@@ -1,0 +1,55 @@
+slug: openfunnel
+name: OpenFunnel
+base_url: https://api.openfunnel.dev
+requires_seed_domain: false   # can run from description/name alone
+cost: { mode: none }          # billed in credits, not USD
+auth:
+  - { header: X-API-Key, env: OPENFUNNEL_API_KEY }
+request:
+  method: GET
+  path: /api/v1/account/search-lookalikes
+  query:
+    limit: $k
+    seed_domains: $seed_domain      # effective (canonicalized) domain, set by preflight
+    query: $query                   # set by build_request hook; pruned when null
+    search_type: $search_type
+    # firmographic filters — set by build_request only for use_filters configs;
+    # array vars repeat per param (doseq); all pruned when null.
+    locations: $locations
+    min_employees: $min_employees
+    max_employees: $max_employees
+    funding_stages: $funding_stages
+response:
+  candidates_path: [results]
+  item:
+    # single (plain) paths — the original runner used r.get(...) directly, so an
+    # empty-string domain must stay "" (not collapse to null like an `a or b` chain).
+    name: name
+    domain: domain
+    description: match_reason
+    rank: null
+    extra:
+      linkedin_url: linkedin_url
+      headquarters: headquarters
+      company_size: company_size
+hooks:
+  preflight: openfunnel_canonicalize_domain
+  build_request: openfunnel_query_for_config
+audit:                                # merged into returned config (order matches old runner)
+  derived_query: derived_query
+  credits_consumed: credits_consumed
+  resolved_domain: $audit.resolved_domain
+  resolved_seed_domains: resolved_seed_domains
+  unresolved_seed_domains: unresolved_seed_domains
+configs:
+  - { name: seed_only_agentic, search_type: agentic, use_query: false }
+  - { name: seed_only_semantic, search_type: semantic, use_query: false }
+  - { name: seed_plus_query_agentic, search_type: agentic, use_query: true }
+  - { name: seed_plus_query_semantic, search_type: semantic, use_query: true }
+  # Firmographic-filtered variants (recall cohort). Filter VALUES come from the
+  # seed registry's public, TAM-derived hints (never the gold set). Skipped
+  # (SkipConfig → error RunResult) when a seed carries no hints. The orchestrator
+  # keeps the highest-recall config, so a filtered variant can only help.
+  - { name: seed_only_semantic_filtered, search_type: semantic, use_query: false, use_filters: true }
+  - { name: seed_plus_query_semantic_filtered, search_type: semantic, use_query: true, use_filters: true }
+  - { name: seed_plus_query_agentic_filtered, search_type: agentic, use_query: true, use_filters: true }
