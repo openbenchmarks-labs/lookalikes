@@ -1,0 +1,55 @@
+slug: ocean
+name: Ocean.io
+base_url: https://api.ocean.io
+requires_seed_domain: true
+cost: { mode: none }          # credits, no fixed USD equivalent
+auth:
+  - { header: X-Api-Token, env: OCEAN_API_KEY }
+request:
+  method: POST
+  path: /v3/search/companies
+  body:
+    size: $k
+    companiesFilters:
+      lookalikeDomains: [$seed_domain]
+      excludeDomains: [$seed_domain]   # drop the seed itself
+      # set by ocean_firmographic_filters only for the seed_firmographic config;
+      # null for static configs (pruned) → they layer filters via merge below.
+      companySizes: $company_sizes
+      primaryLocations: $primary_locations
+  merge:
+    - { from_config: filters, into_body: companiesFilters }   # shallow-merge config filters
+response:
+  candidates_path: [companies, results]
+  item:
+    # Ocean wraps each match as {company:{...}, relevance:...}; fall back to a
+    # flat shape for older endpoints.
+    name: [company.name, company.companyName, name, companyName]
+    domain: [company.domain, company.website, company.rootUrl, domain, website, rootUrl]
+    description: [company.description, company.about, description, about]
+    rank: null
+    extra:
+      country: [company.primaryCountry, company.countryCode]
+      countries: company.countries
+      industries: [company.industries, company.industryCategories]
+      linkedin_industry: company.linkedinIndustry
+      company_size: company.companySize
+      employees_ocean: company.employeeCountOcean
+      employees_linkedin: company.employeeCountLinkedin
+      funding_round: company.fundingRound
+      technologies: company.technologies
+      relevance_score: relevance
+hooks:
+  build_request: ocean_firmographic_filters   # only acts on the seed_firmographic config
+configs:
+  - { name: seed_only, filters: {} }
+  - { name: mid_market, filters: { companySizes: ["51-200", "201-500", "501-1000"] } }
+  - name: us_uk_de_funded
+    filters:
+      companySizes: ["51-200", "201-500", "501-1000"]
+      primaryLocations: { includeCountries: ["us", "gb", "de"] }
+  # Parity with OpenFunnel's *_filtered configs (recall cohort): map the SAME
+  # public, TAM-derived hints (employee range + locations) to Ocean's filter
+  # shape via the build_request hook. Skipped (SkipConfig) when the seed has no
+  # hints.
+  - { name: seed_firmographic, use_seed_firmo: true }

@@ -1,0 +1,27 @@
+slug: parallel
+name: Parallel
+base_url: https://api.parallel.ai
+requires_seed_domain: false   # framed via a natural-language objective; name is enough
+cost: { mode: none }
+auth:
+  - { header: x-api-key, env: PARALLEL_API_KEY }
+request:
+  method: POST
+  path: /v1beta/findall/entity-search
+  body:
+    entity_type: companies
+    objective: $query           # built by build_request hook from seed + mode
+    match_limit: $k_min5         # API floor is 5
+response:
+  candidates_path: [results, entities, data]
+hooks:
+  build_request: parallel_objective
+  transform_candidates: parallel_clean_aggregators   # strip www., route aggregator hosts out of domain
+configs:
+  - { name: lookalike_broad, mode: broad }
+  - { name: lookalike_strict, mode: strict }
+  # Parity with OpenFunnel's *_filtered configs (recall cohort): Parallel has no
+  # structured firmographic filter, so the build_request hook folds the SAME
+  # public, TAM-derived hints into the objective text. Skipped (SkipConfig) when
+  # the seed has no hints.
+  - { name: lookalike_broad_filtered, mode: broad, use_filters: true }

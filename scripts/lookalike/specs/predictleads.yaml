@@ -1,0 +1,24 @@
+slug: predictleads
+name: PredictLeads
+# PredictLeads serves the public API from the marketing-site hostname
+# (no api. subdomain) — api.predictleads.com does not resolve.
+base_url: https://predictleads.com
+requires_seed_domain: true
+cost: { mode: none }
+auth:
+  - { header: X-Api-Key, env: PREDICT_LEADS_API_KEY }
+  - { header: X-Api-Token, env: PREDICT_LEADS_API_TOKEN }
+request:
+  method: GET
+  path: /api/v3/companies/$seed_domain_enc/similar_companies
+  query:
+    page: $page          # set by build_request hook; pruned unless use_paging
+    per_page: $per_page
+response:
+  candidates_path: [data]
+hooks:
+  build_request: predictleads_paging
+  transform_candidates: predictleads_jsonapi_resolve   # join data[] -> included[] companies
+configs:
+  - { name: default, use_paging: false }
+  - { name: paginated, use_paging: true }

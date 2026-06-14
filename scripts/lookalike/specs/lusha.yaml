@@ -1,0 +1,37 @@
+# Lusha is NOT in the runner REGISTRY (its lookalike endpoint requires 5-100
+# seeds per request, incompatible with the one-seed-per-cell unit). The spec is
+# kept for completeness / future multi-seed cell design.
+slug: lusha
+name: Lusha
+base_url: https://api.lusha.com
+requires_seed_domain: true
+cost: { mode: none }          # credits, not directly USD-priced
+auth:
+  - { header: api_key, env: LUSHA_API_KEY }
+request:
+  method: POST
+  path: /v3/companies/lookalike
+  body:
+    seeds:
+      domains: [$seed_domain]
+    limit: $k
+response:
+  candidates_path: [results, companies]
+  item:
+    name: [name, company_name]
+    domain: [domain, website]
+    description: [description, about]
+    rank: null
+    extra:
+      lusha_id: id
+      industry: industry
+      country: [location.country, country]
+      city: location.city
+      employees: [employeeCount.exact, employeeCount]
+      linkedin: socialLinks.linkedin
+audit:
+  credits_charged: billing.creditsCharged
+  results_returned: billing.resultsReturned
+configs:
+  - { name: seed_only, fresh_session: false }
+  - { name: fresh_session, fresh_session: true }
