@@ -29,14 +29,18 @@ _MAX_PAGES = 10  # safety bound; meta.count is ~25-30 in practice
 
 
 def paging(ctx: dict[str, Any]) -> None:
-    """build_request: set page/per_page vars only when the config opts in."""
+    """build_request: request the benchmark depth explicitly.
+
+    The default config is still a single vendor call, but it should not rely on
+    PredictLeads' server-side default page size. The paginated config starts at
+    page 1 and then follows page 2..N in jsonapi_resolve when needed.
+    """
     config = ctx["config"]
+    ctx["vars"]["per_page"] = ctx["k"]
     if config.get("use_paging"):
         ctx["vars"]["page"] = 1
-        ctx["vars"]["per_page"] = ctx["k"]
     else:
         ctx["vars"]["page"] = None
-        ctx["vars"]["per_page"] = None
 
 
 def _rows_to_candidates(payload: dict[str, Any], seed_domain_lower: str) -> list[Candidate]:

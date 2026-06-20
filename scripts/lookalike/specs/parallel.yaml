@@ -20,8 +20,7 @@ hooks:
 configs:
   - { name: lookalike_broad, mode: broad }
   - { name: lookalike_strict, mode: strict }
-  # Parity with OpenFunnel's *_filtered configs (recall cohort): Parallel has no
-  # structured firmographic filter, so the build_request hook folds the SAME
-  # public, TAM-derived hints into the objective text. Skipped (SkipConfig) when
-  # the seed has no hints.
+  # Parallel has no structured firmographic filter, so the build_request hook
+  # folds public seed firmographic hints into the objective text. Skipped
+  # (SkipConfig) when the seed has no hints.
   - { name: lookalike_broad_filtered, mode: broad, use_filters: true }

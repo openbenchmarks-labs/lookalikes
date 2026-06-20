@@ -1,0 +1,387 @@
+{
+  "dataset_slug": "lookalike-2026-q2-expanded",
+  "seed_slug": "caterpillar",
+  "seed_input": {
+    "seed_name": "Caterpillar",
+    "seed_domain": "caterpillar.com",
+    "description": "Industrial manufacturer of construction and mining equipment, engines, turbines, and heavy machinery",
+    "category": "industrial"
+  },
+  "provider_slug": "parallel",
+  "provider_name": "Parallel",
+  "k": 100,
+  "winning_config_name": "lookalike_strict",
+  "judge_model": "gpt-5.4-mini",
+  "captured_at": "2026-06-18T22:13:24Z",
+  "attempts": [
+    {
+      "config": {
+        "name": "lookalike_broad",
+        "mode": "broad"
+      },
+      "vendor_calls": [
+        {
+          "method": "POST",
+          "url": "https://api.parallel.ai/v1beta/findall/entity-search",
+          "request_headers": {
+            "x-api-key": "***REDACTED***",
+            "Content-Type": "application/json",
+            "Accept": "application/json",
+            "User-Agent": ""
+          },
+          "request_body": {
+            "entity_type": "companies",
+            "objective": "Find the top 100 B2B companies most similar to Caterpillar (caterpillar.com) \u2014 Industrial manufacturer of construction and mining equipment, engines, turbines, and heavy machinery. Similar = same business model, overlapping target customer, comparable scale. Prefer product / SaaS companies over agencies or services firms. Return primary company name and domain for each match.",
+            "match_limit": 100
+          },
+          "response_status": 200,
+          "response_body": {
+            "entity_set_id": "entity_set_18be12bf81ab48a99ee693a49c17a6f5",
+            "entities": [
+              {
+                "name": "Finning",
+                "url": "https://linkedin.com/company/finning-international",
+                "description": "Employee Count Official: 10652 | Primary Sector: Real Estate and Construction | Primary Subsector: Construction Equipment and Machinery | Short Description: Supplier of construction and mining quipment | Detailed Description: Finning is a supplier of construction and mining equipment. The company supplies equipments manufactured by the company Caterpillar. Its product range includes articulated trucks, compactors, motor graders, wheel loaders, excavators, air conditioners, cooling towers, dehumidifiers, heaters, attachments, and more. It caters to the construction, agriculture, forestry, mining, government, and other sectors. It also offers fluid analysis, safety management, maintenance & repair, among other services. | Special Flags: Enterprise YES | All Locations: Canada British Columbia Vancouver | Recent News: Finning Reports Q4 and Annual 2025 Results https://www.globenewswire.com/news-release/2026/02/10/3235859/0/en/Finning-reports-Q4-and-Annual-2025-results.html 2026-02  Finning"
+              },
+              {
+                "name": "Komatsu",
+                "url": "https://linkedin.com/company/komatsuconstruction",
+                "description": "Employee Count Official: 47208 | Primary Sector: Industrial Goods and Manufacturing | Primary Subsector: Manufacturing Services | Short Description: Manufacturer and supplier of construction and mining equipment | All Locations: United States Illinois Chicago | Acquisitions Made: 531b1bace4b0f7e16620c25a Business Acquisition 2019-04 535d9a63e4b05065349fa6b0 Business Acquisition  531ac5b1e4b0f7e16617a51d Business Acquisition  | Cxo Team: Rod Schrader CEO | Recent News: Washington Companies Pays for Bridge Destruction Caused by Their Negligence https://en.acnnewswire.com/press-release/english/67831/ 2021-07  Komatsu Launches its Smallest Intelligent Dozer to Date https://www.oemoffhighway.com/trends/equipment-launches/press-release/21451843/komatsu-america-corp-komatsu-launches-its-smallest-intelligent-dozer-to-date 2021-05  Komatsu Continues Expanding Intelligent Machine Control Availability https://www.oemoffhighway.com/electronics/smart-systems/press-release/21232641/komatsu-america-c"
+              }
+            ]
+          },
+          "elapsed_ms": 2395
+        }
+      ],
+      "extracted_candidates": [
+        {
+          "name": "Finning",
+          "domain": null,
+          "description": "Employee Count Official: 10652 | Primary Sector: Real Estate and Construction | Primary Subsector: Construction Equipment and Machinery | Short Description: Supplier of construction and mining quipment | Detailed Description: Finning is a supplier of construction and mining equipment. The company supplies equipments manufactured by the company Caterpillar. Its product range includes articulated trucks, compactors, motor graders, wheel loaders, excavators, air conditioners, cooling towers, dehumidifiers, heaters, attachments, and more. It caters to the construction, agriculture, forestry, mining, government, and other sectors. It also offers fluid analysis, safety management, maintenance & repair, among other services. | Special Flags: Enterprise YES | All Locations: Canada British Columbia Vancouver | Recent News: Finning Reports Q4 and Annual 2025 Results https://www.globenewswire.com/news-release/2026/02/10/3235859/0/en/Finning-reports-Q4-and-Annual-2025-results.html 2026-02  Finning",
+          "rank": 1,
+          "extra": {
+            "linkedin_url": "https://linkedin.com/company/finning-international",
+            "source_url": null,
+            "source_urls": null,
+            "confidence": null
+          }
+        },
+        {
+          "name": "Komatsu",
+          "domain": null,
+          "description": "Employee Count Official: 47208 | Primary Sector: Industrial Goods and Manufacturing | Primary Subsector: Manufacturing Services | Short Description: Manufacturer and supplier of construction and mining equipment | All Locations: United States Illinois Chicago | Acquisitions Made: 531b1bace4b0f7e16620c25a Business Acquisition 2019-04 535d9a63e4b05065349fa6b0 Business Acquisition  531ac5b1e4b0f7e16617a51d Business Acquisition  | Cxo Team: Rod Schrader CEO | Recent News: Washington Companies Pays for Bridge Destruction Caused by Their Negligence https://en.acnnewswire.com/press-release/english/67831/ 2021-07  Komatsu Launches its Smallest Intelligent Dozer to Date https://www.oemoffhighway.com/trends/equipment-launches/press-release/21451843/komatsu-america-corp-komatsu-launches-its-smallest-intelligent-dozer-to-date 2021-05  Komatsu Continues Expanding Intelligent Machine Control Availability https://www.oemoffhighway.com/electronics/smart-systems/press-release/21232641/komatsu-america-c",
+          "rank": 2,
+          "extra": {
+            "linkedin_url": "https://linkedin.com/company/komatsuconstruction",
+            "source_url": null,
+            "source_urls": null,
+            "confidence": null
+          }
+        }
+      ],
+      "judge_calls": [
+        {
+          "model": "gpt-5.4-mini",
+          "messages": [
+            {
+              "role": "system",
+              "content": "You are an evaluator scoring company lookalike results for a B2B sales benchmark.\n\nYou will be given:\n  \u2022 A SEED company \u2014 the company a sales operator is targeting.\n  \u2022 A CANDIDATE company \u2014 a lookalike returned by a vendor's API.\n\nDecide whether the CANDIDATE is a plausible lookalike of the SEED for\nB2B sales prospecting. A plausible lookalike is a company a sales rep\nworking the SEED account would also want to work \u2014 same kind of\nbusiness model, comparable customer base, overlapping product category\nor buyer persona.\n\nRules:\n  - relevant = true only when the candidate is clearly the same kind of\n    company (same model + comparable scale + overlapping customer).\n  - relevant = false for unrelated industries, parent companies,\n    customers/clients of the seed, agencies/consultancies that serve the\n    category (rather than competing), and parody/duplicate entries.\n  - When in doubt, label false.\n  - Keep the rationale \u2264 25 words.\n"
+            },
+            {
+              "role": "user",
+              "content": "SEED:\n  name: Caterpillar\n  domain: caterpillar.com\n  description: Industrial manufacturer of construction and mining equipment, engines, turbines, and heavy machinery\n\nCANDIDATE:\n  name: Komatsu\n  description: Employee Count Official: 47208 | Primary Sector: Industrial Goods and Manufacturing | Primary Subsector: Manufacturing Services | Short Description: Manufacturer and supplier of construction and mining equipment | All Locations: United States Illinois Chicago | Acquisitions Made: 531b1bace4b0f7e16620c25a Business Acquisition 2019-04 535d9a63e4b05065349fa6b0 Business Acquisition  531ac5b1e4b0f7e16617a51d Business Acquisition  | Cxo Team: Rod Schrader CEO | Recent News: Washington Companies Pays for Bridge Destruction Caused by Their Negligence https://en.acnnewswire.com/press-release/english/67831/ 2021-07  Komatsu Launches its Smallest Intelligent Dozer to Date https://www.oemoffhighway.com/trends/equipment-launches/press-release/21451843/komatsu-america-corp-komatsu-launches-its-smallest-intelligent-dozer-to-date 2021-05  Komatsu Continues Expanding Intelligent Machine Control Availability https://www.oemoffhighway.com/electronics/smart-systems/press-release/21232641/komatsu-america-c\n  extras: {\"linkedin_url\": \"https://linkedin.com/company/komatsuconstruction\"}"
+            }
+          ],
+          "raw_response": "{\"relevant\":true,\"rationale\":\"Same industrial heavy-equipment manufacturer serving construction and mining customers; direct peer to Caterpillar.\"}",
+          "parsed_response": {
+            "relevant": true,
+            "rationale": "Same industrial heavy-equipment manufacturer serving construction and mining customers; direct peer to Caterpillar."
+          },
+          "elapsed_ms": 924,
+          "for_candidate_rank": 2,
+          "error": null
+        },
+        {
+          "model": "gpt-5.4-mini",
+          "messages": [
+            {
+              "role": "system",
+              "content": "You are an evaluator scoring company lookalike results for a B2B sales benchmark.\n\nYou will be given:\n  \u2022 A SEED company \u2014 the company a sales operator is targeting.\n  \u2022 A CANDIDATE company \u2014 a lookalike returned by a vendor's API.\n\nDecide whether the CANDIDATE is a plausible lookalike of the SEED for\nB2B sales prospecting. A plausible lookalike is a company a sales rep\nworking the SEED account would also want to work \u2014 same kind of\nbusiness model, comparable customer base, overlapping product category\nor buyer persona.\n\nRules:\n  - relevant = true only when the candidate is clearly the same kind of\n    company (same model + comparable scale + overlapping customer).\n  - relevant = false for unrelated industries, parent companies,\n    customers/clients of the seed, agencies/consultancies that serve the\n    category (rather than competing), and parody/duplicate entries.\n  - When in doubt, label false.\n  - Keep the rationale \u2264 25 words.\n"
+            },
+            {
+              "role": "user",
+              "content": "SEED:\n  name: Caterpillar\n  domain: caterpillar.com\n  description: Industrial manufacturer of construction and mining equipment, engines, turbines, and heavy machinery\n\nCANDIDATE:\n  name: Finning\n  description: Employee Count Official: 10652 | Primary Sector: Real Estate and Construction | Primary Subsector: Construction Equipment and Machinery | Short Description: Supplier of construction and mining quipment | Detailed Description: Finning is a supplier of construction and mining equipment. The company supplies equipments manufactured by the company Caterpillar. Its product range includes articulated trucks, compactors, motor graders, wheel loaders, excavators, air conditioners, cooling towers, dehumidifiers, heaters, attachments, and more. It caters to the construction, agriculture, forestry, mining, government, and other sectors. It also offers fluid analysis, safety management, maintenance & repair, among other services. | Special Flags: Enterprise YES | All Locations: Canada British Columbia Vancouver | Recent News: Finning Reports Q4 and Annual 2025 Results https://www.globenewswire.com/news-release/2026/02/10/3235859/0/en/Finning-reports-Q4-and-Annual-2025-results.html 2026-02  Finning\n  extras: {\"linkedin_url\": \"https://linkedin.com/company/finning-international\"}"
+            }
+          ],
+          "raw_response": "{\"relevant\":false,\"rationale\":\"Finning is Caterpillar\u2019s dealer/supplier and service partner, not a same-model manufacturer or direct lookalike competitor.\"}",
+          "parsed_response": {
+            "relevant": false,
+            "rationale": "Finning is Caterpillar\u2019s dealer/supplier and service partner, not a same-model manufacturer or direct lookalike competitor."
+          },
+          "elapsed_ms": 1228,
+          "for_candidate_rank": 1,
+          "error": null
+        }
+      ],
+      "result": {
+        "status": "ok",
+        "k": 2,
+        "relevant_count": 1,
+        "precision_at_k": 50.0,
+        "latency_ms": 2395,
+        "judged_at": "2026-06-18T22:13:19Z",
+        "cost_usd": null,
+        "error": null
+      }
+    },
+    {
+      "config": {
+        "name": "lookalike_strict",
+        "mode": "strict"
+      },
+      "vendor_calls": [
+        {
+          "method": "POST",
+          "url": "https://api.parallel.ai/v1beta/findall/entity-search",
+          "request_headers": {
+            "x-api-key": "***REDACTED***",
+            "Content-Type": "application/json",
+            "Accept": "application/json",
+            "User-Agent": ""
+          },
+          "request_body": {
+            "entity_type": "companies",
+            "objective": "Find the top 100 direct competitors of Caterpillar (caterpillar.com) \u2014 Industrial manufacturer of construction and mining equipment, engines, turbines, and heavy machinery. Direct competitors only: same product category, overlapping buyer persona, comparable scale. Exclude parent companies, customers, agencies, consultancies, integrators, and downstream resellers. Return primary company name and domain for each match.",
+            "match_limit": 100
+          },
+          "response_status": 200,
+          "response_body": {
+            "entity_set_id": "entity_set_cf4d2c62f9164990ade4c070178767a3",
+            "entities": [
+              {
+                "name": "Caterpillar",
+                "url": "https://linkedin.com/company/caterpillar-inc",
+                "description": "Employee Count Official: 62178 | Primary Sector: Mining | Primary Subsector: Mining Equipment | Short Description: Manufacturer of construction and mining equipment | Detailed Description: Manufacturer of construction and mining equipment. Its product includes diesel and natural gas engines, and industrial turbines, and diesel-electric locomotives. They operating through three primary segments -Construction & Resource Industries, and Energy & Transportation, and providing financing and related services through Financial Products segment. In 2022, the company recorded annual revenues of $61.7B and a net profit of $7.11B. | Other Taxonomy Tags: [\"Generic Company Lists\",\"Fortune 500\",\"Global 2000\"] | Special Flags: Enterprise YES | Name: Caterpillar | All Locations: United States Texas Irving | All Funding Rounds: Post IPO 2023-10-10  Post IPO 2022-03-30  Grant (prize money) 2012-01-20 NASA Grant (prize money) 2011-03-28 OSTI Grant (prize money) 2011-03-18 OSTI Grant (prize money) 2011-02"
+              },
+              {
+                "name": "Finning",
+                "url": "https://linkedin.com/company/finning-international",
+                "description": "Employee Count Official: 10652 | Primary Sector: Real Estate and Construction | Primary Subsector: Construction Equipment and Machinery | Short Description: Supplier of construction and mining quipment | Detailed Description: Finning is a supplier of construction and mining equipment. The company supplies equipments manufactured by the company Caterpillar. Its product range includes articulated trucks, compactors, motor graders, wheel loaders, excavators, air conditioners, cooling towers, dehumidifiers, heaters, attachments, and more. It caters to the construction, agriculture, forestry, mining, government, and other sectors. It also offers fluid analysis, safety management, maintenance & repair, among other services. | Special Flags: Enterprise YES | Name: Finning | All Locations: Canada British Columbia Vancouver | Recent News: Finning Reports Q4 and Annual 2025 Results https://www.globenewswire.com/news-release/2026/02/10/3235859/0/en/Finning-reports-Q4-and-Annual-2025-results.html "
+              },
+              {
+                "name": "Cummins",
+                "url": "https://linkedin.com/company/cummins-inc/about",
+                "description": "Employee Count Official: 52207 | Primary Sector: Auto | Primary Subsector: Auto Components | Short Description: Manufacturer of gas-powered construction equipment | Detailed Description: Manufacturer of gas-powered construction equipment. The platform offers users various diesel and natural gas-powered engines for heavy and medium-duty trucks, buses, recreational vehicles, agricultural, and construction equipment, mining, marine, oil and gas, and governmental equipment markets. In 2022, the company recorded annual revenues of $28.07B and a net profit of $2.15B. | Other Taxonomy Tags: [\"US Tech\",\"Enterprise Tech - US\",\"Generic Company Lists\",\"Fortune 500\",\"Global 2000\"] | Special Flags: Tech YES Enterprise YES | Name: Cummins | All Locations: United States Ohio Columbus | Cxo Team: NA Dey Director - Finance - Cummins Business Services Chetan Kamdar Director and Finance Head, India Supply Chain, Business(NRP) & Engineering Controller Amol Relkar Director- Powergen Engineer Jennifer Rumse"
+              },
+              {
+                "name": "Komatsu",
+                "url": "https://linkedin.com/company/komatsuconstruction",
+                "description": "Employee Count Official: 47208 | Primary Sector: Industrial Goods and Manufacturing | Primary Subsector: Manufacturing Services | Short Description: Manufacturer and supplier of construction and mining equipment | Name: Komatsu | All Locations: United States Illinois Chicago | Acquisitions Made: 531b1bace4b0f7e16620c25a Business Acquisition 2019-04 535d9a63e4b05065349fa6b0 Business Acquisition  531ac5b1e4b0f7e16617a51d Business Acquisition  | Cxo Team: Rod Schrader CEO | Recent News: Washington Companies Pays for Bridge Destruction Caused by Their Negligence https://en.acnnewswire.com/press-release/english/67831/ 2021-07  Komatsu Launches its Smallest Intelligent Dozer to Date https://www.oemoffhighway.com/trends/equipment-launches/press-release/21451843/komatsu-america-corp-komatsu-launches-its-smallest-intelligent-dozer-to-date 2021-05  Komatsu Continues Expanding Intelligent Machine Control Availability https://www.oemoffhighway.com/electronics/smart-systems/press-release/21232641/k"
+              },
+              {
+                "name": "SANY Group",
+                "url": "https://linkedin.com/company/sany-heavy-industry",
+                "description": "Employee Count Official: 14149 | Primary Sector: Real Estate and Construction | Primary Subsector: Construction Equipment and Machinery | Short Description: Manufacturer of construction & mining equipment, port, and oil drilling machinery | Other Taxonomy Tags: [\"Generic Company Lists\",\"Global 2000\"] | Name: SANY Group | All Locations: China Hunan Changsha | Cxo Team: Tobias Schlitzke Director Global Growth Nikilesh Tarlana Key Accounts Strategy - COO Office Deepak Garg Managing Director, Sany Group & Sany Heavy Industry India Pvt Ltd (South Asia & India) | Recent News: SANY and OCHA Sign Partnership Agreement at HNPW 2026 https://www.webdisclosure.com/press-release/sany-and-ocha-sign-partnership-agreement-at-hnpw-2026-XDRR7TGsXh6 2026-03 Equipment makers eye US data centers https://www.chinadaily.com.cn/a/202603/06/WS69aa693ea310d6866eb3c1e4.html 2026-03 SANY America Launches Community Disaster Response Fund at CONEXPO 2026 https://www.miningstockeducation.com/2026/03/sany-america-lau"
+              }
+            ]
+          },
+          "elapsed_ms": 2046
+        }
+      ],
+      "extracted_candidates": [
+        {
+          "name": "Caterpillar",
+          "domain": null,
+          "description": "Employee Count Official: 62178 | Primary Sector: Mining | Primary Subsector: Mining Equipment | Short Description: Manufacturer of construction and mining equipment | Detailed Description: Manufacturer of construction and mining equipment. Its product includes diesel and natural gas engines, and industrial turbines, and diesel-electric locomotives. They operating through three primary segments -Construction & Resource Industries, and Energy & Transportation, and providing financing and related services through Financial Products segment. In 2022, the company recorded annual revenues of $61.7B and a net profit of $7.11B. | Other Taxonomy Tags: [\"Generic Company Lists\",\"Fortune 500\",\"Global 2000\"] | Special Flags: Enterprise YES | Name: Caterpillar | All Locations: United States Texas Irving | All Funding Rounds: Post IPO 2023-10-10  Post IPO 2022-03-30  Grant (prize money) 2012-01-20 NASA Grant (prize money) 2011-03-28 OSTI Grant (prize money) 2011-03-18 OSTI Grant (prize money) 2011-02",
+          "rank": 1,
+          "extra": {
+            "linkedin_url": "https://linkedin.com/company/caterpillar-inc",
+            "source_url": null,
+            "source_urls": null,
+            "confidence": null
+          }
+        },
+        {
+          "name": "Finning",
+          "domain": null,
+          "description": "Employee Count Official: 10652 | Primary Sector: Real Estate and Construction | Primary Subsector: Construction Equipment and Machinery | Short Description: Supplier of construction and mining quipment | Detailed Description: Finning is a supplier of construction and mining equipment. The company supplies equipments manufactured by the company Caterpillar. Its product range includes articulated trucks, compactors, motor graders, wheel loaders, excavators, air conditioners, cooling towers, dehumidifiers, heaters, attachments, and more. It caters to the construction, agriculture, forestry, mining, government, and other sectors. It also offers fluid analysis, safety management, maintenance & repair, among other services. | Special Flags: Enterprise YES | Name: Finning | All Locations: Canada British Columbia Vancouver | Recent News: Finning Reports Q4 and Annual 2025 Results https://www.globenewswire.com/news-release/2026/02/10/3235859/0/en/Finning-reports-Q4-and-Annual-2025-results.html ",
+          "rank": 2,
+          "extra": {
+            "linkedin_url": "https://linkedin.com/company/finning-international",
+            "source_url": null,
+            "source_urls": null,
+            "confidence": null
+          }
+        },
+        {
+          "name": "Cummins",
+          "domain": null,
+          "description": "Employee Count Official: 52207 | Primary Sector: Auto | Primary Subsector: Auto Components | Short Description: Manufacturer of gas-powered construction equipment | Detailed Description: Manufacturer of gas-powered construction equipment. The platform offers users various diesel and natural gas-powered engines for heavy and medium-duty trucks, buses, recreational vehicles, agricultural, and construction equipment, mining, marine, oil and gas, and governmental equipment markets. In 2022, the company recorded annual revenues of $28.07B and a net profit of $2.15B. | Other Taxonomy Tags: [\"US Tech\",\"Enterprise Tech - US\",\"Generic Company Lists\",\"Fortune 500\",\"Global 2000\"] | Special Flags: Tech YES Enterprise YES | Name: Cummins | All Locations: United States Ohio Columbus | Cxo Team: NA Dey Director - Finance - Cummins Business Services Chetan Kamdar Director and Finance Head, India Supply Chain, Business(NRP) & Engineering Controller Amol Relkar Director- Powergen Engineer Jennifer Rumse",
+          "rank": 3,
+          "extra": {
+            "linkedin_url": "https://linkedin.com/company/cummins-inc/about",
+            "source_url": null,
+            "source_urls": null,
+            "confidence": null
+          }
+        },
+        {
+          "name": "Komatsu",
+          "domain": null,
+          "description": "Employee Count Official: 47208 | Primary Sector: Industrial Goods and Manufacturing | Primary Subsector: Manufacturing Services | Short Description: Manufacturer and supplier of construction and mining equipment | Name: Komatsu | All Locations: United States Illinois Chicago | Acquisitions Made: 531b1bace4b0f7e16620c25a Business Acquisition 2019-04 535d9a63e4b05065349fa6b0 Business Acquisition  531ac5b1e4b0f7e16617a51d Business Acquisition  | Cxo Team: Rod Schrader CEO | Recent News: Washington Companies Pays for Bridge Destruction Caused by Their Negligence https://en.acnnewswire.com/press-release/english/67831/ 2021-07  Komatsu Launches its Smallest Intelligent Dozer to Date https://www.oemoffhighway.com/trends/equipment-launches/press-release/21451843/komatsu-america-corp-komatsu-launches-its-smallest-intelligent-dozer-to-date 2021-05  Komatsu Continues Expanding Intelligent Machine Control Availability https://www.oemoffhighway.com/electronics/smart-systems/press-release/21232641/k",
+          "rank": 4,
+          "extra": {
+            "linkedin_url": "https://linkedin.com/company/komatsuconstruction",
+            "source_url": null,
+            "source_urls": null,
+            "confidence": null
+          }
+        },
+        {
+          "name": "SANY Group",
+          "domain": null,
+          "description": "Employee Count Official: 14149 | Primary Sector: Real Estate and Construction | Primary Subsector: Construction Equipment and Machinery | Short Description: Manufacturer of construction & mining equipment, port, and oil drilling machinery | Other Taxonomy Tags: [\"Generic Company Lists\",\"Global 2000\"] | Name: SANY Group | All Locations: China Hunan Changsha | Cxo Team: Tobias Schlitzke Director Global Growth Nikilesh Tarlana Key Accounts Strategy - COO Office Deepak Garg Managing Director, Sany Group & Sany Heavy Industry India Pvt Ltd (South Asia & India) | Recent News: SANY and OCHA Sign Partnership Agreement at HNPW 2026 https://www.webdisclosure.com/press-release/sany-and-ocha-sign-partnership-agreement-at-hnpw-2026-XDRR7TGsXh6 2026-03 Equipment makers eye US data centers https://www.chinadaily.com.cn/a/202603/06/WS69aa693ea310d6866eb3c1e4.html 2026-03 SANY America Launches Community Disaster Response Fund at CONEXPO 2026 https://www.miningstockeducation.com/2026/03/sany-america-lau",
+          "rank": 5,
+          "extra": {
+            "linkedin_url": "https://linkedin.com/company/sany-heavy-industry",
+            "source_url": null,
+            "source_urls": null,
+            "confidence": null
+          }
+        }
+      ],
+      "judge_calls": [
+        {
+          "model": "gpt-5.4-mini",
+          "messages": [
+            {
+              "role": "system",
+              "content": "You are an evaluator scoring company lookalike results for a B2B sales benchmark.\n\nYou will be given:\n  \u2022 A SEED company \u2014 the company a sales operator is targeting.\n  \u2022 A CANDIDATE company \u2014 a lookalike returned by a vendor's API.\n\nDecide whether the CANDIDATE is a plausible lookalike of the SEED for\nB2B sales prospecting. A plausible lookalike is a company a sales rep\nworking the SEED account would also want to work \u2014 same kind of\nbusiness model, comparable customer base, overlapping product category\nor buyer persona.\n\nRules:\n  - relevant = true only when the candidate is clearly the same kind of\n    company (same model + comparable scale + overlapping customer).\n  - relevant = false for unrelated industries, parent companies,\n    customers/clients of the seed, agencies/consultancies that serve the\n    category (rather than competing), and parody/duplicate entries.\n  - When in doubt, label false.\n  - Keep the rationale \u2264 25 words.\n"
+            },
+            {
+              "role": "user",
+              "content": "SEED:\n  name: Caterpillar\n  domain: caterpillar.com\n  description: Industrial manufacturer of construction and mining equipment, engines, turbines, and heavy machinery\n\nCANDIDATE:\n  name: Caterpillar\n  description: Employee Count Official: 62178 | Primary Sector: Mining | Primary Subsector: Mining Equipment | Short Description: Manufacturer of construction and mining equipment | Detailed Description: Manufacturer of construction and mining equipment. Its product includes diesel and natural gas engines, and industrial turbines, and diesel-electric locomotives. They operating through three primary segments -Construction & Resource Industries, and Energy & Transportation, and providing financing and related services through Financial Products segment. In 2022, the company recorded annual revenues of $61.7B and a net profit of $7.11B. | Other Taxonomy Tags: [\"Generic Company Lists\",\"Fortune 500\",\"Global 2000\"] | Special Flags: Enterprise YES | Name: Caterpillar | All Locations: United States Texas Irving | All Funding Rounds: Post IPO 2023-10-10  Post IPO 2022-03-30  Grant (prize money) 2012-01-20 NASA Grant (prize money) 2011-03-28 OSTI Grant (prize money) 2011-03-18 OSTI Grant (prize money) 2011-02\n  extras: {\"linkedin_url\": \"https://linkedin.com/company/caterpillar-inc\"}"
+            }
+          ],
+          "raw_response": "{\"relevant\":false,\"rationale\":\"Duplicate of the seed company, not a distinct lookalike prospect.\"}",
+          "parsed_response": {
+            "relevant": false,
+            "rationale": "Duplicate of the seed company, not a distinct lookalike prospect."
+          },
+          "elapsed_ms": 708,
+          "for_candidate_rank": 1,
+          "error": null
+        },
+        {
+          "model": "gpt-5.4-mini",
+          "messages": [
+            {
+              "role": "system",
+              "content": "You are an evaluator scoring company lookalike results for a B2B sales benchmark.\n\nYou will be given:\n  \u2022 A SEED company \u2014 the company a sales operator is targeting.\n  \u2022 A CANDIDATE company \u2014 a lookalike returned by a vendor's API.\n\nDecide whether the CANDIDATE is a plausible lookalike of the SEED for\nB2B sales prospecting. A plausible lookalike is a company a sales rep\nworking the SEED account would also want to work \u2014 same kind of\nbusiness model, comparable customer base, overlapping product category\nor buyer persona.\n\nRules:\n  - relevant = true only when the candidate is clearly the same kind of\n    company (same model + comparable scale + overlapping customer).\n  - relevant = false for unrelated industries, parent companies,\n    customers/clients of the seed, agencies/consultancies that serve the\n    category (rather than competing), and parody/duplicate entries.\n  - When in doubt, label false.\n  - Keep the rationale \u2264 25 words.\n"
+            },
+            {
+              "role": "user",
+              "content": "SEED:\n  name: Caterpillar\n  domain: caterpillar.com\n  description: Industrial manufacturer of construction and mining equipment, engines, turbines, and heavy machinery\n\nCANDIDATE:\n  name: Finning\n  description: Employee Count Official: 10652 | Primary Sector: Real Estate and Construction | Primary Subsector: Construction Equipment and Machinery | Short Description: Supplier of construction and mining quipment | Detailed Description: Finning is a supplier of construction and mining equipment. The company supplies equipments manufactured by the company Caterpillar. Its product range includes articulated trucks, compactors, motor graders, wheel loaders, excavators, air conditioners, cooling towers, dehumidifiers, heaters, attachments, and more. It caters to the construction, agriculture, forestry, mining, government, and other sectors. It also offers fluid analysis, safety management, maintenance & repair, among other services. | Special Flags: Enterprise YES | Name: Finning | All Locations: Canada British Columbia Vancouver | Recent News: Finning Reports Q4 and Annual 2025 Results https://www.globenewswire.com/news-release/2026/02/10/3235859/0/en/Finning-reports-Q4-and-Annual-2025-results.html \n  extras: {\"linkedin_url\": \"https://linkedin.com/company/finning-international\"}"
+            }
+          ],
+          "raw_response": "{\"relevant\":false,\"rationale\":\"Finning is a Caterpillar dealer/reseller and service provider, not a comparable equipment manufacturer.\"}",
+          "parsed_response": {
+            "relevant": false,
+            "rationale": "Finning is a Caterpillar dealer/reseller and service provider, not a comparable equipment manufacturer."
+          },
+          "elapsed_ms": 909,
+          "for_candidate_rank": 2,
+          "error": null
+        },
+        {
+          "model": "gpt-5.4-mini",
+          "messages": [
+            {
+              "role": "system",
+              "content": "You are an evaluator scoring company lookalike results for a B2B sales benchmark.\n\nYou will be given:\n  \u2022 A SEED company \u2014 the company a sales operator is targeting.\n  \u2022 A CANDIDATE company \u2014 a lookalike returned by a vendor's API.\n\nDecide whether the CANDIDATE is a plausible lookalike of the SEED for\nB2B sales prospecting. A plausible lookalike is a company a sales rep\nworking the SEED account would also want to work \u2014 same kind of\nbusiness model, comparable customer base, overlapping product category\nor buyer persona.\n\nRules:\n  - relevant = true only when the candidate is clearly the same kind of\n    company (same model + comparable scale + overlapping customer).\n  - relevant = false for unrelated industries, parent companies,\n    customers/clients of the seed, agencies/consultancies that serve the\n    category (rather than competing), and parody/duplicate entries.\n  - When in doubt, label false.\n  - Keep the rationale \u2264 25 words.\n"
+            },
+            {
+              "role": "user",
+              "content": "SEED:\n  name: Caterpillar\n  domain: caterpillar.com\n  description: Industrial manufacturer of construction and mining equipment, engines, turbines, and heavy machinery\n\nCANDIDATE:\n  name: Komatsu\n  description: Employee Count Official: 47208 | Primary Sector: Industrial Goods and Manufacturing | Primary Subsector: Manufacturing Services | Short Description: Manufacturer and supplier of construction and mining equipment | Name: Komatsu | All Locations: United States Illinois Chicago | Acquisitions Made: 531b1bace4b0f7e16620c25a Business Acquisition 2019-04 535d9a63e4b05065349fa6b0 Business Acquisition  531ac5b1e4b0f7e16617a51d Business Acquisition  | Cxo Team: Rod Schrader CEO | Recent News: Washington Companies Pays for Bridge Destruction Caused by Their Negligence https://en.acnnewswire.com/press-release/english/67831/ 2021-07  Komatsu Launches its Smallest Intelligent Dozer to Date https://www.oemoffhighway.com/trends/equipment-launches/press-release/21451843/komatsu-america-corp-komatsu-launches-its-smallest-intelligent-dozer-to-date 2021-05  Komatsu Continues Expanding Intelligent Machine Control Availability https://www.oemoffhighway.com/electronics/smart-systems/press-release/21232641/k\n  extras: {\"linkedin_url\": \"https://linkedin.com/company/komatsuconstruction\"}"
+            }
+          ],
+          "raw_response": "{\"relevant\":true,\"rationale\":\"Direct peer competitor in construction and mining equipment manufacturing, serving the same industrial customer base.\"}",
+          "parsed_response": {
+            "relevant": true,
+            "rationale": "Direct peer competitor in construction and mining equipment manufacturing, serving the same industrial customer base."
+          },
+          "elapsed_ms": 946,
+          "for_candidate_rank": 4,
+          "error": null
+        },
+        {
+          "model": "gpt-5.4-mini",
+          "messages": [
+            {
+              "role": "system",
+              "content": "You are an evaluator scoring company lookalike results for a B2B sales benchmark.\n\nYou will be given:\n  \u2022 A SEED company \u2014 the company a sales operator is targeting.\n  \u2022 A CANDIDATE company \u2014 a lookalike returned by a vendor's API.\n\nDecide whether the CANDIDATE is a plausible lookalike of the SEED for\nB2B sales prospecting. A plausible lookalike is a company a sales rep\nworking the SEED account would also want to work \u2014 same kind of\nbusiness model, comparable customer base, overlapping product category\nor buyer persona.\n\nRules:\n  - relevant = true only when the candidate is clearly the same kind of\n    company (same model + comparable scale + overlapping customer).\n  - relevant = false for unrelated industries, parent companies,\n    customers/clients of the seed, agencies/consultancies that serve the\n    category (rather than competing), and parody/duplicate entries.\n  - When in doubt, label false.\n  - Keep the rationale \u2264 25 words.\n"
+            },
+            {
+              "role": "user",
+              "content": "SEED:\n  name: Caterpillar\n  domain: caterpillar.com\n  description: Industrial manufacturer of construction and mining equipment, engines, turbines, and heavy machinery\n\nCANDIDATE:\n  name: SANY Group\n  description: Employee Count Official: 14149 | Primary Sector: Real Estate and Construction | Primary Subsector: Construction Equipment and Machinery | Short Description: Manufacturer of construction & mining equipment, port, and oil drilling machinery | Other Taxonomy Tags: [\"Generic Company Lists\",\"Global 2000\"] | Name: SANY Group | All Locations: China Hunan Changsha | Cxo Team: Tobias Schlitzke Director Global Growth Nikilesh Tarlana Key Accounts Strategy - COO Office Deepak Garg Managing Director, Sany Group & Sany Heavy Industry India Pvt Ltd (South Asia & India) | Recent News: SANY and OCHA Sign Partnership Agreement at HNPW 2026 https://www.webdisclosure.com/press-release/sany-and-ocha-sign-partnership-agreement-at-hnpw-2026-XDRR7TGsXh6 2026-03 Equipment makers eye US data centers https://www.chinadaily.com.cn/a/202603/06/WS69aa693ea310d6866eb3c1e4.html 2026-03 SANY America Launches Community Disaster Response Fund at CONEXPO 2026 https://www.miningstockeducation.com/2026/03/sany-america-lau\n  extras: {\"linkedin_url\": \"https://linkedin.com/company/sany-heavy-industry\"}"
+            }
+          ],
+          "raw_response": "{\"relevant\":true,\"rationale\":\"Same industry and product category: global manufacturer of construction and mining equipment, directly comparable to Caterpillar.\"}",
+          "parsed_response": {
+            "relevant": true,
+            "rationale": "Same industry and product category: global manufacturer of construction and mining equipment, directly comparable to Caterpillar."
+          },
+          "elapsed_ms": 946,
+          "for_candidate_rank": 5,
+          "error": null
+        },
+        {
+          "model": "gpt-5.4-mini",
+          "messages": [
+            {
+              "role": "system",
+              "content": "You are an evaluator scoring company lookalike results for a B2B sales benchmark.\n\nYou will be given:\n  \u2022 A SEED company \u2014 the company a sales operator is targeting.\n  \u2022 A CANDIDATE company \u2014 a lookalike returned by a vendor's API.\n\nDecide whether the CANDIDATE is a plausible lookalike of the SEED for\nB2B sales prospecting. A plausible lookalike is a company a sales rep\nworking the SEED account would also want to work \u2014 same kind of\nbusiness model, comparable customer base, overlapping product category\nor buyer persona.\n\nRules:\n  - relevant = true only when the candidate is clearly the same kind of\n    company (same model + comparable scale + overlapping customer).\n  - relevant = false for unrelated industries, parent companies,\n    customers/clients of the seed, agencies/consultancies that serve the\n    category (rather than competing), and parody/duplicate entries.\n  - When in doubt, label false.\n  - Keep the rationale \u2264 25 words.\n"
+            },
+            {
+              "role": "user",
+              "content": "SEED:\n  name: Caterpillar\n  domain: caterpillar.com\n  description: Industrial manufacturer of construction and mining equipment, engines, turbines, and heavy machinery\n\nCANDIDATE:\n  name: Cummins\n  description: Employee Count Official: 52207 | Primary Sector: Auto | Primary Subsector: Auto Components | Short Description: Manufacturer of gas-powered construction equipment | Detailed Description: Manufacturer of gas-powered construction equipment. The platform offers users various diesel and natural gas-powered engines for heavy and medium-duty trucks, buses, recreational vehicles, agricultural, and construction equipment, mining, marine, oil and gas, and governmental equipment markets. In 2022, the company recorded annual revenues of $28.07B and a net profit of $2.15B. | Other Taxonomy Tags: [\"US Tech\",\"Enterprise Tech - US\",\"Generic Company Lists\",\"Fortune 500\",\"Global 2000\"] | Special Flags: Tech YES Enterprise YES | Name: Cummins | All Locations: United States Ohio Columbus | Cxo Team: NA Dey Director - Finance - Cummins Business Services Chetan Kamdar Director and Finance Head, India Supply Chain, Business(NRP) & Engineering Controller Amol Relkar Director- Powergen Engineer Jennifer Rumse\n  extras: {\"linkedin_url\": \"https://linkedin.com/company/cummins-inc/about\"}"
+            }
+          ],
+          "raw_response": "{\"relevant\":true,\"rationale\":\"Large industrial manufacturer with overlapping heavy equipment, engines, and construction/mining markets; comparable B2B buyer base.\"}",
+          "parsed_response": {
+            "relevant": true,
+            "rationale": "Large industrial manufacturer with overlapping heavy equipment, engines, and construction/mining markets; comparable B2B buyer base."
+          },
+          "elapsed_ms": 1832,
+          "for_candidate_rank": 3,
+          "error": null
+        }
+      ],
+      "result": {
+        "status": "ok",
+        "k": 5,
+        "relevant_count": 3,
+        "precision_at_k": 60.0,
+        "latency_ms": 2046,
+        "judged_at": "2026-06-18T22:13:23Z",
+        "cost_usd": null,
+        "error": null
+      }
+    },
+    {
+      "config": {
+        "name": "lookalike_broad_filtered",
+        "mode": "broad",
+        "use_filters": true
+      },
+      "vendor_calls": [],
+      "extracted_candidates": [],
+      "judge_calls": [],
+      "result": {
+        "status": "vendor_error",
+        "error": "skipped: parallel: filtered config skipped (no firmographic hints for seed)",
+        "latency_ms": 0
+      }
+    }
+  ]
+}

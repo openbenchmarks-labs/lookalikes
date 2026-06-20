@@ -1,0 +1,206 @@
+{
+  "dataset_slug": "lookalike-2026-q2-expanded",
+  "seed_slug": "nubank",
+  "seed_input": {
+    "seed_name": "Nubank",
+    "seed_domain": "nubank.com.br",
+    "description": "Digital bank and fintech platform offering cards, accounts, lending, payments, and financial services in Latin America",
+    "category": "fintech"
+  },
+  "provider_slug": "ocean",
+  "provider_name": "Ocean.io",
+  "k": 100,
+  "winning_config_name": null,
+  "judge_model": "gpt-5.4-mini",
+  "captured_at": "2026-06-18T22:19:17Z",
+  "attempts": [
+    {
+      "config": {
+        "name": "seed_only",
+        "filters": {}
+      },
+      "vendor_calls": [
+        {
+          "method": "POST",
+          "url": "https://api.ocean.io/v3/search/companies",
+          "request_headers": {
+            "X-Api-Token": "***REDACTED***",
+            "Content-Type": "application/json",
+            "Accept": "application/json",
+            "User-Agent": ""
+          },
+          "request_body": {
+            "size": 100,
+            "companiesFilters": {
+              "lookalikeDomains": [
+                "nubank.com.br"
+              ],
+              "excludeDomains": [
+                "nubank.com.br"
+              ]
+            }
+          },
+          "response_status": 200,
+          "response_body": {
+            "detail": "Missing some `lookalikeDomains`",
+            "total": 0,
+            "missingDomains": {
+              "nubank.com.br": "unsupported language"
+            },
+            "creditsUsed": 0.0,
+            "companies": []
+          },
+          "elapsed_ms": 1038
+        }
+      ],
+      "extracted_candidates": [],
+      "judge_calls": [],
+      "result": {
+        "status": "no_candidates",
+        "latency_ms": 1038
+      }
+    },
+    {
+      "config": {
+        "name": "mid_market",
+        "filters": {
+          "companySizes": [
+            "51-200",
+            "201-500",
+            "501-1000"
+          ]
+        }
+      },
+      "vendor_calls": [
+        {
+          "method": "POST",
+          "url": "https://api.ocean.io/v3/search/companies",
+          "request_headers": {
+            "X-Api-Token": "***REDACTED***",
+            "Content-Type": "application/json",
+            "Accept": "application/json",
+            "User-Agent": ""
+          },
+          "request_body": {
+            "size": 100,
+            "companiesFilters": {
+              "lookalikeDomains": [
+                "nubank.com.br"
+              ],
+              "excludeDomains": [
+                "nubank.com.br"
+              ],
+              "companySizes": [
+                "51-200",
+                "201-500",
+                "501-1000"
+              ]
+            }
+          },
+          "response_status": 200,
+          "response_body": {
+            "detail": "Missing some `lookalikeDomains`",
+            "total": 0,
+            "missingDomains": {
+              "nubank.com.br": "unsupported language"
+            },
+            "creditsUsed": 0.0,
+            "companies": []
+          },
+          "elapsed_ms": 495
+        }
+      ],
+      "extracted_candidates": [],
+      "judge_calls": [],
+      "result": {
+        "status": "no_candidates",
+        "latency_ms": 495
+      }
+    },
+    {
+      "config": {
+        "name": "us_uk_de_funded",
+        "filters": {
+          "companySizes": [
+            "51-200",
+            "201-500",
+            "501-1000"
+          ],
+          "primaryLocations": {
+            "includeCountries": [
+              "us",
+              "gb",
+              "de"
+            ]
+          }
+        }
+      },
+      "vendor_calls": [
+        {
+          "method": "POST",
+          "url": "https://api.ocean.io/v3/search/companies",
+          "request_headers": {
+            "X-Api-Token": "***REDACTED***",
+            "Content-Type": "application/json",
+            "Accept": "application/json",
+            "User-Agent": ""
+          },
+          "request_body": {
+            "size": 100,
+            "companiesFilters": {
+              "lookalikeDomains": [
+                "nubank.com.br"
+              ],
+              "excludeDomains": [
+                "nubank.com.br"
+              ],
+              "companySizes": [
+                "51-200",
+                "201-500",
+                "501-1000"
+              ],
+              "primaryLocations": {
+                "includeCountries": [
+                  "us",
+                  "gb",
+                  "de"
+                ]
+              }
+            }
+          },
+          "response_status": 200,
+          "response_body": {
+            "detail": "Missing some `lookalikeDomains`",
+            "total": 0,
+            "missingDomains": {
+              "nubank.com.br": "unsupported language"
+            },
+            "creditsUsed": 0.0,
+            "companies": []
+          },
+          "elapsed_ms": 438
+        }
+      ],
+      "extracted_candidates": [],
+      "judge_calls": [],
+      "result": {
+        "status": "no_candidates",
+        "latency_ms": 438
+      }
+    },
+    {
+      "config": {
+        "name": "seed_firmographic",
+        "use_seed_firmo": true
+      },
+      "vendor_calls": [],
+      "extracted_candidates": [],
+      "judge_calls": [],
+      "result": {
+        "status": "vendor_error",
+        "error": "skipped: ocean: firmographic config skipped (no hints for seed)",
+        "latency_ms": 0
+      }
+    }
+  ]
+}
