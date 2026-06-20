@@ -1,8 +1,8 @@
 """Parallel quirk hooks.
 
 `objective` builds the natural-language entity-search objective from the seed +
-mode (broad/strict); for `use_filters` configs it folds the seed's public,
-TAM-derived firmographic hints (location / employee range / funding stage) into
+mode (broad/strict); for `use_filters` configs it folds the seed's public
+firmographic hints (location / employee range / funding stage) into
 the objective text (Parallel has no structured firmographic filter), and raises
 `SkipConfig` when the seed carries no hints. `clean_aggregators` strips `www.`,
 routes aggregator hosts (LinkedIn, Crunchbase, …) out of the `domain` field, and

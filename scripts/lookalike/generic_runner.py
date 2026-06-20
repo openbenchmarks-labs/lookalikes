@@ -194,7 +194,7 @@ def _compute_cost(spec: VendorSpec, candidates: list[Candidate]) -> float | None
 
 
 def _err(spec: VendorSpec, seed: Seed, config: dict[str, Any], latency_ms: int,
-         message: str, out_config: dict[str, Any] | None = None) -> RunResult:
+         message: str, out_config: dict[str, Any] | None = None, requested_k: int | None = None) -> RunResult:
     return RunResult(
         seed_slug=seed.seed_slug,
         provider_slug=spec.slug,
@@ -203,6 +203,7 @@ def _err(spec: VendorSpec, seed: Seed, config: dict[str, Any], latency_ms: int,
         candidates=[],
         latency_ms=latency_ms,
         error=message,
+        requested_k=requested_k,
     )
 
 
@@ -221,11 +222,11 @@ def run_from_spec(spec: VendorSpec, seed: Seed, k: int, config: dict[str, Any]) 
     except SkipConfig as skip:
         # A firmographic-filter config asked to be skipped for this seed (e.g. no
         # firmographic hints). Record it as a non-fatal skip, no HTTP call made.
-        return _err(spec, seed, config, 0, f"skipped: {skip}" if str(skip) else "skipped")
+        return _err(spec, seed, config, 0, f"skipped: {skip}" if str(skip) else "skipped", requested_k=k)
 
     if spec.requires_seed_domain and not vars.get("seed_domain"):
         return _err(spec, seed, config, 0,
-                    spec.no_domain_error or f"{spec.slug}: seed has no domain")
+                    spec.no_domain_error or f"{spec.slug}: seed has no domain", requested_k=k)
 
     method = spec.request.method.upper()
     url = spec.base_url + str(_template(spec.request.path, vars))
@@ -251,6 +252,7 @@ def run_from_spec(spec: VendorSpec, seed: Seed, k: int, config: dict[str, Any]) 
         return _err(
             spec, seed, config, elapsed_ms, f"HTTP {status}: {str(payload)[:200]}",
             out_config=_build_out_config(config, spec, vars["_audit"], None, success=False),
+            requested_k=k,
         )
 
     raw_items = _resolve_candidate_list(payload, spec.response.candidates_path)
@@ -269,4 +271,5 @@ def run_from_spec(spec: VendorSpec, seed: Seed, k: int, config: dict[str, Any]) 
         latency_ms=elapsed_ms,
         cost_usd=_compute_cost(spec, candidates),
         error=None,
+        requested_k=k,
     )

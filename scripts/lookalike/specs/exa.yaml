@@ -1,28 +1,25 @@
 slug: exa
 name: Exa
 base_url: https://api.exa.ai
-requires_seed_domain: true
-no_domain_error: "exa: seed has no domain; findSimilar requires URL"
+requires_seed_domain: false
 cost: { mode: per_call, usd: 0.005 }
 auth:
   - { header: x-api-key, env: EXA_API_KEY }
 request:
   method: POST
-  path: /findSimilar
+  path: /search
   body:
-    url: $seed_url
+    query: $query                     # "companies like <seed>" per Exa company vertical docs
+    category: company
+    type: auto
     numResults: $num_results          # set by build_request hook (k * over_fetch, capped 100)
-    excludeSourceDomain: $exclude_source
     contents:
       text:
         maxCharacters: 600
-    category: $category               # pruned when null
 response:
   candidates_path: [results]
 hooks:
-  build_request: exa_num_results
+  build_request: exa_company_query
   transform_candidates: exa_dedupe_by_domain   # page hits -> one company per domain, score sort
 configs:
-  - { name: default, category: null, exclude_source: true }
-  - { name: company_category, category: company, exclude_source: true }
-  - { name: overfetch, category: null, exclude_source: true, over_fetch: 3 }
+  - { name: company_like, over_fetch: 1 }

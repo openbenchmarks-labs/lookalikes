@@ -17,6 +17,7 @@ byte-identical.
 """
 from __future__ import annotations
 
+import re
 from typing import Any
 
 from ..common import Seed, SkipConfig, http_request
@@ -27,6 +28,55 @@ LOOKUP_ENDPOINT = "/api/v1/account/lookup-companies"
 # Per-process cache of seed → canonical OpenFunnel domain. Keyed by the
 # (seed_domain, seed_name) pair; one lookup per seed across the whole sweep.
 _DOMAIN_CACHE: dict[tuple[str, str], str | None] = {}
+
+
+def _norm(s: str | None) -> str:
+    return re.sub(r"[^a-z0-9]+", "", (s or "").lower())
+
+
+def _employee_score(match: dict[str, Any]) -> int:
+    hi = match.get("employee_count_max")
+    lo = match.get("employee_count_min")
+    for val in (hi, lo):
+        if isinstance(val, int):
+            return val
+    return 0
+
+
+def _match_score(seed: Seed, match: dict[str, Any], input_idx: int) -> tuple[int, int, int, int]:
+    seed_name = _norm(seed.seed_name)
+    match_name = _norm(match.get("name"))
+    seed_domain = (seed.seed_domain or "").lower()
+    match_domain = (match.get("domain") or "").lower()
+    matched_on = match.get("matched_on")
+
+    exact_name = 1 if seed_name and match_name == seed_name else 0
+    contains_name = 1 if seed_name and (seed_name in match_name or match_name in seed_name) else 0
+    domain_match = 1 if seed_domain and match_domain == seed_domain else 0
+    # Prefer fuzzy/name input over broad domain aliases when both are available:
+    # domain-only lookup can return many tiny regional pages sharing the same
+    # website; the name path is usually closer to the intended corporate seed.
+    name_input = 1 if matched_on == "name" or input_idx > 0 else 0
+    return (
+        exact_name,
+        contains_name,
+        name_input,
+        _employee_score(match),
+        domain_match,
+    )
+
+
+def _select_lookup_match(seed: Seed, payload: dict[str, Any]) -> dict[str, Any] | None:
+    scored: list[tuple[tuple[int, int, int, int, int], dict[str, Any]]] = []
+    for input_idx, result in enumerate(payload.get("results", [])):
+        for match in result.get("matches") or []:
+            if not isinstance(match, dict):
+                continue
+            if (match.get("domain") or "").strip():
+                scored.append((_match_score(seed, match, input_idx), match))
+    if not scored:
+        return None
+    return sorted(scored, key=lambda item: item[0], reverse=True)[0][1]
 
 
 def _resolve_canonical_domain(seed: Seed, api_key: str) -> str | None:
@@ -51,14 +101,8 @@ def _resolve_canonical_domain(seed: Seed, api_key: str) -> str | None:
     )
     canonical: str | None = None
     if status < 300 and isinstance(payload, dict):
-        for result in payload.get("results", []):
-            for match in result.get("matches") or []:
-                d = (match.get("domain") or "").strip()
-                if d:
-                    canonical = d
-                    break
-            if canonical:
-                break
+        match = _select_lookup_match(seed, payload)
+        canonical = (match.get("domain") or "").strip() if match else None
 
     _DOMAIN_CACHE[key] = canonical
     return canonical
@@ -77,6 +121,10 @@ def canonicalize_domain(ctx: dict[str, Any]) -> None:
     seed: Seed = ctx["seed"]
     if ctx["config"].get("use_filters") and not seed.firmographics:
         raise SkipConfig("openfunnel: filtered config skipped (no firmographic hints for seed)")
+    if ctx["config"].get("query_only"):
+        ctx["vars"]["seed_domain"] = None
+        ctx["vars"]["_audit"]["resolved_domain"] = None
+        return
     api_key = ctx["env"]["OPENFUNNEL_API_KEY"]
     canonical = _resolve_canonical_domain(seed, api_key)
     ctx["vars"]["seed_domain"] = canonical or seed.seed_domain
@@ -92,7 +140,15 @@ def query_for_config(ctx: dict[str, Any]) -> None:
     seed: Seed = ctx["seed"]
     config = ctx["config"]
     vars = ctx["vars"]
-    if config.get("use_query") and seed.description:
+    if config.get("query_only"):
+        desc = (seed.description or "").strip()
+        base = f"Companies most similar to {seed.seed_name}"
+        if desc:
+            query = f"{base}: {desc}"
+        else:
+            query = base
+        vars["query"] = query[:200]
+    elif config.get("use_query") and seed.description:
         vars["query"] = seed.description
     elif config.get("use_query"):
         vars["query"] = f"Companies similar to {seed.seed_name}"

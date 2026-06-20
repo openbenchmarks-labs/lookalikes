@@ -86,7 +86,7 @@ The full audit trail. Captures **every config the orchestrator swept** (not just
             "X-Api-Key": "***REDACTED***",
             "X-Api-Token": "***REDACTED***",
             "Accept": "application/json",
-            "User-Agent": "benchmark-runner/0.1 ..."
+            "User-Agent": "openfunnel-bench/0.1 ..."
           },
           "request_body": null,            // GET — no body
           "response_status": 200,

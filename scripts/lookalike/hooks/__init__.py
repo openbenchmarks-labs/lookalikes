@@ -25,7 +25,7 @@ HOOKS: dict[str, Callable[..., Any]] = {
     "openfunnel_canonicalize_domain": openfunnel.canonicalize_domain,
     "openfunnel_query_for_config": openfunnel.query_for_config,
     # Exa
-    "exa_num_results": exa.num_results,
+    "exa_company_query": exa.company_query,
     "exa_dedupe_by_domain": exa.dedupe_by_domain,
     # Ocean
     "ocean_firmographic_filters": ocean.firmographic_filters,

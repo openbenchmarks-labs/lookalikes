@@ -48,8 +48,7 @@ configs:
     filters:
       companySizes: ["51-200", "201-500", "501-1000"]
       primaryLocations: { includeCountries: ["us", "gb", "de"] }
-  # Parity with OpenFunnel's *_filtered configs (recall cohort): map the SAME
-  # public, TAM-derived hints (employee range + locations) to Ocean's filter
-  # shape via the build_request hook. Skipped (SkipConfig) when the seed has no
-  # hints.
+  # Map public seed firmographic hints (employee range + locations) to
+  # Ocean's filter shape via the build_request hook. Skipped (SkipConfig)
+  # when the seed has no hints.
   - { name: seed_firmographic, use_seed_firmo: true }

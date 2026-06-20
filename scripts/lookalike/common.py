@@ -25,7 +25,8 @@ SNAPSHOT_PATH = ROOT / "data" / "latest-lookalike.json"
 RUNS_DIR = ROOT / "data" / "lookalike-runs"
 ENV_FILE = ROOT / ".env"
 
-DEFAULT_K = 10
+DEFAULT_K = 100
+PRECISION_CUTOFFS = (10, 50, 100)
 HTTP_TIMEOUT_SEC = 60
 
 # Headers that carry secrets — normalized to lowercase for case-insensitive
@@ -53,7 +54,7 @@ class SkipConfig(Exception):
     """A hook raises this to skip the current config cleanly (no HTTP call). The
     generic runner turns it into an error RunResult so the orchestrator records
     the skip and moves to the next config. Used e.g. by firmographic-filtered
-    recall configs when a seed carries no firmographic hints."""
+    filtered configs when a seed carries no firmographic hints."""
 
 
 @dataclasses.dataclass(frozen=True)
@@ -65,8 +66,7 @@ class Seed:
     seed_domain: str | None
     description: str | None
     category: str
-    # Optional, public/TAM-derived firmographic hints (NOT derived from the
-    # gold set). Lets a runner use a vendor's documented firmographic filter
+    # Optional public firmographic hints. Lets a runner use a vendor's documented firmographic filter
     # surface (e.g. OpenFunnel locations / employee range / funding stages) so
     # each API can put its best foot forward. Shape:
     #   {"locations": ["USA"], "min_employees": 10, "max_employees": 2000,
@@ -101,6 +101,7 @@ class RunResult:
     latency_ms: int
     cost_usd: float | None = None
     error: str | None = None
+    requested_k: int | None = None
 
     def to_dict(self) -> dict[str, Any]:
         return {
@@ -121,6 +122,7 @@ class RunResult:
             "latency_ms": self.latency_ms,
             "cost_usd": self.cost_usd,
             "error": self.error,
+            "requested_k": self.requested_k,
         }
 
 
@@ -156,7 +158,7 @@ class JudgedRun:
 
     @property
     def k(self) -> int:
-        return len(self.judged)
+        return self.run.requested_k or len(self.judged)
 
     @property
     def relevant_count(self) -> int:
@@ -166,7 +168,15 @@ class JudgedRun:
     def precision_at_k(self) -> float | None:
         if self.k == 0:
             return None
-        return round(100.0 * self.relevant_count / self.k, 2)
+        return round(100.0 * self.relevant_count_at(self.k) / self.k, 2)
+
+    def relevant_count_at(self, cutoff: int) -> int:
+        return sum(1 for j in self.judged[:cutoff] if j.relevant)
+
+    def precision_at(self, cutoff: int) -> float | None:
+        if cutoff <= 0:
+            return None
+        return round(100.0 * self.relevant_count_at(cutoff) / cutoff, 2)
 
 
 @dataclasses.dataclass
@@ -384,6 +394,12 @@ def persist_run_detail(dataset_slug: str, judged: JudgedRun) -> Path:
         "k": judged.k,
         "relevant_count": judged.relevant_count,
         "precision_at_k": judged.precision_at_k,
+        "relevant_count_at_10": judged.relevant_count_at(10),
+        "relevant_count_at_50": judged.relevant_count_at(50),
+        "relevant_count_at_100": judged.relevant_count_at(100),
+        "precision_at_10": judged.precision_at(10),
+        "precision_at_50": judged.precision_at(50),
+        "precision_at_100": judged.precision_at(100),
         "latency_ms": run.latency_ms,
         "cost_usd": run.cost_usd,
         "judge_model": judged.judge_model,
@@ -444,6 +460,12 @@ def upsert_seed_vendor_cell(
                 "returned_count": 0,
                 "relevant_count": None,
                 "precision_at_k": None,
+                "relevant_count_at_10": None,
+                "relevant_count_at_50": None,
+                "relevant_count_at_100": None,
+                "precision_at_10": None,
+                "precision_at_50": None,
+                "precision_at_100": None,
                 "latency_ms": None,
                 "cost_usd": None,
                 "judge_model": None,
@@ -467,6 +489,12 @@ def upsert_seed_vendor_cell(
             "returned_count": len(run.candidates),
             "relevant_count": judged.relevant_count,
             "precision_at_k": judged.precision_at_k,
+            "relevant_count_at_10": judged.relevant_count_at(10),
+            "relevant_count_at_50": judged.relevant_count_at(50),
+            "relevant_count_at_100": judged.relevant_count_at(100),
+            "precision_at_10": judged.precision_at(10),
+            "precision_at_50": judged.precision_at(50),
+            "precision_at_100": judged.precision_at(100),
             "latency_ms": run.latency_ms,
             "cost_usd": run.cost_usd,
             "judge_model": judged.judge_model,
@@ -499,6 +527,26 @@ def recompute_leaderboard(snapshot: dict[str, Any], k: int) -> None:
             row["avg_precision_at_k"] = round(avg, 2)
         else:
             row["avg_precision_at_k"] = None
+
+        for cutoff in PRECISION_CUTOFFS:
+            precision_key = f"precision_at_{cutoff}"
+            avg_key = f"avg_precision_at_{cutoff}"
+            relevant_key = f"relevant_count_at_{cutoff}"
+            total_key = f"total_relevant_at_{cutoff}"
+            cells_with_cutoff = [
+                c for c in my_cells if c.get(precision_key) is not None
+            ]
+            if cells_with_cutoff:
+                row[avg_key] = round(
+                    sum(float(c[precision_key]) for c in cells_with_cutoff)
+                    / len(cells_with_cutoff),
+                    2,
+                )
+            else:
+                row[avg_key] = None
+            row[total_key] = sum(
+                int(c.get(relevant_key) or 0) for c in cells_with_cutoff
+            )
 
         row["seeds_attempted"] = attempted
         row["seeds_judged"] = len(judged_cells)
@@ -616,7 +664,7 @@ def http_request(
     # the right thing to do for any benchmark talking to public APIs.
     hdrs.setdefault(
         "User-Agent",
-        "benchmark-runner/0.1 (+http://openbenchmarks.com/; contact=founders@openbenchmarks.com)",
+        "openfunnel-bench/0.1 (+https://openfunnel.dev/bench; contact=founders@openfunnel.dev)",
     )
 
     req = urllib.request.Request(url=url, data=data, method=method.upper(), headers=hdrs)

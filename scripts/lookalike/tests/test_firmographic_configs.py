@@ -3,7 +3,9 @@
 No network: `http_request` is monkeypatched to capture the outgoing request and
 return a canned empty response. Asserts that
   - filtered/firmographic configs fold the seed's public hints into the request
-    (OpenFunnel querystring, Parallel objective text, Ocean companiesFilters),
+    (Parallel objective text, Ocean companiesFilters),
+  - OpenFunnel's query-only semantic config sends NLU only, without seed domains
+    or firmographic filters,
   - they SkipConfig (→ "skipped: …" RunResult) on a seed with no hints,
   - non-filtered configs are unchanged (no firmographic params leak in),
   - Ocean's static configs still layer their filters via the spec `merge`.
@@ -92,19 +94,18 @@ def check(cond: bool, msg: str) -> None:
 
 def test_openfunnel() -> None:
     print("\n[openfunnel]")
-    # filtered config + firmographics → querystring carries the filters
-    _, cap = _run("openfunnel", "seed_plus_query_semantic_filtered", SEED_FIRMO)
+    # query-only semantic sends compact NLU only: no lookup preflight, seed domain,
+    # or deterministic firmographic filters.
+    _, cap = _run("openfunnel", "query_only_semantic", SEED_FIRMO)
     qs = _qs(cap.last_search["url"])
-    check(qs.get("locations") == ["us"], f"locations=us in qs (got {qs.get('locations')})")
-    check(qs.get("min_employees") == ["11"], f"min_employees=11 (got {qs.get('min_employees')})")
-    check(qs.get("max_employees") == ["1000"], f"max_employees=1000 (got {qs.get('max_employees')})")
-    check(qs.get("funding_stages") == ["series_a"], f"funding_stages=series_a (got {qs.get('funding_stages')})")
+    check(len(cap.calls) == 1, f"query-only skips lookup preflight (calls={len(cap.calls)})")
+    check("seed_domains" not in qs, f"query-only carries no seed_domains (got {qs.get('seed_domains')})")
+    check("min_employees" not in qs and "locations" not in qs,
+          "query-only carries no firmographic params")
+    check(qs.get("query", [""])[0].startswith("Companies most similar to Acme"),
+          f"query-only carries compact NLU query (got {qs.get('query')})")
     check(qs.get("search_type") == ["semantic"], "search_type=semantic")
     check(qs.get("limit") == ["100"], "limit=100 (deep fetch)")
-
-    # no firmographics → clean skip
-    res, _ = _run("openfunnel", "seed_only_semantic_filtered", SEED_BARE)
-    check((res.error or "").startswith("skipped"), f"bare seed skips filtered config (err={res.error!r})")
 
     # non-filtered config → no firmographic params leak in
     _, cap = _run("openfunnel", "seed_only_agentic", SEED_FIRMO)
