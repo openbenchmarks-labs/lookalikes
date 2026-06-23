@@ -2,7 +2,7 @@
 
 Open head-to-head leaderboard for company-lookalike APIs.
 
-Published and maintained by **OpenBenchmarks Labs**.
+Published and maintained by **[OpenBenchmarks Labs](https://openbenchmarks.com)**.
 
 **Live benchmark:** https://openbenchmarks.com/lookalikes
 
@@ -19,6 +19,7 @@ via the JSON API.
 
 ## Endpoints
 
+- **All benchmarks (home)** — https://openbenchmarks.com
 - **Live benchmark UI** — https://openbenchmarks.com/lookalikes
 - **JSON API** — https://openbenchmarks.com/api/benchmarks/lookalikes
 - **Markdown agent docs** — https://openbenchmarks.com/llms.txt
