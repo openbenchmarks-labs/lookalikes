@@ -1,20 +1,29 @@
-"""Ocean.io quirk hook.
+"""Ocean.io quirk hook (single build_request, two independent concerns).
 
-`firmographic_filters` (build_request) handles the `seed_firmographic` config —
-parity with OpenFunnel's *_filtered configs. It maps the seed's public,
-public firmographic hints (employee range + locations) to Ocean's `companiesFilters`
-shape (`companySizes` bands + `primaryLocations.includeCountries`) and stashes
-them in template vars (`company_sizes` / `primary_locations`) that the spec body
-references and prunes when null. It raises `SkipConfig` when a `use_seed_firmo`
-config lands on a seed with no hints.
+Both concerns map the seed's public input into Ocean's `companiesFilters` and
+stash the result in template vars the spec body references and prunes when null.
+A config may opt into either, both, or neither:
 
-Ocean's static configs (seed_only / mid_market / us_uk_de_funded) layer their
-filters via the spec's `merge` directive (`config.filters → companiesFilters`),
-so this hook is a no-op for them. Employee-band mapping is ported verbatim from
-the pre-refactor runners/ocean.py.
+1. `use_seed_firmo` — maps the seed's public firmographic hints (employee range
+   + locations) to `companySizes` bands + `primaryLocations.includeCountries`
+   (vars `company_sizes` / `primary_locations`). Parity with OpenFunnel's
+   *_filtered configs. Raises `SkipConfig` when the seed carries no hints.
+2. `use_seed_keywords` — derives a `keywords.anyOf` filter from the seed's
+   1-line description (var `keywords`). This is the lever the original adapter
+   left on the table: Ocean's lookalike endpoint accepts free-text keywords
+   alongside `lookalikeDomains`, which disambiguates seeds whose name/domain is
+   ambiguous (OpenAI vs agricultural "seed" companies, conglomerates, etc.) —
+   the same disambiguation OpenFunnel/Parallel/Exa get from their query string.
+   Raises `SkipConfig` when no usable keywords can be extracted.
+
+Ocean's static configs (seed_only / mid_market / us_uk_de_funded / broad_match)
+layer their filters via the spec's `merge` directive and scalar vars, so this
+hook is a no-op for them. Employee-band mapping is ported verbatim from the
+pre-refactor runners/ocean.py.
 """
 from __future__ import annotations
 
+import re
 from typing import Any
 
 from ..common import Seed, SkipConfig
@@ -43,20 +52,53 @@ def _size_bands(min_emp: int | None, max_emp: int | None) -> list[str]:
     return [label for blo, bhi, label in _OCEAN_BANDS if blo <= hi and bhi >= lo]
 
 
+# Description → keyword extraction. ponytail: naive split on common delimiters +
+# leading-filler trim, capped at 8 phrases. Ceiling: no POS tagging / phrase
+# ranking, so a long clause can land verbatim as one keyword. The best-of sweep
+# keeps the higher-Precision@K config, so a noisy keyword set can only tie
+# seed_only, never lower the cell. Upgrade path: a proper noun-phrase chunker.
+_KW_SPLIT = re.compile(r",|/|;|\band\b|&", re.IGNORECASE)
+_KW_STRIP_LEAD = re.compile(
+    r"^(a|an|the|including|providing|provider of|for)\s+", re.IGNORECASE
+)
+_KW_DROP = {"etc", "api", "apis", "tooling", "services", "solutions"}
+
+
+def _keywords_from_description(desc: str | None) -> list[str]:
+    out: list[str] = []
+    seen: set[str] = set()
+    for seg in _KW_SPLIT.split(desc or ""):
+        s = _KW_STRIP_LEAD.sub("", seg.strip().strip(".").lower()).strip()
+        if len(s) < 3 or s in _KW_DROP or s in seen:
+            continue
+        seen.add(s)
+        out.append(s)
+        if len(out) >= 8:
+            break
+    return out
+
+
 def firmographic_filters(ctx: dict[str, Any]) -> None:
-    """build_request: for `use_seed_firmo` configs, derive Ocean filter vars from
-    the seed's firmographic hints (skip cleanly when the seed has none)."""
+    """build_request: derive Ocean filter vars from the seed's public input for
+    the configs that opt in (`use_seed_keywords` and/or `use_seed_firmo`); a
+    no-op for static configs. Skips cleanly when the requested signal is absent."""
     config = ctx["config"]
-    if not config.get("use_seed_firmo"):
-        return  # static configs layer filters via the spec `merge` directive
     seed: Seed = ctx["seed"]
-    firmo = seed.firmographics
-    if not firmo:
-        raise SkipConfig("ocean: firmographic config skipped (no hints for seed)")
     vars = ctx["vars"]
-    bands = _size_bands(firmo.get("min_employees"), firmo.get("max_employees"))
-    vars["company_sizes"] = bands or None
-    locs = firmo.get("locations") or []
-    vars["primary_locations"] = (
-        {"includeCountries": [str(c).lower() for c in locs]} if locs else None
-    )
+
+    if config.get("use_seed_keywords"):
+        kws = _keywords_from_description(seed.description)
+        if not kws:
+            raise SkipConfig("ocean: keyword config skipped (no keywords for seed)")
+        vars["keywords"] = {"anyOf": kws}
+
+    if config.get("use_seed_firmo"):
+        firmo = seed.firmographics
+        if not firmo:
+            raise SkipConfig("ocean: firmographic config skipped (no hints for seed)")
+        bands = _size_bands(firmo.get("min_employees"), firmo.get("max_employees"))
+        vars["company_sizes"] = bands or None
+        locs = firmo.get("locations") or []
+        vars["primary_locations"] = (
+            {"includeCountries": [str(c).lower() for c in locs]} if locs else None
+        )

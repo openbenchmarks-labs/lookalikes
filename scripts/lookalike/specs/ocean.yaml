@@ -17,6 +17,11 @@ request:
       # null for static configs (pruned) → they layer filters via merge below.
       companySizes: $company_sizes
       primaryLocations: $primary_locations
+      # keywords (anyOf) derived from the seed description by the build_request
+      # hook for use_seed_keywords configs; companyMatchingMode is a scalar knob
+      # ($-exposed from the config). Both null → pruned (default = precise).
+      keywords: $keywords
+      companyMatchingMode: $company_matching_mode
   merge:
     - { from_config: filters, into_body: companiesFilters }   # shallow-merge config filters
 response:
@@ -52,3 +57,11 @@ configs:
   # Ocean's filter shape via the build_request hook. Skipped (SkipConfig)
   # when the seed has no hints.
   - { name: seed_firmographic, use_seed_firmo: true }
+  # Broaden lookalike matching from same-product (precise) to same-industry
+  # (broad) — helps conglomerates / oddly-categorized seeds (Sea, Grab).
+  - { name: broad_match, company_matching_mode: broad }
+  # Disambiguate the seed with free-text keywords derived from its description
+  # (parity with the query string OpenFunnel/Parallel/Exa receive). Skipped
+  # when no keywords can be extracted.
+  - { name: seed_keywords, use_seed_keywords: true }
+  - { name: seed_keywords_broad, use_seed_keywords: true, company_matching_mode: broad }

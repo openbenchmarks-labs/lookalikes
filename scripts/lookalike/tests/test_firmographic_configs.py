@@ -157,6 +157,33 @@ def test_ocean() -> None:
     cf = cap.last_search["body"]["companiesFilters"]
     check("companySizes" not in cf and "primaryLocations" not in cf,
           "seed_only carries only lookalike/exclude domains")
+    check("keywords" not in cf and "companyMatchingMode" not in cf,
+          "seed_only sends no keywords / matching mode")
+
+    # broad_match: scalar knob only, no keywords, no firmographic bands.
+    _, cap = _run("ocean", "broad_match", SEED_FIRMO)
+    cf = cap.last_search["body"]["companiesFilters"]
+    check(cf.get("companyMatchingMode") == "broad", "broad_match sends companyMatchingMode=broad")
+    check("keywords" not in cf and "companySizes" not in cf, "broad_match adds no keywords/bands")
+
+    # seed_keywords: derive anyOf phrases from the description, keep precise mode.
+    _, cap = _run("ocean", "seed_keywords", SEED_FIRMO)  # desc: "Acme makes widgets"
+    cf = cap.last_search["body"]["companiesFilters"]
+    check(cf.get("keywords", {}).get("anyOf") == ["acme makes widgets"],
+          f"seed_keywords derives anyOf from description (got {cf.get('keywords')})")
+    check("companyMatchingMode" not in cf, "seed_keywords stays precise (no mode override)")
+    check("acme.com" in cf.get("lookalikeDomains", []), "seed_keywords still seeds by domain")
+
+    # seed_keywords_broad: keywords + broad mode together.
+    _, cap = _run("ocean", "seed_keywords_broad", SEED_FIRMO)
+    cf = cap.last_search["body"]["companiesFilters"]
+    check(cf.get("keywords", {}).get("anyOf") and cf.get("companyMatchingMode") == "broad",
+          "seed_keywords_broad sends both keywords and broad mode")
+
+    # keyword config skips cleanly on a seed with no description.
+    SEED_NO_DESC = Seed("nd", "NoDesc", "nd.com", None, "saas")
+    res, _ = _run("ocean", "seed_keywords", SEED_NO_DESC)
+    check((res.error or "").startswith("skipped"), f"no-description seed skips keyword config (err={res.error!r})")
 
 
 class PagedPredictLeads:
