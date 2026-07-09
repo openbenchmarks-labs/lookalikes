@@ -133,7 +133,7 @@ The full audit trail. Captures **every config the orchestrator swept** (not just
         "error": null
       }
     },
-    ... one entry per swept config (e.g. OpenFunnel has 4: seed_only_agentic, seed_only_semantic, seed_plus_query_agentic, seed_plus_query_semantic)
+    ... one entry per swept config (e.g. Parallel has 3: lookalike_broad, lookalike_strict, lookalike_broad_filtered)
   ]
 }
 ```

@@ -4,8 +4,6 @@ No network: `http_request` is monkeypatched to capture the outgoing request and
 return a canned empty response. Asserts that
   - filtered/firmographic configs fold the seed's public hints into the request
     (Parallel objective text, Ocean companiesFilters),
-  - OpenFunnel's query-only semantic config sends NLU only, without seed domains
-    or firmographic filters,
   - they SkipConfig (→ "skipped: …" RunResult) on a seed with no hints,
   - non-filtered configs are unchanged (no firmographic params leak in),
   - Ocean's static configs still layer their filters via the spec `merge`.
@@ -20,12 +18,11 @@ import sys
 import urllib.parse
 
 # Dummy creds so require_env() passes; http_request is mocked so they're unused.
-for _k in ("OPENFUNNEL_API_KEY", "OCEAN_API_KEY", "PARALLEL_API_KEY", "EXA_API_KEY"):
+for _k in ("OCEAN_API_KEY", "PARALLEL_API_KEY", "EXA_API_KEY"):
     os.environ.setdefault(_k, "test-key")
 
 from lookalike import generic_runner  # noqa: E402
 from lookalike.common import Seed  # noqa: E402
-from lookalike.hooks import openfunnel as openfunnel_hook  # noqa: E402
 from lookalike.hooks import predictleads as predictleads_hook  # noqa: E402
 from lookalike.spec_loader import load_spec  # noqa: E402
 
@@ -40,24 +37,20 @@ SEED_BARE = Seed("bare", "Bare Co", "bare.com", "Bare desc", "saas", firmographi
 
 
 class Capture:
-    """Stands in for common.http_request: records calls, returns empty results.
-    The OpenFunnel lookup-companies preflight gets a canned canonical match."""
+    """Stands in for common.http_request: records calls, returns empty results."""
 
     def __init__(self) -> None:
         self.calls: list[dict] = []
 
     def __call__(self, method, url, *, headers=None, body=None, timeout=60):
         self.calls.append({"method": method, "url": url, "body": body})
-        if "lookup-companies" in url:
-            return 200, {"results": [{"matches": [{"domain": "acme.com"}]}]}, 5
         return 200, {"results": [], "companies": [], "entities": [], "data": []}, 5
 
     @property
     def last_search(self) -> dict:
-        # last non-preflight call (the actual lookalike search)
-        for call in reversed(self.calls):
-            if "lookup-companies" not in call["url"]:
-                return call
+        # last call (the actual lookalike search)
+        if self.calls:
+            return self.calls[-1]
         raise AssertionError("no search call captured")
 
 
@@ -66,14 +59,12 @@ def _run(slug: str, config_name: str, seed: Seed):
     config = next(c for c in spec.configs if c["name"] == config_name)
     cap = Capture()
     generic_runner.http_request = cap          # type: ignore[assignment]
-    openfunnel_hook.http_request = cap         # type: ignore[assignment]
     try:
         result = generic_runner.run_from_spec(spec, seed, 100, config)
     finally:
         # restore the real function so other tests/imports are unaffected
         import lookalike.common as _c
         generic_runner.http_request = _c.http_request      # type: ignore[assignment]
-        openfunnel_hook.http_request = _c.http_request     # type: ignore[assignment]
     return result, cap
 
 
@@ -90,28 +81,6 @@ def check(cond: bool, msg: str) -> None:
         print(f"  FAIL: {msg}")
     else:
         print(f"  ok: {msg}")
-
-
-def test_openfunnel() -> None:
-    print("\n[openfunnel]")
-    # query-only semantic sends compact NLU only: no lookup preflight, seed domain,
-    # or deterministic firmographic filters.
-    _, cap = _run("openfunnel", "query_only_semantic", SEED_FIRMO)
-    qs = _qs(cap.last_search["url"])
-    check(len(cap.calls) == 1, f"query-only skips lookup preflight (calls={len(cap.calls)})")
-    check("seed_domains" not in qs, f"query-only carries no seed_domains (got {qs.get('seed_domains')})")
-    check("min_employees" not in qs and "locations" not in qs,
-          "query-only carries no firmographic params")
-    check(qs.get("query", [""])[0].startswith("Companies most similar to Acme"),
-          f"query-only carries compact NLU query (got {qs.get('query')})")
-    check(qs.get("search_type") == ["semantic"], "search_type=semantic")
-    check(qs.get("limit") == ["100"], "limit=100 (deep fetch)")
-
-    # non-filtered config → no firmographic params leak in
-    _, cap = _run("openfunnel", "seed_only_agentic", SEED_FIRMO)
-    qs = _qs(cap.last_search["url"])
-    check("min_employees" not in qs and "locations" not in qs,
-          "non-filtered config carries no firmographic params")
 
 
 def test_parallel() -> None:
@@ -224,7 +193,6 @@ def test_predictleads_pagination() -> None:
 
 def main() -> int:
     print("=== firmographic config request-build tests (offline) ===")
-    test_openfunnel()
     test_parallel()
     test_ocean()
     test_predictleads_pagination()

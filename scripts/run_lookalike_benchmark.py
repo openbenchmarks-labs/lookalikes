@@ -14,7 +14,7 @@ For each (seed, vendor) pair:
 Usage:
   python3 scripts/run_lookalike_benchmark.py                    # all vendors, real APIs + real judge
   python3 scripts/run_lookalike_benchmark.py --mock              # offline smoke run (no API keys needed)
-  python3 scripts/run_lookalike_benchmark.py --only openfunnel,exa
+  python3 scripts/run_lookalike_benchmark.py --only parallel,exa
   python3 scripts/run_lookalike_benchmark.py --seeds stripe,modal
   python3 scripts/run_lookalike_benchmark.py --k 10              # override default K
   python3 scripts/run_lookalike_benchmark.py --judge-model gpt-5
@@ -26,7 +26,6 @@ Usage:
 
 Env (required when running live; ignored under --mock):
   AZURE_OPENAI_NEXTGEN_DEPLOYMENT_KEY + _URL    judge (Azure-hosted gpt-5)
-  OPENFUNNEL_API_KEY
   OCEAN_API_KEY
   PARALLEL_API_KEY
   EXA_API_KEY
@@ -159,8 +158,8 @@ def run_vendor_for_seed(
         }
 
         # Vendor leg — capture every HTTP call the runner makes for this
-        # config (preflights like OpenFunnel's lookup-companies + the
-        # main search call all land in the same buffer).
+        # config (any preflight calls + the main search call all land in
+        # the same buffer).
         try:
             with capture_http_calls() as http_calls:
                 run: RunResult = runner["run"](seed, k, config)
@@ -294,7 +293,7 @@ def main() -> int:
         default=None,
         help=(
             "pin the sweep to a single named runner config (e.g. "
-            "`seed_only_agentic` for OpenFunnel). When set, runners whose "
+            "`lookalike_broad` for Parallel). When set, runners whose "
             "CONFIGS list has no matching name are skipped for that cell."
         ),
     )

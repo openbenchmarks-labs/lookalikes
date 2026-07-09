@@ -30,13 +30,12 @@ via the JSON API.
 
 | # | Vendor | Precision@K | Judged |
 |---|---|---|---|
-| 1 | OpenFunnel | 69.75% | 24/24 |
-| 2 | Parallel | 56.5% | 24/24 |
-| 3 | Ocean.io | 48.61% | 23/24 |
-| 4 | Exa | 25.79% | 24/24 |
-| 5 | PredictLeads | 19.38% | 24/24 |
+| 1 | Parallel | 56.5% | 24/24 |
+| 2 | Ocean.io | 48.61% | 23/24 |
+| 3 | Exa | 25.79% | 24/24 |
+| 4 | PredictLeads | 19.38% | 24/24 |
 
-24 seed companies × 5 vendors. The full per-cell breakdown
+24 seed companies × 4 vendors. The full per-cell breakdown
 and the raw audit trail (every HTTP request + every judge call) lives under
 `data/lookalike-runs/`.
 
@@ -82,7 +81,7 @@ cp .env.example .env && $EDITOR .env                # fill in vendor keys + judg
 PYTHONPATH=scripts python scripts/run_lookalike_benchmark.py --mock          # offline smoke test (no keys)
 PYTHONPATH=scripts python scripts/run_lookalike_benchmark.py                 # live full sweep (single judge)
 PYTHONPATH=scripts python scripts/run_lookalike_benchmark.py --judges gpt-5.4-mini,gpt-5.2,o4-mini   # multi-judge panel
-PYTHONPATH=scripts python scripts/run_lookalike_benchmark.py --only openfunnel --seeds pylon
+PYTHONPATH=scripts python scripts/run_lookalike_benchmark.py --only parallel --seeds pylon
 ```
 
 ## Contributing a new vendor

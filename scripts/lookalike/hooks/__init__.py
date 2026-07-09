@@ -18,12 +18,9 @@ from __future__ import annotations
 
 from typing import Any, Callable
 
-from . import exa, ocean, openfunnel, parallel, predictleads
+from . import exa, ocean, parallel, predictleads
 
 HOOKS: dict[str, Callable[..., Any]] = {
-    # OpenFunnel
-    "openfunnel_canonicalize_domain": openfunnel.canonicalize_domain,
-    "openfunnel_query_for_config": openfunnel.query_for_config,
     # Exa
     "exa_company_query": exa.company_query,
     "exa_dedupe_by_domain": exa.dedupe_by_domain,

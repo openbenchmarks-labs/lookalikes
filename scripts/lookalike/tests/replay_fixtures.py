@@ -20,14 +20,13 @@ import sys
 
 # Dummy creds so require_env() passes; http_request is mocked so they're unused.
 for _k in (
-    "OPENFUNNEL_API_KEY", "OCEAN_API_KEY", "EXA_API_KEY", "PARALLEL_API_KEY",
+    "OCEAN_API_KEY", "EXA_API_KEY", "PARALLEL_API_KEY",
     "PREDICT_LEADS_API_KEY", "PREDICT_LEADS_API_TOKEN", "LUSHA_API_KEY",
 ):
     os.environ.setdefault(_k, "test-key")
 
 from lookalike import generic_runner  # noqa: E402
 from lookalike.common import Seed  # noqa: E402
-from lookalike.hooks import openfunnel as openfunnel_hook  # noqa: E402
 from lookalike.runners import REGISTRY  # noqa: E402
 
 DATASET_DIR = os.path.join(
@@ -79,7 +78,6 @@ def _compare_calls(actual: list[dict], expected: list[dict]) -> list[str]:
 def main() -> int:
     replayer = Replayer()
     generic_runner.http_request = replayer        # type: ignore[assignment]
-    openfunnel_hook.http_request = replayer        # type: ignore[assignment]
 
     totals = {"pass": 0, "fail": 0, "skipped": 0}
     per_vendor: dict[str, dict[str, int]] = {}
@@ -99,7 +97,6 @@ def main() -> int:
                 category=si["category"],
             )
             k = fix.get("k", 10)
-            openfunnel_hook._DOMAIN_CACHE.clear()  # per-seed memo, mirroring one process per seed
 
             for ai, attempt in enumerate(fix["attempts"]):
                 calls = attempt["vendor_calls"]

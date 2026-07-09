@@ -13,7 +13,6 @@ from . import (  # noqa: F401
     lusha,
     mock,
     ocean,
-    openfunnel,
     parallel,
     predictleads,
 )
@@ -29,7 +28,6 @@ from . import (  # noqa: F401
 # Both are surfaced under NOT_SURVEYED_PROVIDERS on the page so the
 # omission stays visible to readers.
 REGISTRY = {
-    openfunnel.VENDOR_SLUG: openfunnel,
     ocean.VENDOR_SLUG: ocean,
     exa.VENDOR_SLUG: exa,
     parallel.VENDOR_SLUG: parallel,
