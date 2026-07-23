@@ -67,7 +67,7 @@ class Seed:
     description: str | None
     category: str
     # Optional public firmographic hints. Lets a runner use a vendor's documented firmographic filter
-    # surface (e.g. OpenFunnel locations / employee range / funding stages) so
+    # surface (e.g. Ocean locations / employee range / funding stages) so
     # each API can put its best foot forward. Shape:
     #   {"locations": ["USA"], "min_employees": 10, "max_employees": 2000,
     #    "funding_stages": ["seed", "series_a", ...]}
