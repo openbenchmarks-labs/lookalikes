@@ -15,7 +15,13 @@ _SPEC = load_spec("predictleads")
 VENDOR_SLUG = _SPEC.slug
 VENDOR_NAME = _SPEC.name
 CONFIGS: list[dict[str, Any]] = _SPEC.configs
+MAX_RESULTS = 25
 
 
 def run(seed: Seed, k: int, config: dict[str, Any]) -> RunResult:
-    return run_from_spec(_SPEC, seed, k, config)
+    result = run_from_spec(_SPEC, seed, k, config)
+    # The published lookalike endpoint's default one-page result depth is 25.
+    # It may occasionally return a couple more records, but it cannot support
+    # a comparable P@100 evaluation without changing the configured endpoint.
+    result.max_results = MAX_RESULTS
+    return result

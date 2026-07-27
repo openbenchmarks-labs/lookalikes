@@ -1,7 +1,8 @@
 """Ocean.io quirk hook.
 
-`firmographic_filters` (build_request) handles the `seed_firmographic` config.
-It maps the seed's public firmographic hints (employee range + locations) to Ocean's `companiesFilters`
+`firmographic_filters` (build_request) handles the `seed_firmographic` config —
+parity across filtered configs. It maps the seed's public,
+TAM-derived hints (employee range + locations) to Ocean's `companiesFilters`
 shape (`companySizes` bands + `primaryLocations.includeCountries`) and stashes
 them in template vars (`company_sizes` / `primary_locations`) that the spec body
 references and prunes when null. It raises `SkipConfig` when a `use_seed_firmo`

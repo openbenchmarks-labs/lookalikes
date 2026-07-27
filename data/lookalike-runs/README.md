@@ -86,7 +86,7 @@ The full audit trail. Captures **every config the orchestrator swept** (not just
             "X-Api-Key": "***REDACTED***",
             "X-Api-Token": "***REDACTED***",
             "Accept": "application/json",
-            "User-Agent": ""
+            "User-Agent": "openfunnel-bench/0.1 ..."
           },
           "request_body": null,            // GET — no body
           "response_status": 200,
@@ -133,7 +133,7 @@ The full audit trail. Captures **every config the orchestrator swept** (not just
         "error": null
       }
     },
-    ... one entry per swept config (e.g. Parallel has 3: lookalike_broad, lookalike_strict, lookalike_broad_filtered)
+    ... one entry per swept config (e.g. OpenFunnel has 4: seed_only_agentic, seed_only_semantic, seed_plus_query_agentic, seed_plus_query_semantic)
   ]
 }
 ```

@@ -22,6 +22,7 @@ import sys
 for _k in (
     "OCEAN_API_KEY", "EXA_API_KEY", "PARALLEL_API_KEY",
     "PREDICT_LEADS_API_KEY", "PREDICT_LEADS_API_TOKEN", "LUSHA_API_KEY",
+    "EXTRUCT_API_TOKEN", "CUFINDER_API_KEY", "DISCOLIKE_API_KEY",
 ):
     os.environ.setdefault(_k, "test-key")
 
@@ -29,10 +30,9 @@ from lookalike import generic_runner  # noqa: E402
 from lookalike.common import Seed  # noqa: E402
 from lookalike.runners import REGISTRY  # noqa: E402
 
-DATASET_DIR = os.path.join(
-    os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))),
-    "data", "lookalike-runs", "lookalike-2026-q2",
-)
+REPO_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
+with open(os.path.join(REPO_ROOT, "data", "latest-lookalike.json"), encoding="utf-8") as _snapshot_file:
+    DATASET_DIR = os.path.join(REPO_ROOT, "data", "lookalike-runs", json.load(_snapshot_file)["dataset_slug"])
 
 
 class Replayer:
@@ -97,7 +97,6 @@ def main() -> int:
                 category=si["category"],
             )
             k = fix.get("k", 10)
-
             for ai, attempt in enumerate(fix["attempts"]):
                 calls = attempt["vendor_calls"]
                 if not calls:  # vendor_crash with no recorded HTTP — can't replay

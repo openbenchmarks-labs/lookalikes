@@ -26,6 +26,8 @@ from .common import JudgedCandidate
 MetricFn = Callable[[list[JudgedCandidate], int], "tuple[Optional[float], dict[str, Any]]"]
 
 
+RECALL_KS = (10, 50, 100)  # recall-cohort fetch/eval depths
+
 
 @dataclass(frozen=True)
 class Metric:
@@ -37,6 +39,7 @@ class Metric:
     fn: MetricFn
     primary: bool = False
     seed_context: bool = False  # needs a cross-vendor relevance pool (2nd pass)
+    gold_context: bool = False  # needs the frozen gold set + gold_size (2nd pass, judge-free)
 
 
 def _ordered_judged(judged: list[JudgedCandidate]) -> list[JudgedCandidate]:
@@ -135,6 +138,18 @@ def _recall_unavailable(judged: list[JudgedCandidate], k: int) -> tuple[Optional
     return None, {"note": "recall is computed in a second pass with the seed pool"}
 
 
+def _gold_metric_unavailable(judged: list[JudgedCandidate], k: int) -> tuple[Optional[float], dict]:
+    # Gold-context metrics need the frozen gold set + gold_size (not in MetricFn's
+    # signature); they are computed via compute_gold_recall_metrics in a 2nd pass.
+    return None, {"note": "computed in a second pass against the frozen gold set"}
+
+
+def _gold_metric(key: str, label: str, unit: str, definition: str) -> "Metric":
+    return Metric(
+        key=key, label=label, unit=unit, direction="higher_is_better",
+        definition=definition, fn=_gold_metric_unavailable, gold_context=True,
+    )
+
 
 METRIC_REGISTRY: dict[str, Metric] = {
     "precision_at_k": Metric(
@@ -149,11 +164,11 @@ METRIC_REGISTRY: dict[str, Metric] = {
         definition="Fraction of the top 10 returned companies the judge panel deemed relevant.",
         fn=_make_precision_at_n(10),
     ),
-    "precision_at_50": Metric(
-        key="precision_at_50", label="Precision@50", unit="percent",
+    "precision_at_25": Metric(
+        key="precision_at_25", label="Precision@25", unit="percent",
         direction="higher_is_better",
-        definition="Fraction of the top 50 returned companies the judge panel deemed relevant.",
-        fn=_make_precision_at_n(50),
+        definition="Fraction of the top 25 returned companies the judge panel deemed relevant.",
+        fn=_make_precision_at_n(25),
     ),
     "precision_at_100": Metric(
         key="precision_at_100", label="Precision@100", unit="percent",
@@ -173,11 +188,11 @@ METRIC_REGISTRY: dict[str, Metric] = {
         definition="Count of top-10 returned companies judged relevant.",
         fn=_make_relevant_count_at_n(10),
     ),
-    "relevant_count_at_50": Metric(
-        key="relevant_count_at_50", label="Relevant@50", unit="count",
+    "relevant_count_at_25": Metric(
+        key="relevant_count_at_25", label="Relevant@25", unit="count",
         direction="higher_is_better",
-        definition="Count of top-50 returned companies judged relevant.",
-        fn=_make_relevant_count_at_n(50),
+        definition="Count of top-25 returned companies judged relevant.",
+        fn=_make_relevant_count_at_n(25),
     ),
     "relevant_count_at_100": Metric(
         key="relevant_count_at_100", label="Relevant@100", unit="count",
@@ -209,7 +224,45 @@ METRIC_REGISTRY: dict[str, Metric] = {
         definition="Relative pooled recall (not absolute): relevant returned / distinct relevant companies any vendor surfaced for the seed.",
         fn=_recall_unavailable, seed_context=True,
     ),
+    # --- TAM-recall (gold-context, judge-free). Recall is against a frozen,
+    # vendor-independent REFERENCE set (NOT absolute TAM); denominator = |reference
+    # set|. Distinct `*_vs_ref` keys so they never collide with the pooled
+    # `recall_at_k` above and never run in the precision first pass. ---
+    "recall_vs_ref_at_10": _gold_metric(
+        "recall_vs_ref_at_10", "Recall@10 (vs ref)", "percent",
+        "Recall against a frozen, vendor-independent reference set, top-10: gold companies found in the first 10 results / |reference set|.",
+    ),
+    "recall_vs_ref_at_50": _gold_metric(
+        "recall_vs_ref_at_50", "Recall@50 (vs ref)", "percent",
+        "Recall against a frozen, vendor-independent reference set, top-50 / |reference set|.",
+    ),
+    "recall_vs_ref_at_100": _gold_metric(
+        "recall_vs_ref_at_100", "Recall@100 (vs ref)", "percent",
+        "Recall against a frozen, vendor-independent reference set, top-100 / |reference set|. The recall leaderboard's primary sort key.",
+    ),
+    "r_precision_vs_ref": _gold_metric(
+        "r_precision_vs_ref", "R-Precision (vs ref)", "percent",
+        "Precision@R where R = |reference set| (the precision-recall break-even point) against the frozen reference set.",
+    ),
+    "hit_at_100": _gold_metric(
+        "hit_at_100", "Hit@100 (vs ref)", "score",
+        "1 if at least one reference-set company appears in the top 100, else 0 (averaged → hit rate on the leaderboard).",
+    ),
+    "coverage_vs_ref": _gold_metric(
+        "coverage_vs_ref", "Coverage (vs ref)", "percent",
+        "Fraction of the reference set found anywhere in the returned list (matched / |reference set|).",
+    ),
+    "matched_count": _gold_metric(
+        "matched_count", "Matched", "count",
+        "Count of reference-set companies the vendor surfaced anywhere in its returned list.",
+    ),
 }
+
+# Keys written by the gold-context second pass (compute_gold_recall_metrics).
+RECALL_METRIC_KEYS = (
+    "recall_vs_ref_at_10", "recall_vs_ref_at_50", "recall_vs_ref_at_100",
+    "r_precision_vs_ref", "hit_at_100", "coverage_vs_ref", "matched_count",
+)
 
 
 def primary_metric() -> Metric:
@@ -220,14 +273,45 @@ def primary_metric() -> Metric:
 
 
 def compute_cell_metrics(judged: list[JudgedCandidate], k: int) -> dict[str, tuple[Optional[float], dict]]:
-    """All first-pass metrics for one cell
-    (excludes seed-context pooled recall, which needs cross-cell data)."""
+    """All first-pass metrics for one cell (excludes seed-context pooled recall and
+    gold-context recall, which need cross-cell / gold-set data in a second pass)."""
     return {
         key: m.fn(judged, k)
         for key, m in METRIC_REGISTRY.items()
-        if not m.seed_context
+        if not m.seed_context and not m.gold_context
     }
 
+
+def compute_gold_recall_metrics(
+    *,
+    recall_at: dict[int, Optional[float]],
+    r_precision: Optional[float],
+    hit_at_max: Optional[int],
+    matched_count: Optional[int],
+    gold_size: int,
+) -> dict[str, tuple[Optional[float], dict]]:
+    """Second pass for the recall cohort: map the deterministic gold-overlap values
+    (computed by recall.py against the frozen reference set — see
+    RECALL_METHODOLOGY.md) onto the `*_vs_ref` metric keys for persistence. Single
+    source of truth for the math stays in recall.py; this only labels + packages.
+
+    `recall_at` is keyed by K (10/50/100); `hit_at_max` is Hit@100 (0/1);
+    `gold_size` = |reference set| (the recall denominator)."""
+    detail = {"gold_size": gold_size, "matched": matched_count}
+    coverage = (
+        round(100.0 * matched_count / gold_size, 2)
+        if gold_size and matched_count is not None
+        else None
+    )
+    return {
+        "recall_vs_ref_at_10": (recall_at.get(10), detail),
+        "recall_vs_ref_at_50": (recall_at.get(50), detail),
+        "recall_vs_ref_at_100": (recall_at.get(100), detail),
+        "r_precision_vs_ref": (r_precision, detail),
+        "hit_at_100": (None if hit_at_max is None else float(hit_at_max), detail),
+        "coverage_vs_ref": (coverage, detail),
+        "matched_count": (None if matched_count is None else float(matched_count), detail),
+    }
 
 
 def compute_seed_context_metric(

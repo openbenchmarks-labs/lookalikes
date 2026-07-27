@@ -29,6 +29,9 @@ Env (required when running live; ignored under --mock):
   OCEAN_API_KEY
   PARALLEL_API_KEY
   EXA_API_KEY
+  EXTRUCT_API_TOKEN
+  CUFINDER_API_KEY
+  DISCOLIKE_API_KEY
   LUSHA_API_KEY
   PREDICT_LEADS_API_TOKEN + PREDICT_LEADS_API_KEY
 """
@@ -158,8 +161,8 @@ def run_vendor_for_seed(
         }
 
         # Vendor leg — capture every HTTP call the runner makes for this
-        # config (any preflight calls + the main search call all land in
-        # the same buffer).
+        # config (any preflight calls + the main search call all land in the
+        # same buffer).
         try:
             with capture_http_calls() as http_calls:
                 run: RunResult = runner["run"](seed, k, config)
@@ -233,6 +236,7 @@ def run_vendor_for_seed(
             "latency_ms": run.latency_ms,
             "judged_at": judged.judged_at,
             "cost_usd": run.cost_usd,
+            "duplicates_removed": run.duplicates_removed,
             "error": None,
         }
         attempts.append(attempt)
@@ -293,7 +297,7 @@ def main() -> int:
         default=None,
         help=(
             "pin the sweep to a single named runner config (e.g. "
-            "`lookalike_broad` for Parallel). When set, runners whose "
+            "`company_like` for Parallel). When set, runners whose "
             "CONFIGS list has no matching name are skipped for that cell."
         ),
     )
