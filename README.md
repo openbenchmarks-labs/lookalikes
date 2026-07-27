@@ -10,16 +10,12 @@ This repo is the open data + code mirror of that page — every cell on the
 leaderboard is backed by a literal HTTP request/response envelope and a
 literal LLM judge prompt + response, both committed under `data/lookalike-runs/`.
 
-For each seed company, every vendor returns its top-`K = 100` lookalikes; an LLM judge (`gpt-5.4-mini`) scores each returned company for relevance against the seed's business model;
-cell value is **Precision@K** — relevant returned / number judged.
+For each seed company, each provider returns an ordered list of lookalikes. An LLM judge (`gpt-5.6`, high reasoning effort) scores every returned company against the seed's business model. We report **Precision@10**, **Precision@25**, and **Precision@100** where the provider returns that depth.
 
-Precision@K is the headline metric. nDCG@K (binary-gain over judge labels),
-MAP@K, MRR, and relative pooled Recall@K are also computed per cell and exposed
-via the JSON API.
+A score at cutoff N is relevant companies in the top N divided by N. Providers that return fewer than a cutoff are not scored at that cutoff. The full candidate-level labels, request/response envelopes, and judge calls are published below.
 
 ## Endpoints
 
-- **All benchmarks (home)** — https://openbenchmarks.com
 - **Live benchmark UI** — https://openbenchmarks.com/lookalikes
 - **JSON API** — https://openbenchmarks.com/api/benchmarks/lookalikes
 - **Markdown agent docs** — https://openbenchmarks.com/llms.txt
@@ -30,12 +26,15 @@ via the JSON API.
 
 | # | Vendor | Precision@K | Judged |
 |---|---|---|---|
-| 1 | Parallel | 56.5% | 24/24 |
-| 2 | Ocean.io | 48.61% | 23/24 |
-| 3 | Exa | 25.79% | 24/24 |
-| 4 | PredictLeads | 19.38% | 24/24 |
+| 1 | Parallel | 67.54% | 48/48 |
+| 2 | Extruct | 61.21% | 48/48 |
+| 3 | Ocean.io | 56.53% | 47/48 |
+| 4 | Exa | 52.4% | 48/48 |
+| 5 | Discolike | 35.19% | 47/48 |
+| 6 | CUFinder | N/A | 47/48 |
+| 7 | PredictLeads | N/A | 48/48 |
 
-24 seed companies × 4 vendors. The full per-cell breakdown
+48 seed companies × 7 vendors. The full per-cell breakdown
 and the raw audit trail (every HTTP request + every judge call) lives under
 `data/lookalike-runs/`.
 
@@ -56,7 +55,6 @@ and the raw audit trail (every HTTP request + every judge call) lives under
 | `scripts/lookalike/metrics.py` | Pluggable metric registry — Precision@K (primary) + nDCG@K / MAP@K / MRR / pooled Recall@K. |
 | `scripts/lookalike/judge.py` | LLM judge + multi-judge panel — system prompt, Pydantic verdict schema, majority vote, mock mode. |
 | `scripts/lookalike/common.py` | Dataclasses + HTTP helper + persistence + redaction. |
-
 ## Reproducing a cell
 
 Pick any (seed, vendor) pair on the leaderboard. The corresponding raw file at
@@ -80,8 +78,8 @@ cp .env.example .env && $EDITOR .env                # fill in vendor keys + judg
 
 PYTHONPATH=scripts python scripts/run_lookalike_benchmark.py --mock          # offline smoke test (no keys)
 PYTHONPATH=scripts python scripts/run_lookalike_benchmark.py                 # live full sweep (single judge)
-PYTHONPATH=scripts python scripts/run_lookalike_benchmark.py --judges gpt-5.4-mini,gpt-5.2,o4-mini   # multi-judge panel
-PYTHONPATH=scripts python scripts/run_lookalike_benchmark.py --only parallel --seeds pylon
+PYTHONPATH=scripts python scripts/run_lookalike_benchmark.py --judge-model gpt-5.6   # reproduce the published Q3 judge
+PYTHONPATH=scripts python scripts/run_lookalike_benchmark.py --only openfunnel --seeds pylon
 ```
 
 ## Contributing a new vendor
@@ -99,21 +97,10 @@ PYTHONPATH=scripts python scripts/run_lookalike_benchmark.py --only parallel --s
 
 ## Methodology
 
-- **Precision@K.** For each seed, the vendor returns up to K candidates. The
-  judge labels each candidate `relevant: bool` against the seed's description.
-  Cell value = `relevant_count / number judged` (the K returned, or fewer if the
-  vendor returned < K). Vendor row = mean across judged seeds.
-- **Best-of sweep.** Each runner declares 1-4 config variants (e.g. agentic vs
-  semantic, with-query vs seed-only). For every cell we run all configs and
-  keep the highest-Precision@K winner. Tiebreaker: more judged candidates,
-  then lower latency.
-- **Judge.** Single-pass binary verdict + 1-line rationale per candidate. Same prompt and rubric across all vendors. The literal prompt and raw model response are published so judge bias is fully auditable — swap the model and re-score to measure drift.
-- **Other metrics.** nDCG@K uses binary gain from the judge-majority labels over
-  the vendor's ranking (not graded relevance). Recall@K is **relative pooled
-  recall** (TREC-style): relevant returned / distinct relevant companies any
-  vendor surfaced for that seed — not absolute recall against a ground-truth
-  universe.
-- **Known limitations.** (1) Judge bias: a single LLM judge has its own priors; the full audit trail lets you swap and re-score.
-  (2) K-tail vs precision tradeoff: vendors that can only return small sets win
-  P@K by default. (3) Recall is relative (pooled across surveyed vendors), so it
-  understates misses no vendor surfaced.
+- **Fixed cohort and cutoffs.** The Q3 snapshot scores 48 seed companies across seven providers. We request up to 100 ranked candidates and report Precision@10, Precision@25, and Precision@100 only where a provider reaches that depth.
+- **Precision@N.** Relevant companies in the top N ÷ N. A provider that returns fewer than N is not scored at that cutoff. Provider rows are means across judged seeds.
+- **Judge.** `gpt-5.6` at high reasoning effort assigns a binary relevance label and one-line rationale to every returned candidate. The identical rubric is used across vendors; funding, geography, and company maturity are not relevance constraints unless they define the core product or buyer.
+- **Duplicate handling.** A shared post-fetch check removes duplicate companies before scoring. Repeated companies count once; the raw audit trail retains the original calls and dedupe record.
+- **NLU prompt sweep.** Exa and Parallel each run the same three fixed variants per seed and retain the list with the highest Precision@100; ties break on more judged candidates, then lower latency. The variants are: (1) full product-and-buyer framing plus buyer-evaluation instruction, (2) product-and-buyer framing, and (3) buyer-evaluation framing. Domain-first providers do not receive this sweep.
+- **Other metrics.** nDCG@K uses binary gain over the ranked labels; MAP@K and MRR are also computed. Relative pooled Recall@K measures overlap with relevant companies surfaced by the surveyed providers, not absolute market coverage.
+- **Known limitations.** The LLM judge has model-specific priors, and a per-seed best-of-prompt result is not a single fixed-production-prompt average. Every raw call and judge response is published so either can be audited or re-scored.

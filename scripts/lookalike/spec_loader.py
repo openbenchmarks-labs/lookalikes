@@ -28,6 +28,7 @@ class AuthHeader(BaseModel):
     model_config = ConfigDict(extra="forbid")
     header: str
     env: str
+    value_prefix: str = ""
 
 
 class CostSpec(BaseModel):

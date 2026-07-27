@@ -1,0 +1,44 @@
+{
+  "dataset_slug": "lookalike-2026-q3",
+  "seed_slug": "fedex",
+  "seed_input": {
+    "seed_name": "FedEx",
+    "seed_domain": "fedex.com",
+    "description": "Global logistics and transportation company providing parcel delivery, freight, shipping, and supply-chain services",
+    "category": "logistics"
+  },
+  "provider_slug": "discolike",
+  "provider_name": "Discolike",
+  "k": 100,
+  "winning_config_name": null,
+  "judge_model": "gpt-5.6",
+  "captured_at": "2026-07-27T03:47:13Z",
+  "attempts": [
+    {
+      "config": {
+        "name": "domain_similarity"
+      },
+      "vendor_calls": [
+        {
+          "method": "GET",
+          "url": "https://api.discolike.com/v1/discover?domain=fedex.com&max_records=100",
+          "request_headers": {
+            "x-discolike-key": "***REDACTED***",
+            "Accept": "application/json",
+            "User-Agent": "openfunnel-bench/0.1 (+https://openfunnel.dev/bench; contact=founders@openfunnel.dev)"
+          },
+          "request_body": null,
+          "response_status": 204,
+          "response_body": "",
+          "elapsed_ms": 643
+        }
+      ],
+      "extracted_candidates": [],
+      "judge_calls": [],
+      "result": {
+        "status": "no_candidates",
+        "latency_ms": 643
+      }
+    }
+  ]
+}

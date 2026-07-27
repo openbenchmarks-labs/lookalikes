@@ -1,8 +1,16 @@
 """LLM-as-judge for the lookalike benchmark.
 
+Uses the OpenAI Python SDK with either the Azure-hosted deployment or the
+direct OpenAI API, depending on the selected judge model.
+
   env required:
     AZURE_OPENAI_NEXTGEN_DEPLOYMENT_KEY
     AZURE_OPENAI_NEXTGEN_DEPLOYMENT_URL   # e.g. https://<…>.azure.com/openai/v1
+
+Model can be overridden via `LOOKALIKE_JUDGE_MODEL` env or `Judge(model=…)`
+at the call site. Default is `gpt-5.4-mini` — matches the model used
+elsewhere in the OpenFunnel stack so the bench is comparable to
+production calls.
 
 `mock=True` keeps a deterministic offline path so the orchestrator
 end-to-end pipeline can be exercised without burning Azure tokens.
@@ -17,6 +25,7 @@ import json
 import os
 import time
 from contextvars import ContextVar, copy_context
+from pathlib import Path
 from typing import Any, Iterator
 
 from openai import AzureOpenAI, OpenAI
@@ -34,6 +43,8 @@ from .common import (
     load_dotenv,
     now_iso,
 )
+
+ROOT = Path(__file__).resolve().parents[2]
 
 
 # Same pattern as common._HTTP_TRACE — when a context manager is active,
@@ -94,7 +105,7 @@ class JudgeEndpoint:
         the *deployment name* (`deployment`, defaulting to the model id).
     """
 
-    kind: str = "openai"
+    kind: str = "openai"  # openai-v1 custom endpoint | azure | direct OpenAI
     key_env: str = AZURE_KEY_ENV
     # openai transport
     url_env: str = AZURE_URL_ENV
@@ -131,6 +142,7 @@ JUDGE_ENDPOINTS: dict[str, JudgeEndpoint] = {
         api_version_default="2024-10-21",
         deployment="gpt-5.1",  # set to your Azure deployment name if it differs
     ),
+    "gpt-5.6": JudgeEndpoint(kind="direct", key_env="OPENAI_API_KEY"),
 }
 
 
@@ -172,6 +184,20 @@ def _build_client(ep: JudgeEndpoint, timeout: int) -> OpenAI:
             client = AzureOpenAI(
                 azure_endpoint=endpoint, api_key=key, api_version=version, timeout=timeout
             )
+            _CLIENT_CACHE[ck] = client
+        return client
+
+    if ep.kind == "direct":
+        key = os.environ.get(ep.key_env)
+        if not key:
+            raise RuntimeError(
+                f"missing {ep.key_env} in env — this direct OpenAI judge needs an API key. "
+                "Pass mock=True for offline runs."
+            )
+        ck = ("direct", key)
+        client = _CLIENT_CACHE.get(ck)
+        if client is None:
+            client = OpenAI(api_key=key, timeout=timeout)
             _CLIENT_CACHE[ck] = client
         return client
 
@@ -253,17 +279,50 @@ You will be given:
 Decide whether the CANDIDATE is a plausible lookalike of the SEED for
 B2B sales prospecting. A plausible lookalike is a company a sales rep
 working the SEED account would also want to work — same kind of
-business model, comparable customer base, overlapping product category
-or buyer persona.
+business model, overlapping product category, or buyer persona.
 
 Rules:
   - relevant = true only when the candidate is clearly the same kind of
-    company (same model + comparable scale + overlapping customer).
+    company (same model + overlapping customer or buyer persona).
+  - Require both: (1) the candidate's primary product/service overlaps a core
+    offering of the seed, and (2) the same buyer or user would reasonably
+    evaluate both for the same job to be done. A shared generic taxonomy label
+    or keyword is not enough.
+  - Do NOT require comparable company size, headcount, revenue, funding,
+    geography, maturity, or platform breadth. Those are not benchmark
+    constraints: a smaller or larger company can be a relevant lookalike.
+    Ignore any such metadata in the candidate record when deciding relevance.
   - relevant = false for unrelated industries, parent companies,
     customers/clients of the seed, agencies/consultancies that serve the
     category (rather than competing), and parody/duplicate entries.
   - When in doubt, label false.
   - Keep the rationale ≤ 25 words.
+
+Examples:
+  - HubSpot ↔ a smaller CRM/marketing-automation platform: true.
+  - HubSpot ↔ a lead-generation agency using HubSpot for clients: false.
+  - Shopify ↔ an online-store/e-commerce platform: true.
+  - Shopify ↔ a payment processor with no storefront platform: false.
+  - Grab ↔ a ride-hailing marketplace: true.
+  - Grab ↔ a traditional car-rental operator with no on-demand marketplace: false.
+  - Rippling ↔ a smaller HRIS/payroll platform: true.
+  - Rippling ↔ device-security software for mobile workers: false.
+  - Brex ↔ a corporate-card and spend-management platform: true.
+  - Brex ↔ consumer personal-finance budgeting software: false.
+  - OpenAI ↔ a foundation-model/API company: true.
+  - OpenAI ↔ a consultancy that implements AI tools for clients: false.
+  - Datadog ↔ an application-performance-monitoring and observability platform: true.
+  - Datadog ↔ a generic IT consulting firm: false.
+  - CrowdStrike ↔ an endpoint-security platform: true.
+  - CrowdStrike ↔ a general-purpose IT monitoring tool with no security product: false.
+  - Procore ↔ construction project-management software: true.
+  - Procore ↔ a construction contractor: false.
+  - ServiceTitan ↔ field-service management software for trades businesses: true.
+  - ServiceTitan ↔ a plumbing company that uses field-service software: false.
+  - Teladoc ↔ a virtual-care/telehealth platform: true.
+  - Teladoc ↔ a health-insurance carrier with no telehealth product: false.
+  - Veeva ↔ life-sciences CRM or clinical-operations software: true.
+  - Veeva ↔ a generic CRM with no life-sciences focus: false.
 """
 
 
@@ -271,10 +330,27 @@ JUDGE_SYSTEM_PROMPT_V2 = """You are an evaluator scoring company lookalike resul
 
 Decide the structured fields first, then the final `relevant` verdict.
 
-RUBRIC — a lookalike must clear ALL THREE bars:
+RUBRIC — a lookalike must clear BOTH bars:
   1. Same business model — sells essentially the same kind of product/service (set same_business_model).
-  2. Comparable scale — roughly the same kind/size of company, not a giant vs. a solo shop.
-  3. Overlapping customer / buyer persona — the same buyers would consider both (set buyer_overlap).
+  2. Overlapping customer / buyer persona — the same buyers would consider both (set buyer_overlap).
+
+Do NOT use company size, headcount, revenue, funding, geography, maturity, or
+platform breadth as a relevance requirement. The benchmark does not supply
+firmographic constraints; a smaller or larger company can be a valid lookalike.
+Ignore such metadata if it appears in the candidate record.
+
+Examples: a smaller CRM/marketing-automation platform is a HubSpot lookalike;
+a lead-generation agency using HubSpot is not. An online-store/e-commerce
+platform is a Shopify lookalike; a payment processor without a storefront is
+not. A ride-hailing marketplace is a Grab lookalike; a traditional car-rental
+operator is not. A smaller HRIS/payroll platform is a Rippling lookalike;
+device-security software for mobile workers is not. A corporate-card and
+spend-management platform is a Brex lookalike; consumer budgeting software is
+not. A foundation-model/API company is an OpenAI lookalike; an AI consultancy
+is not. An endpoint-security platform is a CrowdStrike lookalike; generic IT
+monitoring is not. Construction project-management software is a Procore
+lookalike; a construction contractor is not. Field-service management software
+is a ServiceTitan lookalike; a plumbing company using such software is not.
 
 DISQUALIFIERS (set `disqualifier` to the strongest that applies; else "none"):
   - customer: the candidate is a customer/client of the seed's category, not a peer.
@@ -323,6 +399,8 @@ class Judge:
             if env_model:
                 self.model = env_model
         ep = endpoint_for(self.model)
+        if ep.kind == "direct":
+            load_dotenv(ROOT / ".env.local")
         self._client = _build_client(ep, self.timeout_sec)
         # Azure routes by deployment name; OpenAI-v1 routes by model id.
         self._send_model = (ep.deployment or self.model) if ep.kind == "azure" else self.model
@@ -363,11 +441,16 @@ class Judge:
         ]
         start = time.monotonic()
         try:
-            completion = self._client.chat.completions.create(
-                model=self._send_model,
-                messages=messages,
-                response_format=type_to_response_format_param(schema),
-            )
+            request: dict[str, Any] = {
+                "model": self._send_model,
+                "messages": messages,
+                "response_format": type_to_response_format_param(schema),
+            }
+            if endpoint_for(self.model).kind == "direct":
+                request["reasoning_effort"] = os.environ.get(
+                    "OPENAI_JUDGE_REASONING_EFFORT", "high"
+                )
+            completion = self._client.chat.completions.create(**request)
             elapsed_ms = int((time.monotonic() - start) * 1000)
             raw = completion.choices[0].message.content or ""
             verdict = schema.model_validate_json(raw)
@@ -504,7 +587,7 @@ def _format_extra(extra: dict[str, Any]) -> str | None:
         return None
     import json
 
-    return json.dumps(keep, ensure_ascii=False)[:400]
+    return json.dumps(keep, ensure_ascii=False)[:4000]
 
 
 # --------------------------------------------------------------------------- #

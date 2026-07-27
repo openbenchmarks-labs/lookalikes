@@ -18,11 +18,12 @@ import sys
 import urllib.parse
 
 # Dummy creds so require_env() passes; http_request is mocked so they're unused.
-for _k in ("OCEAN_API_KEY", "PARALLEL_API_KEY", "EXA_API_KEY"):
+for _k in ("OCEAN_API_KEY", "PARALLEL_API_KEY", "EXA_API_KEY", "EXTRUCT_API_TOKEN", "DISCOLIKE_API_KEY", "PREDICT_LEADS_API_KEY", "PREDICT_LEADS_API_TOKEN"):
     os.environ.setdefault(_k, "test-key")
 
 from lookalike import generic_runner  # noqa: E402
-from lookalike.common import Seed  # noqa: E402
+from lookalike.common import Candidate, Seed  # noqa: E402
+from lookalike.hooks import parallel as parallel_hook  # noqa: E402
 from lookalike.hooks import predictleads as predictleads_hook  # noqa: E402
 from lookalike.spec_loader import load_spec  # noqa: E402
 
@@ -48,10 +49,7 @@ class Capture:
 
     @property
     def last_search(self) -> dict:
-        # last call (the actual lookalike search)
-        if self.calls:
-            return self.calls[-1]
-        raise AssertionError("no search call captured")
+        return self.calls[-1]
 
 
 def _run(slug: str, config_name: str, seed: Seed):
@@ -85,20 +83,100 @@ def check(cond: bool, msg: str) -> None:
 
 def test_parallel() -> None:
     print("\n[parallel]")
-    _, cap = _run("parallel", "lookalike_broad_filtered", SEED_FIRMO)
+    _, cap = _run("parallel", "full", SEED_FIRMO)
     objective = cap.last_search["body"]["objective"]
-    check("headquartered in the United States" in objective, "objective names US HQ")
-    check("11" in objective and "1000" in objective, "objective names employee range 11–1000")
-    check("series_a" in objective, "objective names funding stage")
+    check(
+        objective == (
+            "Find companies that are lookalikes of Acme: companies with a similar core product and buyer. "
+            "Acme makes widgets. Return companies a buyer would realistically evaluate alongside Acme."
+        ),
+        "objective defines product-and-buyer lookalikes",
+    )
     check(cap.last_search["body"]["match_limit"] == 100, "match_limit=100 (deep fetch)")
+    ctx = {"seed": SEED_FIRMO, "config": {"query_variant": "concise_fallback"}, "vars": {}}
+    parallel_hook.objective(ctx)
+    check(
+        ctx["vars"]["query"] == "companies like Acme — Acme makes widgets",
+        "fallback restores the concise name-plus-description query",
+    )
 
-    res, _ = _run("parallel", "lookalike_broad_filtered", SEED_BARE)
-    check((res.error or "").startswith("skipped"), f"bare seed skips filtered config (err={res.error!r})")
 
-    # broad (unfiltered) → no firmographic clause
-    _, cap = _run("parallel", "lookalike_broad", SEED_FIRMO)
-    check("headquartered" not in cap.last_search["body"]["objective"],
-          "unfiltered objective has no firmographic clause")
+def test_seed_exclusion() -> None:
+    print("\n[seed exclusion]")
+    candidates = [
+        Candidate("Acme", "acme.com", rank=1),
+        Candidate("Acme mirror", "www.acme.com", rank=2),
+        Candidate("Peer", "peer.com", rank=3),
+    ]
+    got = generic_runner._without_seed(candidates, SEED_FIRMO)
+    check([c.name for c in got] == ["Peer"], "seed and www-domain duplicate are excluded")
+    check(got[0].rank is None, "remaining candidates are re-ranked before scoring")
+
+
+def test_post_fetch_deduplication() -> None:
+    print("\n[post-fetch deduplication]")
+    candidates = [
+        Candidate("Ramp", None, rank=1, extra={"linkedin_url": "https://www.linkedin.com/company/ramp"}),
+        Candidate("Ramp", None, rank=2, extra={"linkedin_url": "https://tw.linkedin.com/company/ramp?trk=foo"}),
+        Candidate("Ramp", "ramp.com", rank=3),
+        Candidate("Ramp Payments", "ramp.com", rank=4),
+        Candidate("Brex", "brex.com", rank=5),
+    ]
+    got, removed = generic_runner._without_duplicates(candidates)
+    check([c.name for c in got] == ["Ramp", "Brex"], "dedupes by LinkedIn slug, domain, and name")
+    check(removed == 3, "records every removed duplicate")
+    check(all(c.rank is None for c in got), "deduplicated results are re-ranked before scoring")
+
+
+def test_parallel_embedded_domain() -> None:
+    print("\n[parallel domain extraction]")
+    check(
+        parallel_hook._embedded_website_domain(
+            "Website Url: https://www.autolease.com.tw/index.html | Founded Year: 2007"
+        ) == "autolease.com.tw",
+        "embedded Website Url becomes the canonical company domain",
+    )
+
+
+def test_exa() -> None:
+    print("\n[exa]")
+    _, cap = _run("exa", "full", SEED_FIRMO)
+    check(
+        cap.last_search["body"]["query"] == (
+            "Find companies that are lookalikes of Acme: companies with a similar core product and buyer. "
+            "Acme makes widgets. Return companies a buyer would realistically evaluate alongside Acme."
+        ),
+        "query defines product-and-buyer lookalikes",
+    )
+
+    seed_no_desc = Seed("no-desc", "Name Only", "name-only.com", None, "saas")
+    _, cap = _run("exa", "full", seed_no_desc)
+    check(
+        cap.last_search["body"]["query"] == (
+            "Find companies that are lookalikes of Name Only: companies with a similar core product and buyer. "
+            "Name Only is a company. Return companies a buyer would realistically evaluate alongside Name Only."
+        ),
+        "query supplies a safe description fallback",
+    )
+
+
+def test_extruct() -> None:
+    print("\n[extruct]")
+    _, cap = _run("extruct", "domain_similarity", SEED_FIRMO)
+    check(
+        cap.last_search["url"] == "https://api.extruct.ai/v1/companies/acme.com/similar",
+        "uses the seed domain in Extruct's lookalike path",
+    )
+    check(cap.last_search["body"] == {"pagination": {"offset": 0, "limit": 100}}, "requests 100 results")
+
+
+def test_discolike() -> None:
+    print("\n[discolike]")
+    _, cap = _run("discolike", "domain_similarity", SEED_FIRMO)
+    check(
+        _qs(cap.last_search["url"]) == {"domain": ["acme.com"], "max_records": ["100"]},
+        "uses the seed domain and requests 100 results",
+    )
 
 
 def test_ocean() -> None:
@@ -194,6 +272,12 @@ def test_predictleads_pagination() -> None:
 def main() -> int:
     print("=== firmographic config request-build tests (offline) ===")
     test_parallel()
+    test_seed_exclusion()
+    test_post_fetch_deduplication()
+    test_parallel_embedded_domain()
+    test_exa()
+    test_extruct()
+    test_discolike()
     test_ocean()
     test_predictleads_pagination()
     print()

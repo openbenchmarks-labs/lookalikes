@@ -10,11 +10,12 @@ Flow:
   4. template path/query/body from vars; shallow-merge config sub-dicts; prune None.
   5. http_request; on >=300 return an error RunResult (config may carry preflight audit).
   6. resolve candidate list (path fallbacks) → transform hook OR declarative item map.
-  7. merge audit values into the returned config; compute cost; take_top.
+  7. remove the seed itself if returned; merge audit values; compute cost; take_top.
 """
 from __future__ import annotations
 
 import urllib.parse
+import re
 from typing import Any
 
 from .common import Candidate, RunResult, Seed, SkipConfig, http_request, require_env, take_top
@@ -25,6 +26,96 @@ from .spec_loader import ItemMap, VendorSpec
 # --------------------------------------------------------------------------- #
 # Templating + path resolution                                                #
 # --------------------------------------------------------------------------- #
+
+
+def _normalized_domain(value: str | None) -> str | None:
+    if not value:
+        return None
+    return value.lower().removeprefix("https://").removeprefix("http://").split("/")[0].removeprefix("www.")
+
+
+def _without_seed(candidates: list[Candidate], seed: Seed) -> list[Candidate]:
+    """Exclude the seed itself, then re-rank the remaining candidates."""
+    seed_domain = _normalized_domain(seed.seed_domain)
+    seed_name = seed.seed_name.casefold().strip()
+    out = [
+        candidate
+        for candidate in candidates
+        if not (
+            (seed_domain and _normalized_domain(candidate.domain) == seed_domain)
+            or (not candidate.domain and candidate.name.casefold().strip() == seed_name)
+        )
+    ]
+    for candidate in out:
+        candidate.rank = None
+    return out
+
+
+def _normalized_name(value: str | None) -> str | None:
+    """Return a conservative name key for candidate identity matching."""
+    if not value:
+        return None
+    normalized = re.sub(r"[^a-z0-9]+", "", value.casefold())
+    return normalized or None
+
+
+def _linkedin_company_slug(value: Any) -> str | None:
+    """Normalize LinkedIn company URLs across locale/query-string variants."""
+    if not isinstance(value, str) or not value:
+        return None
+    parsed = urllib.parse.urlparse(value if "://" in value else f"https://{value}")
+    host = parsed.netloc.casefold().removeprefix("www.")
+    if not (host == "linkedin.com" or host.endswith(".linkedin.com")):
+        return None
+    parts = [part for part in parsed.path.casefold().split("/") if part]
+    try:
+        i = parts.index("company")
+        return parts[i + 1] or None
+    except (ValueError, IndexError):
+        return None
+
+
+def _candidate_identity_keys(candidate: Candidate) -> set[str]:
+    """Identifiers used by the cross-provider post-fetch deduplication pass.
+
+    A canonical domain is strongest. LinkedIn organization slugs and the
+    returned name cover vendors such as Parallel that frequently return an
+    aggregator profile rather than a company website. Any shared key means the
+    later result is the same candidate and is removed, preserving first rank.
+    """
+    keys: set[str] = set()
+    domain = _normalized_domain(candidate.domain)
+    if domain:
+        keys.add(f"domain:{domain}")
+    linkedin = _linkedin_company_slug(candidate.extra.get("linkedin_url"))
+    if linkedin:
+        keys.add(f"linkedin:{linkedin}")
+    name = _normalized_name(candidate.name)
+    if name:
+        keys.add(f"name:{name}")
+    return keys
+
+
+def _without_duplicates(candidates: list[Candidate]) -> tuple[list[Candidate], int]:
+    """Keep the first returned instance of each company, across all vendors."""
+    seen: set[str] = set()
+    unique: list[Candidate] = []
+    removed = 0
+    for candidate in candidates:
+        keys = _candidate_identity_keys(candidate)
+        if keys and seen.intersection(keys):
+            removed += 1
+            # Preserve identifiers learned from a duplicate. For example, an
+            # early LinkedIn-only result and a later domain-bearing result may
+            # connect the rest of that company's aliases.
+            seen.update(keys)
+            continue
+        # A blank result has no identity and cannot safely be collapsed.
+        seen.update(keys)
+        unique.append(candidate)
+    for candidate in unique:
+        candidate.rank = None
+    return unique, removed
 
 
 def _base_vars(seed: Seed, k: int, config: dict[str, Any]) -> dict[str, Any]:
@@ -142,6 +233,8 @@ def _map_item(item: dict[str, Any], item_map: ItemMap) -> Candidate:
 
 
 def _resolve_candidate_list(payload: Any, paths: list[str]) -> list[Any]:
+    if isinstance(payload, list):
+        return payload
     if not isinstance(payload, dict):
         return []
     for p in paths:  # first non-empty list wins (matches `a or b or []`)
@@ -245,7 +338,7 @@ def run_from_spec(spec: VendorSpec, seed: Seed, k: int, config: dict[str, Any]) 
                 target.update(sub)  # shallow merge, matches the original runner
         body = _prune_none(body)
 
-    headers = {a.header: env[a.env] for a in spec.auth}
+    headers = {a.header: f"{a.value_prefix}{env[a.env]}" for a in spec.auth}
     status, payload, elapsed_ms = http_request(method, url, headers=headers, body=body)
 
     if status >= 300:
@@ -261,6 +354,8 @@ def run_from_spec(spec: VendorSpec, seed: Seed, k: int, config: dict[str, Any]) 
         candidates = HOOKS[spec.hooks.transform_candidates](raw_items, ctx)
     else:
         candidates = [_map_item(it, spec.response.item) for it in raw_items if isinstance(it, dict)]
+    candidates = _without_seed(candidates, seed)
+    candidates, duplicates_removed = _without_duplicates(candidates)
 
     return RunResult(
         seed_slug=seed.seed_slug,
@@ -272,4 +367,5 @@ def run_from_spec(spec: VendorSpec, seed: Seed, k: int, config: dict[str, Any]) 
         cost_usd=_compute_cost(spec, candidates),
         error=None,
         requested_k=k,
+        duplicates_removed=duplicates_removed,
     )

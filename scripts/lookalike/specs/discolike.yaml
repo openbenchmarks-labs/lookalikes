@@ -1,0 +1,31 @@
+slug: discolike
+name: Discolike
+base_url: https://api.discolike.com
+requires_seed_domain: true
+cost: { mode: none }
+auth:
+  - { header: x-discolike-key, env: DISCOLIKE_API_KEY }
+request:
+  method: GET
+  path: /v1/discover
+  query:
+    domain: $seed_domain
+    max_records: $k
+response:
+  candidates_path: []
+  item:
+    name: name
+    domain: domain
+    description: description
+    rank: null
+    extra:
+      similarity: similarity
+      employees: employees
+      industry_groups: industry_groups
+      business_model: business_model
+      country: address.country
+      state: address.state
+      city: address.city
+      social_urls: social_urls
+configs:
+  - { name: domain_similarity }

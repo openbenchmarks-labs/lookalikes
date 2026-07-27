@@ -14,6 +14,7 @@ import json
 import os
 import time
 import urllib.error
+import urllib.parse
 import urllib.request
 from contextvars import ContextVar
 from datetime import datetime, timezone
@@ -26,7 +27,7 @@ RUNS_DIR = ROOT / "data" / "lookalike-runs"
 ENV_FILE = ROOT / ".env"
 
 DEFAULT_K = 100
-PRECISION_CUTOFFS = (10, 50, 100)
+PRECISION_CUTOFFS = (10, 25, 100)
 HTTP_TIMEOUT_SEC = 60
 
 # Headers that carry secrets — normalized to lowercase for case-insensitive
@@ -41,6 +42,7 @@ REDACTED_HEADER_NAMES = {
     "api-key",
     "api_key",
     "apikey",
+    "x-discolike-key",
 }
 REDACTED_PLACEHOLDER = "***REDACTED***"
 
@@ -54,7 +56,7 @@ class SkipConfig(Exception):
     """A hook raises this to skip the current config cleanly (no HTTP call). The
     generic runner turns it into an error RunResult so the orchestrator records
     the skip and moves to the next config. Used e.g. by firmographic-filtered
-    filtered configs when a seed carries no firmographic hints."""
+    recall configs when a seed carries no firmographic hints."""
 
 
 @dataclasses.dataclass(frozen=True)
@@ -66,8 +68,9 @@ class Seed:
     seed_domain: str | None
     description: str | None
     category: str
-    # Optional public firmographic hints. Lets a runner use a vendor's documented firmographic filter
-    # surface (e.g. Ocean locations / employee range / funding stages) so
+    # Optional, public/TAM-derived firmographic hints (NOT derived from the
+    # gold set). Lets a runner use a vendor's documented firmographic filter
+    # surface (e.g. locations / employee range / funding stages) so
     # each API can put its best foot forward. Shape:
     #   {"locations": ["USA"], "min_employees": 10, "max_employees": 2000,
     #    "funding_stages": ["seed", "series_a", ...]}
@@ -102,6 +105,13 @@ class RunResult:
     cost_usd: float | None = None
     error: str | None = None
     requested_k: int | None = None
+    # Post-fetch quality controls applied uniformly to every provider.
+    # `duplicates_removed` is retained in artifacts so a short returned list
+    # can be distinguished from a provider returning the same company twice.
+    duplicates_removed: int = 0
+    # Some provider endpoints have a hard result ceiling below the benchmark
+    # depth. Their supported cutoffs remain comparable; deeper ones are N/A.
+    max_results: int | None = None
 
     def to_dict(self) -> dict[str, Any]:
         return {
@@ -123,6 +133,8 @@ class RunResult:
             "cost_usd": self.cost_usd,
             "error": self.error,
             "requested_k": self.requested_k,
+            "duplicates_removed": self.duplicates_removed,
+            "max_results": self.max_results,
         }
 
 
@@ -395,13 +407,15 @@ def persist_run_detail(dataset_slug: str, judged: JudgedRun) -> Path:
         "relevant_count": judged.relevant_count,
         "precision_at_k": judged.precision_at_k,
         "relevant_count_at_10": judged.relevant_count_at(10),
-        "relevant_count_at_50": judged.relevant_count_at(50),
+        "relevant_count_at_25": judged.relevant_count_at(25),
         "relevant_count_at_100": judged.relevant_count_at(100),
         "precision_at_10": judged.precision_at(10),
-        "precision_at_50": judged.precision_at(50),
+        "precision_at_25": judged.precision_at(25),
         "precision_at_100": judged.precision_at(100),
         "latency_ms": run.latency_ms,
         "cost_usd": run.cost_usd,
+        "duplicates_removed": run.duplicates_removed,
+        "max_results": run.max_results,
         "judge_model": judged.judge_model,
         "judged_at": judged.judged_at,
         "candidates": [
@@ -461,13 +475,15 @@ def upsert_seed_vendor_cell(
                 "relevant_count": None,
                 "precision_at_k": None,
                 "relevant_count_at_10": None,
-                "relevant_count_at_50": None,
+                "relevant_count_at_25": None,
                 "relevant_count_at_100": None,
                 "precision_at_10": None,
-                "precision_at_50": None,
+                "precision_at_25": None,
                 "precision_at_100": None,
                 "latency_ms": None,
                 "cost_usd": None,
+                "duplicates_removed": 0,
+                "max_results": None,
                 "judge_model": None,
                 "judged_at": None,
                 "config_used": None,
@@ -490,13 +506,15 @@ def upsert_seed_vendor_cell(
             "relevant_count": judged.relevant_count,
             "precision_at_k": judged.precision_at_k,
             "relevant_count_at_10": judged.relevant_count_at(10),
-            "relevant_count_at_50": judged.relevant_count_at(50),
+            "relevant_count_at_25": judged.relevant_count_at(25),
             "relevant_count_at_100": judged.relevant_count_at(100),
             "precision_at_10": judged.precision_at(10),
-            "precision_at_50": judged.precision_at(50),
+            "precision_at_25": judged.precision_at(25),
             "precision_at_100": judged.precision_at(100),
             "latency_ms": run.latency_ms,
             "cost_usd": run.cost_usd,
+            "duplicates_removed": run.duplicates_removed,
+            "max_results": run.max_results,
             "judge_model": judged.judge_model,
             "judged_at": judged.judged_at,
             "config_used": {"name": run.config_name, **run.config},
@@ -516,14 +534,35 @@ def recompute_leaderboard(snapshot: dict[str, Any], k: int) -> None:
     for c in cells:
         by_vendor.setdefault(c["provider_slug"], []).append(c)
 
+    # A newly added vendor has cells before it has a derived leaderboard row.
+    # Hydrate that row from the cells so adding a provider never requires a
+    # hand-edited snapshot fixture.
+    known_slugs = {row["provider_slug"] for row in rows}
+    for provider_slug, provider_cells in by_vendor.items():
+        if provider_slug in known_slugs:
+            continue
+        exemplar = provider_cells[0]
+        rows.append(
+            {
+                "dataset_slug": exemplar["dataset_slug"],
+                "dataset_name": snapshot.get("dataset_name"),
+                "provider_slug": provider_slug,
+                "provider_name": exemplar["provider_name"],
+            }
+        )
+
     for row in rows:
         my_cells = by_vendor.get(row["provider_slug"], [])
         judged_cells = [c for c in my_cells if c.get("precision_at_k") is not None]
+        primary_cells = [
+            c for c in judged_cells
+            if c.get("max_results") is None or int(c["max_results"]) >= k
+        ]
         attempted = len({c["seed_slug"] for c in my_cells})
 
         # avg Precision@K — mean across judged cells only
-        if judged_cells:
-            avg = sum(c["precision_at_k"] for c in judged_cells) / len(judged_cells)
+        if primary_cells:
+            avg = sum(c["precision_at_k"] for c in primary_cells) / len(primary_cells)
             row["avg_precision_at_k"] = round(avg, 2)
         else:
             row["avg_precision_at_k"] = None
@@ -534,7 +573,9 @@ def recompute_leaderboard(snapshot: dict[str, Any], k: int) -> None:
             relevant_key = f"relevant_count_at_{cutoff}"
             total_key = f"total_relevant_at_{cutoff}"
             cells_with_cutoff = [
-                c for c in my_cells if c.get(precision_key) is not None
+                c for c in my_cells
+                if c.get(precision_key) is not None
+                and (c.get("max_results") is None or int(c["max_results"]) >= cutoff)
             ]
             if cells_with_cutoff:
                 row[avg_key] = round(
@@ -643,6 +684,7 @@ def http_request(
     *,
     headers: dict[str, str] | None = None,
     body: Any = None,
+    body_encoding: str = "json",
     timeout: int = HTTP_TIMEOUT_SEC,
 ) -> tuple[int, Any, int]:
     """Returns (status, json_or_text, elapsed_ms). Raises on network errors
@@ -655,9 +697,21 @@ def http_request(
     data: bytes | None = None
     hdrs = dict(headers or {})
     if body is not None and method.upper() != "GET":
-        data = json.dumps(body).encode("utf-8")
-        hdrs.setdefault("Content-Type", "application/json")
+        if body_encoding == "form":
+            data = urllib.parse.urlencode(body).encode("utf-8")
+            hdrs.setdefault("Content-Type", "application/x-www-form-urlencoded")
+        else:
+            data = json.dumps(body).encode("utf-8")
+            hdrs.setdefault("Content-Type", "application/json")
     hdrs.setdefault("Accept", "application/json")
+    # Several vendors (Ocean, Lusha) sit behind Cloudflare and return a 403
+    # "Error 1010: Access denied" for the default Python urllib UA. A
+    # mainstream desktop UA passes their bot filters reliably and is also
+    # the right thing to do for any benchmark talking to public APIs.
+    hdrs.setdefault(
+        "User-Agent",
+        "openfunnel-bench/0.1 (+https://openfunnel.dev/bench; contact=founders@openfunnel.dev)",
+    )
 
     req = urllib.request.Request(url=url, data=data, method=method.upper(), headers=hdrs)
     start = time.monotonic()

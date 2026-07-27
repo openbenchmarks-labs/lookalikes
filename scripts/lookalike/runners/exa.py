@@ -18,4 +18,10 @@ CONFIGS: list[dict[str, Any]] = _SPEC.configs
 
 
 def run(seed: Seed, k: int, config: dict[str, Any]) -> RunResult:
-    return run_from_spec(_SPEC, seed, k, config)
+    primary = run_from_spec(_SPEC, seed, k, config)
+    if primary.error is None and not primary.candidates:
+        fallback = run_from_spec(_SPEC, seed, k, {**config, "query_variant": "concise_fallback"})
+        fallback.config["fallback_used"] = True
+        fallback.config["fallback_reason"] = "semantic_query_returned_zero_candidates"
+        return fallback
+    return primary

@@ -1,0 +1,31 @@
+slug: extruct
+name: Extruct
+base_url: https://api.extruct.ai
+requires_seed_domain: true
+cost: { mode: none }
+auth:
+  - { header: Authorization, env: EXTRUCT_API_TOKEN, value_prefix: "Bearer " }
+request:
+  method: POST
+  path: /v1/companies/$seed_domain/similar
+  body:
+    pagination:
+      offset: 0
+      limit: $k
+response:
+  candidates_path: [results]
+  item:
+    name: name
+    domain: domain
+    description: [short_description, full_description]
+    rank: null
+    extra:
+      id: id
+      full_description: full_description
+      products_services: products_services
+      use_cases: use_cases
+      target_audience: target_audience
+      industries: industries
+      employee_count: employee_count
+configs:
+  - { name: domain_similarity }

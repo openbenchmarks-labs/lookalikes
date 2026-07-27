@@ -1,0 +1,206 @@
+{
+  "dataset_slug": "lookalike-2026-q3-expansion-preview",
+  "seed_slug": "faire",
+  "seed_input": {
+    "seed_name": "Faire",
+    "seed_domain": "faire.com",
+    "description": "Wholesale marketplace connecting independent retailers with brands and suppliers.",
+    "category": "ecommerce"
+  },
+  "provider_slug": "ocean",
+  "provider_name": "Ocean.io",
+  "k": 100,
+  "winning_config_name": null,
+  "judge_model": "gpt-5.6",
+  "captured_at": "2026-07-27T07:08:04Z",
+  "attempts": [
+    {
+      "config": {
+        "name": "seed_only",
+        "filters": {}
+      },
+      "vendor_calls": [
+        {
+          "method": "POST",
+          "url": "https://api.ocean.io/v3/search/companies",
+          "request_headers": {
+            "X-Api-Token": "***REDACTED***",
+            "Content-Type": "application/json",
+            "Accept": "application/json",
+            "User-Agent": "openfunnel-bench/0.1 (+https://openfunnel.dev/bench; contact=founders@openfunnel.dev)"
+          },
+          "request_body": {
+            "size": 100,
+            "companiesFilters": {
+              "lookalikeDomains": [
+                "faire.com"
+              ],
+              "excludeDomains": [
+                "faire.com"
+              ]
+            }
+          },
+          "response_status": 200,
+          "response_body": {
+            "detail": "Missing some `lookalikeDomains`",
+            "total": 0,
+            "missingDomains": {
+              "faire.com": "crawler failed"
+            },
+            "creditsUsed": 0.0,
+            "companies": []
+          },
+          "elapsed_ms": 944
+        }
+      ],
+      "extracted_candidates": [],
+      "judge_calls": [],
+      "result": {
+        "status": "no_candidates",
+        "latency_ms": 944
+      }
+    },
+    {
+      "config": {
+        "name": "mid_market",
+        "filters": {
+          "companySizes": [
+            "51-200",
+            "201-500",
+            "501-1000"
+          ]
+        }
+      },
+      "vendor_calls": [
+        {
+          "method": "POST",
+          "url": "https://api.ocean.io/v3/search/companies",
+          "request_headers": {
+            "X-Api-Token": "***REDACTED***",
+            "Content-Type": "application/json",
+            "Accept": "application/json",
+            "User-Agent": "openfunnel-bench/0.1 (+https://openfunnel.dev/bench; contact=founders@openfunnel.dev)"
+          },
+          "request_body": {
+            "size": 100,
+            "companiesFilters": {
+              "lookalikeDomains": [
+                "faire.com"
+              ],
+              "excludeDomains": [
+                "faire.com"
+              ],
+              "companySizes": [
+                "51-200",
+                "201-500",
+                "501-1000"
+              ]
+            }
+          },
+          "response_status": 200,
+          "response_body": {
+            "detail": "Missing some `lookalikeDomains`",
+            "total": 0,
+            "missingDomains": {
+              "faire.com": "crawler failed"
+            },
+            "creditsUsed": 0.0,
+            "companies": []
+          },
+          "elapsed_ms": 886
+        }
+      ],
+      "extracted_candidates": [],
+      "judge_calls": [],
+      "result": {
+        "status": "no_candidates",
+        "latency_ms": 886
+      }
+    },
+    {
+      "config": {
+        "name": "us_uk_de_funded",
+        "filters": {
+          "companySizes": [
+            "51-200",
+            "201-500",
+            "501-1000"
+          ],
+          "primaryLocations": {
+            "includeCountries": [
+              "us",
+              "gb",
+              "de"
+            ]
+          }
+        }
+      },
+      "vendor_calls": [
+        {
+          "method": "POST",
+          "url": "https://api.ocean.io/v3/search/companies",
+          "request_headers": {
+            "X-Api-Token": "***REDACTED***",
+            "Content-Type": "application/json",
+            "Accept": "application/json",
+            "User-Agent": "openfunnel-bench/0.1 (+https://openfunnel.dev/bench; contact=founders@openfunnel.dev)"
+          },
+          "request_body": {
+            "size": 100,
+            "companiesFilters": {
+              "lookalikeDomains": [
+                "faire.com"
+              ],
+              "excludeDomains": [
+                "faire.com"
+              ],
+              "companySizes": [
+                "51-200",
+                "201-500",
+                "501-1000"
+              ],
+              "primaryLocations": {
+                "includeCountries": [
+                  "us",
+                  "gb",
+                  "de"
+                ]
+              }
+            }
+          },
+          "response_status": 200,
+          "response_body": {
+            "detail": "Missing some `lookalikeDomains`",
+            "total": 0,
+            "missingDomains": {
+              "faire.com": "crawler failed"
+            },
+            "creditsUsed": 0.0,
+            "companies": []
+          },
+          "elapsed_ms": 865
+        }
+      ],
+      "extracted_candidates": [],
+      "judge_calls": [],
+      "result": {
+        "status": "no_candidates",
+        "latency_ms": 865
+      }
+    },
+    {
+      "config": {
+        "name": "seed_firmographic",
+        "use_seed_firmo": true
+      },
+      "vendor_calls": [],
+      "extracted_candidates": [],
+      "judge_calls": [],
+      "result": {
+        "status": "vendor_error",
+        "error": "skipped: ocean: firmographic config skipped (no hints for seed)",
+        "latency_ms": 0
+      }
+    }
+  ]
+}

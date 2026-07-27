@@ -10,6 +10,9 @@ picking the one that maximizes Precision@K for the seed.
 """
 from . import (  # noqa: F401
     exa,
+    extruct,
+    cufinder,
+    discolike,
     lusha,
     mock,
     ocean,
@@ -30,6 +33,9 @@ from . import (  # noqa: F401
 REGISTRY = {
     ocean.VENDOR_SLUG: ocean,
     exa.VENDOR_SLUG: exa,
+    extruct.VENDOR_SLUG: extruct,
+    cufinder.VENDOR_SLUG: cufinder,
+    discolike.VENDOR_SLUG: discolike,
     parallel.VENDOR_SLUG: parallel,
     predictleads.VENDOR_SLUG: predictleads,
 }
