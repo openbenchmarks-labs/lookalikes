@@ -731,6 +731,39 @@ def capture_http_calls() -> Iterator[list[RawHttpCall]]:
         _HTTP_TRACE.reset(token)
 
 
+def record_vendor_call(
+    *,
+    method: str,
+    url: str,
+    request_body: Any,
+    response_status: int,
+    response_body: Any,
+    elapsed_ms: int,
+) -> None:
+    """Add a non-HTTP vendor invocation (for example a local vendor CLI) to the
+    same raw audit trail as HTTP-backed runners.
+
+    request_headers is empty by construction: a CLI carries its credentials in
+    the environment or a config file, not in a header we could capture, so
+    there is nothing to redact and nothing to claim we captured.
+    """
+    trace = _HTTP_TRACE.get()
+    if trace is None:
+        return
+    trace.append(
+        RawHttpCall(
+            method=method,
+            url=url,
+            request_headers={},
+            request_body=request_body,
+            response_status=response_status,
+            response_body=response_body,
+            response_text_preview=json.dumps(response_body, ensure_ascii=False)[:4096],
+            elapsed_ms=elapsed_ms,
+        )
+    )
+
+
 def _redact_headers(headers: dict[str, str]) -> dict[str, str]:
     """Replace values of well-known auth headers with REDACTED_PLACEHOLDER
     so the open-source raw artifacts can't leak API keys."""

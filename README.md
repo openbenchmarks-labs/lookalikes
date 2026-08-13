@@ -7,8 +7,11 @@ Published and maintained by **[OpenBenchmarks Labs](https://openbenchmarks.com)*
 **Live benchmark:** https://openbenchmarks.com/lookalikes
 
 This repo is the open data + code mirror of that page — every cell on the
-leaderboard is backed by a literal HTTP request/response envelope and a
+leaderboard is backed by the literal vendor call that produced it and the
 literal LLM judge prompt + response, both committed under `data/lookalike-runs/`.
+For seven of the eight vendors that call is an HTTP request/response envelope;
+ZoomInfo has no API for this, so its cells record the `gtm` CLI invocation
+instead.
 
 For each seed company, each provider returns an ordered list of lookalikes. A panel
 of three LLMs from three independent labs scores every returned company, and a
@@ -56,9 +59,9 @@ and the same vendor rarely wins both.
 | 4 | Exa | 48.6% | 48/48 |
 | 5 | Discolike | 34.6% | 47/48 |
 
-CUFinder and PredictLeads do not appear on this board. Their endpoints return at
-most 10 and 25 results respectively, so ranking them at a cutoff they cannot reach
-would report the ceiling rather than the provider.
+CUFinder, PredictLeads and ZoomInfo do not appear on this board. Their endpoints
+return at most 10, 25 and 25 results respectively, so ranking them at a cutoff they
+cannot reach would report the ceiling rather than the provider.
 
 **Short list — Precision@10.** How relevant the top of the list is, which is what
 matters when a person works the results by hand.
@@ -70,11 +73,12 @@ matters when a person works the results by hand.
 | 3 | Extruct | 75.0% | 48/48 |
 | 4 | Ocean.io | 74.3% | 47/48 |
 | 5 | Parallel | 69.2% | 47/48 |
-| 6 | Discolike | 41.9% | 47/48 |
-| 7 | CUFinder | 38.9% | 47/48 |
+| 6 | ZoomInfo | 67.1% | 48/48 |
+| 7 | Discolike | 41.9% | 47/48 |
+| 8 | CUFinder | 38.9% | 47/48 |
 
-48 seed companies × 7 vendors. The full per-cell breakdown
-and the raw audit trail (every HTTP request + every judge call) lives under
+48 seed companies × 8 vendors. The full per-cell breakdown
+and the raw audit trail (every vendor call + every judge call) lives under
 `data/lookalike-runs/`.
 
 ## What's in this repo
@@ -83,7 +87,7 @@ and the raw audit trail (every HTTP request + every judge call) lives under
 |---|---|
 | `data/latest-lookalike.json` | The leaderboard snapshot — seeds (with anchor, capabilities and authored query), per-vendor rows, per-cell aggregates. |
 | `data/lookalike-runs/<dataset>/<seed>/<vendor>.json` | Slim per-cell artifact — winning config's candidates with the panel's verdict, per-judge votes, anchor decision and matched capabilities. |
-| `data/lookalike-runs/<dataset>/<seed>/<vendor>.raw.json` | **Full audit trail** — every config attempted, with the literal HTTP request/response (auth headers redacted) and the literal LLM prompt + raw response for every judge × candidate. |
+| `data/lookalike-runs/<dataset>/<seed>/<vendor>.raw.json` | **Full audit trail** — every config attempted, with the literal vendor call (HTTP request/response with auth headers redacted, or a CLI invocation for ZoomInfo) and the literal LLM prompt + raw response for every judge × candidate. |
 | `data/lookalike-runs/README.md` | Schema docs for the raw artifacts. |
 | `manifest.json` | Flat index of every cell with the headline numbers + file paths. Easy to ingest programmatically. |
 | `scripts/run_lookalike_benchmark.py` | Orchestrator. Sweeps every config each vendor declares; keeps the highest-Precision@K winner per cell. |
@@ -101,7 +105,9 @@ Pick any (seed, vendor) pair on the leaderboard. The corresponding raw file at
 `data/lookalike-runs/<dataset>/<seed>/<vendor>.raw.json` contains, for every
 config the orchestrator swept:
 
-- **`vendor_calls[].request_*`** — replay the HTTP call with your own credentials.
+- **`vendor_calls[].request_*`** — replay the vendor call with your own
+  credentials. `method` is the HTTP verb for API-backed vendors and `"CLI"` for
+  ZoomInfo, where `url` is the command and `request_body` its arguments.
 - **`judge_calls[].messages`** — replay the literal LLM prompt (one entry per
   judge × candidate) against any OpenAI-v1 compatible model (OpenAI direct,
   Azure, Anthropic via converter, local llama, your own fine-tune).
@@ -110,7 +116,7 @@ Judge calls carry a `cached` flag. Within a run a verdict is memoised on
 (judge, prompt version, seed, candidate), so a company returned by several vendors is
 scored once and the reused entries are marked rather than silently omitted.
 
-Every Precision@K number is backed by a literal HTTP envelope you can re-run plus
+Every Precision@K number is backed by a literal vendor call you can re-run plus
 the literal LLM prompts you can re-score with your own judge(s) to measure bias.
 
 ## Running the benchmark yourself
@@ -146,7 +152,7 @@ reproduce a majority-vote result.
 
 ## Methodology
 
-- **Fixed cohort and cutoffs.** The Q3 snapshot scores 48 seed companies across seven
+- **Fixed cohort and cutoffs.** The Q3 snapshot scores 48 seed companies across eight
   providers. We request up to 100 ranked candidates and report Precision@10 and
   Precision@100, each only where a provider's endpoint reaches that depth.
 - **Precision@N.** Relevant companies in the top N ÷ N. The denominator is the cutoff,
@@ -174,6 +180,14 @@ reproduce a majority-vote result.
   the rubric. Every seed's query is published in `data/latest-lookalike.json` and in
   the per-cell audit trail. The earlier three-variant prompt sweep has been retired,
   so a published figure is a single query's result rather than a per-seed maximum.
+- **One vendor is CLI-driven.** ZoomInfo's similar-companies surface is not an HTTP
+  API: the runner shells out to `gtm companies similar --name "<seed>"`, so its audit
+  trail records the command, its arguments, its exit status and its raw output instead
+  of a request envelope. Reproducing a ZoomInfo cell needs the ZoomInfo GTM CLI on
+  PATH and a contract, where every other vendor needs only an API key. Its results
+  also carry no website and no description, only a name plus ZoomInfo's own
+  firmographic attributes and a similarity score, and the benchmark scores what the
+  endpoint returned rather than enriching it in a second call.
 - **Duplicate handling.** A shared post-fetch check removes duplicate companies before
   scoring. Repeated companies count once; the raw audit trail retains the original
   calls and dedupe record.

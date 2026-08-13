@@ -1,0 +1,858 @@
+{
+  "dataset_slug": "lookalike-2026-q3",
+  "seed_slug": "crowdstrike",
+  "provider_slug": "zoominfo-lookalike",
+  "config_name": "native_similar_by_name",
+  "config": {
+    "name": "native_similar_by_name"
+  },
+  "k": 100,
+  "relevant_count": 12,
+  "precision_at_k": 12.0,
+  "relevant_count_at_10": 5,
+  "relevant_count_at_25": 12,
+  "relevant_count_at_100": 12,
+  "precision_at_10": 50.0,
+  "precision_at_25": 48.0,
+  "precision_at_100": 12.0,
+  "latency_ms": 2029,
+  "cost_usd": null,
+  "duplicates_removed": 0,
+  "max_results": 25,
+  "judge_model": "majority(n=3): claude-opus-5,gpt-5.6-terra,kimi-k3",
+  "judged_at": "2026-08-13T17:27:04Z",
+  "candidates": [
+    {
+      "name": "Microsoft",
+      "domain": null,
+      "description": null,
+      "rank": 1,
+      "extra": {
+        "zoominfo_company_id": 24904409,
+        "similarity_score": 0.9200000166893005,
+        "industry": "[Database & File Management Software, Software Development & Design, Software]",
+        "revenue_range": "Over $5 bil.",
+        "employee_range": "Over 10,000",
+        "country": "United States"
+      },
+      "relevant": false,
+      "rationale": "Anchor false: Microsoft is a diversified technology company, though its security products offer endpoint protection, threat intelligence, and incident response.",
+      "anchor_match": false,
+      "capabilities_matched": [
+        "endpoint protection",
+        "threat intelligence",
+        "incident response"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Anchor false: Microsoft is a diversified technology company, though its security products offer endpoint protection, threat intelligence, and incident response."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Anchor false: Microsoft is a diversified software/cloud company, not fundamentally a cloud-native cybersecurity platform; Defender/security is one line despite capability overlap."
+        }
+      ]
+    },
+    {
+      "name": "Palo Alto Networks",
+      "domain": null,
+      "description": null,
+      "rank": 2,
+      "extra": {
+        "zoominfo_company_id": 141951307,
+        "similarity_score": 0.8999999761581421,
+        "industry": "[Security software, Software Development & Design, Software]",
+        "revenue_range": "Over $5 bil.",
+        "employee_range": "Over 10,000",
+        "country": "United States"
+      },
+      "relevant": true,
+      "rationale": "Anchor true: cloud cybersecurity platform; overlaps endpoint protection, threat intelligence, and incident response.",
+      "anchor_match": true,
+      "capabilities_matched": [
+        "endpoint protection",
+        "threat intelligence",
+        "incident response"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Anchor true: cloud cybersecurity platform; overlaps endpoint protection, threat intelligence, and incident response."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Anchor match: enterprise cybersecurity platform. Overlaps via Cortex XDR endpoint protection, Unit 42 threat intelligence, and incident response services."
+        }
+      ]
+    },
+    {
+      "name": "Armorblox",
+      "domain": null,
+      "description": null,
+      "rank": 3,
+      "extra": {
+        "zoominfo_company_id": 466531266,
+        "similarity_score": 0.898143649,
+        "industry": "[Security software, Software Development & Design, Software]",
+        "revenue_range": "$10 mil. - $25 mil.",
+        "employee_range": "100 - 250",
+        "country": "United States"
+      },
+      "relevant": true,
+      "rationale": "Anchor true: cloud-native cybersecurity platform; overlaps in threat intelligence and incident response for email threats.",
+      "anchor_match": true,
+      "capabilities_matched": [
+        "threat intelligence",
+        "incident response"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Anchor true: cloud-native cybersecurity platform; overlaps in threat intelligence and incident response for email threats."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Anchor true: cloud-native enterprise cybersecurity (email security). Overlaps on threat intelligence via email attack detection/research; no endpoint protection or IR."
+        }
+      ]
+    },
+    {
+      "name": "Sotero",
+      "domain": null,
+      "description": null,
+      "rank": 4,
+      "extra": {
+        "zoominfo_company_id": 456401389,
+        "similarity_score": 0.896116555,
+        "industry": "[Security software, Software Development & Design, Software]",
+        "revenue_range": "$1 mil. - $5 mil.",
+        "employee_range": "20 - 50",
+        "country": "United States"
+      },
+      "relevant": false,
+      "rationale": "Anchor true: Sotero is a cloud data-security platform; no evidence of endpoint protection, threat intelligence, or incident response.",
+      "anchor_match": true,
+      "capabilities_matched": [],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Anchor true: Sotero is a cloud data-security platform; no evidence of endpoint protection, threat intelligence, or incident response."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Anchor true: Sotero is an enterprise cybersecurity (data-security) platform. But it offers none of endpoint protection, threat intelligence, or incident response \u2014 no overlap."
+        }
+      ]
+    },
+    {
+      "name": "Red Canary",
+      "domain": null,
+      "description": null,
+      "rank": 5,
+      "extra": {
+        "zoominfo_company_id": 56426943,
+        "similarity_score": 0.891113937,
+        "industry": "[Security software, Software Development & Design, Software]",
+        "revenue_range": "$50 mil. - $100 mil.",
+        "employee_range": "250 - 500",
+        "country": "United States"
+      },
+      "relevant": true,
+      "rationale": "Anchor true: Red Canary is a cloud-based cybersecurity/MDR platform; overlap includes threat intelligence and incident response.",
+      "anchor_match": true,
+      "capabilities_matched": [
+        "threat intelligence",
+        "incident response",
+        "endpoint protection"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Anchor true: Red Canary is a cloud-based cybersecurity/MDR platform; overlap includes threat intelligence and incident response."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Red Canary is a cloud-native cybersecurity platform (MDR) for the same customers; matches endpoint protection, threat intelligence, incident response."
+        }
+      ]
+    },
+    {
+      "name": "Signal",
+      "domain": null,
+      "description": null,
+      "rank": 6,
+      "extra": {
+        "zoominfo_company_id": 207520412,
+        "similarity_score": 0.887412488,
+        "industry": "[Advertising & Marketing, Business Services]",
+        "revenue_range": "$5 mil. - $10 mil.",
+        "employee_range": "5 - 10",
+        "country": "United States"
+      },
+      "relevant": false,
+      "rationale": "Anchor false: Signal is classified in advertising and marketing services, not evidenced as a cloud-native cybersecurity platform; no listed capability overlap established.",
+      "anchor_match": false,
+      "capabilities_matched": [],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Anchor false: Signal is classified in advertising and marketing services, not evidenced as a cloud-native cybersecurity platform; no listed capability overlap established."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Anchor false: Signal is an advertising/marketing services company, not a cloud-native cybersecurity platform; no capability overlap."
+        }
+      ]
+    },
+    {
+      "name": "ActZero",
+      "domain": null,
+      "description": null,
+      "rank": 7,
+      "extra": {
+        "zoominfo_company_id": 480520111,
+        "similarity_score": 0.880110204,
+        "industry": "[Security software, Software Development & Design, Software]",
+        "revenue_range": "$10 mil. - $25 mil.",
+        "employee_range": "100 - 250",
+        "country": "United States"
+      },
+      "relevant": true,
+      "rationale": "ActZero is a cloud-native cybersecurity platform (managed detection and response) offering endpoint protection, threat intelligence, and incident response.",
+      "anchor_match": true,
+      "capabilities_matched": [
+        "endpoint protection",
+        "threat intelligence",
+        "incident response"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Anchor false: ActZero is primarily a managed detection and response provider, not a cloud-native cybersecurity platform; overlaps threat intelligence and incident response."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "ActZero is a cloud-native cybersecurity platform (managed detection and response) offering endpoint protection, threat intelligence, and incident response."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "ActZero is an AI-driven cloud MDR security platform; overlaps endpoint protection, threat intel, incident response."
+        }
+      ]
+    },
+    {
+      "name": "VMware",
+      "domain": null,
+      "description": null,
+      "rank": 8,
+      "extra": {
+        "zoominfo_company_id": 297468076,
+        "similarity_score": 0.8799999952316284,
+        "industry": "[Business Intelligence (BI) Software, Software Development & Design, Software]",
+        "revenue_range": "$1 bil. - $5 bil.",
+        "employee_range": "Over 10,000",
+        "country": "United States"
+      },
+      "relevant": false,
+      "rationale": "Anchor false: VMware is primarily cloud and virtualization infrastructure, though its Carbon Black security offerings include endpoint protection, threat intelligence, and incident response.",
+      "anchor_match": false,
+      "capabilities_matched": [
+        "endpoint protection",
+        "threat intelligence",
+        "incident response"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Anchor false: VMware is primarily cloud and virtualization infrastructure, though its Carbon Black security offerings include endpoint protection, threat intelligence, and incident response."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "VMware's primary business is virtualization/cloud infrastructure software, not a cloud-native cybersecurity platform; different category, so anchor fails despite security side products."
+        }
+      ]
+    },
+    {
+      "name": "ARMS Cyber Defense",
+      "domain": null,
+      "description": null,
+      "rank": 9,
+      "extra": {
+        "zoominfo_company_id": 557762393,
+        "similarity_score": 0.876947045,
+        "industry": "[Security software, Software Development & Design, Software]",
+        "revenue_range": "$1 mil. - $5 mil.",
+        "employee_range": "5 - 10",
+        "country": "United States"
+      },
+      "relevant": true,
+      "rationale": "Cybersecurity software vendor selling security to enterprises, same market as CrowdStrike; overlaps on threat intelligence and incident response.",
+      "anchor_match": true,
+      "capabilities_matched": [
+        "threat intelligence",
+        "incident response",
+        "endpoint protection"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Anchor false: available information identifies security software but does not establish a cloud-native cybersecurity platform or listed capability overlap."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Cybersecurity software vendor selling security to enterprises, same market as CrowdStrike; overlaps on threat intelligence and incident response."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Cyber defense security software vendor with endpoint-focused protection; same category, capability overlap."
+        }
+      ]
+    },
+    {
+      "name": "R-Mor",
+      "domain": null,
+      "description": null,
+      "rank": 10,
+      "extra": {
+        "zoominfo_company_id": 455241842,
+        "similarity_score": 0.876141608,
+        "industry": "[Software & Technical Consulting, Software]",
+        "revenue_range": "$1 mil. - $5 mil.",
+        "employee_range": "10 - 20",
+        "country": "United States"
+      },
+      "relevant": false,
+      "rationale": "Anchor false: available information does not establish a cloud-native cybersecurity platform or any listed capability overlap.",
+      "anchor_match": false,
+      "capabilities_matched": [],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Anchor false: available information does not establish a cloud-native cybersecurity platform or any listed capability overlap."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Anchor fails: R-Mor appears to be software/technical consulting, not a cloud-native cybersecurity platform; no evidence of endpoint, threat intel, or IR products."
+        }
+      ]
+    },
+    {
+      "name": "Trend Micro",
+      "domain": null,
+      "description": null,
+      "rank": 11,
+      "extra": {
+        "zoominfo_company_id": 90243300,
+        "similarity_score": 0.800000011920929,
+        "industry": "[Security software, Software Development & Design, Software]",
+        "revenue_range": "$1 bil. - $5 bil.",
+        "employee_range": "5,000 - 10,000",
+        "country": "Japan"
+      },
+      "relevant": true,
+      "rationale": "Anchor true: Trend Micro is a cybersecurity platform with endpoint protection, threat intelligence, and incident response.",
+      "anchor_match": true,
+      "capabilities_matched": [
+        "endpoint protection",
+        "threat intelligence",
+        "incident response"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Anchor true: Trend Micro is a cybersecurity platform with endpoint protection, threat intelligence, and incident response."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Trend Micro is a cybersecurity platform vendor (Vision One, cloud security); matches endpoint protection, threat intelligence, and incident response."
+        }
+      ]
+    },
+    {
+      "name": "Sophos",
+      "domain": null,
+      "description": null,
+      "rank": 12,
+      "extra": {
+        "zoominfo_company_id": 35651934,
+        "similarity_score": 0.7799999713897705,
+        "industry": "[Security software, Software Development & Design, Software]",
+        "revenue_range": "$500 mil. - $1 bil.",
+        "employee_range": "1,000 - 5,000",
+        "country": "United Kingdom"
+      },
+      "relevant": true,
+      "rationale": "Anchor true: Sophos is a cybersecurity platform with endpoint protection, threat intelligence, and incident response capabilities.",
+      "anchor_match": true,
+      "capabilities_matched": [
+        "endpoint protection",
+        "threat intelligence",
+        "incident response"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Anchor true: Sophos is a cybersecurity platform with endpoint protection, threat intelligence, and incident response capabilities."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Anchor match: Sophos is a cybersecurity platform for business customers; overlaps endpoint protection, threat intelligence, and incident response (MDR)."
+        }
+      ]
+    },
+    {
+      "name": "Fortinet",
+      "domain": null,
+      "description": null,
+      "rank": 13,
+      "extra": {
+        "zoominfo_company_id": 41323685,
+        "similarity_score": 0.7699999809265137,
+        "industry": "[Security software, Software Development & Design, Software]",
+        "revenue_range": "Over $5 bil.",
+        "employee_range": "Over 10,000",
+        "country": "United States"
+      },
+      "relevant": true,
+      "rationale": "Anchor true: Fortinet is a cybersecurity platform with endpoint protection, threat intelligence, and incident response offerings.",
+      "anchor_match": true,
+      "capabilities_matched": [
+        "endpoint protection",
+        "threat intelligence",
+        "incident response"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Anchor true: Fortinet is a cybersecurity platform with endpoint protection, threat intelligence, and incident response offerings."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Anchor match: Fortinet is a cybersecurity platform vendor like CrowdStrike; offers endpoint protection (FortiEDR), FortiGuard threat intelligence, and incident response services."
+        }
+      ]
+    },
+    {
+      "name": "Check Point",
+      "domain": null,
+      "description": null,
+      "rank": 14,
+      "extra": {
+        "zoominfo_company_id": 23857792,
+        "similarity_score": 0.75,
+        "industry": "[Security software, Software Development & Design, Software]",
+        "revenue_range": "$1 bil. - $5 bil.",
+        "employee_range": "5,000 - 10,000",
+        "country": "Israel"
+      },
+      "relevant": true,
+      "rationale": "Anchor true: Check Point is a cybersecurity platform with endpoint protection, threat intelligence, and incident response capabilities.",
+      "anchor_match": true,
+      "capabilities_matched": [
+        "endpoint protection",
+        "threat intelligence",
+        "incident response"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Anchor true: Check Point is a cybersecurity platform with endpoint protection, threat intelligence, and incident response capabilities."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Anchor true: Check Point is an enterprise cybersecurity platform like CrowdStrike; overlaps via Harmony endpoint protection, ThreatCloud threat intelligence, incident response services."
+        }
+      ]
+    },
+    {
+      "name": "Rapid7",
+      "domain": null,
+      "description": null,
+      "rank": 15,
+      "extra": {
+        "zoominfo_company_id": 32129583,
+        "similarity_score": 0.7117711901664734,
+        "industry": "[Security software, Software Development & Design, Software]",
+        "revenue_range": "$500 mil. - $1 bil.",
+        "employee_range": "1,000 - 5,000",
+        "country": "United States"
+      },
+      "relevant": true,
+      "rationale": "Anchor true: Rapid7 is a cybersecurity platform with endpoint protection, threat intelligence, and incident response capabilities.",
+      "anchor_match": true,
+      "capabilities_matched": [
+        "endpoint protection",
+        "threat intelligence",
+        "incident response"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Anchor true: Rapid7 is a cybersecurity platform with endpoint protection, threat intelligence, and incident response capabilities."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Rapid7 is a cloud-native cybersecurity platform (Insight platform) offering endpoint protection, threat intelligence, and incident response \u2014 full anchor and capability match."
+        }
+      ]
+    },
+    {
+      "name": "Red Hat",
+      "domain": null,
+      "description": null,
+      "rank": 16,
+      "extra": {
+        "zoominfo_company_id": 32408079,
+        "similarity_score": 0.703990638256073,
+        "industry": "[Security software, Software Development & Design, Software]",
+        "revenue_range": "$1 bil. - $5 bil.",
+        "employee_range": "Over 10,000",
+        "country": "United States"
+      },
+      "relevant": false,
+      "rationale": "Anchor false: Red Hat is an enterprise open-source software vendor, not a cloud-native cybersecurity platform; no listed capability overlap established.",
+      "anchor_match": false,
+      "capabilities_matched": [],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Anchor false: Red Hat is an enterprise open-source software vendor, not a cloud-native cybersecurity platform; no listed capability overlap established."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Anchor false: Red Hat is enterprise open-source infrastructure software (Linux, OpenShift), not a cybersecurity platform; no endpoint/threat/IR capabilities."
+        }
+      ]
+    },
+    {
+      "name": "SentinelOne",
+      "domain": null,
+      "description": null,
+      "rank": 17,
+      "extra": {
+        "zoominfo_company_id": 365529057,
+        "similarity_score": 0.701418399810791,
+        "industry": "[Security software, Software Development & Design, Software]",
+        "revenue_range": "$500 mil. - $1 bil.",
+        "employee_range": "1,000 - 5,000",
+        "country": "United States"
+      },
+      "relevant": true,
+      "rationale": "Anchor true: SentinelOne is a cloud-native cybersecurity platform with endpoint protection, threat intelligence, and incident response.",
+      "anchor_match": true,
+      "capabilities_matched": [
+        "endpoint protection",
+        "threat intelligence",
+        "incident response"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Anchor true: SentinelOne is a cloud-native cybersecurity platform with endpoint protection, threat intelligence, and incident response."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Anchor match: SentinelOne is a cloud-native cybersecurity platform; offers endpoint protection (Singularity), threat intelligence, and incident response."
+        }
+      ]
+    },
+    {
+      "name": "Google",
+      "domain": null,
+      "description": null,
+      "rank": 18,
+      "extra": {
+        "zoominfo_company_id": 16400573,
+        "similarity_score": 0.699999988079071,
+        "industry": "[Information Collection & Delivery, Media & Internet]",
+        "revenue_range": "Over $5 bil.",
+        "employee_range": "Over 10,000",
+        "country": "United States"
+      },
+      "relevant": false,
+      "rationale": "Anchor false: Google is a broad technology company, not primarily a cloud-native cybersecurity platform; it offers threat intelligence and incident response.",
+      "anchor_match": false,
+      "capabilities_matched": [
+        "threat intelligence",
+        "incident response"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Anchor false: Google is a broad technology company, not primarily a cloud-native cybersecurity platform; it offers threat intelligence and incident response."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Google's primary business is search/advertising internet services, not a cybersecurity platform; anchor fails despite Mandiant-side threat intel and IR."
+        }
+      ]
+    },
+    {
+      "name": "Palantir",
+      "domain": null,
+      "description": null,
+      "rank": 19,
+      "extra": {
+        "zoominfo_company_id": 51495762,
+        "similarity_score": 0.6985199451446533,
+        "industry": "[Security software, Software Development & Design, Software]",
+        "revenue_range": "$1 bil. - $5 bil.",
+        "employee_range": "1,000 - 5,000",
+        "country": "United States"
+      },
+      "relevant": false,
+      "rationale": "Anchor false: Palantir is primarily an enterprise/government data and AI platform; overlap includes threat intelligence.",
+      "anchor_match": false,
+      "capabilities_matched": [
+        "threat intelligence"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Anchor false: Palantir is primarily an enterprise/government data and AI platform; overlap includes threat intelligence."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Anchor false: Palantir is a data-analytics platform, not a cloud-native cybersecurity platform; no clear endpoint/threat-intel/IR product."
+        }
+      ]
+    },
+    {
+      "name": "Cloud Software Group",
+      "domain": null,
+      "description": null,
+      "rank": 20,
+      "extra": {
+        "zoominfo_company_id": 343971915,
+        "similarity_score": 0.6932092905044556,
+        "industry": "[Enterprise Resource Planning (ERP) Software, Software Development & Design, Software]",
+        "revenue_range": "$1 bil. - $5 bil.",
+        "employee_range": "Over 10,000",
+        "country": "United States"
+      },
+      "relevant": false,
+      "rationale": "Anchor false: Cloud Software Group is a software holding company, not a cloud-native cybersecurity platform; no listed capability overlap evidenced.",
+      "anchor_match": false,
+      "capabilities_matched": [],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Anchor false: Cloud Software Group is a software holding company, not a cloud-native cybersecurity platform; no listed capability overlap evidenced."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Holding company (Citrix/TIBCO) for enterprise software, not a cloud-native cybersecurity platform; no endpoint/threat/IR offering."
+        }
+      ]
+    },
+    {
+      "name": "Rocket Software",
+      "domain": null,
+      "description": null,
+      "rank": 21,
+      "extra": {
+        "zoominfo_company_id": 100811063,
+        "similarity_score": 0.6885639429092407,
+        "industry": "[Software & Technical Consulting, Software]",
+        "revenue_range": "$500 mil. - $1 bil.",
+        "employee_range": "1,000 - 5,000",
+        "country": "United States"
+      },
+      "relevant": false,
+      "rationale": "Anchor false: Rocket Software is enterprise modernization software, not a cloud-native cybersecurity platform; no listed capability overlap evidenced.",
+      "anchor_match": false,
+      "capabilities_matched": [],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Anchor false: Rocket Software is enterprise modernization software, not a cloud-native cybersecurity platform; no listed capability overlap evidenced."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Rocket Software sells enterprise infrastructure/mainframe modernization software, not a cloud-native cybersecurity platform; no endpoint, threat intel, or IR overlap."
+        }
+      ]
+    },
+    {
+      "name": "Chronicle Security",
+      "domain": null,
+      "description": null,
+      "rank": 22,
+      "extra": {
+        "zoominfo_company_id": 465930954,
+        "similarity_score": 0.6847574710845947,
+        "industry": "[Software & Technical Consulting, Software]",
+        "revenue_range": "$1 bil. - $5 bil.",
+        "employee_range": "Over 10,000",
+        "country": "United States"
+      },
+      "relevant": true,
+      "rationale": "Anchor true: cloud-native cybersecurity platform; overlaps in threat intelligence and incident response.",
+      "anchor_match": true,
+      "capabilities_matched": [
+        "threat intelligence",
+        "incident response"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Anchor true: cloud-native cybersecurity platform; overlaps in threat intelligence and incident response."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Cloud-native cybersecurity platform (Google-backed security analytics) matching anchor; offers threat intelligence and detection/incident response, but not endpoint protection."
+        }
+      ]
+    },
+    {
+      "name": "Infoblox",
+      "domain": null,
+      "description": null,
+      "rank": 23,
+      "extra": {
+        "zoominfo_company_id": 26722931,
+        "similarity_score": 0.6837802529335022,
+        "industry": "[Networking Software, Software Development & Design, Software]",
+        "revenue_range": "$500 mil. - $1 bil.",
+        "employee_range": "5,000 - 10,000",
+        "country": "United States"
+      },
+      "relevant": false,
+      "rationale": "Anchor false: Infoblox is primarily a network DDI and security platform; overlap is threat intelligence.",
+      "anchor_match": false,
+      "capabilities_matched": [
+        "threat intelligence"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Anchor false: Infoblox is primarily a network DDI and security platform; overlap is threat intelligence."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Infoblox's primary business is networking/DDI software, not a cloud-native cybersecurity platform; only overlaps on threat intelligence."
+        }
+      ]
+    },
+    {
+      "name": "Splunk",
+      "domain": null,
+      "description": null,
+      "rank": 24,
+      "extra": {
+        "zoominfo_company_id": 112427675,
+        "similarity_score": 0.6800000071525574,
+        "industry": "[Business Intelligence (BI) Software, Software Development & Design, Software]",
+        "revenue_range": "$1 bil. - $5 bil.",
+        "employee_range": "5,000 - 10,000",
+        "country": "United States"
+      },
+      "relevant": false,
+      "rationale": "Anchor false: Splunk is a data-analytics/SIEM and observability platform, not a cloud-native endpoint cybersecurity platform; different category despite security features.",
+      "anchor_match": false,
+      "capabilities_matched": [
+        "threat intelligence",
+        "incident response"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Anchor true: Splunk is a cybersecurity platform; overlap includes threat intelligence and incident response."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Anchor false: Splunk is a data-analytics/SIEM and observability platform, not a cloud-native endpoint cybersecurity platform; different category despite security features."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "Splunk is a data analytics/SIEM observability platform, not a cloud-native endpoint security platform; anchor fails despite SOC overlap."
+        }
+      ]
+    },
+    {
+      "name": "F5",
+      "domain": null,
+      "description": null,
+      "rank": 25,
+      "extra": {
+        "zoominfo_company_id": 32344088,
+        "similarity_score": 0.6753349900245667,
+        "industry": "[Security software, Software Development & Design, Software]",
+        "revenue_range": "$1 bil. - $5 bil.",
+        "employee_range": "5,000 - 10,000",
+        "country": "United States"
+      },
+      "relevant": false,
+      "rationale": "Anchor false: F5 primarily provides application delivery and application security, not a cloud-native endpoint cybersecurity platform; overlaps on threat intelligence.",
+      "anchor_match": false,
+      "capabilities_matched": [
+        "threat intelligence"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Anchor false: F5 primarily provides application delivery and application security, not a cloud-native endpoint cybersecurity platform; overlaps on threat intelligence."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "F5 is primarily application delivery/load balancing with add-on security, not a cloud-native endpoint cybersecurity platform; only threat intelligence overlaps."
+        }
+      ]
+    }
+  ],
+  "error": null
+}
