@@ -183,11 +183,13 @@ reproduce a majority-vote result.
 - **One vendor is CLI-driven.** ZoomInfo's similar-companies surface is not an HTTP
   API: the runner shells out to `gtm companies similar --name "<seed>"`, so its audit
   trail records the command, its arguments, its exit status and its raw output instead
-  of a request envelope. Reproducing a ZoomInfo cell needs the ZoomInfo GTM CLI on
-  PATH and a contract, where every other vendor needs only an API key. Its results
-  also carry no website and no description, only a name plus ZoomInfo's own
-  firmographic attributes and a similarity score, and the benchmark scores what the
-  endpoint returned rather than enriching it in a second call.
+  of a request envelope. Reproducing a ZoomInfo cell needs the GTM CLI on PATH rather
+  than an API key; sign-up is self-serve at gtm.ai and there is a free tier, so the
+  barrier is the install, not procurement. Its results also carry no website and no
+  description, only a name plus ZoomInfo's own firmographic attributes and a
+  similarity score, and the benchmark scores what the endpoint returned rather than
+  enriching it in a second call.
+
 - **Duplicate handling.** A shared post-fetch check removes duplicate companies before
   scoring. Repeated companies count once; the raw audit trail retains the original
   calls and dedupe record.

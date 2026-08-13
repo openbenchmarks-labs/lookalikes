@@ -32,8 +32,9 @@ from . import (  # noqa: F401
 # stays visible to readers.
 #
 # ZoomInfo runs through the `gtm` CLI rather than an HTTP API, so it needs the
-# binary on PATH and a ZoomInfo contract; the runner fails the cell cleanly
-# when `gtm` is missing rather than skipping it silently.
+# binary on PATH (self-serve sign-up at gtm.ai, free tier available) rather than
+# an API key; the runner fails the cell cleanly when `gtm` is missing rather
+# than skipping it silently.
 REGISTRY = {
     ocean.VENDOR_SLUG: ocean,
     exa.VENDOR_SLUG: exa,
