@@ -19,8 +19,8 @@
   "cost_usd": null,
   "duplicates_removed": 0,
   "max_results": 10,
-  "judge_model": "gpt-5.6",
-  "judged_at": "2026-07-27T06:54:04Z",
+  "judge_model": "majority(n=3): claude-opus-5,gpt-5.6-terra,kimi-k3",
+  "judged_at": "2026-08-10T20:15:22Z",
   "candidates": [
     {
       "name": "abb",
@@ -36,7 +36,19 @@
         "confidence_level": 99
       },
       "relevant": false,
-      "rationale": "Candidate is the same ABB entity, not a distinct lookalike company."
+      "rationale": "Candidate is ABB itself, a duplicate seed entry rather than a distinct lookalike company.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Candidate is ABB itself, a duplicate seed entry rather than a distinct lookalike company."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Duplicate entry of the seed itself (same company, abb.com), not a lookalike."
+        }
+      ]
     },
     {
       "name": "alpitronic",
@@ -52,7 +64,19 @@
         "confidence_level": 99
       },
       "relevant": true,
-      "rationale": "Both provide DC fast-charging infrastructure for electric vehicles, targeting charging-network operators and commercial infrastructure buyers."
+      "rationale": "Alpitronic manufactures DC fast-charging equipment, aligning with ABB's electrification portfolio as an industrial electrical-technology comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Alpitronic manufactures DC fast-charging equipment, aligning with ABB's electrification portfolio as an industrial electrical-technology comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Alpitronic builds DC fast-charging hardware; ABB's electrification/E-mobility division makes EV chargers, making them direct competitors in electrification technology."
+        }
+      ]
     },
     {
       "name": "chargepoint",
@@ -68,7 +92,19 @@
         "confidence_level": 99
       },
       "relevant": true,
-      "rationale": "ChargePoint and ABB both provide commercial EV charging infrastructure and software, serving fleet operators, businesses, and charging-network buyers."
+      "rationale": "ChargePoint and ABB both provide EV charging infrastructure and electrification solutions, making them direct comparables in electric mobility.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "ChargePoint and ABB both provide EV charging infrastructure and electrification solutions, making them direct comparables in electric mobility."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both make EV charging hardware/infrastructure; ChargePoint competes directly with ABB's e-mobility electrification business."
+        }
+      ]
     },
     {
       "name": "evbox",
@@ -84,7 +120,19 @@
         "confidence_level": 99
       },
       "relevant": true,
-      "rationale": "Both provide commercial EV charging hardware and management software for businesses building and operating electrified transport infrastructure."
+      "rationale": "EVBox and ABB both manufacture EV charging hardware and management solutions, making them direct comparables in electrification infrastructure.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "EVBox and ABB both manufacture EV charging hardware and management solutions, making them direct comparables in electrification infrastructure."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "ABB's e-mobility division makes EV charging hardware; EVBox competes directly in EV charging stations and management software, matching on product axis."
+        }
+      ]
     },
     {
       "name": "evgo",
@@ -100,7 +148,19 @@
         "confidence_level": 99
       },
       "relevant": false,
-      "rationale": "EVgo operates a public EV charging network, while ABB primarily supplies industrial electrification and automation equipment, potentially to charging-network operators."
+      "rationale": "EVgo operates public EV charging networks, whereas ABB primarily sells industrial electrification, automation, robotics, and equipment rather than charging-network services.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "EVgo operates public EV charging networks, whereas ABB primarily sells industrial electrification, automation, robotics, and equipment rather than charging-network services."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "EVgo operates EV charging networks, a downstream service; ABB makes industrial electrification/automation hardware. EVgo is a potential customer of ABB, not a peer or competitor."
+        }
+      ]
     },
     {
       "name": "fastned",
@@ -116,7 +176,19 @@
         "confidence_level": 99
       },
       "relevant": false,
-      "rationale": "Fastned operates an EV charging network, while ABB supplies industrial electrification and automation technology; Fastned is more likely a customer than a competitor."
+      "rationale": "Fastned operates public EV fast-charging stations, whereas ABB primarily sells industrial electrification, automation, robotics, and motion technology.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Fastned operates public EV fast-charging stations, whereas ABB primarily sells industrial electrification, automation, robotics, and motion technology."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Fastned operates EV charging stations (a service network, likely a customer of ABB's chargers); ABB makes industrial electrification/automation/robotics products \u2014 not peers."
+        }
+      ]
     },
     {
       "name": "ionity",
@@ -132,7 +204,19 @@
         "confidence_level": 99
       },
       "relevant": false,
-      "rationale": "IONITY operates an EV charging network, while ABB manufactures electrification and industrial automation technologies; IONITY is more likely an ABB customer than competitor."
+      "rationale": "IONITY operates a public EV charging network, whereas ABB primarily sells industrial electrification and automation equipment; it is closer to an infrastructure customer than competitor.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "IONITY operates a public EV charging network, whereas ABB primarily sells industrial electrification and automation equipment; it is closer to an infrastructure customer than competitor."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Ionity operates an EV charging network, while ABB makes industrial electrification/automation equipment; operator vs manufacturer, different market and model."
+        }
+      ]
     },
     {
       "name": "kempower",
@@ -148,7 +232,19 @@
         "confidence_level": 99
       },
       "relevant": true,
-      "rationale": "Kempower\u2019s DC fast-charging systems directly overlap ABB\u2019s EV charging and electrification offerings, targeting the same fleet, transit, and charging-infrastructure buyers."
+      "rationale": "Kempower\u2019s DC fast-charging systems directly overlap ABB\u2019s electrification and EV-charging business, making it an industrial electrification competitor/comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Kempower\u2019s DC fast-charging systems directly overlap ABB\u2019s electrification and EV-charging business, making it an industrial electrification competitor/comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both manufacture EV charging infrastructure; Kempower's DC fast chargers compete directly with ABB's E-mobility/electrification product line."
+        }
+      ]
     },
     {
       "name": "schneider electric",
@@ -164,7 +260,19 @@
         "confidence_level": 99
       },
       "relevant": true,
-      "rationale": "Both provide industrial electrification, automation, digital energy management, and control technologies to factories, infrastructure, buildings, and utilities."
+      "rationale": "Direct global competitor in electrification, industrial automation, energy management, and digital solutions for factories, infrastructure, and process industries.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Direct global competitor in electrification, industrial automation, energy management, and digital solutions for factories, infrastructure, and process industries."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Direct competitor in electrification, industrial automation, and energy technology; same products, markets, and business model as ABB."
+        }
+      ]
     },
     {
       "name": "siemens",
@@ -180,7 +288,20 @@
         "confidence_level": 99
       },
       "relevant": true,
-      "rationale": "Siemens directly overlaps ABB in industrial automation, electrification, motion, and digital manufacturing, serving the same industrial buyers and use cases."
+      "rationale": "Siemens directly competes with ABB in industrial automation, electrification, motion, digital infrastructure, and mobility technology.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Siemens directly competes with ABB in industrial automation, electrification, motion, digital infrastructure, and mobility technology."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Direct global competitor in industrial automation, electrification, and digital-industry technology; same products, markets, and business model."
+        }
+      ]
     }
-  ]
+  ],
+  "error": null
 }

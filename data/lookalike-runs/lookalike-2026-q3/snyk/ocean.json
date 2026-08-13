@@ -8,20 +8,20 @@
     "filters": {}
   },
   "k": 100,
-  "relevant_count": 76,
-  "precision_at_k": 76.0,
-  "relevant_count_at_10": 8,
-  "relevant_count_at_25": 19,
-  "relevant_count_at_100": 76,
-  "precision_at_10": 80.0,
-  "precision_at_25": 76.0,
-  "precision_at_100": 76.0,
+  "relevant_count": 86,
+  "precision_at_k": 86.0,
+  "relevant_count_at_10": 9,
+  "relevant_count_at_25": 22,
+  "relevant_count_at_100": 86,
+  "precision_at_10": 90.0,
+  "precision_at_25": 88.0,
+  "precision_at_100": 86.0,
   "latency_ms": 1961,
   "cost_usd": null,
   "duplicates_removed": 1,
   "max_results": null,
-  "judge_model": "gpt-5.6",
-  "judged_at": "2026-07-27T06:46:39Z",
+  "judge_model": "majority(n=3): claude-opus-5,gpt-5.6-terra,kimi-k3",
+  "judged_at": "2026-08-10T19:59:59Z",
   "candidates": [
     {
       "name": "mend.io",
@@ -98,7 +98,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Mend.io and Snyk both provide developer-focused application security platforms for identifying and remediating software vulnerabilities at enterprise scale."
+      "rationale": "Mend.io provides application-security vulnerability scanning and remediation for code, open-source dependencies, and development teams, directly overlapping Snyk's developer-security platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Mend.io provides application-security vulnerability scanning and remediation for code, open-source dependencies, and development teams, directly overlapping Snyk's developer-security platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Direct competitor: application security platform scanning code, open-source dependencies, and containers with automated remediation \u2014 same product and market as Snyk."
+        }
+      ]
     },
     {
       "name": "CognitivTrust",
@@ -144,8 +156,20 @@
         ],
         "relevance_score": "A"
       },
-      "relevant": false,
-      "rationale": "CognitivTrust provides secure-design guidance and threat modeling, not Snyk-like vulnerability scanning and remediation across code, dependencies, containers, and infrastructure."
+      "relevant": true,
+      "rationale": "Developer-focused application security platform integrating threat modeling and security reviews into workflows; comparable DevSecOps buyer and secure-code mission.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Developer-focused application security platform integrating threat modeling and security reviews into workflows; comparable DevSecOps buyer and secure-code mission."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Developer-security platform embedding security into development workflow, same buyer persona and application-security market as Snyk, though via AI guidance rather than scanning."
+        }
+      ]
     },
     {
       "name": "Precogs AI",
@@ -205,7 +229,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide developer-first application security that detects and remediates code vulnerabilities within source-control and CI/CD workflows."
+      "rationale": "AI-native developer application-security platform scans code, secrets, and cloud environments and remediates vulnerabilities in CI/CD, directly matching Snyk's core product.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "AI-native developer application-security platform scans code, secrets, and cloud environments and remediates vulnerabilities in CI/CD, directly matching Snyk's core product."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "AI-native application security platform finding and remediating code vulnerabilities in developer workflows \u2014 direct product and market competitor to Snyk."
+        }
+      ]
     },
     {
       "name": "Endor Labs",
@@ -277,7 +313,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide developer-focused application security platforms that identify, prioritize, and remediate vulnerabilities in code and open-source dependencies for AppSec teams."
+      "rationale": "Application-security platform securing code and open-source dependencies; directly overlaps Snyk\u2019s developer-security products and buyers.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Application-security platform securing code and open-source dependencies; directly overlaps Snyk\u2019s developer-security products and buyers."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Developer-security platform securing code, open-source dependencies, and software supply chain \u2014 direct competitor to Snyk on product and buyer."
+        }
+      ]
     },
     {
       "name": "Gitsecure",
@@ -313,7 +361,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide developer-centric application security platforms that detect, prioritize, and remediate code and cloud vulnerabilities within engineering workflows."
+      "rationale": "AI-powered developer application-security platform that detects and remediates code and cloud vulnerabilities, directly overlapping Snyk's DevSecOps product and engineering-team market.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "AI-powered developer application-security platform that detects and remediates code and cloud vulnerabilities, directly overlapping Snyk's DevSecOps product and engineering-team market."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "AI-powered application security platform that finds and fixes code and cloud vulnerabilities for developers \u2014 direct product and market overlap with Snyk."
+        }
+      ]
     },
     {
       "name": "Legit Security",
@@ -388,7 +448,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both offer developer-centric application security platforms spanning SDLC vulnerability detection, remediation, supply-chain security, and cloud or code security workflows."
+      "rationale": "Legit Security is an application-security platform for discovering, prioritizing, and remediating code and software supply-chain vulnerabilities, directly overlapping Snyk.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Legit Security is an application-security platform for discovering, prioritizing, and remediating code and software supply-chain vulnerabilities, directly overlapping Snyk."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "AppSec platform securing code, secrets, and software supply chain across the SDLC\u2014direct competitor to Snyk's developer-security platform."
+        }
+      ]
     },
     {
       "name": "Qwiet AI",
@@ -475,7 +547,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Qwiet AI directly overlaps Snyk in developer security, offering SAST, SCA, container scanning, vulnerability prioritization, and automated remediation to engineering/security teams."
+      "rationale": "AI-powered application-security platform offering SAST, SCA, container, secrets, and vulnerability remediation\u2014directly comparable to Snyk.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "AI-powered application-security platform offering SAST, SCA, container, secrets, and vulnerability remediation\u2014directly comparable to Snyk."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Developer-security platform offering SAST, SCA, container and secrets scanning to find and fix code vulnerabilities \u2014 direct Snyk competitor."
+        }
+      ]
     },
     {
       "name": "Xygeni",
@@ -565,7 +649,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Xygeni directly overlaps Snyk in developer-first application and software supply-chain security across code, dependencies, IaC, pipelines, and cloud."
+      "rationale": "Xygeni provides application security, code-pipeline risk detection, monitoring, and remediation\u2014directly overlapping Snyk\u2019s developer-security platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Xygeni provides application security, code-pipeline risk detection, monitoring, and remediation\u2014directly overlapping Snyk\u2019s developer-security platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Application security platform detecting and remediating code/pipeline vulnerabilities\u2014direct competitor to Snyk's developer-security product and market."
+        }
+      ]
     },
     {
       "name": "ByteArmor",
@@ -629,7 +725,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "ByteArmor offers repository vulnerability scanning for developers, directly overlapping Snyk\u2019s code-security product and developer-security buyer persona."
+      "rationale": "Real-time GitHub repository vulnerability scanning directly overlaps Snyk's developer-security and code vulnerability remediation product.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Real-time GitHub repository vulnerability scanning directly overlaps Snyk's developer-security and code vulnerability remediation product."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Developer security tool scanning code repositories for vulnerabilities, directly matching Snyk's code/dependency vulnerability scanning product and developer market."
+        }
+      ]
     },
     {
       "name": "Vybug",
@@ -672,7 +780,19 @@
         "relevance_score": "A"
       },
       "relevant": false,
-      "rationale": "Vybug\u2019s broad security categories do not establish a developer-focused vulnerability scanning and remediation platform comparable to Snyk."
+      "rationale": "Insufficient evidence that Vybug offers developer vulnerability scanning and remediation comparable to Snyk; broad cybersecurity labels alone are not enough.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Insufficient evidence that Vybug offers developer vulnerability scanning and remediation comparable to Snyk; broad cybersecurity labels alone are not enough."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Only generic security taxonomy tags provided; no evidence of an actual developer-security/vulnerability product resembling Snyk."
+        }
+      ]
     },
     {
       "name": "MergeBase",
@@ -756,7 +876,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "MergeBase offers software composition analysis and remediation for third-party application vulnerabilities, directly overlapping Snyk\u2019s developer-security platform and buyer persona."
+      "rationale": "Application security platform focused on third-party component vulnerability detection and remediation, directly overlapping Snyk's software composition analysis offering.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Application security platform focused on third-party component vulnerability detection and remediation, directly overlapping Snyk's software composition analysis offering."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "SCA platform finding/remediating vulnerabilities in third-party dependencies \u2014 direct competitor to Snyk's core open-source security product, same developer-security market."
+        }
+      ]
     },
     {
       "name": "Backslash Security",
@@ -824,7 +956,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide developer-focused application security that helps security and engineering teams prevent insecure code and manage software-development risks."
+      "rationale": "Application-security platform securing AI-generated code and development environments; overlaps Snyk's developer-centric vulnerability prevention and remediation market.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Application-security platform securing AI-generated code and development environments; overlaps Snyk's developer-centric vulnerability prevention and remediation market."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Developer-focused application security platform protecting code from vulnerabilities; same AppSec product category and buyer persona as Snyk."
+        }
+      ]
     },
     {
       "name": "Veracode",
@@ -927,7 +1071,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Veracode directly overlaps Snyk in application security, vulnerability detection, dependency/container scanning, and remediation for development and security teams."
+      "rationale": "Application-security platform offering code, dependency, container, and cloud vulnerability scanning and remediation\u2014the same DevSecOps market as Snyk.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Application-security platform offering code, dependency, container, and cloud vulnerability scanning and remediation\u2014the same DevSecOps market as Snyk."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Direct competitor: application/developer security platform offering SAST, SCA, container security, and remediation across the SDLC."
+        }
+      ]
     },
     {
       "name": "Generative Security",
@@ -1009,8 +1165,20 @@
         ],
         "relevance_score": "A"
       },
-      "relevant": false,
-      "rationale": "Generative Security focuses on LLM interaction abuse, not vulnerability detection and remediation across code, dependencies, containers, or cloud infrastructure."
+      "relevant": true,
+      "rationale": "Both sell developer-facing application-security platforms; Generative Security specializes in protecting enterprise generative-AI applications from abuse and data exposure.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both sell developer-facing application-security platforms; Generative Security specializes in protecting enterprise generative-AI applications from abuse and data exposure."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Developer-focused application security platform (LLM/GenAI vulnerability analysis), same buyer and job-to-be-done as Snyk's developer-security tooling."
+        }
+      ]
     },
     {
       "name": "StrikePilot",
@@ -1063,7 +1231,19 @@
         "relevance_score": "A"
       },
       "relevant": false,
-      "rationale": "StrikePilot focuses on AI-driven security compliance, not developer vulnerability detection and remediation across code, dependencies, containers, and cloud infrastructure."
+      "rationale": "AI security-compliance automation is adjacent but not clearly a developer vulnerability scanning and remediation platform like Snyk.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "AI security-compliance automation is adjacent but not clearly a developer vulnerability scanning and remediation platform like Snyk."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Security compliance automation (GRC-style) differs from Snyk's developer vulnerability scanning/remediation; adjacent security category, no strong product or market overlap."
+        }
+      ]
     },
     {
       "name": "CodeSafe",
@@ -1106,8 +1286,20 @@
         ],
         "relevance_score": "A"
       },
-      "relevant": false,
-      "rationale": "CodeSafe targets nontechnical website owners with pre-launch scans, unlike Snyk\u2019s developer-focused application, dependency, container, and cloud security platform."
+      "relevant": true,
+      "rationale": "Offers vulnerability scanning of website code, directly overlapping Snyk's application-security and code-vulnerability remediation domain.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Offers vulnerability scanning of website code, directly overlapping Snyk's application-security and code-vulnerability remediation domain."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both scan code for security vulnerabilities; CodeSafe targets less-technical website owners but the core product\u2014code vulnerability scanning\u2014matches Snyk's product axis."
+        }
+      ]
     },
     {
       "name": "Winfunc",
@@ -1165,7 +1357,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both automate vulnerability discovery and remediation across software and cloud assets for developer and security teams."
+      "rationale": "Automated vulnerability discovery and remediation closely overlaps Snyk\u2019s developer-security mission, despite broader digital-asset and exploitation framing.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Automated vulnerability discovery and remediation closely overlaps Snyk\u2019s developer-security mission, despite broader digital-asset and exploitation framing."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both find and remediate security vulnerabilities across code and digital assets; same product category and buyer, genuine competitor despite tiny size."
+        }
+      ]
     },
     {
       "name": "CybeDefend",
@@ -1219,7 +1423,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "CybeDefend offers developer-focused vulnerability detection and remediation for code, directly overlapping Snyk\u2019s application security platform and buyer persona."
+      "rationale": "AI-driven platform detects, analyzes, and remediates code vulnerabilities, directly matching Snyk\u2019s developer-security and application-security product.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "AI-driven platform detects, analyzes, and remediates code vulnerabilities, directly matching Snyk\u2019s developer-security and application-security product."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "AI-driven platform to detect, analyze, and fix code vulnerabilities \u2014 same developer-security product and market as Snyk."
+        }
+      ]
     },
     {
       "name": "Cycode",
@@ -1327,7 +1543,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Cycode and Snyk both provide developer-focused application and software supply chain security, helping teams identify and remediate risks across the development lifecycle."
+      "rationale": "Cycode is a developer-security platform that detects and remediates code and application vulnerabilities, directly overlapping Snyk's DevSecOps product and buyer market.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Cycode is a developer-security platform that detects and remediates code and application vulnerabilities, directly overlapping Snyk's DevSecOps product and buyer market."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Developer-security platform detecting and remediating vulnerabilities in code and cloud environments; direct competitor to Snyk on product and market."
+        }
+      ]
     },
     {
       "name": "Themendeddrum",
@@ -1366,7 +1594,19 @@
         "relevance_score": "A"
       },
       "relevant": false,
-      "rationale": "No clear evidence that Themendeddrum offers developer vulnerability scanning and remediation; broad security labels and Erlang technologies do not establish product overlap."
+      "rationale": "No evidence that Themendeddrum sells a developer vulnerability-management platform comparable to Snyk; taxonomy labels alone are insufficient.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "No evidence that Themendeddrum sells a developer vulnerability-management platform comparable to Snyk; taxonomy labels alone are insufficient."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Name (a Discworld pub reference), keyword-stuffed industry tags, and no discernible developer-security product indicate a parody/placeholder entry, not a Snyk comparable."
+        }
+      ]
     },
     {
       "name": "Semgrep",
@@ -1445,7 +1685,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide developer-centric application security platforms with overlapping SAST, dependency/SCA, vulnerability triage, and remediation workflows for engineering and security teams."
+      "rationale": "Semgrep is a developer-focused application security platform for finding and remediating code, dependency, and secrets vulnerabilities, directly comparable to Snyk.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Semgrep is a developer-focused application security platform for finding and remediating code, dependency, and secrets vulnerabilities, directly comparable to Snyk."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Developer-security platform doing static analysis, dependency and secrets scanning \u2014 direct competitor to Snyk on product, market, and model."
+        }
+      ]
     },
     {
       "name": "Fluid Attacks",
@@ -1505,7 +1757,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide continuous application security and vulnerability remediation throughout the SDLC for development and security teams."
+      "rationale": "Continuous application-security testing and vulnerability remediation during the SDLC closely overlaps Snyk's developer-security offering.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Continuous application-security testing and vulnerability remediation during the SDLC closely overlaps Snyk's developer-security offering."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Application-security vendor finding and remediating vulnerabilities during the SDLC; same AppSec/DevSecOps buyer and job as Snyk."
+        }
+      ]
     },
     {
       "name": "Proxie",
@@ -1546,7 +1810,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide developer-focused application security that detects and remediates code vulnerabilities, targeting teams securing software during development."
+      "rationale": "Proxie is a developer-security tool that detects and remediates code vulnerabilities, directly overlapping Snyk\u2019s application-security platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Proxie is a developer-security tool that detects and remediates code vulnerabilities, directly overlapping Snyk\u2019s application-security platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Developer-security tool detecting and auto-remediating vulnerabilities in code\u2014direct product and market overlap with Snyk's code-vulnerability scanning."
+        }
+      ]
     },
     {
       "name": "Archipelo",
@@ -1607,7 +1883,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide developer-centric security platforms integrated into SDLC workflows, helping security and engineering teams identify and remediate software risks."
+      "rationale": "Both sell developer-focused security platforms for identifying and mitigating software-development risks, serving engineering and security teams.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both sell developer-focused security platforms for identifying and mitigating software-development risks, serving engineering and security teams."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Developer-security platform for identifying and mitigating SDLC risks; same buyer and product category as Snyk, a direct comparable/competitor."
+        }
+      ]
     },
     {
       "name": "Arnica",
@@ -1667,7 +1955,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Arnica directly overlaps Snyk in developer-first application security, including SAST, SCA, IaC, secrets detection, risk prioritization, and automated remediation."
+      "rationale": "Developer-native application security platform that scans code and detects risks before production, directly overlapping Snyk\u2019s vulnerability remediation market.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Developer-native application security platform that scans code and detects risks before production, directly overlapping Snyk\u2019s vulnerability remediation market."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Developer-first application security platform scanning code for vulnerabilities and managing risk pre-production \u2014 direct competitor to Snyk on product, market, and model."
+        }
+      ]
     },
     {
       "name": "DevSecAI",
@@ -1721,7 +2021,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "DevSecAI offers IDE-integrated application vulnerability detection and remediation for developers, directly overlapping Snyk\u2019s developer-first security workflow and buyers."
+      "rationale": "DevSecAI provides developer-focused vulnerability detection, remediation, and continuous security monitoring across the software development lifecycle, directly overlapping Snyk\u2019s DevSecOps platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "DevSecAI provides developer-focused vulnerability detection, remediation, and continuous security monitoring across the software development lifecycle, directly overlapping Snyk\u2019s DevSecOps platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Real-time code vulnerability detection and automated remediation integrated into DevSecOps workflows\u2014directly matches Snyk's developer-security product and buyer."
+        }
+      ]
     },
     {
       "name": "Checkmarx",
@@ -1794,7 +2106,19 @@
         "relevance_score": "A"
       },
       "relevant": false,
-      "rationale": "The domain and description identify a landscape association, not Checkmarx\u2019s application-security platform; it does not overlap Snyk\u2019s developer-security offering."
+      "rationale": "The provided domain and description identify a professional landscape association, not Checkmarx's application-security platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "The provided domain and description identify a professional landscape association, not Checkmarx's application-security platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Record describes a Wisconsin landscape association with mismatched domain, not the Checkmarx application-security company; no product resemblance to Snyk."
+        }
+      ]
     },
     {
       "name": "DevArmor",
@@ -1878,8 +2202,20 @@
         ],
         "relevance_score": "A"
       },
-      "relevant": false,
-      "rationale": "DevArmor automates threat modeling and design reviews, not vulnerability scanning and remediation; despite shared AppSec buyers, its core job differs from Snyk."
+      "relevant": true,
+      "rationale": "Developer-security platform integrating threat modeling and code validation into development workflows; directly comparable to Snyk's secure development and vulnerability remediation products.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Developer-security platform integrating threat modeling and code validation into development workflows; directly comparable to Snyk's secure development and vulnerability remediation products."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are developer-security products sold to AppSec/engineering teams to secure software development; adjacent AppSec capability makes them genuine comparables."
+        }
+      ]
     },
     {
       "name": "Corgea",
@@ -1927,7 +2263,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide developer-focused application security that identifies and remediates source-code vulnerabilities for security and engineering teams."
+      "rationale": "Application-security platform scanning and remediating code, dependencies, containers, and infrastructure vulnerabilities, directly overlapping Snyk's developer-security product.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Application-security platform scanning and remediating code, dependencies, containers, and infrastructure vulnerabilities, directly overlapping Snyk's developer-security product."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Application-security platform detecting and remediating vulnerabilities in code, dependencies, containers, and infrastructure \u2014 direct competitor to Snyk on product and market."
+        }
+      ]
     },
     {
       "name": "Stack Patch",
@@ -1977,7 +2325,19 @@
         "relevance_score": "A"
       },
       "relevant": false,
-      "rationale": "Stack Patch is described as a client software-development company, not a developer-security platform offering vulnerability detection and remediation like Snyk."
+      "rationale": "Described as a software development company helping clients, not a developer-security platform that identifies and remediates vulnerabilities.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Described as a software development company helping clients, not a developer-security platform that identifies and remediates vulnerabilities."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Vague software development services shop, not a developer-security product; no evidence of vulnerability scanning or comparable platform."
+        }
+      ]
     },
     {
       "name": "GraphNode",
@@ -2024,7 +2384,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "GraphNode\u2019s SAST platform directly overlaps Snyk\u2019s developer-focused code vulnerability detection and remediation, targeting the same application security and development teams."
+      "rationale": "GraphNode's SAST platform detects and remediates source-code vulnerabilities, directly overlapping Snyk's developer-security offering.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "GraphNode's SAST platform detects and remediates source-code vulnerabilities, directly overlapping Snyk's developer-security offering."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "SAST platform detecting and remediating source-code vulnerabilities with CI/CD integration \u2014 direct competitor to Snyk's developer-security offering."
+        }
+      ]
     },
     {
       "name": "StarcSec",
@@ -2092,7 +2464,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide developer-centric application security, vulnerability prioritization, supply-chain protection, and guided remediation across code, CI/CD, containers, and cloud environments."
+      "rationale": "AI-driven application security posture platform ingests code, CI/CD, cloud, and runtime data to prioritize and remediate vulnerabilities, directly overlapping Snyk's DevSecOps offering.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "AI-driven application security posture platform ingests code, CI/CD, cloud, and runtime data to prioritize and remediate vulnerabilities, directly overlapping Snyk's DevSecOps offering."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Application security platform covering code/CI-CD/cloud vulnerabilities, SAST/DAST, supply chain security, and guided remediation\u2014direct competitor to Snyk's developer-security platform."
+        }
+      ]
     },
     {
       "name": "Vibe Security",
@@ -2130,7 +2514,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide developer-focused application security tools that identify code vulnerabilities, including vulnerabilities in AI-generated software."
+      "rationale": "AI-generated code vulnerability detection directly overlaps Snyk's developer-security and code-scanning product.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "AI-generated code vulnerability detection directly overlaps Snyk's developer-security and code-scanning product."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Developer-security tool scanning code for vulnerabilities, same product category and developer buyer as Snyk, niche focus on AI-generated code."
+        }
+      ]
     },
     {
       "name": "AppSecAI",
@@ -2192,7 +2588,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide developer-focused application security automation for identifying and remediating vulnerabilities, targeting enterprise AppSec teams and the same core security workflow."
+      "rationale": "AI-powered application-security automation that identifies and fixes vulnerabilities for enterprise software portfolios, directly comparable to Snyk\u2019s developer-security platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "AI-powered application-security automation that identifies and fixes vulnerabilities for enterprise software portfolios, directly comparable to Snyk\u2019s developer-security platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Application-security platform finding and fixing vulnerabilities at scale, same market and product axis as Snyk's developer-security offering."
+        }
+      ]
     },
     {
       "name": "Black Duck",
@@ -2254,7 +2662,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Black Duck offers application security, software composition analysis, and vulnerability remediation for developers and security teams, directly overlapping Snyk\u2019s core use cases."
+      "rationale": "Black Duck is an AppSec and software-composition-analysis platform finding open-source vulnerabilities, directly overlapping Snyk\u2019s dependency and software supply-chain security products.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Black Duck is an AppSec and software-composition-analysis platform finding open-source vulnerabilities, directly overlapping Snyk\u2019s dependency and software supply-chain security products."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Black Duck offers application security including SCA for open-source vulnerabilities and static analysis \u2014 directly competing with Snyk's developer-security platform."
+        }
+      ]
     },
     {
       "name": "Sysdig",
@@ -2325,7 +2745,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both offer developer-focused cloud and container security, including vulnerability and risk management, for security and engineering teams."
+      "rationale": "Both provide developer/cloud-native security, including vulnerability management and container/cloud workload protection, serving DevOps and security teams.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both provide developer/cloud-native security, including vulnerability management and container/cloud workload protection, serving DevOps and security teams."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Cloud-native security platform with container/Kubernetes vulnerability management serving same DevOps and security buyers; direct competitor and comparable to Snyk."
+        }
+      ]
     },
     {
       "name": "Scantist",
@@ -2374,7 +2806,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide developer-focused application and software supply-chain security, including dependency vulnerability analysis and DevSecOps risk remediation."
+      "rationale": "Scantist provides DevSecOps application supply-chain security, dependency/SBOM analysis, and vulnerability risk mitigation, directly overlapping Snyk\u2019s developer-security platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Scantist provides DevSecOps application supply-chain security, dependency/SBOM analysis, and vulnerability risk mitigation, directly overlapping Snyk\u2019s developer-security platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "DevSecOps platform securing code, dependencies, and software supply chain\u2014direct competitor to Snyk on product, market, and model."
+        }
+      ]
     },
     {
       "name": "Dam Secure",
@@ -2435,7 +2879,19 @@
         "relevance_score": "A"
       },
       "relevant": false,
-      "rationale": "Dam Secure\u2019s product and job-to-be-done are unspecified; broad cybersecurity and developer-tool labels do not establish overlap with Snyk\u2019s developer-security platform."
+      "rationale": "Description provides no verifiable product offering; security and developer-tool taxonomy labels alone do not establish similarity to Snyk.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Description provides no verifiable product offering; security and developer-tool taxonomy labels alone do not establish similarity to Snyk."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Description is just an early-access teaser with no product details; industry tags alone cannot confirm developer-security resemblance to Snyk."
+        }
+      ]
     },
     {
       "name": "StackHawk",
@@ -2560,7 +3016,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "StackHawk provides developer-native application and API security testing, overlapping Snyk\u2019s vulnerability detection and remediation workflows for developers and AppSec teams."
+      "rationale": "Developer-focused application security platform that finds vulnerabilities and supports remediation, directly overlapping Snyk's DevSecOps product and buyer market.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Developer-focused application security platform that finds vulnerabilities and supports remediation, directly overlapping Snyk's DevSecOps product and buyer market."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Developer-first application security platform that scans code for vulnerabilities in CI/CD, directly overlapping Snyk's product, buyer, and market."
+        }
+      ]
     },
     {
       "name": "Quantro Security",
@@ -2616,7 +3084,19 @@
         "relevance_score": "A"
       },
       "relevant": false,
-      "rationale": "Quantro\u2019s stealth AI-cybersecurity description does not establish overlap with Snyk\u2019s developer-focused vulnerability detection and remediation platform."
+      "rationale": "Stealth AI/cybersecurity positioning lacks evidence of developer vulnerability scanning, remediation, or application-security product overlap.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Stealth AI/cybersecurity positioning lacks evidence of developer vulnerability scanning, remediation, or application-security product overlap."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Stealth startup with vague 'AI + cybersecurity' positioning; no evidence of developer-security/AppSec product resembling Snyk's code vulnerability platform."
+        }
+      ]
     },
     {
       "name": "TectaPro",
@@ -2666,7 +3146,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both offer automated vulnerability detection and cloud-security capabilities for DevSecOps/security teams managing infrastructure risk and compliance."
+      "rationale": "AI security platform detects vulnerabilities and secures cloud infrastructure, overlapping Snyk\u2019s developer-focused application and cloud security remit.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "AI security platform detects vulnerabilities and secures cloud infrastructure, overlapping Snyk\u2019s developer-focused application and cloud security remit."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both offer security platforms for automated vulnerability detection across cloud infrastructure; same product category and buyer, size ignored."
+        }
+      ]
     },
     {
       "name": "Esprit",
@@ -2714,7 +3206,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide automated application-security tools that find and remediate vulnerabilities, targeting developers and security teams with overlapping security workflows."
+      "rationale": "AI penetration-testing agents find and remediate security vulnerabilities, closely overlapping Snyk's developer-focused vulnerability detection and remediation.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "AI penetration-testing agents find and remediate security vulnerabilities, closely overlapping Snyk's developer-focused vulnerability detection and remediation."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are security platforms that autonomously find and fix vulnerabilities; Esprit's AI pentesting agents overlap Snyk's application-security market and buyers."
+        }
+      ]
     },
     {
       "name": "Bright",
@@ -2783,7 +3287,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide developer-centric application security testing integrated into the SDLC, targeting teams that identify and remediate software vulnerabilities."
+      "rationale": "DAST and automated remediation platform for application-security teams, overlapping Snyk's developer-security workflow and vulnerability-remediation market.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "DAST and automated remediation platform for application-security teams, overlapping Snyk's developer-security workflow and vulnerability-remediation market."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Developer-focused application security testing platform finding/remediating vulnerabilities in CI/CD \u2014 same AppSec market and product category as Snyk."
+        }
+      ]
     },
     {
       "name": "Codenotary",
@@ -2849,7 +3365,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide DevSecOps software-supply-chain security, serving engineering and security teams through CI/CD, dependency/SBOM, and artifact protection workflows."
+      "rationale": "Codenotary provides software supply-chain vulnerability scanning, remediation, SBOM, SAST, and cloud security capabilities for DevSecOps teams, closely overlapping Snyk.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Codenotary provides software supply-chain vulnerability scanning, remediation, SBOM, SAST, and cloud security capabilities for DevSecOps teams, closely overlapping Snyk."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Developer-security platform overlapping Snyk on vulnerability scanning, SAST, SBOM/dependency security, and remediation for DevSecOps teams \u2014 a direct competitor."
+        }
+      ]
     },
     {
       "name": "VulnHero",
@@ -2920,7 +3448,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide AppSec vulnerability detection and prioritization platforms for security teams, with overlapping DevSecOps workflows and remediation use cases."
+      "rationale": "Both provide continuous vulnerability identification, prioritization, and remediation support for AppSec/DevSecOps teams, though VulnHero adds offensive testing and attack-surface management.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both provide continuous vulnerability identification, prioritization, and remediation support for AppSec/DevSecOps teams, though VulnHero adds offensive testing and attack-surface management."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are vulnerability-focused security platforms serving AppSec/DevSecOps teams, finding and prioritizing exploitable vulnerabilities across the stack \u2014 genuine comparables."
+        }
+      ]
     },
     {
       "name": "Vibehub",
@@ -2957,7 +3497,19 @@
         "relevance_score": "A"
       },
       "relevant": false,
-      "rationale": "Vibehub\u2019s listed categories do not establish a core developer-security product for finding and remediating code, dependency, container, or IaC vulnerabilities."
+      "rationale": "Available information provides only broad industry labels, not evidence of a developer vulnerability-management product comparable to Snyk.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Available information provides only broad industry labels, not evidence of a developer vulnerability-management product comparable to Snyk."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Only generic taxonomy tags; no evidence of a developer-security vulnerability product; likely unrelated product (React Flow UI tech hints elsewhere)."
+        }
+      ]
     },
     {
       "name": "PullRequest",
@@ -3005,8 +3557,20 @@
         ],
         "relevance_score": "A"
       },
-      "relevant": false,
-      "rationale": "PullRequest provides AI-assisted expert code review, not a developer-security platform for vulnerability detection and remediation across code, dependencies, containers, and cloud."
+      "relevant": true,
+      "rationale": "Developer-first code security platform that finds vulnerabilities in application code; overlaps Snyk's application-security buyer and remediation workflow.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Developer-first code security platform that finds vulnerabilities in application code; overlaps Snyk's application-security buyer and remediation workflow."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Developer-first code security platform offering application security testing and vulnerability detection\u2014overlaps Snyk's product and market axes."
+        }
+      ]
     },
     {
       "name": "Tiger Dojo Technology Group",
@@ -3054,7 +3618,19 @@
         "relevance_score": "A"
       },
       "relevant": false,
-      "rationale": "Tiger Dojo is a DevSecOps and security consultancy implementing tools and practices, not a developer-security software platform competing with Snyk."
+      "rationale": "Tiger Dojo is a DevSecOps and cloud-security consultancy, not a developer-security software platform competing with Snyk.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Tiger Dojo is a DevSecOps and cloud-security consultancy, not a developer-security software platform competing with Snyk."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Security/DevSecOps services consultancy that helps teams adopt security tools, not a developer-security product platform like Snyk."
+        }
+      ]
     },
     {
       "name": "spartanx.ai",
@@ -3108,7 +3684,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both sell security platforms to AppSec teams for continuously finding, prioritizing, and remediating exploitable vulnerabilities across code, applications, and cloud infrastructure."
+      "rationale": "AI security platform continuously tests code, cloud, APIs, and dependencies, validates vulnerabilities, and generates remediations\u2014strong overlap with Snyk\u2019s developer-security mission.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "AI security platform continuously tests code, cloud, APIs, and dependencies, validates vulnerabilities, and generates remediations\u2014strong overlap with Snyk\u2019s developer-security mission."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are security platforms that continuously find, validate, and remediate vulnerabilities across code, cloud, and applications for the same AppSec buyer."
+        }
+      ]
     },
     {
       "name": "Vexlint",
@@ -3155,7 +3743,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both offer developer-focused code security scanning to identify vulnerabilities, serving teams seeking to secure software during development."
+      "rationale": "Both provide developer-focused vulnerability detection for code; Vexlint targets AI-generated codebases, a focused application-security comparable to Snyk.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both provide developer-focused vulnerability detection for code; Vexlint targets AI-generated codebases, a focused application-security comparable to Snyk."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Same core product: developer security scanner finding vulnerabilities in code; serves developers, directly comparable to Snyk's code-scanning offering."
+        }
+      ]
     },
     {
       "name": "ZeroThreat",
@@ -3226,7 +3826,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both are AppSec platforms helping security teams identify application vulnerabilities, though ZeroThreat emphasizes automated web/API penetration testing."
+      "rationale": "AI-powered application/API penetration testing complements Snyk's developer-security focus, serving similar AppSec teams and vulnerability remediation workflows.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "AI-powered application/API penetration testing complements Snyk's developer-security focus, serving similar AppSec teams and vulnerability remediation workflows."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both sell application-security vulnerability detection to AppSec/security teams; ZeroThreat's automated pentesting complements Snyk's code/dependency scanning \u2014 same buyer, same job."
+        }
+      ]
     },
     {
       "name": "Miggo Security",
@@ -3308,7 +3920,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide application-security platforms for AppSec and DevSecOps teams, identifying application vulnerabilities and breach risks, though Miggo emphasizes runtime detection and response."
+      "rationale": "Both provide application-security platforms that identify application vulnerabilities and risks; Miggo adds runtime detection and response, making it a close security comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both provide application-security platforms that identify application vulnerabilities and risks; Miggo adds runtime detection and response, making it a close security comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are application-security platforms sold to the same AppSec/developer buyers; Snyk finds vulnerabilities pre-deployment, Miggo secures apps at runtime\u2014close peers in the app-security market."
+        }
+      ]
     },
     {
       "name": "Meterian",
@@ -3396,7 +4020,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Meterian directly overlaps Snyk in software composition analysis and CI/CD-integrated vulnerability remediation for DevSecOps teams."
+      "rationale": "Meterian scans open-source components for vulnerabilities and integrates DevSecOps checks into CI/CD, closely matching Snyk's developer-security offering.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Meterian scans open-source components for vulnerabilities and integrates DevSecOps checks into CI/CD, closely matching Snyk's developer-security offering."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Meterian is a developer-security/SCA tool scanning code components and dependencies via CI/CD \u2014 a direct Snyk competitor on product and market."
+        }
+      ]
     },
     {
       "name": "Apona Security",
@@ -3441,7 +4077,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Apona\u2019s ASPM and software supply-chain security tools address code and dependency risks for the same application-security and development buyers as Snyk."
+      "rationale": "Apona provides application security posture and software supply-chain tools for managing open-source and third-party code risks, closely overlapping Snyk's developer-security offering.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Apona provides application security posture and software supply-chain tools for managing open-source and third-party code risks, closely overlapping Snyk's developer-security offering."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Apona sells ASPM and software supply-chain security tools for open-source/third-party code risk\u2014directly overlapping Snyk's developer-security and dependency-vulnerability product and market."
+        }
+      ]
     },
     {
       "name": "OX Security",
@@ -3544,7 +4192,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "OX Security and Snyk both provide developer-first application security platforms that identify and remediate vulnerabilities across code, software supply chains, cloud, and runtime."
+      "rationale": "Application-security platform securing code and software supply chains, prioritizing and remediating vulnerabilities within developer and CI/CD workflows\u2014directly comparable to Snyk.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Application-security platform securing code and software supply chains, prioritizing and remediating vulnerabilities within developer and CI/CD workflows\u2014directly comparable to Snyk."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are developer-focused application security platforms finding and prioritizing vulnerabilities in code and supply chains; direct competitors."
+        }
+      ]
     },
     {
       "name": "GuardRails",
@@ -3604,7 +4264,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "GuardRails closely overlaps Snyk in developer-focused application security across source code, open-source dependencies, secrets, and cloud configuration."
+      "rationale": "Continuous application-security platform covering code, open-source dependencies, secrets, and cloud configuration\u2014directly overlapping Snyk\u2019s developer-security products.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Continuous application-security platform covering code, open-source dependencies, secrets, and cloud configuration\u2014directly overlapping Snyk\u2019s developer-security products."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Continuous application security platform scanning code, open-source dependencies, secrets, and cloud config \u2014 direct competitor to Snyk on product, market, and model."
+        }
+      ]
     },
     {
       "name": "CodeThreat",
@@ -3662,7 +4334,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide developer-focused application security integrated into CI/CD, with overlapping SAST, vulnerability detection, remediation, and secure-code workflows."
+      "rationale": "AI application-security platform providing contextual SAST and CI/CD vulnerability detection, directly overlapping Snyk\u2019s developer-security use case.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "AI application-security platform providing contextual SAST and CI/CD vulnerability detection, directly overlapping Snyk\u2019s developer-security use case."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "AI AppSec/SAST platform for developers, CI/CD-integrated code vulnerability detection \u2014 direct competitor to Snyk's code-security product on product, market, and model."
+        }
+      ]
     },
     {
       "name": "Kodem",
@@ -3722,7 +4406,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Kodem and Snyk both provide application security platforms that help development and security teams identify and remediate vulnerabilities using code analysis."
+      "rationale": "Application security platform combining code and runtime analysis; directly comparable to Snyk's developer-focused vulnerability detection and remediation.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Application security platform combining code and runtime analysis; directly comparable to Snyk's developer-focused vulnerability detection and remediation."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Kodem is an application-security platform combining code and runtime analysis, directly competing with Snyk's developer-security offering for the same buyers."
+        }
+      ]
     },
     {
       "name": "BotGuard",
@@ -3764,7 +4460,24 @@
         "relevance_score": "A"
       },
       "relevant": false,
-      "rationale": "BotGuard secures AI-agent runtime behavior, while Snyk focuses on vulnerability detection and remediation across code, dependencies, containers, and cloud infrastructure."
+      "rationale": "Both are developer-security platforms, but BotGuard secures AI-agent runtime behavior rather than code, dependencies, containers, or cloud vulnerabilities.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Both are developer-security platforms, but BotGuard secures AI-agent runtime behavior rather than code, dependencies, containers, or cloud vulnerabilities."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are developer-first security platforms selling to AppSec/engineering buyers; AI-agent security is a direct adjacent comparable to Snyk's code/dependency/cloud vulnerability space."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "AI agent runtime security differs from Snyk's developer code/dependency vulnerability scanning; only broad cybersecurity overlap."
+        }
+      ]
     },
     {
       "name": "Beagle Security",
@@ -3812,7 +4525,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide developer-focused application security platforms that identify and help remediate vulnerabilities, targeting AppSec and DevSecOps teams."
+      "rationale": "AI-driven web/API penetration testing and vulnerability remediation for DevOps teams overlaps Snyk's developer-focused application security market.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "AI-driven web/API penetration testing and vulnerability remediation for DevOps teams overlaps Snyk's developer-focused application security market."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are developer-focused application security platforms finding vulnerabilities and integrating into DevOps pipelines; pentesting/DAST is a direct comparable to Snyk's AppSec."
+        }
+      ]
     },
     {
       "name": "SecVibe",
@@ -3864,7 +4589,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide developer-focused application security integrated into development workflows, targeting developers and AppSec teams seeking secure code remediation and prevention."
+      "rationale": "AI-driven developer-security platform securing code directly in development environments, closely matching Snyk\u2019s developer-first application-security focus.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "AI-driven developer-security platform securing code directly in development environments, closely matching Snyk\u2019s developer-first application-security focus."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "AI-driven developer security platform securing code in development environments; matches Snyk on product, market, and model. Size irrelevant."
+        }
+      ]
     },
     {
       "name": "Vibe Hack",
@@ -3910,7 +4647,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide developer-focused application security assessment and remediation guidance, targeting teams seeking to identify and fix vulnerabilities in software."
+      "rationale": "Developer-focused application-security assessment addresses OWASP and supply-chain vulnerabilities, overlapping Snyk's developer-security mission despite narrower browser-based scope.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Developer-focused application-security assessment addresses OWASP and supply-chain vulnerabilities, overlapping Snyk's developer-security mission despite narrower browser-based scope."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are developer-focused application security tools that detect vulnerabilities in code and guide remediation; same buyer and job, comparable product axis."
+        }
+      ]
     },
     {
       "name": "ZeroPath",
@@ -3990,7 +4739,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both offer developer-focused application security platforms that detect and remediate code vulnerabilities, serving engineering and AppSec teams."
+      "rationale": "AI-native AppSec platform scans code, dependencies, secrets, and IaC, directly overlapping Snyk\u2019s developer-security products and buyers.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "AI-native AppSec platform scans code, dependencies, secrets, and IaC, directly overlapping Snyk\u2019s developer-security products and buyers."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Direct competitor: AppSec suite with SAST, SCA, secrets detection, and IaC scanning closely mirrors Snyk's developer-security platform."
+        }
+      ]
     },
     {
       "name": "XploitScan",
@@ -4027,7 +4788,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide developer-focused code vulnerability scanning and remediation guidance, serving users securing software during development."
+      "rationale": "Developer-focused vulnerability scanning and remediation for application code directly overlaps Snyk\u2019s core developer-security offering.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Developer-focused vulnerability scanning and remediation for application code directly overlaps Snyk\u2019s core developer-security offering."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Developer-focused vulnerability scanning tool for code, directly matching Snyk's core product and market of developer security."
+        }
+      ]
     },
     {
       "name": "Eureka DevSecOps",
@@ -4097,7 +4870,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide developer-focused application security platforms that integrate with development workflows to prioritize and remediate software vulnerabilities."
+      "rationale": "ASPM platform for development teams correlates and prioritizes application vulnerabilities, directly overlapping Snyk's developer security and remediation workflow.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "ASPM platform for development teams correlates and prioritizes application vulnerabilities, directly overlapping Snyk's developer security and remediation workflow."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "ASPM/developer-security platform centralizing and prioritizing code vulnerabilities for developers \u2014 same product category and buyer as Snyk."
+        }
+      ]
     },
     {
       "name": "VyPr AI",
@@ -4166,7 +4951,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide automated vulnerability discovery and remediation insights across applications and cloud environments for developer and security teams."
+      "rationale": "Both provide automated vulnerability discovery and remediation prioritization for cloud and application environments, serving security and development teams.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both provide automated vulnerability discovery and remediation prioritization for cloud and application environments, serving security and development teams."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are vulnerability-detection security platforms covering code/apps, APIs, and cloud, serving the same developer-security buyers; direct competitor/comparable."
+        }
+      ]
     },
     {
       "name": "VibeWrench",
@@ -4205,7 +5002,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide developer-focused application security scanning to identify vulnerabilities in code and applications before deployment."
+      "rationale": "Developer-focused security scanner that identifies application vulnerabilities; a focused comparable to Snyk\u2019s application-security platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Developer-focused security scanner that identifies application vulnerabilities; a focused comparable to Snyk\u2019s application-security platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Developer-focused application security scanner for code vulnerabilities, same AppSec product category and buyer as Snyk despite narrower AI-built-app niche."
+        }
+      ]
     },
     {
       "name": "glog.ai",
@@ -4284,7 +5093,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Glog.AI offers automated code vulnerability identification and remediation for development teams, directly overlapping Snyk\u2019s developer-security platform and buyer persona."
+      "rationale": "Its autonomous software-security product identifies and remediates code vulnerabilities, directly overlapping Snyk's developer-focused application security platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Its autonomous software-security product identifies and remediates code vulnerabilities, directly overlapping Snyk's developer-focused application security platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Core product autonomously finds and remediates code vulnerabilities for developers, directly matching Snyk's developer-security offering on product and market axes."
+        }
+      ]
     },
     {
       "name": "ArmorCode",
@@ -4354,7 +5175,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide application security platforms that identify, prioritize, and remediate vulnerabilities across code, cloud, containers, and infrastructure for security and development teams."
+      "rationale": "Application security posture management platform aggregates, prioritizes, and remediates vulnerabilities, directly comparable to Snyk\u2019s developer-security offering.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Application security posture management platform aggregates, prioritizes, and remediates vulnerabilities, directly comparable to Snyk\u2019s developer-security offering."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Application security posture platform managing and remediating code vulnerabilities\u2014same AppSec/DevSecOps buyer as Snyk, a direct comparable."
+        }
+      ]
     },
     {
       "name": "Aptori",
@@ -4411,7 +5244,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Aptori is an AppSec platform integrated into the SDLC that detects vulnerabilities and provides fixes, targeting the same developer and security teams as Snyk."
+      "rationale": "AI-driven application security platform detects and remediates code, API, and cloud vulnerabilities, directly overlapping Snyk's developer-security product and buyers.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "AI-driven application security platform detects and remediates code, API, and cloud vulnerabilities, directly overlapping Snyk's developer-security product and buyers."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "AI-driven application security platform detecting and remediating vulnerabilities in code, APIs, and cloud \u2014 directly competes with Snyk's developer-security platform."
+        }
+      ]
     },
     {
       "name": "Enforster AI",
@@ -4464,7 +5309,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide developer-focused application security scanning that identifies code vulnerabilities and recommends remediation, targeting development and security teams."
+      "rationale": "AI-powered SAST platform that finds and remediates code vulnerabilities, directly overlapping Snyk\u2019s developer-security and remediation offering.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "AI-powered SAST platform that finds and remediates code vulnerabilities, directly overlapping Snyk\u2019s developer-security and remediation offering."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "AI-powered SAST tool finding and fixing code vulnerabilities for developers \u2014 direct competitor to Snyk's developer-security platform on product and market."
+        }
+      ]
     },
     {
       "name": "Superagent",
@@ -4515,8 +5372,25 @@
         ],
         "relevance_score": "A"
       },
-      "relevant": false,
-      "rationale": "Superagent tests AI application behavior and safety, while Snyk secures code, dependencies, containers, and infrastructure; their core security jobs do not overlap."
+      "relevant": true,
+      "rationale": "Developer-focused security platform that probes applications for vulnerabilities and delivers remediation guidance \u2014 same AppSec buyer and product category as Snyk, applied to AI apps.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Superagent red-teams AI application behavior; it does not provide Snyk-style code, dependency, container, or cloud vulnerability management."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Developer-focused security platform that probes applications for vulnerabilities and delivers remediation guidance \u2014 same AppSec buyer and product category as Snyk, applied to AI apps."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Developer-facing security testing platform finding vulnerabilities with remediation guidance, albeit for AI apps; plausible comparable in developer-security space."
+        }
+      ]
     },
     {
       "name": "Prompt Security",
@@ -4585,7 +5459,24 @@
         "relevance_score": "A"
       },
       "relevant": false,
-      "rationale": "Prompt Security protects GenAI interactions and usage, while Snyk focuses on developer vulnerability remediation across code, dependencies, containers, and infrastructure."
+      "rationale": "AI-tool and agent security platform, not a developer vulnerability-management platform for code, dependencies, containers, and cloud infrastructure.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "AI-tool and agent security platform, not a developer vulnerability-management platform for code, dependencies, containers, and cloud infrastructure."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are developer-focused security platforms that find and remediate vulnerabilities in code and AI/code-assistant tooling; same buyer and adjacent product space."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "Both cybersecurity software, but Prompt secures GenAI usage/prompts at runtime rather than finding vulnerabilities in code, dependencies, or cloud infra."
+        }
+      ]
     },
     {
       "name": "ArmourZero",
@@ -4658,7 +5549,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide developer-focused application vulnerability detection and remediation integrated into development pipelines, targeting security and engineering teams."
+      "rationale": "Automated application, dependency, API, and cloud vulnerability detection/remediation platform directly overlaps Snyk's developer-security product.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Automated application, dependency, API, and cloud vulnerability detection/remediation platform directly overlaps Snyk's developer-security product."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Automated vulnerability detection and remediation platform covering applications, APIs, and cloud \u2014 direct competitor to Snyk's developer-security offering."
+        }
+      ]
     },
     {
       "name": "Kairo AI",
@@ -4707,7 +5610,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide developer-first vulnerability detection and remediation integrated into coding and CI/CD workflows, though Kairo specializes in Web3 smart contracts."
+      "rationale": "Developer security platform that detects and remediates code vulnerabilities, specialized for smart contracts; comparable application-security tooling.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Developer security platform that detects and remediates code vulnerabilities, specialized for smart contracts; comparable application-security tooling."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Developer-security platform finding code vulnerabilities as written (AI IDE, automated audits, CI/CD), a Web3-focused comparable to Snyk."
+        }
+      ]
     },
     {
       "name": "BlueFlag Security",
@@ -4759,7 +5674,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide developer-focused SDLC security platforms that identify and remediate software supply-chain risks for application security and engineering teams."
+      "rationale": "Both secure the SDLC and software supply chain, with developer-focused risk detection, policy enforcement, and remediation capabilities.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both secure the SDLC and software supply chain, with developer-focused risk detection, policy enforcement, and remediation capabilities."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Developer-first SDLC/supply-chain security platform, same buyer and adjacent product space as Snyk's code and pipeline vulnerability remediation."
+        }
+      ]
     },
     {
       "name": "CodeSlick",
@@ -4815,7 +5742,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "CodeSlick offers developer-first SAST and pull-request vulnerability detection, overlapping Snyk\u2019s code-security offering and targeting the same engineering and AppSec buyers."
+      "rationale": "Automated SAST and vulnerability remediation for developers overlaps Snyk\u2019s code-security product and engineering-team buyer.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Automated SAST and vulnerability remediation for developers overlaps Snyk\u2019s code-security product and engineering-team buyer."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Developer-focused SAST/security platform scanning code for vulnerabilities, secrets, and SBOM \u2014 same product and buyer as Snyk."
+        }
+      ]
     },
     {
       "name": "SecureX360",
@@ -4859,8 +5798,25 @@
         ],
         "relevance_score": "A"
       },
-      "relevant": false,
-      "rationale": "SecureX360 provides continuous attack simulation and pentesting, not developer-focused code, dependency, container, or infrastructure vulnerability scanning and remediation."
+      "relevant": true,
+      "rationale": "Both are application-security products helping engineering/security teams find exploitable vulnerabilities pre-release; same buyer and job-to-be-done, genuine AppSec comparables.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Continuous AI-driven penetration testing serves security and engineering teams, but differs from Snyk's developer vulnerability scanning and remediation platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are application-security products helping engineering/security teams find exploitable vulnerabilities pre-release; same buyer and job-to-be-done, genuine AppSec comparables."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Application security testing platform serving security/engineering teams to find vulnerabilities before release; adjacent competitor to Snyk's developer-security offering.>eot_id>"
+        }
+      ]
     },
     {
       "name": "Secure Software Research",
@@ -4911,7 +5867,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide developer-focused application security platforms for vulnerability detection, prioritization, and code remediation within secure software development workflows."
+      "rationale": "Factor 0 is a developer application-security platform using static analysis and AI for vulnerability detection and code remediation, directly comparable to Snyk.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Factor 0 is a developer application-security platform using static analysis and AI for vulnerability detection and code remediation, directly comparable to Snyk."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Application-security platform with AI/static-analysis vulnerability detection and code remediation\u2014direct competitor to Snyk's code-security offering."
+        }
+      ]
     },
     {
       "name": "DeepTraq",
@@ -5006,7 +5974,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "DeepTraq offers code, application, cloud, and vulnerability security capabilities overlapping Snyk, serving security and development teams seeking vulnerability remediation."
+      "rationale": "DeepTraq includes code and cloud vulnerability security plus remediation, directly overlapping Snyk\u2019s developer-security platform despite broader attack-surface coverage.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "DeepTraq includes code and cloud vulnerability security plus remediation, directly overlapping Snyk\u2019s developer-security platform despite broader attack-surface coverage."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Overlapping security platform: vulnerability management, code security, and cloud posture\u2014direct comparable/competitor to Snyk's code-and-cloud vulnerability finding and remediation."
+        }
+      ]
     },
     {
       "name": "Code Pathfinder",
@@ -5063,7 +6043,19 @@
         "relevance_score": "A"
       },
       "relevant": false,
-      "rationale": "Code Pathfinder provides general code intelligence and AI context tooling, not vulnerability detection and remediation for developer security."
+      "rationale": "Code intelligence and call-graph tooling supports code understanding, not vulnerability detection, remediation, or developer application security.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Code intelligence and call-graph tooling supports code understanding, not vulnerability detection, remediation, or developer application security."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Code intelligence/semantic analysis and MCP integration tooling, not vulnerability detection or developer security; resembles Sourcegraph more than Snyk."
+        }
+      ]
     },
     {
       "name": "Haicker",
@@ -5111,7 +6103,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide automated vulnerability scanning for codebases, targeting developers and security teams seeking to identify and remediate application security flaws."
+      "rationale": "Automated vulnerability scanning for web codebases directly overlaps Snyk's developer-security and code vulnerability remediation market.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Automated vulnerability scanning for web codebases directly overlaps Snyk's developer-security and code vulnerability remediation market."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Automated vulnerability scanning for codebases directly matches Snyk's developer-security product; same buyers and job, a competitor/comparable."
+        }
+      ]
     },
     {
       "name": "NoScope",
@@ -5155,7 +6159,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide software-driven vulnerability discovery and remediation for application security teams, addressing overlapping developer-security and penetration-testing needs."
+      "rationale": "NoScope's AI-driven vulnerability discovery and remediation platform directly overlaps Snyk's developer-security mission, though via automated penetration testing.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "NoScope's AI-driven vulnerability discovery and remediation platform directly overlaps Snyk's developer-security mission, though via automated penetration testing."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "AI-powered pentest platform that finds and remediates vulnerabilities \u2014 same AppSec buyer and job-to-be-done as Snyk, a genuine comparable."
+        }
+      ]
     },
     {
       "name": "Pluto Security",
@@ -5237,8 +6253,25 @@
         ],
         "relevance_score": "A"
       },
-      "relevant": false,
-      "rationale": "Pluto focuses on securing citizen-development workflows, not clearly vulnerability detection and remediation across code, dependencies, containers, or cloud infrastructure."
+      "relevant": true,
+      "rationale": "Developer/builder security platform enabling secure development \u2014 same product category and buyer persona as Snyk's developer-security platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Pluto focuses on securing citizen-development builders, not vulnerability detection and remediation across code, dependencies, containers, and cloud infrastructure."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Developer/builder security platform enabling secure development \u2014 same product category and buyer persona as Snyk's developer-security platform."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Security platform for builders/developers, comparable to Snyk's developer-security positioning; plausible competitor in application security tooling."
+        }
+      ]
     },
     {
       "name": "Pixee",
@@ -5289,7 +6322,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide developer-focused application security platforms that identify, triage, and remediate software vulnerabilities across the SDLC for AppSec and engineering teams."
+      "rationale": "Agentic application-security platform that triages and remediates code vulnerabilities across the SDLC, directly overlapping Snyk's developer-security offering.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Agentic application-security platform that triages and remediates code vulnerabilities across the SDLC, directly overlapping Snyk's developer-security offering."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Developer-security platform triaging and auto-remediating code vulnerabilities; directly competes with Snyk's find-and-fix AppSec offering for the same buyer."
+        }
+      ]
     },
     {
       "name": "Elara App",
@@ -5327,7 +6372,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide developer-focused repository vulnerability scanning and remediation insights for improving code security posture."
+      "rationale": "GitHub repository vulnerability scanning and remediation directly overlaps Snyk's developer-security platform for securing code and dependencies.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "GitHub repository vulnerability scanning and remediation directly overlaps Snyk's developer-security platform for securing code and dependencies."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are developer-security platforms that scan code repositories to find and fix vulnerabilities; direct product and market match with Snyk."
+        }
+      ]
     },
     {
       "name": "Corridor",
@@ -5371,7 +6428,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide developer-focused application security tools that help engineering and security teams prevent vulnerabilities during software development."
+      "rationale": "Both provide developer-focused application security that detects and remediates code vulnerabilities, with Corridor specializing in AI-generated code prevention.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both provide developer-focused application security that detects and remediates code vulnerabilities, with Corridor specializing in AI-generated code prevention."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are developer-security platforms detecting and preventing code vulnerabilities; Corridor targets AI-generated code but serves the same developer/security buyer with the same job."
+        }
+      ]
     },
     {
       "name": "Vigilnz",
@@ -5434,8 +6503,20 @@
         ],
         "relevance_score": "A"
       },
-      "relevant": false,
-      "rationale": "Vigilnz secures AI models and agents, while Snyk primarily provides application vulnerability scanning and remediation; their core security jobs differ."
+      "relevant": true,
+      "rationale": "Both sell security platforms for modern software systems; Vigilnz specializes in securing AI applications, agents, integrations, and AI supply chains.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both sell security platforms for modern software systems; Vigilnz specializes in securing AI applications, agents, integrations, and AI supply chains."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Developer-focused application security vendor like Snyk, protecting modern software/AI supply chains for the same security and engineering buyers."
+        }
+      ]
     },
     {
       "name": "Staris AI",
@@ -5485,7 +6566,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide developer-focused application security platforms that continuously identify exploitable software vulnerabilities and support remediation."
+      "rationale": "Continuous application-security validation and remediation directly overlaps Snyk\u2019s developer-security mission, though it emphasizes exploit validation rather than broad dependency and cloud scanning.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Continuous application-security validation and remediation directly overlaps Snyk\u2019s developer-security mission, though it emphasizes exploit validation rather than broad dependency and cloud scanning."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are application security platforms that find and help remediate vulnerabilities in code/apps for developer and security teams \u2014 direct competitor."
+        }
+      ]
     },
     {
       "name": "Djini.ai",
@@ -5556,7 +6649,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide developer-focused application security tools for detecting vulnerabilities, with Djini specializing in Android and iOS application testing."
+      "rationale": "Both provide developer-facing vulnerability detection and remediation/security testing, though Djini specializes in autonomous mobile application testing.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both provide developer-facing vulnerability detection and remediation/security testing, though Djini specializes in autonomous mobile application testing."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are developer-focused security platforms for automated vulnerability detection; Djini targets mobile apps while Snyk covers code, dependencies, and cloud."
+        }
+      ]
     },
     {
       "name": "Prime Security",
@@ -5609,7 +6714,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide developer-focused application security platforms that help engineering and security teams prevent software vulnerabilities earlier in the development lifecycle."
+      "rationale": "Automates security reviews and vulnerability risk mitigation across the software development lifecycle, directly overlapping Snyk\u2019s developer-security market.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Automates security reviews and vulnerability risk mitigation across the software development lifecycle, directly overlapping Snyk\u2019s developer-security market."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "AI-driven developer-security platform finding vulnerabilities in code/architecture across the SDLC \u2014 direct competitor to Snyk on product and market."
+        }
+      ]
     },
     {
       "name": "DerSecur",
@@ -5668,7 +6785,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "DerSecur directly overlaps Snyk in developer-focused application security testing, including code vulnerability scanning and software composition analysis across the SDLC."
+      "rationale": "DerScanner provides SAST, DAST, and software composition analysis for developer application security, directly overlapping Snyk's vulnerability detection and remediation platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "DerScanner provides SAST, DAST, and software composition analysis for developer application security, directly overlapping Snyk's vulnerability detection and remediation platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "DerScanner is a developer application-security platform (SAST, DAST, SCA) for finding code and dependency vulnerabilities \u2014 direct competitor to Snyk."
+        }
+      ]
     },
     {
       "name": "xeops.ai",
@@ -5713,8 +6842,20 @@
         ],
         "relevance_score": "A"
       },
-      "relevant": false,
-      "rationale": "XeOps focuses on autonomous penetration testing and exploit validation, not developer-centric code, dependency, container, and infrastructure vulnerability remediation."
+      "relevant": true,
+      "rationale": "AI-powered vulnerability discovery and exploit validation is a closely related developer-security product, though more offensive-security focused than Snyk.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "AI-powered vulnerability discovery and exploit validation is a closely related developer-security product, though more offensive-security focused than Snyk."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are AI/automated application-security platforms for discovering and validating vulnerabilities, serving the same security-engineering buyer; adjacent competitors in AppSec testing."
+        }
+      ]
     },
     {
       "name": "Oryon Technology",
@@ -5766,7 +6907,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide developer-centric application security platforms for vulnerability detection and remediation within software development workflows."
+      "rationale": "AI-powered application security platform detecting and remediating software vulnerabilities within developer workflows, directly comparable to Snyk's developer-security offering.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "AI-powered application security platform detecting and remediating software vulnerabilities within developer workflows, directly comparable to Snyk's developer-security offering."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "AI-powered application security platform with vulnerability detection and remediation in developer workflows \u2014 direct product and market match to Snyk."
+        }
+      ]
     },
     {
       "name": "OLIGO Security",
@@ -5818,7 +6971,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide application security platforms for developers and security teams to identify, prioritize, and remediate exploitable vulnerabilities in cloud-native software."
+      "rationale": "Both provide developer-focused cloud application security, vulnerability discovery and remediation; Oligo adds runtime protection but targets the same security teams and workloads.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both provide developer-focused cloud application security, vulnerability discovery and remediation; Oligo adds runtime protection but targets the same security teams and workloads."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are application/cloud security platforms helping dev and security teams find and remediate vulnerabilities; Oligo's runtime focus complements Snyk's code/dependency scanning\u2014genuine comparables."
+        }
+      ]
     },
     {
       "name": "Safety",
@@ -5884,7 +7049,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Safety overlaps Snyk in developer-focused vulnerability detection and software supply-chain security, serving security teams securing development environments."
+      "rationale": "Developer-security platform covering software supply-chain vulnerabilities and remediation-adjacent controls, overlapping Snyk's developer vulnerability-security market.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Developer-security platform covering software supply-chain vulnerabilities and remediation-adjacent controls, overlapping Snyk's developer vulnerability-security market."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Developer-security platform detecting vulnerabilities in dependencies and software supply chain, directly comparable to Snyk's core product and market."
+        }
+      ]
     },
     {
       "name": "privya.ai",
@@ -5960,7 +7137,19 @@
         "relevance_score": "A"
       },
       "relevant": false,
-      "rationale": "Privya scans code for personal-data flows and privacy compliance, not software vulnerabilities; buyers may overlap, but the core job differs from Snyk."
+      "rationale": "Privya is a privacy data-discovery and compliance platform, not a developer vulnerability-management platform for code, dependencies, containers, and infrastructure.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Privya is a privacy data-discovery and compliance platform, not a developer vulnerability-management platform for code, dependencies, containers, and infrastructure."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Privacy-compliance/data-lineage scanning, not security vulnerability detection; different job and buyer despite shared code-scanning technique."
+        }
+      ]
     },
     {
       "name": "Trent AI",
@@ -6035,7 +7224,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide automated application-security tools for software teams to identify and address product vulnerabilities during development."
+      "rationale": "Security platform analyzes application threats and vulnerabilities and recommends remediation, closely overlapping Snyk\u2019s developer-security use case.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Security platform analyzes application threats and vulnerabilities and recommends remediation, closely overlapping Snyk\u2019s developer-security use case."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Application security platform for vulnerability analysis and remediation across code/cloud environments; same product category and buyer as Snyk."
+        }
+      ]
     },
     {
       "name": "Rafter",
@@ -6099,7 +7300,20 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Rafter secures AI-generated code, overlapping Snyk\u2019s developer-focused code vulnerability and remediation offering for application security teams."
+      "rationale": "Rafter secures AI agents and their generated code, closely aligning with Snyk's developer-focused application and code security platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Rafter secures AI agents and their generated code, closely aligning with Snyk's developer-focused application and code security platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Developer-security product securing code (including AI-agent-written code); same product and buyer as Snyk's code-vulnerability platform."
+        }
+      ]
     }
-  ]
+  ],
+  "error": null
 }

@@ -7,18 +7,20 @@
     "name": "domain_similarity"
   },
   "k": 100,
-  "relevant_count": 3,
-  "precision_at_k": 3.0,
-  "relevant_count_at_10": 1,
-  "relevant_count_at_100": 3,
-  "precision_at_10": 10.0,
-  "precision_at_100": 3.0,
+  "relevant_count": 6,
+  "precision_at_k": 6.0,
+  "relevant_count_at_10": 2,
+  "relevant_count_at_25": 2,
+  "relevant_count_at_100": 6,
+  "precision_at_10": 20.0,
+  "precision_at_25": 8.0,
+  "precision_at_100": 6.0,
   "latency_ms": 1147,
   "cost_usd": null,
   "duplicates_removed": 4,
   "max_results": null,
-  "judge_model": "gpt-5.6",
-  "judged_at": "2026-07-27T03:43:35Z",
+  "judge_model": "majority(n=3): claude-opus-5,gpt-5.6-terra,kimi-k3",
+  "judged_at": "2026-08-10T19:35:37Z",
   "candidates": [
     {
       "name": "Progress Rail",
@@ -49,7 +51,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Progress Rail is Caterpillar\u2019s rail-focused subsidiary, not an independent lookalike, and primarily serves rail operators rather than construction or mining equipment buyers."
+      "rationale": "Progress Rail is a Caterpillar subsidiary, not an independent competitor or comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Progress Rail is a Caterpillar subsidiary, not an independent competitor or comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Progress Rail is a Caterpillar subsidiary, not a competitor or comparable; subsidiaries of the seed are excluded."
+        }
+      ]
     },
     {
       "name": "Digital Manuals",
@@ -73,7 +87,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Digital Manuals sells automotive parts/information, including Caterpillar-related products, but does not manufacture heavy construction, mining, or industrial equipment."
+      "rationale": "Automotive parts/catalog website serving equipment users, not an industrial manufacturer of heavy machinery, engines, or mining and construction equipment.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Automotive parts/catalog website serving equipment users, not an industrial manufacturer of heavy machinery, engines, or mining and construction equipment."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Aftermarket parts e-commerce site selling Caterpillar parts, not a heavy-machinery manufacturer; supplier/reseller, not a competitor or comparable."
+        }
+      ]
     },
     {
       "name": "Carter Machinery, Inc.",
@@ -103,7 +129,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Carter Machinery is a Caterpillar dealer and rental/service provider, not a competing heavy-equipment manufacturer with its own overlapping product line."
+      "rationale": "Carter Machinery is a Caterpillar equipment dealer and service provider, distributing the seed's products rather than competing as a heavy-equipment manufacturer.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Carter Machinery is a Caterpillar equipment dealer and service provider, distributing the seed's products rather than competing as a heavy-equipment manufacturer."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Caterpillar dealership selling/renting Cat equipment\u2014a distribution channel partner, not a competing equipment manufacturer."
+        }
+      ]
     },
     {
       "name": "Gmmco",
@@ -133,7 +171,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Gmmco is primarily a Caterpillar dealer and service partner, not an independent heavy-equipment manufacturer competing for the same purchase decision."
+      "rationale": "Gmmco is a Caterpillar dealership and service partner, distributing Caterpillar equipment rather than competing as an independent heavy-equipment manufacturer.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Gmmco is a Caterpillar dealership and service partner, distributing Caterpillar equipment rather than competing as an independent heavy-equipment manufacturer."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Gmmco is a Caterpillar dealership/channel partner in India selling Cat equipment, not a competing manufacturer or comparable."
+        }
+      ]
     },
     {
       "name": "Thompson Tractor Co., Inc.",
@@ -166,7 +216,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Thompson Tractor is an authorized Caterpillar dealer and service provider, not a competing heavy-equipment manufacturer with its own overlapping product line."
+      "rationale": "Authorized Caterpillar dealer selling and servicing CAT equipment, not an independent heavy-equipment manufacturer, competitor, or comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Authorized Caterpillar dealer selling and servicing CAT equipment, not an independent heavy-equipment manufacturer, competitor, or comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Caterpillar dealership selling and servicing Cat equipment; a distribution channel partner, not a competing or comparable equipment manufacturer."
+        }
+      ]
     },
     {
       "name": "PACCAR Inc.",
@@ -191,8 +253,20 @@
           "https://x.com/paccarfinancial"
         ]
       },
-      "relevant": false,
-      "rationale": "PACCAR primarily makes commercial trucks, while Caterpillar focuses on construction and mining machinery; buyers would not evaluate them for the same job."
+      "relevant": true,
+      "rationale": "PACCAR manufactures heavy-duty commercial trucks and provides parts, financing, and leasing, making it a close industrial vehicle manufacturer comparable to Caterpillar.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "PACCAR manufactures heavy-duty commercial trucks and provides parts, financing, and leasing, making it a close industrial vehicle manufacturer comparable to Caterpillar."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are industrial OEMs manufacturing heavy-duty vehicles/machinery and engines; PACCAR's trucks are direct comparables to Caterpillar's heavy equipment."
+        }
+      ]
     },
     {
       "name": "A.W. Smith & Sons",
@@ -215,7 +289,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "A.W. Smith & Sons is a hardware and timber retailer, not a manufacturer of heavy construction, mining, engine, or turbine equipment."
+      "rationale": "Retailer of timber, tools, workwear, and hardware; it supplies construction industries but does not manufacture heavy equipment or engines like Caterpillar.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Retailer of timber, tools, workwear, and hardware; it supplies construction industries but does not manufacture heavy equipment or engines like Caterpillar."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Retail hardware/timber store selling tools and workwear; not a heavy equipment manufacturer. Supplier/retailer of the category, not a competitor or comparable."
+        }
+      ]
     },
     {
       "name": "Milton CAT",
@@ -246,7 +332,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Milton CAT is Caterpillar\u2019s equipment dealer and service provider, not an independent heavy-equipment manufacturer competing for the same purchasing decision."
+      "rationale": "Milton CAT is an authorized Caterpillar equipment dealer and rental/service provider, not an independent heavy-equipment manufacturer or comparable competitor.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Milton CAT is an authorized Caterpillar equipment dealer and rental/service provider, not an independent heavy-equipment manufacturer or comparable competitor."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Milton CAT is an authorized Caterpillar dealer selling/renting CAT equipment \u2014 a channel partner/customer of the seed, not a competing manufacturer."
+        }
+      ]
     },
     {
       "name": "Wagner Equipment Co.",
@@ -283,7 +381,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Wagner is a Caterpillar dealer and service/rental provider, not a competing heavy-equipment manufacturer; it is a sales channel rather than a lookalike."
+      "rationale": "Wagner is a Caterpillar equipment dealer and service/rental provider, not an independent heavy-machinery manufacturer or comparable competitor.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Wagner is a Caterpillar equipment dealer and service/rental provider, not an independent heavy-machinery manufacturer or comparable competitor."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Caterpillar dealer selling, renting, and servicing Cat equipment \u2014 a distribution channel partner/customer, not a competing heavy-equipment manufacturer."
+        }
+      ]
     },
     {
       "name": "Mitsubishi Heavy Industries, Ltd.",
@@ -311,7 +421,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both manufacture heavy industrial machinery, engines, turbines, and infrastructure equipment for industrial, energy, construction, and logistics buyers."
+      "rationale": "Global heavy-industrial manufacturer producing engines, turbines, machinery, and infrastructure systems; a direct comparable to Caterpillar despite broader energy focus.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Global heavy-industrial manufacturer producing engines, turbines, machinery, and infrastructure systems; a direct comparable to Caterpillar despite broader energy focus."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Global heavy-industry manufacturer making engines, turbines, and industrial machinery \u2014 direct comparable to Caterpillar on product and business model."
+        }
+      ]
     },
     {
       "name": "Exxon Mobil Corporation",
@@ -338,7 +460,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "ExxonMobil produces energy, fuels, and chemicals, not construction/mining equipment or heavy machinery; buyers would not evaluate them for the same job."
+      "rationale": "ExxonMobil is an oil and gas producer and refiner, not a manufacturer of heavy construction, mining, engine, or turbine equipment.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "ExxonMobil is an oil and gas producer and refiner, not a manufacturer of heavy construction, mining, engine, or turbine equipment."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Oil and gas energy producer, not heavy machinery or construction/mining equipment manufacturer; no product or market overlap."
+        }
+      ]
     },
     {
       "name": "Foley Equipment",
@@ -367,7 +501,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Foley is Caterpillar\u2019s dealer and service channel, not a competing heavy-equipment manufacturer; it primarily resells the seed\u2019s products."
+      "rationale": "Foley Equipment is a Caterpillar dealer and service provider, distributing the seed's products rather than manufacturing competing heavy equipment.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Foley Equipment is a Caterpillar dealer and service provider, distributing the seed's products rather than manufacturing competing heavy equipment."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Foley is a Caterpillar equipment dealer/distributor, i.e., a sales channel of the seed, not a competing heavy-machinery manufacturer."
+        }
+      ]
     },
     {
       "name": "Caterpillar",
@@ -396,7 +542,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "This is Caterpillar\u2019s branded merchandise retail store, not an independent heavy-equipment, engine, turbine, or industrial-machinery manufacturer."
+      "rationale": "Brand merchandise retailer, not an independent heavy-equipment manufacturer, competitor, or comparable; effectively a duplicate/brand storefront.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Brand merchandise retailer, not an independent heavy-equipment manufacturer, competitor, or comparable; effectively a duplicate/brand storefront."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Branded-merchandise e-commerce store selling Caterpillar apparel and gifts, not heavy machinery manufacturing \u2014 no competitor or comparable."
+        }
+      ]
     },
     {
       "name": "Henri Strawberry Fils & Cie",
@@ -423,7 +581,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Henri Fraise is a Caterpillar dealer and rental/service provider, not a competing heavy-equipment manufacturer with its own overlapping core products."
+      "rationale": "Caterpillar equipment dealer and rental provider, not a heavy-machinery manufacturer or comparable equipment platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Caterpillar equipment dealer and rental provider, not a heavy-machinery manufacturer or comparable equipment platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Caterpillar dealership selling/renting Caterpillar machines; a distribution channel partner, not a competing equipment manufacturer."
+        }
+      ]
     },
     {
       "name": "Gregory Poole Equipment Company",
@@ -455,7 +625,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Gregory Poole is a Caterpillar dealer and service provider, not a competing heavy-equipment manufacturer; it is part of Caterpillar\u2019s distribution channel."
+      "rationale": "Authorized Caterpillar dealer selling and servicing Caterpillar equipment, not an independent competing manufacturer or peer heavy-equipment platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Authorized Caterpillar dealer selling and servicing Caterpillar equipment, not an independent competing manufacturer or peer heavy-equipment platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Caterpillar equipment dealer \u2014 a distribution channel/customer of the seed, not a competing manufacturer of heavy machinery."
+        }
+      ]
     },
     {
       "name": "Xylem Water Solutions",
@@ -484,7 +666,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Xylem primarily sells water-management pumps and infrastructure, not construction/mining machinery or engines; buyers and core jobs to be done differ."
+      "rationale": "Xylem sells water-management pumps and treatment infrastructure, not construction/mining machinery, engines, or heavy equipment comparable to Caterpillar.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Xylem sells water-management pumps and treatment infrastructure, not construction/mining machinery, engines, or heavy equipment comparable to Caterpillar."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Water management and pump solutions company, not construction/mining heavy machinery; different products and buyer markets despite shared industrial-manufacturer label."
+        }
+      ]
     },
     {
       "name": "Terra Cat",
@@ -512,7 +706,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Terra Cat is Caterpillar\u2019s regional dealer and service partner, not an independent heavy-equipment manufacturer offering competing machinery."
+      "rationale": "Terra Cat is an authorized Caterpillar dealer and service provider, not an independent heavy-equipment manufacturer, competitor, or comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Terra Cat is an authorized Caterpillar dealer and service provider, not an independent heavy-equipment manufacturer, competitor, or comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Terra Cat is a Caterpillar equipment dealer/distributor in New Zealand \u2014 a customer of the seed, not a competing manufacturer or comparable."
+        }
+      ]
     },
     {
       "name": "WPG Holdings",
@@ -537,7 +743,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "WPG Holdings is an electronics/semiconductor distributor and holding group, not a manufacturer of construction, mining, engine, or heavy machinery products."
+      "rationale": "WPG Holdings is a corporate/technology distribution group, not a manufacturer of heavy construction, mining, engine, or turbine equipment.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "WPG Holdings is a corporate/technology distribution group, not a manufacturer of heavy construction, mining, engine, or turbine equipment."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Electronics/components distribution holding group, not heavy-machinery or industrial equipment manufacturer; no shared product, market, or model with Caterpillar."
+        }
+      ]
     },
     {
       "name": "TechForce Foundation",
@@ -571,7 +789,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "TechForce is a nonprofit workforce-development organization, not a manufacturer of construction, mining, engine, or other heavy industrial equipment."
+      "rationale": "Nonprofit workforce-development organization for automotive technicians, not a manufacturer of heavy construction, mining, or industrial equipment.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Nonprofit workforce-development organization for automotive technicians, not a manufacturer of heavy construction, mining, or industrial equipment."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Nonprofit offering scholarships and career training for technicians; no resemblance to Caterpillar's heavy equipment manufacturing in product, market, or model."
+        }
+      ]
     },
     {
       "name": "Quinn Company",
@@ -604,7 +834,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Quinn is primarily a Caterpillar dealer, rental, and service provider, not a competing heavy-equipment manufacturer with its own overlapping machinery portfolio."
+      "rationale": "Quinn is primarily a Caterpillar machinery dealer, rental provider, and service partner, not an independent heavy-equipment manufacturer or direct comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Quinn is primarily a Caterpillar machinery dealer, rental provider, and service partner, not an independent heavy-equipment manufacturer or direct comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Quinn is a Cat equipment dealer/distributor, i.e., a channel partner and customer of Caterpillar, not a competing manufacturer or comparable."
+        }
+      ]
     },
     {
       "name": "Ohio CAT",
@@ -634,7 +876,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Ohio CAT is a Caterpillar equipment dealer and service/rental provider, not a competing heavy-equipment manufacturer."
+      "rationale": "Ohio CAT is a Caterpillar equipment dealer and service/rental provider, not an independent heavy-equipment manufacturer or comparable competitor.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Ohio CAT is a Caterpillar equipment dealer and service/rental provider, not an independent heavy-equipment manufacturer or comparable competitor."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Ohio CAT is an authorized Caterpillar dealer\u2014sells, rents, and services Cat equipment; a channel partner/customer, not a competing manufacturer or comparable."
+        }
+      ]
     },
     {
       "name": "Cavpower",
@@ -664,7 +918,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Cavpower is Caterpillar\u2019s dealer and service channel, not an independent heavy-equipment manufacturer competing for the same purchase decision."
+      "rationale": "Cavpower is an authorized Caterpillar dealer and service provider, not an independent heavy-equipment manufacturer or comparable competitor.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Cavpower is an authorized Caterpillar dealer and service provider, not an independent heavy-equipment manufacturer or comparable competitor."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Cavpower is a Caterpillar dealer selling Cat equipment\u2014a channel partner/customer of the seed, not a competing equipment manufacturer."
+        }
+      ]
     },
     {
       "name": "Peterson Cat",
@@ -693,7 +959,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Peterson Cat is a regional Caterpillar dealer and rental/service provider, not a competing heavy-equipment manufacturer."
+      "rationale": "Peterson Cat is a Caterpillar equipment dealer and rental provider, not a heavy-equipment manufacturer or independent peer competitor.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Peterson Cat is a Caterpillar equipment dealer and rental provider, not a heavy-equipment manufacturer or independent peer competitor."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Peterson Cat is a Caterpillar equipment dealer, not a manufacturer; it is a channel partner/customer of the seed, not a competitor or comparable."
+        }
+      ]
     },
     {
       "name": "Costex Tractor Parts",
@@ -722,7 +1000,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Costex is an aftermarket parts retailer for Caterpillar equipment, not a heavy-equipment and engine manufacturer offering comparable machinery."
+      "rationale": "Replacement-parts retailer for Caterpillar-compatible equipment, not a manufacturer of heavy machinery, engines, or industrial equipment.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Replacement-parts retailer for Caterpillar-compatible equipment, not a manufacturer of heavy machinery, engines, or industrial equipment."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Aftermarket replacement-parts retailer for Caterpillar equipment; a supplier/reseller in the value chain, not a peer heavy-equipment manufacturer."
+        }
+      ]
     },
     {
       "name": "MEA Energy Association",
@@ -750,7 +1040,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "MEA is an energy-industry training association, not a manufacturer of construction, mining, engine, or heavy machinery products."
+      "rationale": "Industry association providing energy-sector training and events, not a manufacturer of heavy equipment, engines, or machinery.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Industry association providing energy-sector training and events, not a manufacturer of heavy equipment, engines, or machinery."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Industry training association for gas/energy professionals, not a manufacturer of heavy machinery or engines; no product, market, or model overlap."
+        }
+      ]
     },
     {
       "name": "Western Diesel & Performance",
@@ -777,7 +1079,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Western Diesel is an aftermarket parts retailer carrying Caterpillar products, not a manufacturer of heavy equipment, engines, or machinery."
+      "rationale": "Retailer of diesel parts and tools, including Caterpillar-compatible products; it is a supplier/customer-channel, not a heavy-equipment manufacturer or comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Retailer of diesel parts and tools, including Caterpillar-compatible products; it is a supplier/customer-channel, not a heavy-equipment manufacturer or comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Online retailer reselling engine parts (including Caterpillar's); a downstream distributor, not a manufacturer or competitor of heavy machinery."
+        }
+      ]
     },
     {
       "name": "Southern Company",
@@ -808,7 +1122,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Southern Company is an electric and gas utility, not a manufacturer of heavy construction, mining, or industrial machinery."
+      "rationale": "Southern Company is an electric and gas utility, not a manufacturer of heavy construction, mining, or industrial equipment.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Southern Company is an electric and gas utility, not a manufacturer of heavy construction, mining, or industrial equipment."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Electric and gas utility, not a heavy machinery or equipment manufacturer; unrelated industry despite shared industrial scale."
+        }
+      ]
     },
     {
       "name": "Diesel Injection Zone",
@@ -831,7 +1157,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Diesel Injection Zone is an aftermarket parts retailer carrying Caterpillar products, not a manufacturer of heavy equipment, engines, or industrial machinery."
+      "rationale": "Retailer of diesel engine parts, including Caterpillar-compatible products, rather than a heavy-equipment, engine, and machinery manufacturer.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Retailer of diesel engine parts, including Caterpillar-compatible products, rather than a heavy-equipment, engine, and machinery manufacturer."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Aftermarket e-commerce retailer of diesel injection parts, including Caterpillar's; a parts reseller in the channel, not a heavy-machinery manufacturer or competitor."
+        }
+      ]
     },
     {
       "name": "Zeppelin SK",
@@ -860,7 +1198,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Zeppelin SK is a Caterpillar equipment dealer and rental/service provider, not a competing heavy-machinery manufacturer; it is part of Caterpillar\u2019s distribution channel."
+      "rationale": "Dealer and rental provider for Caterpillar equipment, making it a distributor/customer rather than an independent heavy-machinery manufacturer competitor.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Dealer and rental provider for Caterpillar equipment, making it a distributor/customer rather than an independent heavy-machinery manufacturer competitor."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Zeppelin SK is a Caterpillar dealer/rental and service partner, not a manufacturer of heavy machinery \u2014 a channel customer, not a competitor or comparable."
+        }
+      ]
     },
     {
       "name": "Lenmark Industries",
@@ -888,7 +1238,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Lenmark is a broad industrial-equipment retailer/reseller, not a manufacturer of heavy construction, mining, engine, and turbine equipment like Caterpillar."
+      "rationale": "Industrial-equipment retailer and marketplace, not a manufacturer of heavy construction, mining machinery, engines, or turbines comparable to Caterpillar.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Industrial-equipment retailer and marketplace, not a manufacturer of heavy construction, mining machinery, engines, or turbines comparable to Caterpillar."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Lenmark is a retailer/distributor of industrial equipment and parts, not a machinery manufacturer; a channel player, not a competitor or comparable to Caterpillar."
+        }
+      ]
     },
     {
       "name": "Hawthorne Cat",
@@ -921,7 +1283,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Hawthorne Cat is a Caterpillar dealer and service provider, not a competing heavy-equipment manufacturer with the same core business model."
+      "rationale": "Authorized Caterpillar dealer and service partner, distributing the seed's equipment rather than manufacturing competing heavy machinery.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Authorized Caterpillar dealer and service partner, distributing the seed's equipment rather than manufacturing competing heavy machinery."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Hawthorne Cat is a Caterpillar dealer selling and servicing Caterpillar equipment\u2014a customer/channel partner of the seed, not a competing manufacturer."
+        }
+      ]
     },
     {
       "name": "SABIC",
@@ -951,7 +1325,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "SABIC manufactures chemicals and advanced materials, not construction/mining machinery or industrial engines; buyers and core jobs-to-be-done do not overlap."
+      "rationale": "SABIC produces chemicals and materials, not heavy construction, mining, or industrial equipment; it is an industrial supplier rather than a comparable equipment manufacturer.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "SABIC produces chemicals and materials, not heavy construction, mining, or industrial equipment; it is an industrial supplier rather than a comparable equipment manufacturer."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "SABIC makes chemicals/polymers, not heavy machinery or equipment; different products and buyers, shared 'B2B manufacturing' label insufficient."
+        }
+      ]
     },
     {
       "name": "Logistics Plus, Inc.",
@@ -982,7 +1368,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Logistics Plus provides freight and supply-chain services, not heavy equipment, engines, turbines, or industrial machinery purchased by Caterpillar\u2019s buyers."
+      "rationale": "Logistics provider offering freight and warehousing services, not a manufacturer of heavy construction, mining, or industrial equipment.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Logistics provider offering freight and warehousing services, not a manufacturer of heavy construction, mining, or industrial equipment."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Caterpillar manufactures heavy machinery; Logistics Plus is a 3PL/4PL freight and supply-chain service provider \u2014 different product, market, and model."
+        }
+      ]
     },
     {
       "name": "Bonfiglioli S.P.A.",
@@ -1011,8 +1409,25 @@
           "https://www.youtube.com/user/BonfiglioliWorldwide"
         ]
       },
-      "relevant": false,
-      "rationale": "Bonfiglioli supplies power-transmission components to machinery manufacturers, while Caterpillar primarily sells complete heavy equipment and engines to operators; buyers and jobs differ."
+      "relevant": true,
+      "rationale": "Both manufacture industrial powertrain equipment for heavy mobile machinery and mining-related applications, with overlapping OEM and industrial markets.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both manufacture industrial powertrain equipment for heavy mobile machinery and mining-related applications, with overlapping OEM and industrial markets."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Bonfiglioli makes drivetrain components (gearboxes, motors) supplied to machinery OEMs, not heavy construction/mining equipment \u2014 a supplier, not a peer of Caterpillar."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Industrial manufacturer of drivetrain/power-transmission components for mobile machinery and mining; comparable heavy-industrial B2B manufacturer peer.Continue.', ''}"
+        }
+      ]
     },
     {
       "name": "Farm Equipment",
@@ -1039,7 +1454,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Farm Equipment is a trade publication/association resource for dealers, not a manufacturer of heavy construction, mining, or agricultural machinery."
+      "rationale": "Trade association/media resource for agricultural equipment dealers, not a manufacturer of heavy machinery, engines, or construction and mining equipment.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Trade association/media resource for agricultural equipment dealers, not a manufacturer of heavy machinery, engines, or construction and mining equipment."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Trade association/media serving equipment dealers, not a machinery manufacturer; not a competitor or comparable to Caterpillar."
+        }
+      ]
     },
     {
       "name": "Fabick Cat",
@@ -1073,7 +1500,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Fabick Cat is a Caterpillar equipment dealer and service provider, not an independent heavy-equipment manufacturer buyers would evaluate as an alternative."
+      "rationale": "Fabick Cat is an authorized Caterpillar equipment dealer and service provider, distributing and maintaining the seed's products rather than competing with its manufacturing business.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Fabick Cat is an authorized Caterpillar equipment dealer and service provider, distributing and maintaining the seed's products rather than competing with its manufacturing business."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Fabick Cat is a Caterpillar dealership reselling and servicing Cat equipment\u2014a distribution channel/client of the seed, not a competing manufacturer."
+        }
+      ]
     },
     {
       "name": "Al-Bahar",
@@ -1101,7 +1540,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Al-Bahar is a Caterpillar dealer and service partner reselling Caterpillar equipment, not an independent heavy-equipment manufacturer with its own competing products."
+      "rationale": "Al-Bahar is a regional Caterpillar dealer and service provider, not an independent heavy-equipment manufacturer or comparable competitor.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Al-Bahar is a regional Caterpillar dealer and service provider, not an independent heavy-equipment manufacturer or comparable competitor."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Al-Bahar is a Caterpillar dealer/distributor and service partner, not a competing heavy-equipment manufacturer; it's a channel client of the seed."
+        }
+      ]
     },
     {
       "name": "Stanley Black & Decker, Inc.",
@@ -1131,7 +1582,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Stanley Black & Decker sells tools and outdoor equipment, not heavy construction/mining machinery; shared construction customers do not imply the same purchasing decision."
+      "rationale": "Stanley Black & Decker makes tools and outdoor equipment, not Caterpillar\u2019s heavy construction/mining machinery, engines, or industrial power systems.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Stanley Black & Decker makes tools and outdoor equipment, not Caterpillar\u2019s heavy construction/mining machinery, engines, or industrial power systems."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Makes hand/power tools and outdoor equipment, not heavy construction/mining machinery or engines; different product category and buyer despite shared construction adjacency."
+        }
+      ]
     },
     {
       "name": "Balfour Beatty",
@@ -1163,7 +1626,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Balfour Beatty is an infrastructure construction and engineering contractor, not a manufacturer of heavy equipment, engines, turbines, or machinery."
+      "rationale": "Balfour Beatty is an infrastructure engineering and construction contractor, not a manufacturer of heavy equipment, engines, or machinery.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Balfour Beatty is an infrastructure engineering and construction contractor, not a manufacturer of heavy equipment, engines, or machinery."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Balfour Beatty is a construction/engineering contractor, a customer of equipment makers, not a heavy-machinery manufacturer like Caterpillar."
+        }
+      ]
     },
     {
       "name": "Zeppelin & Caterpillar",
@@ -1185,7 +1660,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Zeppelin Uzbekistan is a Caterpillar/SEM equipment dealer and service provider, not a competing heavy-equipment manufacturer with its own overlapping core products."
+      "rationale": "Caterpillar dealer and service provider, distributing the seed's machinery rather than manufacturing comparable heavy equipment.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Caterpillar dealer and service provider, distributing the seed's machinery rather than manufacturing comparable heavy equipment."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Zeppelin is a Caterpillar equipment dealer (distribution channel), not a competing heavy-machinery manufacturer; dealers are channel partners, not lookalikes."
+        }
+      ]
     },
     {
       "name": "Caterpillar Inc.",
@@ -1214,7 +1701,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "This appears to be Caterpillar\u2019s India sales site or dealer channel for Caterpillar machines, not an independent peer manufacturer."
+      "rationale": "Appears to be Caterpillar's Indian brand/dealer presence selling the seed's own machines, not an independent competitor or comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Appears to be Caterpillar's Indian brand/dealer presence selling the seed's own machines, not an independent competitor or comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Duplicate entry: regional dealer site for Caterpillar itself, not a competitor or comparable company."
+        }
+      ]
     },
     {
       "name": "Glencore",
@@ -1245,7 +1744,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Glencore is a mining and commodities operator\u2014a potential Caterpillar customer\u2014not a manufacturer of heavy equipment, engines, or machinery."
+      "rationale": "Glencore mines and trades commodities; Caterpillar manufactures heavy equipment and engines. It is primarily a potential customer, not a comparable or competitor.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Glencore mines and trades commodities; Caterpillar manufactures heavy equipment and engines. It is primarily a potential customer, not a comparable or competitor."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Glencore is a mining and commodities-trading company, a customer of Caterpillar's mining equipment, not an equipment manufacturer competitor."
+        }
+      ]
     },
     {
       "name": "ASCE",
@@ -1277,7 +1788,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "ASCE is a professional membership organization, not a manufacturer of construction, mining, engine, or heavy-machinery products."
+      "rationale": "ASCE is a professional civil-engineering association, not a manufacturer of heavy equipment, engines, or mining and construction machinery.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "ASCE is a professional civil-engineering association, not a manufacturer of heavy equipment, engines, or mining and construction machinery."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "ASCE is a civil engineering professional society/nonprofit, not a heavy equipment or machinery manufacturer; no product, market, or model overlap."
+        }
+      ]
     },
     {
       "name": "Phoenix Contact USA",
@@ -1301,7 +1824,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Phoenix Contact sells industrial automation and electrical components, not construction, mining, or heavy equipment for the same purchasing need."
+      "rationale": "Industrial electrical automation supplier, not a heavy construction/mining equipment, engine, turbine, or machinery manufacturer comparable to Caterpillar.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Industrial electrical automation supplier, not a heavy construction/mining equipment, engine, turbine, or machinery manufacturer comparable to Caterpillar."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Phoenix Contact makes electrical/automation components (PLCs, breakers), not heavy construction/mining machinery; a potential supplier, not a peer or comparable to Caterpillar."
+        }
+      ]
     },
     {
       "name": "Boyd CAT",
@@ -1331,7 +1866,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Boyd CAT is a Caterpillar equipment dealer, rental, and service provider, not a heavy-equipment manufacturer offering competing products."
+      "rationale": "Boyd CAT is a Caterpillar equipment dealer providing sales, rentals, parts, and service, making it a distributor rather than a competing manufacturer.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Boyd CAT is a Caterpillar equipment dealer providing sales, rentals, parts, and service, making it a distributor rather than a competing manufacturer."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Boyd CAT is a Caterpillar equipment dealer (sales/rental/service), a downstream channel partner of the seed, not a competing heavy-machinery manufacturer."
+        }
+      ]
     },
     {
       "name": "Covestro",
@@ -1365,7 +1912,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Covestro manufactures polymer materials, not heavy construction/mining equipment or industrial engines; buyers and core jobs-to-be-done differ."
+      "rationale": "Covestro makes polymer materials and chemicals, whereas Caterpillar manufactures heavy equipment, engines, and machinery; they are not direct competitors or close comparables.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Covestro makes polymer materials and chemicals, whereas Caterpillar manufactures heavy equipment, engines, and machinery; they are not direct competitors or close comparables."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Covestro makes polymer/chemical materials, not heavy machinery or equipment; shared generic manufacturing label only, no product or market overlap."
+        }
+      ]
     },
     {
       "name": "Daifuku Co., Ltd.",
@@ -1395,7 +1954,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Daifuku provides intralogistics and factory automation, not construction/mining heavy equipment; buyers and core jobs-to-be-done differ from Caterpillar\u2019s."
+      "rationale": "Daifuku sells warehouse and factory material-handling automation, not construction, mining, or heavy equipment; it targets different operational buyers and use cases.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Daifuku sells warehouse and factory material-handling automation, not construction, mining, or heavy equipment; it targets different operational buyers and use cases."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Daifuku makes warehouse/logistics automation (AGVs, conveyors), not heavy construction/mining machinery; different product and buyer\u2014only generic industrial-manufacturing overlap."
+        }
+      ]
     },
     {
       "name": "FSC Trucking",
@@ -1418,7 +1989,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "FSC Trucking sells Caterpillar-themed apparel and accessories, not construction equipment, engines, turbines, or heavy machinery to industrial buyers."
+      "rationale": "Online seller of trucking-themed apparel and accessories, not a manufacturer of heavy equipment, engines, or industrial machinery.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Online seller of trucking-themed apparel and accessories, not a manufacturer of heavy equipment, engines, or industrial machinery."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "E-commerce apparel shop selling trucking-themed t-shirts; not a heavy-machinery manufacturer or competitor\u2014merchandise retailer, unrelated product and market."
+        }
+      ]
     },
     {
       "name": "PowerCentral",
@@ -1448,7 +2031,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "PowerCentral is an equipment marketplace, not a manufacturer of heavy machinery or power systems; its business model differs fundamentally from Caterpillar\u2019s."
+      "rationale": "PowerCentral is a marketplace for generator equipment and services, not an industrial machinery manufacturer or comparable OEM to Caterpillar.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "PowerCentral is a marketplace for generator equipment and services, not an industrial machinery manufacturer or comparable OEM to Caterpillar."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Online marketplace for power equipment, not a manufacturer; a sales channel for Caterpillar-like products, not a competitor or comparable."
+        }
+      ]
     },
     {
       "name": "Hastings Deering",
@@ -1477,7 +2072,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Hastings Deering is a Caterpillar equipment dealer and service partner, not a competing heavy-equipment manufacturer with its own overlapping product line."
+      "rationale": "Hastings Deering is an authorized Caterpillar equipment dealer and service provider, distributing Cat products rather than manufacturing competing heavy machinery.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Hastings Deering is an authorized Caterpillar equipment dealer and service provider, distributing Cat products rather than manufacturing competing heavy machinery."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Caterpillar dealership/reseller, not an equipment manufacturer; it is a channel partner/customer of the seed, not a competitor or comparable."
+        }
+      ]
     },
     {
       "name": "Colorado Springs Utilities",
@@ -1508,7 +2115,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Colorado Springs Utilities provides public utility services; it does not manufacture heavy construction, mining, engine, or turbine equipment."
+      "rationale": "Community-owned water and sewer utility, not a manufacturer of heavy equipment, engines, or industrial machinery.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Community-owned water and sewer utility, not a manufacturer of heavy equipment, engines, or industrial machinery."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Municipal water/energy utility, not a heavy-equipment manufacturer; no product, market, or model overlap with Caterpillar."
+        }
+      ]
     },
     {
       "name": "Mitsubishi Electric Corporation",
@@ -1538,7 +2157,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Mitsubishi Electric primarily sells electrical, automation, HVAC, and energy systems, not construction/mining machinery or heavy equipment for the same job."
+      "rationale": "Diversified electrical and automation manufacturer, not a primary producer of heavy construction/mining equipment, engines, or comparable machinery.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Diversified electrical and automation manufacturer, not a primary producer of heavy construction/mining equipment, engines, or comparable machinery."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Mitsubishi Electric makes electrical/electronics equipment and automation, not construction/mining heavy machinery or engines; only generic B2B manufacturing overlap."
+        }
+      ]
     },
     {
       "name": "American Council of Engineering Companies",
@@ -1570,7 +2201,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "ACEC is an engineering-industry professional association, not a manufacturer of construction, mining, engine, or other heavy equipment."
+      "rationale": "Professional association advocating for engineering firms, not a manufacturer of heavy equipment, engines, or industrial machinery.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Professional association advocating for engineering firms, not a manufacturer of heavy equipment, engines, or industrial machinery."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Nonprofit trade association for engineering firms, not a manufacturer of heavy machinery; no product, market, or model overlap with Caterpillar."
+        }
+      ]
     },
     {
       "name": "AutomaTech",
@@ -1596,7 +2239,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "AutomaTech distributes industrial automation and integration solutions, not construction, mining, engine, or heavy-equipment products evaluated for Caterpillar\u2019s core jobs."
+      "rationale": "Industrial automation distributor and integrator, not a manufacturer of heavy construction, mining, or power equipment.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Industrial automation distributor and integrator, not a manufacturer of heavy construction, mining, or power equipment."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "AutomaTech is an industrial-automation distributor/integrator, not a heavy machinery manufacturer; serves the category rather than competing with Caterpillar."
+        }
+      ]
     },
     {
       "name": "Innovation Mining Supplies",
@@ -1618,7 +2273,24 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Candidate is an equipment retailer, rental, and maintenance provider, not a heavy-equipment manufacturer competing with Caterpillar."
+      "rationale": "Retailer/dealer reselling Cat equipment and rentals, not a heavy-machinery manufacturer; a channel partner of the seed's category, not a competitor.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Retailer and service provider of heavy mining and construction equipment, including likely Caterpillar products; comparable dealer ecosystem rather than unrelated supplier."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Retailer/dealer reselling Cat equipment and rentals, not a heavy-machinery manufacturer; a channel partner of the seed's category, not a competitor."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "Retailer/dealer of mining equipment, not a manufacturer; distributes Cat products rather than competing with Caterpillar."
+        }
+      ]
     },
     {
       "name": "American Society of Civil Engineers",
@@ -1652,7 +2324,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "ASCE is a professional membership and education nonprofit, not a manufacturer of construction equipment, engines, or other heavy machinery."
+      "rationale": "ASCE is a professional association serving civil engineers, not a manufacturer of heavy equipment, engines, or industrial machinery.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "ASCE is a professional association serving civil engineers, not a manufacturer of heavy equipment, engines, or industrial machinery."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "ASCE is a professional engineering society/nonprofit, not a heavy machinery manufacturer; no product, market, or business-model overlap."
+        }
+      ]
     },
     {
       "name": "Warren CAT",
@@ -1684,7 +2368,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Warren CAT is a Caterpillar equipment dealer and service provider, not a competing heavy-equipment manufacturer with its own overlapping product line."
+      "rationale": "Warren CAT is an authorized Caterpillar equipment dealer and service provider, distributing and maintaining the seed's products rather than competing with it.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Warren CAT is an authorized Caterpillar equipment dealer and service provider, distributing and maintaining the seed's products rather than competing with it."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Warren CAT is a Caterpillar dealership selling and servicing Cat equipment \u2014 a channel partner/customer of the seed, not a competing manufacturer."
+        }
+      ]
     },
     {
       "name": "ClimateTechReview",
@@ -1713,7 +2409,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "ClimateTechReview is a climate-tech networking and information platform, not a manufacturer of heavy construction, mining, or industrial machinery."
+      "rationale": "Climate-tech networking, research, and investment-information platform; does not manufacture heavy equipment, engines, or industrial machinery.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Climate-tech networking, research, and investment-information platform; does not manufacture heavy equipment, engines, or industrial machinery."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Climate tech networking/information platform, not heavy machinery or industrial equipment manufacturing \u2014 no product, market, or model overlap."
+        }
+      ]
     },
     {
       "name": "Worldwide Machinery",
@@ -1741,7 +2449,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Worldwide Machinery is an equipment dealer and rental provider, not a heavy-equipment manufacturer, despite serving similar industries and buyers."
+      "rationale": "Equipment dealer and rental provider serving similar industries, but not a heavy-machinery manufacturer comparable to Caterpillar's primary OEM business.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Equipment dealer and rental provider serving similar industries, but not a heavy-machinery manufacturer comparable to Caterpillar's primary OEM business."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Equipment dealer/rental firm in the manufacturer's distribution channel, not a heavy-machinery manufacturer peer; likely a customer of Caterpillar rather than a comparable."
+        }
+      ]
     },
     {
       "name": "Kalmar USA",
@@ -1769,7 +2489,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both manufacture and service heavy industrial material-handling equipment for operational fleets, with overlapping buyers in ports, manufacturing, and logistics facilities."
+      "rationale": "Manufactures heavy industrial material-handling equipment and provides lifecycle services, making it a comparable B2B machinery supplier to Caterpillar.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Manufactures heavy industrial material-handling equipment and provides lifecycle services, making it a comparable B2B machinery supplier to Caterpillar."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both manufacture heavy industrial machinery (material handling vs construction/mining equipment) sold B2B; genuine comparable in heavy-equipment manufacturing."
+        }
+      ]
     },
     {
       "name": "American Public Transportation",
@@ -1799,7 +2531,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "APTA is a public-transit trade association, not a manufacturer of construction, mining, or heavy industrial equipment."
+      "rationale": "APTA is a nonprofit trade association for transit agencies, not a manufacturer of heavy equipment, engines, or machinery.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "APTA is a nonprofit trade association for transit agencies, not a manufacturer of heavy equipment, engines, or machinery."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Nonprofit transit advocacy association, not a manufacturer of heavy equipment or engines; unrelated industry and business model."
+        }
+      ]
     },
     {
       "name": "CN",
@@ -1826,7 +2570,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "CN provides freight transportation and logistics, while Caterpillar manufactures heavy industrial equipment; their core offerings and purchasing jobs do not overlap."
+      "rationale": "CN is a rail freight and logistics operator, not a manufacturer of heavy construction, mining, engine, or turbine equipment.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "CN is a rail freight and logistics operator, not a manufacturer of heavy construction, mining, engine, or turbine equipment."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "CN is a rail freight and logistics provider; Caterpillar manufactures heavy machinery. Different products, markets, and models\u2014no resemblance."
+        }
+      ]
     },
     {
       "name": "Construction Equipment Guide",
@@ -1857,7 +2613,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "CEG is an equipment marketplace and industry media site, not a manufacturer of heavy construction and mining machinery."
+      "rationale": "Construction Equipment Guide is a media and marketplace resource for equipment transactions, not a manufacturer of heavy machinery, engines, or industrial equipment.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Construction Equipment Guide is a media and marketplace resource for equipment transactions, not a manufacturer of heavy machinery, engines, or industrial equipment."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "CEG is a media/marketplace site for equipment listings and news, serving the category rather than manufacturing heavy machinery like Caterpillar."
+        }
+      ]
     },
     {
       "name": "DENSO Corporation",
@@ -1886,7 +2654,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "DENSO primarily supplies automotive components and mobility technology, not construction/mining equipment or heavy machinery; buyers and core jobs differ."
+      "rationale": "DENSO primarily supplies automotive electronics and mobility systems, not construction, mining, or heavy-equipment machinery and engines.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "DENSO primarily supplies automotive electronics and mobility systems, not construction, mining, or heavy-equipment machinery and engines."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "DENSO is an automotive components supplier; Caterpillar makes construction/mining equipment and industrial engines. Different products and markets, no genuine overlap."
+        }
+      ]
     },
     {
       "name": "Energy Industries Council",
@@ -1913,7 +2693,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "EIC is an energy-industry membership and intelligence organization, not a manufacturer of heavy equipment, engines, turbines, or machinery."
+      "rationale": "Membership trade association providing energy-supply-chain intelligence and networking, not a manufacturer of heavy equipment, engines, or machinery.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Membership trade association providing energy-supply-chain intelligence and networking, not a manufacturer of heavy equipment, engines, or machinery."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Energy trade association/membership organization, not a heavy machinery or equipment manufacturer; no product, market, or model overlap with Caterpillar."
+        }
+      ]
     },
     {
       "name": "HOLT CAT",
@@ -1943,7 +2735,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "HOLT CAT is a Caterpillar dealer and rental/service provider, not an independent heavy-equipment manufacturer offering competing products."
+      "rationale": "HOLT CAT is a Caterpillar dealer and service/rental distributor, selling the seed's equipment rather than competing as a heavy-machinery manufacturer.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "HOLT CAT is a Caterpillar dealer and service/rental distributor, selling the seed's equipment rather than competing as a heavy-machinery manufacturer."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "HOLT CAT is a Caterpillar dealer/rental distributor selling Cat equipment, not a competing heavy-machinery manufacturer; it's a customer/channel partner."
+        }
+      ]
     },
     {
       "name": "RTX",
@@ -1978,7 +2782,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "RTX primarily serves aerospace and defense buyers, while Caterpillar\u2019s core heavy equipment serves construction and mining customers; engines alone do not establish buyer overlap."
+      "rationale": "RTX primarily sells aerospace and defense systems, not construction, mining, or industrial heavy machinery; engine overlap alone is insufficient.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "RTX primarily sells aerospace and defense systems, not construction, mining, or industrial heavy machinery; engine overlap alone is insufficient."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Aerospace/defense systems manufacturer, not construction/mining equipment or heavy machinery; different industries and buyers."
+        }
+      ]
     },
     {
       "name": "Norscot",
@@ -2002,7 +2818,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Norscot is an e-commerce/dealer portal for promotional or branded products, not a manufacturer of construction, mining, or heavy industrial equipment."
+      "rationale": "Norscot appears to sell dealer/customer products and account services, not construction, mining, or industrial heavy machinery comparable to Caterpillar.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Norscot appears to sell dealer/customer products and account services, not construction, mining, or industrial heavy machinery comparable to Caterpillar."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Norscot sells licensed die-cast scale models/merchandise of heavy equipment, not actual construction machinery; a licensee, not a competitor or comparable."
+        }
+      ]
     },
     {
       "name": "American Electric Power Company, Inc.",
@@ -2030,7 +2858,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "AEP is an electric utility, not a manufacturer of heavy construction, mining, engine, or turbine equipment; buyers and jobs differ."
+      "rationale": "AEP is an electric utility serving energy customers, not a manufacturer of heavy equipment, engines, or machinery.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "AEP is an electric utility serving energy customers, not a manufacturer of heavy equipment, engines, or machinery."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "AEP is an electric utility distributing power, not a manufacturer of heavy machinery, engines, or equipment; no shared product, market, or model."
+        }
+      ]
     },
     {
       "name": "American Public Power Association",
@@ -2061,7 +2901,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "APPA is a utility industry association and advocacy organization, not a manufacturer of heavy equipment, engines, turbines, or industrial machinery."
+      "rationale": "APPA is a nonprofit trade association for public utilities, not a manufacturer of heavy equipment, engines, or industrial machinery.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "APPA is a nonprofit trade association for public utilities, not a manufacturer of heavy equipment, engines, or industrial machinery."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "APPA is a nonprofit trade association for community-owned utilities; no resemblance to Caterpillar's heavy machinery manufacturing."
+        }
+      ]
     },
     {
       "name": "Pacific Basin Shipping Limited",
@@ -2095,7 +2947,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Pacific Basin provides maritime cargo transportation, not heavy machinery, construction equipment, engines, or industrial manufacturing products evaluated by Caterpillar buyers."
+      "rationale": "Pacific Basin operates dry-bulk shipping vessels, not construction, mining, engine, turbine, or heavy-equipment manufacturing.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Pacific Basin operates dry-bulk shipping vessels, not construction, mining, engine, turbine, or heavy-equipment manufacturing."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Dry-bulk shipping operator, not a manufacturer of construction/mining equipment or engines; unrelated industry and product."
+        }
+      ]
     },
     {
       "name": "Mustang Cat",
@@ -2127,7 +2991,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Mustang Cat is primarily a Caterpillar equipment dealer, rental, parts, and service provider\u2014not an independent heavy-equipment manufacturer with a comparable business model."
+      "rationale": "Mustang Cat is an authorized Caterpillar equipment dealer and service provider, distributing the seed's products rather than competing as an independent manufacturer.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Mustang Cat is an authorized Caterpillar equipment dealer and service provider, distributing the seed's products rather than competing as an independent manufacturer."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Mustang Cat is an authorized Caterpillar dealer/rental distributor, a channel partner selling Cat equipment rather than a competing or comparable manufacturer."
+        }
+      ]
     },
     {
       "name": "Society for Mining, Metallurgy & Exploration",
@@ -2160,7 +3036,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "SME is a professional association providing education and networking, not a manufacturer of heavy mining and construction equipment."
+      "rationale": "Professional association serving mining professionals, not a manufacturer of heavy equipment, engines, or machinery comparable to Caterpillar.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Professional association serving mining professionals, not a manufacturer of heavy equipment, engines, or machinery comparable to Caterpillar."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Professional industry association for mining professionals, not an equipment manufacturer; serves the industry rather than competing with Caterpillar."
+        }
+      ]
     },
     {
       "name": "GM products",
@@ -2184,7 +3072,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "GM Products distributes energy-infrastructure cables and accessories, not construction/mining machinery or industrial engines; buyers and core jobs differ."
+      "rationale": "Energy-infrastructure cable and accessory webshop, not a manufacturer of heavy construction, mining, engine, or turbine equipment.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Energy-infrastructure cable and accessory webshop, not a manufacturer of heavy construction, mining, engine, or turbine equipment."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "E-commerce distributor of cables and infrastructure supplies, not a heavy machinery or equipment manufacturer; different product and market."
+        }
+      ]
     },
     {
       "name": "Louisiana Cat",
@@ -2213,7 +3113,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Louisiana Cat is a Caterpillar equipment dealer and service partner, not a competing heavy-equipment manufacturer with the same core business model."
+      "rationale": "Louisiana Cat is a dealer and service provider for Caterpillar equipment, not a manufacturer or peer heavy-machinery platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Louisiana Cat is a dealer and service provider for Caterpillar equipment, not a manufacturer or peer heavy-machinery platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Louisiana Cat is a Caterpillar dealership/reseller, a channel partner of the seed rather than a competing equipment manufacturer."
+        }
+      ]
     },
     {
       "name": "The Agrotech Daily",
@@ -2239,7 +3151,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "The candidate is an agricultural technology news publisher, not a manufacturer of heavy construction, mining, or industrial equipment."
+      "rationale": "Agricultural-technology news publisher, not a manufacturer of heavy construction, mining, engine, or machinery products.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Agricultural-technology news publisher, not a manufacturer of heavy construction, mining, engine, or machinery products."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Media/news platform covering agtech, not a manufacturer of heavy machinery or equipment; different industry and business model."
+        }
+      ]
     },
     {
       "name": "Constellation Energy Corporation",
@@ -2274,7 +3198,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Constellation is an energy producer and utility, not a manufacturer of construction, mining, engine, or heavy-machinery products for Caterpillar\u2019s buyers."
+      "rationale": "Constellation is an electric-power generator and retailer, not a manufacturer of heavy construction, mining, or industrial equipment.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Constellation is an electric-power generator and retailer, not a manufacturer of heavy construction, mining, or industrial equipment."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Constellation is a power generation utility; Caterpillar manufactures construction/mining equipment and engines. Different industry, product, and market\u2014no resemblance."
+        }
+      ]
     },
     {
       "name": "Kintetsu World Express, Inc.",
@@ -2303,7 +3239,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Kintetsu provides freight and supply-chain logistics, not construction, mining, engine, or heavy-equipment manufacturing for Caterpillar\u2019s buyers."
+      "rationale": "Freight forwarding and supply-chain logistics provider, not a manufacturer of heavy construction, mining, engine, or turbine equipment.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Freight forwarding and supply-chain logistics provider, not a manufacturer of heavy construction, mining, engine, or turbine equipment."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Freight/logistics services firm, not heavy machinery manufacturing; unrelated industry, could be a supplier to Caterpillar rather than a peer."
+        }
+      ]
     },
     {
       "name": "Equipment Explorer",
@@ -2326,7 +3274,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Equipment Explorer is an equipment marketplace connecting buyers and dealers, not a manufacturer of heavy machinery, engines, or turbines like Caterpillar."
+      "rationale": "Equipment marketplace connecting buyers and dealers, not an industrial manufacturer of heavy machinery, engines, or turbines.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Equipment marketplace connecting buyers and dealers, not an industrial manufacturer of heavy machinery, engines, or turbines."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Marketplace for buying/selling used equipment, not a manufacturer; no product or business-model overlap with Caterpillar's heavy-machinery manufacturing."
+        }
+      ]
     },
     {
       "name": "Neemba",
@@ -2353,7 +3313,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Neemba is Caterpillar\u2019s dealer and service partner, not an independent heavy-equipment manufacturer competing for the same purchasing decision."
+      "rationale": "Caterpillar dealer and service partner, not an independent competing heavy-equipment manufacturer or comparable OEM.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Caterpillar dealer and service partner, not an independent competing heavy-equipment manufacturer or comparable OEM."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Neemba is a Caterpillar dealer and service partner\u2014a distribution channel, not a competing manufacturer or comparable."
+        }
+      ]
     },
     {
       "name": "Honeywell Technologies",
@@ -2383,8 +3355,20 @@
           "https://www.youtube.com/user/Honeywell"
         ]
       },
-      "relevant": false,
-      "rationale": "Honeywell primarily sells aerospace and industrial automation technologies, not construction/mining machinery; buyers would not evaluate both for the same core job."
+      "relevant": true,
+      "rationale": "Honeywell is a broad industrial automation manufacturer, overlapping Caterpillar in industrial equipment, engines, and serving construction, mining, and process-sector customers.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Honeywell is a broad industrial automation manufacturer, overlapping Caterpillar in industrial equipment, engines, and serving construction, mining, and process-sector customers."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are large diversified industrial manufacturers producing machinery, engines, and equipment for industrial sectors; comparable heavy-industrial OEM business model."
+        }
+      ]
     },
     {
       "name": "Railinc",
@@ -2411,7 +3395,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Railinc provides rail-industry fleet data software, not heavy equipment, engines, or machinery; buyers would not evaluate it for Caterpillar\u2019s core jobs."
+      "rationale": "Railinc provides rail-industry data and fleet-management software, not construction, mining, or heavy-equipment manufacturing.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Railinc provides rail-industry data and fleet-management software, not construction, mining, or heavy-equipment manufacturing."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Railinc sells rail-industry software and data services, not heavy equipment manufacturing; no product, market, or model overlap with Caterpillar."
+        }
+      ]
     },
     {
       "name": "ConnectITCareers.com",
@@ -2434,7 +3430,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "ConnectITCareers is an IT job-search and career-coaching platform, not a manufacturer of heavy construction, mining, or industrial equipment."
+      "rationale": "Technology job-search and career-coaching platform, unrelated to heavy equipment manufacturing, construction, mining, engines, or industrial machinery.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Technology job-search and career-coaching platform, unrelated to heavy equipment manufacturing, construction, mining, engines, or industrial machinery."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "IT career/job-search platform; no resemblance to Caterpillar's heavy machinery manufacturing in product, market, or business model."
+        }
+      ]
     },
     {
       "name": "Rain Bird",
@@ -2467,7 +3475,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Rain Bird sells irrigation systems, not construction, mining, engine, or heavy-equipment products; buyers would not evaluate them for the same job."
+      "rationale": "Rain Bird manufactures irrigation equipment, not construction, mining, engine, or heavy machinery; it serves a distinct water-management market.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Rain Bird manufactures irrigation equipment, not construction, mining, engine, or heavy machinery; it serves a distinct water-management market."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Rain Bird makes irrigation systems; Caterpillar makes heavy construction/mining machinery and engines. Different products and buyers; shared manufacturing label insufficient."
+        }
+      ]
     },
     {
       "name": "AEP Texas",
@@ -2494,7 +3514,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "AEP Texas distributes electricity, while Caterpillar manufactures heavy equipment and industrial engines; their core offerings and purchasing use cases do not overlap."
+      "rationale": "AEP Texas is an electric utility serving end customers, not a manufacturer of heavy equipment, engines, or industrial machinery.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "AEP Texas is an electric utility serving end customers, not a manufacturer of heavy equipment, engines, or industrial machinery."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "AEP Texas is an electric utility distributor; Caterpillar manufactures heavy machinery and engines. Different industries, no product, market, or model overlap."
+        }
+      ]
     },
     {
       "name": "Hammond Power Solutions",
@@ -2525,7 +3557,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Hammond makes transformers and power-quality equipment, not heavy machinery, engines, or turbines; its products serve a distinct purchasing need."
+      "rationale": "Both are industrial manufacturers, but Hammond\u2019s transformer products do not closely match Caterpillar\u2019s heavy equipment, engines, mining, or construction machinery markets.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Both are industrial manufacturers, but Hammond\u2019s transformer products do not closely match Caterpillar\u2019s heavy equipment, engines, mining, or construction machinery markets."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Hammond makes electrical transformers and power filters, not heavy machinery, engines, or construction/mining equipment \u2014 different products, buyers, and markets; shared manufacturing label insufficient."
+        }
+      ]
     },
     {
       "name": "EngMek",
@@ -2551,7 +3595,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "EngMek supplies HVAC, solar, and fabricated components, not construction/mining heavy machinery, engines, or turbines for Caterpillar\u2019s core buyers."
+      "rationale": "EngMek supplies HVAC, solar, and metal-fabrication components, not heavy construction/mining machinery, engines, or industrial equipment platforms.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "EngMek supplies HVAC, solar, and metal-fabrication components, not heavy construction/mining machinery, engines, or industrial equipment platforms."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "EngMek supplies HVAC/ductwork/cable-management components, not heavy construction/mining machinery or engines \u2014 no product, market, or model overlap with Caterpillar."
+        }
+      ]
     },
     {
       "name": "Ameren",
@@ -2583,7 +3639,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Ameren is an electric and gas utility, not a manufacturer of construction, mining, engine, or heavy machinery products."
+      "rationale": "Ameren is an electric utility serving energy customers, not a manufacturer of heavy construction, mining, engine, or turbine equipment.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Ameren is an electric utility serving energy customers, not a manufacturer of heavy construction, mining, engine, or turbine equipment."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Utility energy provider, not heavy machinery manufacturer; unrelated industry, no product or model overlap with Caterpillar."
+        }
+      ]
     },
     {
       "name": "South Kentucky Rural Electric Cooperative",
@@ -2615,7 +3683,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "SKRECC is an electric utility cooperative, not a manufacturer of construction, mining, engine, or heavy machinery products."
+      "rationale": "Electric utility cooperative serving end customers, not a manufacturer of heavy equipment, engines, turbines, or mining and construction machinery.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Electric utility cooperative serving end customers, not a manufacturer of heavy equipment, engines, turbines, or mining and construction machinery."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Electric utility cooperative providing power services, not heavy machinery manufacturing \u2014 no product, market, or model overlap with Caterpillar."
+        }
+      ]
     },
     {
       "name": "Komatsu America Corp and Affiliates",
@@ -2641,7 +3721,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Komatsu is a direct manufacturer of construction and mining equipment and heavy machinery, serving the same industrial buyers as Caterpillar."
+      "rationale": "Komatsu is a direct competitor manufacturing construction, mining, and heavy equipment for the same industrial customers.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Komatsu is a direct competitor manufacturing construction, mining, and heavy equipment for the same industrial customers."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Komatsu is a direct competitor: global manufacturer of construction and mining equipment and heavy machinery, same product and market as Caterpillar."
+        }
+      ]
     },
     {
       "name": "The Group Training Academy",
@@ -2663,7 +3755,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "An automotive technician training provider does not manufacture heavy equipment, engines, turbines, or machinery for Caterpillar\u2019s industrial buyers."
+      "rationale": "Automotive technician training provider, not a manufacturer of heavy construction, mining, or industrial power equipment.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Automotive technician training provider, not a manufacturer of heavy construction, mining, or industrial power equipment."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Training academy for automotive technicians; education services, not construction/mining equipment manufacturing. No product, market, or model overlap."
+        }
+      ]
     },
     {
       "name": "Carter Machinery",
@@ -2686,7 +3790,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Carter Machinery provides training for Caterpillar equipment rather than manufacturing competing heavy machinery for the same purchasing decision."
+      "rationale": "Training provider for Caterpillar equipment users, not a manufacturer of heavy machinery, engines, or industrial equipment.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Training provider for Caterpillar equipment users, not a manufacturer of heavy machinery, engines, or industrial equipment."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Caterpillar dealer's training arm offering equipment training courses, not a heavy-machinery manufacturer or competitor; ecosystem partner, not a lookalike."
+        }
+      ]
     },
     {
       "name": "Institute For Industrial Technology",
@@ -2714,7 +3830,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "IIT is a technical education and training institution, not a manufacturer of construction, mining, or heavy industrial equipment."
+      "rationale": "Technical education institute offering industrial training, not a manufacturer of heavy equipment, engines, or machinery.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Technical education institute offering industrial training, not a manufacturer of heavy equipment, engines, or machinery."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Educational training institute, not a heavy-machinery manufacturer; no product, market, or business-model overlap with Caterpillar."
+        }
+      ]
     },
     {
       "name": "Gunkul Engineering Public Company Limited",
@@ -2740,7 +3868,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Gunkul provides renewable-energy systems and electrical engineering, not Caterpillar\u2019s core heavy construction, mining equipment, engines, or machinery offerings."
+      "rationale": "Gunkul primarily develops renewable energy projects and electrical systems, not construction, mining, or heavy machinery products comparable to Caterpillar.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Gunkul primarily develops renewable energy projects and electrical systems, not construction, mining, or heavy machinery products comparable to Caterpillar."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Gunkul is a solar/wind energy and electrical-systems provider, not a heavy machinery or construction/mining equipment manufacturer; no product, market, or model overlap."
+        }
+      ]
     },
     {
       "name": "Lightfoot",
@@ -2768,7 +3908,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Lightfoot provides fleet-management and telematics software, not heavy construction/mining machinery, engines, or turbines; buyers would not evaluate them for the same job."
+      "rationale": "Fleet telematics and driver coaching software serves vehicle operators, not heavy-equipment manufacturing, engines, or mining/construction machinery buyers.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Fleet telematics and driver coaching software serves vehicle operators, not heavy-equipment manufacturing, engines, or mining/construction machinery buyers."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Lightfoot sells fleet telematics/driver-coaching software, not heavy machinery or equipment manufacturing; no product, market, or model overlap with Caterpillar."
+        }
+      ]
     },
     {
       "name": "Caterpillar Japan",
@@ -2792,10 +3944,20 @@
         ]
       },
       "relevant": false,
-      "rationale": "Caterpillar Japan is a regional Caterpillar sales/expo property, not an independent heavy-equipment manufacturer or genuine lookalike."
+      "rationale": "Caterpillar Japan is a regional Caterpillar entity and online expo, not an independent competitor or comparable company.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Caterpillar Japan is a regional Caterpillar entity and online expo, not an independent competitor or comparable company."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Regional subsidiary/duplicate of Caterpillar itself, not a competitor or comparable lookalike."
+        }
+      ]
     }
   ],
-  "error": null,
-  "relevant_count_at_25": 1,
-  "precision_at_25": 4.0
+  "error": null
 }

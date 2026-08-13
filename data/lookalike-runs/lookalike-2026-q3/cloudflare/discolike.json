@@ -7,20 +7,20 @@
     "name": "domain_similarity"
   },
   "k": 100,
-  "relevant_count": 19,
-  "precision_at_k": 19.0,
-  "relevant_count_at_10": 3,
-  "relevant_count_at_25": 7,
-  "relevant_count_at_100": 19,
-  "precision_at_10": 30.0,
-  "precision_at_25": 28.0,
-  "precision_at_100": 19.0,
+  "relevant_count": 21,
+  "precision_at_k": 21.0,
+  "relevant_count_at_10": 4,
+  "relevant_count_at_25": 8,
+  "relevant_count_at_100": 21,
+  "precision_at_10": 40.0,
+  "precision_at_25": 32.0,
+  "precision_at_100": 21.0,
   "latency_ms": 1098,
   "cost_usd": null,
   "duplicates_removed": 9,
   "max_results": null,
-  "judge_model": "gpt-5.6",
-  "judged_at": "2026-07-27T06:54:58Z",
+  "judge_model": "majority(n=3): claude-opus-5,gpt-5.6-terra,kimi-k3",
+  "judged_at": "2026-08-10T20:02:12Z",
   "candidates": [
     {
       "name": "Cloudflare, Inc.",
@@ -45,7 +45,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "This is a duplicate/impersonating Cloudflare entry with a misspelled domain, not a distinct lookalike company."
+      "rationale": "Candidate is a typo-domain duplicate of the seed, not a distinct company lookalike.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Candidate is a typo-domain duplicate of the seed, not a distinct company lookalike."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Duplicate/parody of the seed itself: same name, misspelled domain, same social profiles. Not a distinct lookalike company."
+        }
+      ]
     },
     {
       "name": "Cloudflare",
@@ -73,7 +85,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "This is a duplicate or misattributed Cloudflare profile on an unrelated domain, not a distinct lookalike company."
+      "rationale": "Duplicate/misattributed Cloudflare entry rather than a distinct company lookalike.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Duplicate/misattributed Cloudflare entry rather than a distinct company lookalike."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Duplicate of the seed itself: identical name, description, and official Cloudflare social URLs; not a distinct lookalike company."
+        }
+      ]
     },
     {
       "name": "TanDuy03",
@@ -103,8 +127,20 @@
           "https://x.com/tanduy_03"
         ]
       },
-      "relevant": false,
-      "rationale": "Pirehub primarily appears to be application hosting and deployment; CDN and DDoS features are ancillary, not a clearly comparable edge-security platform."
+      "relevant": true,
+      "rationale": "Pirehub offers CDN, DDoS protection, application deployment, and performance monitoring\u2014overlapping Cloudflare\u2019s edge infrastructure, security, and performance platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Pirehub offers CDN, DDoS protection, application deployment, and performance monitoring\u2014overlapping Cloudflare\u2019s edge infrastructure, security, and performance platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Cloud platform for deploying/scaling apps with CDN and DDoS protection, overlapping Cloudflare's performance, security, and developer-platform axes."
+        }
+      ]
     },
     {
       "name": "Shopify",
@@ -130,7 +166,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Candidate is an artificial-flower e-commerce retailer, not an internet infrastructure, security, networking, or edge-computing platform."
+      "rationale": "Artificial-flower retail shop; it does not provide internet infrastructure, security, networking, CDN, or edge-computing products.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Artificial-flower retail shop; it does not provide internet infrastructure, security, networking, CDN, or edge-computing products."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Artificial-flower e-commerce shop; no resemblance to Cloudflare's internet infrastructure, security, or edge-computing platform."
+        }
+      ]
     },
     {
       "name": "Datum Technology, Inc.",
@@ -157,7 +205,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide internet networking infrastructure, including DNS and application connectivity, targeting developers and infrastructure teams managing application delivery."
+      "rationale": "Network cloud platform with DNS and internet connectivity overlaps Cloudflare\u2019s networking and developer infrastructure offerings.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Network cloud platform with DNS and internet connectivity overlaps Cloudflare\u2019s networking and developer infrastructure offerings."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Network cloud platform offering internet connectivity, DNS management, and edge networking infrastructure, overlapping Cloudflare's networking/developer infrastructure product and market."
+        }
+      ]
     },
     {
       "name": "DataDome",
@@ -183,7 +243,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both offer website, application, and API security, including bot mitigation and DDoS protection, to security and infrastructure teams."
+      "rationale": "DataDome provides web, API, bot, fraud, and DDoS protection, overlapping Cloudflare's application-security and traffic-protection platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "DataDome provides web, API, bot, fraud, and DDoS protection, overlapping Cloudflare's application-security and traffic-protection platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Cybersecurity platform with bot mitigation, DDoS protection, and API security directly overlaps Cloudflare's application security line; genuine competitor."
+        }
+      ]
     },
     {
       "name": "Blockify",
@@ -211,7 +283,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Blockify is a Shopify-focused fraud and checkout-control app, not an internet infrastructure, edge networking, or broad application-security platform."
+      "rationale": "Blockify is a Shopify-focused fraud-prevention app, not a broad internet security, networking, CDN, or edge-computing platform comparable to Cloudflare.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Blockify is a Shopify-focused fraud-prevention app, not a broad internet security, networking, CDN, or edge-computing platform comparable to Cloudflare."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Shopify fraud-protection app for e-commerce merchants; narrow plugin, not an internet infrastructure/edge security platform comparable to Cloudflare."
+        }
+      ]
     },
     {
       "name": "AI Support Plus",
@@ -233,7 +317,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "AI Support Plus automates customer service, while Cloudflare provides internet security, networking, performance, and edge infrastructure; their products and buyer needs do not overlap."
+      "rationale": "Customer-support automation SaaS does not provide internet security, networking, performance, or edge infrastructure like Cloudflare.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Customer-support automation SaaS does not provide internet security, networking, performance, or edge infrastructure like Cloudflare."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "AI customer support chatbot platform, unrelated to Cloudflare's internet infrastructure, security, and edge computing business."
+        }
+      ]
     },
     {
       "name": "Kernel",
@@ -259,7 +355,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Kernel provides specialized cloud-browser infrastructure, not Cloudflare\u2019s core application security, networking, CDN, or broad edge-platform offering."
+      "rationale": "Browser infrastructure for web-agent automation, not Cloudflare's security, CDN, networking, or edge application platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Browser infrastructure for web-agent automation, not Cloudflare's security, CDN, networking, or edge application platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Kernel provides cloud-browser infrastructure for web-agent automation; Cloudflare is application security, networking, CDN and edge compute \u2014 different products, buyers, and jobs to be done."
+        }
+      ]
     },
     {
       "name": "BasedFlare",
@@ -283,7 +391,19 @@
         "social_urls": []
       },
       "relevant": true,
-      "rationale": "Both offer DNS, CDN, DDoS protection, load balancing, and website security to organizations managing internet applications and infrastructure."
+      "rationale": "Offers CDN, DDoS protection, DNS, load balancing, and HTTPS services\u2014core Cloudflare-style web security and performance infrastructure.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Offers CDN, DDoS protection, DNS, load balancing, and HTTPS services\u2014core Cloudflare-style web security and performance infrastructure."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Same product stack as Cloudflare: DDoS protection, CDN, DNS management, HTTPS/load balancing for websites. Size ignored per rules."
+        }
+      ]
     },
     {
       "name": "InsForge",
@@ -319,7 +439,24 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide developer cloud infrastructure for deploying application backends, including serverless compute, storage, databases, and APIs, targeting software development teams."
+      "rationale": "Both provide developer-focused cloud infrastructure for building and deploying application backends, including serverless logic, storage, databases, and APIs.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both provide developer-focused cloud infrastructure for building and deploying application backends, including serverless logic, storage, databases, and APIs."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Backend-as-a-service (auth, Postgres, storage) for AI coding agents, not edge networking, security, or performance infrastructure; only a shared generic cloud label."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Both sell cloud/developer backend infrastructure platforms (serverless, storage, edge functions) to developers; comparable, narrower BaaS peer.Please answer only with valid JSON.  Reminder: respond only with JSON matching schema."
+        }
+      ]
     },
     {
       "name": "Agent Customer Care",
@@ -341,7 +478,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Agent Customer Care provides AI customer-support automation, not internet security, networking, performance, or edge infrastructure evaluated by Cloudflare buyers."
+      "rationale": "AI customer-support service; Cloudflare provides internet infrastructure, security, networking, and edge computing, with no comparable primary product or buyer job.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "AI customer-support service; Cloudflare provides internet infrastructure, security, networking, and edge computing, with no comparable primary product or buyer job."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "AI customer-support software, not internet infrastructure, security, networking, or edge computing; no product or market overlap with Cloudflare."
+        }
+      ]
     },
     {
       "name": "StackPloy",
@@ -369,7 +518,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "StackPloy primarily provides managed WordPress hosting; Cloudflare provides edge networking, CDN, and security infrastructure, serving distinct core jobs despite ancillary DDoS overlap."
+      "rationale": "StackPloy primarily sells managed WordPress/cloud hosting, not Cloudflare's edge networking, CDN, and application-security platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "StackPloy primarily sells managed WordPress/cloud hosting, not Cloudflare's edge networking, CDN, and application-security platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Managed WordPress/eCommerce hosting provider; DDoS protection is an optional add-on, not a core edge-security/CDN platform like Cloudflare."
+        }
+      ]
     },
     {
       "name": "RETRY.NETWORK",
@@ -394,7 +555,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide website and application security, including DDoS mitigation, threat prevention, bot filtering, and monitoring for web infrastructure teams."
+      "rationale": "Provides DDoS protection, bot filtering, and website security infrastructure, overlapping Cloudflare's core application-security and performance offerings.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Provides DDoS protection, bot filtering, and website security infrastructure, overlapping Cloudflare's core application-security and performance offerings."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Website protection service with DDoS mitigation, threat prevention, and bot filtering directly matches Cloudflare's core application security product line."
+        }
+      ]
     },
     {
       "name": "QWERTY Tech",
@@ -418,7 +591,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "QWERTY Tech provides autonomous AI coding agents, not internet infrastructure, edge networking, performance, or application-security services evaluated for Cloudflare\u2019s use cases."
+      "rationale": "AI coding-agent platform; its security controls are ancillary, not a web infrastructure, CDN, edge computing, or application-security offering comparable to Cloudflare.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "AI coding-agent platform; its security controls are ancillary, not a web infrastructure, CDN, edge computing, or application-security offering comparable to Cloudflare."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "AI coding-agent platform, not internet infrastructure, security, networking, or edge computing; no product or market overlap with Cloudflare."
+        }
+      ]
     },
     {
       "name": "Web Tech Domains",
@@ -441,7 +626,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Web Tech Domains is a custom software development consultancy, not an internet security, networking, performance, or edge infrastructure platform."
+      "rationale": "Custom web/mobile development agency offering IT services, not an internet infrastructure, edge network, security, or performance platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Custom web/mobile development agency offering IT services, not an internet infrastructure, edge network, security, or performance platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Custom software/app development agency, not an internet infrastructure, security, or edge-computing platform like Cloudflare."
+        }
+      ]
     },
     {
       "name": "Commslayer",
@@ -465,7 +662,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Commslayer provides Shopify-focused customer support automation, not internet security, networking, performance, or edge infrastructure evaluated by Cloudflare buyers."
+      "rationale": "Shopify-focused helpdesk and AI customer-support software, not internet infrastructure, application security, networking, CDN, or edge-computing services.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Shopify-focused helpdesk and AI customer-support software, not internet infrastructure, application security, networking, CDN, or edge-computing services."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Shopify helpdesk/AI support tool; no overlap with Cloudflare's internet infrastructure, security, or edge computing platform."
+        }
+      ]
     },
     {
       "name": "Akamai Technologies",
@@ -495,7 +704,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Akamai directly overlaps Cloudflare in CDN, edge infrastructure, application security, DNS, cloud networking, and enterprise buyer personas."
+      "rationale": "Akamai directly competes in CDN, edge computing, application delivery, networking, and web security for digital applications.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Akamai directly competes in CDN, edge computing, application delivery, networking, and web security for digital applications."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Akamai is a direct competitor: CDN, edge computing, application security, and cloud delivery platform overlapping Cloudflare's core products and market."
+        }
+      ]
     },
     {
       "name": "Netlify",
@@ -523,7 +744,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide developer-focused platforms for deploying, securing, scaling, and delivering web applications through cloud and edge infrastructure."
+      "rationale": "Netlify is a developer-focused web application deployment and hosting platform, overlapping Cloudflare's developer platform, edge delivery, and application infrastructure offerings.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Netlify is a developer-focused web application deployment and hosting platform, overlapping Cloudflare's developer platform, edge delivery, and application infrastructure offerings."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both offer developer-facing edge/web infrastructure: hosting, deployment, CDN-style performance and security. Genuine competitors/comparables in edge computing and developer services."
+        }
+      ]
     },
     {
       "name": "Datalex",
@@ -550,7 +783,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Datalex is primarily a custom automation and digital-solutions provider; incidental WAF/DDoS features do not overlap Cloudflare\u2019s core internet infrastructure platform."
+      "rationale": "Datalex is a custom automation and digital-solutions provider; WAF/DDoS are ancillary services, not a comparable internet infrastructure platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Datalex is a custom automation and digital-solutions provider; WAF/DDoS are ancillary services, not a comparable internet infrastructure platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "IT services agency building custom apps/workflows for clients, not an internet infrastructure/edge security platform competitor; merely offers services with security features."
+        }
+      ]
     },
     {
       "name": "Your Host Pro LLC",
@@ -572,7 +817,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Your Host Pro is managed WordPress hosting, not an internet security, CDN, networking, or edge-computing platform evaluated for the same infrastructure needs."
+      "rationale": "Managed WordPress hosting is distinct from Cloudflare's networking, edge, and application-security platform; DDoS protection is only an ancillary hosting feature.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Managed WordPress hosting is distinct from Cloudflare's networking, edge, and application-security platform; DDoS protection is only an ancillary hosting feature."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Managed WordPress hosting provider; not an internet infrastructure, security, or edge-computing platform like Cloudflare. Different product and market."
+        }
+      ]
     },
     {
       "name": "PrivateNetAI",
@@ -594,7 +851,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "PrivateNetAI is primarily an information/comparison site and AI automation provider, not an internet infrastructure, edge networking, or application security platform."
+      "rationale": "Privacy and cybersecurity information site with AI automation tools, not an internet infrastructure, CDN, edge networking, or application-security platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Privacy and cybersecurity information site with AI automation tools, not an internet infrastructure, CDN, edge networking, or application-security platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Media/comparison content site about VPNs and AI tools, not an internet infrastructure, security, or edge-computing platform; no product or model overlap with Cloudflare."
+        }
+      ]
     },
     {
       "name": "Agentic Orgs",
@@ -621,7 +890,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Agentic Orgs provides AI coding-team orchestration, not application security, networking, performance, or edge infrastructure evaluated for Cloudflare\u2019s use cases."
+      "rationale": "AI coding-agent management platform, not internet infrastructure, edge networking, application security, or performance services.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "AI coding-agent management platform, not internet infrastructure, edge networking, application security, or performance services."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "AI coding-agent orchestration tool; no overlap with Cloudflare's internet infrastructure, security, networking, or edge computing products."
+        }
+      ]
     },
     {
       "name": "GrowMe Digital Ltd.",
@@ -644,7 +925,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "GrowMe is a digital development and growth agency, not an internet infrastructure, edge networking, performance, or application security platform."
+      "rationale": "Digital growth agency building client websites and apps; it does not offer internet infrastructure, security, networking, CDN, or edge platform products.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Digital growth agency building client websites and apps; it does not offer internet infrastructure, security, networking, CDN, or edge platform products."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "GrowMe is a digital agency building websites and apps for clients, not an internet infrastructure, security, or edge-computing platform like Cloudflare."
+        }
+      ]
     },
     {
       "name": "Docker Inc.",
@@ -674,7 +967,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Docker\u2019s container development and image-management platform does not overlap Cloudflare\u2019s core edge networking, application security, and performance services."
+      "rationale": "Docker provides container development and image-management tooling, not Cloudflare's edge networking, web security, or application-delivery infrastructure.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Docker provides container development and image-management tooling, not Cloudflare's edge networking, web security, or application-delivery infrastructure."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Docker sells containerization tooling; Cloudflare sells edge network, security, and performance infrastructure. Different products and jobs despite shared developer audience."
+        }
+      ]
     },
     {
       "name": "Ecomatic",
@@ -699,7 +1004,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Ecomatic is Shopify-focused AI marketing content software, not an internet security, networking, performance, or edge-computing infrastructure platform."
+      "rationale": "Ecomatic is Shopify-focused AI marketing/content software, not internet infrastructure, security, networking, CDN, or edge-computing services.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Ecomatic is Shopify-focused AI marketing/content software, not internet infrastructure, security, networking, CDN, or edge-computing services."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Ecomatic is an AI content tool for Shopify merchants; no overlap with Cloudflare's internet infrastructure, security, networking, or edge computing."
+        }
+      ]
     },
     {
       "name": "SiteAgent by Maker",
@@ -721,7 +1038,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "SiteAgent automates website design, content, and optimization; it does not provide Cloudflare-like security, networking, CDN, or edge infrastructure."
+      "rationale": "Website optimization automation is an application-layer tool, not an internet infrastructure platform for security, networking, CDN, or edge computing.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Website optimization automation is an application-layer tool, not an internet infrastructure platform for security, networking, CDN, or edge computing."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "AI website design/content optimization tool, not infrastructure, security, CDN, or edge networking; no strong product or market overlap with Cloudflare."
+        }
+      ]
     },
     {
       "name": "JFrog",
@@ -755,7 +1084,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "JFrog manages software artifacts and release security, while Cloudflare primarily provides edge networking, application security, and performance infrastructure for different jobs."
+      "rationale": "JFrog manages software artifacts and supply-chain security, not Cloudflare's edge networking, CDN, application security, or performance platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "JFrog manages software artifacts and supply-chain security, not Cloudflare's edge networking, CDN, application security, or performance platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "JFrog is DevOps artifact/software-supply-chain management, not application security, networking, CDN, or edge infrastructure\u2014no strong product, market, or model overlap with Cloudflare."
+        }
+      ]
     },
     {
       "name": "Web Engine",
@@ -783,7 +1124,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Web Engine is a web development agency and Cloudflare user/reseller category, not an internet infrastructure, security, networking, or edge platform."
+      "rationale": "Web development agency offering WordPress and CDN-related services, not an internet infrastructure, security, networking, or edge platform competitor.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Web development agency offering WordPress and CDN-related services, not an internet infrastructure, security, networking, or edge platform competitor."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Web development agency building WordPress sites for clients, not an internet infrastructure/security platform like Cloudflare."
+        }
+      ]
     },
     {
       "name": "Servesys",
@@ -808,7 +1161,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Servesys is a software consultancy implementing cloud solutions, not an internet infrastructure, security, networking, or edge-computing platform comparable to Cloudflare."
+      "rationale": "Servesys is a cloud and AI consulting agency that uses Cloudflare, not an internet infrastructure platform competing with it.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Servesys is a cloud and AI consulting agency that uses Cloudflare, not an internet infrastructure platform competing with it."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "IT/software consultancy building solutions on AWS and Cloudflare for clients, not a competing internet-infrastructure or security platform."
+        }
+      ]
     },
     {
       "name": "AppHive",
@@ -831,7 +1196,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "AppHive builds Shopify merchant applications, not internet security, networking, performance, or edge infrastructure evaluated by Cloudflare\u2019s buyers."
+      "rationale": "Shopify merchant app platform, not an internet infrastructure, security, networking, CDN, or edge-computing provider like Cloudflare.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Shopify merchant app platform, not an internet infrastructure, security, networking, CDN, or edge-computing provider like Cloudflare."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Shopify app builder for merchants; no overlap with Cloudflare's internet infrastructure, security, networking, or edge computing products."
+        }
+      ]
     },
     {
       "name": "Azion Technologies, Inc.",
@@ -860,7 +1237,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Azion overlaps Cloudflare in edge computing, application delivery, serverless development, web security, DDoS protection, and bot management for similar technical buyers."
+      "rationale": "Azion provides edge application delivery, serverless computing, caching, WAF, DDoS, and bot protection\u2014directly overlapping Cloudflare\u2019s security, performance, and developer platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Azion provides edge application delivery, serverless computing, caching, WAF, DDoS, and bot protection\u2014directly overlapping Cloudflare\u2019s security, performance, and developer platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Edge platform offering CDN/cache, serverless edge functions, WAF, DDoS and bot protection \u2014 direct competitor to Cloudflare's core security, performance, and developer platform."
+        }
+      ]
     },
     {
       "name": "staycdn",
@@ -883,7 +1272,19 @@
         "social_urls": []
       },
       "relevant": true,
-      "rationale": "StayCDN overlaps Cloudflare in CDN, edge networking, application performance, and DDoS protection for businesses operating internet applications."
+      "rationale": "Edge CDN, traffic routing, DDoS protection, observability, and cloud infrastructure directly overlap Cloudflare\u2019s security, performance, and networking platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Edge CDN, traffic routing, DDoS protection, observability, and cloud infrastructure directly overlap Cloudflare\u2019s security, performance, and networking platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Edge infrastructure, CDN, DDoS protection, and security services directly mirror Cloudflare's core product and market."
+        }
+      ]
     },
     {
       "name": "Shopware",
@@ -914,7 +1315,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Shopware is an e-commerce storefront platform, not an internet security, networking, performance, or edge infrastructure provider like Cloudflare."
+      "rationale": "Shopware is an e-commerce storefront platform, not an internet infrastructure, edge networking, security, or performance platform comparable to Cloudflare.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Shopware is an e-commerce storefront platform, not an internet infrastructure, edge networking, security, or performance platform comparable to Cloudflare."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Shopware is an eCommerce storefront platform; Cloudflare is internet infrastructure for security, networking, and edge computing. Different products and buyers."
+        }
+      ]
     },
     {
       "name": "AR-Global Trade LLC",
@@ -940,7 +1353,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "AR-Global Trade is a managed web and marketing service, not an internet infrastructure, edge networking, or application security platform."
+      "rationale": "Web management and marketing agency serving Shopify/WordPress clients, not an internet infrastructure, edge networking, or security platform competitor.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Web management and marketing agency serving Shopify/WordPress clients, not an internet infrastructure, edge networking, or security platform competitor."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "A small web/marketing agency managing Shopify/WordPress sites, not an internet infrastructure, security, or edge-computing platform comparable to Cloudflare."
+        }
+      ]
     },
     {
       "name": "VergeCloud",
@@ -968,7 +1393,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "VergeCloud overlaps Cloudflare in CDN, DNS, traffic management, load balancing, performance, and cloud security for website and infrastructure teams."
+      "rationale": "Provides CDN, DNS, traffic management, and cloud security infrastructure directly comparable to Cloudflare's core edge networking and security platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Provides CDN, DNS, traffic management, and cloud security infrastructure directly comparable to Cloudflare's core edge networking and security platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "CDN, DNS, and cloud security platform \u2014 same core products as Cloudflare, a direct smaller competitor in edge infrastructure."
+        }
+      ]
     },
     {
       "name": "Webscale",
@@ -998,7 +1435,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide cloud application delivery, performance, and security infrastructure; e-commerce operators could evaluate them for protecting and accelerating online storefronts."
+      "rationale": "Webscale provides cloud application delivery, performance, traffic monitoring, and security infrastructure for e-commerce sites, overlapping Cloudflare's web infrastructure offering.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Webscale provides cloud application delivery, performance, traffic monitoring, and security infrastructure for e-commerce sites, overlapping Cloudflare's web infrastructure offering."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Cloud application delivery, security (fraud/bot blocking), and performance platform \u2014 overlaps Cloudflare's core infrastructure axes, though vertically focused on e-commerce."
+        }
+      ]
     },
     {
       "name": "Catalyst Analytics",
@@ -1021,7 +1470,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Catalyst Analytics is a web-design and managed-hosting service that uses Cloudflare, not an internet security, networking, or edge infrastructure platform."
+      "rationale": "Custom web-development and managed-hosting agency that uses Cloudflare integrations; it does not provide competing internet infrastructure, security, networking, or edge services.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Custom web-development and managed-hosting agency that uses Cloudflare integrations; it does not provide competing internet infrastructure, security, networking, or edge services."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Web design agency that integrates Cloudflare; it is a service shop/client of the seed, not an internet infrastructure or security platform competitor."
+        }
+      ]
     },
     {
       "name": "I Fix Ecommerce LLC",
@@ -1046,7 +1507,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "I Fix Ecommerce is an e-commerce development and marketing agency, not an internet infrastructure, security, networking, or edge-computing platform."
+      "rationale": "E-commerce development and marketing agency serving merchants, not an internet infrastructure, security, networking, or edge-computing platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "E-commerce development and marketing agency serving merchants, not an internet infrastructure, security, networking, or edge-computing platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Ecommerce services agency, not an internet infrastructure, security, or edge-computing platform; serves rather than competes with Cloudflare's category."
+        }
+      ]
     },
     {
       "name": "CloudMySite",
@@ -1075,7 +1548,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "CloudMySite primarily sells managed WordPress hosting and website creation, not Cloudflare-like edge networking, application security, or internet performance infrastructure."
+      "rationale": "CloudMySite is primarily a WordPress hosting, domain registration, and website-builder provider, not an internet security, CDN, networking, or edge-computing platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "CloudMySite is primarily a WordPress hosting, domain registration, and website-builder provider, not an internet security, CDN, networking, or edge-computing platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Shared/WordPress hosting, domains, and site builder \u2014 not an edge security, CDN, or network-performance platform; DDoS mention is incidental."
+        }
+      ]
     },
     {
       "name": "Worker.do",
@@ -1101,7 +1586,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Worker.do directly overlaps Cloudflare Workers in serverless edge compute, targeting developers deploying globally distributed, low-latency applications."
+      "rationale": "Worker.do provides serverless edge compute across global locations, closely comparable to Cloudflare Workers and its developer edge-services offering.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Worker.do provides serverless edge compute across global locations, closely comparable to Cloudflare Workers and its developer edge-services offering."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Offers serverless edge workers with global edge deployment, directly mirroring Cloudflare Workers' edge compute product and developer market."
+        }
+      ]
     },
     {
       "name": "PrograminStudio",
@@ -1128,7 +1625,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "PrograminStudio is a custom web development agency, not an internet infrastructure, security, networking, or edge-computing platform."
+      "rationale": "Website-development agency delivering custom client projects, not an internet infrastructure, security, networking, or edge-computing platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Website-development agency delivering custom client projects, not an internet infrastructure, security, networking, or edge-computing platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Web development agency building WordPress/e-commerce sites; no internet infrastructure, security, networking, or edge-computing product like Cloudflare."
+        }
+      ]
     },
     {
       "name": "Browser Use",
@@ -1153,7 +1662,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Browser Use provides AI browser-agent automation, not application security, networking, CDN/performance, or edge infrastructure for the same buyer need."
+      "rationale": "Browser automation and web-agent tooling differs from Cloudflare's internet security, networking, CDN, and edge-computing platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Browser automation and web-agent tooling differs from Cloudflare's internet security, networking, CDN, and edge-computing platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Browser Use sells browser-automation/AI-agent tooling, not internet infrastructure, edge networking, or application security; no axis resemblance to Cloudflare."
+        }
+      ]
     },
     {
       "name": "EKNIX",
@@ -1179,8 +1700,20 @@
           "https://x.com/eknixltd"
         ]
       },
-      "relevant": false,
-      "rationale": "EKNIX appears to provide tailored security and compliance services rather than a competing internet infrastructure and edge-computing platform."
+      "relevant": true,
+      "rationale": "Provides web performance, bot management, and API security services overlapping Cloudflare's application security and performance offerings.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Provides web performance, bot management, and API security services overlapping Cloudflare's application security and performance offerings."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Offers bot management, API security, and web performance optimization \u2014 directly overlapping Cloudflare's core application security and performance platform."
+        }
+      ]
     },
     {
       "name": "Latest Themes",
@@ -1204,7 +1737,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Latest Themes is a custom engineering and hosting services studio, not an internet security, networking, performance, or edge infrastructure platform."
+      "rationale": "Custom web-development and managed-hosting studio; it serves clients rather than offering a competing security, networking, CDN, or edge-computing platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Custom web-development and managed-hosting studio; it serves clients rather than offering a competing security, networking, CDN, or edge-computing platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Services agency building WordPress themes and e-commerce sites for clients, not an internet infrastructure/security/edge platform competing with Cloudflare."
+        }
+      ]
     },
     {
       "name": "CS Cloud Studio",
@@ -1230,7 +1775,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "CS Cloud Studio is a web/e-commerce development agency, not an internet infrastructure, edge networking, performance, or application-security platform."
+      "rationale": "Digital agency building Shopify sites; it does not provide Cloudflare-like internet infrastructure, security, networking, or edge platform products.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Digital agency building Shopify sites; it does not provide Cloudflare-like internet infrastructure, security, networking, or edge platform products."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Digital agency building Shopify/e-commerce sites for clients; not an internet infrastructure, security, or edge-computing platform like Cloudflare. Serves the category, doesn't compete."
+        }
+      ]
     },
     {
       "name": "Ideal Developer",
@@ -1252,7 +1809,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Ideal Developer is a custom software development agency, not an internet infrastructure, edge networking, performance, and application-security platform like Cloudflare."
+      "rationale": "Custom development agency using web technologies; it does not offer a competing internet infrastructure, security, networking, or edge platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Custom development agency using web technologies; it does not offer a competing internet infrastructure, security, networking, or edge platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Web-development agency building custom sites for clients; not an internet infrastructure/security platform \u2014 a service shop, not a Cloudflare competitor."
+        }
+      ]
     },
     {
       "name": "VirtualSach",
@@ -1276,7 +1845,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "VirtualSach primarily develops custom AI and edge systems, not a self-service internet security, networking, CDN, and edge infrastructure platform."
+      "rationale": "VirtualSach appears to be an AI/edge infrastructure services provider, not a broad internet security, CDN, networking, and edge platform competitor.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "VirtualSach appears to be an AI/edge infrastructure services provider, not a broad internet security, CDN, networking, and edge platform competitor."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "IT services/consultancy building custom AI and edge deployments for clients, not an internet infrastructure platform competing with Cloudflare."
+        }
+      ]
     },
     {
       "name": "DreamWebCrafts",
@@ -1299,7 +1880,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "DreamWebCrafts is a web/app development and IT services provider, not an internet security, edge networking, or developer infrastructure platform."
+      "rationale": "Digital agency and IT services provider, not an internet infrastructure platform offering CDN, edge networking, and application security products.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Digital agency and IT services provider, not an internet infrastructure platform offering CDN, edge networking, and application security products."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Web/app development and IT services agency, not an internet infrastructure, security, or edge-computing platform; serves the category rather than competing with Cloudflare."
+        }
+      ]
     },
     {
       "name": "Zeroagent",
@@ -1326,7 +1919,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Zeroagent provides AI sales and support tools for e-commerce, not internet security, networking, performance, or edge infrastructure."
+      "rationale": "AI shopping and support tool for e-commerce stores, not an internet infrastructure, security, networking, or edge-computing platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "AI shopping and support tool for e-commerce stores, not an internet infrastructure, security, networking, or edge-computing platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Zeroagent is an AI shopping assistant for e-commerce stores, unrelated to Cloudflare's internet infrastructure, security, and edge networking platform."
+        }
+      ]
     },
     {
       "name": "DNS-Proxy",
@@ -1349,7 +1954,19 @@
         "social_urls": []
       },
       "relevant": true,
-      "rationale": "DNS-Proxy overlaps Cloudflare\u2019s core website security offerings, including WAF, DDoS mitigation, DNS protection, and threat monitoring for website operators."
+      "rationale": "Provides DNS protection, WAF, DDoS mitigation, and web security\u2014core Cloudflare application-security and network-edge offerings.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Provides DNS protection, WAF, DDoS mitigation, and web security\u2014core Cloudflare application-security and network-edge offerings."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Offers WAF, DDoS mitigation, and DNS/web security \u2014 same core product and market as Cloudflare's application security business."
+        }
+      ]
     },
     {
       "name": "SecureCheap",
@@ -1378,7 +1995,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "SecureCheap focuses on cloud cost optimization and vulnerability management, not Cloudflare\u2019s edge-delivered application security, networking, performance, or developer infrastructure."
+      "rationale": "Cloud cost-optimization and security management tool, not an internet edge, CDN, application security, or networking infrastructure platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Cloud cost-optimization and security management tool, not an internet edge, CDN, application security, or networking infrastructure platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "SecureCheap does cloud cost optimization and vulnerability scanning across providers, not CDN, edge networking, or application-security infrastructure like Cloudflare."
+        }
+      ]
     },
     {
       "name": "Lua Global Inc.",
@@ -1402,7 +2031,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Lua builds no-code enterprise AI agents, not application security, networking, performance, or edge infrastructure; buyers and jobs-to-be-done differ."
+      "rationale": "Lua is a no-code enterprise AI-agent automation platform, not an internet security, networking, CDN, or edge-computing provider.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Lua is a no-code enterprise AI-agent automation platform, not an internet security, networking, CDN, or edge-computing provider."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "No-code AI agent builder for business automation; no overlap with Cloudflare's internet infrastructure, security, networking, or edge computing products."
+        }
+      ]
     },
     {
       "name": "Sitecove",
@@ -1429,7 +2070,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Sitecove manages website content, hosting, SEO, and updates; it does not offer Cloudflare-like network security, CDN, edge computing, or connectivity infrastructure."
+      "rationale": "Website management and hosting for CMS sites, not an internet infrastructure, edge network, or application-security platform comparable to Cloudflare.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Website management and hosting for CMS sites, not an internet infrastructure, edge network, or application-security platform comparable to Cloudflare."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "SMB website-management/hosting service with SEO and updates, not internet infrastructure, edge security, or networking platform like Cloudflare."
+        }
+      ]
     },
     {
       "name": "E EasySiteControl",
@@ -1451,7 +2104,24 @@
         "social_urls": []
       },
       "relevant": true,
-      "rationale": "Both provide developer infrastructure for deploying scalable applications, including serverless compute, storage, security, monitoring, and automated scaling."
+      "rationale": "Developer-facing cloud infrastructure platform offering serverless compute, storage, scaling, and security\u2014overlaps Cloudflare's developer services and edge-computing axis as a smaller comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Backend application-development infrastructure does not primarily provide Cloudflare's edge networking, CDN, or application-security platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Developer-facing cloud infrastructure platform offering serverless compute, storage, scaling, and security\u2014overlaps Cloudflare's developer services and edge-computing axis as a smaller comparable."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Backend/serverless developer infrastructure platform with security and scaling \\u00a0developer-services overlap; plausible comparable to Cloudflare's developer platform.<json_schema>Yes</json_schema>"
+        }
+      ]
     },
     {
       "name": "Ada",
@@ -1477,7 +2147,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Ada provides AI customer-service automation, not internet security, networking, performance, developer infrastructure, or edge computing evaluated by Cloudflare buyers."
+      "rationale": "Ada sells AI customer-service automation, not internet security, networking, performance, or edge infrastructure.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Ada sells AI customer-service automation, not internet security, networking, performance, or edge infrastructure."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Ada sells AI customer-service chatbots; Cloudflare is internet infrastructure/security/edge computing. Different products, markets, and buyers."
+        }
+      ]
     },
     {
       "name": "Frontio",
@@ -1503,7 +2185,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Frontio is a customer-support inbox, not an internet security, networking, performance, or edge-computing infrastructure platform."
+      "rationale": "Frontio is a customer-support omnichannel inbox, not an internet infrastructure platform for security, networking, performance, or edge computing.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Frontio is a customer-support omnichannel inbox, not an internet infrastructure platform for security, networking, performance, or edge computing."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Frontio is an omnichannel customer-communication inbox; Cloudflare is internet infrastructure/security/edge computing \u2014 no product, market, or model overlap."
+        }
+      ]
     },
     {
       "name": "AnswerAgentAI",
@@ -1527,7 +2221,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "AnswerAgentAI builds and manages AI agents, not internet security, networking, performance, or edge infrastructure evaluated for Cloudflare\u2019s core use cases."
+      "rationale": "AI-agent management software is distinct from Cloudflare's internet security, networking, performance, and edge-computing platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "AI-agent management software is distinct from Cloudflare's internet security, networking, performance, and edge-computing platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "AI agent-building SaaS platform; no overlap with Cloudflare's internet infrastructure, security, networking, or edge computing products."
+        }
+      ]
     },
     {
       "name": "SHOPIFIO",
@@ -1560,7 +2266,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "SHOPIFIO is a Shopify setup and marketing services agency, not an internet infrastructure, security, networking, or edge-computing platform."
+      "rationale": "Shopify-focused e-commerce setup and marketing agency, not an internet infrastructure, security, networking, or edge-computing platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Shopify-focused e-commerce setup and marketing agency, not an internet infrastructure, security, networking, or edge-computing platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Shopify store setup/marketing agency, not an internet infrastructure, security, or edge-computing platform; no product, market, or model overlap."
+        }
+      ]
     },
     {
       "name": "PlayFlow",
@@ -1589,7 +2307,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "PlayFlow orchestrates multiplayer game servers; Cloudflare provides broad security, networking, CDN, and edge infrastructure, not dedicated game-server deployment."
+      "rationale": "PlayFlow orchestrates multiplayer game servers; it is specialized game infrastructure, not a security, networking, CDN, or edge-computing platform comparable to Cloudflare.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "PlayFlow orchestrates multiplayer game servers; it is specialized game infrastructure, not a security, networking, CDN, or edge-computing platform comparable to Cloudflare."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "PlayFlow is niche game-server orchestration for multiplayer studios, not internet infrastructure, security, CDN, or edge platform like Cloudflare; different product and buyer."
+        }
+      ]
     },
     {
       "name": "BoltFlare",
@@ -1626,7 +2356,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "BoltFlare primarily sells managed WordPress hosting; its bundled CDN and security features complement rather than substitute for Cloudflare\u2019s infrastructure platform."
+      "rationale": "Managed WordPress host using CDN and security features; it is a hosting provider, not a broad internet infrastructure, edge, and security platform peer.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Managed WordPress host using CDN and security features; it is a hosting provider, not a broad internet infrastructure, edge, and security platform peer."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Managed WordPress hosting provider, not an internet infrastructure/security/edge platform; uses CDN features rather than competing with Cloudflare."
+        }
+      ]
     },
     {
       "name": "AgentGenerator",
@@ -1648,7 +2390,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "AgentGenerator builds no-code AI agents, not internet security, networking, performance, or edge infrastructure; buyers and jobs to be done differ."
+      "rationale": "No-code AI agent creation platform, not an internet infrastructure, security, networking, performance, or edge computing provider.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "No-code AI agent creation platform, not an internet infrastructure, security, networking, performance, or edge computing provider."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "No-code AI agent builder, not internet infrastructure, security, networking, or edge computing; no shared product or market axis with Cloudflare."
+        }
+      ]
     },
     {
       "name": "Privateflare",
@@ -1675,7 +2429,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide CDN, WAF, DNS, SSL, and traffic-security infrastructure for organizations managing web application performance and protection."
+      "rationale": "Self-hosted CDN, WAF, DNS, SSL, and traffic-security platform directly overlaps Cloudflare\u2019s core security, performance, and networking products.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Self-hosted CDN, WAF, DNS, SSL, and traffic-security platform directly overlaps Cloudflare\u2019s core security, performance, and networking products."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Offers CDN, WAF, DNS, SSL, and traffic security\u2014same core products as Cloudflare, just self-hosted. Direct competitor/comparable."
+        }
+      ]
     },
     {
       "name": "StudioLLM",
@@ -1698,7 +2464,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "StudioLLM builds and deploys AI agents, not application security, networking, CDN/performance, or edge infrastructure evaluated for Cloudflare\u2019s core use cases."
+      "rationale": "StudioLLM builds AI-agent automation tools, not internet security, CDN, edge networking, or developer infrastructure comparable to Cloudflare.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "StudioLLM builds AI-agent automation tools, not internet security, CDN, edge networking, or developer infrastructure comparable to Cloudflare."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "StudioLLM is an AI agent-building platform; Cloudflare is internet infrastructure for security, networking, and edge computing. Different product and market."
+        }
+      ]
     },
     {
       "name": "OnePrompt",
@@ -1721,7 +2499,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "OnePrompt is an AI application-building platform, not an internet security, networking, performance, or edge infrastructure provider evaluated for Cloudflare\u2019s core use cases."
+      "rationale": "OnePrompt is an AI app-development/code-generation platform, not an internet infrastructure, edge networking, performance, or application-security provider.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "OnePrompt is an AI app-development/code-generation platform, not an internet infrastructure, edge networking, performance, or application-security provider."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "OnePrompt is an AI app-builder generating code from prompts; no overlap with Cloudflare's edge networking, security, or infrastructure products."
+        }
+      ]
     },
     {
       "name": "Layer7 Cache",
@@ -1744,7 +2534,19 @@
         "social_urls": []
       },
       "relevant": true,
-      "rationale": "Layer7 Cache offers CDN performance and DDoS protection, overlapping Cloudflare\u2019s core edge delivery and application-security use cases for website operators."
+      "rationale": "CDN offering web performance, traffic delivery, and DDoS mitigation directly overlaps Cloudflare\u2019s core networking, performance, and security platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "CDN offering web performance, traffic delivery, and DDoS mitigation directly overlaps Cloudflare\u2019s core networking, performance, and security platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "CDN with DDoS mitigation, performance optimization, and secure content delivery directly overlaps Cloudflare's core CDN/security/edge performance product."
+        }
+      ]
     },
     {
       "name": "Codegiant Industries",
@@ -1770,7 +2572,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Codegiant focuses on AI application modernization and enterprise integrations, not edge networking, CDN, application security, or internet infrastructure."
+      "rationale": "Codegiant focuses on enterprise-stack modernization, integrations, and AI application development, not internet security, networking, CDN, or edge infrastructure.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Codegiant focuses on enterprise-stack modernization, integrations, and AI application development, not internet security, networking, CDN, or edge infrastructure."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Codegiant is an app-modernization/integration platform with connectors; not internet infrastructure, edge networking, or application security like Cloudflare."
+        }
+      ]
     },
     {
       "name": "Maker Directory",
@@ -1793,7 +2607,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Maker Directory is a broad builder-tools directory, not an internet security, networking, performance, or edge infrastructure platform competing for Cloudflare buyers."
+      "rationale": "A broad maker-tools directory/platform, not an internet infrastructure, CDN, edge networking, or application-security provider comparable to Cloudflare.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "A broad maker-tools directory/platform, not an internet infrastructure, CDN, edge networking, or application-security provider comparable to Cloudflare."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Incoherent grab-bag of unrelated tools (video generation, crypto exchange, transcription); no genuine internet infrastructure/security/edge platform resembling Cloudflare."
+        }
+      ]
     },
     {
       "name": "Queue-Fair",
@@ -1825,7 +2651,24 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide website traffic-management infrastructure, including virtual waiting rooms that protect applications during demand surges and prevent overload."
+      "rationale": "Queue-Fair\u2019s virtual waiting room and traffic-overload management directly overlap Cloudflare\u2019s web performance, traffic management, and application resilience services.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Queue-Fair\u2019s virtual waiting room and traffic-overload management directly overlap Cloudflare\u2019s web performance, traffic management, and application resilience services."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Niche virtual waiting room for traffic spikes; not an internet infrastructure, security, CDN, or edge-computing platform comparable to Cloudflare."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Virtual waiting room/traffic overload protection for websites competes with Cloudflare's Waiting Room, same buyer and job."
+        }
+      ]
     },
     {
       "name": "FastComet",
@@ -1853,7 +2696,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "FastComet primarily sells traditional managed web hosting, not Cloudflare-like edge networking, application security, CDN, or developer infrastructure for the same job."
+      "rationale": "Web hosting provider for small websites, not an internet edge network, application security, CDN, or developer infrastructure platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Web hosting provider for small websites, not an internet edge network, application security, CDN, or developer infrastructure platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Small-business web hosting (shared/VPS/WordPress), not application security, CDN, or edge infrastructure \u2014 different primary product and buyer; odd domain mismatch too."
+        }
+      ]
     },
     {
       "name": "Protego",
@@ -1880,7 +2735,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Protego primarily offers cybersecurity education and lightweight assessment tools, not Cloudflare-like network, application-delivery, edge-computing, or security infrastructure."
+      "rationale": "Protego is primarily a cloud-security education and free-tools resource, not an internet infrastructure, edge network, or application-security platform comparable to Cloudflare.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Protego is primarily a cloud-security education and free-tools resource, not an internet infrastructure, edge network, or application-security platform comparable to Cloudflare."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Protego is a cybersecurity education/resources portal with free tools and courses, not an internet infrastructure or application-security platform competing with Cloudflare."
+        }
+      ]
     },
     {
       "name": "LaunchFlow",
@@ -1905,7 +2772,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "LaunchFlow provides infrastructure blueprints and deployment automation, not Cloudflare-like application security, edge networking, CDN, or performance services."
+      "rationale": "Infrastructure-blueprint and developer tooling platform, not an edge network, CDN, application-security, or networking provider like Cloudflare.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Infrastructure-blueprint and developer tooling platform, not an edge network, CDN, application-security, or networking provider like Cloudflare."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "LaunchFlow is IaC/DevOps scaffolding (Terraform/Kubernetes templates), not edge networking, CDN, or application security; developer audience overlap is weak."
+        }
+      ]
     },
     {
       "name": "Information Network",
@@ -1931,7 +2810,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Information Network is a managed IT services provider, not an internet infrastructure, edge networking, and application security platform like Cloudflare."
+      "rationale": "Managed IT services consultancy using third-party technologies, not an internet infrastructure, edge network, or application security platform comparable to Cloudflare.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Managed IT services consultancy using third-party technologies, not an internet infrastructure, edge network, or application security platform comparable to Cloudflare."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Managed IT services provider serving SMBs, not an internet infrastructure/edge security platform; serves the category rather than competing with Cloudflare."
+        }
+      ]
     },
     {
       "name": "Automate WP",
@@ -1960,7 +2851,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Automate WP is managed WordPress hosting and site-building; it does not offer Cloudflare-like security, networking, CDN, or edge infrastructure."
+      "rationale": "Managed WordPress hosting and site-building service, not an internet security, networking, CDN, or edge-computing platform comparable to Cloudflare.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Managed WordPress hosting and site-building service, not an internet security, networking, CDN, or edge-computing platform comparable to Cloudflare."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Managed WordPress hosting/site-builder service, not internet infrastructure, CDN, security, or edge computing like Cloudflare."
+        }
+      ]
     },
     {
       "name": "CloudX",
@@ -1984,7 +2887,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "CloudX builds and implements Salesforce applications, not internet security, networking, performance, or edge infrastructure competing with Cloudflare."
+      "rationale": "Salesforce application developer and migration provider, not an internet infrastructure, security, networking, CDN, or edge-computing platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Salesforce application developer and migration provider, not an internet infrastructure, security, networking, CDN, or edge-computing platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Salesforce app-development consultancy; no overlap with Cloudflare's internet infrastructure, security, networking, or edge computing products."
+        }
+      ]
     },
     {
       "name": "CloudXDN",
@@ -2008,7 +2923,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "CloudXDN focuses on compliance automation and security-policy audits, not Cloudflare\u2019s core edge networking, application security, performance, or developer infrastructure."
+      "rationale": "CloudXDN is a compliance and security-policy automation tool, not an internet edge, CDN, networking, or application-security infrastructure platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "CloudXDN is a compliance and security-policy automation tool, not an internet edge, CDN, networking, or application-security infrastructure platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "GRC/compliance-policy automation platform, not internet infrastructure, application security, or edge networking; different product and buyer than Cloudflare."
+        }
+      ]
     },
     {
       "name": "Stackedtensor",
@@ -2033,7 +2960,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Stackedtensor is a custom AI product-development consultancy, not an internet security, networking, performance, or edge infrastructure platform."
+      "rationale": "AI product-development consultancy serving clients, not an internet infrastructure, security, networking, or edge-computing platform competitor.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "AI product-development consultancy serving clients, not an internet infrastructure, security, networking, or edge-computing platform competitor."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "AI product-development consultancy, not an internet infrastructure/security/edge platform; an agency serving clients, not a Cloudflare competitor or comparable."
+        }
+      ]
     },
     {
       "name": "Tricore Infotech Pvt. Ltd.",
@@ -2061,7 +3000,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Tricore is a web development consultancy, not an internet infrastructure platform offering security, networking, performance, or edge-computing products."
+      "rationale": "Web-development consultancy serving client projects, not an internet infrastructure, security, networking, CDN, or edge-computing platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Web-development consultancy serving client projects, not an internet infrastructure, security, networking, CDN, or edge-computing platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "IT consulting and web-design agency, not an internet infrastructure/security/edge-computing platform; serves the category rather than competing with Cloudflare."
+        }
+      ]
     },
     {
       "name": "CodeInspire",
@@ -2089,7 +3040,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "CodeInspire is a Shopify development agency, not an internet infrastructure, security, networking, or edge-computing platform evaluated for Cloudflare\u2019s use cases."
+      "rationale": "CodeInspire is a Shopify-focused web development agency, not an internet infrastructure, security, networking, or edge-computing platform competitor.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "CodeInspire is a Shopify-focused web development agency, not an internet infrastructure, security, networking, or edge-computing platform competitor."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Shopify web agency building e-commerce apps/themes; no overlap with Cloudflare's internet infrastructure, security, networking, or edge computing products."
+        }
+      ]
     },
     {
       "name": "QuickLifeSolutions",
@@ -2116,7 +3079,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "QuickLifeSolutions provides marketing automation and lead-generation services, not internet infrastructure, application security, networking, or edge computing."
+      "rationale": "Marketing automation and lead-generation service, not an internet infrastructure, security, networking, performance, or edge-computing platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Marketing automation and lead-generation service, not an internet infrastructure, security, networking, performance, or edge-computing platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Marketing/lead-generation agency service, not internet infrastructure, security, or edge computing; no product or market overlap with Cloudflare."
+        }
+      ]
     },
     {
       "name": "Host.com",
@@ -2139,7 +3114,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Host.com primarily sells website hosting, while Cloudflare provides edge networking, CDN, and application security infrastructure; their core jobs differ."
+      "rationale": "Host.com primarily sells traditional web hosting and servers, not Cloudflare's edge networking, CDN, and application-security platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Host.com primarily sells traditional web hosting and servers, not Cloudflare's edge networking, CDN, and application-security platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Traditional web host (shared/VPS/dedicated servers, site builder); not a CDN, edge-security, or internet-performance platform like Cloudflare."
+        }
+      ]
     },
     {
       "name": "eCommerce Web Guru",
@@ -2161,7 +3148,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "eCommerce Web Guru is a Shopify development agency, not an internet infrastructure, security, networking, or edge-computing platform evaluated for Cloudflare\u2019s use cases."
+      "rationale": "Shopify-focused web development agency serving e-commerce clients, not an internet infrastructure, security, networking, or edge-computing platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Shopify-focused web development agency serving e-commerce clients, not an internet infrastructure, security, networking, or edge-computing platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Shopify development agency, not an internet infrastructure, security, or edge-computing platform; serves rather than competes with Cloudflare's category."
+        }
+      ]
     },
     {
       "name": "WebSalad",
@@ -2187,7 +3186,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "WebSalad primarily sells managed hosting and VPS services, not Cloudflare-like edge networking, CDN, application security, or developer infrastructure."
+      "rationale": "Managed hosting and VPS provider, not an edge network, application security, or global connectivity platform comparable to Cloudflare.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Managed hosting and VPS provider, not an edge network, application security, or global connectivity platform comparable to Cloudflare."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Generic managed hosting/VPS provider; lacks Cloudflare's CDN, application security, and edge-networking products\u2014different product and buyer."
+        }
+      ]
     },
     {
       "name": "Kintify",
@@ -2212,7 +3223,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Kintify\u2019s CDN and network performance/security services overlap Cloudflare\u2019s core content-delivery offering and target the same online business and infrastructure buyers."
+      "rationale": "Kintify's global CDN, cloud nodes, and security offerings directly overlap Cloudflare's performance, networking, and edge infrastructure platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Kintify's global CDN, cloud nodes, and security offerings directly overlap Cloudflare's performance, networking, and edge infrastructure platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "CDN/edge network with global PoPs plus security and cloud infrastructure directly matches Cloudflare's core product, market, and B2B infrastructure model."
+        }
+      ]
     },
     {
       "name": "CloudCusp",
@@ -2240,7 +3263,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "CloudCusp offers disparate developer tools and services, not a core internet infrastructure platform for security, networking, CDN performance, or edge computing."
+      "rationale": "CloudCusp offers developer optimization tools and services, not a broad internet infrastructure, CDN, networking, edge computing, or application-security platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "CloudCusp offers developer optimization tools and services, not a broad internet infrastructure, CDN, networking, edge computing, or application-security platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Dev-tools shop (code minifiers, AI resume builder, WordPress plugins), not an internet infrastructure, CDN, or application-security platform like Cloudflare."
+        }
+      ]
     },
     {
       "name": "Tben.me",
@@ -2262,7 +3297,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Tben.me is a DevOps consultancy providing managed infrastructure services, not an internet security, networking, performance, or edge-computing platform."
+      "rationale": "DevOps consulting and managed infrastructure services do not compete with Cloudflare\u2019s internet security, networking, and edge platform products.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "DevOps consulting and managed infrastructure services do not compete with Cloudflare\u2019s internet security, networking, and edge platform products."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "One-person DevOps consultancy selling implementation services, not an infrastructure platform; serves the category rather than competing with Cloudflare."
+        }
+      ]
     },
     {
       "name": "ecommerce.so",
@@ -2284,7 +3331,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Ecommerce.so builds and automates Shopify stores; it does not provide Cloudflare-like internet security, networking, performance, or edge infrastructure."
+      "rationale": "E-commerce store-building and dropshipping automation, not internet infrastructure, security, networking, or edge-computing services.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "E-commerce store-building and dropshipping automation, not internet infrastructure, security, networking, or edge-computing services."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "AI-powered Shopify store builder for e-commerce merchants; unrelated to Cloudflare's internet infrastructure, security, and edge computing platform."
+        }
+      ]
     },
     {
       "name": "CloudHost",
@@ -2307,7 +3366,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "CloudHost sells traditional web hosting and VPS infrastructure, not Cloudflare-like edge security, CDN, networking, or developer platform services."
+      "rationale": "Web hosting and managed VPS provider, not an edge networking, application security, and developer infrastructure platform comparable to Cloudflare.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Web hosting and managed VPS provider, not an edge networking, application security, and developer infrastructure platform comparable to Cloudflare."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Traditional web hosting (VPS/dedicated/shared servers), not CDN, edge security, or internet-performance infrastructure; different job-to-be-done than Cloudflare."
+        }
+      ]
     },
     {
       "name": "CDN.com.tr",
@@ -2333,7 +3404,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide CDN, website performance, and DDoS protection services to organizations seeking faster, more secure web delivery."
+      "rationale": "CDN.com.tr provides CDN performance and DDoS protection services, directly overlapping Cloudflare's core edge delivery and security offerings.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "CDN.com.tr provides CDN performance and DDoS protection services, directly overlapping Cloudflare's core edge delivery and security offerings."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "CDN provider offering content delivery, DDoS protection, and website speed/security \u2014 directly comparable to Cloudflare's core CDN and edge security product."
+        }
+      ]
     },
     {
       "name": "Uzerflow",
@@ -2359,7 +3442,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Uzerflow is a no-code app builder, not an internet security, networking, performance, or edge-computing infrastructure platform like Cloudflare."
+      "rationale": "Uzerflow is a no-code application development platform, not an internet infrastructure, security, networking, CDN, or edge-computing provider.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Uzerflow is a no-code application development platform, not an internet infrastructure, security, networking, CDN, or edge-computing provider."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "No-code SaaS app builder for non-developers; no overlap with Cloudflare's internet infrastructure, security, networking, or edge computing."
+        }
+      ]
     },
     {
       "name": "WebCloudor",
@@ -2384,7 +3479,20 @@
         ]
       },
       "relevant": false,
-      "rationale": "WebCloudor is a web development agency using cloud platforms, not an internet infrastructure, edge networking, security, or developer platform like Cloudflare."
+      "rationale": "WebCloudor is a web-development agency serving clients, not an internet infrastructure platform offering Cloudflare's security, networking, CDN, or edge products.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "WebCloudor is a web-development agency serving clients, not an internet infrastructure platform offering Cloudflare's security, networking, CDN, or edge products."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Web development agency building sites and apps for clients, not an internet infrastructure/security/edge platform like Cloudflare."
+        }
+      ]
     }
-  ]
+  ],
+  "error": null
 }

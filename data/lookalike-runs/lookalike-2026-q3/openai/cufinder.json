@@ -7,18 +7,20 @@
     "name": "domain_lookalikes"
   },
   "k": 100,
-  "relevant_count": 4,
-  "precision_at_k": 4.0,
-  "relevant_count_at_10": 4,
-  "relevant_count_at_100": 4,
-  "precision_at_10": 40.0,
-  "precision_at_100": 4.0,
+  "relevant_count": 5,
+  "precision_at_k": 5.0,
+  "relevant_count_at_10": 5,
+  "relevant_count_at_25": 5,
+  "relevant_count_at_100": 5,
+  "precision_at_10": 50.0,
+  "precision_at_25": 20.0,
+  "precision_at_100": 5.0,
   "latency_ms": 736,
   "cost_usd": null,
   "duplicates_removed": 0,
   "max_results": 10,
-  "judge_model": "gpt-5.6",
-  "judged_at": "2026-07-27T03:31:23Z",
+  "judge_model": "majority(n=3): claude-opus-5,gpt-5.6-terra,kimi-k3",
+  "judged_at": "2026-08-10T19:24:40Z",
   "candidates": [
     {
       "name": "amazon",
@@ -34,7 +36,19 @@
         "confidence_level": 99
       },
       "relevant": false,
-      "rationale": "Amazon is primarily a diversified e-commerce and cloud company; its AI offerings do not make it the same core company type as OpenAI."
+      "rationale": "Amazon is primarily an e-commerce and cloud conglomerate; its AI offerings are ancillary rather than a foundation-model/API company comparable to OpenAI.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Amazon is primarily an e-commerce and cloud conglomerate; its AI offerings are ancillary rather than a foundation-model/API company comparable to OpenAI."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Amazon's primary business is e-commerce/cloud conglomerate; foundation models via AWS are a side offering, not its primary product resemblance to OpenAI."
+        }
+      ]
     },
     {
       "name": "anthropic",
@@ -50,7 +64,19 @@
         "confidence_level": 99
       },
       "relevant": true,
-      "rationale": "Anthropic develops Claude foundation models, APIs, and enterprise AI tools serving the same buyers and use cases as OpenAI."
+      "rationale": "Anthropic develops foundation models, APIs, and Claude enterprise AI assistants, directly competing with OpenAI across products and customers.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Anthropic develops foundation models, APIs, and Claude enterprise AI assistants, directly competing with OpenAI across products and customers."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Foundation-model AI research company with flagship assistant Claude; direct competitor to OpenAI on product, market, and business model."
+        }
+      ]
     },
     {
       "name": "apple",
@@ -66,7 +92,19 @@
         "confidence_level": 99
       },
       "relevant": false,
-      "rationale": "Apple primarily sells consumer hardware and integrated software, not foundation models or enterprise AI APIs evaluated for the same job."
+      "rationale": "Apple primarily sells consumer hardware and ecosystem software; its AI features do not make it a foundation-model/API peer to OpenAI.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Apple primarily sells consumer hardware and ecosystem software; its AI features do not make it a foundation-model/API peer to OpenAI."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Apple is consumer electronics/hardware maker, not a foundation-model or AI API company; no product or business-model overlap with OpenAI."
+        }
+      ]
     },
     {
       "name": "github",
@@ -82,7 +120,19 @@
         "confidence_level": 99
       },
       "relevant": false,
-      "rationale": "GitHub is primarily a software development and code-hosting platform, not a foundation-model or general-purpose AI API provider."
+      "rationale": "GitHub is primarily a code-hosting and developer collaboration platform; its AI coding features do not make it a foundation-model/API peer.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "GitHub is primarily a code-hosting and developer collaboration platform; its AI coding features do not make it a foundation-model/API peer."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "GitHub is a code-hosting/developer collaboration platform, not a foundation-model or AI-API provider; AI features are ancillary, so no product or model resemblance."
+        }
+      ]
     },
     {
       "name": "google",
@@ -98,7 +148,19 @@
         "confidence_level": 99
       },
       "relevant": true,
-      "rationale": "Google offers Gemini foundation models, AI APIs, and enterprise AI tooling that buyers directly evaluate against OpenAI\u2019s products."
+      "rationale": "Google offers Gemini foundation models, AI APIs, and enterprise AI products that directly compete with OpenAI.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Google offers Gemini foundation models, AI APIs, and enterprise AI products that directly compete with OpenAI."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Google builds foundation models (Gemini), AI APIs, and consumer/enterprise AI products, directly competing with OpenAI on product and market axes."
+        }
+      ]
     },
     {
       "name": "meta",
@@ -113,8 +175,20 @@
         "country": "united states",
         "confidence_level": 99
       },
-      "relevant": false,
-      "rationale": "Meta primarily operates social networking and advertising platforms; its AI models are not its primary product or equivalent enterprise offering."
+      "relevant": true,
+      "rationale": "Meta develops Llama foundation models and AI products, making it a direct AI research and model-platform comparable to OpenAI.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Meta develops Llama foundation models and AI products, making it a direct AI research and model-platform comparable to OpenAI."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Meta develops foundation models (Llama) and AI products, directly competing with OpenAI in frontier AI research and model development."
+        }
+      ]
     },
     {
       "name": "microsoft",
@@ -130,7 +204,24 @@
         "confidence_level": 99
       },
       "relevant": true,
-      "rationale": "Microsoft offers foundation models, Azure AI APIs, Copilot, and enterprise AI tooling evaluated by many of the same developers and organizations."
+      "rationale": "Microsoft offers competing foundation models, Azure AI APIs, and Copilot enterprise AI products, making it a direct platform competitor and comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Microsoft offers competing foundation models, Azure AI APIs, and Copilot enterprise AI products, making it a direct platform competitor and comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Microsoft is OpenAI's largest investor and cloud partner, not a peer; broad tech conglomerate rather than a foundation-model comparable."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Microsoft builds and sells foundation-model APIs, Copilot AI products, and enterprise AI tooling \\u2014 a direct AI platform comparable."
+        }
+      ]
     },
     {
       "name": "netflix",
@@ -146,7 +237,19 @@
         "confidence_level": 99
       },
       "relevant": false,
-      "rationale": "Netflix is a consumer entertainment streaming service, not a foundation-model, AI API, or enterprise AI platform provider."
+      "rationale": "Netflix is a consumer entertainment streaming service, not a foundation-model, AI API, or enterprise AI tooling provider.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Netflix is a consumer entertainment streaming service, not a foundation-model, AI API, or enterprise AI tooling provider."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Netflix is an entertainment streaming service, not an AI foundation-model or API company; no product, market, or business-model overlap with OpenAI."
+        }
+      ]
     },
     {
       "name": "nvidia",
@@ -162,7 +265,19 @@
         "confidence_level": 99
       },
       "relevant": false,
-      "rationale": "NVIDIA primarily sells accelerated computing hardware and AI infrastructure, not foundation-model APIs or conversational AI products evaluated for the same job."
+      "rationale": "NVIDIA primarily sells GPUs and computing infrastructure; it is a key supplier to OpenAI, not a foundation-model/API competitor or comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "NVIDIA primarily sells GPUs and computing infrastructure; it is a key supplier to OpenAI, not a foundation-model/API competitor or comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "NVIDIA sells GPUs and accelerated-computing hardware \u2014 infrastructure supplier to AI labs, not a foundation-model/API competitor or comparable to OpenAI."
+        }
+      ]
     },
     {
       "name": "perplexity",
@@ -178,10 +293,20 @@
         "confidence_level": 99
       },
       "relevant": true,
-      "rationale": "Perplexity offers a generative AI answer engine that users and enterprises may evaluate alongside ChatGPT for conversational research and knowledge retrieval."
+      "rationale": "AI company offering an LLM-powered answer/search product, comparable to OpenAI's ChatGPT and foundation-model product ecosystem.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "AI company offering an LLM-powered answer/search product, comparable to OpenAI's ChatGPT and foundation-model product ecosystem."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "AI product company building foundation-model-powered answer engine and APIs; direct competitor/comparable to OpenAI's ChatGPT and AI tooling."
+        }
+      ]
     }
   ],
-  "error": null,
-  "relevant_count_at_25": 4,
-  "precision_at_25": 16.0
+  "error": null
 }

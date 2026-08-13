@@ -10,15 +10,17 @@
   "relevant_count": 2,
   "precision_at_k": 2.0,
   "relevant_count_at_10": 2,
+  "relevant_count_at_25": 2,
   "relevant_count_at_100": 2,
   "precision_at_10": 20.0,
+  "precision_at_25": 8.0,
   "precision_at_100": 2.0,
   "latency_ms": 346,
   "cost_usd": null,
   "duplicates_removed": 0,
   "max_results": 10,
-  "judge_model": "gpt-5.6",
-  "judged_at": "2026-07-27T03:31:25Z",
+  "judge_model": "majority(n=3): claude-opus-5,gpt-5.6-terra,kimi-k3",
+  "judged_at": "2026-08-10T19:29:21Z",
   "candidates": [
     {
       "name": "airbnb",
@@ -34,7 +36,19 @@
         "confidence_level": 95
       },
       "relevant": false,
-      "rationale": "Airbnb is a lodging marketplace, not a restaurant POS, payments, ordering, payroll, or operations software platform."
+      "rationale": "Airbnb is a consumer travel lodging and experiences marketplace, not a restaurant POS, payments, or operations software platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Airbnb is a consumer travel lodging and experiences marketplace, not a restaurant POS, payments, or operations software platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Airbnb is a travel/lodging marketplace, not restaurant POS, payments, or operations software; no shared product, market, or model with Toast."
+        }
+      ]
     },
     {
       "name": "doordash",
@@ -50,7 +64,19 @@
         "confidence_level": 95
       },
       "relevant": false,
-      "rationale": "DoorDash is primarily a delivery marketplace and logistics platform, not a restaurant POS, payments, payroll, and operations software provider."
+      "rationale": "DoorDash primarily operates a delivery marketplace and logistics network, not a restaurant POS, payments, payroll, and operations platform like Toast.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "DoorDash primarily operates a delivery marketplace and logistics network, not a restaurant POS, payments, payroll, and operations platform like Toast."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "DoorDash is a food-delivery logistics marketplace, not a restaurant POS/payments/operations platform; different product and buyer, more partner than competitor."
+        }
+      ]
     },
     {
       "name": "hubspot",
@@ -66,7 +92,19 @@
         "confidence_level": 95
       },
       "relevant": false,
-      "rationale": "HubSpot is a general CRM and marketing platform, not a restaurant POS, payments, ordering, payroll, or operations platform."
+      "rationale": "HubSpot is a general CRM, marketing, sales, and service platform, not a restaurant POS, payments, or operations platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "HubSpot is a general CRM, marketing, sales, and service platform, not a restaurant POS, payments, or operations platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Toast is restaurant POS/payments/operations; HubSpot is a generic CRM/marketing platform \u2014 different product, buyer, and market."
+        }
+      ]
     },
     {
       "name": "instacart",
@@ -82,7 +120,19 @@
         "confidence_level": 95
       },
       "relevant": false,
-      "rationale": "Instacart primarily serves grocery retailers with marketplace and fulfillment technology, not restaurants seeking POS, payments, payroll, and operations software."
+      "rationale": "Instacart is primarily a grocery marketplace and retailer e-commerce platform, not a restaurant POS, payments, payroll, or operations software competitor.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Instacart is primarily a grocery marketplace and retailer e-commerce platform, not a restaurant POS, payments, payroll, or operations software competitor."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Toast is restaurant POS/payments/operations software; Instacart is a grocery delivery marketplace and grocery-retail e-commerce platform \u2014 different buyers and products."
+        }
+      ]
     },
     {
       "name": "square",
@@ -98,7 +148,19 @@
         "confidence_level": 95
       },
       "relevant": true,
-      "rationale": "Square offers integrated POS, payments, online ordering, payroll, and merchant operations tools, directly overlapping Toast\u2019s restaurant commerce platform and buyers."
+      "rationale": "Square offers merchant POS, payments, ordering, staff/payroll, and operations tools, directly overlapping Toast\u2019s restaurant commerce platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Square offers merchant POS, payments, ordering, staff/payroll, and operations tools, directly overlapping Toast\u2019s restaurant commerce platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Square is a direct competitor: merchant point-of-sale, payments, online ordering, payroll, and operations platform serving restaurants and other sellers."
+        }
+      ]
     },
     {
       "name": "netflix",
@@ -114,7 +176,19 @@
         "confidence_level": 95
       },
       "relevant": false,
-      "rationale": "Netflix is a consumer entertainment streaming service, not a restaurant POS, payments, ordering, payroll, or operations platform."
+      "rationale": "Netflix is a consumer streaming entertainment service, not a restaurant POS, payments, ordering, payroll, or operations platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Netflix is a consumer streaming entertainment service, not a restaurant POS, payments, ordering, payroll, or operations platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Netflix is a streaming entertainment service; Toast is restaurant POS and operations software. No shared product, market, or business model."
+        }
+      ]
     },
     {
       "name": "opentable",
@@ -130,7 +204,19 @@
         "confidence_level": 95
       },
       "relevant": true,
-      "rationale": "Both provide restaurant-management software, including front-of-house operations and guest/order workflows, evaluated by restaurant operators seeking integrated hospitality technology."
+      "rationale": "OpenTable provides restaurant operations software, reservations, and guest acquisition tools, serving the same restaurant customers as Toast with overlapping operational workflows.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "OpenTable provides restaurant operations software, reservations, and guest acquisition tools, serving the same restaurant customers as Toast with overlapping operational workflows."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both sell restaurant operations software to restaurants; OpenTable's FOH/BOH platform overlaps Toast's space as a direct comparable in restaurant tech."
+        }
+      ]
     },
     {
       "name": "pinterest",
@@ -146,7 +232,19 @@
         "confidence_level": 95
       },
       "relevant": false,
-      "rationale": "Pinterest is a consumer visual discovery platform, not a restaurant POS, payments, ordering, payroll, or operations solution."
+      "rationale": "Pinterest is a consumer visual discovery and shopping platform, not restaurant POS, payments, ordering, payroll, or operations software.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Pinterest is a consumer visual discovery and shopping platform, not restaurant POS, payments, ordering, payroll, or operations software."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Pinterest is a visual social-media/discovery platform; no overlap with Toast's restaurant POS, payments, and operations software."
+        }
+      ]
     },
     {
       "name": "salesforce",
@@ -162,7 +260,19 @@
         "confidence_level": 95
       },
       "relevant": false,
-      "rationale": "Salesforce is a general CRM platform, not a restaurant POS, payments, ordering, payroll, or operations solution evaluated for the same job."
+      "rationale": "Salesforce is a general CRM platform, not a restaurant-focused POS, payments, ordering, payroll, or operations platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Salesforce is a general CRM platform, not a restaurant-focused POS, payments, ordering, payroll, or operations platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Salesforce is a generic CRM platform; Toast is restaurant POS, payments, and operations software. Different products, markets, and buyers."
+        }
+      ]
     },
     {
       "name": "stripe",
@@ -178,10 +288,20 @@
         "confidence_level": 95
       },
       "relevant": false,
-      "rationale": "Stripe provides general payment infrastructure, not a restaurant-specific POS and operations platform; buyers would not evaluate both for the same full-stack need."
+      "rationale": "Stripe is a broad programmable payments platform, not a restaurant-focused POS and operations system serving Toast\u2019s core hospitality buyers.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Stripe is a broad programmable payments platform, not a restaurant-focused POS and operations system serving Toast\u2019s core hospitality buyers."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Stripe is generic payments infrastructure with no restaurant POS or operations platform; a supplier, not a competitor or comparable to Toast."
+        }
+      ]
     }
   ],
-  "error": null,
-  "relevant_count_at_25": 2,
-  "precision_at_25": 8.0
+  "error": null
 }

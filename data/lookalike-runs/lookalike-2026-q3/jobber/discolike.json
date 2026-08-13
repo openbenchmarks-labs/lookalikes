@@ -7,20 +7,20 @@
     "name": "domain_similarity"
   },
   "k": 100,
-  "relevant_count": 11,
-  "precision_at_k": 11.0,
+  "relevant_count": 14,
+  "precision_at_k": 14.0,
   "relevant_count_at_10": 1,
-  "relevant_count_at_25": 1,
-  "relevant_count_at_100": 11,
+  "relevant_count_at_25": 2,
+  "relevant_count_at_100": 14,
   "precision_at_10": 10.0,
-  "precision_at_25": 4.0,
-  "precision_at_100": 11.0,
+  "precision_at_25": 8.0,
+  "precision_at_100": 14.0,
   "latency_ms": 932,
   "cost_usd": null,
   "duplicates_removed": 1,
   "max_results": null,
-  "judge_model": "gpt-5.6",
-  "judged_at": "2026-07-27T06:59:33Z",
+  "judge_model": "majority(n=3): claude-opus-5,gpt-5.6-terra,kimi-k3",
+  "judged_at": "2026-08-10T20:19:53Z",
   "candidates": [
     {
       "name": "The Drain Whisperer",
@@ -48,7 +48,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "The Drain Whisperer is a plumbing contractor and potential Jobber customer, not a field-service management software provider."
+      "rationale": "Plumbing contractor is a potential Jobber customer, not a field-service management software competitor or comparable platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Plumbing contractor is a potential Jobber customer, not a field-service management software competitor or comparable platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "A plumbing contractor \u2014 a user of field-service software, not a software competitor to Jobber."
+        }
+      ]
     },
     {
       "name": "The Home Improvement Directory",
@@ -70,7 +82,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "A contractor directory and lead-generation marketplace does not provide scheduling, dispatch, invoicing, or other field-service management workflows."
+      "rationale": "A contractor discovery directory and lead-generation marketplace, not operational field-service management software for home-service businesses.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "A contractor discovery directory and lead-generation marketplace, not operational field-service management software for home-service businesses."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Homeowner-facing contractor directory/lead-gen marketplace, not field-service management software for home-service businesses; different product and buyer."
+        }
+      ]
     },
     {
       "name": "Cleve Trusclair",
@@ -97,7 +121,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Cleve Trusclair provides handyman, property, and consulting services, not field-service management software evaluated by home-service operators."
+      "rationale": "Handyman and consulting services serve home-service operations but do not provide field-service management software comparable to Jobber.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Handyman and consulting services serve home-service operations but do not provide field-service management software comparable to Jobber."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Handyman/property services company (and consulting mishmash), not field-service management software; it's a potential customer of Jobber, not a comparable."
+        }
+      ]
     },
     {
       "name": "HomeHelpersCo",
@@ -120,7 +156,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "HomeHelpersCo is a homeowner-to-contractor marketplace, not field-service management software used by home-service businesses for operations."
+      "rationale": "Home-services contractor marketplace for homeowners, not field-service management software sold to service businesses.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Home-services contractor marketplace for homeowners, not field-service management software sold to service businesses."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Contractor-matching marketplace for homeowners, not field-service management software for home-service businesses; different product and buyer."
+        }
+      ]
     },
     {
       "name": "Builders Showcase",
@@ -147,7 +195,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Builders Showcase is a homeowner-contractor discovery marketplace, not field-service management software for contractors\u2019 scheduling, dispatch, invoicing, and payments."
+      "rationale": "Homeowner-to-contractor discovery marketplace, not field-service management software for home-service businesses.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Homeowner-to-contractor discovery marketplace, not field-service management software for home-service businesses."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Homeowner-contractor marketplace, not field-service management software for home-service businesses; different product and business model."
+        }
+      ]
     },
     {
       "name": "Job Gobbler",
@@ -172,7 +232,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Job Gobbler is a labor marketplace connecting users and workers, not field-service management software for home-service business operations."
+      "rationale": "Labor marketplace connecting users to workers, not software for home-service businesses to manage scheduling, dispatch, invoicing, and payments.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Labor marketplace connecting users to workers, not software for home-service businesses to manage scheduling, dispatch, invoicing, and payments."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Job Gobbler is a consumer-to-worker task marketplace, not field-service management software for home-service businesses like Jobber."
+        }
+      ]
     },
     {
       "name": "OctopusPro",
@@ -204,7 +276,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "OctopusPro directly overlaps Jobber as field-service management software offering scheduling, workforce dispatch, invoicing, and customer management for service businesses."
+      "rationale": "Field-service management software with scheduling, dispatch, invoicing, and mobile workforce tools, directly comparable to Jobber for service businesses.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Field-service management software with scheduling, dispatch, invoicing, and mobile workforce tools, directly comparable to Jobber for service businesses."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Field-service management software with scheduling, dispatch, invoicing, and mobile workforce tools \u2014 direct competitor to Jobber on product and market axes."
+        }
+      ]
     },
     {
       "name": "Contractors Certified",
@@ -227,7 +311,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Contractors Certified is a contractor marketplace and bidding platform, not field-service management software for scheduling, dispatch, invoicing, and payments."
+      "rationale": "Contractor marketplace connecting project owners with vetted contractors, not field-service management software for home-service businesses.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Contractor marketplace connecting project owners with vetted contractors, not field-service management software for home-service businesses."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Contractor bidding marketplace connecting clients to contractors, not field-service management software; different product and buyer, not a Jobber competitor."
+        }
+      ]
     },
     {
       "name": "Home Contractor",
@@ -251,7 +347,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Home Contractor is a consumer contractor-matching marketplace, not field-service management software used by home-service businesses."
+      "rationale": "Consumer marketplace connecting homeowners to contractors, not software for service businesses to manage scheduling, dispatch, invoicing, and payments.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Consumer marketplace connecting homeowners to contractors, not software for service businesses to manage scheduling, dispatch, invoicing, and payments."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Homeowner-facing contractor-matching marketplace, not field-service management software for home-service businesses; different product and buyer persona."
+        }
+      ]
     },
     {
       "name": "Home Pros Direct",
@@ -274,7 +382,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Home Pros Direct is a homeowner-to-contractor directory and lead-generation marketplace, not field-service management software for scheduling, dispatch, invoicing, and payments."
+      "rationale": "Home Pros Direct is a homeowner-to-contractor directory/lead platform, not operational field-service management software for service businesses.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Home Pros Direct is a homeowner-to-contractor directory/lead platform, not operational field-service management software for service businesses."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Homeowner-to-pro lead-generation marketplace, not field-service management software; serves a different job than Jobber's scheduling/dispatch/invoicing platform."
+        }
+      ]
     },
     {
       "name": "Complete360",
@@ -303,7 +423,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Complete360 focuses on marketing and lead generation, not operational field-service management such as dispatch, invoicing, and payments."
+      "rationale": "Marketing and lead-generation services for local businesses, not a field-service management platform for operating scheduling, dispatch, invoicing, and payments.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Marketing and lead-generation services for local businesses, not a field-service management platform for operating scheduling, dispatch, invoicing, and payments."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Marketing/lead-generation platform for local service businesses, not field-service operations software (scheduling, dispatch, invoicing); serves the category rather than competing with Jobber."
+        }
+      ]
     },
     {
       "name": "ServiceSmart Online",
@@ -326,7 +458,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "ServiceSmart is a consumer services marketplace, not field-service management software for providers handling scheduling, dispatch, invoicing, and payments."
+      "rationale": "Consumer services marketplace and vendor advertising platform, not field-service operations software for home-service businesses.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Consumer services marketplace and vendor advertising platform, not field-service operations software for home-service businesses."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Consumer marketplace connecting users with local service providers, not field-service management software for home-service businesses; a lead channel, not a Jobber competitor."
+        }
+      ]
     },
     {
       "name": "DC City Pages",
@@ -352,7 +496,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "DC City Pages is a consumer-facing service-provider directory, not field-service management software for scheduling, dispatch, invoicing, and payments."
+      "rationale": "Local home-services directory connects consumers to providers; it does not provide field-service scheduling, dispatch, invoicing, or payments software.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Local home-services directory connects consumers to providers; it does not provide field-service scheduling, dispatch, invoicing, or payments software."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Directory connecting consumers to home-service pros, not field-service management software; serves Jobber's customers rather than competing with Jobber."
+        }
+      ]
     },
     {
       "name": "OnSite",
@@ -378,7 +534,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "OnSite delivers facilities maintenance services, while Jobber sells field-service management software to home-service businesses; their offerings and buyer jobs differ."
+      "rationale": "OnSite delivers facilities services directly, rather than field-service management software for home-service businesses.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "OnSite delivers facilities services directly, rather than field-service management software for home-service businesses."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "OnSite delivers facilities services (cleaning, maintenance, plumbing), not field-service management software \u2014 a service provider, not a software competitor."
+        }
+      ]
     },
     {
       "name": "Zippidee",
@@ -408,7 +576,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Zippidee is a consumer marketplace for hiring home-service professionals, not field-service management software used by service businesses."
+      "rationale": "Zippidee is a consumer-facing marketplace for hiring local pros, not field-service management software for home-service businesses.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Zippidee is a consumer-facing marketplace for hiring local pros, not field-service management software for home-service businesses."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Zippidee is a consumer marketplace for hiring handymen, not field-service management software for home-service businesses; different product and buyer."
+        }
+      ]
     },
     {
       "name": "Services Engine",
@@ -435,8 +615,20 @@
           "https://x.com/servicesengine"
         ]
       },
-      "relevant": false,
-      "rationale": "Services Engine primarily handles lead generation and marketing, not Jobber\u2019s core scheduling, dispatch, and field-service operations job."
+      "relevant": true,
+      "rationale": "Home-service platform with customer management, payments, and job follow-up; overlaps Jobber\u2019s trades-business operational workflow despite stronger marketing focus.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Home-service platform with customer management, payments, and job follow-up; overlaps Jobber\u2019s trades-business operational workflow despite stronger marketing focus."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "All-in-one software platform for home-service businesses (HVAC, plumbing) with CRM, payments, workflow automation \u2014 same buyer and overlapping product as Jobber."
+        }
+      ]
     },
     {
       "name": "BuilderPier",
@@ -458,7 +650,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "BuilderPier is a homeowner-contractor lead marketplace, not field-service management software for contractors\u2019 scheduling, dispatch, invoicing, and payments."
+      "rationale": "Homeowner-to-contractor lead marketplace, not field-service management software for service businesses\u2019 scheduling, dispatch, invoicing, and payments.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Homeowner-to-contractor lead marketplace, not field-service management software for service businesses\u2019 scheduling, dispatch, invoicing, and payments."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "BuilderPier is a homeowner-to-contractor quote marketplace, not field-service management software for scheduling, invoicing, and dispatch like Jobber."
+        }
+      ]
     },
     {
       "name": "MaxmentPro",
@@ -481,7 +685,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "MaxmentPro is primarily a consumer-facing home-services directory/marketplace, not field-service management software for scheduling, dispatch, invoicing, and payments."
+      "rationale": "MaxmentPro is a homeowner-facing directory/marketplace for finding service providers, not a field-service management platform for operating home-service businesses.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "MaxmentPro is a homeowner-facing directory/marketplace for finding service providers, not a field-service management platform for operating home-service businesses."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Directory/marketplace connecting consumers to home-service pros, not field-service management software; weak operational-tools mention doesn't carry product or model resemblance."
+        }
+      ]
     },
     {
       "name": "One Stop Pros",
@@ -504,7 +720,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "One Stop Pros is a homeowner-to-service-provider marketplace, not field-service management software for home-service businesses\u2019 scheduling, dispatch, invoicing, and payments."
+      "rationale": "Consumer marketplace connecting homeowners with service professionals, not a field-service management platform for home-service businesses.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Consumer marketplace connecting homeowners with service professionals, not a field-service management platform for home-service businesses."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Consumer marketplace connecting homeowners with pros; not field-service management software for home-service businesses like Jobber."
+        }
+      ]
     },
     {
       "name": "Software Advice, Inc.",
@@ -534,7 +762,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Software Advice is a cross-industry software recommendation marketplace, not a field-service management platform serving home-service operations."
+      "rationale": "Software purchasing advisory and review platform; it does not provide field-service scheduling, dispatch, invoicing, or payments software.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Software purchasing advisory and review platform; it does not provide field-service scheduling, dispatch, invoicing, or payments software."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Software Advice is a software-selection advisory marketplace, not field-service management software; it advises buyers rather than competing with Jobber."
+        }
+      ]
     },
     {
       "name": "JobXi",
@@ -561,7 +801,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "JobXi is a recruitment marketplace, not field-service management software for home-service businesses; its product and buyer use case do not overlap Jobber's."
+      "rationale": "JobXi is a job-search marketplace for hiring, not field-service management software for scheduling, dispatch, invoicing, and payments.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "JobXi is a job-search marketplace for hiring, not field-service management software for scheduling, dispatch, invoicing, and payments."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "JobXi is a job-search platform for job seekers, not field-service management software; different product and market despite name similarity."
+        }
+      ]
     },
     {
       "name": "DFW Property Agents",
@@ -588,7 +840,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "DFW Property Agents is a real estate brokerage, not field-service management software for home-service businesses."
+      "rationale": "Real estate brokerage serving home buyers and sellers, not field-service management software for home-service businesses.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Real estate brokerage serving home buyers and sellers, not field-service management software for home-service businesses."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Real estate agency, not field-service management software; different product, market, and business model."
+        }
+      ]
     },
     {
       "name": "CleanStop",
@@ -614,7 +878,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "CleanStop sells cleaning supplies, equipment, training, and repair services; it does not offer field-service management software for scheduling, dispatch, invoicing, or payments."
+      "rationale": "CleanStop supplies products, training, and services to cleaning crews; it is not field-service management software for home-service businesses.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "CleanStop supplies products, training, and services to cleaning crews; it is not field-service management software for home-service businesses."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "CleanStop sells cleaning chemicals, equipment, and training to cleaning crews \u2014 a supplier, not field-service management software like Jobber."
+        }
+      ]
     },
     {
       "name": "Xoaks",
@@ -636,7 +912,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Xoaks is a consumer marketplace for finding technicians, not field-service management software used by home-service businesses to run operations."
+      "rationale": "Home-services marketplace connecting consumers to technicians, not a field-service management platform sold to service businesses.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Home-services marketplace connecting consumers to technicians, not a field-service management platform sold to service businesses."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Xoaks is a consumer marketplace for finding technicians, not field-service management software for home-service businesses; different product and model."
+        }
+      ]
     },
     {
       "name": "LocalStuff",
@@ -662,7 +950,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "LocalStuff is a consumer services marketplace, not field-service management software for service businesses handling scheduling, dispatch, invoicing, and operations."
+      "rationale": "Consumer marketplace connecting users to service providers, not field-service management software for home-service businesses.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Consumer marketplace connecting users to service providers, not field-service management software for home-service businesses."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "LocalStuff is a consumer marketplace connecting users with service providers, not field-service management software for home-service businesses."
+        }
+      ]
     },
     {
       "name": "GradeMySite",
@@ -687,7 +987,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "GradeMySite provides website health and visibility monitoring, not field-service scheduling, dispatch, invoicing, or payments for home-service businesses."
+      "rationale": "Website health monitoring and online-presence optimization, not field-service scheduling, dispatch, invoicing, or payments for home-service businesses.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Website health monitoring and online-presence optimization, not field-service scheduling, dispatch, invoicing, or payments for home-service businesses."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Website health/SEO monitoring service, not field-service management software; different product and buyer job-to-be-done."
+        }
+      ]
     },
     {
       "name": "Consumer Business Review",
@@ -711,7 +1023,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "CBR is a consumer contractor-discovery and reviews platform, not field-service management software used by home-service businesses."
+      "rationale": "Consumer review and contractor-discovery platform for homeowners, not field-service management software used by home-service businesses.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Consumer review and contractor-discovery platform for homeowners, not field-service management software used by home-service businesses."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Consumer review directory for homeowners finding contractors; not field-service management software for service businesses. Different product and buyer."
+        }
+      ]
     },
     {
       "name": "BookingContractors.com",
@@ -734,7 +1058,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "BookingContractors is a homeowner-contractor marketplace, not field-service management software contractors use for scheduling, dispatch, invoicing, and payments."
+      "rationale": "Homeowner-to-contractor marketplace, not field-service management software for service businesses\u2019 scheduling, dispatch, invoicing, and payments.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Homeowner-to-contractor marketplace, not field-service management software for service businesses\u2019 scheduling, dispatch, invoicing, and payments."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Jobber is B2B field-service management software for contractors; candidate is a B2C marketplace matching homeowners with contractors\u2014different product and buyer, not a competitor."
+        }
+      ]
     },
     {
       "name": "SideHours.com",
@@ -759,7 +1095,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "SideHours is a local-services marketplace for customer-provider matching, not field-service management software for scheduling, dispatch, invoicing, and payments."
+      "rationale": "Consumer-facing local-services marketplace for hiring providers, not field-service operations software for home-service businesses.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Consumer-facing local-services marketplace for hiring providers, not field-service operations software for home-service businesses."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Consumer-facing marketplace connecting customers with local pros (like Thumbtack), not field-service management software sold to service businesses."
+        }
+      ]
     },
     {
       "name": "LawnScaping.com",
@@ -781,7 +1129,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "LawnScaping is a homeowner-to-contractor marketplace, not field-service management software used by home-service businesses for operations."
+      "rationale": "Consumer marketplace matching homeowners with lawn professionals, not field-service management software sold to service businesses.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Consumer marketplace matching homeowners with lawn professionals, not field-service management software sold to service businesses."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Homeowner-facing marketplace matching consumers with lawn pros, not field-service management software for service businesses; different product and buyer."
+        }
+      ]
     },
     {
       "name": "Qulgu",
@@ -803,7 +1163,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Qulgu is a consumer marketplace/directory for finding home-service providers, not field-service management software for those businesses."
+      "rationale": "Qulgu is a consumer-facing local-service directory/marketplace, not field-service management software for home-service businesses.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Qulgu is a consumer-facing local-service directory/marketplace, not field-service management software for home-service businesses."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Qulgu is a consumer directory connecting homeowners with local pros (like Angi), not field-service management software sold to service businesses like Jobber."
+        }
+      ]
     },
     {
       "name": "Wasabi Automate",
@@ -825,7 +1197,19 @@
         "social_urls": []
       },
       "relevant": true,
-      "rationale": "Both provide field-service operations software for home-service businesses, overlapping in scheduling, invoicing, routing, customer communications, and workflow automation."
+      "rationale": "Home-service operations platform with scheduling, invoicing, routing, and customer communications, directly comparable to Jobber.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Home-service operations platform with scheduling, invoicing, routing, and customer communications, directly comparable to Jobber."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Field-service software for home-service businesses (HVAC, landscaping) with scheduling, invoicing, dispatch \u2014 same product and market as Jobber."
+        }
+      ]
     },
     {
       "name": "5miles",
@@ -855,7 +1239,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "5miles is a consumer marketplace, not field-service management software for home-service businesses; its product and buyer persona do not overlap Jobber\u2019s."
+      "rationale": "5miles is a consumer classifieds marketplace, not field-service management software for home-service businesses.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "5miles is a consumer classifieds marketplace, not field-service management software for home-service businesses."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "5miles is a local buy/sell marketplace, not field-service management software; no product, market, or model overlap with Jobber."
+        }
+      ]
     },
     {
       "name": "Homeyou",
@@ -888,7 +1284,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Homeyou is a homeowner-to-contractor marketplace, not field-service management software for trades businesses handling operations like dispatch, invoicing, and payments."
+      "rationale": "Homeyou is a homeowner-to-contractor marketplace, not field-service management software for home-service businesses.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Homeyou is a homeowner-to-contractor marketplace, not field-service management software for home-service businesses."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Homeyou is a homeowner-to-contractor lead marketplace, not field-service management software for service businesses like Jobber; different product and buyer."
+        }
+      ]
     },
     {
       "name": "Waupaca Area Services Live",
@@ -912,7 +1320,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Candidate is a local services directory, not field-service management software for scheduling, dispatch, invoicing, and payments."
+      "rationale": "Local directory connecting consumers with service providers, not field-service management software for home-service businesses.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Local directory connecting consumers with service providers, not field-service management software for home-service businesses."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Local business directory/listing site, not field-service management software; serves consumers seeking contractors, not home-service businesses needing operations software."
+        }
+      ]
     },
     {
       "name": "Nika Web Agency",
@@ -934,7 +1354,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Nika Web is a marketing agency for contractors, not field-service management software for scheduling, dispatch, invoicing, and payments."
+      "rationale": "Marketing agency serving home-service contractors, not a field-service management software platform or direct comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Marketing agency serving home-service contractors, not a field-service management software platform or direct comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Marketing agency serving home-service contractors, not field-service management software; serves the category rather than competing with Jobber's product."
+        }
+      ]
     },
     {
       "name": "AllServicePros",
@@ -956,7 +1388,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "AllServicePros is a lead-generation and reputation marketplace, not field-service operations software for scheduling, dispatch, invoicing, and payments."
+      "rationale": "Marketplace and reputation platform connecting homeowners to providers, not operational field-service management for service businesses.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Marketplace and reputation platform connecting homeowners to providers, not operational field-service management for service businesses."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Lead-generation marketplace connecting customers to home-service pros, not field-service management software; same buyers but different job to be done."
+        }
+      ]
     },
     {
       "name": "Local Service Quotes",
@@ -979,7 +1423,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Local Service Quotes is a homeowner-to-contractor lead marketplace, not field-service management software for contractors\u2019 scheduling, dispatch, invoicing, and payments."
+      "rationale": "Consumer quote marketplace connecting homeowners to service pros, not field-service management software for operating those businesses.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Consumer quote marketplace connecting homeowners to service pros, not field-service management software for operating those businesses."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Jobber is FSM software for service businesses; candidate is a homeowner-facing quote marketplace, not field-service management software or a comparable model."
+        }
+      ]
     },
     {
       "name": "Home Service Contractors",
@@ -1004,7 +1460,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Candidate is a consumer contractor directory and quote marketplace, not field-service management software used by home-service businesses."
+      "rationale": "Consumer contractor-discovery directory for homeowners, not field-service management software for home-service businesses.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Consumer contractor-discovery directory for homeowners, not field-service management software for home-service businesses."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Homeowner-facing contractor directory/lead marketplace, not field-service management software; serves consumers, not home-service businesses as a software peer."
+        }
+      ]
     },
     {
       "name": "Housecall Pro",
@@ -1037,7 +1505,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide field-service management software for home-service businesses, including scheduling, customer communications, invoicing, and payments."
+      "rationale": "Home-service field-service platform with the same scheduling, dispatch, invoicing, payments, and customer-management workflows as Jobber.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Home-service field-service platform with the same scheduling, dispatch, invoicing, payments, and customer-management workflows as Jobber."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Direct competitor: all-in-one field-service management for home-service businesses with scheduling, dispatch, invoicing, and payments \u2014 matches on product, market, and model."
+        }
+      ]
     },
     {
       "name": "TrustPatrick",
@@ -1069,7 +1549,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "TrustPatrick is a homeowner-contractor discovery and referral marketplace, not field-service management software for contractors\u2019 scheduling, dispatch, invoicing, and payments."
+      "rationale": "Homeowner contractor-discovery and review marketplace, not field-service operations software for managing scheduling, dispatch, invoicing, and payments.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Homeowner contractor-discovery and review marketplace, not field-service operations software for managing scheduling, dispatch, invoicing, and payments."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Homeowner-to-contractor matching marketplace, not field-service management software; different product and business model than Jobber's SaaS for service businesses."
+        }
+      ]
     },
     {
       "name": "USHouseBuilders.com",
@@ -1091,7 +1583,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "USHouseBuilders.com is a homeowner-contractor marketplace, not field-service management software for contractors handling scheduling, dispatch, invoicing, and payments."
+      "rationale": "Homeowner-contractor marketplace for finding and quoting projects, not field-service operations software for scheduling, dispatch, invoicing, and payments.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Homeowner-contractor marketplace for finding and quoting projects, not field-service operations software for scheduling, dispatch, invoicing, and payments."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Homeowner-to-contractor lead-gen marketplace, not field-service management software; serves homeowners, doesn't sell scheduling/dispatch/invoicing tools to service businesses."
+        }
+      ]
     },
     {
       "name": "Homepoints",
@@ -1116,7 +1620,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Homepoints is a consumer marketplace connecting homeowners with contractors and suppliers, not field-service management software used by home-service businesses."
+      "rationale": "Home-improvement marketplace connecting consumers to contractors and suppliers, not field-service management software for service businesses.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Home-improvement marketplace connecting consumers to contractors and suppliers, not field-service management software for service businesses."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Consumer-facing marketplace matching homeowners with contractors/suppliers, not field-service management software for home-service businesses; different product and buyer."
+        }
+      ]
     },
     {
       "name": "Task Titans",
@@ -1138,7 +1654,19 @@
         "social_urls": []
       },
       "relevant": true,
-      "rationale": "Both provide field-service management software for home-service teams, including job scheduling, staff management, billing, invoicing, and customer management."
+      "rationale": "Field-service management platform for home-service teams with scheduling, job management, billing, invoicing, and client management\u2014directly comparable to Jobber.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Field-service management platform for home-service teams with scheduling, job management, billing, invoicing, and client management\u2014directly comparable to Jobber."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Field-service management platform for home-service businesses (cleaning, landscaping, maintenance) with scheduling, invoicing, and job management \u2014 direct Jobber competitor."
+        }
+      ]
     },
     {
       "name": "Royal Home Supplies",
@@ -1160,7 +1688,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Royal Home Supplies is a consumer home-goods retailer, not field-service management software for home-service businesses."
+      "rationale": "Online retailer of home decor and appliances, not field-service management software for home-service businesses.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Online retailer of home decor and appliances, not field-service management software for home-service businesses."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Candidate is a home decor/appliance e-commerce retailer, not field-service management software; unrelated product, market, and business model."
+        }
+      ]
     },
     {
       "name": "TradeRated",
@@ -1188,7 +1728,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "TradeRated is a review and reputation platform, not field-service management software for scheduling, dispatch, invoicing, and payments."
+      "rationale": "TradeRated is a reputation and review-capture tool, not a field-service operations platform for scheduling, dispatch, invoicing, and payments.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "TradeRated is a reputation and review-capture tool, not a field-service operations platform for scheduling, dispatch, invoicing, and payments."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "TradeRated is a review-capture/reputation marketing tool, not field-service management software covering scheduling, dispatch, invoicing; different product category despite serving trades."
+        }
+      ]
     },
     {
       "name": "Rooah! SimplePlan",
@@ -1218,7 +1770,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Rooah is a consumer services marketplace/directory, not field-service management software for scheduling, dispatch, invoicing, and payments."
+      "rationale": "Consumer marketplace for hiring service professionals, not field-service management software for home-service businesses.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Consumer marketplace for hiring service professionals, not field-service management software for home-service businesses."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Consumer marketplace connecting homeowners with service pros (like Angi), not field-service management software for running home-service businesses."
+        }
+      ]
     },
     {
       "name": "All Pro Plumbing Austin",
@@ -1242,7 +1806,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "All Pro Plumbing is a home-service contractor and potential Jobber customer, not a competing field-service management software platform."
+      "rationale": "Plumbing contractor is a prospective Jobber customer, not a field-service management software competitor or comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Plumbing contractor is a prospective Jobber customer, not a field-service management software competitor or comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "A plumbing contractor is a customer of field-service software, not a competitor or comparable to Jobber's software platform."
+        }
+      ]
     },
     {
       "name": "ServiceStack LLC",
@@ -1266,7 +1842,19 @@
         "social_urls": []
       },
       "relevant": true,
-      "rationale": "Both offer SaaS scheduling, CRM, and billing tools to home-service contractors, supporting overlapping job-booking and business-management workflows."
+      "rationale": "Serves home-service contractors with scheduling, CRM, billing, and online booking, overlapping Jobber\u2019s field-service management buyer and workflow.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Serves home-service contractors with scheduling, CRM, billing, and online booking, overlapping Jobber\u2019s field-service management buyer and workflow."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "SaaS platform for home-service contractors with scheduling, booking, CRM, and billing tools; same buyer persona and overlapping field-service product."
+        }
+      ]
     },
     {
       "name": "Labor Link Media",
@@ -1290,7 +1878,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Labor Link Media is a marketing agency for lead generation, not field-service management software for scheduling, dispatch, invoicing, and payments."
+      "rationale": "Marketing agency serving service businesses; it generates leads and websites rather than providing field-service scheduling, dispatch, invoicing, or payments software.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Marketing agency serving service businesses; it generates leads and websites rather than providing field-service scheduling, dispatch, invoicing, or payments software."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Marketing agency serving service businesses, not field-service management software; a service provider to the category, not a competitor or comparable."
+        }
+      ]
     },
     {
       "name": "Www.Mortgagechain",
@@ -1312,7 +1912,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Mortgagechain is a homeowner-to-service-provider referral marketplace, not field-service management software for home-service businesses."
+      "rationale": "Consumer lead-generation marketplace connecting homeowners to service professionals, not field-service management software for home-service businesses.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Consumer lead-generation marketplace connecting homeowners to service professionals, not field-service management software for home-service businesses."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Lead-gen marketplace matching homeowners with pros, not field-service management software for home-service businesses; different product and business model."
+        }
+      ]
     },
     {
       "name": "WorkByClick",
@@ -1335,7 +1947,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "WorkByClick is a consumer marketplace for finding local contractors, not field-service management software used by contractors to run operations."
+      "rationale": "Consumer marketplace for finding local contractors, not field-service management software for home-service businesses.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Consumer marketplace for finding local contractors, not field-service management software for home-service businesses."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Consumer marketplace matching homeowners with contractors, not field-service management software sold to service businesses; different product and model."
+        }
+      ]
     },
     {
       "name": "Starling",
@@ -1360,7 +1984,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Starling is a homeowner-facing marketplace/service platform, not field-service management software used by home-service businesses for operations."
+      "rationale": "Starling serves homeowners managing repairs, while Jobber sells operational software to home-service businesses; it is a customer-facing service platform, not a peer.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Starling serves homeowners managing repairs, while Jobber sells operational software to home-service businesses; it is a customer-facing service platform, not a peer."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Starling is a B2C marketplace connecting homeowners to local pros; Jobber is management software sold to home-service businesses. Different products and buyers."
+        }
+      ]
     },
     {
       "name": "BisProfiles",
@@ -1385,7 +2021,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "BisProfiles is a business directory, not field-service management software for scheduling, dispatch, invoicing, and payments used by home-service operators."
+      "rationale": "Business directory for finding providers, not field-service management software for home-service businesses.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Business directory for finding providers, not field-service management software for home-service businesses."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Business directory for finding local providers, not field-service management software; no scheduling, dispatch, invoicing product \u2014 different product and model."
+        }
+      ]
     },
     {
       "name": "Pick A Pro NZ",
@@ -1413,7 +2061,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Pick A Pro is a homeowner-to-service-provider marketplace, not field-service management software purchased by home-service businesses."
+      "rationale": "Consumer marketplace connecting homeowners with local service providers, not field-service management software sold to home-service businesses.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Consumer marketplace connecting homeowners with local service providers, not field-service management software sold to home-service businesses."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Consumer marketplace connecting homeowners to pros (like Angi), not field-service management software sold to service businesses; different buyer and model."
+        }
+      ]
     },
     {
       "name": "ReviewedByPros",
@@ -1436,7 +2096,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "ReviewedByPros offers customer reputation checks for contractors, not scheduling, dispatch, invoicing, payments, or broader field-service management."
+      "rationale": "Contractor review marketplace helps tradespeople screen customers, not manage scheduling, dispatch, invoicing, or payments.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Contractor review marketplace helps tradespeople screen customers, not manage scheduling, dispatch, invoicing, or payments."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Review-sharing/lead-vetting tool for contractors, not field-service management software; different product and job-to-be-done."
+        }
+      ]
     },
     {
       "name": "pro4me",
@@ -1459,7 +2131,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "pro4me is a homeowner-to-service-professional marketplace, not field-service management software for trades businesses managing operations."
+      "rationale": "Marketplace connecting homeowners to maintenance professionals, rather than field-service management software sold to service businesses.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Marketplace connecting homeowners to maintenance professionals, rather than field-service management software sold to service businesses."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "pro4me is a consumer-to-pro home-services marketplace, not field-service management software sold to service businesses; different product and buyer."
+        }
+      ]
     },
     {
       "name": "Service Biz Advisor",
@@ -1482,7 +2166,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Service Biz Advisor provides lead generation for contractors, not field-service management software for scheduling, dispatch, invoicing, and payments."
+      "rationale": "Lead-generation service for home-service contractors, not a field-service management platform for scheduling, dispatch, invoicing, and payments.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Lead-generation service for home-service contractors, not a field-service management platform for scheduling, dispatch, invoicing, and payments."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Lead-generation service for contractors, not field-service management software; acts as a lead supplier to home-service businesses, not a peer platform."
+        }
+      ]
     },
     {
       "name": "MyWorkly",
@@ -1508,7 +2204,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide field-service management software for home-service businesses, including scheduling, workforce coordination, customer communication, and payments."
+      "rationale": "Field-service platform for home-service professionals with booking, dispatch, quotes, payments, and customer management\u2014directly comparable to Jobber.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Field-service platform for home-service professionals with booking, dispatch, quotes, payments, and customer management\u2014directly comparable to Jobber."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Field-service management platform with booking, scheduling, dispatch, quotes, and payments for home-service businesses \u2014 direct competitor to Jobber."
+        }
+      ]
     },
     {
       "name": "WLD Digital",
@@ -1530,8 +2238,25 @@
         "city": null,
         "social_urls": []
       },
-      "relevant": false,
-      "rationale": "WLD Digital primarily provides websites and SEO; its limited scheduling dashboard does not clearly replace Jobber\u2019s field-service operations, dispatch, invoicing, and payments platform."
+      "relevant": true,
+      "rationale": "BlueHammer serves home-service businesses with lead management and scheduling, overlapping Jobber\u2019s field-service workflow, though it also provides agency services.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "BlueHammer serves home-service businesses with lead management and scheduling, overlapping Jobber\u2019s field-service workflow, though it also provides agency services."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Primarily a website-design/SEO agency for home-service businesses; its dashboard is secondary and lacks core field-service management (dispatch, invoicing, payments) \u2014 serves the category, doesn't compete."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "BlueHammer software serves home-service businesses with scheduling and lead management, overlapping Jobber's market despite agency web-design element."
+        }
+      ]
     },
     {
       "name": "AskOurPros.com",
@@ -1556,7 +2281,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "AskOurPros is a professional-services directory and lead-discovery marketplace, not field-service operations software for scheduling, dispatch, invoicing, and payments."
+      "rationale": "A consumer-facing directory and marketing listings platform, not field-service management software for scheduling, dispatch, invoicing, and payments.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "A consumer-facing directory and marketing listings platform, not field-service management software for scheduling, dispatch, invoicing, and payments."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Directory/marketplace connecting consumers with service pros, not field-service management software; different product and business model from Jobber."
+        }
+      ]
     },
     {
       "name": "Propertify",
@@ -1587,7 +2324,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Propertify is primarily a real estate and home-services marketplace, not field-service management software for home-service operators."
+      "rationale": "Real-estate marketplace and bundled home services, not field-service management software for service-business scheduling, dispatch, invoicing, and payments.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Real-estate marketplace and bundled home services, not field-service management software for service-business scheduling, dispatch, invoicing, and payments."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Propertify is a real estate search/rental/loan platform, not field-service management software for home-service businesses; no shared product or buyer."
+        }
+      ]
     },
     {
       "name": "Contracters.com",
@@ -1621,7 +2370,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Contracters.com is a contractor-client marketplace, not field-service management software for scheduling, dispatch, invoicing, and payments."
+      "rationale": "Contractor lead marketplace connecting clients to providers, not field-service management software for scheduling, dispatch, invoicing, and payments.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Contractor lead marketplace connecting clients to providers, not field-service management software for scheduling, dispatch, invoicing, and payments."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Contractor-lead marketplace connecting clients to contractors, not field-service management software; serves Jobber's customers rather than competing with Jobber."
+        }
+      ]
     },
     {
       "name": "Seriously Home",
@@ -1646,7 +2407,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Seriously Home is primarily a homeowner-contractor referral marketplace, not field-service operations software for scheduling, dispatch, invoicing, and workforce management."
+      "rationale": "Homeowner-to-contractor referral marketplace, not a field-service operations platform for managing scheduling, dispatch, invoicing, and payments across service businesses.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Homeowner-to-contractor referral marketplace, not a field-service operations platform for managing scheduling, dispatch, invoicing, and payments across service businesses."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Homeowner-to-contractor referral marketplace, not field-service management software for contractors; different buyer persona and business model than Jobber."
+        }
+      ]
     },
     {
       "name": "Renovation PRO",
@@ -1670,7 +2443,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Renovation PRO is a services directory and lead-generation marketplace, not field-service management software for scheduling, dispatch, invoicing, and payments."
+      "rationale": "A classifieds and lead-generation directory for home-service providers, not software for providers to manage scheduling, dispatch, invoicing, or payments.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "A classifieds and lead-generation directory for home-service providers, not software for providers to manage scheduling, dispatch, invoicing, or payments."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Classified-ads marketplace connecting consumers to contractors; not field-service management software for home-service businesses. Different product and model."
+        }
+      ]
     },
     {
       "name": "Get the Contractor",
@@ -1696,7 +2481,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Get The Contractor is a homeowner-contractor marketplace, not field-service management software for contractors\u2019 scheduling, dispatch, invoicing, and payments."
+      "rationale": "Homeowner contractor-discovery marketplace, not field-service management software for home-service businesses.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Homeowner contractor-discovery marketplace, not field-service management software for home-service businesses."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Homeowner-to-contractor marketplace, not field-service management software; different product, buyer, and business model than Jobber's SaaS for service businesses."
+        }
+      ]
     },
     {
       "name": "Mio Rede",
@@ -1719,7 +2516,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Mio Rede is a referral and lead-generation network, not field-service management software for scheduling, dispatch, invoicing, and payments."
+      "rationale": "Referral network for home-improvement professionals, not a field-service platform for scheduling, dispatch, invoicing, and payments.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Referral network for home-improvement professionals, not a field-service platform for scheduling, dispatch, invoicing, and payments."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Referral/lead-generation network for home pros, not field-service management software; different job to be done despite shared customer base."
+        }
+      ]
     },
     {
       "name": "CompanyCam",
@@ -1754,8 +2563,20 @@
           "https://x.com/companycam"
         ]
       },
-      "relevant": false,
-      "rationale": "CompanyCam primarily provides jobsite photo documentation and collaboration, complementing rather than replacing Jobber\u2019s scheduling, dispatch, invoicing, and payments platform."
+      "relevant": true,
+      "rationale": "Contractor-focused job-management SaaS overlaps Jobber\u2019s home-service operational workflow, though it emphasizes documentation and project collaboration.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Contractor-focused job-management SaaS overlaps Jobber\u2019s home-service operational workflow, though it emphasizes documentation and project collaboration."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Job-management SaaS for contractors/trades field workers \u2014 same buyer persona and adjacent field-service product, a genuine comparable to Jobber."
+        }
+      ]
     },
     {
       "name": "ServiceHub",
@@ -1780,7 +2601,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "ServiceHub is a consumer services marketplace, not field-service management software for home-service businesses managing scheduling, dispatch, invoicing, and payments."
+      "rationale": "Consumer-services marketplace matching customers with freelancers, not a field-service management platform for home-service businesses.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Consumer-services marketplace matching customers with freelancers, not a field-service management platform for home-service businesses."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "ServiceHub is a consumer marketplace connecting customers with freelancers; Jobber is FSM software sold to service businesses. Different model and buyer."
+        }
+      ]
     },
     {
       "name": "Send Me a Pro",
@@ -1805,7 +2638,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Send Me a Pro is a homeowner-to-contractor marketplace, not field-service management software evaluated by home-service businesses for operations."
+      "rationale": "Consumer marketplace connecting homeowners to contractors, not field-service management software for home-service businesses.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Consumer marketplace connecting homeowners to contractors, not field-service management software for home-service businesses."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Homeowner-facing marketplace for finding contractors, not field-service management software for service businesses; different product and buyer."
+        }
+      ]
     },
     {
       "name": "KolaboFort",
@@ -1831,7 +2676,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "KolaboFort is a multi-category local-services marketplace/directory, not field-service management software for home-service businesses."
+      "rationale": "Multi-category local-services directory and hiring marketplace, not field-service management software for home-service businesses.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Multi-category local-services directory and hiring marketplace, not field-service management software for home-service businesses."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "KolaboFort is a consumer services marketplace/directory, not field-service management software for home-service businesses; different product, buyer, and business model."
+        }
+      ]
     },
     {
       "name": "OKBOY",
@@ -1864,7 +2721,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "OKBOY is a consumer marketplace for booking home services, not field-service management software purchased by home-service businesses."
+      "rationale": "OKBOY is a consumer marketplace for booking home services, whereas Jobber sells operational management software to home-service businesses.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "OKBOY is a consumer marketplace for booking home services, whereas Jobber sells operational management software to home-service businesses."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "OKBOY is a B2C marketplace connecting consumers with home-service providers, not management software for service businesses like Jobber. Different buyer and product."
+        }
+      ]
     },
     {
       "name": "Home Services For U",
@@ -1886,7 +2755,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Candidate is a consumer marketplace for finding home-service vendors, not field-service management software used by service businesses."
+      "rationale": "Consumer marketplace connecting homeowners to service providers, not a field-service management platform for businesses to run scheduling, dispatch, invoicing, and payments.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Consumer marketplace connecting homeowners to service providers, not a field-service management platform for businesses to run scheduling, dispatch, invoicing, and payments."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Consumer marketplace connecting homeowners to service providers, not field-service management software for service businesses like Jobber."
+        }
+      ]
     },
     {
       "name": "Urban Helpers",
@@ -1912,7 +2793,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Urban Helpers is a consumer home-services booking marketplace/operator, not field-service management software sold to home-service businesses."
+      "rationale": "Urban Helpers is a consumer-facing home-services booking marketplace, not field-service management software for service businesses.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Urban Helpers is a consumer-facing home-services booking marketplace, not field-service management software for service businesses."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Jobber sells FSM software to home-service businesses; Urban Helpers is a consumer marketplace booking home services\u2014a potential customer, not a competitor or comparable."
+        }
+      ]
     },
     {
       "name": "Workiz Inc.",
@@ -1942,7 +2835,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Workiz directly overlaps Jobber as field-service management software for home-service trades, including scheduling, invoicing, payments, CRM, and customer communications."
+      "rationale": "Workiz directly competes in field-service management for home-service contractors, with matching scheduling, dispatch, invoicing, payments, and CRM workflows.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Workiz directly competes in field-service management for home-service contractors, with matching scheduling, dispatch, invoicing, payments, and CRM workflows."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are field-service management platforms for home-service trades (scheduling, dispatch, invoicing); direct competitors on product and market."
+        }
+      ]
     },
     {
       "name": "Profile Rankings",
@@ -1968,7 +2873,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Profile Rankings provides review and reputation management, not field-service scheduling, dispatch, invoicing, or payments for home-service operators."
+      "rationale": "Review-management software serves a different job than Jobber\u2019s operational scheduling, dispatch, invoicing, and payment platform for home-service businesses.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Review-management software serves a different job than Jobber\u2019s operational scheduling, dispatch, invoicing, and payment platform for home-service businesses."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Review/reputation management software, not field-service management (scheduling, dispatch, invoicing); different product category and job-to-be-done."
+        }
+      ]
     },
     {
       "name": "Service Window",
@@ -1990,7 +2907,19 @@
         "social_urls": []
       },
       "relevant": true,
-      "rationale": "Both provide field-service management software for home-service contractors, supporting operational workflows and customer engagement for the same business users."
+      "rationale": "Field-management software for home-service contractors, overlapping Jobber\u2019s core customer and operational workflow market.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Field-management software for home-service contractors, overlapping Jobber\u2019s core customer and operational workflow market."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Field-management software for home-service contractors, same buyer persona and job-to-be-done as Jobber's scheduling/dispatch platform; genuine comparable despite marketplace add-ons."
+        }
+      ]
     },
     {
       "name": "Twin Cities Business Directory",
@@ -2012,7 +2941,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Twin Cities BizFinder is a local service-provider referral directory, not field-service management software for scheduling, dispatch, invoicing, and payments."
+      "rationale": "Local-business referral directory matches consumers to providers; it does not provide field-service scheduling, dispatch, invoicing, or payments software.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Local-business referral directory matches consumers to providers; it does not provide field-service scheduling, dispatch, invoicing, or payments software."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Local business directory matching consumers with service providers; not field-service management software. Different product and buyer\u2014serves consumers, not home-service businesses."
+        }
+      ]
     },
     {
       "name": "HomeGuide",
@@ -2039,7 +2980,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "HomeGuide is a homeowner-to-contractor marketplace, not field-service management software for contractors\u2019 scheduling, dispatch, invoicing, and payments."
+      "rationale": "HomeGuide is a homeowner-to-contractor marketplace, not a field-service operations platform for service businesses like Jobber.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "HomeGuide is a homeowner-to-contractor marketplace, not a field-service operations platform for service businesses like Jobber."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "HomeGuide is a homeowner-facing marketplace for hiring pros, not field-service management software; it serves a different job than Jobber's scheduling/invoicing platform."
+        }
+      ]
     },
     {
       "name": "A.B.C. Services",
@@ -2061,7 +3014,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "A.B.C. Services is a consultancy for home-service businesses, not a field-service management software platform evaluated for scheduling, dispatch, invoicing, and payments."
+      "rationale": "Consulting and accounting provider to home-service businesses, not a field-service management software platform or comparable product.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Consulting and accounting provider to home-service businesses, not a field-service management software platform or comparable product."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Consulting firm serving home-services businesses, not a field-service management software platform; serves the category rather than competing."
+        }
+      ]
     },
     {
       "name": "Menutize",
@@ -2090,7 +3055,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Menutize offers booking, invoicing, payments, and client communication for home-service businesses, overlapping Jobber\u2019s field-service workflows and target buyers."
+      "rationale": "Provides booking, invoicing, payments, and client communication software for home-service businesses, overlapping Jobber\u2019s field-service management product and customer market.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Provides booking, invoicing, payments, and client communication software for home-service businesses, overlapping Jobber\u2019s field-service management product and customer market."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Booking/scheduling, invoicing, and payments platform for home-service businesses (cleaning, plumbing, HVAC, landscaping) \u2014 direct Jobber competitor on product and market."
+        }
+      ]
     },
     {
       "name": "OSI Contractors",
@@ -2113,7 +3090,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "OSI Contractors is a construction services provider and potential Jobber user, not a field-service management software platform."
+      "rationale": "OSI Contractors is a home-services construction provider and potential Jobber customer, not a field-service management software competitor or comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "OSI Contractors is a home-services construction provider and potential Jobber customer, not a field-service management software competitor or comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Construction/remodeling contractor that would use field-service software, not a software competitor to Jobber."
+        }
+      ]
     },
     {
       "name": "QuoteIQ",
@@ -2155,7 +3144,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide field-service management software for home-service professionals, including estimates, scheduling, invoicing, payments, and customer management."
+      "rationale": "Home-service CRM offering estimates, invoicing, scheduling, and job management directly overlaps Jobber\u2019s field-service management platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Home-service CRM offering estimates, invoicing, scheduling, and job management directly overlaps Jobber\u2019s field-service management platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "All-in-one CRM for home-service pros with estimates, invoicing, and job scheduling \u2014 direct competitor to Jobber's field-service platform."
+        }
+      ]
     },
     {
       "name": "Digital Shift Corporation",
@@ -2190,7 +3191,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Digital Shift is a marketing agency for home-service businesses, not a field-service management platform for scheduling, dispatch, invoicing, and payments."
+      "rationale": "Digital marketing agency serving home-service businesses, not a field-service management software platform or comparable product.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Digital marketing agency serving home-service businesses, not a field-service management software platform or comparable product."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Digital marketing agency serving home-service businesses, not field-service management software; agency serving the category, not a competitor to Jobber."
+        }
+      ]
     },
     {
       "name": "Certified Remodeler Com",
@@ -2213,7 +3226,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Certified Remodeler is a homeowner-to-contractor marketplace, not field-service management software for contractors handling scheduling, dispatch, invoicing, and payments."
+      "rationale": "Homeowner-to-contractor discovery marketplace, not field-service management software for service businesses.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Homeowner-to-contractor discovery marketplace, not field-service management software for service businesses."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Candidate is a homeowner-facing contractor marketplace, not field-service management software; different product and buyer than Jobber's contractor-focused SaaS."
+        }
+      ]
     },
     {
       "name": "ServiceTitan",
@@ -2244,7 +3269,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide field-service management software for home-service trades, including scheduling, dispatch, invoicing, payments, and operational workflows."
+      "rationale": "Both provide field-service management software for home and trade-service businesses, including scheduling, invoicing, billing, and operational workflows.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both provide field-service management software for home and trade-service businesses, including scheduling, invoicing, billing, and operational workflows."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Direct competitor: both are field-service management platforms for trades/home-service businesses with scheduling, dispatch, invoicing."
+        }
+      ]
     },
     {
       "name": "Lonestar Agile Inc.",
@@ -2270,7 +3307,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Lonestar Agile is primarily an IT/business consultancy and home-repair provider, not field-service management software evaluated by home-service operators."
+      "rationale": "Primarily an IT and business consulting firm; its incidental home repair services do not constitute field-service management software.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Primarily an IT and business consulting firm; its incidental home repair services do not constitute field-service management software."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Consulting agency and home-repair provider, not field-service management software; serves the category rather than competing with it."
+        }
+      ]
     },
     {
       "name": "Step by Step Moving and Delivery",
@@ -2292,7 +3341,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Step by Step is a moving-services operator, not field-service management software evaluated by home-service businesses."
+      "rationale": "Moving company providing relocation services, not a field-service management software platform for home-service businesses.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Moving company providing relocation services, not a field-service management software platform for home-service businesses."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Moving company is a home-service business (potential Jobber customer), not field-service management software; no product or model resemblance."
+        }
+      ]
     },
     {
       "name": "Elbi",
@@ -2314,7 +3375,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Elbi is a home-cleaning service provider, not field-service management software; it would be a potential Jobber customer rather than a competing platform."
+      "rationale": "Elbi is a home-cleaning provider, not field-service management software for home-service businesses.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Elbi is a home-cleaning provider, not field-service management software for home-service businesses."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Elbi is a home cleaning service provider, i.e., a potential customer of field-service software, not a competing FSM platform."
+        }
+      ]
     },
     {
       "name": "Eta Tecnologia de Materiais",
@@ -2338,7 +3411,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Candidate appears to be a generic website-building platform, not field-service management software for home-service businesses."
+      "rationale": "Website-building platform, not field-service management software for home-service businesses; scheduling features are incidental.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Website-building platform, not field-service management software for home-service businesses; scheduling features are incidental."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Candidate is a website-builder platform (Wix-like description) / materials tech firm, not field-service management software for home-service businesses."
+        }
+      ]
     },
     {
       "name": "Dominik Krezdorn",
@@ -2361,7 +3446,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Candidate is an electrical services contractor, potentially a Jobber customer, not a field-service management software platform."
+      "rationale": "Electrical contractor serving end customers, not a field-service management software platform or comparable vendor.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Electrical contractor serving end customers, not a field-service management software platform or comparable vendor."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Electrical services contractor, not field-service management software; it's a potential Jobber customer, not a competitor or comparable."
+        }
+      ]
     },
     {
       "name": "Lawn Wealth Locator",
@@ -2386,7 +3483,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "It targets lawn-care businesses but provides market-location and advertising intelligence, not field-service scheduling, dispatch, invoicing, or payments."
+      "rationale": "Serves lawn-care businesses with location intelligence and market targeting, not core field-service scheduling, dispatch, invoicing, or payments.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Serves lawn-care businesses with location intelligence and market targeting, not core field-service scheduling, dispatch, invoicing, or payments."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Marketing/location-intelligence tool for lawn businesses, not field-service management covering scheduling, dispatch, invoicing, payments; different product, adjacent category."
+        }
+      ]
     },
     {
       "name": "ToolsWalaPk",
@@ -2412,7 +3521,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "ToolsWalaPk provides generic digital productivity tools, not field-service management for home-service businesses, so the product and buyer use case do not overlap."
+      "rationale": "Generic digital productivity-tools platform, not field-service management for home-service businesses.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Generic digital productivity-tools platform, not field-service management for home-service businesses."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Generic digital-tools download/access site, not field-service management software; no shared product, market, or business model with Jobber."
+        }
+      ]
     },
     {
       "name": "Home Project Services",
@@ -2437,7 +3558,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Home Project Services is a consumer contractor-matching marketplace, not field-service management software for home-service businesses."
+      "rationale": "Consumer lead-generation marketplace connecting homeowners to contractors, not software for service businesses to manage scheduling, dispatch, invoicing, and payments.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Consumer lead-generation marketplace connecting homeowners to contractors, not software for service businesses to manage scheduling, dispatch, invoicing, and payments."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Lead-gen marketplace matching homeowners with contractors, not field-service management software for home-service businesses; different product and business model."
+        }
+      ]
     },
     {
       "name": "CoLocal",
@@ -2467,7 +3600,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "CoLocal is a consumer-facing service-provider directory/marketplace, not field-service operations software for scheduling, dispatch, invoicing, and payments."
+      "rationale": "CoLocal is a consumer-facing services marketplace/directory, not field-service management software for operating scheduling, dispatch, invoicing, and payments.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "CoLocal is a consumer-facing services marketplace/directory, not field-service management software for operating scheduling, dispatch, invoicing, and payments."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "CoLocal is a consumer marketplace listing home-service pros, not field-service management software; different product and model, akin to Angi, not Jobber."
+        }
+      ]
     },
     {
       "name": "Remember The Plumber",
@@ -2491,7 +3636,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Remember The Plumber is a contractor-discovery marketplace, not field-service management software for contractors handling scheduling, dispatch, invoicing, and payments."
+      "rationale": "Consumer marketplace/directory connecting homeowners with contractors, not field-service management software for home-service businesses.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Consumer marketplace/directory connecting homeowners with contractors, not field-service management software for home-service businesses."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Consumer marketplace for finding contractors, not field-service management software for home-service businesses; different product and buyer."
+        }
+      ]
     },
     {
       "name": "Local Contractor",
@@ -2522,7 +3679,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Local Contractor is a homeowner-to-contractor marketplace, not field-service management software contractors use for scheduling, dispatch, invoicing, and payments."
+      "rationale": "Homeowner-to-contractor marketplace, not field-service management software for contractors' scheduling, dispatch, invoicing, and payments.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Homeowner-to-contractor marketplace, not field-service management software for contractors' scheduling, dispatch, invoicing, and payments."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Homeowner-contractor matching marketplace, not field-service management software; different product and business model from Jobber."
+        }
+      ]
     },
     {
       "name": "Paris Lumber & Building Center",
@@ -2546,7 +3715,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Paris Lumber is a building-materials retailer, not field-service management software; Jobber\u2019s buyers would not evaluate it for scheduling, dispatch, or invoicing."
+      "rationale": "Building-materials retailer serving homeowners and contractors, not field-service management software for home-service businesses.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Building-materials retailer serving homeowners and contractors, not field-service management software for home-service businesses."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Lumber and building-materials retailer, not field-service management software; no product, market, or model overlap with Jobber."
+        }
+      ]
     },
     {
       "name": "HomeSpruce",
@@ -2574,7 +3755,20 @@
         ]
       },
       "relevant": false,
-      "rationale": "HomeSpruce is a homeowner-to-contractor services marketplace, not field-service management software used by home-service businesses to run operations."
+      "rationale": "Consumer marketplace connecting homeowners to service professionals, rather than field-service management software sold to those businesses.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Consumer marketplace connecting homeowners to service professionals, rather than field-service management software sold to those businesses."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Jobber is B2B field-service management software for service businesses; HomeSpruce is a B2C marketplace connecting homeowners with contractors \u2014 different buyer and model."
+        }
+      ]
     }
-  ]
+  ],
+  "error": null
 }

@@ -10,15 +10,17 @@
   "relevant_count": 4,
   "precision_at_k": 4.0,
   "relevant_count_at_10": 4,
+  "relevant_count_at_25": 4,
   "relevant_count_at_100": 4,
   "precision_at_10": 40.0,
+  "precision_at_25": 16.0,
   "precision_at_100": 4.0,
   "latency_ms": 432,
   "cost_usd": null,
   "duplicates_removed": 0,
   "max_results": 10,
-  "judge_model": "gpt-5.6",
-  "judged_at": "2026-07-27T03:31:43Z",
+  "judge_model": "majority(n=3): claude-opus-5,gpt-5.6-terra,kimi-k3",
+  "judged_at": "2026-08-10T19:47:42Z",
   "candidates": [
     {
       "name": "abb",
@@ -34,7 +36,19 @@
         "confidence_level": 94
       },
       "relevant": true,
-      "rationale": "ABB directly overlaps Siemens in industrial automation, electrification, engineering software, and smart infrastructure, serving the same industrial buyers and use cases."
+      "rationale": "ABB directly competes with Siemens in industrial automation, electrification, smart infrastructure, and digital industrial solutions.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "ABB directly competes with Siemens in industrial automation, electrification, smart infrastructure, and digital industrial solutions."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Direct competitor: electrification and automation technology leader with software-driven industrial solutions, matching Siemens across product, market, and model."
+        }
+      ]
     },
     {
       "name": "amazon",
@@ -50,7 +64,19 @@
         "confidence_level": 94
       },
       "relevant": false,
-      "rationale": "Amazon\u2019s core e-commerce and cloud businesses do not overlap Siemens\u2019 primary industrial automation, electrification, infrastructure, and mobility offerings."
+      "rationale": "Amazon\u2019s primary businesses are e-commerce, cloud computing, and logistics, not industrial automation, electrification, infrastructure, mobility, or industrial software.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Amazon\u2019s primary businesses are e-commerce, cloud computing, and logistics, not industrial automation, electrification, infrastructure, mobility, or industrial software."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Amazon is e-commerce/cloud/consumer tech, not industrial automation, electrification, or infrastructure; no shared product or market axis with Siemens."
+        }
+      ]
     },
     {
       "name": "deloitte",
@@ -66,7 +92,19 @@
         "confidence_level": 94
       },
       "relevant": false,
-      "rationale": "Deloitte is primarily a consulting and professional-services network, not an industrial automation, electrification, infrastructure, mobility, or industrial-software provider."
+      "rationale": "Deloitte is a professional-services consultancy, not an industrial automation, electrification, mobility, or infrastructure technology provider comparable to Siemens.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Deloitte is a professional-services consultancy, not an industrial automation, electrification, mobility, or infrastructure technology provider comparable to Siemens."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Deloitte is a professional services/consulting firm, not an industrial technology or automation product company; serves rather than competes with the category."
+        }
+      ]
     },
     {
       "name": "google",
@@ -82,7 +120,19 @@
         "confidence_level": 94
       },
       "relevant": false,
-      "rationale": "Google\u2019s core search, advertising, cloud, and consumer software businesses do not overlap Siemens\u2019 industrial automation, electrification, infrastructure, or mobility offerings."
+      "rationale": "Google primarily provides consumer internet, advertising, cloud, and AI products, not Siemens' industrial automation, electrification, infrastructure, or mobility systems.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Google primarily provides consumer internet, advertising, cloud, and AI products, not Siemens' industrial automation, electrification, infrastructure, or mobility systems."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Google is consumer software/search/cloud; Siemens is industrial automation, electrification, and infrastructure. No shared product, market, or model axis."
+        }
+      ]
     },
     {
       "name": "honeywell technologies",
@@ -98,7 +148,19 @@
         "confidence_level": 94
       },
       "relevant": true,
-      "rationale": "Honeywell overlaps Siemens in industrial automation, smart-building technologies, electrification, and software, targeting the same industrial and infrastructure buyers."
+      "rationale": "Honeywell directly competes across industrial automation, smart buildings, process industries, and industrial software, closely matching Siemens' products and customers.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Honeywell directly competes across industrial automation, smart buildings, process industries, and industrial software, closely matching Siemens' products and customers."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Diversified industrial technology and automation company serving building, industrial, and process sectors \u2014 direct competitor and comparable to Siemens."
+        }
+      ]
     },
     {
       "name": "ibm",
@@ -114,7 +176,24 @@
         "confidence_level": 94
       },
       "relevant": false,
-      "rationale": "IBM primarily provides enterprise IT, cloud, AI, and consulting, not Siemens-like industrial automation, electrification, mobility, or smart-infrastructure systems."
+      "rationale": "IBM is primarily IT services/consulting and enterprise software, not industrial automation/electrification; overlap too weak to qualify as a Siemens lookalike.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "IBM overlaps strongly in enterprise technology, infrastructure, industrial software, and automation-adjacent digital solutions, making it a credible broad comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "IBM is primarily IT services/consulting and enterprise software, not industrial automation/electrification; overlap too weak to qualify as a Siemens lookalike."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "IBM is IT services/software/consulting; lacks Siemens' industrial automation, electrification, mobility hardware focus \\u2014 different product and buyer."
+        }
+      ]
     },
     {
       "name": "microsoft",
@@ -130,7 +209,19 @@
         "confidence_level": 94
       },
       "relevant": false,
-      "rationale": "Microsoft primarily sells general-purpose cloud and productivity software, not Siemens\u2019 core industrial automation, electrification, infrastructure, and mobility systems."
+      "rationale": "Microsoft is a general enterprise software and cloud provider, not primarily an industrial automation, electrification, mobility, or smart-infrastructure competitor.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Microsoft is a general enterprise software and cloud provider, not primarily an industrial automation, electrification, mobility, or smart-infrastructure competitor."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Microsoft is a general software/cloud company; lacks Siemens' industrial automation, electrification, and infrastructure focus. No strong axis match."
+        }
+      ]
     },
     {
       "name": "schneider electric",
@@ -146,7 +237,19 @@
         "confidence_level": 94
       },
       "relevant": true,
-      "rationale": "Schneider Electric directly overlaps Siemens in industrial automation, electrification, smart infrastructure, energy management, and digital systems for factories, buildings, and grids."
+      "rationale": "Direct industrial technology peer in electrification, automation, smart infrastructure, digital industrial software, and energy management.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Direct industrial technology peer in electrification, automation, smart infrastructure, digital industrial software, and energy management."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Direct global competitor across electrification, industrial automation, smart infrastructure, and industrial software \u2014 same products, markets, and business model as Siemens."
+        }
+      ]
     },
     {
       "name": "siemens energy",
@@ -162,7 +265,24 @@
         "confidence_level": 94
       },
       "relevant": true,
-      "rationale": "Both provide industrial electrification and energy-infrastructure technologies to utilities and large infrastructure operators, with overlap in grid and power-system solutions."
+      "rationale": "Energy technology supplier for power generation, transmission, storage, and electrification; a closely related industrial-technology comparable despite a narrower focus.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Energy technology supplier for power generation, transmission, storage, and electrification; a closely related industrial-technology comparable despite a narrower focus."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Siemens Energy is a Siemens AG spin-off operating under Siemens trademark license \u2014 a corporate relative, not an independent lookalike."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Independent spun-off industrial energy technology firm; comparable large-scale electrification/power equipment player to Siemens."
+        }
+      ]
     },
     {
       "name": "siemens healthineers",
@@ -178,10 +298,20 @@
         "confidence_level": 94
       },
       "relevant": false,
-      "rationale": "Siemens Healthineers primarily sells clinical diagnostics and medical technology to healthcare providers, unlike Siemens\u2019 core industrial automation, infrastructure, mobility, and electrification offerings."
+      "rationale": "Siemens Healthineers is a healthcare diagnostics and imaging company, not a competitor or peer in Siemens\u2019s core industrial automation, infrastructure, mobility, or electrification markets.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Siemens Healthineers is a healthcare diagnostics and imaging company, not a competitor or peer in Siemens\u2019s core industrial automation, infrastructure, mobility, or electrification markets."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Siemens Healthineers is Siemens' spun-off medtech subsidiary in healthcare diagnostics, not a peer competitor in industrial automation or electrification."
+        }
+      ]
     }
   ],
-  "error": null,
-  "relevant_count_at_25": 4,
-  "precision_at_25": 16.0
+  "error": null
 }

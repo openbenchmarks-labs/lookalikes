@@ -8,20 +8,20 @@
     "filters": {}
   },
   "k": 100,
-  "relevant_count": 46,
-  "precision_at_k": 46.0,
-  "relevant_count_at_10": 2,
-  "relevant_count_at_25": 9,
-  "relevant_count_at_100": 46,
-  "precision_at_10": 20.0,
-  "precision_at_25": 36.0,
-  "precision_at_100": 46.0,
+  "relevant_count": 72,
+  "precision_at_k": 72.0,
+  "relevant_count_at_10": 9,
+  "relevant_count_at_25": 20,
+  "relevant_count_at_100": 72,
+  "precision_at_10": 90.0,
+  "precision_at_25": 80.0,
+  "precision_at_100": 72.0,
   "latency_ms": 2309,
   "cost_usd": null,
   "duplicates_removed": 0,
   "max_results": null,
-  "judge_model": "gpt-5.6",
-  "judged_at": "2026-07-27T07:11:20Z",
+  "judge_model": "majority(n=3): claude-opus-5,gpt-5.6-terra,kimi-k3",
+  "judged_at": "2026-08-10T20:22:08Z",
   "candidates": [
     {
       "name": "SquareFoot",
@@ -74,7 +74,19 @@
         "relevance_score": "A"
       },
       "relevant": false,
-      "rationale": "SquareFoot is a tenant-facing space marketplace and brokerage, while VTS is an operating platform for landlords and property teams."
+      "rationale": "SquareFoot is a tenant-facing commercial-space marketplace and brokerage, while VTS is an operating platform for landlords and property teams.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "SquareFoot is a tenant-facing commercial-space marketplace and brokerage, while VTS is an operating platform for landlords and property teams."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "SquareFoot is a tenant-side brokerage marketplace for finding office space; VTS is a landlord-side leasing/asset-management SaaS. Different buyers and business models, resemblance weak."
+        }
+      ]
     },
     {
       "name": "RealPage",
@@ -129,7 +141,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide real-estate operations, asset-performance, tenant-experience, and data software to property owners, operators, and investors."
+      "rationale": "RealPage provides real-estate operations, asset-performance, and tenant-experience software for property owners and operators, closely overlapping VTS\u2019s commercial real-estate platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "RealPage provides real-estate operations, asset-performance, and tenant-experience software for property owners and operators, closely overlapping VTS\u2019s commercial real-estate platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both provide software platforms for real-estate owners/operators covering leasing, property operations, and asset-performance data \u2014 direct competitors/comparables in proptech."
+        }
+      ]
     },
     {
       "name": "Occupier",
@@ -211,8 +235,20 @@
         ],
         "relevance_score": "A"
       },
-      "relevant": false,
-      "rationale": "Both serve commercial real estate, but VTS primarily targets landlords and asset managers; Occupier targets tenant real estate and finance teams."
+      "relevant": true,
+      "rationale": "Both provide commercial real-estate lease and portfolio management software, though Occupier focuses on tenant-side real estate and accounting workflows.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both provide commercial real-estate lease and portfolio management software, though Occupier focuses on tenant-side real estate and accounting workflows."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are commercial-real-estate lease/portfolio management software platforms; Occupier serves tenants while VTS serves landlords, but same CRE lease-management product category."
+        }
+      ]
     },
     {
       "name": "Entrata",
@@ -272,8 +308,20 @@
         ],
         "relevance_score": "A"
       },
-      "relevant": false,
-      "rationale": "Entrata serves residential property managers, while VTS targets commercial real-estate operators; their leasing workflows and buyers are distinct despite platform similarities."
+      "relevant": true,
+      "rationale": "Property-management platform overlapping leasing, tenant experience, and commercial real estate operations; a credible adjacent competitor/comparable to VTS.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Property-management platform overlapping leasing, tenant experience, and commercial real estate operations; a credible adjacent competitor/comparable to VTS."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are real-estate property management operating platforms covering leasing, operations, and tenant/resident experience \u2014 direct PropTech comparables."
+        }
+      ]
     },
     {
       "name": "AppFolio",
@@ -328,7 +376,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide real-estate operating software for property owners and managers, with overlapping leasing, property operations, and asset-management workflows."
+      "rationale": "AppFolio provides real-estate property management and operations software, comparable to VTS\u2019s commercial real-estate operating platform despite differing segment focus.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "AppFolio provides real-estate property management and operations software, comparable to VTS\u2019s commercial real-estate operating platform despite differing segment focus."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are proptech platforms for real estate operations\u2014leasing, property/asset management\u2014serving property owners and managers; genuine comparables/competitors."
+        }
+      ]
     },
     {
       "name": "LoopNet",
@@ -366,8 +426,20 @@
         ],
         "relevance_score": "A"
       },
-      "relevant": false,
-      "rationale": "LoopNet is a property listings marketplace, while VTS is an operating platform for leasing, asset management, and tenant experience; they are complementary, not substitutes."
+      "relevant": true,
+      "rationale": "Commercial real-estate platform serving leasing and property stakeholders; LoopNet's listing marketplace is a credible adjacent comparable to VTS's leasing operating platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Commercial real-estate platform serving leasing and property stakeholders; LoopNet's listing marketplace is a credible adjacent comparable to VTS's leasing operating platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are CRE software platforms serving landlords/brokers around leasing; LoopNet's listing marketplace overlaps VTS's leasing/marketing product in the same market."
+        }
+      ]
     },
     {
       "name": "ManageCasa",
@@ -433,8 +505,20 @@
         ],
         "relevance_score": "A"
       },
-      "relevant": false,
-      "rationale": "ManageCasa targets residential rental and HOA operations, while VTS serves commercial real estate leasing and asset teams; buyers and core workflows differ."
+      "relevant": true,
+      "rationale": "Both provide property-management operating software for leasing, tenants, payments, maintenance, and asset operations, though ManageCasa focuses on residential rentals and HOAs.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both provide property-management operating software for leasing, tenants, payments, maintenance, and asset operations, though ManageCasa focuses on residential rentals and HOAs."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are PropTech property-management SaaS platforms serving property managers with tenant, payments, maintenance, and operations tooling; residential/HOA vs commercial focus differs but product/model resemblance holds."
+        }
+      ]
     },
     {
       "name": "Enertiv",
@@ -496,8 +580,20 @@
         ],
         "relevance_score": "A"
       },
-      "relevant": false,
-      "rationale": "Enertiv serves real-estate owners, but its sustainability, energy, and decarbonization platform addresses a different job than VTS\u2019s leasing and tenant operations."
+      "relevant": true,
+      "rationale": "Both provide software platforms to real-estate owners/operators for portfolio and property data, asset optimization, and operational management.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both provide software platforms to real-estate owners/operators for portfolio and property data, asset optimization, and operational management."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are SaaS platforms sold to commercial real estate owners/operators for portfolio-level operations; Enertiv's asset optimization overlaps VTS's asset-management space."
+        }
+      ]
     },
     {
       "name": "Innago",
@@ -538,8 +634,20 @@
         ],
         "relevance_score": "A"
       },
-      "relevant": false,
-      "rationale": "Innago focuses landlord rental administration, while VTS serves commercial-real-estate leasing and asset operations; their buyers and core evaluation use cases differ."
+      "relevant": true,
+      "rationale": "Both provide property-management platforms with leasing, tenant communication, and operational workflows, though Innago targets landlords rather than VTS's commercial real estate focus.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both provide property-management platforms with leasing, tenant communication, and operational workflows, though Innago targets landlords rather than VTS's commercial real estate focus."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Property-management/leasing software for landlords and property managers; same product category and operator buyer as VTS, akin to AppFolio/Buildium comparables."
+        }
+      ]
     },
     {
       "name": "TenantCloud",
@@ -605,8 +713,20 @@
         ],
         "relevance_score": "A"
       },
-      "relevant": false,
-      "rationale": "TenantCloud primarily serves residential landlords with rental management, while VTS targets commercial real-estate teams managing leasing, assets, and tenant experience."
+      "relevant": true,
+      "rationale": "Both provide real-estate leasing and property-management software, though TenantCloud is oriented toward rental-property operations rather than commercial portfolios.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both provide real-estate leasing and property-management software, though TenantCloud is oriented toward rental-property operations rather than commercial portfolios."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both sell property management/leasing software\u2014rent collection, leasing, tenant management\u2014to property owners/managers; residential-vs-commercial segment difference doesn't break product resemblance."
+        }
+      ]
     },
     {
       "name": "SimplifyEm",
@@ -685,8 +805,20 @@
         ],
         "relevance_score": "A"
       },
-      "relevant": false,
-      "rationale": "SimplifyEm targets rental property management and accounting, while VTS focuses commercial real estate leasing, asset management, and tenant experience workflows."
+      "relevant": true,
+      "rationale": "Both offer real-estate operating software for property managers, including tenant and operational workflows, though SimplifyEm targets smaller residential managers.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both offer real-estate operating software for property managers, including tenant and operational workflows, though SimplifyEm targets smaller residential managers."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both sell property-management software platforms for real estate operators; SimplifyEm targets smaller landlords but matches on product and business model."
+        }
+      ]
     },
     {
       "name": "Yardi",
@@ -763,7 +895,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Yardi offers commercial real estate property, investment, and asset management software serving the same operators and overlapping workflows as VTS."
+      "rationale": "Yardi is a commercial real-estate software platform covering property operations, asset management, leasing/marketing, and tenant engagement\u2014directly comparable to VTS.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Yardi is a commercial real-estate software platform covering property operations, asset management, leasing/marketing, and tenant engagement\u2014directly comparable to VTS."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Yardi is a real-estate property management and asset platform covering leasing, operations, and tenant engagement \u2014 a direct competitor to VTS."
+        }
+      ]
     },
     {
       "name": "Dealpath",
@@ -853,7 +997,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide operating, asset/portfolio management, and data workflow software for commercial real estate owners and investment managers."
+      "rationale": "Commercial real estate operating platform; Dealpath supports investment sourcing and portfolio management, overlapping VTS asset-management workflows and serving CRE firms.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Commercial real estate operating platform; Dealpath supports investment sourcing and portfolio management, overlapping VTS asset-management workflows and serving CRE firms."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are commercial-real-estate software platforms serving institutional owners and investors with asset/portfolio management and data workflows\u2014direct proptech comparables."
+        }
+      ]
     },
     {
       "name": "Costar Realty Group",
@@ -928,7 +1084,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide commercial real estate owners and operators with property data, analytics, and lifecycle management tools for portfolio decision-making."
+      "rationale": "CoStar provides commercial real-estate data, analytics, marketplaces, and lifecycle tools, overlapping VTS's property-data and leasing platform market.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "CoStar provides commercial real-estate data, analytics, marketplaces, and lifecycle tools, overlapping VTS's property-data and leasing platform market."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "CoStar is a leading commercial-real-estate data, analytics, and marketplace provider\u2014direct comparable to VTS's CRE leasing, asset-management, and property-data platform."
+        }
+      ]
     },
     {
       "name": "Ziprent",
@@ -1012,7 +1180,19 @@
         "relevance_score": "A"
       },
       "relevant": false,
-      "rationale": "Ziprent is a tech-enabled residential property management service, not a commercial real estate operating software platform for leasing and asset teams."
+      "rationale": "Ziprent provides residential rental property-management services, not a commercial-real-estate operating platform for enterprise leasing, asset management, and tenant experience.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Ziprent provides residential rental property-management services, not a commercial-real-estate operating platform for enterprise leasing, asset management, and tenant experience."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Residential property-management service with hands-on operations, not a commercial-real-estate leasing/asset-management software platform; different market and model."
+        }
+      ]
     },
     {
       "name": "Propertyware",
@@ -1072,8 +1252,25 @@
         ],
         "relevance_score": "A"
       },
-      "relevant": false,
-      "rationale": "Propertyware targets single-family residential property management, while VTS serves commercial leasing and asset operations; their buyers and core workflows differ."
+      "relevant": true,
+      "rationale": "Propertyware is property-management software for landlords/managers (description appears corrupted); comparable proptech operations platform to VTS on product and market.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Description identifies a real-estate staging, wholesale, and remodeling business, not commercial-real-estate operating software."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Propertyware is property-management software for landlords/managers (description appears corrupted); comparable proptech operations platform to VTS on product and market."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Both are real-estate operations software for property owners/managers, though Propertyware targets residential rental management versus VTS's commercial leasing."
+        }
+      ]
     },
     {
       "name": "Propmodo",
@@ -1138,7 +1335,19 @@
         "relevance_score": "A"
       },
       "relevant": false,
-      "rationale": "Propmodo is a commercial real estate media and insights publisher, not an operating platform for leasing, asset management, or tenant experience."
+      "rationale": "Propmodo is a commercial-real-estate media and insights publisher, not a leasing, asset-management, tenant-experience, or property-operations software platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Propmodo is a commercial-real-estate media and insights publisher, not a leasing, asset-management, tenant-experience, or property-operations software platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Propmodo is a CRE news/insights media outlet, not a leasing/asset-management software platform; serves same industry but as media, not competitor."
+        }
+      ]
     },
     {
       "name": "Reonomy",
@@ -1190,7 +1399,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide commercial real estate data and insights to CRE professionals for market intelligence, opportunity discovery, and property decision-making."
+      "rationale": "Both provide commercial-real-estate data platforms for CRE professionals, supporting market intelligence, property research, and operational decision-making.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both provide commercial-real-estate data platforms for CRE professionals, supporting market intelligence, property research, and operational decision-making."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are commercial-real-estate software platforms providing CRE data, insights, and workflow tools to property professionals; direct comparables/competitors in CRE tech."
+        }
+      ]
     },
     {
       "name": "Buildium",
@@ -1273,8 +1494,25 @@
         ],
         "relevance_score": "A"
       },
-      "relevant": false,
-      "rationale": "Buildium targets residential property managers and community associations, while VTS serves commercial real-estate leasing and asset teams; buyers would not typically evaluate both."
+      "relevant": true,
+      "rationale": "Both are real-estate property management software platforms for real estate professionals; Buildium skews residential vs VTS's commercial, but product and market axes hold.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Buildium targets residential property managers and community associations, while VTS focuses on commercial leasing, asset management, and tenant experience."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are real-estate property management software platforms for real estate professionals; Buildium skews residential vs VTS's commercial, but product and market axes hold."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Both are real-estate management SaaS platforms; Buildium targets residential property management vs VTS commercial, a close comparable."
+        }
+      ]
     },
     {
       "name": "Plentific",
@@ -1330,7 +1568,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide integrated property-operations software for landlords, overlapping in occupant experience, portfolio data, and operational management despite commercial-versus-housing specialization."
+      "rationale": "Both provide real-estate operating platforms for portfolio owners, including tenant/resident experience, operational workflows, and connected property data.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both provide real-estate operating platforms for portfolio owners, including tenant/resident experience, operational workflows, and connected property data."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are proptech operating platforms for property owners/managers, overlapping on tenant/resident experience and portfolio operations; Plentific is residential-focused but a genuine comparable."
+        }
+      ]
     },
     {
       "name": "Spaceti",
@@ -1432,7 +1682,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both offer commercial real estate software for workplace/tenant experience and property intelligence, targeting corporate and commercial real estate leaders optimizing building operations."
+      "rationale": "Both provide commercial-real-estate workplace and tenant-experience platforms, using property data to optimize space, operations, and occupier outcomes.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both provide commercial-real-estate workplace and tenant-experience platforms, using property data to optimize space, operations, and occupier outcomes."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Proptech workplace/tenant-experience and building-intelligence platform for commercial real estate, overlapping VTS's tenant experience and property-data offerings."
+        }
+      ]
     },
     {
       "name": "Planon",
@@ -1492,7 +1754,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide integrated real-estate and building operations software for property owners and operators, overlapping in asset management, occupant experience, and property data."
+      "rationale": "Planon\u2019s integrated building, workplace, and real-estate management platform serves property owners with overlapping asset and tenant operations use cases.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Planon\u2019s integrated building, workplace, and real-estate management platform serves property owners with overlapping asset and tenant operations use cases."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are commercial real estate software platforms for building owners/managers\u2014Planon's IWMS/building management overlaps VTS's asset management and tenant experience; genuine comparable."
+        }
+      ]
     },
     {
       "name": "Switch Automation",
@@ -1553,8 +1827,25 @@
         ],
         "relevance_score": "A"
       },
-      "relevant": false,
-      "rationale": "Switch focuses on building automation and energy management, while VTS centers on leasing, CRE asset workflows, and tenant-experience operations."
+      "relevant": true,
+      "rationale": "Both are PropTech platforms serving commercial real estate owners/operators with building operations and occupant-experience software; same buyer persona and adjacent product make them comparables.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Smart-building IoT and energy-management platform for facilities differs from VTS\u2019s leasing, asset-management, and commercial real-estate operating platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are PropTech platforms serving commercial real estate owners/operators with building operations and occupant-experience software; same buyer persona and adjacent product make them comparables."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Both proptech SaaS sold to commercial property owners/asset managers; adjacent products but same buyer, valid ICP expansion."
+        }
+      ]
     },
     {
       "name": "Vestian",
@@ -1600,7 +1891,19 @@
         "relevance_score": "A"
       },
       "relevant": false,
-      "rationale": "Vestian is a commercial real estate advisory and services firm, not a software operating platform for leasing, asset management, and tenant experience."
+      "rationale": "Vestian is a commercial real-estate advisory and facilities-services firm, not a software operating platform for leasing, asset management, or tenant experience.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Vestian is a commercial real-estate advisory and facilities-services firm, not a software operating platform for leasing, asset management, or tenant experience."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Vestian is a CRE advisory/services firm (transactions, facilities, projects), not a software platform like VTS; serves the category rather than competing."
+        }
+      ]
     },
     {
       "name": "Hubble",
@@ -1661,7 +1964,19 @@
         "relevance_score": "A"
       },
       "relevant": false,
-      "rationale": "Hubble is a workspace booking and office-access platform for occupiers, not a leasing and asset-management operating platform for commercial property owners."
+      "rationale": "Hubble brokers flexible offices and coworking access for occupiers, not a CRE operating platform for owners' leasing, asset management, and tenant operations.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Hubble brokers flexible offices and coworking access for occupiers, not a CRE operating platform for owners' leasing, asset management, and tenant operations."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Hubble is a tenant-side flexible-workspace marketplace; VTS is a landlord-side CRE operating platform for leasing and asset management\u2014different product and buyer persona."
+        }
+      ]
     },
     {
       "name": "Propstack",
@@ -1714,7 +2029,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide commercial real-estate data and analytics platforms used by owners, developers, funds, and brokers for property and market decision-making."
+      "rationale": "Commercial real-estate data and analytics platform serving owners, developers, and finance professionals; comparable to VTS's property-data and asset-management offerings.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Commercial real-estate data and analytics platform serving owners, developers, and finance professionals; comparable to VTS's property-data and asset-management offerings."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are commercial-real-estate software/data platforms serving owners, brokers, and investors with property data and market analytics; clear product and market overlap."
+        }
+      ]
     },
     {
       "name": "Cbre",
@@ -1795,7 +2122,19 @@
         "relevance_score": "A"
       },
       "relevant": false,
-      "rationale": "CBRE is primarily a commercial real estate brokerage and services firm, not a competing property operating software platform."
+      "rationale": "CBRE is a commercial real-estate services and advisory firm, not primarily a CRE operating software platform for leasing, asset management, and tenant experience.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "CBRE is a commercial real-estate services and advisory firm, not primarily a CRE operating software platform for leasing, asset management, and tenant experience."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "CBRE is a CRE services/brokerage firm, not a software platform like VTS; services provider in the category, not a product competitor."
+        }
+      ]
     },
     {
       "name": "Archilogic",
@@ -1878,7 +2217,19 @@
         "relevance_score": "A"
       },
       "relevant": false,
-      "rationale": "Archilogic provides spatial-app developer infrastructure, not commercial real-estate leasing, asset management, or tenant-experience software for property operators."
+      "rationale": "Archilogic provides spatial-data and 3D infrastructure for developers, not a commercial-real-estate leasing, asset-management, and tenant-operations platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Archilogic provides spatial-data and 3D infrastructure for developers, not a commercial-real-estate leasing, asset-management, and tenant-operations platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Archilogic sells developer floor-plan/spatial APIs \u2014 an enabler for proptech apps, not a CRE leasing/asset-management platform competing with VTS."
+        }
+      ]
     },
     {
       "name": "PropStream",
@@ -1949,7 +2300,19 @@
         "relevance_score": "A"
       },
       "relevant": false,
-      "rationale": "PropStream targets real-estate investors seeking property leads and analysis, while VTS serves commercial owners/operators managing leasing, assets, and tenants."
+      "rationale": "PropStream targets real-estate investors with property research, lead generation, and deal analysis, not commercial-property owners managing leasing, assets, and tenants.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "PropStream targets real-estate investors with property research, lead generation, and deal analysis, not commercial-property owners managing leasing, assets, and tenants."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "PropStream serves residential real-estate investors with data/lead-gen tools; VTS serves CRE landlords/operators for leasing and asset management \u2014 different buyers and jobs."
+        }
+      ]
     },
     {
       "name": "Facilio",
@@ -2017,7 +2380,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide commercial real estate operating platforms for owners and operators, overlapping in portfolio data, asset performance, and property operations."
+      "rationale": "Both provide cloud operating software for commercial-property owners and operators, including asset and property operations management.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both provide cloud operating software for commercial-property owners and operators, including asset and property operations management."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are proptech SaaS platforms for CRE owners/operators covering property operations and asset management; genuine comparables in the CRE software space."
+        }
+      ]
     },
     {
       "name": "ServiceChannel",
@@ -2088,7 +2463,19 @@
         "relevance_score": "A"
       },
       "relevant": false,
-      "rationale": "ServiceChannel manages facilities maintenance and contractors; VTS centers on commercial leasing, asset management, tenant experience, and property intelligence\u2014distinct buyer workflows."
+      "rationale": "ServiceChannel manages facilities maintenance, work orders, and contractors for multi-site operators, not commercial-real-estate leasing, asset management, or tenant-experience workflows.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "ServiceChannel manages facilities maintenance, work orders, and contractors for multi-site operators, not commercial-real-estate leasing, asset management, or tenant-experience workflows."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "ServiceChannel is facilities-maintenance/work-order software for multi-location brands, not CRE leasing, asset management, or tenant experience; different buyer and job."
+        }
+      ]
     },
     {
       "name": "Spacewell",
@@ -2173,7 +2560,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide commercial-building operations platforms covering occupant experience, portfolio data, and property/workplace management for CRE and facilities teams."
+      "rationale": "Smart-building and workplace-management platform overlaps VTS in commercial real-estate operations, space utilization, tenant/workplace experience, and property data.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Smart-building and workplace-management platform overlaps VTS in commercial real-estate operations, space utilization, tenant/workplace experience, and property data."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are B2B SaaS proptech platforms serving commercial real estate owners/operators \u2014 building operations, space and asset management; direct comparables in the CRE software market."
+        }
+      ]
     },
     {
       "name": "OfficeSpace Software",
@@ -2257,8 +2656,20 @@
         ],
         "relevance_score": "A"
       },
-      "relevant": false,
-      "rationale": "OfficeSpace serves corporate workplace teams for space planning and booking, while VTS primarily serves commercial property owners for leasing and asset operations."
+      "relevant": true,
+      "rationale": "Workplace and corporate real-estate software overlaps VTS\u2019s tenant experience, space utilization, asset management, and property operations market.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Workplace and corporate real-estate software overlaps VTS\u2019s tenant experience, space utilization, asset management, and property operations market."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are commercial-real-estate software platforms for managing buildings and occupant/tenant workplace experience; strong proptech comparable despite occupier tilt."
+        }
+      ]
     },
     {
       "name": "Beyond Pricing",
@@ -2326,7 +2737,19 @@
         "relevance_score": "A"
       },
       "relevant": false,
-      "rationale": "Beyond serves short-term rental managers with pricing and booking tools, while VTS serves commercial real estate teams managing leasing, assets, and tenants."
+      "rationale": "Beyond provides revenue management and booking tools for short-term rentals, not commercial real-estate leasing, asset management, or tenant-experience operations.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Beyond provides revenue management and booking tools for short-term rentals, not commercial real-estate leasing, asset management, or tenant-experience operations."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Short-term-rental revenue/pricing tool for vacation-rental managers, not a commercial-real-estate leasing/asset-management platform; different buyer, job, and product."
+        }
+      ]
     },
     {
       "name": "Douglas Emmett",
@@ -2393,7 +2816,19 @@
         "relevance_score": "A"
       },
       "relevant": false,
-      "rationale": "Douglas Emmett is a commercial property owner/operator and potential VTS customer, not a competing real-estate operating software platform."
+      "rationale": "Douglas Emmett is a commercial property owner/operator and potential VTS customer, not a real-estate operating software platform competitor or comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Douglas Emmett is a commercial property owner/operator and potential VTS customer, not a real-estate operating software platform competitor or comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Douglas Emmett is a REIT owning office/apartment properties \u2014 a landlord/potential VTS customer, not a CRE software platform competitor."
+        }
+      ]
     },
     {
       "name": "RealState Agent",
@@ -2466,7 +2901,19 @@
         "relevance_score": "A"
       },
       "relevant": false,
-      "rationale": "DealCheck focuses on real-estate investment deal analysis, not commercial leasing, asset operations, or tenant-experience management for VTS buyers."
+      "rationale": "Appears to be a real-estate agent serving buyers and sellers, not a commercial-real-estate operating platform for owners, leasing, and asset management.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Appears to be a real-estate agent serving buyers and sellers, not a commercial-real-estate operating platform for owners, leasing, and asset management."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Real estate agent service with spammy promo copy, not a CRE software platform; no product or business-model resemblance to VTS."
+        }
+      ]
     },
     {
       "name": "Mapiq",
@@ -2529,8 +2976,20 @@
         ],
         "relevance_score": "A"
       },
-      "relevant": false,
-      "rationale": "Mapiq serves corporate workplace teams managing employee office use, while VTS primarily serves commercial landlords managing leasing, assets, and tenants."
+      "relevant": true,
+      "rationale": "Mapiq's workplace experience and space-management platform overlaps VTS's tenant-experience and commercial-property operations offerings.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Mapiq's workplace experience and space-management platform overlaps VTS's tenant-experience and commercial-property operations offerings."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Workplace/tenant-experience platform for office buildings, directly overlapping VTS's tenant-experience product line; genuine proptech comparable."
+        }
+      ]
     },
     {
       "name": "Dottid",
@@ -2591,7 +3050,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Dottid directly overlaps VTS in commercial real estate asset, deal, property-data, and operations software for CRE teams."
+      "rationale": "Dottid is a commercial-real-estate asset management platform for CRE operators, directly overlapping VTS\u2019s asset-management and property-operations market.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Dottid is a commercial-real-estate asset management platform for CRE operators, directly overlapping VTS\u2019s asset-management and property-operations market."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "All-in-one commercial real estate asset management and deal/leasing platform \u2014 direct competitor to VTS on product, market, and model."
+        }
+      ]
     },
     {
       "name": "Huqouq",
@@ -2646,7 +3117,19 @@
         "relevance_score": "A"
       },
       "relevant": false,
-      "rationale": "The vague workplace slogan does not establish a commercial-real-estate operating platform or a product addressing VTS\u2019s leasing, asset, or tenant-management buyers."
+      "rationale": "Description does not establish a commercial-real-estate operating, leasing, asset-management, or tenant-experience software product.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Description does not establish a commercial-real-estate operating, leasing, asset-management, or tenant-experience software product."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Vague workplace-wellbeing tagline with no evidence of a CRE leasing, asset-management, or tenant-experience software product; likely HR/nonprofit, not a VTS comparable."
+        }
+      ]
     },
     {
       "name": "HqO",
@@ -2736,7 +3219,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "HqO\u2019s real-estate experience platform overlaps VTS\u2019s tenant-experience offering and targets commercial property owners and operators with the same core use case."
+      "rationale": "HQO\u2019s real-estate experience platform serves property owners with tenant engagement, operational data, and building-management capabilities overlapping VTS.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "HQO\u2019s real-estate experience platform serves property owners with tenant engagement, operational data, and building-management capabilities overlapping VTS."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "HqO is a commercial real estate tenant-experience software platform, directly overlapping VTS's tenant experience offering for the same landlord/property-owner buyers."
+        }
+      ]
     },
     {
       "name": "Tom ogrodzki",
@@ -2771,8 +3266,20 @@
         ],
         "relevance_score": "A"
       },
-      "relevant": true,
-      "rationale": "Both offer commercial real estate data platforms aimed at CRE professionals seeking market and property intelligence."
+      "relevant": false,
+      "rationale": "CRE market-data transparency database differs from VTS's leasing, asset-management, and tenant-experience operating workflows.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "CRE market-data transparency database differs from VTS's leasing, asset-management, and tenant-experience operating workflows."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Personal website/project, not a genuine CRE software company; lacks credible product resemblance to VTS's leasing/asset-management platform."
+        }
+      ]
     },
     {
       "name": "Waypoint",
@@ -2835,7 +3342,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Waypoint\u2019s CRE asset-management platform directly overlaps VTS\u2019s asset-management offering and serves the same commercial real-estate owners and managers."
+      "rationale": "CRE asset-management platform serving portfolio managers, overlapping VTS's asset-management and property-operations offering.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "CRE asset-management platform serving portfolio managers, overlapping VTS's asset-management and property-operations offering."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "CRE asset-management software platform, directly overlapping VTS's asset-management product and serving the same real-estate buyers; genuine competitor."
+        }
+      ]
     },
     {
       "name": "Visitt",
@@ -2890,7 +3409,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide CRE operations software with overlapping property management, tenant experience, portfolio analytics, and owner/operator buyer personas."
+      "rationale": "Commercial-real-estate operating software with overlapping tenant, asset, operations, and tenant-experience capabilities; a direct VTS comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Commercial-real-estate operating software with overlapping tenant, asset, operations, and tenant-experience capabilities; a direct VTS comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are CRE property operations platforms covering tenant experience, asset management, and building performance \u2014 direct product and market overlap."
+        }
+      ]
     },
     {
       "name": "Smart Capital Center",
@@ -2942,7 +3473,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide CRE asset-management and property-data platforms for owners and asset managers, overlapping in portfolio analytics, valuation, and performance monitoring."
+      "rationale": "CRE platform for investors and asset managers, overlapping VTS\u2019s commercial-property data and asset-management workflows despite stronger underwriting focus.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "CRE platform for investors and asset managers, overlapping VTS\u2019s commercial-property data and asset-management workflows despite stronger underwriting focus."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are CRE software platforms serving asset managers/owners; SCC covers underwriting, valuation, portfolio analytics\u2014adjacent product, same market and buyer persona."
+        }
+      ]
     },
     {
       "name": "Re-Leased",
@@ -3010,7 +3553,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Re-Leased provides commercial property management and asset-management software, overlapping VTS\u2019s platform and serving the same real-estate operators and property managers."
+      "rationale": "Re-Leased provides commercial property management and asset-management software, closely overlapping VTS's real-estate operating platform market and workflows.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Re-Leased provides commercial property management and asset-management software, closely overlapping VTS's real-estate operating platform market and workflows."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Re-Leased is a commercial property management software platform for landlords and asset managers\u2014direct product and market comparable to VTS's CRE operating platform."
+        }
+      ]
     },
     {
       "name": "Building Engines",
@@ -3078,7 +3633,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide commercial real estate operations software with overlapping asset, tenant experience, space, and property-management use cases for CRE owners and operators."
+      "rationale": "Commercial-real-estate software for property operations, leasing plans, tenant experience, and building data; a direct comparable to VTS.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Commercial-real-estate software for property operations, leasing plans, tenant experience, and building data; a direct comparable to VTS."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are commercial-real-estate software platforms for property operations, leasing, and tenant management \u2014 direct competitors serving the same CRE buyer."
+        }
+      ]
     },
     {
       "name": "REoptimizer\u00ae",
@@ -3143,8 +3710,20 @@
         ],
         "relevance_score": "A"
       },
-      "relevant": false,
-      "rationale": "REoptimizer targets corporate occupier portfolio strategy, while VTS primarily serves property owners and leasing teams; buyers and core workflows differ."
+      "relevant": true,
+      "rationale": "Real-estate portfolio strategy and asset-management software overlaps VTS's commercial-property operating and asset-management platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Real-estate portfolio strategy and asset-management software overlaps VTS's commercial-property operating and asset-management platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "CRE software platform for portfolio strategy and asset management, overlapping VTS's asset-management/property-data market and buyer."
+        }
+      ]
     },
     {
       "name": "Outcome",
@@ -3200,8 +3779,20 @@
         ],
         "relevance_score": "A"
       },
-      "relevant": false,
-      "rationale": "Outcome offers broad AI workflow automation for CRE, not a clearly overlapping leasing, asset-management, or tenant-experience operating platform."
+      "relevant": true,
+      "rationale": "AI workflow and data-automation platform for commercial real-estate firms, overlapping VTS's CRE operating and property-data market.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "AI workflow and data-automation platform for commercial real-estate firms, overlapping VTS's CRE operating and property-data market."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are SaaS platforms built for commercial real estate firms, turning property data into workflows and insights; same market and overlapping product space."
+        }
+      ]
     },
     {
       "name": "ID Plans",
@@ -3258,7 +3849,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide CRE operating platforms spanning leasing, tenant/property management, portfolio data, and workflows for commercial real-estate professionals."
+      "rationale": "ID CLOUD is a CRE operating platform covering leasing, tenants, property management, and portfolio data\u2014directly comparable to VTS.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "ID CLOUD is a CRE operating platform covering leasing, tenants, property management, and portfolio data\u2014directly comparable to VTS."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are CRE operating platforms for leasing, tenant, and property/portfolio management \u2014 direct competitors serving the same buyers."
+        }
+      ]
     },
     {
       "name": "Viuw",
@@ -3326,7 +3929,19 @@
         "relevance_score": "A"
       },
       "relevant": false,
-      "rationale": "Viuw is a real-estate technology consultancy and implementation partner, not a commercial real-estate operating software platform competing for the same purchase."
+      "rationale": "Viuw is a real-estate technology consultancy and implementation partner, not a commercial-real-estate operating-platform provider.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Viuw is a real-estate technology consultancy and implementation partner, not a commercial-real-estate operating-platform provider."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Consultancy/fractional CTO implementing real-estate systems (Yardi, MRI) for clients; serves the category rather than offering a competing CRE platform."
+        }
+      ]
     },
     {
       "name": "RealStack AI",
@@ -3360,8 +3975,20 @@
         ],
         "relevance_score": "A"
       },
-      "relevant": false,
-      "rationale": "RealStack AI focuses on CRE investment workflows, not VTS\u2019s core leasing, property operations, tenant experience, or asset-management jobs."
+      "relevant": true,
+      "rationale": "Both provide CRE-focused operating software; RealStack's end-to-end investment workflow is a comparable platform for commercial-real-estate teams.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both provide CRE-focused operating software; RealStack's end-to-end investment workflow is a comparable platform for commercial-real-estate teams."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are CRE software platforms serving real-estate owners/investors and asset-management teams; strong overlap in market and business model makes it a comparable."
+        }
+      ]
     },
     {
       "name": "Unilease",
@@ -3395,7 +4022,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide commercial real-estate leasing software and market data/connectivity for brokers and leasing stakeholders, addressing the same leasing workflow."
+      "rationale": "Leasing software for commercial real-estate brokers and clients, with market transparency and workflow connectivity, directly overlaps VTS's leasing platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Leasing software for commercial real-estate brokers and clients, with market transparency and workflow connectivity, directly overlaps VTS's leasing platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "CRE leasing software for brokers and clients, streamlining leasing with market data \u2014 same product and market as VTS's leasing platform."
+        }
+      ]
     },
     {
       "name": "repositree.io",
@@ -3467,7 +4106,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide commercial real-estate leasing and management software for overlapping users, including owners, tenants, brokers, and developers."
+      "rationale": "Commercial-real-estate management platform with leasing, property inventory, proposals, and cash-flow tools, directly comparable to VTS's leasing and asset-management offering.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Commercial-real-estate management platform with leasing, property inventory, proposals, and cash-flow tools, directly comparable to VTS's leasing and asset-management offering."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are commercial-real-estate software platforms for leasing, portfolio/property management, and data insights serving brokers, landlords, and tenants \u2014 direct product and market match."
+        }
+      ]
     },
     {
       "name": "Fyxt",
@@ -3535,7 +4186,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide integrated commercial real estate operations software for property management teams, with overlapping lease, asset, tenant, and portfolio workflows."
+      "rationale": "Commercial real-estate platform for property managers and REITs, overlapping VTS\u2019s leasing, tenant operations, and property-data market.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Commercial real-estate platform for property managers and REITs, overlapping VTS\u2019s leasing, tenant operations, and property-data market."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are commercial real estate software platforms for property/leasing management and tenant experience; direct product and market overlap."
+        }
+      ]
     },
     {
       "name": "Lisa \ud83d\udfea Lead-to-lease platform",
@@ -3593,7 +4256,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Lisa\u2019s commercial real estate lead-to-lease platform directly overlaps VTS\u2019s leasing software and targets the same property owners, managers, and brokers."
+      "rationale": "Commercial-real-estate leasing platform for owners, managers, and brokers, directly overlapping VTS\u2019s leasing and tenant opportunity workflows.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Commercial-real-estate leasing platform for owners, managers, and brokers, directly overlapping VTS\u2019s leasing and tenant opportunity workflows."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Lead-to-lease leasing platform for commercial real estate owners/managers/brokers\u2014same product category, market, and buyer as VTS's leasing/asset platform."
+        }
+      ]
     },
     {
       "name": "Capital Markets",
@@ -3651,7 +4326,19 @@
         "relevance_score": "A"
       },
       "relevant": false,
-      "rationale": "RealtyAds provides CRE advertising and content services, not a leasing, asset-management, tenant-experience, or property-data operating platform like VTS."
+      "rationale": "RealtyAds is a CRE marketing and advertising provider, not a leasing, asset-management, tenant-experience, or property-operations platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "RealtyAds is a CRE marketing and advertising provider, not a leasing, asset-management, tenant-experience, or property-operations platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "RealtyAds is an AI advertising/lead-generation service for CRE firms, not a leasing/asset-management operating platform; it serves the category as a marketing vendor rather than competing with VTS."
+        }
+      ]
     },
     {
       "name": "Aletheia Technologies",
@@ -3690,7 +4377,19 @@
         "relevance_score": "A"
       },
       "relevant": false,
-      "rationale": "Aletheia develops general AI and robotics, not a commercial-real-estate operating platform for leasing, asset management, or tenant experience."
+      "rationale": "AI and robotics company; no commercial-real-estate leasing, asset management, tenant experience, or property-operations product is established.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "AI and robotics company; no commercial-real-estate leasing, asset management, tenant experience, or property-operations product is established."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Generic AI/robotics company with no CRE leasing, asset management, or tenant-experience product; 'Real Estate' tag alone doesn't establish resemblance."
+        }
+      ]
     },
     {
       "name": "CommercializeIQ",
@@ -3752,7 +4451,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both offer commercial real estate asset-management software that centralizes property and portfolio data for owners, landlords, and asset managers."
+      "rationale": "AI commercial-real-estate asset-management platform for owners and landlords, directly overlapping VTS's property data and asset-management workflows.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "AI commercial-real-estate asset-management platform for owners and landlords, directly overlapping VTS's property data and asset-management workflows."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "AI asset-management platform for CRE owners/landlords/asset managers, centralizing property/portfolio data \u2014 same market and overlapping product with VTS's asset management."
+        }
+      ]
     },
     {
       "name": "Ridgeline AI",
@@ -3803,7 +4514,19 @@
         "relevance_score": "A"
       },
       "relevant": false,
-      "rationale": "Ridgeline AI is a CRE technology consultancy offering customized implementation services, not a commercial real-estate operating software platform competing with VTS."
+      "rationale": "CRE technology consultancy implementing tailored solutions, not a commercial-real-estate operating platform for leasing, asset management, or tenant experience.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "CRE technology consultancy implementing tailored solutions, not a commercial-real-estate operating platform for leasing, asset management, or tenant experience."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Consultancy providing AI/tech consulting to CRE firms, not a competing CRE operating/leasing platform; serves the category rather than competing with VTS."
+        }
+      ]
     },
     {
       "name": "Grace Hill",
@@ -3886,7 +4609,19 @@
         "relevance_score": "A"
       },
       "relevant": false,
-      "rationale": "Grace Hill focuses on training, compliance, and talent performance, not commercial leasing, asset management, or tenant-experience operations software."
+      "rationale": "Grace Hill provides real-estate talent, training, and risk-performance solutions, not commercial property leasing, asset-management, or tenant-experience operating software.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Grace Hill provides real-estate talent, training, and risk-performance solutions, not commercial property leasing, asset-management, or tenant-experience operating software."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Grace Hill sells real-estate staff training and talent-performance software, not a leasing/asset-management/tenant-experience platform; shared real-estate vertical alone is insufficient."
+        }
+      ]
     },
     {
       "name": "Elliot",
@@ -3941,7 +4676,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Elliot\u2019s property operations and tenant-experience platform overlaps VTS\u2019s core CRE software and targets the same building owners and property managers."
+      "rationale": "Elliot provides a commercial-property operations and tenant-experience platform for building owners and managers, overlapping VTS's core leasing and tenant-experience market.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Elliot provides a commercial-property operations and tenant-experience platform for building owners and managers, overlapping VTS's core leasing and tenant-experience market."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both sell commercial real estate software to building owners/managers; Elliot's tenant-experience and building-operations platform directly overlaps VTS's tenant experience and asset management offering."
+        }
+      ]
     },
     {
       "name": "DealSumm",
@@ -3991,8 +4738,20 @@
         ],
         "relevance_score": "A"
       },
-      "relevant": false,
-      "rationale": "DealSumm focuses on AI real-estate document review, not VTS\u2019s core commercial leasing, asset management, and tenant-experience operating platform."
+      "relevant": true,
+      "rationale": "AI platform for reviewing real-estate agreements serves commercial property teams with lease and property-data workflows overlapping VTS's operating platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "AI platform for reviewing real-estate agreements serves commercial property teams with lease and property-data workflows overlapping VTS's operating platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are proptech SaaS for commercial real estate leasing workflows; DealSumm's AI lease-agreement review serves the same CRE landlord/asset-manager buyer as VTS."
+        }
+      ]
     },
     {
       "name": "WorkSpace",
@@ -4042,7 +4801,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide CRE asset and portfolio operating software for real estate investors, operators, and property-management stakeholders."
+      "rationale": "Real-estate operations platform for asset and property managers, overlapping VTS's commercial-property asset management and tenant operations.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Real-estate operations platform for asset and property managers, overlapping VTS's commercial-property asset management and tenant operations."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both sell property-management software to commercial real estate asset/property managers: tenant management, operations, reporting \u2014 same product and buyer market."
+        }
+      ]
     },
     {
       "name": "ContractIO",
@@ -4105,8 +4876,25 @@
         ],
         "relevance_score": "A"
       },
-      "relevant": false,
-      "rationale": "ContractIO provides CRE contract intelligence and document due diligence, not VTS\u2019s leasing, asset-management, or tenant-experience operating platform."
+      "relevant": true,
+      "rationale": "CRE-focused contract and lease-document intelligence overlaps VTS\u2019s leasing and asset-management workflows for commercial-property operators.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "CRE-focused contract and lease-document intelligence overlaps VTS\u2019s leasing and asset-management workflows for commercial-property operators."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Adjacent proptech: AI contract due-diligence tool, not a CRE leasing/asset-management/tenant-experience platform; different product and job-to-be-done."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "CRE-focused software (lease/loan document intelligence) serving commercial real estate owners/asset managers, same buyer persona as VTS.', ...(adjacent product) \u2013 acceptable.You must respond with valid JSON.You must respond with valid JSON"
+        }
+      ]
     },
     {
       "name": "Build-Apps",
@@ -4170,7 +4958,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide commercial real estate portfolio owners with data-driven operating and asset-management platforms for managing property portfolios."
+      "rationale": "PIPP.AI is a commercial-real-estate data and portfolio platform for owners, overlapping VTS's CRE asset-management and property-data functions.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "PIPP.AI is a commercial-real-estate data and portfolio platform for owners, overlapping VTS's CRE asset-management and property-data functions."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "PIPP.AI is a data-driven CRE platform for portfolio owners covering asset management and property data, overlapping VTS's product, market, and buyer."
+        }
+      ]
     },
     {
       "name": "ElevateIQ Group",
@@ -4208,7 +5008,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide commercial property leasing and data software for real-estate professionals, supporting overlapping workflows and buyer personas."
+      "rationale": "Commercial-real-estate data and reporting software for sales and leasing aligns with VTS\u2019s property-data and leasing platform capabilities.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Commercial-real-estate data and reporting software for sales and leasing aligns with VTS\u2019s property-data and leasing platform capabilities."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Provides property/leasing data and reporting software for real estate professionals, overlapping VTS's CRE leasing and property-data platform."
+        }
+      ]
     },
     {
       "name": "Pillar",
@@ -4252,7 +5064,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide software for commercial real estate investment and asset managers to manage and analyze institutional property portfolios."
+      "rationale": "Real-estate investment-management platform overlaps VTS\u2019s asset-management and property-data functions for commercial real-estate operators.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Real-estate investment-management platform overlaps VTS\u2019s asset-management and property-data functions for commercial real-estate operators."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are commercial-real-estate software platforms for managing and analyzing property assets; strong overlap in CRE asset-management product and market."
+        }
+      ]
     },
     {
       "name": "Property-xRM",
@@ -4316,7 +5140,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both offer real-estate CRM and property/leasing management software for property operators handling tenant relationships and assets."
+      "rationale": "Property management CRM supports leasing and commercial real-estate workflows, making it a comparable platform to VTS\u2019s leasing and asset-management offering.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Property management CRM supports leasing and commercial real-estate workflows, making it a comparable platform to VTS\u2019s leasing and asset-management offering."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Property-xRM is a CRM for property management/leasing, including commercial real estate \u2014 same product category and market as VTS's CRE leasing platform."
+        }
+      ]
     },
     {
       "name": "Green Street",
@@ -4396,7 +5232,19 @@
         "relevance_score": "A"
       },
       "relevant": false,
-      "rationale": "Green Street provides CRE market intelligence and advisory, not a leasing, asset-management, or tenant-experience operating platform; buyers use it for different workflows."
+      "rationale": "Green Street provides CRE investment research and analytics, not property operations software for leasing, asset management, and tenant experience.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Green Street provides CRE investment research and analytics, not property operations software for leasing, asset management, and tenant experience."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Green Street is CRE research, data, and advisory services, not a leasing/asset-management/tenant-experience operating platform; different product and buyer job-to-be-done."
+        }
+      ]
     },
     {
       "name": "Bryckel AI",
@@ -4439,8 +5287,20 @@
         ],
         "relevance_score": "A"
       },
-      "relevant": false,
-      "rationale": "Bryckel provides lease abstraction and document-review AI, not a CRE leasing and asset-management operating platform; buyers would not evaluate them for the same job."
+      "relevant": true,
+      "rationale": "Provides CRE lease abstraction, review, and portfolio intelligence to brokerages and REITs, overlapping VTS\u2019s leasing and asset-management workflows.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Provides CRE lease abstraction, review, and portfolio intelligence to brokerages and REITs, overlapping VTS\u2019s leasing and asset-management workflows."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "CRE software for lease abstraction, portfolio intelligence, and lease review \u2014 overlaps VTS's leasing/asset-management platform for the same landlord/REIT buyers."
+        }
+      ]
     },
     {
       "name": "Crescendo Commercial Realty",
@@ -4504,7 +5364,19 @@
         "relevance_score": "A"
       },
       "relevant": false,
-      "rationale": "Crescendo is a commercial real estate brokerage and consultancy, not a software operating platform for leasing, asset management, and tenant experience."
+      "rationale": "Commercial real estate brokerage and consulting firm serving property stakeholders, not a software operating platform for leasing and asset management.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Commercial real estate brokerage and consulting firm serving property stakeholders, not a software operating platform for leasing and asset management."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Brokerage/consulting firm serving CRE clients, not a software platform; service provider in the category rather than a product competitor to VTS."
+        }
+      ]
     },
     {
       "name": "Prismera",
@@ -4572,7 +5444,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Prismera offers AI software for commercial real estate transactions and asset management, overlapping VTS\u2019s platform and targeting the same CRE firms."
+      "rationale": "AI platform for commercial-real-estate transactions and asset management overlaps VTS\u2019s CRE operating, leasing, and asset-management market.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "AI platform for commercial-real-estate transactions and asset management overlaps VTS\u2019s CRE operating, leasing, and asset-management market."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "CRE software platform automating transactions and asset management for real-estate firms; same market and product category as VTS."
+        }
+      ]
     },
     {
       "name": "Altus Group",
@@ -4647,7 +5531,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide CRE software and analytics for asset performance, serving property owners, investors, and asset managers with overlapping operational decision-making needs."
+      "rationale": "CRE software provider; ARGUS valuation and performance analytics overlaps VTS's asset-management and property-data platform for commercial real-estate professionals.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "CRE software provider; ARGUS valuation and performance analytics overlaps VTS's asset-management and property-data platform for commercial real-estate professionals."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both provide commercial-real-estate software platforms for asset management and analytics (ARGUS vs VTS); same buyers, comparable products \u2014 genuine competitors/comparables."
+        }
+      ]
     },
     {
       "name": "Lease Dynamix LDX",
@@ -4686,7 +5582,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide commercial real estate leasing workflow software for professionals managing lease negotiations and operations."
+      "rationale": "Both provide software for commercial real-estate professionals centered on leasing workflows; LDX is a narrower lease-negotiation comparable to VTS.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both provide software for commercial real-estate professionals centered on leasing workflows; LDX is a narrower lease-negotiation comparable to VTS."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are SaaS platforms for commercial-real-estate leasing workflows serving CRE professionals; LDX's lease-intelligence product overlaps VTS's core leasing platform, making them direct comparables."
+        }
+      ]
     },
     {
       "name": "Corral Real Estate Group LLC",
@@ -4741,7 +5649,19 @@
         "relevance_score": "A"
       },
       "relevant": false,
-      "rationale": "Corral is a real estate investment/property management firm, not a commercial real estate operating software platform evaluated for VTS\u2019s job."
+      "rationale": "Real estate group/property manager, not a commercial-real-estate operating software platform for leasing, asset management, and tenant experience.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Real estate group/property manager, not a commercial-real-estate operating software platform for leasing, asset management, and tenant experience."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "VTS is CRE software; Corral is a real estate investment/property-management firm\u2014a customer of such software, not a software competitor."
+        }
+      ]
     },
     {
       "name": "RePrecinct",
@@ -4779,7 +5699,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide commercial real estate software for leasing workflows, property data, CRM, campaign management, and analytics used by CRE professionals."
+      "rationale": "Commercial-real-estate platform for agencies' sales, leasing, CRM, marketing, and property data, overlapping VTS's leasing and CRE operating workflows.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Commercial-real-estate platform for agencies' sales, leasing, CRM, marketing, and property data, overlapping VTS's leasing and CRE operating workflows."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Proptech platform for commercial real estate leasing, sales, CRM, and property data \u2014 same market and product category as VTS, a genuine comparable."
+        }
+      ]
     },
     {
       "name": "Clicinsight",
@@ -4853,8 +5785,25 @@
         ],
         "relevance_score": "A"
       },
-      "relevant": false,
-      "rationale": "Clicinsight appears to provide CRE analytics or consulting, not a leasing, asset-management, or tenant-experience platform evaluated for the same workflow."
+      "relevant": true,
+      "rationale": "Provides analytics solutions specifically for commercial real estate, overlapping VTS\u2019s property-data and asset-management platform market.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Provides analytics solutions specifically for commercial real estate, overlapping VTS\u2019s property-data and asset-management platform market."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "IT-consulting-style analytics provider for CRE; services firm serving the category rather than a CRE software-platform peer like VTS."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Analytics software for commercial real estate industry \though narparable to VTS's CRE data/analytics platform for same buyers."
+        }
+      ]
     },
     {
       "name": "Retransform",
@@ -4924,7 +5873,19 @@
         "relevance_score": "A"
       },
       "relevant": false,
-      "rationale": "Retransform primarily provides tailored technology and managed services to real estate firms, not a clearly comparable leasing and asset-management operating platform."
+      "rationale": "Retransform primarily provides bespoke proptech implementation and managed services, rather than a commercial-real-estate operating platform comparable to VTS.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Retransform primarily provides bespoke proptech implementation and managed services, rather than a commercial-real-estate operating platform comparable to VTS."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Primarily a real-estate technology services/managed-services provider implementing tailored solutions for CRE clients\u2014serves the category rather than competing with VTS's SaaS platform."
+        }
+      ]
     },
     {
       "name": "RentTango",
@@ -4993,8 +5954,20 @@
         ],
         "relevance_score": "A"
       },
-      "relevant": false,
-      "rationale": "RentTango serves residential leasing, while VTS targets commercial real estate; their buyers and property workflows differ despite broad leasing-software overlap."
+      "relevant": true,
+      "rationale": "Leasing workflow platform managing lead-to-lease transactions for real estate operators, comparable to VTS\u2019s leasing operations product despite residential focus.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Leasing workflow platform managing lead-to-lease transactions for real estate operators, comparable to VTS\u2019s leasing operations product despite residential focus."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Leasing management software for real estate companies, covering lead-to-lease workflow\u2014same product category and buyer as VTS, though residential-focused."
+        }
+      ]
     },
     {
       "name": "Lette",
@@ -5047,7 +6020,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide software for property owners and operators to manage portfolios, improve asset performance, and enhance tenant or resident experience."
+      "rationale": "AI property-portfolio operating platform overlaps VTS in asset operations, leasing/property management, tenant experience, and investor-facing portfolio intelligence.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "AI property-portfolio operating platform overlaps VTS in asset operations, leasing/property management, tenant experience, and investor-facing portfolio intelligence."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "AI-powered property portfolio operations platform for real estate owners; same proptech product/market as VTS despite smaller size."
+        }
+      ]
     },
     {
       "name": "Gmaven",
@@ -5126,7 +6111,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Gmaven provides CRE data management and workflow software for commercial real-estate professionals, overlapping VTS\u2019s property data and operational platform use cases."
+      "rationale": "Gmaven provides data management and process tools specifically for commercial real estate professionals, overlapping VTS's CRE operating-platform market and workflows.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Gmaven provides data management and process tools specifically for commercial real estate professionals, overlapping VTS's CRE operating-platform market and workflows."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are commercial-real-estate software platforms helping CRE professionals manage data, deals, and leasing workflows \u2014 same product category and buyer market."
+        }
+      ]
     },
     {
       "name": "clik.ai",
@@ -5182,7 +6179,19 @@
         "relevance_score": "A"
       },
       "relevant": false,
-      "rationale": "Clik.ai focuses on CRE underwriting and document extraction for lenders and investors, not leasing, asset operations, or tenant-experience management."
+      "rationale": "Clik.ai automates CRE lending underwriting and investment-document analysis, whereas VTS is an operating platform for leasing, asset management, and tenant experience.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Clik.ai automates CRE lending underwriting and investment-document analysis, whereas VTS is an operating platform for leasing, asset management, and tenant experience."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Both are CRE software, but Clik.ai sells AI underwriting tools to lenders/servicers, a different buyer and job than VTS's leasing/asset-management platform for owners."
+        }
+      ]
     },
     {
       "name": "The Fractional Analyst",
@@ -5231,7 +6240,19 @@
         "relevance_score": "A"
       },
       "relevant": false,
-      "rationale": "Primarily fractional financial modeling and CFO advisory; its underwriting tool does not overlap VTS\u2019s leasing, tenant-experience, and property-operations platform."
+      "rationale": "Fractional advisory and underwriting tools for real estate investors are not a commercial-property operating platform for leasing, asset management, and tenant experience.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Fractional advisory and underwriting tools for real estate investors are not a commercial-property operating platform for leasing, asset management, and tenant experience."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Primarily a fractional CFO/analyst advisory and financial-modeling consultancy for real estate clients, not a CRE software platform competing with VTS."
+        }
+      ]
     },
     {
       "name": "CREx",
@@ -5274,7 +6295,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "CREx offers a CRE operating platform spanning leasing, asset management, property operations, portfolio data, and analytics for the same CRE teams as VTS."
+      "rationale": "CREx provides a CRE operating system spanning asset management, leasing, portfolio data, and analytics, directly comparable to VTS's commercial-real-estate platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "CREx provides a CRE operating system spanning asset management, leasing, portfolio data, and analytics, directly comparable to VTS's commercial-real-estate platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "CREx builds a CRE operating platform (CREx OS) for asset management, analytics, and portfolio data \u2014 same product and buyer as VTS, a direct comparable."
+        }
+      ]
     },
     {
       "name": "Blooma",
@@ -5341,8 +6374,25 @@
         ],
         "relevance_score": "A"
       },
-      "relevant": false,
-      "rationale": "Blooma serves CRE lenders for underwriting and portfolio risk, while VTS serves owners/operators for leasing, asset management, and tenant operations."
+      "relevant": true,
+      "rationale": "Both are commercial-real-estate SaaS platforms offering CRE data, analytics, and portfolio/asset management; Blooma targets CRE lenders, a peer persona in the same proptech space.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Blooma provides CRE intelligence and risk tools for lenders, not leasing, tenant experience, or property operations software for owners and landlords."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are commercial-real-estate SaaS platforms offering CRE data, analytics, and portfolio/asset management; Blooma targets CRE lenders, a peer persona in the same proptech space."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Both vertical CRE SaaS data/analytics platforms; Blooma targets lenders rather than landlords, but a close comparable in proptech."
+        }
+      ]
     },
     {
       "name": "Keypilot",
@@ -5385,8 +6435,25 @@
         ],
         "relevance_score": "A"
       },
-      "relevant": false,
-      "rationale": "Keypilot focuses on real-estate investment analytics, not commercial-property leasing, asset operations, or tenant-experience management for VTS buyers\u2019 core workflow."
+      "relevant": true,
+      "rationale": "Real-estate data/analytics software for property professionals, overlapping VTS's property data and real-estate market axes.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Industry tags alone do not establish that Keypilot offers commercial-real-estate leasing, asset-management, tenant-experience, or property-operations software comparable to VTS."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Real-estate data/analytics software for property professionals, overlapping VTS's property data and real-estate market axes."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Both appear to be real-estate data/analytics software platforms serving CRE investors and asset managers."
+        }
+      ]
     },
     {
       "name": "RefineRE",
@@ -5460,8 +6527,20 @@
         ],
         "relevance_score": "A"
       },
-      "relevant": false,
-      "rationale": "Both offer CRE software, but RefineRE targets corporate occupiers for portfolio intelligence, while VTS primarily serves landlords managing leasing, assets, and tenants."
+      "relevant": true,
+      "rationale": "Cloud CRE portfolio intelligence and analytics platform overlaps VTS's commercial property data and asset-management functions, serving comparable real-estate users.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Cloud CRE portfolio intelligence and analytics platform overlaps VTS's commercial property data and asset-management functions, serving comparable real-estate users."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are commercial-real-estate software platforms delivering portfolio/lease data, analytics, and reporting; direct PropTech comparables despite slightly different buyer focus."
+        }
+      ]
     },
     {
       "name": "PropertyHarbour",
@@ -5529,7 +6608,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "PropertyHarbour offers leasing and asset-management software for commercial real estate, directly overlapping VTS\u2019s core platform and serving the same property teams."
+      "rationale": "Both offer commercial real-estate leasing and asset-management platforms, making PropertyHarbour a direct product and market comparable to VTS.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both offer commercial real-estate leasing and asset-management platforms, making PropertyHarbour a direct product and market comparable to VTS."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Leasing and asset-management software for commercial real estate \u2014 directly matches VTS's core product and market; a competitor/comparable."
+        }
+      ]
     },
     {
       "name": "LeaseSuite",
@@ -5591,8 +6682,20 @@
         ],
         "relevance_score": "A"
       },
-      "relevant": false,
-      "rationale": "Both address CRE leasing, but LeaseSuite serves commercial tenants and advisors, while VTS primarily serves landlords and asset managers with operating software."
+      "relevant": true,
+      "rationale": "CRE portfolio, lease transaction, and asset-management platform; directly comparable to VTS, though focused on occupiers and advisors.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "CRE portfolio, lease transaction, and asset-management platform; directly comparable to VTS, though focused on occupiers and advisors."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are CRE proptech platforms for lease/portfolio management and transactions; LeaseSuite is tenant-side vs VTS landlord-side, but same product category and market."
+        }
+      ]
     },
     {
       "name": "CRE Collaborative CRECo.ai",
@@ -5645,7 +6748,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide CRE professionals with property data, transaction workflows, and collaborative dashboards supporting leasing and investment decisions."
+      "rationale": "Commercial real estate platform providing property data, collaboration, and transaction tools; overlaps VTS's CRE operating and leasing ecosystem.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Commercial real estate platform providing property data, collaboration, and transaction tools; overlaps VTS's CRE operating and leasing ecosystem."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "All-in-one commercial real estate platform with property data and collaboration tools for CRE professionals\u2014same product category and market as VTS."
+        }
+      ]
     },
     {
       "name": "Pereview Software",
@@ -5708,7 +6823,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide commercial real estate asset and portfolio management software for property owners, operators, investors, and asset managers."
+      "rationale": "Commercial real-estate asset management platform serving property owners and investors, overlapping VTS\u2019s asset-management and property-data operating-platform use cases.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Commercial real-estate asset management platform serving property owners and investors, overlapping VTS\u2019s asset-management and property-data operating-platform use cases."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are commercial real estate software platforms serving owners/operators with asset management and portfolio operations \u2014 same product category and buyer."
+        }
+      ]
     },
     {
       "name": "360 Lease Strategies",
@@ -5757,7 +6884,19 @@
         "relevance_score": "A"
       },
       "relevant": false,
-      "rationale": "360 Lease Strategies appears to provide commercial lease advisory services, not a software operating platform for leasing, asset management, or tenant experience."
+      "rationale": "Lease advisory/consulting service, not a commercial-real-estate operating platform for leasing, asset management, tenant experience, and property data.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Lease advisory/consulting service, not a commercial-real-estate operating platform for leasing, asset management, tenant experience, and property data."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Lease advisory/consulting services firm, not a CRE software platform; serves the category rather than competing with VTS's product."
+        }
+      ]
     },
     {
       "name": "Reavant",
@@ -5796,8 +6935,20 @@
         ],
         "relevance_score": "A"
       },
-      "relevant": false,
-      "rationale": "Reavant offers generic AI workflow agents for real estate, without clear overlap with VTS\u2019s leasing, asset-management, or tenant-experience platform."
+      "relevant": true,
+      "rationale": "Real-estate-focused AI workflow and insights platform overlaps VTS\u2019s property operations and data use cases, though narrower in scope.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Real-estate-focused AI workflow and insights platform overlaps VTS\u2019s property operations and data use cases, though narrower in scope."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "AI software purpose-built for real-estate workflows and insights; comparable proptech serving the same real-estate operator market as VTS."
+        }
+      ]
     },
     {
       "name": "Dormot Technologies",
@@ -5836,7 +6987,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide property operating platforms with lease, tenant, financial, and property-management workflows for commercial real estate owners and managers."
+      "rationale": "Property-management operating platform with lease, tenant, financial, and service tools; comparable to VTS\u2019s commercial real-estate operations and leasing platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Property-management operating platform with lease, tenant, financial, and service tools; comparable to VTS\u2019s commercial real-estate operations and leasing platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Proptech property-management operating platform with lease, tenant, and asset tools; direct comparable/competitor to VTS's CRE platform despite smaller size."
+        }
+      ]
     },
     {
       "name": "Pikes Northwest",
@@ -5910,7 +7073,19 @@
         "relevance_score": "A"
       },
       "relevant": false,
-      "rationale": "Pikes Northwest is a commercial property management service, not a software operating platform for leasing, asset management, tenant experience, and property data."
+      "rationale": "Pikes Northwest is a commercial property-management firm, likely a user/customer of VTS rather than a competing real-estate operating software platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Pikes Northwest is a commercial property-management firm, likely a user/customer of VTS rather than a competing real-estate operating software platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "VTS is a CRE software platform; Pikes Northwest is a property-management service firm, a service provider in the category, not a software competitor."
+        }
+      ]
     },
     {
       "name": "RI Marketplace",
@@ -5957,7 +7132,24 @@
         "relevance_score": "A"
       },
       "relevant": false,
-      "rationale": "RI Marketplace facilitates commercial property sales and auctions, while VTS manages leasing, assets, and tenant operations; the core jobs differ."
+      "rationale": "Commercial real-estate platform, but focused on auction/listing transactions for investors rather than leasing, asset operations, or tenant experience.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Commercial real-estate platform, but focused on auction/listing transactions for investors rather than leasing, asset operations, or tenant experience."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are CRE-tech platforms serving landlords/brokers with deal, listing, and property-data tools; comparable peers in commercial real estate software."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "CRE asset auction marketplace for investors, not leasing/asset-management SaaS platform; different product and buyer job."
+        }
+      ]
     },
     {
       "name": "Revolution RE",
@@ -6014,7 +7206,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide real-estate data and operational intelligence platforms for professional property owners and asset managers, including portfolio performance and management use cases."
+      "rationale": "Both provide real-estate operators with portfolio performance data, analytics, and operational decision support, though RevolutionRE focuses on multifamily property management.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both provide real-estate operators with portfolio performance data, analytics, and operational decision support, though RevolutionRE focuses on multifamily property management."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both provide real-estate data/analytics platforms for property portfolios; overlapping CRE asset-management and property-data market, strong product resemblance."
+        }
+      ]
     },
     {
       "name": "Datex Property Solutions",
@@ -6091,7 +7295,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide commercial real estate owners and managers with portfolio data, reporting, leasing insights, and asset-management decision support."
+      "rationale": "Commercial real-estate platform automating leasing, reporting, and portfolio management for the same property managers, asset managers, and leasing teams.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Commercial real-estate platform automating leasing, reporting, and portfolio management for the same property managers, asset managers, and leasing teams."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both offer commercial-real-estate software platforms for leasing automation, asset/portfolio reporting, and property data to the same CRE buyer personas."
+        }
+      ]
     },
     {
       "name": "Dory",
@@ -6139,8 +7355,25 @@
         ],
         "relevance_score": "A"
       },
-      "relevant": false,
-      "rationale": "Dory targets general rental property operations, while VTS focuses commercial leasing, asset management, and property intelligence; their core jobs differ."
+      "relevant": true,
+      "rationale": "Proptech SaaS platform connecting landlords, property managers, and tenants for leasing, payments, and maintenance\u2014overlaps VTS's property-management and tenant-experience product and model.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Dory targets residential rental property management, while VTS is a commercial-real-estate operating platform; their core asset markets and workflows differ."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Proptech SaaS platform connecting landlords, property managers, and tenants for leasing, payments, and maintenance\u2014overlaps VTS's property-management and tenant-experience product and model."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Both are real-estate SaaS platforms for property/tenant management; Dory targets residential landlords vs VTS commercial, but adjacent comparable."
+        }
+      ]
     },
     {
       "name": "Tower360",
@@ -6203,7 +7436,20 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Tower360 overlaps VTS in commercial real estate asset, lease, tenant, deal, and portfolio management for asset managers and investors."
+      "rationale": "Commercial real-estate platform for asset managers covering portfolios, deals, leases, tenants, and contracts\u2014directly comparable to VTS's leasing and asset-management offering.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Commercial real-estate platform for asset managers covering portfolios, deals, leases, tenants, and contracts\u2014directly comparable to VTS's leasing and asset-management offering."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are software platforms for commercial real estate asset management, leasing, and tenant/deal management\u2014same product, market, and SaaS model; direct competitor."
+        }
+      ]
     }
-  ]
+  ],
+  "error": null
 }

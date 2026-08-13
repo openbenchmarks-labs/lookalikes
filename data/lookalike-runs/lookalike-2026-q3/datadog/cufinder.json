@@ -10,15 +10,17 @@
   "relevant_count": 1,
   "precision_at_k": 1.0,
   "relevant_count_at_10": 1,
+  "relevant_count_at_25": 1,
   "relevant_count_at_100": 1,
   "precision_at_10": 10.0,
+  "precision_at_25": 4.0,
   "precision_at_100": 1.0,
   "latency_ms": 794,
   "cost_usd": null,
   "duplicates_removed": 0,
   "max_results": 10,
-  "judge_model": "gpt-5.6",
-  "judged_at": "2026-07-27T03:31:16Z",
+  "judge_model": "majority(n=3): claude-opus-5,gpt-5.6-terra,kimi-k3",
+  "judged_at": "2026-08-10T19:19:50Z",
   "candidates": [
     {
       "name": "anthropic",
@@ -34,7 +36,19 @@
         "confidence_level": 98
       },
       "relevant": false,
-      "rationale": "Anthropic builds foundation AI models and assistants, not an infrastructure observability, APM, logging, or security-monitoring platform evaluated for the same job."
+      "rationale": "Anthropic develops foundation AI models and assistants, not observability, infrastructure monitoring, APM, logging, or security-monitoring products.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Anthropic develops foundation AI models and assistants, not observability, infrastructure monitoring, APM, logging, or security-monitoring products."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "AI research/assistant company, no observability, monitoring, or APM product \u2014 unrelated to Datadog's market."
+        }
+      ]
     },
     {
       "name": "atlassian",
@@ -50,7 +64,19 @@
         "confidence_level": 98
       },
       "relevant": false,
-      "rationale": "Atlassian primarily provides collaboration, project management, and ITSM software, not infrastructure monitoring, APM, logs, or observability for the same job."
+      "rationale": "Atlassian primarily provides collaboration, project, and IT service-management tools, not cloud observability or infrastructure/APM monitoring.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Atlassian primarily provides collaboration, project, and IT service-management tools, not cloud observability or infrastructure/APM monitoring."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Atlassian sells team collaboration/project-management software (Jira, Confluence), not observability, monitoring, or APM \u2014 different product category and buyer job."
+        }
+      ]
     },
     {
       "name": "databricks",
@@ -66,7 +92,19 @@
         "confidence_level": 98
       },
       "relevant": false,
-      "rationale": "Databricks is a data/AI lakehouse platform, not an infrastructure observability, APM, logging, or security-monitoring product evaluated for the same job."
+      "rationale": "Databricks sells data/AI analytics infrastructure, not observability, monitoring, APM, logs, or security monitoring; overlap is only adjacent cloud enterprise software.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Databricks sells data/AI analytics infrastructure, not observability, monitoring, APM, logs, or security monitoring; overlap is only adjacent cloud enterprise software."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Databricks sells a data lakehouse/AI analytics platform, not observability, monitoring, or APM \u2014 different product and buyer job than Datadog."
+        }
+      ]
     },
     {
       "name": "google",
@@ -82,7 +120,19 @@
         "confidence_level": 98
       },
       "relevant": false,
-      "rationale": "Google is a broad technology and advertising company, not primarily an observability and application-monitoring platform evaluated for the same core job."
+      "rationale": "Google is a broad technology company; its primary offering is not an observability or infrastructure monitoring platform comparable to Datadog.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Google is a broad technology company; its primary offering is not an observability or infrastructure monitoring platform comparable to Datadog."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Diversified tech conglomerate whose primary business is search/ads and consumer products, not an observability/monitoring platform peer."
+        }
+      ]
     },
     {
       "name": "mongodb",
@@ -98,7 +148,19 @@
         "confidence_level": 98
       },
       "relevant": false,
-      "rationale": "MongoDB is primarily a database platform, not an observability/APM platform; buyers evaluate it for data storage rather than system monitoring."
+      "rationale": "MongoDB is a database platform for application development, not an observability, monitoring, APM, logging, or security-monitoring product.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "MongoDB is a database platform for application development, not an observability, monitoring, APM, logging, or security-monitoring product."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "MongoDB sells a developer database platform, not observability/monitoring; different product and buyer job despite shared developer-infrastructure adjacency."
+        }
+      ]
     },
     {
       "name": "salesforce",
@@ -114,7 +176,19 @@
         "confidence_level": 98
       },
       "relevant": false,
-      "rationale": "Salesforce is primarily a CRM and customer-success platform, not an infrastructure observability, APM, logging, or security-monitoring vendor."
+      "rationale": "Salesforce is primarily a CRM and customer-success platform, not an observability, infrastructure monitoring, APM, logs, or security-monitoring competitor.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Salesforce is primarily a CRM and customer-success platform, not an observability, infrastructure monitoring, APM, logs, or security-monitoring competitor."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Salesforce is a CRM/customer-success platform, not cloud observability, monitoring, or security monitoring\u2014different product, market, and buyer."
+        }
+      ]
     },
     {
       "name": "snowflake",
@@ -130,7 +204,19 @@
         "confidence_level": 98
       },
       "relevant": false,
-      "rationale": "Snowflake is a cloud data warehouse and analytics platform, not an observability/APM platform evaluated for application and infrastructure monitoring."
+      "rationale": "Snowflake is a cloud data warehousing and analytics platform, not an observability, infrastructure monitoring, APM, logs, or security monitoring competitor.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Snowflake is a cloud data warehousing and analytics platform, not an observability, infrastructure monitoring, APM, logs, or security monitoring competitor."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Snowflake is a cloud data-warehousing/analytics platform, not observability/APM/monitoring; different product category and buyer job despite overlapping cloud-software customers."
+        }
+      ]
     },
     {
       "name": "splunk",
@@ -146,7 +232,19 @@
         "confidence_level": 98
       },
       "relevant": true,
-      "rationale": "Splunk offers a unified observability and security monitoring platform evaluated by the same IT operations, DevOps, and security buyers as Datadog."
+      "rationale": "Splunk directly competes in observability, log analytics, infrastructure monitoring, and security operations platforms.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Splunk directly competes in observability, log analytics, infrastructure monitoring, and security operations platforms."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Unified security and observability platform directly competing with Datadog on product, market, and business model."
+        }
+      ]
     },
     {
       "name": "stripe",
@@ -162,7 +260,19 @@
         "confidence_level": 98
       },
       "relevant": false,
-      "rationale": "Stripe provides payment infrastructure, while Datadog provides observability and monitoring; they solve different jobs for different evaluating teams."
+      "rationale": "Stripe provides payment and financial infrastructure, not observability, infrastructure monitoring, APM, logging, or security monitoring.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Stripe provides payment and financial infrastructure, not observability, infrastructure monitoring, APM, logging, or security monitoring."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Stripe is payments/financial infrastructure; Datadog is cloud observability and monitoring. Different products, buyers, and jobs to be done."
+        }
+      ]
     },
     {
       "name": "twilio",
@@ -178,10 +288,20 @@
         "confidence_level": 98
       },
       "relevant": false,
-      "rationale": "Twilio is a customer communications and engagement platform, not an infrastructure observability, APM, logging, or security-monitoring product."
+      "rationale": "Twilio provides customer-engagement communications APIs, not observability, infrastructure monitoring, APM, logs, or security-monitoring products.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Twilio provides customer-engagement communications APIs, not observability, infrastructure monitoring, APM, logs, or security-monitoring products."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Twilio is a communications/customer-engagement API platform, not observability or monitoring; shared developer-focused API model alone is insufficient."
+        }
+      ]
     }
   ],
-  "error": null,
-  "relevant_count_at_25": 1,
-  "precision_at_25": 4.0
+  "error": null
 }

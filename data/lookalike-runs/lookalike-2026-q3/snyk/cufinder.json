@@ -19,8 +19,8 @@
   "cost_usd": null,
   "duplicates_removed": 0,
   "max_results": 10,
-  "judge_model": "gpt-5.6",
-  "judged_at": "2026-07-27T06:53:49Z",
+  "judge_model": "majority(n=3): claude-opus-5,gpt-5.6-terra,kimi-k3",
+  "judged_at": "2026-08-10T19:58:24Z",
   "candidates": [
     {
       "name": "abnormal ai",
@@ -36,7 +36,19 @@
         "confidence_level": 95
       },
       "relevant": false,
-      "rationale": "Abnormal AI provides email and account security, not developer-focused application, dependency, container, or cloud vulnerability management."
+      "rationale": "Abnormal AI provides email and account-threat detection, not developer vulnerability remediation for code, dependencies, containers, or cloud infrastructure.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Abnormal AI provides email and account-threat detection, not developer vulnerability remediation for code, dependencies, containers, or cloud infrastructure."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Abnormal AI is email/phishing security protecting users from inbound attacks; Snyk is developer-focused application/code vulnerability remediation. Different products, buyers, and markets."
+        }
+      ]
     },
     {
       "name": "checkmarx",
@@ -52,7 +64,19 @@
         "confidence_level": 95
       },
       "relevant": true,
-      "rationale": "Checkmarx is an application-security platform offering code vulnerability scanning and remediation for DevSecOps and developer teams, directly overlapping Snyk."
+      "rationale": "Checkmarx is an application-security and DevSecOps platform scanning code for vulnerabilities, directly overlapping Snyk\u2019s developer-security products and buyers.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Checkmarx is an application-security and DevSecOps platform scanning code for vulnerabilities, directly overlapping Snyk\u2019s developer-security products and buyers."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are developer-focused application security platforms scanning code for vulnerabilities; direct competitors serving the same AppSec/DevSecOps buyers."
+        }
+      ]
     },
     {
       "name": "crowdstrike",
@@ -67,8 +91,25 @@
         "country": "united states",
         "confidence_level": 95
       },
-      "relevant": false,
-      "rationale": "CrowdStrike primarily protects endpoints and detects enterprise threats, while Snyk secures developer code and software dependencies; their core evaluation use cases differ."
+      "relevant": true,
+      "rationale": "Both provide cloud-security and vulnerability detection/remediation for enterprise cloud workloads, though CrowdStrike is broader and endpoint-centric.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both provide cloud-security and vulnerability detection/remediation for enterprise cloud workloads, though CrowdStrike is broader and endpoint-centric."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "CrowdStrike is endpoint/EDR runtime security; Snyk is developer application security (code, dependencies, containers). Different security subcategories and buyer personas."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Both enterprise cybersecurity platforms; CrowdStrike's cloud-workload/vulnerability management overlaps Snyk's cloud security, making it a plausible competitor/comparable."
+        }
+      ]
     },
     {
       "name": "cyera",
@@ -84,7 +125,19 @@
         "confidence_level": 95
       },
       "relevant": false,
-      "rationale": "Cyera secures enterprise data and AI usage, while Snyk secures software development artifacts; their core products and jobs differ."
+      "rationale": "Cyera secures enterprise data and AI usage, whereas Snyk focuses on developer application-security vulnerabilities in code and cloud artifacts.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Cyera secures enterprise data and AI usage, whereas Snyk focuses on developer application-security vulnerabilities in code and cloud artifacts."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Cyera is data-security/AI-data posture management; Snyk is developer/AppSec vulnerability remediation. Different product and buyer; shared security label alone is insufficient."
+        }
+      ]
     },
     {
       "name": "datadog",
@@ -100,7 +153,19 @@
         "confidence_level": 95
       },
       "relevant": false,
-      "rationale": "Datadog primarily provides observability and performance monitoring, not developer-focused vulnerability detection and remediation for code, dependencies, containers, and infrastructure."
+      "rationale": "Datadog\u2019s primary platform is cloud observability and performance monitoring, not developer vulnerability remediation or application-security tooling.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Datadog\u2019s primary platform is cloud observability and performance monitoring, not developer vulnerability remediation or application-security tooling."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Datadog is observability/performance monitoring, not vulnerability finding or security remediation; monitoring alone doesn't match Snyk's developer-security product."
+        }
+      ]
     },
     {
       "name": "orca security",
@@ -116,7 +181,19 @@
         "confidence_level": 95
       },
       "relevant": true,
-      "rationale": "Both provide cloud-native security platforms that identify and remediate vulnerabilities and misconfigurations across containers, Kubernetes, and cloud infrastructure for security teams."
+      "rationale": "Both provide security platforms that identify and remediate cloud and infrastructure vulnerabilities; Orca is a close cloud-security comparable to Snyk.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both provide security platforms that identify and remediate cloud and infrastructure vulnerabilities; Orca is a close cloud-security comparable to Snyk."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are security platforms finding and remediating vulnerabilities/risks in cloud infrastructure; Snyk's cloud-security offering makes Orca a direct competitor."
+        }
+      ]
     },
     {
       "name": "palo alto networks",
@@ -131,8 +208,25 @@
         "country": "united states",
         "confidence_level": 95
       },
-      "relevant": true,
-      "rationale": "Palo Alto Networks\u2019 Prisma Cloud offers code-to-cloud security, including application, container, and infrastructure protection, overlapping Snyk\u2019s DevSecOps buyers and use cases."
+      "relevant": false,
+      "rationale": "Palo Alto is broad enterprise network/perimeter cybersecurity; Snyk is developer-first application/code security. Different buyers and products; shared 'cybersecurity' label alone is insufficient.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Palo Alto's Prisma Cloud includes cloud-native application security, vulnerability scanning, and code-to-cloud protection overlapping Snyk's developer-security platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Palo Alto is broad enterprise network/perimeter cybersecurity; Snyk is developer-first application/code security. Different buyers and products; shared 'cybersecurity' label alone is insufficient."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "judge error: Unterminated string starting at: line 1 column 33 (char 32)"
+        }
+      ]
     },
     {
       "name": "sentinelone",
@@ -148,7 +242,19 @@
         "confidence_level": 95
       },
       "relevant": false,
-      "rationale": "SentinelOne primarily serves SOC teams with endpoint/XDR and SIEM, while Snyk targets developers with application and software supply-chain security."
+      "rationale": "SentinelOne primarily provides endpoint protection and security operations; its cloud offerings do not make it a close developer vulnerability-management or code-security peer.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "SentinelOne primarily provides endpoint protection and security operations; its cloud offerings do not make it a close developer vulnerability-management or code-security peer."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "SentinelOne is an endpoint/SOC security-operations platform (EDR, SIEM, MDR); Snyk is developer-first code, dependency, and IaC vulnerability scanning \u2014 different buyers and products."
+        }
+      ]
     },
     {
       "name": "veracode",
@@ -164,7 +270,19 @@
         "confidence_level": 95
       },
       "relevant": true,
-      "rationale": "Veracode directly overlaps Snyk in developer-focused application security, vulnerability scanning, dependency/container security, and remediation for development and security teams."
+      "rationale": "Application-security platform offering code, dependency, container, and cloud vulnerability scanning and remediation\u2014the same DevSecOps market as Snyk.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Application-security platform offering code, dependency, container, and cloud vulnerability scanning and remediation\u2014the same DevSecOps market as Snyk."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Direct competitor: application/developer security platform offering SAST, SCA, container security, and remediation across the SDLC."
+        }
+      ]
     },
     {
       "name": "wiz",
@@ -180,7 +298,20 @@
         "confidence_level": 95
       },
       "relevant": true,
-      "rationale": "Both provide code-to-cloud security platforms for identifying and remediating vulnerabilities and cloud risks, targeting overlapping application and cloud security teams."
+      "rationale": "Wiz is a cloud and code security platform that identifies and reduces application and infrastructure risk, directly comparable to Snyk.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Wiz is a cloud and code security platform that identifies and reduces application and infrastructure risk, directly comparable to Snyk."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are developer-oriented cloud-native security platforms connecting code, dependencies, and cloud runtime for vulnerability and risk remediation; direct competitors."
+        }
+      ]
     }
-  ]
+  ],
+  "error": null
 }

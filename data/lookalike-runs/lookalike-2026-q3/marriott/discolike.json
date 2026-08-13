@@ -7,18 +7,20 @@
     "name": "domain_similarity"
   },
   "k": 100,
-  "relevant_count": 5,
-  "precision_at_k": 5.0,
+  "relevant_count": 6,
+  "precision_at_k": 6.0,
   "relevant_count_at_10": 1,
-  "relevant_count_at_100": 5,
+  "relevant_count_at_25": 1,
+  "relevant_count_at_100": 6,
   "precision_at_10": 10.0,
-  "precision_at_100": 5.0,
+  "precision_at_25": 4.0,
+  "precision_at_100": 6.0,
   "latency_ms": 994,
   "cost_usd": null,
   "duplicates_removed": 0,
   "max_results": null,
-  "judge_model": "gpt-5.6",
-  "judged_at": "2026-07-27T03:47:25Z",
+  "judge_model": "majority(n=3): claude-opus-5,gpt-5.6-terra,kimi-k3",
+  "judged_at": "2026-08-10T19:38:41Z",
   "candidates": [
     {
       "name": "Wyndham Hotels & Resorts",
@@ -52,7 +54,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Wyndham directly overlaps Marriott as a global hotel operator offering lodging, booking, travel services, and guest loyalty programs to the same customers."
+      "rationale": "Global hotel operator with lodging brands, booking services, and a guest loyalty program\u2014direct hospitality competitor and comparable to Marriott.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Global hotel operator with lodging brands, booking services, and a guest loyalty program\u2014direct hospitality competitor and comparable to Marriott."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Global hotel franchisor/operator with lodging brands and loyalty program; direct competitor to Marriott on product, market, and model."
+        }
+      ]
     },
     {
       "name": "Voyager Travel",
@@ -74,7 +88,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Voyager is a travel booking/service club, not a hotel and lodging operator; customers would not evaluate both for the same core offering."
+      "rationale": "Voyager sells vacation packages and travel-booking assistance, not hotel lodging brands or a comparable hospitality operating platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Voyager sells vacation packages and travel-booking assistance, not hotel lodging brands or a comparable hospitality operating platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Voyager is a travel agency/club selling vacation packages, not a lodging operator; different business model, more distribution channel than hotel comparable."
+        }
+      ]
     },
     {
       "name": "TravelPapa",
@@ -102,7 +128,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "TravelPapa is a flight, tour, and guide-booking service, not a hotel or lodging operator serving the same accommodation need as Marriott."
+      "rationale": "TravelPapa is a flight, tours, and guide booking service, not a hotel/lodging operator or hospitality loyalty brand comparable to Marriott.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "TravelPapa is a flight, tours, and guide booking service, not a hotel/lodging operator or hospitality loyalty brand comparable to Marriott."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Marriott operates hotels/lodging; TravelPapa is an airfare booking and tour-guide marketplace, a different travel segment, not a hospitality comparable."
+        }
+      ]
     },
     {
       "name": "Cheapflightsfares",
@@ -131,7 +169,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Cheapflightsfares is primarily an online travel booking agency, while Marriott primarily operates hotel and lodging brands; their core offerings and evaluation jobs differ."
+      "rationale": "Online travel agency focused on flight booking; it may distribute hotel inventory but does not operate lodging brands or compete as a hospitality provider.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Online travel agency focused on flight booking; it may distribute hotel inventory but does not operate lodging brands or compete as a hospitality provider."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Marriott operates hotels and lodging; Cheapflightsfares is a flight-booking OTA intermediary, not a lodging operator or comparable\u2014different product and business model."
+        }
+      ]
     },
     {
       "name": "chevron_right",
@@ -163,7 +213,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Ideal Flying is a travel-booking agency/platform, not a hotel operator or lodging brand serving the same hospitality need as Marriott."
+      "rationale": "Travel booking agency aggregates hotels, flights, and tours; it does not operate lodging brands or offer Marriott's hotel-hospitality business model.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Travel booking agency aggregates hotels, flights, and tours; it does not operate lodging brands or offer Marriott's hotel-hospitality business model."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Online travel agency aggregating flights, hotels, cars, and tours; not a hotel/lodging operator or hospitality-brand comparable to Marriott."
+        }
+      ]
     },
     {
       "name": "OneLife Top",
@@ -193,7 +255,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "OneLife Top is a lifestyle content publisher, not a hotel operator, lodging brand, travel accommodation platform, or hospitality loyalty provider."
+      "rationale": "Lifestyle media site offering articles and subscriptions, not a hotel, lodging, travel-services, or guest-loyalty operator.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Lifestyle media site offering articles and subscriptions, not a hotel, lodging, travel-services, or guest-loyalty operator."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "OneLife Top is a lifestyle content/media website, not a hotel or lodging operator; shares only a generic 'travel' keyword with Marriott."
+        }
+      ]
     },
     {
       "name": "All That Travel",
@@ -221,7 +295,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "All That Travel is a travel-planning agency, not a hotel operator or lodging/loyalty brand serving the same booking need."
+      "rationale": "Travel-planning agency selling vacation packages and tours, not a hotel/lodging operator or hospitality loyalty brand comparable to Marriott.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Travel-planning agency selling vacation packages and tours, not a hotel/lodging operator or hospitality loyalty brand comparable to Marriott."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Travel agency selling vacation packages, not a hotel/lodging operator; it's an intermediary, not a peer of Marriott."
+        }
+      ]
     },
     {
       "name": "Tourovision Group, Inc",
@@ -244,7 +330,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Tourovision is a travel agency booking third-party hotels and transportation, not a hotel owner/operator offering lodging and loyalty brands like Marriott."
+      "rationale": "Travel agency selling bookings, flights, and tours; it is a hospitality distributor, not a hotel/lodging operator comparable to Marriott.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Travel agency selling bookings, flights, and tours; it is a hospitality distributor, not a hotel/lodging operator comparable to Marriott."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Travel agency reselling bookings, not a hotel/lodging operator; serves the category as intermediary rather than competing with Marriott."
+        }
+      ]
     },
     {
       "name": "tobook.com",
@@ -270,7 +368,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Tobook is an online travel booking marketplace, not a hotel operator or lodging brand; travelers would not evaluate both for the same service."
+      "rationale": "Tobook is an online travel agency marketplace, not a hotel/lodging operator or hospitality brand comparable to Marriott.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Tobook is an online travel agency marketplace, not a hotel/lodging operator or hospitality brand comparable to Marriott."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Hotel booking intermediary/OTA, not a hotel operator; acts as distribution channel for hotels like Marriott rather than a competitor or comparable lodging brand."
+        }
+      ]
     },
     {
       "name": "I Need A Vacation",
@@ -294,7 +404,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Candidate is a general vacation booking platform, not a hotel operator or lodging-brand company serving the same accommodation need."
+      "rationale": "Consumer travel booking platform, not a hotel/lodging operator or hospitality brand comparable to Marriott.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Consumer travel booking platform, not a hotel/lodging operator or hospitality brand comparable to Marriott."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Marriott operates hotels/lodging; candidate is a travel booking intermediary (OTA), a distribution channel, not a lodging operator or direct competitor."
+        }
+      ]
     },
     {
       "name": "Direct Access",
@@ -316,7 +438,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Direct Access is a travel-discount booking membership, not a hotel operator or hospitality brand serving guests through owned or managed lodging."
+      "rationale": "Travel-membership booking program selling discounted hotel stays, not a hotel/lodging operator or comparable hospitality brand.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Travel-membership booking program selling discounted hotel stays, not a hotel/lodging operator or comparable hospitality brand."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Travel-discount membership/booking club that resells hotel stays; a distribution intermediary, not a lodging operator or hospitality peer of Marriott."
+        }
+      ]
     },
     {
       "name": "Armed Forces Vacation Club",
@@ -348,7 +482,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "AFVC is a military-focused travel booking and discount service, not a hotel operator or hospitality brand competing for the same lodging-management buyers."
+      "rationale": "AFVC is a military-focused vacation booking and discount service, not a hotel/lodging operator or hospitality-brand platform comparable to Marriott.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "AFVC is a military-focused vacation booking and discount service, not a hotel/lodging operator or hospitality-brand platform comparable to Marriott."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Discount vacation-booking club for military members, not a hotel/lodging operator; a distribution channel for hotels rather than a Marriott peer."
+        }
+      ]
     },
     {
       "name": "The Travel Group",
@@ -375,7 +521,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "TTG is a travel agency and booking intermediary, not a hotel owner/operator or hospitality brand competing for the same lodging job."
+      "rationale": "Travel agency sells booking and itinerary services; it does not operate hotel or lodging brands comparable to Marriott.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Travel agency sells booking and itinerary services; it does not operate hotel or lodging brands comparable to Marriott."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Travel agency reselling bookings, not a hotel/lodging operator; an intermediary in Marriott's distribution chain, not a competitor or comparable."
+        }
+      ]
     },
     {
       "name": "The Club",
@@ -397,7 +555,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "The Club is a membership travel-booking and concierge service, not a hotel operator or hospitality brand comparable to Marriott."
+      "rationale": "Member-only travel deals and concierge booking service, not a hotel or lodging operator comparable to Marriott's hospitality brands.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Member-only travel deals and concierge booking service, not a hotel or lodging operator comparable to Marriott's hospitality brands."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Members-only vacation booking club with concierge service; a travel booking membership, not a hotel/lodging operator or loyalty-brand comparable."
+        }
+      ]
     },
     {
       "name": "Visa Signature Luxury Hotel Collection",
@@ -422,7 +592,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Visa\u2019s collection is a hotel-booking and cardholder-benefits platform, not a hotel operator or hospitality brand competing with Marriott."
+      "rationale": "Visa\u2019s collection is a cardholder hotel-booking benefit platform, not a hotel operator or lodging brand comparable to Marriott.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Visa\u2019s collection is a cardholder hotel-booking benefit platform, not a hotel operator or lodging brand comparable to Marriott."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Card-program booking platform channeling guests to luxury hotels; a distribution partner, not a hotel operator or lodging-brand competitor."
+        }
+      ]
     },
     {
       "name": "SaversCentralOnline",
@@ -445,7 +627,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "SaversCentralOnline is a discount membership marketplace, not a hotel or lodging operator; travelers would not evaluate it for the same job."
+      "rationale": "Discount membership aggregator for travel and lifestyle deals, not a hotel/lodging operator or hospitality brand comparable to Marriott.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Discount membership aggregator for travel and lifestyle deals, not a hotel/lodging operator or hospitality brand comparable to Marriott."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Marriott operates hotels and lodging; SaversCentralOnline is a discount-deals membership aggregator, not a hospitality operator or competitor."
+        }
+      ]
     },
     {
       "name": "Tenex Perks",
@@ -471,7 +665,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Tenex is a member perks and discounts platform, not a hotel operator or lodging hospitality brand serving travelers."
+      "rationale": "Tenex is a consumer/member perks and discount marketplace, not a hotel or lodging operator, hospitality brand, or guest-loyalty comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Tenex is a consumer/member perks and discount marketplace, not a hotel or lodging operator, hospitality brand, or guest-loyalty comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Tenex is a discount-perks membership platform, not a hotel/lodging operator; no resemblance to Marriott's hospitality business on any axis."
+        }
+      ]
     },
     {
       "name": "Condor",
@@ -502,7 +708,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Condor is an airline, not a hotel and lodging operator; travelers evaluate flights and accommodations for different jobs."
+      "rationale": "Condor is an airline selling flights, while Marriott operates lodging brands; they are adjacent travel providers, not comparable hospitality businesses.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Condor is an airline selling flights, while Marriott operates lodging brands; they are adjacent travel providers, not comparable hospitality businesses."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Condor is an airline selling flights; Marriott is a hotel/lodging operator. Different travel verticals \u2014 adjacent partners, not competitors or comparables."
+        }
+      ]
     },
     {
       "name": "The Esco Travel Co.",
@@ -528,7 +746,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Esco is a travel membership and booking-advisory service, not a hotel operator offering lodging and hospitality brands like Marriott."
+      "rationale": "Travel membership and advisory booking service, not a hotel or lodging operator; it distributes travel inventory rather than competing with Marriott.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Travel membership and advisory booking service, not a hotel or lodging operator; it distributes travel inventory rather than competing with Marriott."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Travel booking club/agency reselling hotels, not a hotel or lodging operator; a distributor of Marriott-like inventory rather than a peer."
+        }
+      ]
     },
     {
       "name": "OhMyBot",
@@ -551,7 +781,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "OhMyBot is a cross-category AI comparison assistant, not a hotel operator or lodging and hospitality brand serving travelers."
+      "rationale": "Generic consumer AI comparison assistant spanning travel and other categories, not a hotel/lodging operator or hospitality brand.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Generic consumer AI comparison assistant spanning travel and other categories, not a hotel/lodging operator or hospitality brand."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "OhMyBot is an AI comparison-shopping assistant, not a hotel/lodging operator; no shared product, market, or business model with Marriott."
+        }
+      ]
     },
     {
       "name": "SponsorMotion",
@@ -575,7 +817,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "SponsorMotion is an event sponsorship and co-marketing service, not a hotel, lodging, travel, or hospitality operator like Marriott."
+      "rationale": "SponsorMotion is a brand-event sponsorship and co-marketing service, not a hotel, lodging, travel, or hospitality loyalty operator.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "SponsorMotion is a brand-event sponsorship and co-marketing service, not a hotel, lodging, travel, or hospitality loyalty operator."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Event-sponsorship marketing platform, not hospitality/lodging; unrelated industry and product despite generic marketing keywords."
+        }
+      ]
     },
     {
       "name": "Vacayou",
@@ -606,7 +860,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Vacayou is a specialized travel agency booking third-party vacations, not a hotel operator or lodging and loyalty brand like Marriott."
+      "rationale": "Vacayou is a wellness travel agency and booking intermediary, not a hotel/lodging operator or hospitality brand comparable to Marriott.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Vacayou is a wellness travel agency and booking intermediary, not a hotel/lodging operator or hospitality brand comparable to Marriott."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Vacayou is a wellness travel agency booking others' hotels and retreats, not a hotel/lodging operator; it is a distribution channel, not a competitor to Marriott."
+        }
+      ]
     },
     {
       "name": "Global Hotel Card",
@@ -630,7 +896,24 @@
         ]
       },
       "relevant": false,
-      "rationale": "Global Hotel Card is a third-party hotel booking platform, while Marriott primarily operates and franchises hotel and lodging brands."
+      "rationale": "Hotel booking/OTA platform distributing hotels, not a hotel/lodging operator; it's a channel partner of companies like Marriott, not a competitor.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Hotel booking platform serving travelers with accommodation search and reservations; comparable hospitality/travel business, though not a hotel operator."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Hotel booking/OTA platform distributing hotels, not a hotel/lodging operator; it's a channel partner of companies like Marriott, not a competitor."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "OTA/booking aggregator, not a hotel owner-operator or brand; distribution intermediary rather than hospitality operator peer.Reminder: your entire response must be valid JSON matching the schema.  \u23ce"
+        }
+      ]
     },
     {
       "name": "Travelers Guide",
@@ -655,7 +938,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Travelers Guide is a travel booking and information platform, not a hotel operator or lodging-brand company serving the same core need."
+      "rationale": "Travel booking platform selling flights and accommodations, not a hotel operator or lodging-brand company comparable to Marriott.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Travel booking platform selling flights and accommodations, not a hotel operator or lodging-brand company comparable to Marriott."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Online travel booking agency aggregating flights and hotels, not a hotel/lodging operator; distribution intermediary rather than hospitality peer to Marriott."
+        }
+      ]
     },
     {
       "name": "Smarty",
@@ -684,7 +979,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Smarty is a consumer coupon and cashback browser extension, not a hotel operator or hospitality and lodging brand."
+      "rationale": "Coupon and cashback browser extension for consumers, not a hotel/lodging operator, hospitality brand, or travel loyalty comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Coupon and cashback browser extension for consumers, not a hotel/lodging operator, hospitality brand, or travel loyalty comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Smarty is a coupon/cashback browser extension, not a hospitality or lodging company; no product, market, or model resemblance to Marriott."
+        }
+      ]
     },
     {
       "name": "About Cooking Spoken",
@@ -707,7 +1014,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Candidate is a general-interest content website, not a hotel operator, lodging brand, or hospitality and guest-loyalty provider."
+      "rationale": "A general lifestyle and content website, not a hotel, lodging, travel-services, or hospitality loyalty operator.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "A general lifestyle and content website, not a hotel, lodging, travel-services, or hospitality loyalty operator."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Dutch content/media website about cooking and lifestyle topics; no hotel, lodging, or hospitality business resembling Marriott."
+        }
+      ]
     },
     {
       "name": "Express Markets",
@@ -729,7 +1048,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Express Markets is an insurance-carrier access platform for agencies, not a hotel, lodging, travel, or hospitality operator serving guests."
+      "rationale": "Insurance-market access platform for independent agencies; unrelated to Marriott's hotel, lodging, travel, and loyalty business.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Insurance-market access platform for independent agencies; unrelated to Marriott's hotel, lodging, travel, and loyalty business."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Insurance E&S marketplace for agencies is unrelated to Marriott's hotel/lodging hospitality business on every axis."
+        }
+      ]
     },
     {
       "name": "Money Mailer",
@@ -761,7 +1092,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Money Mailer is a direct-marketing and coupon platform, not a hotel operator or hospitality and lodging provider competing with Marriott."
+      "rationale": "Money Mailer is a local advertising and coupon platform, not a hotel, lodging, travel, or hospitality brand/operator.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Money Mailer is a local advertising and coupon platform, not a hotel, lodging, travel, or hospitality brand/operator."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Money Mailer is a direct-mail coupon marketing service, not hospitality or lodging; no product, market, or model overlap with Marriott."
+        }
+      ]
     },
     {
       "name": "FlyToday",
@@ -787,7 +1130,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "FlyToday is a travel agency offering trip planning and bookings, not a hotel operator or lodging brand evaluated for the same need."
+      "rationale": "FlyToday is a travel-planning and booking agency, not a hotel/lodging operator or hospitality brand comparable to Marriott.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "FlyToday is a travel-planning and booking agency, not a hotel/lodging operator or hospitality brand comparable to Marriott."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Travel agency offering tours, visas, and insurance; not a hotel/lodging operator like Marriott. Different product and buyer job."
+        }
+      ]
     },
     {
       "name": "ThemeTown",
@@ -818,7 +1173,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "ThemeTown is a residential property research platform, not a hotel operator or hospitality and lodging brand serving travelers."
+      "rationale": "ThemeTown is a residential real-estate research and listings platform, not a hotel, lodging, travel, or hospitality operator.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "ThemeTown is a residential real-estate research and listings platform, not a hotel, lodging, travel, or hospitality operator."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Real estate research SaaS for homebuyers; no overlap with hotel/lodging hospitality product, market, or business model."
+        }
+      ]
     },
     {
       "name": "7toucans",
@@ -840,7 +1207,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "7Toucans is a travel booking and social platform, not a hotel operator or lodging brand competing with Marriott."
+      "rationale": "Travel booking marketplace aggregates hotels and other services; it is a distribution channel, not a hotel/lodging operator comparable to Marriott.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Travel booking marketplace aggregates hotels and other services; it is a distribution channel, not a hotel/lodging operator comparable to Marriott."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "OTA/social booking marketplace, not a lodging operator or hospitality brand; different product and business model from Marriott."
+        }
+      ]
     },
     {
       "name": "InvitGo",
@@ -864,7 +1243,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "InvitGo is a group-event management app, not a hotel, lodging, or hospitality operator serving travelers and guests like Marriott."
+      "rationale": "InvitGo is a social event-outing management platform, not a hotel, lodging, travel, or hospitality loyalty operator.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "InvitGo is a social event-outing management platform, not a hotel, lodging, travel, or hospitality loyalty operator."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "InvitGo is a social event-planning app, not a hospitality/lodging company; no product, market, or model overlap with hotel operator Marriott."
+        }
+      ]
     },
     {
       "name": "Ritzy Group",
@@ -886,7 +1277,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Ritzy Group appears to offer account, payment, and financial services, not hotel lodging, travel hospitality, or guest loyalty brands."
+      "rationale": "Ritzy Group appears to offer consumer account and financial-product information, not hotel lodging, travel services, or hospitality loyalty programs.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Ritzy Group appears to offer consumer account and financial-product information, not hotel lodging, travel services, or hospitality loyalty programs."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Generic account-registration and financial-products site; no hotel, lodging, travel, or hospitality business. Unrelated to Marriott."
+        }
+      ]
     },
     {
       "name": "Fly Global",
@@ -913,7 +1316,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Fly Global is a travel booking agency, while Marriott primarily operates hotel and lodging brands; buyers would not evaluate them for the same job."
+      "rationale": "Travel booking agency selling flights and hotel packages, not a hotel/lodging operator or hospitality brand comparable to Marriott.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Travel booking agency selling flights and hotel packages, not a hotel/lodging operator or hospitality brand comparable to Marriott."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Online travel agency reselling flights/hotels; Marriott is a hotel owner-operator. Booking channel, not a lodging competitor or comparable."
+        }
+      ]
     },
     {
       "name": "Gynky",
@@ -935,7 +1350,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Gynky is a general online retail store, not a hotel, lodging, travel, or hospitality operator serving travelers."
+      "rationale": "Gynky is a general online retail store, not a hospitality company operating hotels, lodging, travel services, or guest loyalty brands.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Gynky is a general online retail store, not a hospitality company operating hotels, lodging, travel services, or guest loyalty brands."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Gynky is a general e-commerce store selling clothing and electronics; no overlap with Marriott's hotel/lodging hospitality business."
+        }
+      ]
     },
     {
       "name": "SimplyBook.me",
@@ -965,7 +1392,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "SimplyBook.me sells appointment-scheduling software to service businesses, while Marriott operates hotels and lodging; their core offerings and purchasing use cases differ."
+      "rationale": "Appointment-scheduling SaaS for service businesses, not a hotel/lodging operator, travel brand, or hospitality loyalty provider.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Appointment-scheduling SaaS for service businesses, not a hotel/lodging operator, travel brand, or hospitality loyalty provider."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "SimplyBook.me is appointment-scheduling SaaS for service businesses, not a hotel/lodging operator; different product, market, and business model from Marriott."
+        }
+      ]
     },
     {
       "name": "FHC Deals",
@@ -989,7 +1428,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "FHC Deals is a travel booking aggregator, not a hotel operator or hospitality brand; customers use it to book providers like Marriott."
+      "rationale": "Travel-booking aggregator, not a hotel/lodging operator or hospitality brand comparable to Marriott.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Travel-booking aggregator, not a hotel/lodging operator or hospitality brand comparable to Marriott."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "FHC Deals is a travel booking/price-comparison aggregator, not a hotel or lodging operator; different business model from Marriott's hospitality brands."
+        }
+      ]
     },
     {
       "name": "The Ryokan Collection",
@@ -1016,7 +1467,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide branded lodging accommodations, booking, and loyalty benefits to travelers seeking hotel stays, despite differing geographic and luxury focus."
+      "rationale": "Luxury lodging consortium offering bookable accommodations and loyalty benefits, directly comparable to Marriott's hotel and guest-loyalty business.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Luxury lodging consortium offering bookable accommodations and loyalty benefits, directly comparable to Marriott's hotel and guest-loyalty business."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Hospitality lodging group of luxury inns with booking and guest loyalty program; same product and market as Marriott's hotel brands."
+        }
+      ]
     },
     {
       "name": "VAQQY LLC",
@@ -1043,7 +1506,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "VAQQY is a travel agency selling vacation packages, not a hotel operator or lodging-brand company serving the same booking need directly."
+      "rationale": "VAQQY is a travel agency selling vacation packages, not a hotel/lodging operator or hospitality brand comparable to Marriott.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "VAQQY is a travel agency selling vacation packages, not a hotel/lodging operator or hospitality brand comparable to Marriott."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Travel agency reselling vacation packages, not a lodging operator; it's a distribution channel/client of hotels, not a competitor to Marriott."
+        }
+      ]
     },
     {
       "name": "RE/MAX, LLC",
@@ -1081,7 +1556,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "RE/MAX is a real estate brokerage franchise, not a hotel and lodging operator; buyers do not evaluate them for the same need."
+      "rationale": "RE/MAX is a real-estate brokerage and property-listings network, not a hotel, lodging, travel, or hospitality operator.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "RE/MAX is a real-estate brokerage and property-listings network, not a hotel, lodging, travel, or hospitality operator."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Marriott operates hotels and lodging; RE/MAX is a residential real estate brokerage, a different industry, buyer, and business model."
+        }
+      ]
     },
     {
       "name": "savewallet",
@@ -1104,7 +1591,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Savewallet is a retail e-commerce store, not a hotel, lodging, travel, or hospitality operator serving comparable guest needs."
+      "rationale": "Online apparel retailer, not a hotel, lodging, travel, or guest-loyalty operator; it serves unrelated customers and needs.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Online apparel retailer, not a hotel, lodging, travel, or guest-loyalty operator; it serves unrelated customers and needs."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "E-commerce clothing retailer with no hospitality, lodging, or travel product; unrelated industry to Marriott's hotel business."
+        }
+      ]
     },
     {
       "name": "JustFly",
@@ -1132,7 +1631,24 @@
         ]
       },
       "relevant": false,
-      "rationale": "JustFly is an online travel booking agency, not a hotel operator or hospitality brand offering lodging comparable to Marriott."
+      "rationale": "JustFly is an online travel agency booking flights/hotels \u2014 a distribution intermediary, not a hotel/lodging operator like Marriott.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both serve leisure travelers with accommodation booking and travel services, making JustFly a comparable B2C travel and lodging platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "JustFly is an online travel agency booking flights/hotels \u2014 a distribution intermediary, not a hotel/lodging operator like Marriott."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "JustFly is an OTA/flight booking agency, not a hotel operator/brand owner like Marriott; different product and model."
+        }
+      ]
     },
     {
       "name": "Zcation",
@@ -1159,7 +1675,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Zcation sells packaged trips and travel-planning services, not hotel lodging or hospitality operations; travelers would not evaluate both for the same need."
+      "rationale": "Zcation sells curated vacation packages and group trips, not hotel lodging and hospitality brands; it is a travel intermediary rather than a lodging comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Zcation sells curated vacation packages and group trips, not hotel lodging and hospitality brands; it is a travel intermediary rather than a lodging comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Zcation sells packaged vacation tours, not hotels or lodging; serves travelers for a different job, so not a hospitality peer of Marriott."
+        }
+      ]
     },
     {
       "name": "Oyster",
@@ -1186,7 +1714,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Oyster is a hotel review and booking intermediary, not a hotel operator; travelers would not evaluate it for the same lodging-service job."
+      "rationale": "Oyster is a travel review and hotel-booking media platform, not a lodging operator or hospitality brand comparable to Marriott.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Oyster is a travel review and hotel-booking media platform, not a lodging operator or hospitality brand comparable to Marriott."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Oyster is a hotel review/booking media site, not a hotel operator; it's a distribution channel for hotels like Marriott, not a competitor or comparable."
+        }
+      ]
     },
     {
       "name": "Findlys",
@@ -1212,7 +1752,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Findlys is a local-services discovery, booking, and advertising platform, not a hotel operator or hospitality and lodging brand."
+      "rationale": "Local-services discovery, booking, and advertising platform, not a hotel/lodging operator or hospitality loyalty brand.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Local-services discovery, booking, and advertising platform, not a hotel/lodging operator or hospitality loyalty brand."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Findlys is a local-services booking/marketing marketplace, not a hotel or lodging operator; no hospitality product, market, or model overlap with Marriott."
+        }
+      ]
     },
     {
       "name": "Club365",
@@ -1239,7 +1791,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Club365 is a multi-service travel booking and discount platform, not a hotel operator offering branded lodging like Marriott."
+      "rationale": "Travel booking and member-discount platform, but does not operate hotels or lodging brands like Marriott.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Travel booking and member-discount platform, but does not operate hotels or lodging brands like Marriott."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Marriott operates and franchises hotels/lodging; Club365 is a membership travel-booking/discount platform, not a lodging operator or direct peer comparable."
+        }
+      ]
     },
     {
       "name": "SwyftBooking, Inc.",
@@ -1269,7 +1833,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "SwyftBooking is an online travel marketplace, not a hotel operator or hospitality brand; it distributes third-party lodging rather than providing Marriott-like stays."
+      "rationale": "SwyftBooking is an online travel marketplace that distributes hotel inventory, not a lodging operator or hospitality brand comparable to Marriott.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "SwyftBooking is an online travel marketplace that distributes hotel inventory, not a lodging operator or hospitality brand comparable to Marriott."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "OTA booking intermediary, not a lodging operator; Marriott's lookalikes are hotel brands (Hilton, Hyatt), not distribution channels."
+        }
+      ]
     },
     {
       "name": "Credibility Agency, Inc.",
@@ -1293,7 +1869,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Credibility Agency is a business-opportunity/reputation platform, not a hotel operator or hospitality and lodging brand serving travelers."
+      "rationale": "Business-opportunity and reputation-management platform, not a hotel, lodging, travel, or guest-loyalty operator.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Business-opportunity and reputation-management platform, not a hotel, lodging, travel, or guest-loyalty operator."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Business-credibility/reputation agency platform, no hotels, lodging, or hospitality operations; unrelated industry to Marriott."
+        }
+      ]
     },
     {
       "name": "Book5star.com",
@@ -1322,7 +1910,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Book5star.com is a booking marketplace, not a hotel owner/operator or hospitality brand; it may distribute Marriott properties rather than compete directly."
+      "rationale": "Luxury-accommodation booking platform, not a hotel operator or hospitality brand owner like Marriott.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Luxury-accommodation booking platform, not a hotel operator or hospitality brand owner like Marriott."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Marriott operates hotel brands and lodging; Book5star is a third-party booking marketplace, a distribution channel rather than a peer hotel operator."
+        }
+      ]
     },
     {
       "name": "Traveo",
@@ -1352,7 +1952,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Traveo is a travel-planning and experiences platform, not a hotel or lodging operator serving the same accommodation-booking need."
+      "rationale": "Traveo is a travel-experience planning platform, not a hotel or lodging operator with Marriott's hospitality business model.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Traveo is a travel-experience planning platform, not a hotel or lodging operator with Marriott's hospitality business model."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Consumer travel-planning/experiences app, not a hotel or lodging operator; no product or business-model overlap with Marriott's hospitality core."
+        }
+      ]
     },
     {
       "name": "Area Scanner",
@@ -1376,7 +1988,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Area Scanner is a local business directory, not a hotel operator or hospitality and lodging brand serving travelers."
+      "rationale": "Local business directory, not a hotel, lodging, travel, or hospitality brand/operator.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Local business directory, not a hotel, lodging, travel, or hospitality brand/operator."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Local business directory website, not a hotel or hospitality operator; no shared product, market, or business model with Marriott."
+        }
+      ]
     },
     {
       "name": "TinyGig, Inc.",
@@ -1406,7 +2030,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both offer travelers bookable short-term lodging and compete for the same accommodation need, despite hotels versus host-supplied vacation rentals."
+      "rationale": "Vacation-rental marketplace offers traveler lodging accommodations, making it a comparable hospitality alternative despite its peer-to-peer model.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Vacation-rental marketplace offers traveler lodging accommodations, making it a comparable hospitality alternative despite its peer-to-peer model."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Vacation-rental marketplace competing with Marriott for traveler lodging spend; same accommodation market and buyer, comparable hospitality business model."
+        }
+      ]
     },
     {
       "name": "Travel Counsellors",
@@ -1437,7 +2073,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Travel Counsellors is a travel agency selling customized trips, while Marriott primarily operates hotel and lodging brands; buyers use them for different jobs."
+      "rationale": "Travel Counsellors is a travel agency arranging holidays and bookings, not a hotel/lodging operator or hospitality brand comparable to Marriott.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Travel Counsellors is a travel agency arranging holidays and bookings, not a hotel/lodging operator or hospitality brand comparable to Marriott."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Travel agency selling holiday bookings, not a hotel/lodging operator; it's a distribution channel for hotels like Marriott, not a competitor or comparable."
+        }
+      ]
     },
     {
       "name": "LoveAmur",
@@ -1460,7 +2108,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "LoveAmur is an online dating community, not a hotel, lodging, travel, or hospitality operator serving comparable guest needs."
+      "rationale": "Online dating community is unrelated to Marriott's hotel, lodging, travel, and guest loyalty business.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Online dating community is unrelated to Marriott's hotel, lodging, travel, and guest loyalty business."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Online dating platform has no resemblance to Marriott's hotel, lodging, and travel hospitality business on any axis."
+        }
+      ]
     },
     {
       "name": "Stayav",
@@ -1486,7 +2146,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Stayav is a travel agency and booking platform, not a hotel operator or hospitality brand competing for the same lodging guest relationship."
+      "rationale": "Stayav is a travel agency and booking intermediary, not a hotel and lodging operator with hospitality brands like Marriott.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Stayav is a travel agency and booking intermediary, not a hotel and lodging operator with hospitality brands like Marriott."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Travel agency/OTA distributing hotel bookings, not a lodging operator; it's a channel partner of hotels, not a competitor or comparable to Marriott."
+        }
+      ]
     },
     {
       "name": "Your Real Estate Website",
@@ -1508,7 +2180,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "A real estate listing and website platform does not operate hotels, lodging, travel services, or guest loyalty brands."
+      "rationale": "Real-estate website/listing platform, not a hotel, lodging, travel, or hospitality operator.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Real-estate website/listing platform, not a hotel, lodging, travel, or hospitality operator."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Real estate WordPress template platform, not hospitality/lodging; no product, market, or business-model overlap with a hotel company."
+        }
+      ]
     },
     {
       "name": "Drogerie Baganz",
@@ -1534,7 +2218,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Drogerie Baganz is a consumer retail/e-commerce store, not a hotel, lodging, travel, or hospitality operator serving travelers and guests."
+      "rationale": "Online drugstore retailer selling consumer goods, not a hotel, lodging, travel, or guest-loyalty operator.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Online drugstore retailer selling consumer goods, not a hotel, lodging, travel, or guest-loyalty operator."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "German drugstore e-commerce retailer selling cosmetics and household goods; no resemblance to Marriott's hotel/hospitality business on any axis."
+        }
+      ]
     },
     {
       "name": "More Cravings by Marriott Bonvoy",
@@ -1565,7 +2261,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "More Cravings is a Marriott Bonvoy dining/promotions platform, not an independent hospitality company operating hotels and lodging brands."
+      "rationale": "More Cravings is a Marriott Bonvoy dining and loyalty program, not an independent hospitality company or comparable hotel operator.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "More Cravings is a Marriott Bonvoy dining and loyalty program, not an independent hospitality company or comparable hotel operator."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Candidate is Marriott's own dining/loyalty program (Marriott Bonvoy brand) \u2014 a subsidiary/duplicate of the seed, not a competitor or comparable."
+        }
+      ]
     },
     {
       "name": "HiKyri",
@@ -1588,7 +2296,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "HiKyri is a consumer e-commerce retailer, not a hotel, lodging, travel, or hospitality operator serving comparable guests and travel needs."
+      "rationale": "HiKyri is a consumer e-commerce retailer selling goods, not a hotel, lodging, travel, or hospitality brand.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "HiKyri is a consumer e-commerce retailer selling goods, not a hotel, lodging, travel, or hospitality brand."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "HiKyri is a D2C e-commerce retailer of clothing and home goods; no overlap with Marriott's hotel/lodging hospitality business."
+        }
+      ]
     },
     {
       "name": "Encostay",
@@ -1612,7 +2332,19 @@
         "social_urls": []
       },
       "relevant": true,
-      "rationale": "Both provide bookable hotel and vacation accommodations to travelers seeking lodging, with overlapping reservation and stay services."
+      "rationale": "Hotel and vacation-rental booking provider serving travelers with lodging accommodations, making it a hospitality-market comparable to Marriott.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Hotel and vacation-rental booking provider serving travelers with lodging accommodations, making it a hospitality-market comparable to Marriott."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both serve travelers booking lodging\u2014hotels, apartments, villas\u2014making Encostay a hospitality/lodging peer to Marriott despite smaller scale."
+        }
+      ]
     },
     {
       "name": "RMR Lumen Electrical",
@@ -1635,7 +2367,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "RMR Lumen Electrical sells household goods and appliances, not hotel lodging, travel, or hospitality services for Marriott\u2019s guests and buyers."
+      "rationale": "Consumer retailer of appliances, housewares, and furniture, not a hotel, lodging, travel, or guest-loyalty operator.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Consumer retailer of appliances, housewares, and furniture, not a hotel, lodging, travel, or guest-loyalty operator."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Home appliance and furniture retail e-commerce site; no resemblance to Marriott's hotel, lodging, and hospitality business."
+        }
+      ]
     },
     {
       "name": "Fortunebaby",
@@ -1657,7 +2401,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Fortunebaby is a consumer jewelry retailer, not a hotel, lodging, travel, or hospitality operator serving comparable guest needs."
+      "rationale": "Online jewelry retailer, not a hotel, lodging, travel, or hospitality brand.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Online jewelry retailer, not a hotel, lodging, travel, or hospitality brand."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Online jewelry retailer has no overlap with Marriott's hotel, lodging, and travel hospitality business on any axis."
+        }
+      ]
     },
     {
       "name": "Realty Connect USA",
@@ -1683,7 +2439,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Realty Connect USA is a property brokerage, not a hotel operator or hospitality and lodging brand serving travelers and guests."
+      "rationale": "Real estate brokerage serves property buyers and sellers, not hotel guests or lodging travelers; it is neither a hospitality competitor nor comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Real estate brokerage serves property buyers and sellers, not hotel guests or lodging travelers; it is neither a hospitality competitor nor comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Real estate brokerage for home buying/selling, not hospitality or lodging; unrelated industry to Marriott's hotel and travel business."
+        }
+      ]
     },
     {
       "name": "CheapHotelFlights",
@@ -1705,7 +2473,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "CheapHotelFlights is a travel-booking aggregator, not a hotel operator; travelers would not evaluate both for the same lodging-service job."
+      "rationale": "Travel booking aggregator, not a hotel/lodging operator or hospitality brand comparable to Marriott.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Travel booking aggregator, not a hotel/lodging operator or hospitality brand comparable to Marriott."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Travel booking aggregator comparing providers, not a hotel/lodging operator; a distribution channel rather than a competitor or comparable to Marriott."
+        }
+      ]
     },
     {
       "name": "Holiday.me",
@@ -1728,7 +2508,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Holiday.me is a travel booking intermediary, not a hotel operator or lodging brand; travelers would not evaluate both for the same service."
+      "rationale": "Holiday.me is a travel booking agency/reseller, not a hotel or lodging operator comparable to Marriott's hospitality business.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Holiday.me is a travel booking agency/reseller, not a hotel or lodging operator comparable to Marriott's hospitality business."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Online travel agency booking flights/cruises/insurance; a distribution channel, not a hotel/lodging operator like Marriott."
+        }
+      ]
     },
     {
       "name": "Avante Fly",
@@ -1758,7 +2550,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Avante Fly primarily brokers luxury transportation and travel services, not hotel operations or lodging brands; accommodation booking is ancillary."
+      "rationale": "Luxury travel concierge and private-transport booking platform, not a hotel/lodging operator or hospitality brand comparable to Marriott.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Luxury travel concierge and private-transport booking platform, not a hotel/lodging operator or hospitality brand comparable to Marriott."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "AvanteFly is a luxury private-jet/transport booking platform, not a hotel or lodging operator; no shared product or business model with Marriott."
+        }
+      ]
     },
     {
       "name": "Gate 1 Travel",
@@ -1785,7 +2589,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Gate 1 is a travel agency and tour-package provider, not a hotel operator or lodging and hospitality brand like Marriott."
+      "rationale": "Gate 1 is a travel agency and tour-package seller, not a hotel/lodging operator or hospitality brand comparable to Marriott.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Gate 1 is a travel agency and tour-package seller, not a hotel/lodging operator or hospitality brand comparable to Marriott."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Gate 1 is a travel agency selling packaged tours; Marriott operates hotels/lodging. Different products\u2014agency distributes travel, doesn't compete as a lodging peer."
+        }
+      ]
     },
     {
       "name": "Backyou",
@@ -1807,7 +2623,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Backyou provides financial and tax account services, not hotel lodging, travel hospitality, or guest loyalty offerings."
+      "rationale": "Financial-security and tax-information login service is unrelated to Marriott's hotel, lodging, travel, and loyalty business.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Financial-security and tax-information login service is unrelated to Marriott's hotel, lodging, travel, and loyalty business."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Financial/tax login SaaS has no resemblance to Marriott's hotel and hospitality business on product, market, or model."
+        }
+      ]
     },
     {
       "name": "Tiktok 4ev",
@@ -1832,7 +2660,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "4ev is a consumer e-commerce rental store, not a hotel, lodging, travel, or hospitality operator serving Marriott\u2019s guests."
+      "rationale": "Online furniture and accessory rental store, not a hotel, lodging, travel, or guest-loyalty hospitality operator.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Online furniture and accessory rental store, not a hotel, lodging, travel, or guest-loyalty hospitality operator."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Furniture-rental e-commerce store; no overlap with Marriott's hotel/lodging hospitality business on any axis."
+        }
+      ]
     },
     {
       "name": "WSS Power Groups",
@@ -1855,7 +2695,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "WSS Power Groups is an advertising campaign platform, not a hotel, lodging, travel, or hospitality operator competing with Marriott."
+      "rationale": "Advertising campaign platform, not a hotel, lodging, travel, or guest-loyalty operator.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Advertising campaign platform, not a hotel, lodging, travel, or guest-loyalty operator."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Advertising/marketing campaign platform, unrelated to hospitality, hotels, or lodging; no shared product, market, or business model."
+        }
+      ]
     },
     {
       "name": "Superb Purchase",
@@ -1877,7 +2729,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Superb Purchase is a general consumer e-commerce store, not a hotel, lodging, travel, or hospitality operator serving Marriott\u2019s guests."
+      "rationale": "Online retailer of home and wellness products, not a hotel, lodging, travel, or hospitality loyalty operator.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Online retailer of home and wellness products, not a hotel, lodging, travel, or hospitality loyalty operator."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "E-commerce store selling home/wellness products; no resemblance to hotel/lodging hospitality business on any axis."
+        }
+      ]
     },
     {
       "name": "Fair Voyage",
@@ -1910,7 +2774,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Fair Voyage is a travel-planning and tour service, not a hotel operator or lodging and loyalty brand serving the same booking need."
+      "rationale": "Fair Voyage is a tailored-tour travel agency, not a hotel/lodging operator or hospitality brand comparable to Marriott.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Fair Voyage is a tailored-tour travel agency, not a hotel/lodging operator or hospitality brand comparable to Marriott."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Fair Voyage is a travel agency/tour operator, not a hotel or lodging operator\u2014different product and business model from Marriott."
+        }
+      ]
     },
     {
       "name": "Payless Car Rental",
@@ -1938,7 +2814,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Payless offers vehicle rentals, not hotel lodging or hospitality brands; travelers may use both, but not for the same job to be done."
+      "rationale": "Car rental is a travel-adjacent transportation service, not a lodging/hotel operator or comparable hospitality platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Car rental is a travel-adjacent transportation service, not a lodging/hotel operator or comparable hospitality platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Car rental service, not lodging/hospitality; travel-adjacent but different product and buyer job than Marriott's hotel business."
+        }
+      ]
     },
     {
       "name": "Hotel Saver Gift",
@@ -1961,7 +2849,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Hotel Saver Gift is a travel-discount and booking service, not a hotel operator or hospitality brand competing with Marriott\u2019s core lodging offering."
+      "rationale": "Travel-discount and hotel-gift-card reseller, not a hotel/lodging operator or hospitality brand comparable to Marriott.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Travel-discount and hotel-gift-card reseller, not a hotel/lodging operator or hospitality brand comparable to Marriott."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Marriott operates hotel brands; candidate is a discount hotel-booking gift-card reseller, a distribution intermediary rather than a lodging operator or peer."
+        }
+      ]
     },
     {
       "name": "GoGlobia",
@@ -1996,7 +2896,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "GoGlobia is a travel booking agency/platform, not a hotel operator or hospitality brand; users would not evaluate both for the same job."
+      "rationale": "GoGlobia is an online travel agency aggregating bookings, not a hotel and lodging operator or hospitality brand comparable to Marriott.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "GoGlobia is an online travel agency aggregating bookings, not a hotel and lodging operator or hospitality brand comparable to Marriott."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "OTA booking flights/hotels/tours, not a hotel operator like Marriott; distribution intermediary, different business model."
+        }
+      ]
     },
     {
       "name": "SpotHero",
@@ -2028,7 +2940,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "SpotHero is a parking-booking marketplace, not a hotel or lodging operator; travelers use both for distinct jobs rather than evaluate them as alternatives."
+      "rationale": "SpotHero is a parking-reservation marketplace, not a hotel/lodging operator or hospitality loyalty brand.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "SpotHero is a parking-reservation marketplace, not a hotel/lodging operator or hospitality loyalty brand."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "SpotHero is a parking-booking marketplace, not hospitality/lodging; shared travel adjacency is not product, market, or model resemblance."
+        }
+      ]
     },
     {
       "name": "Klook",
@@ -2064,7 +2988,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Klook is an online travel booking marketplace, while Marriott primarily operates hotel and lodging brands; their core business models differ."
+      "rationale": "Hotel booking marketplace is a distribution channel for accommodations, not a hotel and lodging operator comparable to Marriott; record also appears mismatched.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Hotel booking marketplace is a distribution channel for accommodations, not a hotel and lodging operator comparable to Marriott; record also appears mismatched."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "OTA booking marketplace, not a hotel operator; different business model, plus suspicious duplicate record (ru domain, Agoda socials)."
+        }
+      ]
     },
     {
       "name": "Vacation Breeze",
@@ -2086,7 +3022,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Vacation Breeze is a travel-package booking service, not a hotel operator or hospitality brand offering lodging like Marriott."
+      "rationale": "Vacation package booking service serves leisure travelers, but does not operate hotels or lodging brands like Marriott.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Vacation package booking service serves leisure travelers, but does not operate hotels or lodging brands like Marriott."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Travel booking club selling vacation packages \u2014 an agency/reseller in the category, not a hotel/lodging operator like Marriott."
+        }
+      ]
     },
     {
       "name": "SAS Photography",
@@ -2111,7 +3059,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "SAS Photography provides photography services, not hotel lodging, hospitality operations, travel accommodations, or guest loyalty programs."
+      "rationale": "Professional photography service, not a hotel, lodging, travel, or hospitality operator.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Professional photography service, not a hotel, lodging, travel, or hospitality operator."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Photography services business; no resemblance to Marriott's hotel, lodging, and hospitality operations on any axis."
+        }
+      ]
     },
     {
       "name": "X Business",
@@ -2148,7 +3108,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "X Business is an advertising platform, not a hotel, lodging, hospitality, or travel operator serving travelers and guests."
+      "rationale": "Advertising campaign platform, not a hotel, lodging, travel, or guest-loyalty operator.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Advertising campaign platform, not a hotel, lodging, travel, or guest-loyalty operator."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Candidate is an ad-campaign platform; Marriott is a hotel/hospitality company. No product, market, or business-model overlap."
+        }
+      ]
     },
     {
       "name": "Hotel 4 0 1 3 Corporation",
@@ -2175,8 +3147,20 @@
           "https://x.com/hotel4013usa"
         ]
       },
-      "relevant": false,
-      "rationale": "Hotel 4013 appears to be a hotel-management and reservation technology platform, not a hotel and lodging brand operator like Marriott."
+      "relevant": true,
+      "rationale": "Operates a hotel and guest booking/reservation offering, directly comparable to Marriott's lodging and hospitality business.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Operates a hotel and guest booking/reservation offering, directly comparable to Marriott's lodging and hospitality business."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Hotel management and lodging company with booking platform; same hospitality market and business model as Marriott, a smaller comparable."
+        }
+      ]
     },
     {
       "name": "Event Nerdz",
@@ -2203,7 +3187,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Event Nerdz is a travel-deals membership platform, not a hotel or lodging operator; travelers would not evaluate both for the same need."
+      "rationale": "Travel-deals membership and trip-planning resource, not a hotel/lodging operator or hospitality brand comparable to Marriott.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Travel-deals membership and trip-planning resource, not a hotel/lodging operator or hospitality brand comparable to Marriott."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Marriott operates hotels/lodging; Event Nerdz is a travel-deals membership content platform, not a lodging provider or hospitality peer."
+        }
+      ]
     },
     {
       "name": "GroupKii",
@@ -2226,7 +3222,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "GroupKii is Facebook group-management SaaS, while Marriott operates hotels and hospitality brands; their offerings and buyers do not overlap."
+      "rationale": "Facebook group management SaaS is unrelated to operating hotels, lodging brands, travel services, or guest loyalty programs.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Facebook group management SaaS is unrelated to operating hotels, lodging brands, travel services, or guest loyalty programs."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "GroupKii is Facebook group management SaaS; Marriott is a global hotel/hospitality operator. No product, market, or model overlap."
+        }
+      ]
     },
     {
       "name": "Four Seasons Hotels and Resorts",
@@ -2254,7 +3262,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both operate global hotel and resort brands offering accommodations, travel experiences, loyalty-related guest services, and event solutions to overlapping travelers and planners."
+      "rationale": "Four Seasons is a global luxury hotel and resort operator, directly comparable to Marriott in lodging, hospitality, travel, and guest experience.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Four Seasons is a global luxury hotel and resort operator, directly comparable to Marriott in lodging, hospitality, travel, and guest experience."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Four Seasons is a global hotel and resort operator, directly competing with Marriott in hospitality and lodging across product, market, and business model."
+        }
+      ]
     },
     {
       "name": "Bridal Association of America",
@@ -2277,7 +3297,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "A wedding-services membership directory does not operate hotels, lodging, travel, or hospitality brands and serves a different buyer need."
+      "rationale": "Wedding-vendor membership and consumer directory, not a hotel, lodging, travel, or guest-loyalty operator.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Wedding-vendor membership and consumer directory, not a hotel, lodging, travel, or guest-loyalty operator."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Wedding vendor directory/membership association, not a hotel or lodging hospitality company; no resemblance to Marriott's core business."
+        }
+      ]
     },
     {
       "name": "Pack Booking",
@@ -2300,7 +3332,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Pack Booking is a travel-booking agency/platform, not a hotel operator or hospitality brand serving guests through owned or managed lodging."
+      "rationale": "Travel booking intermediary selling packages and reservations, not a hotel/lodging operator or hospitality brand comparable to Marriott.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Travel booking intermediary selling packages and reservations, not a hotel/lodging operator or hospitality brand comparable to Marriott."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Pack Booking is an online travel agency reselling flights/hotels; Marriott operates lodging brands. OTA distributor, not a hospitality operator or competitor."
+        }
+      ]
     },
     {
       "name": "Best Hotel Products",
@@ -2328,7 +3372,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Best Hotel Products supplies hotel furnishings and equipment; it does not operate hotels, lodging, travel, or guest loyalty brands."
+      "rationale": "Hotel furniture and supply retailer serving hospitality properties, not a lodging operator, hotel brand, or guest loyalty platform comparable to Marriott.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Hotel furniture and supply retailer serving hospitality properties, not a lodging operator, hotel brand, or guest loyalty platform comparable to Marriott."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "E-commerce supplier selling hotel furniture and supplies; a vendor to hotels, not a hospitality operator or competitor to Marriott."
+        }
+      ]
     },
     {
       "name": "Cheap Adventures LLC",
@@ -2356,7 +3412,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Cheap Adventures is a flight-booking platform, not a hotel operator or lodging/loyalty brand serving the same accommodation need."
+      "rationale": "Flight-deal booking platform, not a hotel/lodging operator or hospitality loyalty brand; it is a complementary travel service rather than a comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Flight-deal booking platform, not a hotel/lodging operator or hospitality loyalty brand; it is a complementary travel service rather than a comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Flight-deal booking platform, not hotel/lodging operator; different product and buyer job than Marriott's hospitality business."
+        }
+      ]
     },
     {
       "name": "Auktionsverket Trollh\u00e4ttan",
@@ -2378,7 +3446,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "An online auction marketplace does not overlap Marriott\u2019s core hotel, lodging, travel, or guest loyalty offerings or serve the same purchasing need."
+      "rationale": "Online auction marketplace for goods; it does not operate lodging, hotel brands, travel services, or a hospitality loyalty business.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Online auction marketplace for goods; it does not operate lodging, hotel brands, travel services, or a hospitality loyalty business."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Online auction platform for goods; no resemblance to Marriott's hotel, lodging, and hospitality business."
+        }
+      ]
     },
     {
       "name": "X Corp.",
@@ -2415,7 +3495,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "X Business is an advertising platform, while Marriott primarily operates hotels and hospitality brands; their core offerings and buyer use cases do not overlap."
+      "rationale": "Advertising campaign platform, not a hotel, lodging, travel, or hospitality loyalty operator.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Advertising campaign platform, not a hotel, lodging, travel, or hospitality loyalty operator."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Candidate is an AI advertising campaign platform, unrelated to Marriott's hotel/lodging hospitality business on any axis."
+        }
+      ]
     },
     {
       "name": "WhataHotel!",
@@ -2441,7 +3533,24 @@
         ]
       },
       "relevant": false,
-      "rationale": "WhataHotel is a hotel booking and rewards intermediary, not a hotel operator or lodging brand like Marriott."
+      "rationale": "Marriott operates and brands hotels; WhataHotel! is a booking/travel-agency service selling access to others' hotels \u2014 a channel partner, not a peer operator.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Travel booking and loyalty service for high-end hotel stays; comparable hospitality offering, though it does not operate hotel properties."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Marriott operates and brands hotels; WhataHotel! is a booking/travel-agency service selling access to others' hotels \u2014 a channel partner, not a peer operator."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "Candidate is a small hotel-booking/travel agency reselling stays, not a hotel operator or lodging brand like Marriott."
+        }
+      ]
     },
     {
       "name": "Life Journeys Media",
@@ -2468,7 +3577,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Life Journeys Media sells personalized family-memory eBooks, not hotel lodging, hospitality, travel, or guest loyalty services."
+      "rationale": "Family-memory eBook platform is unrelated to Marriott's hotel, lodging, travel, and loyalty business.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Family-memory eBook platform is unrelated to Marriott's hotel, lodging, travel, and loyalty business."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Family-memory eBook platform has no overlap with hotel/lodging hospitality; unrelated product, market, and business model."
+        }
+      ]
     },
     {
       "name": "Smarter Getaways",
@@ -2490,7 +3611,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Smarter Getaways is a travel membership and booking service, not a hotel operator or hospitality brand competing for the same lodging need."
+      "rationale": "Travel membership and booking service that sells hotel stays and vacation packages, but does not operate lodging brands or a comparable hospitality business.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Travel membership and booking service that sells hotel stays and vacation packages, but does not operate lodging brands or a comparable hospitality business."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Travel-membership booking service reselling hotel stays and vouchers\u2014a distribution channel for lodging, not a hotel operator or hospitality peer of Marriott."
+        }
+      ]
     },
     {
       "name": "OnFindr",
@@ -2512,7 +3645,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "OnFindr is a local business directory and review platform, not a hotel operator or hospitality and lodging brand."
+      "rationale": "OnFindr is a local business directory and review platform, not a hotel and lodging operator or hospitality loyalty brand.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "OnFindr is a local business directory and review platform, not a hotel and lodging operator or hospitality loyalty brand."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "OnFindr is a local business directory, not a hotel/lodging operator; no product, market, or model overlap with Marriott's hospitality business."
+        }
+      ]
     },
     {
       "name": "WeRoad",
@@ -2545,7 +3690,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "WeRoad sells organized adventure tours, not hotel lodging or hospitality brands; travelers would not evaluate both for the same core job."
+      "rationale": "WeRoad organizes adventure group trips, while Marriott operates lodging and hotel brands; it is more a travel-tour provider than a hotel hospitality competitor.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "WeRoad organizes adventure group trips, while Marriott operates lodging and hotel brands; it is more a travel-tour provider than a hotel hospitality competitor."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "WeRoad organizes group adventure tours; Marriott operates hotels/lodging. Shared travel taxonomy alone isn't a product or model resemblance."
+        }
+      ]
     },
     {
       "name": "Scott Dunn Ltd.",
@@ -2577,7 +3734,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Scott Dunn is a travel agency selling tailored trips, not a hotel operator offering lodging and hospitality brands like Marriott."
+      "rationale": "Scott Dunn is a luxury travel agency curating and booking holidays, not a hotel or lodging operator comparable to Marriott.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Scott Dunn is a luxury travel agency curating and booking holidays, not a hotel or lodging operator comparable to Marriott."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Luxury travel agency booking others' hotels and tours, not a lodging operator; serves the hotel category rather than competing with Marriott."
+        }
+      ]
     },
     {
       "name": "BAOJINJIA",
@@ -2599,7 +3768,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "BAOJINJIA sells electronics and appliances to hospitality businesses; it does not operate hotels, lodging, travel, or guest loyalty brands."
+      "rationale": "BAOJINJIA supplies electronics to hospitality businesses; it does not operate hotels, lodging, travel, or guest-loyalty brands.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "BAOJINJIA supplies electronics to hospitality businesses; it does not operate hotels, lodging, travel, or guest-loyalty brands."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Electronics supplier selling computers and appliances to hotels; a vendor to hospitality, not a hotel/lodging operator like Marriott."
+        }
+      ]
     },
     {
       "name": "Travelwhirled",
@@ -2624,7 +3805,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Travelwhirled is a customized trip-planning service, not a hotel or lodging operator; travelers would not evaluate both for the same need."
+      "rationale": "Customized adventure-trip planning service, not a hotel/lodging operator or hospitality brand comparable to Marriott.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Customized adventure-trip planning service, not a hotel/lodging operator or hospitality brand comparable to Marriott."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Travelwhirled is a bespoke adventure-trip planning service, not a hotel/lodging operator; it doesn't compete with Marriott's core hospitality product."
+        }
+      ]
     },
     {
       "name": "Well Traveled Group Inc.",
@@ -2652,7 +3845,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Well Traveled is a travel-recommendation membership service, not a hotel operator offering lodging and hospitality brands to travelers."
+      "rationale": "Travel recommendation membership and content community, not a hotel/lodging operator or hospitality brand comparable to Marriott.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Travel recommendation membership and content community, not a hotel/lodging operator or hospitality brand comparable to Marriott."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Travel content and recommendations membership service, not a hotel/lodging operator; does not compete with or resemble Marriott's hospitality business."
+        }
+      ]
     },
     {
       "name": "Coupons Studio",
@@ -2675,10 +3880,20 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Coupons Studio is a coupon and affiliate promotions platform, not a hotel operator or hospitality and lodging brand."
+      "rationale": "Coupon and affiliate promotions site, not a hotel/lodging operator or hospitality loyalty brand.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Coupon and affiliate promotions site, not a hotel/lodging operator or hospitality loyalty brand."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Coupon aggregation platform, not hospitality/lodging; no product, market, or business-model resemblance to a hotel company."
+        }
+      ]
     }
   ],
-  "error": null,
-  "relevant_count_at_25": 1,
-  "precision_at_25": 4.0
+  "error": null
 }

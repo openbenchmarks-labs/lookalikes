@@ -7,20 +7,20 @@
     "name": "domain_similarity"
   },
   "k": 100,
-  "relevant_count": 46,
-  "precision_at_k": 46.0,
-  "relevant_count_at_10": 7,
-  "relevant_count_at_25": 15,
-  "relevant_count_at_100": 46,
-  "precision_at_10": 70.0,
-  "precision_at_25": 60.0,
-  "precision_at_100": 46.0,
+  "relevant_count": 65,
+  "precision_at_k": 65.0,
+  "relevant_count_at_10": 9,
+  "relevant_count_at_25": 20,
+  "relevant_count_at_100": 65,
+  "precision_at_10": 90.0,
+  "precision_at_25": 80.0,
+  "precision_at_100": 65.0,
   "latency_ms": 1952,
   "cost_usd": null,
   "duplicates_removed": 1,
   "max_results": null,
-  "judge_model": "gpt-5.6",
-  "judged_at": "2026-07-27T06:50:19Z",
+  "judge_model": "majority(n=3): claude-opus-5,gpt-5.6-terra,kimi-k3",
+  "judged_at": "2026-08-10T20:14:16Z",
   "candidates": [
     {
       "name": "Hers",
@@ -36,8 +36,20 @@
         "industries": null,
         "employee_count": "201-500"
       },
-      "relevant": false,
-      "rationale": "Both offer virtual women\u2019s healthcare, but Maven sells employer benefits while Hers primarily sells direct-to-consumer treatments; buyers and jobs differ."
+      "relevant": true,
+      "rationale": "Both provide virtual healthcare for women, though Hers focuses on direct-to-consumer telehealth treatments rather than employer family-health benefits.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both provide virtual healthcare for women, though Hers focuses on direct-to-consumer telehealth treatments rather than employer family-health benefits."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are virtual-care platforms focused on women's health, connecting patients to licensed providers online \u2014 same market, product model, and buyer persona."
+        }
+      ]
     },
     {
       "name": "Tia",
@@ -54,7 +66,19 @@
         "employee_count": "201-500"
       },
       "relevant": true,
-      "rationale": "Both provide integrated virtual women\u2019s healthcare, including reproductive, primary, and mental health services, with overlapping users and benefits buyers."
+      "rationale": "Tia delivers women\u2019s health care through virtual and in-person appointments, closely overlapping Maven\u2019s virtual women\u2019s and family-health offering.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Tia delivers women\u2019s health care through virtual and in-person appointments, closely overlapping Maven\u2019s virtual women\u2019s and family-health offering."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Women's health care platform combining virtual and in-person care; direct competitor to Maven's women's health virtual-care model."
+        }
+      ]
     },
     {
       "name": "Wisp",
@@ -70,8 +94,20 @@
         "industries": null,
         "employee_count": "51-200"
       },
-      "relevant": false,
-      "rationale": "Both address women\u2019s reproductive health, but Maven is an employer benefits platform while Wisp primarily sells telehealth care directly to consumers."
+      "relevant": true,
+      "rationale": "Both provide virtual healthcare focused on women\u2019s reproductive and family-health needs, making Wisp a direct telehealth comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both provide virtual healthcare focused on women\u2019s reproductive and family-health needs, making Wisp a direct telehealth comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are virtual-care/telehealth platforms focused on women's health; Wisp covers reproductive and sexual health, directly overlapping Maven's product and market."
+        }
+      ]
     },
     {
       "name": "Midi",
@@ -88,7 +124,19 @@
         "employee_count": "51-200"
       },
       "relevant": true,
-      "rationale": "Both provide virtual women\u2019s health care and employer benefits, with overlapping buyers seeking menopause and family-health services."
+      "rationale": "Virtual women's-health clinic delivering insurance-covered telehealth, directly comparable to Maven's women's and family-health care platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Virtual women's-health clinic delivering insurance-covered telehealth, directly comparable to Maven's women's and family-health care platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are virtual-care clinics focused on women's health; Midi targets midlife/menopause care, a direct overlap in product and market."
+        }
+      ]
     },
     {
       "name": "MAVEN Project",
@@ -105,7 +153,24 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "Both use telehealth, but MAVEN Project serves safety-net clinics with volunteer specialty guidance, not employer-sponsored women\u2019s and family health benefits."
+      "rationale": "Both provide virtual healthcare, but MAVEN Project is a nonprofit specialist-support platform for safety-net clinics, not a women's and family health benefits platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Both provide virtual healthcare, but MAVEN Project is a nonprofit specialist-support platform for safety-net clinics, not a women's and family health benefits platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are telehealth/virtual-care platforms delivering remote specialty care; comparable on product axis despite different patient segments (women's health vs safety-net populations)."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "Nonprofit provider-to-provider telehealth mentoring for safety-net clinics; not an employer-benefits virtual care platform like Maven Clinic."
+        }
+      ]
     },
     {
       "name": "Progyny",
@@ -122,7 +187,19 @@
         "employee_count": "501-1000"
       },
       "relevant": true,
-      "rationale": "Both provide employer-sponsored women\u2019s and family health benefits spanning fertility, pregnancy, postpartum, parenting, and related virtual-care support."
+      "rationale": "Both provide employer-sponsored virtual women\u2019s and family health benefits, including fertility, pregnancy, postpartum, and menopause support.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both provide employer-sponsored virtual women\u2019s and family health benefits, including fertility, pregnancy, postpartum, and menopause support."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both sell employer-sponsored family-building/women's health benefits platforms; direct competitors in fertility and family health benefits market."
+        }
+      ]
     },
     {
       "name": "Pomelo Care",
@@ -139,7 +216,19 @@
         "employee_count": "201-500"
       },
       "relevant": true,
-      "rationale": "Both provide employer and health-plan virtual maternity/family healthcare benefits, targeting the same buyers and maternal-care needs."
+      "rationale": "Virtual-care provider focused on pregnancy, postpartum, women\u2019s, and pediatric/family health\u2014directly comparable to Maven Clinic\u2019s family-health benefits platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Virtual-care provider focused on pregnancy, postpartum, women\u2019s, and pediatric/family health\u2014directly comparable to Maven Clinic\u2019s family-health benefits platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Virtual-care platform for women's, pregnancy, and family health \u2014 direct competitor to Maven Clinic on product, market, and model."
+        }
+      ]
     },
     {
       "name": "Visana Health",
@@ -156,7 +245,19 @@
         "employee_count": "51-200"
       },
       "relevant": true,
-      "rationale": "Both provide virtual women\u2019s health care platforms spanning reproductive and hormonal needs, serving overlapping patients and employer health-benefit buyers."
+      "rationale": "Both provide virtual, longitudinal women's health care, making Visana a direct product and market comparable to Maven Clinic.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both provide virtual, longitudinal women's health care, making Visana a direct product and market comparable to Maven Clinic."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are virtual women's health care platforms serving the same patients with the same telehealth model; direct competitors."
+        }
+      ]
     },
     {
       "name": "Mahmee",
@@ -173,7 +274,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Both provide coordinated virtual maternity and postpartum care, serving expectant and new parents with overlapping pregnancy, lactation, and family-health needs."
+      "rationale": "Mahmee provides pregnancy and postpartum maternal care, directly overlapping Maven Clinic\u2019s women\u2019s and family health virtual-care focus.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Mahmee provides pregnancy and postpartum maternal care, directly overlapping Maven Clinic\u2019s women\u2019s and family health virtual-care focus."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both provide virtual maternal/women's health care services; Mahmee's pregnancy and postpartum platform directly overlaps Maven's women's and family health focus."
+        }
+      ]
     },
     {
       "name": "Kindbody",
@@ -190,7 +303,19 @@
         "employee_count": "501-1000"
       },
       "relevant": true,
-      "rationale": "Both provide employer-facing fertility and family-building benefits with integrated reproductive care, targeting the same benefits buyers and patient populations."
+      "rationale": "Employer-focused virtual and clinical fertility, family-building, and women\u2019s health benefits platform directly overlaps Maven Clinic\u2019s core offering.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Employer-focused virtual and clinical fertility, family-building, and women\u2019s health benefits platform directly overlaps Maven Clinic\u2019s core offering."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are women's/family-health benefits platforms combining virtual care and employer benefit solutions \u2014 direct competitors on product, market, and model."
+        }
+      ]
     },
     {
       "name": "Advantia Health",
@@ -207,7 +332,24 @@
         "employee_count": "51-200"
       },
       "relevant": false,
-      "rationale": "Advantia is primarily a clinical provider group, not an employer-focused virtual-care and benefits platform; purchasing model and buyers differ."
+      "rationale": "Provides women's and maternal health services, including telemedicine, but is primarily a multi-location care provider rather than an employer benefits platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Provides women's and maternal health services, including telemedicine, but is primarily a multi-location care provider rather than an employer benefits platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Tech-enabled women's health provider offering telehealth and OB/GYN care \u2014 same women's health market and overlapping virtual-care product as Maven, akin to Tia."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "Brick-and-mortar women's health provider group serving patients directly, not a virtual-care benefits platform sold to employers."
+        }
+      ]
     },
     {
       "name": "HerMD",
@@ -224,7 +366,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Both provide virtual women\u2019s healthcare, with overlapping gynecology and menopause-related services for women seeking remote specialist care."
+      "rationale": "Both provide virtual healthcare focused on women\u2019s health; HerMD is a direct comparable, though narrower than Maven\u2019s family-benefits platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both provide virtual healthcare focused on women\u2019s health; HerMD is a direct comparable, though narrower than Maven\u2019s family-benefits platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are virtual-care platforms specializing in women's health; same product, market, and care-delivery model \u2014 direct competitors/comparables."
+        }
+      ]
     },
     {
       "name": "Medici",
@@ -240,8 +394,20 @@
         "industries": null,
         "employee_count": "201-500"
       },
-      "relevant": false,
-      "rationale": "Medici provides broad preventive and concierge virtual care, not a women\u2019s and family health benefits platform targeting the same employer-benefits buyer."
+      "relevant": true,
+      "rationale": "Both provide virtual healthcare platforms serving families, including pediatric and counseling care; Medici is a credible digital-care comparable despite broader preventive focus.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both provide virtual healthcare platforms serving families, including pediatric and counseling care; Medici is a credible digital-care comparable despite broader preventive focus."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are virtual-care platforms delivered via app, overlapping on family/pediatric care and remote condition management; strong product and market resemblance."
+        }
+      ]
     },
     {
       "name": "Axia Women's Health",
@@ -258,7 +424,19 @@
         "employee_count": "1001-5000"
       },
       "relevant": false,
-      "rationale": "Axia is a direct healthcare provider network, while Maven is a virtual-care benefits platform sold to employers and health plans; buyers differ."
+      "rationale": "Axia is a women's healthcare provider network, whereas Maven is a virtual-care benefits platform for employers and members; they are not direct peers.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Axia is a women's healthcare provider network, whereas Maven is a virtual-care benefits platform for employers and members; they are not direct peers."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Axia is a provider network of women's health clinics, not a virtual-care/benefits platform; it's a care provider, not a comparable to Maven's digital platform model."
+        }
+      ]
     },
     {
       "name": "Minnesota Women's Care",
@@ -275,7 +453,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "Minnesota Women's Care is a local clinical provider, not a virtual-care and employer benefits platform evaluated by benefits buyers."
+      "rationale": "Local in-person women's health practice, not a virtual-care and employer benefits platform comparable to Maven Clinic.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Local in-person women's health practice, not a virtual-care and employer benefits platform comparable to Maven Clinic."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Brick-and-mortar OB/GYN clinic practice, not a virtual-care platform or employer benefits product like Maven; different business model."
+        }
+      ]
     },
     {
       "name": "Expectful",
@@ -291,8 +481,25 @@
         "industries": null,
         "employee_count": "1-10"
       },
-      "relevant": false,
-      "rationale": "Expectful is a consumer maternal-wellness content platform, not a virtual-care and employer benefits platform evaluated by Maven\u2019s B2B buyers."
+      "relevant": true,
+      "rationale": "Provides women's fertility, pregnancy, and postpartum health support, overlapping Maven's family-health focus, though as a consumer wellness content platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Provides women's fertility, pregnancy, and postpartum health support, overlapping Maven's family-health focus, though as a consumer wellness content platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Expectful is a consumer content/meditation app for moms, not a virtual-care clinical platform; shared audience but no product or model resemblance."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Both serve maternal/family health from fertility through postpartum; Expectful is a consumer wellness/content peer, comparable in women's health space."
+        }
+      ]
     },
     {
       "name": "Anya",
@@ -309,7 +516,19 @@
         "employee_count": "51-200"
       },
       "relevant": true,
-      "rationale": "Both provide virtual women\u2019s and family health support, including employer benefits and specialist care across reproductive and parenting life stages."
+      "rationale": "Women's and family-health virtual-care platform serving employers and care providers, closely overlapping Maven Clinic's benefits and care model.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Women's and family-health virtual-care platform serving employers and care providers, closely overlapping Maven Clinic's benefits and care model."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are virtual women's/family health platforms sold as employer benefits with specialist consultations; strong product and market overlap."
+        }
+      ]
     },
     {
       "name": "Mavida Health",
@@ -326,7 +545,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Both provide virtual women\u2019s health care, with overlapping fertility, pregnancy, postpartum, and mental-health services for women and families."
+      "rationale": "Both provide virtual healthcare focused on women\u2019s reproductive, pregnancy, and postpartum needs; Mavida is a narrower maternal mental-health care comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both provide virtual healthcare focused on women\u2019s reproductive, pregnancy, and postpartum needs; Mavida is a narrower maternal mental-health care comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both offer virtual care for women's health across fertility, pregnancy, and postpartum; same product category and buyer/member market."
+        }
+      ]
     },
     {
       "name": "Delfina",
@@ -343,7 +574,19 @@
         "employee_count": "51-200"
       },
       "relevant": true,
-      "rationale": "Both provide virtual maternal-health care and benefits to pregnant members, employers, health plans, and providers for overlapping pregnancy-care needs."
+      "rationale": "Pregnancy-focused virtual-care platform providing maternity benefits, telehealth, and care support to members, employers, and health plans\u2014directly comparable to Maven Clinic.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Pregnancy-focused virtual-care platform providing maternity benefits, telehealth, and care support to members, employers, and health plans\u2014directly comparable to Maven Clinic."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Virtual pregnancy/maternal care platform with telehealth and employer/health-plan benefits model; directly overlaps Maven's women's and family health focus."
+        }
+      ]
     },
     {
       "name": "mHospital",
@@ -359,8 +602,20 @@
         "industries": null,
         "employee_count": "11-50"
       },
-      "relevant": false,
-      "rationale": "mHospital provides general on-demand medical care, not an employer-focused women\u2019s and family health benefits platform serving the same buyer and use case."
+      "relevant": true,
+      "rationale": "Both provide virtual healthcare platforms, though mHospital is general telemedicine rather than family-health benefits focused.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both provide virtual healthcare platforms, though mHospital is general telemedicine rather than family-health benefits focused."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are virtual-care/telehealth platforms connecting patients with licensed doctors; same product and business model, differing only in specialty focus."
+        }
+      ]
     },
     {
       "name": "InovCares",
@@ -377,7 +632,19 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "Both provide digital maternal-health care spanning pregnancy and postpartum support, serving overlapping patients and care teams with similar virtual-care needs."
+      "rationale": "Digital prenatal and postpartum virtual-care platform for women of color, directly comparable to Maven\u2019s women\u2019s and family health focus.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Digital prenatal and postpartum virtual-care platform for women of color, directly comparable to Maven\u2019s women\u2019s and family health focus."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are virtual-care platforms for women's/maternal health; InovCares offers digital prenatal/postpartum care, directly comparable product and market."
+        }
+      ]
     },
     {
       "name": "Viva Eve",
@@ -394,7 +661,19 @@
         "employee_count": "51-200"
       },
       "relevant": false,
-      "rationale": "Viva Eve is an in-person specialty care provider, not a virtual-care and employer benefits platform; buyers and delivery models differ."
+      "rationale": "Women\u2019s health focus overlaps, but Viva Eve is an in-person specialty clinic, not a virtual-care and employer benefits platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Women\u2019s health focus overlaps, but Viva Eve is an in-person specialty clinic, not a virtual-care and employer benefits platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "In-person fibroid/gynecology specialty clinic; Maven is a virtual-care and employer-benefits platform. Women's-health overlap alone is weak, product and model differ."
+        }
+      ]
     },
     {
       "name": "MeMD",
@@ -411,7 +690,19 @@
         "employee_count": "51-200"
       },
       "relevant": true,
-      "rationale": "Both provide employer-sponsored virtual healthcare, including women\u2019s health, and target benefits leaders and brokers seeking expanded employee care access."
+      "rationale": "Telehealth platform serving employer benefits, including women\u2019s health and behavioral care; a credible virtual-care comparable despite broader, less specialized scope.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Telehealth platform serving employer benefits, including women\u2019s health and behavioral care; a credible virtual-care comparable despite broader, less specialized scope."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Virtual-care telehealth platform sold as employee benefit, includes women's and family health services \u2014 same product and market as Maven."
+        }
+      ]
     },
     {
       "name": "Happy Mama",
@@ -428,7 +719,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Both provide virtual maternal-health support spanning pregnancy and postpartum, serving women and families seeking coordinated education, care, and specialist support."
+      "rationale": "Maternal-health platform and virtual care/support across pregnancy and postpartum closely overlap Maven\u2019s women\u2019s and family health offering.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Maternal-health platform and virtual care/support across pregnancy and postpartum closely overlap Maven\u2019s women\u2019s and family health offering."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Maternal-health platform with virtual doula support spanning preconception to postpartum \u2014 same women's-health virtual-care product and market as Maven."
+        }
+      ]
     },
     {
       "name": "Grand Rounds Health",
@@ -445,7 +748,19 @@
         "employee_count": "51-200"
       },
       "relevant": true,
-      "rationale": "Both sell employer-sponsored virtual healthcare and benefits navigation platforms to HR and benefits leaders, with overlapping family and behavioral health use cases."
+      "rationale": "Both offer employer-oriented virtual-care platforms with care navigation and coordinated health benefits, though Included Health is broader than women\u2019s and family health.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both offer employer-oriented virtual-care platforms with care navigation and coordinated health benefits, though Included Health is broader than women\u2019s and family health."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are employer-sponsored virtual-care and health-benefits platforms; direct competitors in digital health benefits, differing mainly in population focus."
+        }
+      ]
     },
     {
       "name": "Myri Health",
@@ -462,7 +777,19 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "Both offer employer-facing virtual maternal health support for pregnancy and postpartum care, targeting benefits buyers and expecting families."
+      "rationale": "Digital maternal-care platform supporting expecting and postpartum mothers, employers, and health systems; directly overlaps Maven's family-health virtual-care and benefits focus.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Digital maternal-care platform supporting expecting and postpartum mothers, employers, and health systems; directly overlaps Maven's family-health virtual-care and benefits focus."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Digital maternal-care platform serving women's health and employer maternity benefits \u2014 direct overlap with Maven's virtual women's/family health model."
+        }
+      ]
     },
     {
       "name": "MomDoc Women for Women",
@@ -479,7 +806,19 @@
         "employee_count": "51-200"
       },
       "relevant": false,
-      "rationale": "MomDoc is a regional OB/GYN medical practice, not a virtual-care and employer benefits platform for women\u2019s and family health."
+      "rationale": "Local OB/GYN practice delivering direct patient care, not a virtual family-health benefits platform for employers and health plans.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Local OB/GYN practice delivering direct patient care, not a virtual family-health benefits platform for employers and health plans."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Traditional brick-and-mortar OB/GYN practice in Arizona, not a virtual-care/employee-benefits platform; merely a care provider in the category, not a comparable."
+        }
+      ]
     },
     {
       "name": "Hello Alpha",
@@ -496,7 +835,19 @@
         "employee_count": "51-200"
       },
       "relevant": true,
-      "rationale": "Both provide virtual women\u2019s health care, with overlapping services and users seeking convenient care for women-specific and broader health needs."
+      "rationale": "Women-focused virtual healthcare platform with personalized online care, overlapping Maven Clinic\u2019s core women\u2019s health telehealth offering.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Women-focused virtual healthcare platform with personalized online care, overlapping Maven Clinic\u2019s core women\u2019s health telehealth offering."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Virtual-care platform specifically for women's health; same product, patient market, and telehealth model as Maven Clinic."
+        }
+      ]
     },
     {
       "name": "Fomin Clinic",
@@ -513,7 +864,24 @@
         "employee_count": "1001-5000"
       },
       "relevant": false,
-      "rationale": "Fomin is a physical clinic network serving patients, not a virtual family-health benefits platform purchased by employers or health plans."
+      "rationale": "Maven is a virtual-care/benefits platform; Fomin is a brick-and-mortar clinic network with no telehealth or benefits-platform model \u2014 analogous to Teladoc vs. a hospital.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both focus on women\u2019s reproductive, pregnancy, and family health, making the clinic network a healthcare-service comparable despite its in-person model."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Maven is a virtual-care/benefits platform; Fomin is a brick-and-mortar clinic network with no telehealth or benefits-platform model \u2014 analogous to Teladoc vs. a hospital."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "Physical clinic network delivering care, not a virtual-care/employer-benefits software platform; different model and buyer.'t"
+        }
+      ]
     },
     {
       "name": "Marani Health",
@@ -530,7 +898,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Both provide virtual maternal-health solutions, targeting health plans, employers, and care providers seeking pregnancy and postpartum support."
+      "rationale": "Both provide virtual, technology-enabled maternal care for health plans, employers, providers, and patients across pregnancy and postpartum.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both provide virtual, technology-enabled maternal care for health plans, employers, providers, and patients across pregnancy and postpartum."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are virtual women's/maternal health platforms selling to employers and health plans; strong market and business-model overlap in maternal care."
+        }
+      ]
     },
     {
       "name": "Mavie",
@@ -547,7 +927,19 @@
         "employee_count": "51-200"
       },
       "relevant": true,
-      "rationale": "Both sell employer-focused virtual healthcare and wellness benefits to HR teams, though Mavie is broader rather than specializing in women\u2019s and family health."
+      "rationale": "Employer-focused virtual-care and wellness platform, comparable to Maven's benefits-based family-health delivery model despite broader health scope.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Employer-focused virtual-care and wellness platform, comparable to Maven's benefits-based family-health delivery model despite broader health scope."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Virtual-care/telemedicine platform sold as workplace health benefits; matches Maven on product (virtual care) and business model (employer benefits), though broader than women's health."
+        }
+      ]
     },
     {
       "name": "Nabta Health",
@@ -564,7 +956,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Both provide digitally enabled women\u2019s and family healthcare, including employer-oriented benefits and personalized virtual clinical support for overlapping health needs."
+      "rationale": "Both provide women\u2019s and family health care through a technology-enabled platform, including employer-facing benefits and personalized clinical support.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both provide women\u2019s and family health care through a technology-enabled platform, including employer-facing benefits and personalized clinical support."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are women's and family health platforms blending virtual care with benefits-style services; same product and market, direct comparable."
+        }
+      ]
     },
     {
       "name": "Amaze Health",
@@ -581,7 +985,19 @@
         "employee_count": "51-200"
       },
       "relevant": true,
-      "rationale": "Both sell employer-sponsored virtual care and health-benefits platforms to HR leaders, though Amaze is broader and Maven specializes in women\u2019s and family health."
+      "rationale": "Employer-sponsored virtual-care platform; overlaps Maven\u2019s benefits model and family-health adjacent services, though broader across employee healthcare.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Employer-sponsored virtual-care platform; overlaps Maven\u2019s benefits model and family-health adjacent services, though broader across employee healthcare."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are employer-sponsored virtual-care benefits platforms; Amaze offers broader care rather than women's health focus, but same product and model."
+        }
+      ]
     },
     {
       "name": "Maya Healthcare Clinic",
@@ -598,7 +1014,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "Maya is a patient-facing local clinical practice, not a virtual-care and employer benefits platform for women\u2019s and family health."
+      "rationale": "Local primary-care clinic offering women\u2019s and telehealth services, not an employer-focused virtual-care and family-benefits platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Local primary-care clinic offering women\u2019s and telehealth services, not an employer-focused virtual-care and family-benefits platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Small local primary-care clinic, not a virtual-care/benefits platform; a care provider practice rather than a platform comparable to Maven."
+        }
+      ]
     },
     {
       "name": "Motherbeing",
@@ -615,7 +1043,19 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "Both provide virtual consultations and digital health support for women, addressing overlapping users and women\u2019s health needs."
+      "rationale": "Both provide virtual healthcare focused on women\u2019s health, making Motherbeing a relevant product and market comparable despite its consumer-oriented positioning.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both provide virtual healthcare focused on women\u2019s health, making Motherbeing a relevant product and market comparable despite its consumer-oriented positioning."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are virtual-care platforms focused on women's health, offering remote consultations and health guidance to the same audience."
+        }
+      ]
     },
     {
       "name": "Ms.Medicine",
@@ -631,8 +1071,20 @@
         "industries": null,
         "employee_count": "11-50"
       },
-      "relevant": false,
-      "rationale": "Ms.Medicine is a patient-facing concierge primary-care network, not an employer-focused virtual family-health benefits platform; buyer and delivery models differ."
+      "relevant": true,
+      "rationale": "Women's-health-focused care provider with a membership/virtual-access model; comparable family-health care offering despite concierge primary-care emphasis.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Women's-health-focused care provider with a membership/virtual-access model; comparable family-health care offering despite concierge primary-care emphasis."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both provide dedicated women's health care services; same buyer persona and job-to-be-done, differing only in virtual vs concierge delivery model."
+        }
+      ]
     },
     {
       "name": "MomsLab",
@@ -649,7 +1101,19 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "Both provide virtual women\u2019s health support, including pregnancy, postpartum, mental wellness, and clinician access, serving overlapping users and care needs."
+      "rationale": "Women's health platform supporting pregnancy, postpartum, and mental wellness; comparable virtual-care offering despite greater consumer wellness emphasis.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Women's health platform supporting pregnancy, postpartum, and mental wellness; comparable virtual-care offering despite greater consumer wellness emphasis."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are virtual women's health platforms offering pregnancy/postpartum programs and specialist consultations; strong product and market overlap with Maven Clinic."
+        }
+      ]
     },
     {
       "name": "FlexCare Digital Health",
@@ -666,7 +1130,19 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "Both sell employer-sponsored virtual-care benefits to HR teams and health plans, though FlexCare is broader rather than women\u2019s and family-health focused."
+      "rationale": "Both provide employer-focused virtual-care benefits, though FlexCare is broader telemedicine rather than women\u2019s and family health specialized.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both provide employer-focused virtual-care benefits, though FlexCare is broader telemedicine rather than women\u2019s and family health specialized."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are virtual-care platforms sold as employer/health-plan benefits; FlexCare is a general telehealth peer to Maven's women's-health-focused virtual clinic."
+        }
+      ]
     },
     {
       "name": "true. Women's Health",
@@ -683,7 +1159,24 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "It is a direct-to-patient concierge medical practice, not a virtual family-health benefits platform evaluated by employers or health plans."
+      "rationale": "A direct-to-patient menopause-focused medical practice, not a virtual-care benefits platform serving employers and families.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "A direct-to-patient menopause-focused medical practice, not a virtual-care benefits platform serving employers and families."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Women's-health medical practice with virtual/24-7 access; delivers the same virtual women's healthcare product as Maven Clinic \u2014 a peer comparable."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "Seed is a B2B employer-benefits virtual care platform; candidate is a direct-to-consumer concierge clinic, different buyer and model."
+        }
+      ]
     },
     {
       "name": "Capital Women's Care",
@@ -700,7 +1193,19 @@
         "employee_count": "201-500"
       },
       "relevant": false,
-      "rationale": "Capital Women\u2019s Care is a regional clinical provider, not a virtual-care and employer benefits platform evaluated by benefits buyers."
+      "rationale": "Regional in-person OB/GYN provider network, not a virtual women\u2019s/family health benefits platform serving employer-sponsored populations.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Regional in-person OB/GYN provider network, not a virtual women\u2019s/family health benefits platform serving employer-sponsored populations."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Traditional in-person OB/GYN physician practice group, not a virtual-care or benefits platform; a care provider, not a comparable to Maven."
+        }
+      ]
     },
     {
       "name": "MomDoc Midwives",
@@ -717,7 +1222,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "MomDoc is a direct clinical practice, not a virtual-care and employer benefits platform evaluated by benefits buyers for family-health coverage."
+      "rationale": "Provides direct women\u2019s and family health care, but is a local clinical practice rather than a virtual-care benefits platform or comparable B2B solution.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Provides direct women\u2019s and family health care, but is a local clinical practice rather than a virtual-care benefits platform or comparable B2B solution."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Brick-and-mortar midwifery/OB-GYN practice delivering in-person care, not a virtual-care or benefits platform; provider in the category, not a comparable platform."
+        }
+      ]
     },
     {
       "name": "WINFertility",
@@ -734,7 +1251,19 @@
         "employee_count": "51-200"
       },
       "relevant": true,
-      "rationale": "Both provide employer-sponsored family-building and reproductive-health benefits, with overlapping employer, health-plan, and benefits-consultant buyers."
+      "rationale": "WIN offers employer family-building and virtual clinical support spanning fertility, maternity, menopause, and parenting, directly comparable to Maven Clinic\u2019s family-health benefits platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "WIN offers employer family-building and virtual clinical support spanning fertility, maternity, menopause, and parenting, directly comparable to Maven Clinic\u2019s family-health benefits platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both provide family-health benefit platforms sold to employers and health plans; fertility benefits are a core segment of Maven's women's/family health benefits market."
+        }
+      ]
     },
     {
       "name": "MFM Health",
@@ -751,7 +1280,19 @@
         "employee_count": "51-200"
       },
       "relevant": false,
-      "rationale": "MFM Health is a local in-person medical practice, not a virtual-care and employer benefits platform focused on women\u2019s and family health."
+      "rationale": "Regional in-person primary and specialty care practice; not a virtual family-health benefits platform serving employers and health-plan members.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Regional in-person primary and specialty care practice; not a virtual family-health benefits platform serving employers and health-plan members."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "MFM Health is a brick-and-mortar local primary care practice, not a virtual-care/benefits platform for women's and family health."
+        }
+      ]
     },
     {
       "name": "Verbena",
@@ -768,7 +1309,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Both provide virtual women\u2019s health care spanning reproductive, menstrual, pregnancy, postpartum, and related needs for overlapping patient populations."
+      "rationale": "Women's and family-health telemedicine platform, directly comparable to Maven's virtual-care offering, though narrower in scope.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Women's and family-health telemedicine platform, directly comparable to Maven's virtual-care offering, though narrower in scope."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are virtual-care/telemedicine platforms focused on women's health \u2014 same product and same target market; direct competitors."
+        }
+      ]
     },
     {
       "name": "CareValidate",
@@ -785,7 +1338,24 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "CareValidate provides virtual-care infrastructure to health businesses, while Maven delivers women\u2019s and family-health benefits and care to employers and patients."
+      "rationale": "CareValidate is white-label infrastructure enabling digital health brands to launch virtual care \u2014 a supplier/enabler, not a peer women's/family virtual-care provider like Maven.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both provide virtual-care platforms, though CareValidate emphasizes infrastructure and medication fulfillment rather than employer family-health benefits."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "CareValidate is white-label infrastructure enabling digital health brands to launch virtual care \u2014 a supplier/enabler, not a peer women's/family virtual-care provider like Maven."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "CareValidate is white-label virtual-care infrastructure sold to digital health brands, not an employer-benefits women's/family virtual care platform."
+        }
+      ]
     },
     {
       "name": "Puremaven",
@@ -802,7 +1372,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "Puremaven offers beauty and self-care experiences, not virtual clinical care or women\u2019s and family health benefits for employers."
+      "rationale": "Puremaven offers virtual beauty and self-care experiences, not clinical women's and family healthcare or employer health benefits.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Puremaven offers virtual beauty and self-care experiences, not clinical women's and family healthcare or employer health benefits."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Puremaven is a beauty/self-care expert marketplace, not clinical virtual care or family-health benefits; different product and buyer."
+        }
+      ]
     },
     {
       "name": "MangoSoft",
@@ -819,7 +1401,24 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "MangoCare offers general teleconsultation tools for clinics, not a women\u2019s and family-health benefits platform for employers or health plans."
+      "rationale": "General software dev shop with a telehealth app among unrelated products (payments, business chat, custom development); lacks focused virtual-care/women's-family-health platform resemblance.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "MangoCare offers virtual patient-doctor consultations, making it a digital-health and telehealth comparable despite its broader software offerings."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "General software dev shop with a telehealth app among unrelated products (payments, business chat, custom development); lacks focused virtual-care/women's-family-health platform resemblance."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "MangoSoft is a software dev shop with varied apps/payments; not an employer-benefits virtual women's health care platform., You must respond with valid JSON that conforms to the following JSON schema:"
+        }
+      ]
     },
     {
       "name": "Maieuticapp",
@@ -836,7 +1435,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "Maieuticapp is practice-management software for clinicians, while Maven is an employer-sponsored virtual-care benefits platform; their buyers and core jobs differ."
+      "rationale": "Women\u2019s-health-adjacent software, but serves independent clinicians\u2019 practice administration rather than employer-sponsored family virtual-care benefits.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Women\u2019s-health-adjacent software, but serves independent clinicians\u2019 practice administration rather than employer-sponsored family virtual-care benefits."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Practice-management SaaS sold to midwives/gynecologists, not a virtual-care/benefits platform; serves women's-health providers as a vendor rather than competing with Maven."
+        }
+      ]
     },
     {
       "name": "Premier Women's Health",
@@ -853,7 +1464,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "Premier is a local OB-GYN medical practice serving patients, not a virtual-care and employer benefits platform for women\u2019s and family health."
+      "rationale": "Local obstetric and gynecologic practice serving patients, not a virtual-care benefits platform for employers and families.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Local obstetric and gynecologic practice serving patients, not a virtual-care benefits platform for employers and families."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Traditional brick-and-mortar OB/GYN practice, not a virtual-care or benefits platform; no product/model resemblance despite shared women's-health market."
+        }
+      ]
     },
     {
       "name": "MD Integrations",
@@ -870,7 +1493,24 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "MD Integrations provides white-label telehealth infrastructure to healthcare brands, unlike Maven\u2019s women\u2019s and family health benefits platform for employers."
+      "rationale": "MD Integrations supplies white-label telemedicine infrastructure to brands, whereas Maven delivers employer benefits focused on women's and family health.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "MD Integrations supplies white-label telemedicine infrastructure to brands, whereas Maven delivers employer benefits focused on women's and family health."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are telemedicine/virtual-care platforms with physician networks; product axis holds strongly despite different go-to-market focus."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "White-label telehealth infrastructure sold to DTC brands, not an employer-benefits virtual care platform for women's/family health."
+        }
+      ]
     },
     {
       "name": "Mama",
@@ -887,7 +1527,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "Mama is a consulting, training, research, and advocacy firm, not a virtual-care and employee benefits platform for women's and family health."
+      "rationale": "Mama is a women's-health consulting, training, research, and advocacy firm, not a virtual-care or employer benefits platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Mama is a women's-health consulting, training, research, and advocacy firm, not a virtual-care or employer benefits platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Consulting/training/advocacy firm serving women's health, not a virtual-care or benefits platform; no competing product or business model."
+        }
+      ]
     },
     {
       "name": "Elektra Health",
@@ -904,7 +1556,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Both provide employer- and health-plan-oriented virtual women\u2019s health care, with Elektra overlapping Maven\u2019s menopause care and benefits buyer persona."
+      "rationale": "Virtual women's-health platform offering telemedicine and employer/health-plan benefits, directly comparable to Maven's family-health care model.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Virtual women's-health platform offering telemedicine and employer/health-plan benefits, directly comparable to Maven's family-health care model."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are virtual-care platforms dedicated to women's health; Elektra's menopause telemedicine fits squarely within Maven's women's health focus."
+        }
+      ]
     },
     {
       "name": "My Virtual Physician",
@@ -921,7 +1585,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Both provide virtual gynecology and reproductive/family healthcare, serving overlapping patients seeking remote women\u2019s health consultations."
+      "rationale": "Multi-specialty telehealth includes gynecology, reproductive health, and pediatrics, substantially overlapping Maven's virtual women's and family-care offering.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Multi-specialty telehealth includes gynecology, reproductive health, and pediatrics, substantially overlapping Maven's virtual women's and family-care offering."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Telehealth provider with gynecology, reproductive health, and family planning \u2014 directly overlaps Maven's virtual women's and family health care."
+        }
+      ]
     },
     {
       "name": "Cayaba Care",
@@ -938,7 +1614,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Both provide technology-enabled maternal care and pregnancy support to women, with overlapping health-plan/provider buyers and the same maternity-care job to be done."
+      "rationale": "Provides maternal and family virtual-care support, directly comparable to Maven\u2019s women\u2019s and family health platform despite a narrower high-risk maternal focus.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Provides maternal and family virtual-care support, directly comparable to Maven\u2019s women\u2019s and family health platform despite a narrower high-risk maternal focus."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both provide virtual maternity/women's health care and support services; direct comparable in women's and family health virtual-care market."
+        }
+      ]
     },
     {
       "name": "Peppy",
@@ -955,7 +1643,19 @@
         "employee_count": "51-200"
       },
       "relevant": true,
-      "rationale": "Peppy similarly offers employer-sponsored virtual health benefits for fertility, menopause, parenthood, and broader family health needs."
+      "rationale": "Employer-sponsored virtual health support for fertility, menopause, and family needs closely overlaps Maven Clinic\u2019s women\u2019s and family benefits platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Employer-sponsored virtual health support for fertility, menopause, and family needs closely overlaps Maven Clinic\u2019s women\u2019s and family benefits platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are virtual-care employee-benefit platforms focused on women's/family health, maternity, and life-stage support \u2014 direct competitors with same model and market."
+        }
+      ]
     },
     {
       "name": "femfeel",
@@ -971,8 +1671,25 @@
         "industries": null,
         "employee_count": "1-10"
       },
-      "relevant": false,
-      "rationale": "femfeel is a consumer menopause self-management app, not a virtual-care and employer benefits platform serving the same organizational buyers as Maven."
+      "relevant": true,
+      "rationale": "Menopause-focused digital health app serves women\u2019s health needs, overlapping Maven\u2019s virtual-care and family-health benefits domain despite narrower consumer offering.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Menopause-focused digital health app serves women\u2019s health needs, overlapping Maven\u2019s virtual-care and family-health benefits domain despite narrower consumer offering."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Consumer self-help menopause wellness app, not a virtual-care or benefits platform; different product and buyer (consumers vs employers/health plans)."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Both are women's-health digital care products; femfeel is a narrower menopause app but a plausible comparable in women's digital health.Continue.</p>"
+        }
+      ]
     },
     {
       "name": "Diana Health",
@@ -988,8 +1705,20 @@
         "industries": null,
         "employee_count": "51-200"
       },
-      "relevant": false,
-      "rationale": "Diana is primarily a clinical practice network, not an employer-focused virtual-care benefits platform; its buyers and delivery model differ from Maven\u2019s."
+      "relevant": true,
+      "rationale": "Women\u2019s and family-health provider offering pregnancy, gynecology, menopause, mental-health, and virtual care overlaps Maven\u2019s core care focus.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Women\u2019s and family-health provider offering pregnancy, gynecology, menopause, mental-health, and virtual care overlaps Maven\u2019s core care focus."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Women's health care provider offering virtual and in-person care across pregnancy, gynecology, menopause, and mental health \u2014 direct comparable to Maven's women's-health virtual-care model."
+        }
+      ]
     },
     {
       "name": "MamaWell",
@@ -1006,7 +1735,19 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "Both provide employer-oriented maternal health support, including virtual/personalized pregnancy care and benefits for working women through HR and health-plan buyers."
+      "rationale": "Maternal health platform serving employers and health insurers, closely comparable to Maven\u2019s women\u2019s and family-health virtual-care benefits model.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Maternal health platform serving employers and health insurers, closely comparable to Maven\u2019s women\u2019s and family-health virtual-care benefits model."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both offer women's/maternal health support sold as workplace benefits to employers and health plans\u2014same market and business model."
+        }
+      ]
     },
     {
       "name": "avi Medical",
@@ -1023,7 +1764,24 @@
         "employee_count": "201-500"
       },
       "relevant": false,
-      "rationale": "avi Medical is a general primary-care provider, not a women\u2019s and family-health benefits platform purchased by employers."
+      "rationale": "avi Medical is a primary-care practice with teleconsultations, not an employer-focused women's and family-health virtual-care benefits platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "avi Medical is a primary-care practice with teleconsultations, not an employer-focused women's and family-health virtual-care benefits platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are virtual-care providers in family health; Avi offers video consultations and digital primary care, making it a comparable telehealth platform per Teladoc precedent."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "avi Medical operates physical primary-care clinics for consumers, not an employer-benefits virtual women's/family health platform."
+        }
+      ]
     },
     {
       "name": "Eucalyptus",
@@ -1039,8 +1797,20 @@
         "industries": null,
         "employee_count": "501-1000"
       },
-      "relevant": false,
-      "rationale": "Eucalyptus runs primarily consumer telehealth clinics, while Maven sells women\u2019s and family-health benefits to employers and health plans; buyer models differ."
+      "relevant": true,
+      "rationale": "Digital telehealth clinics overlap Maven\u2019s virtual-care model and women\u2019s/family health areas including fertility and menopause.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Digital telehealth clinics overlap Maven\u2019s virtual-care model and women\u2019s/family health areas including fertility and menopause."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both virtual-care/telehealth clinic platforms with overlapping women's health focus: Eucalyptus covers fertility, contraception, and menopause care \u2014 direct competitor/comparable."
+        }
+      ]
     },
     {
       "name": "CareValet",
@@ -1057,7 +1827,19 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "Both sell employer-focused virtual-care benefit platforms, giving benefits teams digital access to telehealth services, despite CareValet lacking Maven\u2019s women\u2019s-health specialization."
+      "rationale": "Both provide employer-facing digital health benefits platforms with telehealth access and member care navigation, though CareValet is broader than women's and family health.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both provide employer-facing digital health benefits platforms with telehealth access and member care navigation, though CareValet is broader than women's and family health."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both sell virtual-care/telehealth platforms as employee health benefits to employers and health plans; same product and business model despite no women's-health focus."
+        }
+      ]
     },
     {
       "name": "FemGevity",
@@ -1074,7 +1856,19 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "Both provide virtual women\u2019s healthcare, including menopause support, with overlapping users seeking personalized reproductive and hormonal care."
+      "rationale": "Both provide virtual healthcare focused on women\u2019s health; FemGevity is a narrower menopause and longevity-care comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both provide virtual healthcare focused on women\u2019s health; FemGevity is a narrower menopause and longevity-care comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are virtual-care/telemedicine platforms focused on women's health; strong product and market overlap, direct comparable."
+        }
+      ]
     },
     {
       "name": "Frame",
@@ -1091,7 +1885,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Frame\u2019s virtual fertility care, coaching, and navigation directly overlap Maven\u2019s fertility and family-health services for patients and care teams."
+      "rationale": "Virtual fertility care, coaching, and navigation closely overlap Maven\u2019s women\u2019s and family-health virtual-care offering.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Virtual fertility care, coaching, and navigation closely overlap Maven\u2019s women\u2019s and family-health virtual-care offering."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are virtual-care platforms focused on women's and family health; Frame's fertility care navigation is a direct comparable in Maven's market."
+        }
+      ]
     },
     {
       "name": "Virginia Women's Center",
@@ -1108,7 +1914,19 @@
         "employee_count": "51-200"
       },
       "relevant": false,
-      "rationale": "Virginia Women's Center is a local clinical practice serving patients, not an employer-facing virtual-care and family-health benefits platform."
+      "rationale": "Local women's health practice using virtual visits, not a virtual-care benefits platform serving employers and health-plan buyers.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Local women's health practice using virtual visits, not a virtual-care benefits platform serving employers and health-plan buyers."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Clinical OB/GYN practice with portal features, not a virtual-care/benefits platform; a care provider, not a platform competitor to Maven."
+        }
+      ]
     },
     {
       "name": "Menopause in the Workplace - Compliance, Retention & Productivity",
@@ -1125,7 +1943,19 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "Both provide employer-sponsored virtual women\u2019s health support, with overlapping menopause care offerings and HR/benefits buyers."
+      "rationale": "Employer-facing menopause support platform for women\u2019s health and workforce benefits, overlapping Maven\u2019s employer-sponsored virtual-care market.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Employer-facing menopause support platform for women\u2019s health and workforce benefits, overlapping Maven\u2019s employer-sponsored virtual-care market."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Employer-sold digital women's health benefit (menopause care platform); same buyer and adjacent product to Maven's virtual women's/family health benefits."
+        }
+      ]
     },
     {
       "name": "Together Women's Health",
@@ -1142,7 +1972,19 @@
         "employee_count": "51-200"
       },
       "relevant": false,
-      "rationale": "Together is an in-person OBGYN provider network, not a virtual-care and employer benefits platform evaluated by HR or health-plan buyers."
+      "rationale": "OBGYN practice network delivers direct clinical care, while Maven is a virtual-care benefits platform sold to employers and health plans.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "OBGYN practice network delivers direct clinical care, while Maven is a virtual-care benefits platform sold to employers and health plans."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Brick-and-mortar OBGYN practice network; lacks Maven's virtual-care/employer-benefits platform model, analogous to traditional provider vs telehealth platform."
+        }
+      ]
     },
     {
       "name": "Avanlee Care",
@@ -1158,8 +2000,25 @@
         "industries": null,
         "employee_count": "11-50"
       },
-      "relevant": false,
-      "rationale": "Avanlee supports informal caregivers for Medicare populations, while Maven provides women\u2019s reproductive and family-health virtual care; buyers and jobs differ."
+      "relevant": true,
+      "rationale": "Caregiver-engagement platform sold to health plans, comparable to Maven\u2019s family-health benefits and virtual-care model.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Caregiver-engagement platform sold to health plans, comparable to Maven\u2019s family-health benefits and virtual-care model."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Caregiver-engagement tools for Medicare Advantage plans, not virtual women's/family health care; different product and buyer job despite both selling to health plans."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Both are digital health platforms sold to health plans/employers supporting a specific family-care population; comparable virtual care benefits model.# You must respond with valid JSON.# Keep concise.# Done.# ...You must output JSON only.#"
+        }
+      ]
     },
     {
       "name": "Fertility and Midwifery Care Center",
@@ -1176,7 +2035,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "Candidate is a direct clinical practice serving patients, not a virtual-care and employer benefits platform for women\u2019s and family health."
+      "rationale": "Provides direct women's fertility, maternity, and postpartum care, but as a local clinical facility rather than a virtual-care benefits platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Provides direct women's fertility, maternity, and postpartum care, but as a local clinical facility rather than a virtual-care benefits platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Local brick-and-mortar fertility/midwifery clinic delivering in-person care, not a virtual-care or benefits platform like Maven."
+        }
+      ]
     },
     {
       "name": "Mi Doctora by MomDoc",
@@ -1192,8 +2063,20 @@
         "industries": null,
         "employee_count": "11-50"
       },
-      "relevant": false,
-      "rationale": "Mi Doctora is a direct medical practice, not an employer-sponsored virtual-care and family-benefits platform evaluated by HR or health-plan buyers."
+      "relevant": true,
+      "rationale": "Women's-health provider offers overlapping pregnancy, contraception, menopause, and virtual care, though as a clinical practice rather than employer benefits platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Women's-health provider offers overlapping pregnancy, contraception, menopause, and virtual care, though as a clinical practice rather than employer benefits platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Women's-health provider offering virtual visits for pregnancy, birth control, and menopause\u2014overlapping services and patient market with Maven's virtual women's-health clinic."
+        }
+      ]
     },
     {
       "name": "Frieda Health",
@@ -1210,7 +2093,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Both provide virtual women\u2019s health care, including menopause support, with overlapping patients seeking digital clinical assessment and treatment."
+      "rationale": "Digital clinic providing virtual, personalized women\u2019s health care; menopause-focused but directly comparable to Maven\u2019s women\u2019s and family-health care platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Digital clinic providing virtual, personalized women\u2019s health care; menopause-focused but directly comparable to Maven\u2019s women\u2019s and family-health care platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are virtual-care platforms focused on women's health; Frieda's digital menopause clinic fits squarely within Maven's women's-health telehealth space."
+        }
+      ]
     },
     {
       "name": "Baker Health",
@@ -1227,7 +2122,19 @@
         "employee_count": "51-200"
       },
       "relevant": false,
-      "rationale": "Baker is a consumer membership primary-care practice, not an employer benefits platform focused on women\u2019s and family health."
+      "rationale": "Baker Health is a consumer membership primary-care practice; it lacks Maven\u2019s employer-focused women\u2019s and family health benefits platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Baker Health is a consumer membership primary-care practice; it lacks Maven\u2019s employer-focused women\u2019s and family health benefits platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Baker Health is a local membership-based primary/pediatric clinic with telehealth add-ons, not a women's/family-health virtual-care benefits platform like Maven."
+        }
+      ]
     },
     {
       "name": "Miranna",
@@ -1244,7 +2151,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "Miranna offers consumer coaching and mentorship, not employer-sponsored virtual healthcare and family benefits; buyers and core job-to-be-done differ."
+      "rationale": "Consumer-focused coaching and mentorship app, not an employer benefits or virtual clinical-care platform for women's and family health.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Consumer-focused coaching and mentorship app, not an employer benefits or virtual clinical-care platform for women's and family health."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Coaching/mentorship app for midlife women, not a virtual-care or employer health-benefits platform; women's focus alone is too weak a resemblance."
+        }
+      ]
     },
     {
       "name": "Bloom Care",
@@ -1261,7 +2180,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Both provide employer/health-plan digital benefits for pregnancy, parenting, and inclusive family-health support through guidance and expert consultations."
+      "rationale": "Digital family-health benefits platform covering fertility, pregnancy, parenting, expert support, and employer clients directly overlaps Maven Clinic's core offering.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Digital family-health benefits platform covering fertility, pregnancy, parenting, expert support, and employer clients directly overlaps Maven Clinic's core offering."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Digital family-health platform covering pregnancy, parenting, and expert consultations, offered as an employee benefit \u2014 same product, market, and model as Maven."
+        }
+      ]
     },
     {
       "name": "L\u00e4\u00e4k\u00e4rikeskus Aava",
@@ -1278,7 +2209,19 @@
         "employee_count": "501-1000"
       },
       "relevant": false,
-      "rationale": "Aava is a general healthcare clinic network, not a virtual women\u2019s and family health benefits platform evaluated for the same employer need."
+      "rationale": "Traditional broad Finnish clinic and occupational-health provider, not a virtual women's and family-health benefits platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Traditional broad Finnish clinic and occupational-health provider, not a virtual women's and family-health benefits platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Traditional brick-and-mortar Finnish healthcare provider offering general care; lacks virtual-care platform and women's/family-health benefits focus of Maven."
+        }
+      ]
     },
     {
       "name": "Vi",
@@ -1295,7 +2238,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Both provide employer-oriented virtual women\u2019s health support, with Vi\u2019s menopause care overlapping Maven\u2019s family and women\u2019s health benefits offering."
+      "rationale": "Menopause-focused virtual health platform and employer benefit for women\u2019s health, overlapping Maven\u2019s family-health virtual-care and benefits model.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Menopause-focused virtual health platform and employer benefit for women\u2019s health, overlapping Maven\u2019s family-health virtual-care and benefits model."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Digital women's health platform (menopause) sold as employer benefit\u2014same product category and buyer as Maven's virtual-care benefits platform."
+        }
+      ]
     },
     {
       "name": "Mammha",
@@ -1312,7 +2267,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Both offer virtual maternal and family health care, including mental health support, to overlapping health-system and parent populations."
+      "rationale": "Maternal virtual-care platform offering screening, therapy, and support for pregnant and postpartum parents; a focused women's and family health comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Maternal virtual-care platform offering screening, therapy, and support for pregnant and postpartum parents; a focused women's and family health comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are virtual-care platforms for women's/maternal health; Mammha's maternal mental-health telehealth overlaps Maven's women's and family health market."
+        }
+      ]
     },
     {
       "name": "Mosaic Wellness",
@@ -1328,8 +2295,20 @@
         "industries": null,
         "employee_count": "201-500"
       },
-      "relevant": false,
-      "rationale": "Mosaic is primarily a consumer wellness and treatment platform, not an employer-sponsored women\u2019s and family health benefits platform serving HR buyers."
+      "relevant": true,
+      "rationale": "Digital health platform serving women and parents with personalized care, overlapping Maven's family-health virtual-care market despite broader consumer focus.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Digital health platform serving women and parents with personalized care, overlapping Maven's family-health virtual-care market despite broader consumer focus."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Digital health platforms with virtual doctor access for women's and family health \u2014 strong product and market overlap with Maven's virtual women's/family care."
+        }
+      ]
     },
     {
       "name": "Maya",
@@ -1346,7 +2325,19 @@
         "employee_count": "51-200"
       },
       "relevant": false,
-      "rationale": "Maya is a consumer menstrual and fertility tracking app, not a virtual-care and employer benefits platform serving HR benefits buyers."
+      "rationale": "Consumer menstrual and fertility tracking app, whereas Maven is an employer benefits and virtual-care platform for women and families.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Consumer menstrual and fertility tracking app, whereas Maven is an employer benefits and virtual-care platform for women and families."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Maven is a virtual-care/benefits platform selling to employers; Maya is a consumer period/fertility tracking app \u2014 different product, buyer, and job to be done."
+        }
+      ]
     },
     {
       "name": "Canopie",
@@ -1363,7 +2354,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Both provide virtual maternal/family health services to health plans and employers, with overlapping perinatal care, mental health, and coaching offerings."
+      "rationale": "Digital maternal health platform serving expecting and new mothers and health-plan/provider benefits markets, directly overlapping Maven\u2019s family-health virtual care focus.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Digital maternal health platform serving expecting and new mothers and health-plan/provider benefits markets, directly overlapping Maven\u2019s family-health virtual care focus."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Virtual women's-health platform focused on maternal care; same product model and buyer market as Maven's family-health virtual care."
+        }
+      ]
     },
     {
       "name": "Womb",
@@ -1380,7 +2383,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Both provide employer-oriented virtual clinical support spanning fertility, pregnancy, postpartum, and early parenthood for women and families."
+      "rationale": "Both provide technology-enabled clinical support and employer benefits across fertility, pregnancy, postpartum, and parenthood.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both provide technology-enabled clinical support and employer benefits across fertility, pregnancy, postpartum, and parenthood."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both offer tech-enabled clinical programs for pregnancy, postpartum, and family health, including employer-facing parental benefits \u2014 strong product and market overlap."
+        }
+      ]
     },
     {
       "name": "HealthMary UK",
@@ -1396,8 +2411,20 @@
         "industries": null,
         "employee_count": "1-10"
       },
-      "relevant": false,
-      "rationale": "HealthMary is a provider marketplace and practice-growth app, not an employer-focused virtual-care and family-benefits platform serving HR benefits buyers."
+      "relevant": true,
+      "rationale": "Marketplace app connecting women with female health providers, comparable to Maven's virtual women's-health care platform despite serving independent practitioners.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Marketplace app connecting women with female health providers, comparable to Maven's virtual women's-health care platform despite serving independent practitioners."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Women's health virtual-care marketplace connecting women with providers; same women's-health care-delivery space and business model as Maven."
+        }
+      ]
     },
     {
       "name": "Lady Technologies",
@@ -1414,7 +2441,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "Lady Technologies sells consumer fertility and vaginal-health tracking devices, not an employer-focused virtual-care and family-benefits platform."
+      "rationale": "Women\u2019s health focus overlaps, but Lady sells a consumer fertility and vaginal-health device, not a virtual-care family-health benefits platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Women\u2019s health focus overlaps, but Lady sells a consumer fertility and vaginal-health device, not a virtual-care family-health benefits platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Consumer fertility-tracking device maker, not a virtual-care/benefits platform; only generic women's-health category overlap."
+        }
+      ]
     },
     {
       "name": "Momkidcare\u00ae",
@@ -1431,7 +2470,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Both provide digital specialist care for fertility, pregnancy, postpartum, and family health, serving substantially overlapping users and care needs."
+      "rationale": "Digital women's and family-health platform providing fertility, pregnancy, postpartum, and child-care specialist access, closely overlapping Maven Clinic's virtual-care focus.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Digital women's and family-health platform providing fertility, pregnancy, postpartum, and child-care specialist access, closely overlapping Maven Clinic's virtual-care focus."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Digital women's health platform connecting users to specialists for fertility, pregnancy, postnatal care \u2014 same product and market as Maven's virtual-care platform."
+        }
+      ]
     },
     {
       "name": "Quilted Health",
@@ -1447,8 +2498,20 @@
         "industries": null,
         "employee_count": "11-50"
       },
-      "relevant": false,
-      "rationale": "Quilted is a maternity care provider, not an employer-focused women\u2019s and family health benefits platform, so buyers and business models differ."
+      "relevant": true,
+      "rationale": "Provides virtual pregnancy and postpartum care, directly overlapping Maven\u2019s women\u2019s and family-health virtual-care offering.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Provides virtual pregnancy and postpartum care, directly overlapping Maven\u2019s women\u2019s and family-health virtual-care offering."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both provide virtual women's and family health care; Quilted's pregnancy/postpartum virtual care overlaps Maven's core market and model."
+        }
+      ]
     },
     {
       "name": "Ema",
@@ -1464,8 +2527,20 @@
         "industries": null,
         "employee_count": "11-50"
       },
-      "relevant": false,
-      "rationale": "Ema provides an AI wellness assistant, not a comprehensive virtual-care and employee benefits platform; buyers would evaluate it for a different job."
+      "relevant": true,
+      "rationale": "AI-driven women\u2019s health assistant offering personalized wellness support overlaps Maven\u2019s women\u2019s health focus, though with a narrower product scope.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "AI-driven women\u2019s health assistant offering personalized wellness support overlaps Maven\u2019s women\u2019s health focus, though with a narrower product scope."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are women's health-focused digital platforms sold to enterprises/providers; Ema's AI women's-health product overlaps Maven's virtual-care and benefits platform in market and product."
+        }
+      ]
     },
     {
       "name": "Evernow",
@@ -1482,7 +2557,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Both provide virtual women\u2019s health care, with overlapping menopause treatment services and the same end users seeking symptom management."
+      "rationale": "Both deliver virtual healthcare focused on women\u2019s health; Evernow is a specialized menopause-care comparable within Maven\u2019s broader family-health platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both deliver virtual healthcare focused on women\u2019s health; Evernow is a specialized menopause-care comparable within Maven\u2019s broader family-health platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are virtual-care platforms focused on women's health; Evernow's menopause care overlaps Maven's women's-health market and telehealth model."
+        }
+      ]
     },
     {
       "name": "EmbraceHer Innovations",
@@ -1498,8 +2585,25 @@
         "industries": null,
         "employee_count": "11-50"
       },
-      "relevant": false,
-      "rationale": "Both support families, but EmbraceHer sells parent-support resources to medical practices, unlike Maven\u2019s virtual-care benefits platform for employers and health plans."
+      "relevant": true,
+      "rationale": "Family-health support platform connecting parents to healthcare professionals and guidance, sold to organizations\u2014comparable model and market to Maven's virtual family-health platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Parent-support platform for medical practices overlaps Maven's family-health focus, but primarily enables providers rather than offering comparable virtual-care benefits."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Family-health support platform connecting parents to healthcare professionals and guidance, sold to organizations\u2014comparable model and market to Maven's virtual family-health platform."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Digital platform delivering maternal/parenting support and clinician access \\u2014 same family-health virtual support space as Maven, plausible comparable.}"
+        }
+      ]
     },
     {
       "name": "Avicenna Health",
@@ -1515,8 +2619,25 @@
         "industries": null,
         "employee_count": "11-50"
       },
-      "relevant": false,
-      "rationale": "Avicenna provides general adult telehealth, not a women\u2019s and family health benefits platform evaluated by the same employer benefits buyers."
+      "relevant": true,
+      "rationale": "Both are virtual-care/telehealth platforms; Avicenna offers telemedicine including women's health, matching Maven on product and model like Teladoc example.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "General direct-to-patient telehealth for adults, not a women\u2019s and family-health benefits platform for employers and health plans."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are virtual-care/telehealth platforms; Avicenna offers telemedicine including women's health, matching Maven on product and model like Teladoc example."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Both are virtual-care/telehealth platforms delivering remote clinical services, though Avicenna is broader and not women's-health-benefits focused."
+        }
+      ]
     },
     {
       "name": "DRS GOODMAN & PARTRIDGE, OB/GYN",
@@ -1533,7 +2654,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "Candidate is a local OB/GYN medical practice, not a virtual-care and employer benefits platform evaluated by benefits buyers."
+      "rationale": "Local OB/GYN practice providing direct patient care, not a virtual family-health benefits platform serving employers and their members.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Local OB/GYN practice providing direct patient care, not a virtual family-health benefits platform serving employers and their members."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Traditional brick-and-mortar OB/GYN practice, not a virtual-care/benefits platform; provider, not comparable digital-health model."
+        }
+      ]
     },
     {
       "name": "Fertility Cloud",
@@ -1549,8 +2682,20 @@
         "industries": null,
         "employee_count": "1-10"
       },
-      "relevant": false,
-      "rationale": "Both offer virtual fertility care, but Fertility Cloud is direct-to-patient, unlike Maven\u2019s employer-sponsored benefits platform targeting HR and benefits buyers."
+      "relevant": true,
+      "rationale": "Telehealth fertility-care provider serving women, couples, and family-building needs; a focused virtual-care comparable to Maven Clinic.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Telehealth fertility-care provider serving women, couples, and family-building needs; a focused virtual-care comparable to Maven Clinic."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Telehealth platform for fertility/reproductive care directly overlaps Maven's virtual women's and family health focus; same market and model."
+        }
+      ]
     },
     {
       "name": "Comprehensive Women's Health",
@@ -1567,7 +2712,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "Candidate is a direct medical practice serving patients, not a virtual-care and employer benefits platform for women\u2019s and family health."
+      "rationale": "Women's primary-care and aesthetics practice, not a virtual-care family-health benefits platform for employers.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Women's primary-care and aesthetics practice, not a virtual-care family-health benefits platform for employers."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Physical women's primary-care and medispa clinic, not a virtual-care or benefits platform; different business model, no digital platform product."
+        }
+      ]
     },
     {
       "name": "Evah Sa\u00fade",
@@ -1584,7 +2741,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Both provide virtual women\u2019s health services, including fertility and pregnancy care, targeting employers and HR buyers offering workforce health benefits."
+      "rationale": "Virtual women's-health care platform offering gynecology, fertility, and pregnancy support, closely matching Maven Clinic's family-health benefits and care model.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Virtual women's-health care platform offering gynecology, fertility, and pregnancy support, closely matching Maven Clinic's family-health benefits and care model."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Virtual women's health platform offering telehealth gynecology, fertility, and pregnancy care\u2014same product and market as Maven Clinic."
+        }
+      ]
     },
     {
       "name": "UWH of Michigan",
@@ -1601,7 +2770,19 @@
         "employee_count": "1001-5000"
       },
       "relevant": false,
-      "rationale": "UWH is a direct clinical provider network, not a virtual-care and employer benefits platform evaluated by benefits buyers."
+      "rationale": "Provider network delivering in-person OB-GYN care, not a virtual-care and employer benefits platform for women\u2019s and family health.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Provider network delivering in-person OB-GYN care, not a virtual-care and employer benefits platform for women\u2019s and family health."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Traditional in-person OB/GYN provider network, not a virtual-care/benefits platform; different business model and buyer (patients vs. employers/plans)."
+        }
+      ]
     },
     {
       "name": "Medical Mavens",
@@ -1617,8 +2798,25 @@
         "industries": null,
         "employee_count": "1-10"
       },
-      "relevant": false,
-      "rationale": "Both offer virtual women\u2019s health, but Medical Mavens is a direct patient hormone-care practice, not an employer-focused family-health benefits platform."
+      "relevant": true,
+      "rationale": "Virtual-care provider focused on women's/hormone health; strong product overlap with Maven's virtual women's-health platform despite smaller scale.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Both provide virtual healthcare, but Medical Mavens is a direct-to-consumer hormone and wellness clinic, not a family-health benefits platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Virtual-care provider focused on women's/hormone health; strong product overlap with Maven's virtual women's-health platform despite smaller scale."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Virtual-care telehealth provider with personalized treatment plans; same product category, though B2C wellness rather than employer benefits."
+        }
+      ]
     },
     {
       "name": "Marma",
@@ -1635,7 +2833,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Both deliver virtual, personalized support for women across fertility, pregnancy, and postpartum, serving overlapping users and maternal-health needs."
+      "rationale": "Women\u2019s fertility, pregnancy, and postpartum health platform, overlapping Maven\u2019s family-health focus, though centered specifically on nutrition coaching.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Women\u2019s fertility, pregnancy, and postpartum health platform, overlapping Maven\u2019s family-health focus, though centered specifically on nutrition coaching."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Digital women's-health platform serving the same fertility-to-postpartum audience with virtual coaching/care; a narrower but genuine comparable to Maven."
+        }
+      ]
     },
     {
       "name": "Modern Menopause",
@@ -1652,7 +2862,19 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "Both provide physician-led virtual women\u2019s health care, with menopause treatment overlapping Maven\u2019s family-health services and serving the same patients."
+      "rationale": "Virtual, physician-led women\u2019s health care overlaps Maven\u2019s women-and-family health platform, specifically serving menopause care.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Virtual, physician-led women\u2019s health care overlaps Maven\u2019s women-and-family health platform, specifically serving menopause care."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Virtual, physician-led women's health platform; menopause care is a core Maven Clinic vertical \u2014 same product, market, and model."
+        }
+      ]
     },
     {
       "name": "Evora Medical Group",
@@ -1669,7 +2891,24 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "Evora is a direct-to-patient concierge medical practice, not an employer-focused virtual-care and family benefits platform like Maven."
+      "rationale": "Direct-care women's health practice, not a virtual-care benefits platform for employers; overlaps clinically but not in product or business model.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Direct-care women's health practice, not a virtual-care benefits platform for employers; overlaps clinically but not in product or business model."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Women's health care provider (menopause, sexual health, gynecology) serving the same patient market as Maven, comparable to Maven peers like Tia."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "Evora is a concierge medical practice serving patients directly, not a virtual-care benefits platform sold to employers.json**Nope\u2014clinic, not platform.<br>**"
+        }
+      ]
     },
     {
       "name": "Care for Women",
@@ -1686,7 +2925,24 @@
         "employee_count": "51-200"
       },
       "relevant": false,
-      "rationale": "Care for Women is primarily a clinic network, not a virtual-care employee benefits platform, despite overlapping women\u2019s hormonal health services."
+      "rationale": "Brick-and-mortar hormonal-health clinic chain, not a virtual-care/benefits platform; traditional provider without Maven's telehealth platform model.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Specialized women\u2019s hormonal-health provider serving individuals and employers, comparable to Maven\u2019s women\u2019s-health benefits and care focus."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Brick-and-mortar hormonal-health clinic chain, not a virtual-care/benefits platform; traditional provider without Maven's telehealth platform model."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "In-person hormonal health clinic chain, not a virtual-care/employer benefits platform; different delivery model despite shared women's health focus."
+        }
+      ]
     },
     {
       "name": "Merritt Health & Wellness",
@@ -1703,7 +2959,20 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "Merritt is a direct local primary-care clinic, not a virtual-care and employer benefits platform for women\u2019s and family health."
+      "rationale": "Traditional primary-care clinic offering some women\u2019s health, not a virtual-care benefits platform for employers and families.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Traditional primary-care clinic offering some women\u2019s health, not a virtual-care benefits platform for employers and families."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "A small in-person primary care clinic, not a virtual-care or benefits platform; serves patients as a provider, not as a comparable tech-enabled care platform."
+        }
+      ]
     }
-  ]
+  ],
+  "error": null
 }

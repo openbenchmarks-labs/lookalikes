@@ -7,20 +7,20 @@
     "name": "domain_lookalikes"
   },
   "k": 100,
-  "relevant_count": 5,
-  "precision_at_k": 5.0,
-  "relevant_count_at_10": 5,
-  "relevant_count_at_25": 5,
-  "relevant_count_at_100": 5,
-  "precision_at_10": 50.0,
-  "precision_at_25": 20.0,
-  "precision_at_100": 5.0,
+  "relevant_count": 4,
+  "precision_at_k": 4.0,
+  "relevant_count_at_10": 4,
+  "relevant_count_at_25": 4,
+  "relevant_count_at_100": 4,
+  "precision_at_10": 40.0,
+  "precision_at_25": 16.0,
+  "precision_at_100": 4.0,
   "latency_ms": 335,
   "cost_usd": null,
   "duplicates_removed": 0,
   "max_results": 10,
-  "judge_model": "gpt-5.6",
-  "judged_at": "2026-07-27T06:53:48Z",
+  "judge_model": "majority(n=3): claude-opus-5,gpt-5.6-terra,kimi-k3",
+  "judged_at": "2026-08-10T20:00:54Z",
   "candidates": [
     {
       "name": "akamai technologies",
@@ -36,7 +36,19 @@
         "confidence_level": 94
       },
       "relevant": true,
-      "rationale": "Akamai directly overlaps Cloudflare in CDN, edge computing, application performance, networking, and security for businesses delivering digital applications."
+      "rationale": "Akamai directly competes in CDN, edge computing, application delivery, networking, and web security for digital applications.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Akamai directly competes in CDN, edge computing, application delivery, networking, and web security for digital applications."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Akamai is a direct competitor: CDN, edge computing, application security, and cloud delivery platform overlapping Cloudflare's core products and market."
+        }
+      ]
     },
     {
       "name": "atlassian",
@@ -52,7 +64,19 @@
         "confidence_level": 94
       },
       "relevant": false,
-      "rationale": "Atlassian\u2019s core collaboration and project-management software does not overlap Cloudflare\u2019s security, networking, performance, or edge infrastructure offerings."
+      "rationale": "Atlassian sells team collaboration, project management, and developer workflow tools, not internet security, networking, CDN, or edge infrastructure.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Atlassian sells team collaboration, project management, and developer workflow tools, not internet security, networking, CDN, or edge infrastructure."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Atlassian sells team-collaboration software (Jira, Confluence), not internet infrastructure, security, or edge networking \u2014 no shared product, market, or model."
+        }
+      ]
     },
     {
       "name": "cisco",
@@ -68,7 +92,19 @@
         "confidence_level": 94
       },
       "relevant": true,
-      "rationale": "Cisco\u2019s networking, SASE, cloud security, and application infrastructure offerings overlap Cloudflare\u2019s core products and target the same enterprise IT and security buyers."
+      "rationale": "Cisco\u2019s networking and security platforms overlap Cloudflare\u2019s core infrastructure, connectivity, and cyber-protection offerings, making it a credible competitor/comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Cisco\u2019s networking and security platforms overlap Cloudflare\u2019s core infrastructure, connectivity, and cyber-protection offerings, making it a credible competitor/comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Cisco overlaps Cloudflare on networking and security infrastructure markets, serving same enterprise buyers; genuine comparable/competitor despite hardware breadth."
+        }
+      ]
     },
     {
       "name": "crowdstrike",
@@ -84,7 +120,19 @@
         "confidence_level": 94
       },
       "relevant": false,
-      "rationale": "CrowdStrike primarily protects endpoints, identities, and workloads; Cloudflare primarily provides edge networking, application security, and performance infrastructure for different security jobs."
+      "rationale": "Both offer enterprise cybersecurity, but CrowdStrike primarily secures endpoints and workloads rather than Cloudflare's edge network, web security, and performance platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Both offer enterprise cybersecurity, but CrowdStrike primarily secures endpoints and workloads rather than Cloudflare's edge network, web security, and performance platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "CrowdStrike sells endpoint/workload EDR; Cloudflare sells edge network and application security infrastructure. Different security layers, different jobs, not competitors or comparables."
+        }
+      ]
     },
     {
       "name": "datadog",
@@ -100,7 +148,24 @@
         "confidence_level": 94
       },
       "relevant": false,
-      "rationale": "Datadog provides observability and monitoring, while Cloudflare primarily provides edge networking, application delivery, and security; their core jobs differ."
+      "rationale": "Datadog provides cloud observability and monitoring, whereas Cloudflare primarily delivers edge networking, security, and application-delivery infrastructure.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Datadog provides cloud observability and monitoring, whereas Cloudflare primarily delivers edge networking, security, and application-delivery infrastructure."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are usage-priced cloud infrastructure SaaS serving DevOps/developer buyers; adjacent performance and observability tooling, genuine comparables in the same space."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "Datadog sells observability/monitoring SaaS, not CDN, edge security or networking infrastructure; different product category despite shared devops buyer."
+        }
+      ]
     },
     {
       "name": "google",
@@ -116,7 +181,24 @@
         "confidence_level": 94
       },
       "relevant": false,
-      "rationale": "Google\u2019s primary business is search and advertising; Google Cloud overlaps partially, but Google overall is not primarily an internet infrastructure platform."
+      "rationale": "Diversified consumer-tech conglomerate; primary products (search, ads, consumer software) don't resemble Cloudflare's internet infrastructure, security, and edge platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Google Cloud offers competing cloud networking, CDN, security, and edge infrastructure services."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Diversified consumer-tech conglomerate; primary products (search, ads, consumer software) don't resemble Cloudflare's internet infrastructure, security, and edge platform."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "Google is a diversified consumer/ads/cloud giant; not a peer edge-security/CDN infrastructure vendor despite some overlapping cloud offerings."
+        }
+      ]
     },
     {
       "name": "microsoft",
@@ -131,8 +213,25 @@
         "country": "united states",
         "confidence_level": 94
       },
-      "relevant": true,
-      "rationale": "Microsoft Azure offers competing CDN, edge networking, DDoS protection, application security, and developer cloud services evaluated by the same enterprise buyers."
+      "relevant": false,
+      "rationale": "Diversified software giant; record shows no primary internet-infrastructure/security/edge product carrying resemblance to Cloudflare's core offering.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Microsoft Azure offers cloud networking, edge delivery, and application-security services that overlap with Cloudflare's internet-infrastructure platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Diversified software giant; record shows no primary internet-infrastructure/security/edge product carrying resemblance to Cloudflare's core offering."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "Microsoft is a broad software/cloud conglomerate, not a peer CDN/edge security infrastructure provider; resemblance too diffuse."
+        }
+      ]
     },
     {
       "name": "palo alto networks",
@@ -148,7 +247,19 @@
         "confidence_level": 94
       },
       "relevant": true,
-      "rationale": "Both provide enterprise cloud and network security platforms, including Zero Trust and SASE capabilities, targeting the same IT and security buyers."
+      "rationale": "Both provide enterprise cloud and network security platforms, making Palo Alto Networks a strong cybersecurity competitor/comparable to Cloudflare.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both provide enterprise cloud and network security platforms, making Palo Alto Networks a strong cybersecurity competitor/comparable to Cloudflare."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Cybersecurity platform overlapping Cloudflare's security business (Zero Trust, network/application security); genuine competitor and comparable in enterprise security market."
+        }
+      ]
     },
     {
       "name": "snowflake",
@@ -164,7 +275,19 @@
         "confidence_level": 94
       },
       "relevant": false,
-      "rationale": "Snowflake is a cloud data warehouse and analytics platform, not an application security, edge networking, performance, or CDN infrastructure provider."
+      "rationale": "Snowflake is a cloud data platform for warehousing and analytics, not an internet security, networking, CDN, or edge-computing platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Snowflake is a cloud data platform for warehousing and analytics, not an internet security, networking, CDN, or edge-computing platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Snowflake is a data warehousing/analytics cloud; Cloudflare is internet infrastructure for security, networking, and edge computing. Different products and buyers."
+        }
+      ]
     },
     {
       "name": "zscaler",
@@ -180,7 +303,20 @@
         "confidence_level": 94
       },
       "relevant": true,
-      "rationale": "Both provide cloud-delivered zero-trust security and networking platforms evaluated by enterprise security and IT teams."
+      "rationale": "Both provide globally distributed enterprise network-security platforms; Zscaler's zero-trust access and Cloudflare's security/networking services are close competitive comparables.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both provide globally distributed enterprise network-security platforms; Zscaler's zero-trust access and Cloudflare's security/networking services are close competitive comparables."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are cloud-delivered security and networking platforms (zero trust, SASE, application security) competing for the same enterprise buyers."
+        }
+      ]
     }
-  ]
+  ],
+  "error": null
 }

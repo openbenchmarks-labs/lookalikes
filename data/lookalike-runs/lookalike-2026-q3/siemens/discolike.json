@@ -7,18 +7,20 @@
     "name": "domain_similarity"
   },
   "k": 100,
-  "relevant_count": 36,
-  "precision_at_k": 36.0,
-  "relevant_count_at_10": 5,
-  "relevant_count_at_100": 36,
-  "precision_at_10": 50.0,
-  "precision_at_100": 36.0,
+  "relevant_count": 25,
+  "precision_at_k": 25.0,
+  "relevant_count_at_10": 4,
+  "relevant_count_at_25": 11,
+  "relevant_count_at_100": 25,
+  "precision_at_10": 40.0,
+  "precision_at_25": 44.0,
+  "precision_at_100": 25.0,
   "latency_ms": 963,
   "cost_usd": null,
   "duplicates_removed": 0,
   "max_results": null,
-  "judge_model": "gpt-5.6",
-  "judged_at": "2026-07-27T03:44:44Z",
+  "judge_model": "majority(n=3): claude-opus-5,gpt-5.6-terra,kimi-k3",
+  "judged_at": "2026-08-10T19:49:45Z",
   "candidates": [
     {
       "name": "Siemens",
@@ -49,7 +51,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "This appears to be a duplicate or misattributed Siemens listing rather than a distinct lookalike company."
+      "rationale": "Duplicate Siemens-branded entry rather than a distinct company lookalike.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Duplicate Siemens-branded entry rather than a distinct company lookalike."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Duplicate of the seed itself \u2014 same Siemens brand, same industrial automation/software products; not a distinct lookalike company."
+        }
+      ]
     },
     {
       "name": "L&T Technology Services",
@@ -82,7 +96,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "LTTS is primarily an engineering services and consulting provider, not an industrial automation, electrification, infrastructure, or mobility technology manufacturer like Siemens."
+      "rationale": "LTTS is primarily an engineering and IT services consultancy serving industrial clients, not an industrial automation, electrification, mobility, or infrastructure product peer.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "LTTS is primarily an engineering and IT services consultancy serving industrial clients, not an industrial automation, electrification, mobility, or infrastructure product peer."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "LTTS is an engineering-services/consultancy firm serving industrial clients, not a maker of automation/electrification products like Siemens; service provider, not competitor."
+        }
+      ]
     },
     {
       "name": "Prevu3D",
@@ -107,7 +133,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Prevu3D\u2019s industrial digital-twin and engineering platform overlaps Siemens\u2019 industrial software offerings and targets similar operations and engineering buyers."
+      "rationale": "Prevu3D provides industrial digital-twin and 3D reality-capture software, overlapping Siemens' industrial software and smart-infrastructure offerings.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Prevu3D provides industrial digital-twin and 3D reality-capture software, overlapping Siemens' industrial software and smart-infrastructure offerings."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Industrial digital-twin software for operations and engineering, overlapping Siemens' digital industries software on product and buyer market."
+        }
+      ]
     },
     {
       "name": "ExactSpace",
@@ -131,7 +169,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "ExactSpace\u2019s industrial digital-twin and predictive-maintenance platform overlaps Siemens\u2019 industrial software offerings and targets the same plant operations and maintenance buyers."
+      "rationale": "Industrial digital-twin and plant-operations software overlaps Siemens' automation, industrial software, and smart infrastructure offerings.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Industrial digital-twin and plant-operations software overlaps Siemens' automation, industrial software, and smart infrastructure offerings."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Industrial digital-twin/asset-optimization software for plant operations\u2014overlaps Siemens' industrial software and automation business, serving same operations buyers; a smaller comparable."
+        }
+      ]
     },
     {
       "name": "Centauri Research",
@@ -157,8 +207,25 @@
           "https://www.linkedin.com/company/centauriresearch/"
         ]
       },
-      "relevant": true,
-      "rationale": "Both provide industrial engineering software for telemetry, simulation, defect detection, predictive maintenance, and operational digitalization to engineering and infrastructure buyers."
+      "relevant": false,
+      "rationale": "Small AI/data-products shop for engineering clients; shares digital-twin/telemetry buzzwords but lacks Siemens' industrial automation/electrification product and market overlap.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Engineering-focused industrial AI platform overlaps with Siemens' digitalization, automation, asset simulation, and predictive-maintenance offerings."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Small AI/data-products shop for engineering clients; shares digital-twin/telemetry buzzwords but lacks Siemens' industrial automation/electrification product and market overlap."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "Small AI/data software vendor; lacks Siemens' industrial automation, electrification, hardware and infrastructure scope \beonly vague industrial-digital overlap."
+        }
+      ]
     },
     {
       "name": "E3S",
@@ -192,7 +259,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "E3S\u2019s mixed AI, security, and payroll tools do not clearly overlap Siemens\u2019s core industrial automation, electrification, infrastructure, or mobility offerings."
+      "rationale": "E3S is an AI analytics, compliance, and payroll software provider, not an industrial automation, electrification, mobility, or infrastructure technology comparable to Siemens.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "E3S is an AI analytics, compliance, and payroll software provider, not an industrial automation, electrification, mobility, or infrastructure technology comparable to Siemens."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Small IT-services/cybersecurity and payroll-software firm; no industrial automation, electrification, or infrastructure products comparable to Siemens's core business."
+        }
+      ]
     },
     {
       "name": "DigitalTwin Solutions",
@@ -213,8 +292,25 @@
         "city": "Johnson City",
         "social_urls": []
       },
-      "relevant": false,
-      "rationale": "DigitalTwin Solutions is primarily a consulting and custom implementation provider, not an industrial technology and software platform comparable to Siemens."
+      "relevant": true,
+      "rationale": "Sells digital twin software and real-time industrial monitoring to manufacturers, directly overlapping Siemens' industrial software/smart infrastructure business; same product and buyer.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "DigitalTwin Solutions is a consulting and implementation provider for industrial digital twins, rather than a broad industrial technology and automation platform competitor."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Sells digital twin software and real-time industrial monitoring to manufacturers, directly overlapping Siemens' industrial software/smart infrastructure business; same product and buyer."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Sells industrial digital twin/Industry 4.0 software to manufacturers, overlapping Siemens' industrial automation software offering, though consulting-heavy and tiny.Please answer only with JSON.  Only include the requested fields.  Do not i"
+        }
+      ]
     },
     {
       "name": "Nextspace",
@@ -239,7 +335,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Nextspace\u2019s industrial digital-twin platform overlaps Siemens\u2019 industrial software and smart-infrastructure offerings, targeting the same asset and infrastructure operators."
+      "rationale": "Digital-twin software for industrial and built-world assets overlaps Siemens\u2019 industrial software and smart-infrastructure offerings.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Digital-twin software for industrial and built-world assets overlaps Siemens\u2019 industrial software and smart-infrastructure offerings."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Digital-twin software for industrial and infrastructure applications directly overlaps Siemens' industrial software and digital twin business."
+        }
+      ]
     },
     {
       "name": "Siemens Healthineers",
@@ -268,7 +376,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Siemens Healthineers primarily sells medical imaging and diagnostics to healthcare providers, not Siemens\u2019 core industrial automation, infrastructure, or mobility buyers."
+      "rationale": "Siemens Healthineers is a healthcare diagnostics and imaging company, not a competitor or peer in Siemens\u2019s core industrial automation, infrastructure, mobility, or electrification markets.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Siemens Healthineers is a healthcare diagnostics and imaging company, not a competitor or peer in Siemens\u2019s core industrial automation, infrastructure, mobility, or electrification markets."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Siemens Healthineers is Siemens' spun-off medtech subsidiary in healthcare diagnostics, not a peer competitor in industrial automation or electrification."
+        }
+      ]
     },
     {
       "name": "ProLytX",
@@ -294,8 +414,25 @@
           "https://www.linkedin.com/company/prolytx/"
         ]
       },
-      "relevant": true,
-      "rationale": "ProLytX\u2019s industrial engineering data-management software overlaps Siemens\u2019 industrial software offerings and targets the same engineering and operations buyers."
+      "relevant": false,
+      "rationale": "Niche IT-services/consultancy for engineering data management serving industrial clients, not an industrial technology/automation product peer competing with Siemens.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Industrial engineering data-management software supports operational and safety lifecycle workflows, overlapping Siemens\u2019 industrial software offerings and manufacturing/engineering buyers."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Niche IT-services/consultancy for engineering data management serving industrial clients, not an industrial technology/automation product peer competing with Siemens."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "Niche engineering data-management software; not a comparable to Siemens' broad industrial automation, electrification, and infrastructure hardware/software business.<json_schema>...</json_schema>"
+        }
+      ]
     },
     {
       "name": "Ki Marktplatz",
@@ -322,8 +459,25 @@
           "https://www.youtube.com/channel/UCZVEMFg6I_8QgpiC3IOgkIw"
         ]
       },
-      "relevant": true,
-      "rationale": "Both provide industrial engineering software supporting product design, simulation, automation, and lifecycle management for product-development and manufacturing teams."
+      "relevant": false,
+      "rationale": "Small AI-solutions marketplace/consultancy implementing generative AI for clients' engineering; not an industrial automation/electrification peer, serves the category rather than competing with Siemens.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "AI platform for engineering design, simulation, and product lifecycle management overlaps Siemens Digital Industries software and industrial product-development customers."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Small AI-solutions marketplace/consultancy implementing generative AI for clients' engineering; not an industrial automation/electrification peer, serves the category rather than competing with Siemens."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "AI consulting/marketplace for engineering; not an industrial automation, electrification, or infrastructure technology manufacturer comparable to Siemens."
+        }
+      ]
     },
     {
       "name": "Smart Spatial",
@@ -349,8 +503,25 @@
           "https://www.youtube.com/@Smart-Spatial"
         ]
       },
-      "relevant": true,
-      "rationale": "Smart Spatial offers infrastructure digital twins, simulation, and operational software overlapping Siemens\u2019 industrial software for physical-asset design and management."
+      "relevant": false,
+      "rationale": "Niche 3D-visualization/digital-twin SaaS; not an industrial automation, electrification, or infrastructure technology peer\u2014only weak peripheral overlap with Siemens' software slice.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Digital-twin platform for simulating and operating complex physical infrastructure overlaps Siemens' industrial software and smart-infrastructure offerings."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Niche 3D-visualization/digital-twin SaaS; not an industrial automation, electrification, or infrastructure technology peer\u2014only weak peripheral overlap with Siemens' software slice."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "Niche 3D digital-twin SaaS startup overlaps only marginally with Siemens' vast industrial automation, electrification and infrastructure business."
+        }
+      ]
     },
     {
       "name": "SoftHouseGroup",
@@ -379,7 +550,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "SoftHouseGroup is an IT services consultancy, not a provider of Siemens-like industrial automation, electrification, infrastructure, or mobility products."
+      "rationale": "SoftHouse is an IT services consultancy delivering custom modernization and automation projects, not an industrial technology, automation, infrastructure, or mobility product company.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "SoftHouse is an IT services consultancy delivering custom modernization and automation projects, not an industrial technology, automation, infrastructure, or mobility product company."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "SoftHouse is an IT services/software consultancy; Siemens is an industrial technology product company spanning automation, electrification, mobility. Consultancy serving clients, not a competitor."
+        }
+      ]
     },
     {
       "name": "Continuti",
@@ -401,7 +584,19 @@
         "social_urls": []
       },
       "relevant": true,
-      "rationale": "Continuti overlaps Siemens\u2019 industrial digital-twin, IoT, asset-monitoring, and maintenance software offerings for industrial operations and infrastructure buyers."
+      "rationale": "Industrial digital-twin and asset-management platform for utilities and process industries overlaps Siemens' industrial software and smart-infrastructure offerings.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Industrial digital-twin and asset-management platform for utilities and process industries overlaps Siemens' industrial software and smart-infrastructure offerings."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Industrial 3D digital twin and asset-management software for plants/utilities directly overlaps Siemens' industrial software and smart-infrastructure business, serving the same buyers."
+        }
+      ]
     },
     {
       "name": "Cadmatic",
@@ -430,7 +625,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Cadmatic\u2019s industrial engineering, CAD, project-data, and digital-twin software overlaps Siemens\u2019 industrial software offerings and targets similar engineering organizations."
+      "rationale": "Industrial engineering and digital-twin software for plant and marine design overlaps Siemens' industrial software and automation-adjacent portfolio.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Industrial engineering and digital-twin software for plant and marine design overlaps Siemens' industrial software and automation-adjacent portfolio."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Industrial engineering CAD and digital-twin software for plants/marine, comparable to Siemens' Digital Industries software business; same product category and industrial buyer."
+        }
+      ]
     },
     {
       "name": "Visionaize",
@@ -456,7 +663,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Visionaize\u2019s industrial digital twins, AI monitoring, predictive maintenance, and optimization overlap Siemens\u2019 industrial software and automation offerings for operations teams."
+      "rationale": "Industrial AI and digital-twin platform for manufacturing, power, and oil-and-gas operations overlaps Siemens\u2019 industrial automation and software offerings.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Industrial AI and digital-twin platform for manufacturing, power, and oil-and-gas operations overlaps Siemens\u2019 industrial automation and software offerings."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Digital twin and industrial AI software for manufacturing, energy, and oil & gas directly competes with Siemens' industrial software/digital twin offerings."
+        }
+      ]
     },
     {
       "name": "SimScale",
@@ -484,7 +703,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "SimScale overlaps Siemens\u2019 Simcenter engineering simulation software, serving engineering teams conducting physics-based modeling, design validation, and optimization."
+      "rationale": "Cloud engineering simulation software overlaps Siemens\u2019 industrial digital-twin and simulation offerings, serving engineering teams with comparable CAE workflow tools.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Cloud engineering simulation software overlaps Siemens\u2019 industrial digital-twin and simulation offerings, serving engineering teams with comparable CAE workflow tools."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Engineering simulation software competing with Siemens Digital Industries' Simcenter portfolio; same product category and engineering buyer persona."
+        }
+      ]
     },
     {
       "name": "Syyclops",
@@ -511,7 +742,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Syyclops overlaps Siemens\u2019 smart-building offerings through IoT-driven facility, energy, and maintenance analytics for building operators and facility managers."
+      "rationale": "Building-operations analytics and IoT-enabled facility management align with Siemens Smart Infrastructure and building automation offerings.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Building-operations analytics and IoT-enabled facility management align with Siemens Smart Infrastructure and building automation offerings."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Building-operations analytics software with IoT/AI, directly comparable to Siemens' smart-infrastructure building management and energy software offerings; same market and product axis."
+        }
+      ]
     },
     {
       "name": "Digital Twin Analytics",
@@ -536,7 +779,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "DTA\u2019s digital-twin simulation and operational analytics software overlaps Siemens\u2019 industrial software offerings for utilities, transport, and infrastructure decision-makers."
+      "rationale": "Digital-twin simulation and analytics software overlaps Siemens' industrial software offerings, serving operational optimization needs across utilities, transport, and other complex industries.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Digital-twin simulation and analytics software overlaps Siemens' industrial software offerings, serving operational optimization needs across utilities, transport, and other complex industries."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Digital-twin simulation and analytics software for transport, utilities, and infrastructure overlaps Siemens' industrial software and smart-infrastructure/mobility digital-twin business."
+        }
+      ]
     },
     {
       "name": "First Momentum",
@@ -575,7 +830,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "First Momentum is a venture capital investor, not an industrial automation, electrification, infrastructure, mobility, or industrial software provider."
+      "rationale": "First Momentum is a deep-tech venture capital investor, not an industrial automation, electrification, mobility, or infrastructure technology provider.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "First Momentum is a deep-tech venture capital investor, not an industrial automation, electrification, mobility, or infrastructure technology provider."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Venture capital firm investing in deep tech startups, not an industrial technology products company; different business model and market."
+        }
+      ]
     },
     {
       "name": "Definity",
@@ -601,7 +868,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Definity is a custom AI and IT services provider, not an industrial automation, electrification, infrastructure, mobility, or industrial software company."
+      "rationale": "Definity is a bespoke AI and software-services consultancy, not an industrial automation, electrification, infrastructure, mobility, or industrial-software provider.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Definity is a bespoke AI and software-services consultancy, not an industrial automation, electrification, infrastructure, mobility, or industrial-software provider."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Definity is an IT services/AI consultancy building custom solutions for clients, not an industrial technology or automation company like Siemens."
+        }
+      ]
     },
     {
       "name": "Twiniti",
@@ -627,7 +906,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Twiniti is primarily an AI consulting and training provider, not an industrial automation, electrification, mobility, or infrastructure technology manufacturer like Siemens."
+      "rationale": "Twiniti is primarily an AI and EAM consulting/training provider, not an industrial automation, electrification, infrastructure, mobility, or software peer.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Twiniti is primarily an AI and EAM consulting/training provider, not an industrial automation, electrification, infrastructure, mobility, or software peer."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Twiniti is an AI/digital-twin consulting and training firm serving the category, not an industrial-technology product company competing with Siemens."
+        }
+      ]
     },
     {
       "name": "Geminum Pty Ltd",
@@ -652,7 +943,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Geminum\u2019s industrial digital-twin and operational monitoring platform overlaps Siemens\u2019 industrial software offerings and targets the same manufacturing operations and maintenance buyers."
+      "rationale": "Industrial digital-twin software for manufacturing and mining overlaps Siemens' industrial automation and digitalization offerings.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Industrial digital-twin software for manufacturing and mining overlaps Siemens' industrial automation and digitalization offerings."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Industrial digital-twin software for manufacturing and mining operations mirrors Siemens' industrial software and automation portfolio, making it a comparable product in the same space."
+        }
+      ]
     },
     {
       "name": "Nebius x JetBrains Academy",
@@ -674,7 +977,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "AI programming education does not overlap Siemens\u2019 core industrial automation, electrification, infrastructure, mobility, or industrial software offerings and targets different buyers."
+      "rationale": "AI-assisted programming education provider, not an industrial automation, electrification, infrastructure, mobility, or industrial software company.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "AI-assisted programming education provider, not an industrial automation, electrification, infrastructure, mobility, or industrial software company."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Coding education platform for developers; no overlap with Siemens' industrial automation, electrification, or infrastructure technology."
+        }
+      ]
     },
     {
       "name": "Eigen",
@@ -701,7 +1016,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Eigen\u2019s general team-productivity workspace does not overlap Siemens\u2019 core industrial automation, electrification, infrastructure, mobility, or industrial software offerings."
+      "rationale": "Eigen is a general team productivity and AI workspace, not an industrial automation, electrification, infrastructure, mobility, or industrial software comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Eigen is a general team productivity and AI workspace, not an industrial automation, electrification, infrastructure, mobility, or industrial software comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Generic team-collaboration/productivity SaaS; Siemens is industrial technology (automation, electrification, mobility). No shared product, market, or model resemblance."
+        }
+      ]
     },
     {
       "name": "Enterprise IT News",
@@ -732,7 +1059,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Enterprise IT News is a technology media publisher, not a provider of industrial automation, electrification, infrastructure, mobility, or engineering software."
+      "rationale": "Enterprise IT News is a media publication covering technology trends, not an industrial automation, electrification, infrastructure, mobility, or software provider comparable to Siemens.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Enterprise IT News is a media publication covering technology trends, not an industrial automation, electrification, infrastructure, mobility, or software provider comparable to Siemens."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "EITN is a tech news/media platform, not an industrial technology company; it covers the category rather than competing in it."
+        }
+      ]
     },
     {
       "name": "3D Engineering Automation LLP",
@@ -763,7 +1102,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "3D Engineering is a Siemens channel partner and engineering-services provider, not an industrial technology product company offering comparable automation or infrastructure platforms."
+      "rationale": "Siemens channel partner and engineering-services consultancy, serving users of Siemens tools rather than competing in Siemens\u2019s industrial technology markets.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Siemens channel partner and engineering-services consultancy, serving users of Siemens tools rather than competing in Siemens\u2019s industrial technology markets."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Channel partner and engineering-services firm reselling/implementing Siemens products; a partner, not a competitor or comparable industrial technology company."
+        }
+      ]
     },
     {
       "name": "Wandelbots GmbH",
@@ -789,7 +1140,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide industrial automation software for manufacturers, serving engineering and operations teams deploying and managing automated production systems."
+      "rationale": "Industrial robot automation software directly overlaps Siemens' industrial automation and digitalization offerings, serving manufacturers with comparable automation workflows.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Industrial robot automation software directly overlaps Siemens' industrial automation and digitalization offerings, serving manufacturers with comparable automation workflows."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Industrial robot automation software directly overlaps Siemens' industrial automation and software business; genuine comparable/competitor in that space."
+        }
+      ]
     },
     {
       "name": "Smarttrak AI",
@@ -813,8 +1176,25 @@
           "https://www.youtube.com/@SmarttrakAI"
         ]
       },
-      "relevant": true,
-      "rationale": "Both provide digital-twin, asset-monitoring, and predictive-maintenance technology for energy and industrial infrastructure operators."
+      "relevant": false,
+      "rationale": "Niche solar asset-monitoring software; digital-twin tech overlap alone isn't enough \u2014 not a peer to Siemens's broad industrial automation/electrification business. When in doubt, false.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "AI digital-twin monitoring and predictive maintenance for renewable energy assets overlaps Siemens\u2019 industrial software, smart infrastructure, and electrification offerings."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Niche solar asset-monitoring software; digital-twin tech overlap alone isn't enough \u2014 not a peer to Siemens's broad industrial automation/electrification business. When in doubt, false."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "Niche AI SaaS for solar asset monitoring; not a diversified industrial automation/electrification manufacturer comparable to Siemens."
+        }
+      ]
     },
     {
       "name": "XRintelligence",
@@ -840,7 +1220,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide industrial digital-twin and operations software for engineering, maintenance, simulation, and performance optimization buyers."
+      "rationale": "Industrial digital-twin and AI operations software overlaps Siemens' industrial automation, software, predictive maintenance, and smart-infrastructure offerings.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Industrial digital-twin and AI operations software overlaps Siemens' industrial automation, software, predictive maintenance, and smart-infrastructure offerings."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Builds industrial digital twin software for operations, predictive maintenance, and engineering\u2014directly comparable to Siemens' digital twin/industrial software business."
+        }
+      ]
     },
     {
       "name": "e-Magic Inc.",
@@ -868,7 +1260,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "e-Magic\u2019s operational digital twins for buildings, manufacturing, and energy overlap Siemens\u2019 industrial software and smart-infrastructure offerings for asset operators."
+      "rationale": "Digital-twin platform for industrial assets, buildings, manufacturing, and energy management overlaps Siemens\u2019 smart infrastructure and industrial software offerings.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Digital-twin platform for industrial assets, buildings, manufacturing, and energy management overlaps Siemens\u2019 smart infrastructure and industrial software offerings."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Industrial digital-twin software for buildings, manufacturing, and energy overlaps Siemens' smart-infrastructure and industrial-software (Xcelerator/MindSphere) business \u2014 a comparable product and market."
+        }
+      ]
     },
     {
       "name": "Reality Scale",
@@ -892,7 +1296,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Reality Scale is a generative 3D/AR content platform, not an industrial automation, electrification, infrastructure, mobility, or engineering-software provider comparable to Siemens."
+      "rationale": "Generic AI 3D/AR content platform for gaming, education, and simulations, not an industrial automation, electrification, infrastructure, or mobility comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Generic AI 3D/AR content platform for gaming, education, and simulations, not an industrial automation, electrification, infrastructure, or mobility comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Generative AI 3D/AR rendering platform for gaming/education; no overlap with Siemens' industrial automation, electrification, or infrastructure businesses."
+        }
+      ]
     },
     {
       "name": "Maya HTT",
@@ -921,7 +1337,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Maya HTT primarily develops, integrates, and supports Siemens Simcenter solutions rather than offering a competing broad industrial technology platform."
+      "rationale": "Maya HTT is primarily an engineering simulation and digital-manufacturing solutions provider, likely implementing Siemens software rather than competing as an industrial technology platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Maya HTT is primarily an engineering simulation and digital-manufacturing solutions provider, likely implementing Siemens software rather than competing as an industrial technology platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Maya HTT is a Siemens partner/reseller of Simcenter tools and engineering-services firm, not a comparable industrial-technology competitor; partner relationship disqualifies."
+        }
+      ]
     },
     {
       "name": "Desapex",
@@ -949,7 +1377,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Desapex is primarily an AEC digital-engineering consultancy and implementation provider, not an industrial automation, electrification, or infrastructure technology vendor like Siemens."
+      "rationale": "Desapex is an AEC-focused digital engineering and consulting provider, not an industrial automation, electrification, mobility, or infrastructure technology peer of Siemens.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Desapex is an AEC-focused digital engineering and consulting provider, not an industrial automation, electrification, mobility, or infrastructure technology peer of Siemens."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Desapex is an AEC digital-engineering services/consultancy firm, not an industrial automation/electrification technology provider; it serves the category rather than competing with Siemens."
+        }
+      ]
     },
     {
       "name": "Spatial Logic",
@@ -974,7 +1414,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both offer facility digital-twin software for operational visualization, monitoring, and collaboration used by facility and engineering teams."
+      "rationale": "Digital-twin software for facility operations overlaps Siemens' smart-infrastructure and industrial digitalization offerings, serving similar operational users.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Digital-twin software for facility operations overlaps Siemens' smart-infrastructure and industrial digitalization offerings, serving similar operational users."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Digital-twin software for facilities overlaps Siemens' Xcelerator/smart-infrastructure software business; same product category and industrial buyer persona."
+        }
+      ]
     },
     {
       "name": "EqBit AI",
@@ -999,7 +1451,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "EqBit is a custom digital development and AI consultancy, not an industrial automation, electrification, infrastructure, mobility, or industrial software provider."
+      "rationale": "EqBit AI is a custom software and marketing services studio, not an industrial automation, electrification, infrastructure, mobility, or industrial software company.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "EqBit AI is a custom software and marketing services studio, not an industrial automation, electrification, infrastructure, mobility, or industrial software company."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "EqBit AI is a software/AI development services studio, not an industrial technology company; it serves the category rather than competing with Siemens."
+        }
+      ]
     },
     {
       "name": "TechnoWelle",
@@ -1026,7 +1490,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "TechnoWelle provides automotive embedded-software engineering and consulting, not Siemens-like industrial automation, electrification, infrastructure, or mobility systems."
+      "rationale": "Automotive embedded-software engineering and consulting provider, not a diversified industrial automation, electrification, mobility, and infrastructure technology peer.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Automotive embedded-software engineering and consulting provider, not a diversified industrial automation, electrification, mobility, and infrastructure technology peer."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Niche automotive embedded-software services/consultancy firm; not an industrial automation, electrification, or infrastructure technology peer like Siemens."
+        }
+      ]
     },
     {
       "name": "Talisman Consulting",
@@ -1050,7 +1526,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Talisman is an IT consultancy offering implementation services, not an industrial technology manufacturer/platform competing with Siemens\u2019 core automation and infrastructure products."
+      "rationale": "Technology consultancy serving industrial clients, not an industrial automation, electrification, mobility, or infrastructure product company comparable to Siemens.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Technology consultancy serving industrial clients, not an industrial automation, electrification, mobility, or infrastructure product company comparable to Siemens."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "IT consultancy serving industrial/tech sectors, not an industrial technology product maker; agencies/consultancies that serve the category are excluded."
+        }
+      ]
     },
     {
       "name": "Uplift Duo",
@@ -1077,7 +1565,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Uplift Duo provides sales and support workflow automation, not Siemens\u2019 core industrial automation, electrification, infrastructure, mobility, or engineering software."
+      "rationale": "Sales and customer-support workflow automation does not compete with Siemens\u2019s industrial automation, infrastructure, mobility, or electrification products.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Sales and customer-support workflow automation does not compete with Siemens\u2019s industrial automation, infrastructure, mobility, or electrification products."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Sales/customer-support workflow automation software, unrelated to Siemens' industrial automation, electrification, and smart infrastructure technology."
+        }
+      ]
     },
     {
       "name": "Insoftex",
@@ -1106,7 +1606,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Insoftex is a custom software development consultancy, not an industrial automation, electrification, infrastructure, or mobility technology manufacturer like Siemens."
+      "rationale": "Insoftex is a custom software development and consulting agency, not an industrial automation, electrification, mobility, or infrastructure technology peer.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Insoftex is a custom software development and consulting agency, not an industrial automation, electrification, mobility, or infrastructure technology peer."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Custom software development consultancy serving various industries; not an industrial technology product company or Siemens competitor/comparable."
+        }
+      ]
     },
     {
       "name": "Digital Twin Consortium",
@@ -1132,7 +1644,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Digital Twin Consortium is an industry membership and standards organization, not an industrial automation, electrification, infrastructure, mobility, or software vendor like Siemens."
+      "rationale": "Industry consortium promoting digital-twin standards and collaboration, not an industrial automation, infrastructure, mobility, or software vendor comparable to Siemens.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Industry consortium promoting digital-twin standards and collaboration, not an industrial automation, infrastructure, mobility, or software vendor comparable to Siemens."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Nonprofit industry consortium promoting digital twin standards, not an industrial technology vendor competing with or comparable to Siemens."
+        }
+      ]
     },
     {
       "name": "Neural Concept",
@@ -1159,7 +1683,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both sell engineering software for product design, simulation, and development workflows to industrial engineering teams, despite Siemens\u2019 much broader portfolio."
+      "rationale": "AI engineering and generative design platform overlaps Siemens\u2019 industrial software offerings for product development, simulation, and engineering workflows.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "AI engineering and generative design platform overlaps Siemens\u2019 industrial software offerings for product development, simulation, and engineering workflows."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "AI-driven engineering design/simulation platform overlaps Siemens Digital Industries Software (NX, Simcenter, generative design); comparable engineering-software vendor."
+        }
+      ]
     },
     {
       "name": "GigaPlant AI",
@@ -1181,8 +1717,25 @@
         "city": "Remagen",
         "social_urls": []
       },
-      "relevant": true,
-      "rationale": "Both sell factory automation technology to manufacturers seeking to improve industrial process efficiency, with overlap in AI-enabled and low-code automation."
+      "relevant": false,
+      "rationale": "GigaPlant AI sells courses/templates and expert guidance for factory AI adoption\u2014an enablement/education service serving the automation category, not an industrial-automation technology competitor to Siemens.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Provides AI and low-code factory automation tools, serving the same industrial automation and manufacturing-efficiency market as Siemens."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "GigaPlant AI sells courses/templates and expert guidance for factory AI adoption\u2014an enablement/education service serving the automation category, not an industrial-automation technology competitor to Siemens."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "Courses/templates for factory AI automation /electainment vendor; education-heavy offering, not an industrial technology/automation equipment peer of Siemens.Please respond with JSON.  \u2060"
+        }
+      ]
     },
     {
       "name": "evosoft GmbH",
@@ -1210,7 +1763,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "evosoft primarily provides custom software and digital-transformation services, rather than Siemens-like industrial automation, electrification, infrastructure, or mobility products."
+      "rationale": "Evosoft is a wholly owned Siemens subsidiary, not an independent competitor, comparable, or ICP-expansion prospect.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Evosoft is a wholly owned Siemens subsidiary, not an independent competitor, comparable, or ICP-expansion prospect."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "100% Siemens AG subsidiary \u2014 part of the seed itself, not an independent competitor or comparable; excluded per parent/affiliate rule."
+        }
+      ]
     },
     {
       "name": "Cloudworx",
@@ -1234,7 +1799,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Cloudworx\u2019s industrial digital-twin and asset-optimization platform overlaps Siemens\u2019 industrial software offerings and targets the same engineering and operations buyers."
+      "rationale": "Industrial digital-twin and predictive-operations platform overlaps Siemens' industrial automation and software offerings for manufacturing and energy users.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Industrial digital-twin and predictive-operations platform overlaps Siemens' industrial automation and software offerings for manufacturing and energy users."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Industrial digital-twin software for the same buyers; directly comparable to Siemens's Xcelerator/industrial software business."
+        }
+      ]
     },
     {
       "name": "Summate",
@@ -1264,7 +1841,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Summate is an AI news and content platform, not an industrial automation, electrification, infrastructure, mobility, or engineering software provider."
+      "rationale": "Summate is an AI news and content platform, not an industrial automation, electrification, infrastructure, mobility, or industrial software provider.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Summate is an AI news and content platform, not an industrial automation, electrification, infrastructure, mobility, or industrial software provider."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "AI news/media newsletter platform, not industrial technology, automation, or electrification \u2014 no product, market, or model overlap with Siemens."
+        }
+      ]
     },
     {
       "name": "Specifications.AI",
@@ -1287,7 +1876,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Specifications.AI provides niche AEC specification software, not Siemens\u2019 core industrial automation, electrification, infrastructure, mobility, or engineering software offerings."
+      "rationale": "AEC specification software is a narrow project-delivery tool, not comparable to Siemens\u2019s industrial automation, electrification, infrastructure, mobility, or industrial software portfolio.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "AEC specification software is a narrow project-delivery tool, not comparable to Siemens\u2019s industrial automation, electrification, infrastructure, mobility, or industrial software portfolio."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Niche AI tool for AEC specifications; no overlap with Siemens' industrial automation, electrification, or infrastructure products and markets."
+        }
+      ]
     },
     {
       "name": "eoda",
@@ -1315,7 +1916,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "eoda is a data science consultancy, not an industrial automation, electrification, infrastructure, mobility, or industrial software company comparable to Siemens."
+      "rationale": "eoda is a data science consulting and training provider, not an industrial automation, electrification, infrastructure, mobility, or industrial software company.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "eoda is a data science consulting and training provider, not an industrial automation, electrification, infrastructure, mobility, or industrial software company."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Siemens is an industrial technology conglomerate; eoda is a data science/AI consultancy, a services firm serving the category, not a peer or competitor."
+        }
+      ]
     },
     {
       "name": "Ada Mode",
@@ -1340,8 +1953,25 @@
           "https://www.linkedin.com/company/ada-mode/"
         ]
       },
-      "relevant": true,
-      "rationale": "Ada Mode\u2019s industrial AI platform overlaps Siemens\u2019 industrial software and automation offerings, targeting operators and OEMs for predictive maintenance and operational optimization."
+      "relevant": false,
+      "rationale": "Ada Mode is a small AI consultancy building custom solutions for industrial clients; not a competitor or comparable to Siemens' industrial technology products.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Industrial AI platform for energy and manufacturing operations overlaps Siemens\u2019 industrial automation, software, and predictive-maintenance markets."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Ada Mode is a small AI consultancy building custom solutions for industrial clients; not a competitor or comparable to Siemens' industrial technology products."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "Ada Mode is a small industrial-AI consultancy/platform, not a peer to Siemens' automation, electrification, and infrastructure hardware-software business."
+        }
+      ]
     },
     {
       "name": "Willow",
@@ -1367,7 +1997,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Willow\u2019s building and infrastructure digital-twin platform overlaps Siemens\u2019 smart-infrastructure and building-operations software, targeting the same facility and asset-management buyers."
+      "rationale": "Digital-twin software for smart building and infrastructure operations overlaps Siemens Smart Infrastructure and industrial software offerings.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Digital-twin software for smart building and infrastructure operations overlaps Siemens Smart Infrastructure and industrial software offerings."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Digital twin platform for buildings/infrastructure directly overlaps Siemens' smart infrastructure and industrial software (digital twin) businesses; same buyers, competing products."
+        }
+      ]
     },
     {
       "name": "Engineering 4.0",
@@ -1389,7 +2031,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Engineering 4.0 is primarily a custom software engineering and digital-transformation consultancy, not an industrial automation, electrification, or infrastructure product vendor."
+      "rationale": "Engineering consultancy developing tailored Industry 4.0 systems, rather than an industrial automation, infrastructure, mobility, or electrification technology provider.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Engineering consultancy developing tailored Industry 4.0 systems, rather than an industrial automation, infrastructure, mobility, or electrification technology provider."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Engineering services firm implementing Industry 4.0 automation for clients; consultancy serving the category, not an industrial-technology peer competing with Siemens."
+        }
+      ]
     },
     {
       "name": "Automation Intelligence, LLC",
@@ -1414,7 +2068,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Automation Intelligence is primarily a digital-twin consultancy, not an industrial technology and automation product vendor directly comparable to Siemens."
+      "rationale": "Digital-twin consultancy serving manufacturers and warehouses, not an industrial automation, electrification, mobility, or infrastructure technology peer.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Digital-twin consultancy serving manufacturers and warehouses, not an industrial automation, electrification, mobility, or infrastructure technology peer."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Digital-twin consultancy implementing solutions for manufacturers, not an industrial technology product company; consultancy serving the category rather than competing with Siemens."
+        }
+      ]
     },
     {
       "name": "TestVagrant Technologies Pvt. Ltd.",
@@ -1441,7 +2107,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "TestVagrant is a software testing and engineering services firm, not an industrial automation, electrification, infrastructure, or mobility technology provider."
+      "rationale": "Software testing and engineering consultancy, not an industrial automation, electrification, mobility, or smart-infrastructure product company.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Software testing and engineering consultancy, not an industrial automation, electrification, mobility, or smart-infrastructure product company."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Software testing/QA services firm; Siemens is an industrial technology conglomerate. No shared product, market, or business model\u2014services provider, not a peer."
+        }
+      ]
     },
     {
       "name": "Fuse IOT LTDA",
@@ -1468,7 +2146,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide industrial IoT monitoring, equipment intelligence, anomaly detection, and predictive maintenance solutions for manufacturing and facility operations buyers."
+      "rationale": "Industrial IoT monitoring and predictive maintenance platform overlaps Siemens' industrial automation and digitalization offerings for manufacturers and facilities.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Industrial IoT monitoring and predictive maintenance platform overlaps Siemens' industrial automation and digitalization offerings for manufacturers and facilities."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Industrial IoT monitoring and predictive-analytics platform mirrors Siemens' industrial automation/software offerings; same product category and buyer persona."
+        }
+      ]
     },
     {
       "name": "DeepCast, LLC",
@@ -1491,8 +2181,25 @@
           "https://www.linkedin.com/company/deepcastai/"
         ]
       },
-      "relevant": true,
-      "rationale": "DeepCast\u2019s industrial AI and operational analytics overlap Siemens\u2019 industrial software offerings and target engineers managing digital transformation in process industries."
+      "relevant": false,
+      "rationale": "Niche AI modeling SaaS for oil/chemical engineers; not a competitor to Siemens' industrial automation, electrification, and infrastructure portfolio.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Industrial AI and data-analytics platform for oil and chemical operations overlaps Siemens' digital-industries software and industrial automation customers."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Niche AI modeling SaaS for oil/chemical engineers; not a competitor to Siemens' industrial automation, electrification, and infrastructure portfolio."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "Niche AI/ML SaaS for oil & chemical analytics; not a diversified industrial automation/electrification technology manufacturer like Siemens.<br>"
+        }
+      ]
     },
     {
       "name": "B2B Media Group GmbH",
@@ -1514,7 +2221,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "B2B Media Group is a business-content and resources publisher, not a provider of industrial automation, electrification, infrastructure, mobility, or engineering software."
+      "rationale": "Media and expert-content platform, not an industrial automation, electrification, infrastructure, mobility, or industrial software provider.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Media and expert-content platform, not an industrial automation, electrification, infrastructure, mobility, or industrial software provider."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "B2B media/content platform offering white papers and workshops, not industrial technology, automation, or electrification products; no product or market overlap."
+        }
+      ]
     },
     {
       "name": "Digital.ai",
@@ -1544,7 +2263,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Digital.ai provides enterprise DevSecOps and software-delivery tooling, not Siemens\u2019 core industrial automation, electrification, infrastructure, or mobility technologies."
+      "rationale": "Digital.ai sells DevSecOps and software-delivery tooling, not Siemens\u2019 industrial automation, electrification, infrastructure, mobility, or industrial software portfolio.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Digital.ai sells DevSecOps and software-delivery tooling, not Siemens\u2019 industrial automation, electrification, infrastructure, mobility, or industrial software portfolio."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "DevOps/app-testing and agile-planning SaaS, not industrial automation, electrification, or industrial software; different products and buyer markets."
+        }
+      ]
     },
     {
       "name": "CreateASoft, Inc.",
@@ -1575,7 +2306,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide industrial digital-twin and simulation software for manufacturing and operations teams seeking workflow optimization and predictive decision support."
+      "rationale": "Digital-twin and industrial simulation software for manufacturing and logistics aligns with Siemens\u2019 industrial automation and digitalization portfolio.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Digital-twin and industrial simulation software for manufacturing and logistics aligns with Siemens\u2019 industrial automation and digitalization portfolio."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Industrial digital-twin and simulation software for manufacturing and logistics \u2014 directly comparable to Siemens' Digital Industries software offerings."
+        }
+      ]
     },
     {
       "name": "Twin Tech",
@@ -1600,7 +2343,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Twin Tech is a training and digital-transformation consultancy, not a provider of Siemens-like industrial automation, electrification, infrastructure, mobility, or software products."
+      "rationale": "Digital-twin training and consulting provider, not an industrial automation, electrification, infrastructure, mobility, or industrial software competitor.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Digital-twin training and consulting provider, not an industrial automation, electrification, infrastructure, mobility, or industrial software competitor."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Twin Tech is a training/coaching consultancy on digital twins, not an industrial-technology product company competing with Siemens."
+        }
+      ]
     },
     {
       "name": "Cogniprise",
@@ -1623,7 +2378,19 @@
         "social_urls": []
       },
       "relevant": true,
-      "rationale": "Cogniprise\u2019s industrial automation and process-optimization software overlaps Siemens\u2019 digital industries offerings and targets the same manufacturing and energy operations buyers."
+      "rationale": "AI-driven industrial process optimization and automation for energy and manufacturing overlaps Siemens' industrial automation and digitalization offerings.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "AI-driven industrial process optimization and automation for energy and manufacturing overlaps Siemens' industrial automation and digitalization offerings."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Industrial automation/process-optimization software for energy and manufacturing overlaps Siemens' industrial automation and software business; same buyers, comparable product."
+        }
+      ]
     },
     {
       "name": "Automate srl",
@@ -1650,7 +2417,24 @@
         ]
       },
       "relevant": false,
-      "rationale": "Automate is primarily an industrial engineering and systems-integration provider, not a manufacturer/platform vendor competing with Siemens\u2019 core automation and infrastructure offerings."
+      "rationale": "Engineering/services firm implementing automation, MES, and AI projects for clients\u2014a systems integrator serving the category, not an industrial technology product company like Siemens.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Industrial automation, MES integration, and PLC solutions overlap Siemens\u2019 industrial automation and digitalization offerings, making it a sector comparable despite its services focus."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Engineering/services firm implementing automation, MES, and AI projects for clients\u2014a systems integrator serving the category, not an industrial technology product company like Siemens."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "Engineering services integrator implementing automation/MES for clients, not a maker of industrial automation products like Siemens; more likely a Siemens partner.on"
+        }
+      ]
     },
     {
       "name": "DigitalOps",
@@ -1674,7 +2458,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "DigitalOps is an AI/cloud consulting provider, not an industrial automation, electrification, infrastructure, or mobility technology manufacturer competing for the same job."
+      "rationale": "DigitalOps is an AI/cloud consulting and services provider, not an industrial automation, electrification, mobility, or infrastructure technology company.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "DigitalOps is an AI/cloud consulting and services provider, not an industrial automation, electrification, mobility, or infrastructure technology company."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "DigitalOps is an IT consulting/services firm, not an industrial technology product maker; serves rather than competes with Siemens."
+        }
+      ]
     },
     {
       "name": "Systemic Intelligence",
@@ -1699,7 +2495,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide industrial digital-twin and simulation software for manufacturing, energy, and operations teams seeking performance optimization and scenario planning."
+      "rationale": "Provides industrial digital-twin simulation software for manufacturing, logistics, and energy operations, overlapping Siemens' industrial software and automation portfolio.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Provides industrial digital-twin simulation software for manufacturing, logistics, and energy operations, overlapping Siemens' industrial software and automation portfolio."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Sells industrial digital-twin/simulation software to manufacturing, logistics, and energy firms, matching Siemens' industrial software (Xcelerator/digital twin) product and market axes."
+        }
+      ]
     },
     {
       "name": "AEC Magazine",
@@ -1727,7 +2535,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "AEC Magazine is an industry publication, not a provider of industrial automation, electrification, infrastructure, mobility, or engineering software products."
+      "rationale": "AEC Magazine is an industry publication, not an industrial automation, electrification, infrastructure, mobility, or software provider comparable to Siemens.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "AEC Magazine is an industry publication, not an industrial automation, electrification, infrastructure, mobility, or software provider comparable to Siemens."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "AEC Magazine is a trade media publication covering construction tech, not an industrial technology/automation company like Siemens; different industry and model."
+        }
+      ]
     },
     {
       "name": "ParoFort",
@@ -1753,7 +2573,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "ParoFort\u2019s construction project-management platform does not clearly overlap Siemens\u2019 core industrial automation, electrification, mobility, or smart-infrastructure offerings for the same job."
+      "rationale": "Construction project-management SaaS uses digital twins but does not primarily compete with Siemens' industrial automation, electrification, mobility, or infrastructure portfolio.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Construction project-management SaaS uses digital twins but does not primarily compete with Siemens' industrial automation, electrification, mobility, or infrastructure portfolio."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "ParoFort is niche construction project-management SaaS; Siemens is industrial automation, electrification, and infrastructure technology \u2014 different products and buyer markets, no strong axis."
+        }
+      ]
     },
     {
       "name": "Tomorrow Projects",
@@ -1777,7 +2609,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Tomorrow Projects is an innovation and strategy consultancy, not a provider of industrial automation, electrification, infrastructure, mobility, or industrial software products."
+      "rationale": "Innovation consultancy providing strategy and transformation services, not an industrial technology manufacturer or automation, infrastructure, mobility, and software platform peer.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Innovation consultancy providing strategy and transformation services, not an industrial technology manufacturer or automation, infrastructure, mobility, and software platform peer."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Innovation/strategy consultancy advising clients on digital transformation, not an industrial technology maker; serves the category rather than competing with Siemens."
+        }
+      ]
     },
     {
       "name": "ML6",
@@ -1805,7 +2649,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "ML6 is an AI engineering consultancy/platform provider, not an industrial automation, electrification, infrastructure, or mobility technology company comparable to Siemens."
+      "rationale": "ML6 is primarily an AI advisory and engineering services firm, not an industrial automation, electrification, infrastructure, mobility, or industrial software peer.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "ML6 is primarily an AI advisory and engineering services firm, not an industrial automation, electrification, infrastructure, mobility, or industrial software peer."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "AI engineering consultancy/advisory services firm, not an industrial technology or automation company; no product, market, or model overlap with Siemens."
+        }
+      ]
     },
     {
       "name": "HackBook",
@@ -1832,8 +2688,25 @@
           "https://x.com/hackbookai"
         ]
       },
-      "relevant": true,
-      "rationale": "Both provide industrial operations technology with cybersecurity and real-time asset monitoring for manufacturing and critical-infrastructure operators."
+      "relevant": false,
+      "rationale": "Industrial-operations cybersecurity vendor, not industrial automation/electrification/infrastructure technology; no shared product, market, or model with Siemens.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Industrial cybersecurity platform for operational environments overlaps Siemens' industrial security and automation offerings, serving similar manufacturing and infrastructure operators."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Industrial-operations cybersecurity vendor, not industrial automation/electrification/infrastructure technology; no shared product, market, or model with Siemens."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "OT cybersecurity SaaS startup, not an industrial automation/electrification conglomerate; adjacent vendor at best, not a peer or comparable.You must respond with valid JSON that conforms to the following JSON schema:\n\n<json_schema>\n{\n  \"pro"
+        }
+      ]
     },
     {
       "name": "STX Next",
@@ -1860,7 +2733,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "STX Next is a custom software consultancy, not a provider of Siemens-like industrial automation, electrification, infrastructure, or mobility products."
+      "rationale": "STX Next is a custom software and cloud consultancy, not an industrial automation, electrification, mobility, or infrastructure technology provider.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "STX Next is a custom software and cloud consultancy, not an industrial automation, electrification, mobility, or infrastructure technology provider."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Software development services/consultancy, not an industrial automation, electrification, or industrial-software product company; serves the category rather than competing."
+        }
+      ]
     },
     {
       "name": "4BIZ",
@@ -1883,7 +2768,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "4BIZ is an AI services/consulting provider, not an industrial automation, electrification, infrastructure, mobility, or industrial software company comparable to Siemens."
+      "rationale": "AI consulting and tailored automation services, not an industrial automation, electrification, infrastructure, mobility, or industrial software peer.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "AI consulting and tailored automation services, not an industrial automation, electrification, infrastructure, mobility, or industrial software peer."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "AI services/consultancy helping firms adopt AI; not an industrial automation/electrification peer or comparable to Siemens."
+        }
+      ]
     },
     {
       "name": "Vintecc",
@@ -1910,8 +2807,25 @@
           "https://www.youtube.com/channel/UC9qfgzmToly5zkc7SvNo0Tg"
         ]
       },
-      "relevant": true,
-      "rationale": "Both provide industrial digitalization technologies, including IoT, digital twins, automation, and analytics, targeting manufacturing and operations buyers."
+      "relevant": false,
+      "rationale": "Tailored AI/IoT services consultancy implementing industrial solutions for clients, not a product competitor to Siemens' automation and industrial software portfolio.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Vintecc sells industrial AI, IoT, digital-twin and automation solutions for manufacturers, overlapping Siemens\u2019 digital-industries and industrial-automation offerings."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Tailored AI/IoT services consultancy implementing industrial solutions for clients, not a product competitor to Siemens' automation and industrial software portfolio."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "Vintecc is an engineering/software services firm for industry, not a diversified industrial technology manufacturer like Siemens."
+        }
+      ]
     },
     {
       "name": "Plain Concepts",
@@ -1942,7 +2856,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Plain Concepts is an IT consultancy and custom-development provider, not an industrial automation, electrification, infrastructure, or mobility technology manufacturer like Siemens."
+      "rationale": "Plain Concepts is an IT/AI consulting and custom-development firm, not an industrial automation, electrification, mobility, or infrastructure technology product peer.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Plain Concepts is an IT/AI consulting and custom-development firm, not an industrial automation, electrification, mobility, or infrastructure technology product peer."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "IT services/AI consultancy, not an industrial technology maker; serves the category rather than competing with Siemens' automation/electrification products."
+        }
+      ]
     },
     {
       "name": "Verhaert Digital Innovation",
@@ -1972,7 +2898,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Verhaert is a custom digital innovation services firm, not a provider of Siemens-like industrial automation, electrification, infrastructure, or mobility products."
+      "rationale": "Digital innovation consultancy builds tailored solutions for clients; it does not offer Siemens-like industrial automation, infrastructure, mobility, or product platforms.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Digital innovation consultancy builds tailored solutions for clients; it does not offer Siemens-like industrial automation, infrastructure, mobility, or product platforms."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Digital innovation consultancy building custom software for clients; a services firm, not an industrial technology product peer of Siemens."
+        }
+      ]
     },
     {
       "name": "blue automation GmbH",
@@ -1999,7 +2937,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Blue Automation is primarily a custom automation engineering and integration service, not an industrial technology product vendor comparable to Siemens."
+      "rationale": "Custom automation engineering and integration firm, not a broad industrial automation, electrification, mobility, and technology product competitor.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Custom automation engineering and integration firm, not a broad industrial automation, electrification, mobility, and technology product competitor."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Custom automation engineering services/system integrator implementing PLCs and robots for clients, not an industrial-technology product comparable to Siemens."
+        }
+      ]
     },
     {
       "name": "CONWEAVER",
@@ -2022,8 +2972,25 @@
           "https://www.linkedin.com/company/conweavergmbh/"
         ]
       },
-      "relevant": true,
-      "rationale": "Both offer industrial digital-twin and engineering data software for manufacturers, serving engineering teams seeking integrated product, production, and compliance information."
+      "relevant": false,
+      "rationale": "Niche enterprise knowledge-graph/data-fabric vendor; only a tangential 'digital twin' keyword overlap, not an industrial automation, electrification, or infrastructure peer of Siemens.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Industrial data and digital-twin software for engineering teams overlaps Siemens Digital Industries\u2019 product lifecycle, automation, and industrial digitalization offerings."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Niche enterprise knowledge-graph/data-fabric vendor; only a tangential 'digital twin' keyword overlap, not an industrial automation, electrification, or infrastructure peer of Siemens."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "Niche knowledge-graph data-fabric software; not an industrial automation/electrification conglomerate comparable to Siemens, more a supplier to such firms."
+        }
+      ]
     },
     {
       "name": "valantic",
@@ -2050,7 +3017,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Valantic is a digital-transformation consultancy and systems implementer, not an industrial automation, electrification, mobility, or smart-infrastructure technology manufacturer."
+      "rationale": "Valantic is a digital-transformation consultancy and SAP implementer, not an industrial automation, electrification, mobility, or infrastructure technology product company.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Valantic is a digital-transformation consultancy and SAP implementer, not an industrial automation, electrification, mobility, or infrastructure technology product company."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Valantic is an IT/SAP consulting firm serving clients, not an industrial technology manufacturer; consultancy rather than competitor or comparable to Siemens."
+        }
+      ]
     },
     {
       "name": "Engineering.com",
@@ -2078,7 +3057,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Engineering.com is an engineering media and information site, not a provider of industrial automation, electrification, infrastructure, mobility, or industrial software."
+      "rationale": "Engineering.com is an engineering media and community site, not an industrial automation, electrification, mobility, or infrastructure technology provider.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Engineering.com is an engineering media and community site, not an industrial automation, electrification, mobility, or infrastructure technology provider."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Engineering.com is a media/content site for engineers, not an industrial technology or automation products company like Siemens."
+        }
+      ]
     },
     {
       "name": "Harpaceas",
@@ -2106,7 +3097,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Harpaceas focuses on construction BIM consulting and specialized workflows, not Siemens\u2019 core industrial automation, electrification, mobility, or smart-infrastructure technology platforms."
+      "rationale": "Construction-focused BIM consultancy, certification, and software partner; it does not offer Siemens' broad industrial automation, electrification, mobility, or infrastructure products.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Construction-focused BIM consultancy, certification, and software partner; it does not offer Siemens' broad industrial automation, electrification, mobility, or infrastructure products."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Harpaceas is a niche BIM software partner/reseller for construction, not an industrial technology peer; serves a category Siemens spans rather than competing."
+        }
+      ]
     },
     {
       "name": "Innovaxel",
@@ -2134,7 +3137,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Innovaxel is a custom AI and digital-product engineering service, not an industrial automation, electrification, infrastructure, mobility, or industrial-software provider."
+      "rationale": "Innovaxel is a custom AI and digital-product development consultancy, not an industrial automation, electrification, infrastructure, mobility, or industrial-software provider.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Innovaxel is a custom AI and digital-product development consultancy, not an industrial automation, electrification, infrastructure, mobility, or industrial-software provider."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Innovaxel is an AI/software development services agency, not an industrial automation, electrification, or infrastructure technology company like Siemens."
+        }
+      ]
     },
     {
       "name": "Think-it",
@@ -2161,7 +3176,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Think-it is a software engineering services firm, not an industrial automation, electrification, infrastructure, or mobility technology provider like Siemens."
+      "rationale": "Think-it is a software engineering and sustainability consultancy, not an industrial automation, electrification, mobility, or infrastructure technology provider.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Think-it is a software engineering and sustainability consultancy, not an industrial automation, electrification, mobility, or infrastructure technology provider."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Think-it is a software engineering services/consultancy firm, not an industrial technology product company; it serves rather than competes with Siemens."
+        }
+      ]
     },
     {
       "name": "TechStaX",
@@ -2186,7 +3213,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "TechStaX offers generic AI, data integration, and custom development, not Siemens\u2019 core industrial automation, electrification, infrastructure, or mobility technologies."
+      "rationale": "AI/data-integration platform and custom developer; does not offer Siemens's industrial automation, electrification, infrastructure, mobility, or industrial software products.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "AI/data-integration platform and custom developer; does not offer Siemens's industrial automation, electrification, infrastructure, mobility, or industrial software products."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Generic AI/data-integration services firm, not industrial automation, electrification, or infrastructure technology; no shared product or market axis with Siemens."
+        }
+      ]
     },
     {
       "name": "realvirtual.io",
@@ -2212,7 +3251,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both offer industrial digital-twin, simulation, and automation software used by manufacturers and automation engineers for PLC testing and production optimization."
+      "rationale": "Industrial digital-twin simulation and PLC testing platform aligns with Siemens\u2019 industrial automation software and smart-manufacturing offerings.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Industrial digital-twin simulation and PLC testing platform aligns with Siemens\u2019 industrial automation software and smart-manufacturing offerings."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Industrial digital-twin simulation software with PLC testing overlaps Siemens' Digital Industries software business (Xcelerator/Tecnomatix), making it a comparable competitor in industrial software."
+        }
+      ]
     },
     {
       "name": "Treedis",
@@ -2240,7 +3291,24 @@
         ]
       },
       "relevant": false,
-      "rationale": "Treedis provides immersive spatial digital twins, not Siemens-style industrial automation, electrification, or infrastructure systems; buyers would not typically evaluate them interchangeably."
+      "rationale": "Niche 360\u00b0 virtual-tour/digital-twin SaaS for real estate and education; not industrial automation, electrification, or mobility technology like Siemens.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Treedis offers digital-twin software for physical spaces, overlapping Siemens\u2019 smart-infrastructure and digital-twin offerings despite a narrower focus."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Niche 360\u00b0 virtual-tour/digital-twin SaaS for real estate and education; not industrial automation, electrification, or mobility technology like Siemens."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "Niche 3D digital-twin SaaS for real estate/education; not a comparable to Siemens' industrial automation, electrification, and infrastructure business.<parameter name="
+        }
+      ]
     },
     {
       "name": "Retrocausal",
@@ -2268,7 +3336,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both offer industrial manufacturing software that helps factory operators automate, monitor, and optimize production processes."
+      "rationale": "Manufacturing-operations AI platform serving factory productivity and automation needs overlaps Siemens\u2019 industrial software and automation markets.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Manufacturing-operations AI platform serving factory productivity and automation needs overlaps Siemens\u2019 industrial software and automation markets."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Manufacturing-operations AI software overlapping Siemens' industrial software/digital-factory business; same factory buyer and production-efficiency job."
+        }
+      ]
     },
     {
       "name": "CORE Innovation Group",
@@ -2295,8 +3375,25 @@
           "https://www.youtube.com/channel/UCFFWl07pTR5HRFn1kabcSRg"
         ]
       },
-      "relevant": true,
-      "rationale": "Both provide Industry 4.0 technologies such as predictive maintenance, digital twins, industrial IoT, and manufacturing optimization to industrial operations buyers."
+      "relevant": false,
+      "rationale": "Non-profit research organization facilitating industrial innovation, not an industrial technology vendor competing with Siemens; research/events focus, not comparable products at market.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Its industrial IoT, predictive-maintenance, digital-twin, and intelligent-manufacturing platforms overlap Siemens Digital Industries offerings."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Non-profit research organization facilitating industrial innovation, not an industrial technology vendor competing with Siemens; research/events focus, not comparable products at market."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "Non-profit research organization doing Industry 4.0 projects, not an industrial technology vendor comparable to Siemens."
+        }
+      ]
     },
     {
       "name": "V2T",
@@ -2327,7 +3424,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "V2T is primarily an AI consulting and custom simulation provider, not an industrial automation, electrification, infrastructure, or mobility technology vendor like Siemens."
+      "rationale": "V2T is primarily an AI consulting and custom implementation provider, not a broad industrial automation, infrastructure, mobility, or electrification technology peer.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "V2T is primarily an AI consulting and custom implementation provider, not a broad industrial automation, infrastructure, mobility, or electrification technology peer."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "V2T is a small AI consulting/implementation shop, not an industrial technology peer; shared digital-twin tech alone cannot substitute for product/market resemblance."
+        }
+      ]
     },
     {
       "name": "ACULENCE",
@@ -2350,7 +3459,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "ACULENCE is an executive advisory consultancy serving industrial deep-tech firms, not a provider of Siemens-like automation, electrification, infrastructure, mobility, or industrial software."
+      "rationale": "ACULENCE is an executive advisory consultancy serving industrial deep-tech firms, not an industrial technology manufacturer or automation, infrastructure, mobility, and software provider.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "ACULENCE is an executive advisory consultancy serving industrial deep-tech firms, not an industrial technology manufacturer or automation, infrastructure, mobility, and software provider."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Advisory/consultancy serving deep-tech clients, not an industrial technology maker; agencies/consultancies that serve the category are excluded."
+        }
+      ]
     },
     {
       "name": "The Intellify",
@@ -2378,7 +3499,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "The Intellify is a custom AI and digital-engineering consultancy, not an industrial automation, electrification, infrastructure, or mobility technology provider like Siemens."
+      "rationale": "AI and digital engineering consultancy serving industries, not an industrial automation, electrification, infrastructure, mobility, or industrial software provider.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "AI and digital engineering consultancy serving industries, not an industrial automation, electrification, infrastructure, mobility, or industrial software provider."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "AI/digital engineering services consultancy, not an industrial technology products company; serves the category rather than competing with Siemens."
+        }
+      ]
     },
     {
       "name": "Robotec.ai",
@@ -2403,7 +3536,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide industrial digital-twin and simulation software for robotics and automation teams developing, testing, and deploying complex systems."
+      "rationale": "Robotec.ai's robotics simulation and digital-twin software overlaps Siemens' industrial automation and digitalization offerings for industrial engineering customers.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Robotec.ai's robotics simulation and digital-twin software overlaps Siemens' industrial automation and digitalization offerings for industrial engineering customers."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both sell industrial digital-twin/robot-simulation software; Robotec's platform overlaps Siemens' simulation offerings (e.g., Process Simulate), a direct product-axis match."
+        }
+      ]
     },
     {
       "name": "DKube",
@@ -2435,7 +3580,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "DKube\u2019s enterprise AI workflow platform does not overlap Siemens\u2019 core industrial automation, electrification, infrastructure, or mobility offerings and serves a different buying need."
+      "rationale": "Enterprise AI platform and services do not directly resemble Siemens\u2019 industrial automation, electrification, infrastructure, mobility, or industrial software businesses.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Enterprise AI platform and services do not directly resemble Siemens\u2019 industrial automation, electrification, infrastructure, mobility, or industrial software businesses."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Enterprise AI/document-processing software vendor; no overlap with Siemens' industrial automation, electrification, infrastructure, or mobility businesses."
+        }
+      ]
     },
     {
       "name": "Tiger Solutions GmbH",
@@ -2461,7 +3618,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Tiger Solutions is primarily an AVEVA-focused engineering consultancy and workflow add-on provider, not a competing industrial automation and infrastructure technology company."
+      "rationale": "Tiger Solutions is primarily an AVEVA E3D consulting, integration, and custom-software provider, not an industrial automation, infrastructure, mobility, or electrification platform competitor.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Tiger Solutions is primarily an AVEVA E3D consulting, integration, and custom-software provider, not an industrial automation, infrastructure, mobility, or electrification platform competitor."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Tiny consultancy implementing AVEVA E3D engineering software plus a niche plugin; serves Siemens' category rather than competing in industrial automation/electrification."
+        }
+      ]
     },
     {
       "name": "GLOBAL Automation Technologies",
@@ -2488,7 +3657,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "GLOBAL is primarily a robotics system integrator and engineering staffing provider, not an industrial automation technology manufacturer comparable to Siemens."
+      "rationale": "Automation engineering and staffing integrator serving manufacturers, rather than an industrial automation, electrification, mobility, and software technology provider like Siemens.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Automation engineering and staffing integrator serving manufacturers, rather than an industrial automation, electrification, mobility, and software technology provider like Siemens."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "System integrator and engineering staffing firm that implements automation (often using vendors like Siemens), a channel/services partner rather than a peer automation-technology maker."
+        }
+      ]
     },
     {
       "name": "REALITIQ",
@@ -2517,7 +3698,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "REALITIQ provides real-estate visualization and marketing tools, not Siemens\u2019 core industrial automation, electrification, infrastructure, mobility, or engineering software offerings."
+      "rationale": "Real-estate visualization and digital-twin marketing tools do not compete with Siemens\u2019 industrial automation, infrastructure, mobility, or electrification products.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Real-estate visualization and digital-twin marketing tools do not compete with Siemens\u2019 industrial automation, infrastructure, mobility, or electrification products."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Real-estate marketing visualization SaaS (virtual tours, AR for agents); no overlap with Siemens' industrial automation, electrification, or infrastructure markets."
+        }
+      ]
     },
     {
       "name": "E2 Adventures",
@@ -2545,7 +3738,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "E2 Adventures provides virtual STEM education, not industrial automation, electrification, infrastructure, mobility, or engineering software for Siemens\u2019 buyers."
+      "rationale": "E2 Adventures provides virtual educational field trips for schools, not industrial automation, infrastructure, mobility, electrification, or industrial software.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "E2 Adventures provides virtual educational field trips for schools, not industrial automation, infrastructure, mobility, electrification, or industrial software."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "E2 Adventures sells virtual educational field trips for students; Siemens is an industrial technology conglomerate. No product, market, or model resemblance."
+        }
+      ]
     },
     {
       "name": "ARENA2036",
@@ -2572,7 +3777,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "ARENA2036 is a research and collaboration platform, not a vendor of Siemens-like industrial automation, electrification, infrastructure, mobility, or software products."
+      "rationale": "Industrial-manufacturing research and collaboration initiative, not a commercial automation, electrification, infrastructure, mobility, or industrial-software provider comparable to Siemens.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Industrial-manufacturing research and collaboration initiative, not a commercial automation, electrification, infrastructure, mobility, or industrial-software provider comparable to Siemens."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Research/community project hosting events and workshops on manufacturing innovation; not an industrial-technology product company competing with Siemens."
+        }
+      ]
     },
     {
       "name": "Intelliod Pvt. Ltd.",
@@ -2598,7 +3815,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Intelliod primarily sells disparate AI applications, not Siemens-like industrial automation, electrification, mobility, or smart-infrastructure platforms for the same buyers."
+      "rationale": "Primarily a broad AI software provider for sales, hospitality, and education; digital twins are only one offering, not Siemens-like industrial technology.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Primarily a broad AI software provider for sales, hospitality, and education; digital twins are only one offering, not Siemens-like industrial technology."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Consumer/business AI apps (sales agent, hotel concierge, tutor); digital-twin niche too weak to match Siemens' industrial automation and infrastructure focus."
+        }
+      ]
     },
     {
       "name": "iinix",
@@ -2622,7 +3851,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "iinix is a custom AI/software services firm, not an industrial automation, electrification, infrastructure, mobility, or industrial software provider like Siemens."
+      "rationale": "iinix is an AI/software engineering consultancy, not an industrial automation, electrification, infrastructure, mobility, or industrial software provider.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "iinix is an AI/software engineering consultancy, not an industrial automation, electrification, infrastructure, mobility, or industrial software provider."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "iinix is a small AI/software services agency building solutions for clients, not an industrial technology or automation product company like Siemens."
+        }
+      ]
     },
     {
       "name": "Sustainable Architectures",
@@ -2646,7 +3887,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Sustainable Architectures is an educational community, not a provider of industrial automation, electrification, infrastructure, mobility, or engineering software like Siemens."
+      "rationale": "Nonprofit community promoting sustainable IT practices, not an industrial automation, electrification, infrastructure, mobility, or industrial-software provider.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Nonprofit community promoting sustainable IT practices, not an industrial automation, electrification, infrastructure, mobility, or industrial-software provider."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Nonprofit community/advocacy group for sustainable IT practices, not an industrial technology company; no product or market overlap with Siemens."
+        }
+      ]
     },
     {
       "name": "Now to Next",
@@ -2668,7 +3921,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Now to Next provides AI transformation workshops and services, not Siemens-like industrial automation, electrification, infrastructure, mobility, or industrial software products."
+      "rationale": "AI transformation workshops and strategic services do not compete with Siemens\u2019 industrial automation, electrification, infrastructure, mobility, or industrial software products.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "AI transformation workshops and strategic services do not compete with Siemens\u2019 industrial automation, electrification, infrastructure, mobility, or industrial software products."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "AI adoption workshops and consulting platform; not industrial automation, electrification, or infrastructure technology \u2014 a consultancy, not a Siemens comparable."
+        }
+      ]
     },
     {
       "name": "DominantLabs",
@@ -2696,10 +3961,20 @@
         ]
       },
       "relevant": false,
-      "rationale": "DominantLabs is an AI consultancy, not an industrial automation, electrification, infrastructure, mobility, or industrial software provider competing with Siemens."
+      "rationale": "AI transformation consultancy serving clients; it does not offer Siemens-like industrial automation, electrification, infrastructure, mobility, or industrial software products.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "AI transformation consultancy serving clients; it does not offer Siemens-like industrial automation, electrification, infrastructure, mobility, or industrial software products."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "AI consulting/services agency, not an industrial technology product company; serves the AI category rather than competing with Siemens."
+        }
+      ]
     }
   ],
-  "error": null,
-  "relevant_count_at_25": 14,
-  "precision_at_25": 56.0
+  "error": null
 }

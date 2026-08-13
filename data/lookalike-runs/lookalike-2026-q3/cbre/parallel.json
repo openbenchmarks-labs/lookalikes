@@ -2,43 +2,582 @@
   "dataset_slug": "lookalike-2026-q3",
   "seed_slug": "cbre",
   "provider_slug": "parallel",
-  "config_name": "no_similarity_clause",
+  "config_name": "seed_first",
   "config": {
-    "name": "no_similarity_clause",
-    "prompt_variant": "no_similarity_clause"
+    "name": "seed_first"
   },
   "k": 100,
-  "relevant_count": 16,
-  "precision_at_k": 16.0,
-  "relevant_count_at_10": 9,
-  "relevant_count_at_100": 16,
-  "precision_at_10": 90.0,
-  "precision_at_100": 16.0,
-  "latency_ms": 1255,
+  "relevant_count": 41,
+  "precision_at_k": 41.0,
+  "relevant_count_at_10": 5,
+  "relevant_count_at_25": 15,
+  "relevant_count_at_100": 41,
+  "precision_at_10": 50.0,
+  "precision_at_25": 60.0,
+  "precision_at_100": 41.0,
+  "latency_ms": 2278,
   "cost_usd": null,
-  "duplicates_removed": 0,
-  "judge_model": "gpt-5.6",
-  "judged_at": "2026-07-27T02:20:13Z",
+  "duplicates_removed": 17,
+  "max_results": null,
+  "judge_model": "majority(n=3): claude-opus-5,gpt-5.6-terra,kimi-k3",
+  "judged_at": "2026-08-12T18:19:06Z",
   "candidates": [
     {
-      "name": "Bainmark",
-      "domain": "bainmark.co.uk",
-      "description": "Primary Sector: Real Estate and Construction | Primary Subsector: Property Management Services | Short Description: Provider of commercial property investment, asset management, and lease advisory | Detailed Description: Provider of commercial property investment, asset management, and lease advisory. They offer advice on property purchase and sale of real estate. The team manages properties, focusing on rent collection and asset value enhancement. They advise landlords and tenants on rent reviews, lease renewals, and re-letting. | All Locations: United Kingdom England London | Name: Bainmark | Website Url: https://www.bainmark.co.uk/ | Stage: Unfunded | Location Country: United Kingdom | Location State: England | Location City: London | All Locations: [{\"country\":\"United Kingdom\",\"city\":\"London\",\"state\":\"England\"}] | Countries Count: 1 | Geo Served: [\"United Kingdom\"]",
+      "name": "CBRE",
+      "domain": "cbre.com.sg",
+      "description": "Name: CBRE | Short Description: Provider of real estate investment and development services | Primary Sector: Real Estate and Construction | Primary Subsector: Real Estate & Infrastructure Developers | All Locations: Singapore Singapore Singapore | Cxo Team: Steven Swerdlow CEO | Recent News: CBRE expands Logistics team with a flurry of new hires https://www.property-magazine.eu/cbre-expands-logistics-team-with-a-flurry-of-new-hires-57937.html 2021-05  CBRE Relocating Its Bethesda Office to JBG SMITH Tower https://commercialobserver.com/2021/04/cbre-relocating-its-bethesda-office-to-jbg-smith-tower/ 2021-04  Savills Adds Jeremy Lake, Galven Tan To Singapore Investment Team https://www.mingtiandi.com/real-estate/agencies-people/jeremy-lake-joins-savills-investment-team-in-singapore/ 2019-11  | Website Url: http://cbre.com.sg | Founded Year: 2000 | Stage: Unfunded | Location Country: Singapore | Location State: Singapore | Location City: Singapore | All Locations: [{\"country\":\"Singapore\"",
       "rank": 1,
       "extra": {
-        "linkedin_url": null,
-        "source_url": "https://platform.tracxn.com/a/d/company/588c90fde4b0d2a0c97396d7/bainmark?utm_source=parallel&utm_medium=ai#a:about",
+        "linkedin_url": "https://linkedin.com/company/cbresingapore",
+        "source_url": null,
+        "source_urls": null,
+        "confidence": null
+      },
+      "relevant": false,
+      "rationale": "Anchor false: this is CBRE's Singapore entity, a duplicate of the seed; it offers leasing, facilities, valuation, and asset management.",
+      "anchor_match": false,
+      "capabilities_matched": [
+        "property leasing",
+        "facilities",
+        "valuation",
+        "asset management"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Anchor false: this is CBRE's Singapore entity, a duplicate of the seed; it offers leasing, facilities, valuation, and asset management."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Candidate is the seed itself \u2014 CBRE's Singapore regional domain; duplicate entries fail the anchor gate regardless of full capability overlap."
+        }
+      ]
+    },
+    {
+      "name": "Cbre-Expandia",
+      "domain": "cbre-expandia.com",
+      "description": "Name: Cbre-Expandia | Short Description: Provider of commercial real estate services and investment solutions | Detailed Description: Provider of commercial real estate services and investment solutions. It offers advisory and transaction services, capital markets expertise, valuation and advisory, integrated facility management, market research, and project management and building consultancy. Services also include global workplace solutions, corporate services, tenant representation, property management, and investment services. The company assists clients with leasing and investment opportunities across various property types, including offices, warehouses, and retail spaces. | Primary Sector: Real Estate and Construction | Primary Subsector: Serviced Offices | Website Url: http://cbre-expandia.com | Stage: Unfunded | Employee Count Official: 39 | Linkedin Url: https://linkedin.com/company/cbre-ukraine",
+      "rank": 2,
+      "extra": {
+        "linkedin_url": "https://linkedin.com/company/cbre-ukraine",
+        "source_url": null,
+        "source_urls": null,
+        "confidence": null
+      },
+      "relevant": false,
+      "rationale": "CBRE's own Ukraine affiliate (cbre-ukraine) \u2014 duplicate/regional arm of the seed itself, so anchor fails despite full capability overlap.",
+      "anchor_match": false,
+      "capabilities_matched": [
+        "property leasing",
+        "facilities",
+        "valuation",
+        "asset management"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Anchor true: commercial real estate services firm; overlaps property leasing, facilities, and valuation."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "CBRE's own Ukraine affiliate (cbre-ukraine) \u2014 duplicate/regional arm of the seed itself, so anchor fails despite full capability overlap."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "Candidate is CBRE's own Ukraine affiliate \\u2014 duplicate of the seed, not a lookalike."
+        }
+      ]
+    },
+    {
+      "name": "Cushman Wakefield",
+      "domain": "boerke.com",
+      "description": "Name: Cushman Wakefield | Short Description: Provider of commercial real estate services including leasing and asset management | Detailed Description: Provider of commercial real estate services including leasing and asset management. The company delivers tenant and landlord representation, along with market research and capital market transaction support. Commercial development consulting and portfolio optimization are also provided. The firm combines expertise to offer solutions for investors and property owners. | Primary Sector: Real Estate and Construction | Primary Subsector: Real Estate Brokers | All Locations: United States Wisconsin Milwaukee | Website Url: https://www.boerke.com/ | Founded Year: 1921 | Stage: Unfunded | Location Country: United States | Location State: Wisconsin | Location City: Milwaukee | All Locations: [{\"country\":\"United States\",\"city\":\"Milwaukee\",\"state\":\"Wisconsin\"}] | Countries Count: 1 | Geo Served: [\"United States\"] | Cxo Team: Maureen Lyons Directo\nName: Cushman Wakefield | Short Description: Provider of commercial real estate services including leasing and asset management | Detailed Description: Provider of commercial real estate services including leasing and asset management. The company delivers tenant and landlord representation, along with market research and capital market transaction support. Commercial development consulting and portfolio optimization are also provided. The firm combines expertise to offer solutions for investors and property owners. | Primary Sector: Real Estate and Construction | Primary Subsector: Real Estate Brokers | All Locations: United States Wisconsin Milwaukee | Cxo Team: Maureen Lyons Director of Transaction Management Kathryn Gremban Director of Research & Market Intelligence Dawn Peterson President & CEO | Website Url: https://www.boerke.com/ | Founded Year: 1921 | Stage: Unfunded | Location Country: United States | Location State: Wisconsin | Location City: Milwaukee",
+      "rank": 3,
+      "extra": {
+        "linkedin_url": "https://linkedin.com/company/the-boerke-company-inc-",
+        "source_url": null,
         "source_urls": null,
         "confidence": null
       },
       "relevant": true,
-      "rationale": "Both provide commercial real estate investment, asset management, leasing, and property advisory services to landlords, tenants, and property investors."
+      "rationale": "Anchor true: commercial real estate services firm; overlaps property leasing and asset management.",
+      "anchor_match": true,
+      "capabilities_matched": [
+        "property leasing",
+        "asset management"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Anchor true: commercial real estate services firm; overlaps property leasing and asset management."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Commercial real estate services/brokerage firm like CBRE; offers leasing (tenant/landlord rep) and asset management; no evidence of facilities or valuation."
+        }
+      ]
+    },
+    {
+      "name": "CBRE Capital Advisors",
+      "domain": null,
+      "description": "Name: CBRE Capital Advisors | Short Description: Real estate focused investment bank | Detailed Description: CBRE Capital Advisors is a real estate focused investment bank. It offers services such as M&A advisory, restructuring, capital raising, strategic advisory, Re-capitalization. It operates out of one office located in New York, the US. The firm is a subsidy of CBRE. | Primary Sector: Investment Industry | Primary Subsector: Investment Banks | All Locations: United States New York New York City | Recent News: Development Team Obtains $42.7m Construction Loan For Monroe Apartments https://www.connectcre.com/stories/436056-2/ 2025-02  Melco Announces Exploration of Strategic Alternatives in Relation to City of Dreams Manila https://www.globenewswire.com/news-release/2025/02/27/3033754/0/en/Melco-Announces-Exploration-of-Strategic-Alternatives-in-Relation-to-City-of-Dreams-Manila.html 2025-02  Wynn Resorts announces private offering of $800M of senior notes due 2033 https://seekingal",
+      "rank": 4,
+      "extra": {
+        "linkedin_url": "https://linkedin.com/company/2319",
+        "source_url": null,
+        "source_urls": null,
+        "confidence": null
+      },
+      "relevant": false,
+      "rationale": "Anchor false: CBRE subsidiary focused on real estate investment banking; no evidence of leasing, facilities, valuation, or asset management.",
+      "anchor_match": false,
+      "capabilities_matched": [],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Anchor false: CBRE subsidiary focused on real estate investment banking; no evidence of leasing, facilities, valuation, or asset management."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Subsidiary of the seed (CBRE) and a real estate investment bank, not CRE services; no leasing, facilities, valuation, or asset management overlap."
+        }
+      ]
+    },
+    {
+      "name": "CBRE | WTW",
+      "domain": "cbre-wtw.com.my",
+      "description": "Name: CBRE | WTW | Short Description: Provider of comprehensive and focused property valuation, brokerage, and advisory services | Detailed Description: It is a real estate solutions provider based in Kuala Lumpur, Malaysia. They offer comprehensive and reliable valuations critical to the success of every real estate investment. They have representation in Malaysia through their Global Workplace Solutions business based in Petaling Jaya. | Primary Sector: Real Estate and Construction | Primary Subsector: Real Estate Brokers | All Locations: Malaysia Federal Territory of Kuala Lumpur Kuala Lumpur | Website Url: https://cbre-wtw.com.my | Stage: Unfunded | Location Country: Malaysia | All Locations: [{\"country\":\"Malaysia\",\"city\":\"Kuala Lumpur\",\"state\":\"Federal Territory of Kuala Lumpur\"}] | Countries Count: 1 | Founded Year: 1960 | Location State: Federal Territory of Kuala Lumpur | Location City: Kuala Lumpur | Geo Served: [\"Malaysia\"] | Employee Count Official: 260\nName: CBRE | WTW | Short Description: Provider of comprehensive and focused property valuation, brokerage, and advisory services | Detailed Description: It is a real estate solutions provider based in Kuala Lumpur, Malaysia. They offer comprehensive and reliable valuations critical to the success of every real estate investment. They have representation in Malaysia through their Global Workplace Solutions business based in Petaling Jaya. | Primary Sector: Real Estate and Construction | Primary Subsector: Real Estate Brokers | All Locations: Malaysia Federal Territory of Kuala Lumpur Kuala Lumpur | Website Url: https://cbre-wtw.com.my | Founded Year: 1960 | Stage: Unfunded | Location Country: Malaysia | Location State: Federal Territory of Kuala Lumpur | Location City: Kuala Lumpur | All Locations: [{\"country\":\"Malaysia\",\"city\":\"Kuala Lumpur\",\"state\":\"Federal Territory of Kuala Lumpur\"}] | Countries Count: 1 | Geo Served: [\"Malaysia\"] | Email: kualalumpur@cbre-wtw.com.my",
+      "rank": 5,
+      "extra": {
+        "linkedin_url": "https://linkedin.com/company/cbre-wtw",
+        "source_url": null,
+        "source_urls": null,
+        "confidence": null
+      },
+      "relevant": true,
+      "rationale": "Anchor true: commercial real-estate brokerage and advisory firm; overlaps property leasing, facilities, and valuation.",
+      "anchor_match": true,
+      "capabilities_matched": [
+        "property leasing",
+        "facilities",
+        "valuation"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Anchor true: commercial real-estate brokerage and advisory firm; overlaps property leasing, facilities, and valuation."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "CBRE|WTW is a commercial real estate services firm (valuation, brokerage, advisory); anchor matches; valuation capability confirmed."
+        }
+      ]
+    },
+    {
+      "name": "CBRE Ireland",
+      "domain": null,
+      "description": "Name: CBRE Ireland | Short Description: Provider of commercial real estate & investment services | Primary Sector: Real Estate and Construction | Primary Subsector: Real Estate & Infrastructure Developers | All Locations: Ireland County Dublin Dublin | Recent News: One-off sales drive \u2018solid quarter\u2019 for commercial property investment https://www.irishtimes.com/business/2022/10/05/one-off-sales-drive-solid-quarter-for-commercial-property-investment/ 2022-10  CBRE merges residential and commercial capital markets teams https://www.irishtimes.com/business/commercial-property/cbre-merges-residential-and-commercial-capital-markets-teams-1.4238845 2020-04  Strongest ever first quarter for office take-up in Dublin (IE) http://europe-re.com/strongest-ever-first-quarter-for-office-take-up-in-dublin-ie/66413 2019-04  34 hotel sales completed in Ireland in 2018 http://europe-re.com/34-hotel-sales-completed-in-ireland-in-2018/66031 2019-01  Dublin office vacancy rate in 2018 drops to record 6% ht",
+      "rank": 6,
+      "extra": {
+        "linkedin_url": "https://linkedin.com/company/cbre-ireland",
+        "source_url": null,
+        "source_urls": null,
+        "confidence": null
+      },
+      "relevant": false,
+      "rationale": "Anchor false: CBRE Ireland is a regional CBRE entity/duplicate; it overlaps on property leasing, facilities, and valuation.",
+      "anchor_match": false,
+      "capabilities_matched": [
+        "property leasing",
+        "facilities",
+        "valuation"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Anchor false: CBRE Ireland is a regional CBRE entity/duplicate; it overlaps on property leasing, facilities, and valuation."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Anchor false: CBRE Ireland is a regional arm of the seed itself (duplicate entry), excluded per rules."
+        }
+      ]
+    },
+    {
+      "name": "CBRE Hotels",
+      "domain": null,
+      "description": "Name: CBRE Hotels | Short Description: Commercial real estate firm focused on hospitality industry | Detailed Description: CB Richard Ellis Hotels (CBRE Hotels) provides commercial real estate services to property developers, investors, operators, managers, and service providers in the hospitality industry. Services offered by the company includes hotel brokerage & investment sales, valuation & feasibility studies, investment & market advisory, asset management, debt & structured finance, etc. | All Locations: United Kingdom England London | Recent News: Ritika Diwan Named Director for CBRE Hotels' Sydney-based Capital Markets Team https://www.hotelnewsresource.com/article122349.html 2022-08  Tomotsugu Ichikawa strengthens CBRE \u2019s hotel brokerage services in Japan https://www.ttgasia.com/2022/02/14/tomotsugu-ichikawa-strengthens-cbres-hotel-brokerage-services-in-japan/ 2022-02  Woodspring Suites Portfolio in Washington Sells for $88MM https://news.theregistryps.com/woodspring-suites-po",
+      "rank": 7,
+      "extra": {
+        "linkedin_url": "https://linkedin.com/company/cbrehotels",
+        "source_url": null,
+        "source_urls": null,
+        "confidence": null
+      },
+      "relevant": false,
+      "rationale": "Anchor false: CBRE Hotels is a CBRE business unit/duplicate entry; overlaps property leasing, valuation, and asset management.",
+      "anchor_match": false,
+      "capabilities_matched": [
+        "property leasing",
+        "valuation",
+        "asset management"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Anchor false: CBRE Hotels is a CBRE business unit/duplicate entry; overlaps property leasing, valuation, and asset management."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "CBRE Hotels is a subsidiary/division of the seed CBRE itself; duplicate entries fail the anchor despite overlapping valuation and asset management."
+        }
+      ]
+    },
+    {
+      "name": "Powers Property",
+      "domain": "powersproperty.com",
+      "description": "Name: Powers Property | Short Description: Provider of commercial real estate advisory, asset management, development, and leasing | Detailed Description: Provider of commercial real estate advisory, asset management, development, and leasing. The group delivers strategic advisory, consulting, development, and leasing for its clients and retail properties. As an owner, developer, and manager of real estate, it delivers results that add value to property assets and enhance returns for its clients. | Primary Sector: Real Estate and Construction | Primary Subsector: Real Estate & Infrastructure Developers | All Locations: Canada Ontario Markham | Website Url: https://powersproperty.com | Stage: Unfunded | Location Country: Canada | All Locations: [{\"country\":\"Canada\",\"city\":\"Markham\",\"state\":\"Ontario\"}] | Countries Count: 1 | Founded Year: 1995 | Location State: Ontario | Location City: Markham | Geo Served: [\"Canada\"] | Employee Count Official: 5 | Linkedin Url: https://linkedin.com/comp",
+      "rank": 8,
+      "extra": {
+        "linkedin_url": "https://linkedin.com/company/powers-real-estate-limited",
+        "source_url": null,
+        "source_urls": null,
+        "confidence": null
+      },
+      "relevant": true,
+      "rationale": "Anchor true: commercial real estate firm; overlaps in property leasing and asset management.",
+      "anchor_match": true,
+      "capabilities_matched": [
+        "property leasing",
+        "asset management"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Anchor true: commercial real estate firm; overlaps in property leasing and asset management."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Anchor match: commercial real estate services firm offering leasing and asset management; overlaps property leasing and asset management."
+        }
+      ]
+    },
+    {
+      "name": "CBRE Excellerate",
+      "domain": "cbreexcellerate.com",
+      "description": "Name: CBRE Excellerate | Short Description: Provider of real estate and facilities management services to businesses | Detailed Description: Provider of real estate and facilities management services to businesses. The company offers advisory and transaction support, data center solutions, and project management. Property management and valuations are also part of the service offerings. Insights and research are available for informed decision-making. | Primary Sector: Business Services | Primary Subsector: Facility Management Services | All Locations: South Africa Gauteng Johannesburg | Website Url: https://cbreexcellerate.com | Stage: Unfunded | Location Country: South Africa | All Locations: [{\"country\":\"South Africa\",\"city\":\"Johannesburg\",\"state\":\"Gauteng\"}] | Countries Count: 1 | Employee Count Official: 758 | Linkedin Url: https://linkedin.com/company/cbreexcellerate | Founded Year: 2019 | Location State: Gauteng | Location City: Johannesburg | Geo Served: [\"South Africa\"]",
+      "rank": 9,
+      "extra": {
+        "linkedin_url": "https://linkedin.com/company/cbreexcellerate",
+        "source_url": null,
+        "source_urls": null,
+        "confidence": null
+      },
+      "relevant": true,
+      "rationale": "Anchor true: commercial real estate services for businesses; overlaps facilities and valuation.",
+      "anchor_match": true,
+      "capabilities_matched": [
+        "facilities",
+        "valuation",
+        "asset management"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Anchor true: commercial real estate services for businesses; overlaps facilities and valuation."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "CBRE's South African affiliate offering commercial real estate services: facilities management, valuations, property management; anchor matches, multiple capabilities overlap."
+        }
+      ]
+    },
+    {
+      "name": "Prd Realty Limited",
+      "domain": "prd-realty.com",
+      "description": "Name: Prd Realty Limited | Short Description: PREFERRED | Detailed Description: Commercial real estate investment firm, engaged in acquisition, asset management, and development. The company also provides property management, brokerage services, and construction management services for commercial and multi-family properties. | Primary Sector: Real Estate and Construction | Primary Subsector: Real Estate & Infrastructure Developers | Website Url: https://prd-realty.com | Founded Year: 1980 | Stage: Unfunded | Countries Count: 1 | All Locations: United States Florida Delray Beach | Location Country: United States | Location State: Florida | Location City: Delray Beach | All Locations: [{\"country\":\"United States\",\"city\":\"Delray Beach\",\"state\":\"Florida\"}] | Geo Served: [\"United States\"] | Employee Count Official: 127 | Linkedin Url: https://linkedin.com/company/preferred-realty-&-development | Latest Estimated Revenue Usd: 319848957.0",
+      "rank": 10,
+      "extra": {
+        "linkedin_url": "https://linkedin.com/company/preferred-realty-&-development",
+        "source_url": null,
+        "source_urls": null,
+        "confidence": null
+      },
+      "relevant": true,
+      "rationale": "Anchor true: commercial real estate investment/services firm; overlaps in property leasing, facilities, and asset management.",
+      "anchor_match": true,
+      "capabilities_matched": [
+        "property leasing",
+        "facilities",
+        "asset management"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Anchor true: commercial real estate investment/services firm; overlaps in property leasing, facilities, and asset management."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Anchor matches: commercial real estate investment/services firm. Overlaps via asset management and brokerage-driven leasing; no evidence for valuation or facilities."
+        }
+      ]
+    },
+    {
+      "name": "Newmark Grubb Knight Frank",
+      "domain": "ngkf.com",
+      "description": "Name: Newmark Grubb Knight Frank | Short Description: Provider of integrated commercial real estate services | Detailed Description: Provider of integrated commercial real estate services. This company offers a comprehensive suite of services for both investors and occupiers of commercial properties. For investors, services include capital markets activities (investment sales, mortgage brokerage), landlord representation, valuation, advisory, property management, and consulting. Occupier services encompass tenant representation, global corporate services (real estate strategy, project management, lease administration), and flexible workspace solutions. The firm's integrated platform aims to provide clients with a single source for all their real estate needs. | All Locations: United States New York New York City | Website Url: http://ngkf.com | Founded Year: 1929 | Stage: Public | Location Country: United States | Location State: New York | Location City: New York City",
+      "rank": 11,
+      "extra": {
+        "linkedin_url": "https://linkedin.com/company/newmark-grubb-knight-frank",
+        "source_url": null,
+        "source_urls": null,
+        "confidence": null
+      },
+      "relevant": true,
+      "rationale": "Anchor true: integrated commercial real estate firm; overlaps property leasing, facilities, valuation, and asset management.",
+      "anchor_match": true,
+      "capabilities_matched": [
+        "property leasing",
+        "facilities",
+        "valuation",
+        "asset management"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Anchor true: integrated commercial real estate firm; overlaps property leasing, facilities, valuation, and asset management."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Anchor match: integrated commercial real estate services firm like CBRE. Overlaps leasing (landlord/tenant rep), valuation, property/facilities and asset management."
+        }
+      ]
+    },
+    {
+      "name": "Norvia Immo",
+      "domain": "norvia.immo",
+      "description": "Name: Norvia Immo | Short Description: Provider of asset management transaction support and property valuation services | Detailed Description: Provider of asset management transaction support and property valuation services. Services include the oversight of real estate portfolios, the coordination of property sales and leasing processes, and the management of digital data rooms for transactions. Additional activities involve the assessment of property values to support financial and strategic decision-making. | Primary Sector: Real Estate and Construction | Primary Subsector: Property Management Services | Website Url: https://norvia.immo | Stage: Unfunded",
+      "rank": 12,
+      "extra": {
+        "linkedin_url": null,
+        "source_url": "https://platform.tracxn.com/a/d/company/6841f3ec86bd4311715a3ae3/norvia%20immo?utm_source=parallel&utm_medium=ai#a:about",
+        "source_urls": null,
+        "confidence": null
+      },
+      "relevant": true,
+      "rationale": "Anchor true: commercial real estate services firm with leasing, valuation, and asset management support.",
+      "anchor_match": true,
+      "capabilities_matched": [
+        "property leasing",
+        "valuation",
+        "asset management"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Anchor true: commercial real estate services firm with leasing, valuation, and asset management support."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Anchor true: commercial real estate services firm; overlaps valuation, asset management, and leasing coordination."
+        }
+      ]
+    },
+    {
+      "name": "Oak Realty Group",
+      "domain": "oakrealtygroup.com",
+      "description": "Name: Oak Realty Group | Short Description: Real estate investment firm acquiring, developing, and managing commercial and multifamily properties | Detailed Description: Real estate investment firm acquiring, developing, and managing commercial and multifamily properties. The firm focuses on creating value through the management of commercial real estate properties. It invests in office, medical office, and industrial properties. The firm also invests in institutional-quality multifamily rental properties. It directs investment, finance, and asset management activities. | Primary Sector: Real Estate and Construction | Primary Subsector: Real Estate & Infrastructure Developers | All Locations: United States Illinois Deerfield | Website Url: https://www.oakrealtygroup.com/ | Stage: Unfunded | Location Country: United States | All Locations: [{\"country\":\"United States\",\"city\":\"Deerfield\",\"state\":\"Illinois\"}] | Countries Count: 1 | Subsidiary Count: 1 | Employee Count Official: 4",
+      "rank": 13,
+      "extra": {
+        "linkedin_url": "https://linkedin.com/company/oak-realty-group-inc-",
+        "source_url": null,
+        "source_urls": null,
+        "confidence": null
+      },
+      "relevant": true,
+      "rationale": "Anchor true: both are commercial real estate investment firms; overlap includes asset management.",
+      "anchor_match": true,
+      "capabilities_matched": [
+        "asset management"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Anchor true: both are commercial real estate investment firms; overlap includes asset management."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Anchor true: commercial real estate investment firm managing commercial/multifamily properties, matching the investment-firm anchor. Overlap: asset management only."
+        }
+      ]
+    },
+    {
+      "name": "CBRE Data Center Solutions",
+      "domain": "cbredatacentersolutions.com",
+      "description": "Name: CBRE Data Center Solutions | Short Description: Advisory and consulting services for developing, locating, buying, selling and leasing data centers | Detailed Description: CBRE Data Center Solutions provides advisory and consulting services for developing, locating, buying, selling, and leasing data centers. It offers strategy, acquisition and disposition representation, project management and facilities management from a single provider. It has 100+ data center acquisition and disposition specialists, 1500+ data center facility managers, and engineers,  along with 300+ project managers with expertise in data center construction and design. | Primary Sector: Business Services | Primary Subsector: IT Services | All Locations: United States Illinois Elk Grove Village | Website Url: http://cbredatacentersolutions.com | Stage: Deadpooled | Location Country: United States | Location State: Illinois | Location City: Elk Grove Village | All Locations: [{\"country\":\"United States\",\"city\":",
+      "rank": 14,
+      "extra": {
+        "linkedin_url": null,
+        "source_url": "https://platform.tracxn.com/a/d/company/58c04e59e4b04ba78a4ff790/cbre%20data%20center%20solutions?utm_source=parallel&utm_medium=ai#a:about",
+        "source_urls": null,
+        "confidence": null
+      },
+      "relevant": false,
+      "rationale": "Anchor false: CBRE-branded data-center division/duplicate of the seed; overlaps property leasing and facilities.",
+      "anchor_match": false,
+      "capabilities_matched": [
+        "property leasing",
+        "facilities"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Anchor false: CBRE-branded data-center division/duplicate of the seed; overlaps property leasing and facilities."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Candidate is a CBRE subsidiary (same company family, effectively the seed itself); anchor fails despite leasing and facilities overlap."
+        }
+      ]
+    },
+    {
+      "name": "Alpine Management",
+      "domain": "alpinemanage.com",
+      "description": "Name: Alpine Management | Short Description: Provider of property management asset management and receivership management services | Detailed Description: Provider of property management asset management and receivership management services. Operations include tenant retention, expense control, and maintenance oversight for commercial real estate. Financial reporting, strategic planning, and leasing activities are performed to maintain property performance. Distressed assets are stabilized through regulatory compliance and financial planning to preserve value. | Primary Sector: Real Estate and Construction Tech | Primary Subsector: Property Management Tech | Other Taxonomy Tags: [\"Trending Themes in Real Estate Tech\",\"Property Management Suite\"] | All Locations: United States Utah Pleasant Grove | Website Url: https://alpinemanage.com | Stage: Unfunded | Location Country: United States | All Locations: [{\"country\":\"United States\",\"city\":\"Pleasant Grove\",\"state\":\"Utah\"}]",
+      "rank": 15,
+      "extra": {
+        "linkedin_url": "https://linkedin.com/company/alpine-manage",
+        "source_url": null,
+        "source_urls": null,
+        "confidence": null
+      },
+      "relevant": true,
+      "rationale": "Anchor true: commercial real estate management firm; overlaps property leasing, facilities, and asset management.",
+      "anchor_match": true,
+      "capabilities_matched": [
+        "property leasing",
+        "facilities",
+        "asset management"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Anchor true: commercial real estate management firm; overlaps property leasing, facilities, and asset management."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "CRE services firm (property/asset management, leasing, maintenance oversight) matching CBRE's anchor; overlaps leasing, asset management, facilities. No valuation evidence."
+        }
+      ]
+    },
+    {
+      "name": "PEMCO",
+      "domain": "pemco-limited.com",
+      "description": "Name: PEMCO | Short Description: Provider of real estate solutions, asset management, and property preservation | Detailed Description: Provider of real estate solutions, asset management, and property preservation. The company offers valuations, property management, real estate sales, and facilities maintenance. It delivers marketing and training programs, along with services related to Housing and Urban Development. The company also provides GSA-approved consultancy, business, and financial solutions. | Primary Sector: Real Estate and Construction Tech | Primary Subsector: Property Management Tech | Other Taxonomy Tags: [\"Trending Themes in Real Estate Tech\",\"Property Management Suite\"] | All Locations: United States Hawaii Honolulu | Website Url: http://pemco-limited.com | Stage: Unfunded | Location Country: United States | All Locations: [{\"country\":\"United States\",\"city\":\"Honolulu\",\"state\":\"Hawaii\"}] | Countries Count: 1 | Linkedin Url: https://linkedin.com/company/pemco-ltd-",
+      "rank": 16,
+      "extra": {
+        "linkedin_url": "https://linkedin.com/company/pemco-ltd-",
+        "source_url": null,
+        "source_urls": null,
+        "confidence": null
+      },
+      "relevant": true,
+      "rationale": "Anchor match: real estate services firm offering valuations, asset management, and facilities maintenance, same category as CBRE; overlaps valuation, asset management, facilities.",
+      "anchor_match": true,
+      "capabilities_matched": [
+        "facilities",
+        "valuation",
+        "asset management"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Anchor false: PEMCO appears focused on property preservation/HUD services, not a commercial real estate services and investment firm; overlaps valuation, facilities, asset management."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Anchor match: real estate services firm offering valuations, asset management, and facilities maintenance, same category as CBRE; overlaps valuation, asset management, facilities."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Real estate services firm offering asset management, valuations, property/facilities management \u2014 same category, smaller scale."
+        }
+      ]
+    },
+    {
+      "name": "CBRE Investment Management",
+      "domain": "cbreim.com",
+      "description": "Name: CBRE Investment Management | Short Description: Provider of real estate investment management and portfolio construction services | Primary Sector: Financial Services | Primary Subsector: Services for Investment Industry | All Locations: United States New York New York City | Website Url: http://cbreim.com | Founded Year: 1972 | Stage: Unfunded | Location Country: United States | Location State: New York | Location City: New York City | All Locations: [{\"country\":\"United States\",\"city\":\"New York City\",\"state\":\"New York\"}] | Countries Count: 1 | Geo Served: [\"United States\"] | Acquisitions As Acquirer Count: 2 | Achievements: Top Player among its competitors Size  | Acquisitions Made: Business Acquisition  Business Acquisition  | Cxo Team: Andreas Kottering Managing Director & Partner Diann Hsueh Managing Director & Deputy Portfolio Manager Bob Sulentic Chairman & CEO cathy chan General Counsel & Chief Compliance Officer, Apac Chuck Leitner CEO Chief Investment Officer, Americas D",
+      "rank": 17,
+      "extra": {
+        "linkedin_url": "https://linkedin.com/company/cbreim",
+        "source_url": null,
+        "source_urls": null,
+        "confidence": null
+      },
+      "relevant": false,
+      "rationale": "Anchor false: CBRE Investment Management is CBRE's own subsidiary (same firm), not an independent lookalike.",
+      "anchor_match": false,
+      "capabilities_matched": [
+        "asset management"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Anchor true: commercial real estate investment manager; overlaps on asset management."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Anchor false: CBRE Investment Management is CBRE's own subsidiary (same firm), not an independent lookalike."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "Subsidiary/affiliate of the seed itself, not an independent lookalike; overlaps asset management."
+        }
+      ]
     },
     {
       "name": "Southeast Real Estate",
       "domain": "realestatesoutheast.com",
-      "description": "Primary Sector: Real Estate and Construction Tech | Primary Subsector: Property Management Tech | Short Description: Provider of commercial real estate asset management and brokerage services | Detailed Description: Provider of commercial real estate asset management and brokerage services. The company offers asset management services including property management and accounting. Brokerage services leverage business relationships to provide leasing results. The team handles asset management comprehensively, delivering outcomes for partners. It works with investors to buy or sell commercial real estate. The company redevelops commercial properties. | Other Taxonomy Tags: [\"Trending Themes in Real Estate Tech\",\"Property Management Suite\"] | All Locations: United States Alabama Prattville | Special Flags: Enterprise YES | Achievements: Trending Theme Market {themes=[{id=5d3956c8878707017c0d49a2}]} | Name: Southeast Real Estate | Website Url: https://realestatesoutheast.com",
-      "rank": 2,
+      "description": "Name: Southeast Real Estate | Short Description: Provider of commercial real estate asset management and brokerage services | Detailed Description: Provider of commercial real estate asset management and brokerage services. The company offers asset management services including property management and accounting. Brokerage services leverage business relationships to provide leasing results. The team handles asset management comprehensively, delivering outcomes for partners. It works with investors to buy or sell commercial real estate. The company redevelops commercial properties. | Primary Sector: Real Estate and Construction Tech | Primary Subsector: Property Management Tech | Other Taxonomy Tags: [\"Trending Themes in Real Estate Tech\",\"Property Management Suite\"] | All Locations: United States Alabama Prattville | Website Url: https://realestatesoutheast.com | Founded Year: 2001 | Stage: Unfunded | Location Country: United States | Location State: Alabama | Location City: Prattville",
+      "rank": 18,
       "extra": {
         "linkedin_url": "https://linkedin.com/company/real-estate-southeast-llc",
         "source_url": null,
@@ -46,69 +585,288 @@
         "confidence": null
       },
       "relevant": true,
-      "rationale": "Both provide commercial real estate brokerage, leasing, property management, and asset management services to investors and property owners."
+      "rationale": "Anchor true: commercial real estate brokerage and asset-management firm; overlaps property leasing and asset management.",
+      "anchor_match": true,
+      "capabilities_matched": [
+        "property leasing",
+        "asset management",
+        "facilities"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Anchor true: commercial real estate brokerage and asset-management firm; overlaps property leasing and asset management."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Anchor match: commercial real estate services firm offering brokerage/leasing, asset and property management to investors; overlaps leasing, facilities, asset management."
+        }
+      ]
     },
     {
-      "name": "Beamed Properties",
-      "domain": "beamedproperties.com",
-      "description": "Primary Sector: Real Estate and Construction Tech | Primary Subsector: Property Management Tech | Short Description: Provider of turnkey asset management for various property types | Detailed Description: Provider of turnkey asset management for various property types. The company manages industrial, commercial, multi-family, and mixed-use properties. It offers expertise in leasing, financial controls, building improvements, and maintenance. The company provides tailored service, proactive solutions, and detailed financial reporting. It focuses on process streamlining, cost saving strategies, and strong financial results. | Other Taxonomy Tags: [\"Trending Themes in Real Estate Tech\",\"Property Management Suite\"] | All Locations: United States Pennsylvania Philadelphia | Special Flags: Enterprise YES | Achievements: Trending Theme Market {themes=[{id=5d3956c8878707017c0d49a2}]} | Name: Beamed Properties | Website Url: https://beamedproperties.com | Founded Year: 2022 | Stage: Unfunded",
-      "rank": 3,
+      "name": "Birch Tree Props",
+      "domain": "birchtreeprops.com",
+      "description": "Name: Birch Tree Props | Short Description: Provider of real estate investment, asset management, and property leasing | Detailed Description: Provider of real estate investment, asset management, and property leasing. The company focuses on acquiring income-producing assets and value-add opportunities. The firm develops solutions for real estate-related projects. It maintains properties and attempts to meet the needs of tenants. | Primary Sector: Real Estate and Construction | Primary Subsector: Real Estate & Infrastructure Developers | All Locations: United States California Castro Valley | Website Url: https://www.birchtreeprops.com/ | Stage: Unfunded | Location Country: United States | Location State: California | Location City: Castro Valley | All Locations: [{\"country\":\"United States\",\"city\":\"Castro Valley\",\"state\":\"California\"}] | Countries Count: 1 | Geo Served: [\"United States\"] | Linkedin Url: https://linkedin.com/company/birch-tree-properties-llc | Employee Count Official: 4",
+      "rank": 19,
       "extra": {
-        "linkedin_url": null,
-        "source_url": "https://platform.tracxn.com/a/d/company/622b59d46cb60c34f117e188/beamed%20properties?utm_source=parallel&utm_medium=ai#a:about",
-        "source_urls": null,
-        "confidence": null
-      },
-      "relevant": true,
-      "rationale": "Both provide commercial property asset management, leasing, maintenance, financial controls, and related services to real estate owners and investors."
-    },
-    {
-      "name": "Capital Retail",
-      "domain": "capitalretail.com",
-      "description": "Primary Sector: Real Estate and Construction Tech | Primary Subsector: Property Management Tech | Short Description: Provider of commercial property management, leasing, sales, and brokerage services | Detailed Description: Provider of commercial property management, leasing, sales, and brokerage services. They work on behalf of property owners to increase asset value. The company focuses on tenant services and marketing to maintain occupancy rates. The company also provides real estate insight to help clients get the best deal. | Other Taxonomy Tags: [\"Trending Themes in Real Estate Tech\",\"Property Management Suite\"] | All Locations: United States Maryland Bethesda | Special Flags: Enterprise YES | Achievements: Trending Theme Market {themes=[{id=5d3956c8878707017c0d49a2}]} | Name: Capital Retail | Website Url: https://www.capitalretail.com/ | Founded Year: 2006 | Stage: Unfunded | Location Country: United States | Location State: Maryland | Location City: Bethesda",
-      "rank": 4,
-      "extra": {
-        "linkedin_url": "http://linkedin.com/company/capital-retail-group-llc",
+        "linkedin_url": "https://linkedin.com/company/birch-tree-properties-llc",
         "source_url": null,
         "source_urls": null,
         "confidence": null
       },
       "relevant": true,
-      "rationale": "Both provide commercial real estate brokerage, leasing, property management, and advisory services to property owners seeking occupancy and asset value growth."
+      "rationale": "Anchor true: real estate investment and services firm; overlaps property leasing and asset management.",
+      "anchor_match": true,
+      "capabilities_matched": [
+        "property leasing",
+        "asset management"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Anchor true: real estate investment and services firm; overlaps property leasing and asset management."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Small CRE investment firm acquiring income-producing assets; same commercial real estate services/investment kind of company. Matches property leasing and asset management; no valuation evidence."
+        }
+      ]
     },
     {
-      "name": "Rubinoff Company",
-      "domain": "rubinoffcompany.com",
-      "description": "Primary Sector: Real Estate and Construction Tech | Primary Subsector: Property Management Tech | Short Description: Provider of commercial, residential, and asset management services for properties | Detailed Description: Provider of commercial, residential, and asset management services for properties. The firm delivers property management services for various client needs and market types. The company offers services such as budgeting, tenant relations, and lease administration. The firm also provides real estate services for home buyers and sellers. | Other Taxonomy Tags: [\"Trending Themes in Real Estate Tech\",\"Property Management Suite\"] | All Locations: United States Pennsylvania Pittsburgh | Special Flags: Consumer YES Enterprise YES | Achievements: Trending Theme Market {themes=[{id=5d3956c8878707017c0d49a2}]} | Name: Rubinoff Company | Website Url: https://rubinoffcompany.com | Stage: Unfunded | Location Country: United States | All Locations: [{\"country\":\"United States\",\"city\nPrimary Sector: Real Estate and Construction Tech | Primary Subsector: Property Management Tech | Short Description: Provider of commercial, residential, and asset management services for properties | Detailed Description: Provider of commercial, residential, and asset management services for properties. The firm delivers property management services for various client needs and market types. The company offers services such as budgeting, tenant relations, and lease administration. The firm also provides real estate services for home buyers and sellers. | Other Taxonomy Tags: [\"Trending Themes in Real Estate Tech\",\"Property Management Suite\"] | All Locations: United States Pennsylvania Pittsburgh | Special Flags: Consumer YES Enterprise YES | Achievements: Trending Theme Market {themes=[{id=5d3956c8878707017c0d49a2}]} | Name: Rubinoff Company | Website Url: https://rubinoffcompany.com | Founded Year: 1983 | Stage: Unfunded | Location Country: United States | Location State: Pennsylvani",
-      "rank": 5,
+      "name": "CBRE Clarion",
+      "domain": "cbreclarion.com",
+      "description": "Name: CBRE Clarion | Short Description: Investment management firm | Primary Sector: Financial Services | Primary Subsector: Asset Management | All Locations: United States Pennsylvania Radnor | Recent News: CBRE Clarion Global Real Estate Income Fund Appoints New Trustee http://www.businesswire.com/news/home/20200624005740/en/CBRE-Clarion-Global-Real-Estate-Income-Fund/ 2020-06  CBRE Clarion Global Real Estate Income appoints new trustee https://www.propertyfundsworld.com/2018/12/21/271686/cbre-clarion-global-real-estate-income-appoints-new-trustee 2018-12  | Website Url: http://cbreclarion.com | Founded Year: 1992 | Stage: Unfunded | Location Country: United States | Location State: Pennsylvania | Location City: Radnor | All Locations: [{\"country\":\"United States\",\"city\":\"Radnor\",\"state\":\"Pennsylvania\"}] | Countries Count: 1 | Geo Served: [\"United States\"] | Latest Estimated Revenue Usd: 199055600.0 | Linkedin Url: https://linkedin.com/company/cbreclarionsecurities.com",
+      "rank": 20,
       "extra": {
-        "linkedin_url": "https://linkedin.com/company/the-rubinoff-company",
+        "linkedin_url": "https://linkedin.com/company/cbreclarionsecurities.com",
+        "source_url": null,
+        "source_urls": null,
+        "confidence": null
+      },
+      "relevant": false,
+      "rationale": "CBRE-affiliated real estate securities investment manager, not CRE services firm; affiliate/subsidiary fails anchor despite asset management overlap.",
+      "anchor_match": false,
+      "capabilities_matched": [
+        "asset management"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Anchor true: commercial real estate investment manager; overlaps on asset management."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "CBRE-affiliated real estate securities investment manager, not CRE services firm; affiliate/subsidiary fails anchor despite asset management overlap."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "Subsidiary/affiliate of seed; a real estate securities investment manager, not a full CRE services firm."
+        }
+      ]
+    },
+    {
+      "name": "Nicheconsulttz",
+      "domain": "nicheconsulttz.com",
+      "description": "Name: Nicheconsulttz | Short Description: Provider of property valuation and real estate asset management services | Detailed Description: Provider of property valuation and real estate asset management services. Professionals conduct appraisals for land, buildings, machinery, and equipment for purposes including insurance, taxation, investment, and mortgage. Activities include physical asset coding, preparation of fixed asset registers, and inventory control. Real estate management services encompass the administration of title deeds, lease coordination, rental income collection, property maintenance, and tenant relations. | Primary Sector: Real Estate and Construction | Primary Subsector: Real Estate Appraisal Services | Website Url: https://nicheconsulttz.com | Stage: Unfunded",
+      "rank": 21,
+      "extra": {
+        "linkedin_url": null,
+        "source_url": "https://platform.tracxn.com/a/d/company/5906ae8ce4b00c9ed534652e/nicheconsulttz?utm_source=parallel&utm_medium=ai#a:about",
+        "source_urls": null,
+        "confidence": null
+      },
+      "relevant": true,
+      "rationale": "Anchor true: commercial real estate services firm; overlaps on valuation and asset management.",
+      "anchor_match": true,
+      "capabilities_matched": [
+        "valuation",
+        "asset management",
+        "property leasing",
+        "facilities"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Anchor true: commercial real estate services firm; overlaps on valuation and asset management."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Anchor true: real estate services firm like CBRE. Explicitly offers valuation and asset management; lease coordination and property maintenance cover leasing and facilities."
+        }
+      ]
+    },
+    {
+      "name": "SHMCRE",
+      "domain": "shmcre.com",
+      "description": "Name: SHMCRE | Short Description: Provider of property management and asset management services for real estate | Detailed Description: Provider of property management and asset management services for real estate. The company leases and manages properties, including office, retail, industrial, and residential spaces. Maintenance, HVAC, and tenant improvement services are handled in-house. Leasing and management are performed by employees, providing a single point of contact. | Primary Sector: Real Estate and Construction Tech | Primary Subsector: Property Management Tech | Other Taxonomy Tags: [\"Trending Themes in Real Estate Tech\",\"Property Management Suite\"] | All Locations: United States California West Covina | Website Url: https://www.shmcre.com/ | Founded Year: 1993 | Stage: Unfunded | Location Country: United States | Location State: California | Location City: West Covina | All Locations: [{\"country\":\"United States\",\"city\":\"West Covina\",\"state\":\"California\"}]",
+      "rank": 22,
+      "extra": {
+        "linkedin_url": "https://linkedin.com/company/sunny-hills-management-co-inc",
         "source_url": null,
         "source_urls": null,
         "confidence": null
       },
       "relevant": true,
-      "rationale": "Rubinoff provides commercial property and asset management, overlapping CBRE\u2019s real estate services for property owners, tenants, and investors."
+      "rationale": "Anchor true: commercial real estate services firm; overlaps property leasing, facilities, and asset management.",
+      "anchor_match": true,
+      "capabilities_matched": [
+        "property leasing",
+        "facilities",
+        "asset management"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Anchor true: commercial real estate services firm; overlaps property leasing, facilities, and asset management."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "judge error: Error code: 429 - {'error': {'object': 'error', 'type': 'invalid_request_error', 'code': 'invalid_request_error', 'message': 'rate limit exceeded, please try again later'}}"
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Anchor true: commercial real estate services firm; overlaps leasing, facilities/maintenance, asset management."
+        }
+      ]
     },
     {
-      "name": "Symetrio",
-      "domain": "symetrio.de",
-      "description": "Primary Sector: Real Estate and Construction | Primary Subsector: Property Management Services | Short Description: Provider of real estate asset management, sales, rental, and investment services | Detailed Description: Provider of real estate asset management, sales, rental, and investment services. The company delivers strategies for property valuation increase and risk mitigation throughout the property lifecycle. Services include market analysis, lease optimisation, modernisation projects, and reporting. It facilitates property sales through valuation and marketing. The company also supports property investments based on individual requirements. | All Locations: Germany Berlin Berlin | Name: Symetrio | Website Url: https://www.symetrio.de/ | Stage: Public | Location Country: Germany | Location State: Berlin | Location City: Berlin | All Locations: [{\"country\":\"Germany\",\"city\":\"Berlin\",\"state\":\"Berlin\"}] | Countries Count: 1 | Geo Served: [\"Germany\"] | Employee Count Official: 1",
-      "rank": 6,
+      "name": "Kobrinsky Group",
+      "domain": "kobrinskygroup.com",
+      "description": "Name: Kobrinsky Group | Short Description: Provider of real estate asset management and development services | Detailed Description: Provider of real estate asset management and development services. The company leases retail and office spaces. It manages properties for lease. | Primary Sector: Real Estate and Construction | Primary Subsector: Real Estate & Infrastructure Developers | All Locations: United States California Salinas | Website Url: https://kobrinskygroup.com | Stage: Unfunded | Location Country: United States | All Locations: [{\"country\":\"United States\",\"city\":\"Salinas\",\"state\":\"California\"}] | Countries Count: 1 | Linkedin Url: https://linkedin.com/company/kobrinsky-group | Location State: California | Location City: Salinas | Geo Served: [\"United States\"]",
+      "rank": 23,
       "extra": {
-        "linkedin_url": null,
-        "source_url": "https://platform.tracxn.com/a/d/company/5a0c31c9e4b072010a026525/symetrio?utm_source=parallel&utm_medium=ai#a:about",
+        "linkedin_url": "https://linkedin.com/company/kobrinsky-group",
+        "source_url": null,
         "source_urls": null,
         "confidence": null
       },
       "relevant": true,
-      "rationale": "Both provide commercial real estate asset management, leasing, valuation, sales, and investment services to property owners and investors."
+      "rationale": "Anchor true: commercial real estate management/development firm; overlaps property leasing and asset management.",
+      "anchor_match": true,
+      "capabilities_matched": [
+        "property leasing",
+        "asset management"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Anchor true: commercial real estate management/development firm; overlaps property leasing and asset management."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Anchor true: commercial real estate firm leasing and managing retail/office properties. Overlaps on property leasing and asset management."
+        }
+      ]
+    },
+    {
+      "name": "BR Properties",
+      "domain": null,
+      "description": "Name: BR Properties | Short Description: Commercial real estate property developer | Primary Sector: Real Estate and Construction | Primary Subsector: Real Estate & Infrastructure Developers | All Locations: Brazil Rio Grande do Sul Porto Alegre | Recent News: BR Properties sells office management subsidiary to CBRE for R$1.65 million https://valor.globo.com/empresas/noticia/2023/12/09/br-properties-vende-subsidiaria-de-gerenciamento-de-escritorios-para-cbre-por-r-165-milhao.ghtml 2023-12  BR Properties (BRPR3) announces redemption of shares, totaling R$52 million https://www.spacemoney.com.br/geral/br-properties-brpr3-anuncia-resgate-acoes-total-r-52-milhoes/200156/ 2023-11  BR Properties has a loss of BRL 2.3 million in the 2nd quarter, against a loss of BRL 1.4 billion a year ago https://valor.globo.com/empresas/noticia/2023/08/03/br-properties-tem-prejuizo-de-r-23-milhoes-no-2o-tri-contra-perda-de-r-14-bi-um-ano-atras.ghtml 2023-08  Br Properties: Loss Increases 42% in The 1st Quar",
+      "rank": 24,
+      "extra": {
+        "linkedin_url": "https://linkedin.com/company/br-properties-s-a",
+        "source_url": null,
+        "source_urls": null,
+        "confidence": null
+      },
+      "relevant": false,
+      "rationale": "Anchor false: BR Properties is a commercial property developer, not a commercial real estate services and investment firm; no listed overlap evidenced.",
+      "anchor_match": false,
+      "capabilities_matched": [],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Anchor false: BR Properties is a commercial property developer, not a commercial real estate services and investment firm; no listed overlap evidenced."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "judge error: Error code: 429 - {'error': {'object': 'error', 'type': 'invalid_request_error', 'code': 'invalid_request_error', 'message': 'rate limit exceeded, please try again later'}}"
+        }
+      ]
+    },
+    {
+      "name": "CBRE Baltics",
+      "domain": "cbre.lv",
+      "description": "Name: CBRE Baltics | Short Description: Investment company that provides brokerage, property management, and valuation services | Detailed Description: CBRE is a global commercial real estate services and investment company, providing strategic advice and execution across various property types. The company has a presence in the Baltics region, offering a range of services including research, consulting, and property management. With a strong global market position, CBRE is committed to delivering exceptional results to its clients. | Primary Sector: Business Services | Primary Subsector: Management Consulting Services | All Locations: Latvia Riga Riga | Website Url: http://cbre.lv | Founded Year: 2011 | Stage: Unfunded | Location Country: Latvia | Location State: Riga | Location City: Riga | All Locations: [{\"country\":\"Latvia\",\"city\":\"Riga\",\"state\":\"Riga\"}] | Countries Count: 1 | Geo Served: [\"Latvia\"] | Employee Count Official: 29 | Board Member Count: 2 | Linkedin Url: https://linke",
+      "rank": 25,
+      "extra": {
+        "linkedin_url": "https://linkedin.com/company/cbre-baltics",
+        "source_url": null,
+        "source_urls": null,
+        "confidence": null
+      },
+      "relevant": false,
+      "rationale": "Anchor false: CBRE Baltics is a regional CBRE operation, effectively a duplicate of the seed; overlap: valuation.",
+      "anchor_match": false,
+      "capabilities_matched": [
+        "valuation",
+        "property leasing",
+        "facilities"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Anchor false: CBRE Baltics is a regional CBRE operation, effectively a duplicate of the seed; overlap: valuation."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "CBRE Baltics is CBRE's own regional arm \u2014 duplicate of the seed, so anchor fails despite overlapping leasing, facilities, valuation services."
+        }
+      ]
+    },
+    {
+      "name": "Oak Impact",
+      "domain": "oakimpact.com",
+      "description": "Name: Oak Impact | Short Description: Provider of commercial real estate investment, asset management, and development | Detailed Description: Provider of commercial real estate investment, asset management, and development. The company focuses on commercial real estate and private equity investments. It offers institutional-grade management and reporting services. The company also engages in real estate development projects. Brokerage services are planned for the future. | Primary Sector: Real Estate and Construction | Primary Subsector: Real Estate & Infrastructure Developers | All Locations: United States California Oakland | Founders: John Underwood Co-Founder & Managing Partner | Website Url: https://www.oakimpact.com/ | Founded Year: 2020 | Stage: Unfunded | Location Country: United States | Location State: California | Location City: Oakland | All Locations: [{\"country\":\"United States\",\"city\":\"Oakland\",\"state\":\"California\"}] | Countries Count: 1 | Geo Served: [\"United States\"]",
+      "rank": 26,
+      "extra": {
+        "linkedin_url": "https://linkedin.com/company/oak-impact-group",
+        "source_url": null,
+        "source_urls": null,
+        "confidence": null
+      },
+      "relevant": true,
+      "rationale": "Anchor true: commercial real estate investment and management firm; overlap includes asset management.",
+      "anchor_match": true,
+      "capabilities_matched": [
+        "asset management"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Anchor true: commercial real estate investment and management firm; overlap includes asset management."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Anchor true: commercial real estate investment and asset management firm like CBRE. Overlap: asset management; no evidence of leasing, facilities, or valuation."
+        }
+      ]
     },
     {
       "name": "Belland Associates",
-      "domain": null,
-      "description": "Primary Sector: Real Estate and Construction Tech | Primary Subsector: Property Management Tech | Short Description: Provider of commercial property and asset management services for owners | Detailed Description: Provider of commercial property and asset management services for owners. The company delivers day-to-day operations, tenant relations, rent collection, and accounting services. It offers real-time access to property financials, documents, and reports. Direct access to a dedicated property manager is provided. The company also furnishes monthly reports detailing income and expenses. | Other Taxonomy Tags: [\"Enterprise Applications\",\"SaaS\",\"US Tech\",\"SaaS - US\",\"Trending Themes in Real Estate Tech\",\"Property Management Suite\",\"Enterprise Tech - US\",\"Enterprise Software\"] | All Locations: United States Georgia Cumming | Special Flags: Tech YES Enterprise YES SaaS YES Software YES | Achievements: Trending Theme Market {themes=[{id=5d3956c8878707017c0d49a2}]}",
-      "rank": 7,
+      "domain": "bellandassociatesga.com",
+      "description": "Name: Belland Associates | Short Description: Provider of commercial property and asset management services for owners | Detailed Description: Provider of commercial property and asset management services for owners. The company delivers day-to-day operations, tenant relations, rent collection, and accounting services. It offers real-time access to property financials, documents, and reports. Direct access to a dedicated property manager is provided. The company also furnishes monthly reports detailing income and expenses. | Primary Sector: Real Estate and Construction Tech | Primary Subsector: Property Management Tech | Other Taxonomy Tags: [\"Enterprise Applications\",\"SaaS\",\"US Tech\",\"SaaS - US\",\"Trending Themes in Real Estate Tech\",\"Property Management Suite\",\"Enterprise Tech - US\",\"Enterprise Software\"] | All Locations: United States Georgia Cumming | Website Url: https://bellandassociatesga.com | Founded Year: 1984 | Stage: Unfunded | Location Country: United States",
+      "rank": 27,
       "extra": {
         "linkedin_url": null,
         "source_url": "https://platform.tracxn.com/a/d/company/64e388352ee21a5997abb8d9/belland%20associates?utm_source=parallel&utm_medium=ai#a:about",
@@ -116,164 +874,1319 @@
         "confidence": null
       },
       "relevant": true,
-      "rationale": "Both provide commercial property and asset management services to property owners, including operations, tenant relations, accounting, and financial reporting."
+      "rationale": "Anchor true: commercial real estate services provider; overlaps on asset management.",
+      "anchor_match": true,
+      "capabilities_matched": [
+        "asset management",
+        "facilities"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Anchor true: commercial real estate services provider; overlaps on asset management."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Anchor true: commercial property/asset management firm for owners, same CRE services category. Matches asset management and facilities (day-to-day operations)."
+        }
+      ]
     },
     {
-      "name": "Smart Landlord",
-      "domain": "smartlandlord.com",
-      "description": "Primary Sector: Real Estate and Construction | Primary Subsector: Property Management Services | Short Description: Provider of buy-to-let property investment and asset management services | Detailed Description: Provider of buy-to-let property investment and asset management services. The company offers guidance to investors looking to build a property portfolio. It provides access to off-market property deals and market insights. The company also introduces clients to third-party service providers. | Name: Smart Landlord | Website Url: https://smartlandlord.com | Stage: Unfunded | Linkedin Url: http://linkedin.com/company/smartlandlord/ | Legal Entity Count: 1 | Legal Entity Names: [\"SMARTLANDLORD LTD\"] | Earliest Incorporation Date: 2022-03-07 | Employee Count History: [{\"employee_count\":2,\"year\":\"2024\",\"month\":\"3\"},{\"employee_count\":2,\"year\":\"2023\",\"month\":\"3\"}] | Total Assets Latest Usd: 18806.09",
-      "rank": 8,
+      "name": "Trustwell Group",
+      "domain": "trustwellgroup.com",
+      "description": "Name: Trustwell Group | Short Description: Provider of real estate development, franchise, property, and asset management services | Detailed Description: Provider of real estate development, franchise, property, and asset management services. It collaborates with clients to achieve financial goals. The company offers turnkey commercial real estate development packages. It allows clients to invest in franchise operations. The company focuses on rental property investment through property management. It aims to grow clients\u2019 assets through asset management. It also provides family office services. | Primary Sector: Real Estate and Construction | Primary Subsector: Real Estate & Infrastructure Developers | All Locations: United States North Carolina Raleigh | Website Url: https://www.trustwellgroup.com/ | Stage: Unfunded | Location Country: United States | Location State: North Carolina | All Locations: [{\"country\":\"United States\",\"state\":\"North Carolina\",\"city\":\"Raleigh\"}]",
+      "rank": 28,
       "extra": {
-        "linkedin_url": "http://linkedin.com/company/smartlandlord/",
+        "linkedin_url": "https://linkedin.com/company/trustwell-group",
+        "source_url": null,
+        "source_urls": null,
+        "confidence": null
+      },
+      "relevant": true,
+      "rationale": "Anchor true: commercial real estate services and investment firm; overlap includes asset management.",
+      "anchor_match": true,
+      "capabilities_matched": [
+        "asset management"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Anchor true: commercial real estate services and investment firm; overlap includes asset management."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "judge error: Error code: 429 - {'error': {'object': 'error', 'type': 'invalid_request_error', 'code': 'invalid_request_error', 'message': 'rate limit exceeded, please try again later'}}"
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Commercial real estate services/development and asset management firm; overlaps asset management and property management."
+        }
+      ]
+    },
+    {
+      "name": "Peliongrp",
+      "domain": "peliongrp.com",
+      "description": "Name: Peliongrp | Short Description: Developer of commercial properties offering asset management and tenant-centric leasing | Detailed Description: Developer of commercial properties offering asset management and tenant-centric leasing. The firm focuses on property development and management, providing structured investment opportunities. It facilitates property operations, tenant relations, and compliance with regulatory standards. The company delivers construction consultation and accounting expertise for real estate projects. | Primary Sector: Real Estate and Construction | Primary Subsector: Real Estate & Infrastructure Developers | Website Url: https://www.peliongrp.com/ | Stage: Unfunded",
+      "rank": 29,
+      "extra": {
+        "linkedin_url": null,
+        "source_url": "https://platform.tracxn.com/a/d/company/67fab5a7fdeec103c2806a9e/peliongrp?utm_source=parallel&utm_medium=ai#a:about",
+        "source_urls": null,
+        "confidence": null
+      },
+      "relevant": false,
+      "rationale": "Anchor false: commercial property developer, not a commercial real estate services and investment firm; overlaps property leasing and asset management.",
+      "anchor_match": false,
+      "capabilities_matched": [
+        "property leasing",
+        "asset management"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Anchor false: commercial property developer, not a commercial real estate services and investment firm; overlaps property leasing and asset management."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Commercial real estate developer/manager offering asset management, leasing, and investment services \u2014 same market as CBRE; overlaps leasing and asset management."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "Property developer/owner, not a commercial real estate services and investment firm, despite leasing and asset management overlap."
+        }
+      ]
+    },
+    {
+      "name": "CBRE BC Conseil",
+      "domain": "bc-conseil.fr",
+      "description": "Name: CBRE BC Conseil | Short Description: Provider of brokerage services for selling & renting of commercial properties | Primary Sector: Real Estate and Construction | Primary Subsector: Real Estate Brokers | All Locations: France Provence Alpes Cote d Azur Toulon | Website Url: http://bc-conseil.fr | Founded Year: 1988 | Stage: Deadpooled | Location Country: France | Location State: Provence Alpes Cote d Azur | Location City: Toulon | All Locations: [{\"country\":\"France\",\"city\":\"Toulon\",\"state\":\"Provence Alpes Cote d Azur\"}] | Countries Count: 1 | Geo Served: [\"France\"] | Linkedin Url: http://linkedin.com/company/cbre-bc-conseil/ | Deadpooled: Yes | Deadpooled Date: 2024-01-01",
+      "rank": 30,
+      "extra": {
+        "linkedin_url": "http://linkedin.com/company/cbre-bc-conseil/",
+        "source_url": null,
+        "source_urls": null,
+        "confidence": null
+      },
+      "relevant": true,
+      "rationale": "Anchor true: commercial real estate brokerage; overlaps on property leasing.",
+      "anchor_match": true,
+      "capabilities_matched": [
+        "property leasing"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Anchor true: commercial real estate brokerage; overlaps on property leasing."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Anchor false: CBRE-branded French affiliate office, effectively the seed itself/duplicate, not an independent lookalike."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Commercial real estate brokerage firm; overlaps on leasing/renting of commercial properties."
+        }
+      ]
+    },
+    {
+      "name": "Newcastle Associates",
+      "domain": "newcastle-associates.com",
+      "description": "Name: Newcastle Associates | Short Description: Firm offers vertically-integrated real estate development and asset management services | Detailed Description: Firm offers vertically-integrated real estate development and asset management services. It focuses on real estate investment, development, and asset management across commercial, industrial, and multi-family properties. | Primary Sector: Real Estate and Construction | Primary Subsector: Real Estate & Infrastructure Developers | All Locations: United States California Beverly Hills | Website Url: https://www.newcastle-associates.com/ | Stage: Unfunded | Location Country: United States | All Locations: [{\"country\":\"United States\",\"city\":\"Beverly Hills\",\"state\":\"California\"}] | Countries Count: 1 | Founded Year: 2003 | Location State: California | Location City: Beverly Hills | Geo Served: [\"United States\"]",
+      "rank": 31,
+      "extra": {
+        "linkedin_url": null,
+        "source_url": "https://platform.tracxn.com/a/d/company/588a61d6e4b00b29f194c85d/newcastle%20associates?utm_source=parallel&utm_medium=ai#a:about",
+        "source_urls": null,
+        "confidence": null
+      },
+      "relevant": true,
+      "rationale": "Anchor true: commercial real estate investment and management firm; overlap includes asset management.",
+      "anchor_match": true,
+      "capabilities_matched": [
+        "asset management"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Anchor true: commercial real estate investment and management firm; overlap includes asset management."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Commercial real estate investment/development and asset management firm matches CBRE's investment-firm anchor; overlaps on asset management."
+        }
+      ]
+    },
+    {
+      "name": "Beaufort Global",
+      "domain": "beaufortglobal.com",
+      "description": "Name: Beaufort Global | Short Description: Provider of investment, development, and asset management services for real estate | Detailed Description: Provider of investment, development, and asset management services for real estate. The firm focuses on hospitality real estate, including hotels, resorts, commercial properties, residential buildings, infrastructure, master developments, mixed-use projects, and governmental initiatives. It offers asset optimization and manages investments, finances, and wealth. The firm delivers development capabilities throughout the full life cycle of development. It also supports relationships of foreign direct investment. | Primary Sector: Real Estate and Construction | Primary Subsector: Real Estate & Infrastructure Developers | Website Url: https://beaufortglobal.com | Stage: Unfunded | Founded Year: 2009 | Employee Count Official: 4 | Linkedin Url: https://linkedin.com/company/beaufort-global-partners-llc",
+      "rank": 32,
+      "extra": {
+        "linkedin_url": "https://linkedin.com/company/beaufort-global-partners-llc",
+        "source_url": null,
+        "source_urls": null,
+        "confidence": null
+      },
+      "relevant": true,
+      "rationale": "Anchor true: commercial real estate investment/services firm; overlap includes asset management.",
+      "anchor_match": true,
+      "capabilities_matched": [
+        "asset management"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Anchor true: commercial real estate investment/services firm; overlap includes asset management."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Anchor true: real estate investment and asset management firm like CBRE. Overlap: asset management; no leasing, facilities, or valuation evidence."
+        }
+      ]
+    },
+    {
+      "name": "CBRE|ESI",
+      "domain": "thinkesi.com",
+      "description": "Name: CBRE|ESI | Short Description: Provider of security, smart building, and other management services | Primary Sector: Business Services | Primary Subsector: Facility Management Services | All Locations: United States Wisconsin Brookfield | Website Url: http://thinkesi.com | Founded Year: 1986 | Stage: Deadpooled | Location Country: United States | All Locations: [{\"country\":\"United States\",\"city\":\"Brookfield\",\"state\":\"Wisconsin\"}] | Countries Count: 1 | Employee Count Official: 242 | Linkedin Url: https://linkedin.com/company/environmental-systems-inc-esi- | Location State: Wisconsin | Location City: Brookfield | Geo Served: [\"United States\"] | Deadpooled: Yes | Deadpooled Date: 2023-01-01",
+      "rank": 33,
+      "extra": {
+        "linkedin_url": "https://linkedin.com/company/environmental-systems-inc-esi-",
         "source_url": null,
         "source_urls": null,
         "confidence": null
       },
       "relevant": false,
-      "rationale": "Smart Landlord targets buy-to-let residential investors, unlike CBRE\u2019s commercial property services for corporate and institutional real estate buyers."
+      "rationale": "Anchor false: CBRE|ESI is a smart-building and security services provider, not a commercial real estate services and investment firm; overlaps facilities.",
+      "anchor_match": false,
+      "capabilities_matched": [
+        "facilities"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Anchor false: CBRE|ESI is a smart-building and security services provider, not a commercial real estate services and investment firm; overlaps facilities."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Anchor false: facility/smart-building services provider, not a CRE services/investment firm; overlaps only facilities."
+        }
+      ]
     },
     {
-      "name": "assetopsllc",
-      "domain": "assetopsllc.com",
-      "description": "Primary Sector: Real Estate and Construction | Primary Subsector: Property Management Services | Short Description: Provider of REO asset management and disposition services | Detailed Description: Provider of REO asset management and disposition services. It connects institutional clients with real estate brokers nationwide, focusing on identifying optimal exit strategies for each asset. Services include broker referral and management, REO consulting and training, and customized component services such as property valuations and repair management. The firm offers both public and private training sessions. It prioritizes strong vendor oversight and achieving the highest total net execution for clients. | All Locations: United States   | Name: assetopsllc | Website Url: https://www.assetopsllc.com/ | Stage: Unfunded | Location Country: United States | All Locations: [{\"country\":\"United States\"}] | Countries Count: 1",
-      "rank": 9,
+      "name": "Measures and Company",
+      "domain": "measuresandco.co.uk",
+      "description": "Name: Measures and Company | Short Description: Provider of property asset management and development services | Detailed Description: Measures and Company is a property asset management and development company led by James Measures, a highly qualified Chartered Surveyor with 30 years of expertise in the UK and Ireland. They offer services in asset management for investors and have successfully managed portfolios for clients like EK Kanoo. | Primary Sector: Real Estate and Construction | Primary Subsector: Real Estate & Infrastructure Developers | All Locations: United Kingdom England Nottingham | Website Url: https://www.measuresandco.co.uk/ | Founded Year: 2013 | Stage: Unfunded | Location Country: United Kingdom | Location State: England | Location City: Nottingham | All Locations: [{\"country\":\"United Kingdom\",\"city\":\"Nottingham\",\"state\":\"England\"}] | Countries Count: 1 | Geo Served: [\"United Kingdom\"] | Linkedin Url: https://linkedin.com/company/measures-and-company",
+      "rank": 34,
       "extra": {
-        "linkedin_url": null,
-        "source_url": "https://platform.tracxn.com/a/d/company/64b15fcbe9b34d2adaaae410/assetopsllc?utm_source=parallel&utm_medium=ai#a:about",
-        "source_urls": null,
-        "confidence": null
-      },
-      "relevant": true,
-      "rationale": "Both provide institutional real estate asset management, valuation, and disposition-related services to property owners and investors."
-    },
-    {
-      "name": "Rhouses",
-      "domain": "rhouses.com",
-      "description": "Primary Sector: Real Estate and Construction | Primary Subsector: Property Management Services | Short Description: Provider of property investment, development, lettings, and asset management services | Detailed Description: Provider of property investment, development, lettings, and asset management services. It advises clients on investment opportunities, evaluates risks, and manages assets to maximize returns. Services include property acquisition and development across commercial and residential sectors, first-class lettings and property management encompassing pre-tenancy administration, compliance, maintenance, and rent collection, and asset management through meticulous analysis and hands-on management. The firm tailors services to individual client needs, ensuring asset security and financial rewards while maintaining confidentiality. | Name: Rhouses | Website Url: https://rhouses.com | Stage: Unfunded | Employee Count Official: 2 | Legal Entity Count: 1",
-      "rank": 10,
-      "extra": {
-        "linkedin_url": null,
-        "source_url": "https://platform.tracxn.com/a/d/company/58dcdf6be4b0fb120889f0ae/rhouses?utm_source=parallel&utm_medium=ai#a:about",
-        "source_urls": null,
-        "confidence": null
-      },
-      "relevant": true,
-      "rationale": "Both provide property investment advisory, lettings, property management, and asset management to owners and investors, creating clear offering and buyer overlap."
-    },
-    {
-      "name": "Arcton",
-      "domain": "arcton.co.uk",
-      "description": "Primary Sector: Real Estate and Construction | Primary Subsector: Property Management Services | Short Description: Provider of property asset management, sales, and leasing services for investors | Detailed Description: Provider of property asset management, sales, and leasing services for investors. The company focuses on managing, selling, and leasing properties. It supports clients through property investment, from acquisition to management and sale. The company enhances value throughout the investment lifecycle. It aims to provide transparency, professionalism, and responsiveness in its operations. | All Locations: United Kingdom   | Name: Arcton | Website Url: https://www.arcton.co.uk/ | Stage: Unfunded | Location Country: United Kingdom | All Locations: [{\"country\":\"United Kingdom\"}] | Countries Count: 1",
-      "rank": 11,
-      "extra": {
-        "linkedin_url": null,
-        "source_url": "https://platform.tracxn.com/a/d/company/5b6b2602e4b007e98027769f/arcton?utm_source=parallel&utm_medium=ai#a:about",
-        "source_urls": null,
-        "confidence": null
-      },
-      "relevant": true,
-      "rationale": "Arcton offers property asset management, sales, and leasing to investors, directly overlapping CBRE\u2019s commercial real estate services and buyer base."
-    },
-    {
-      "name": "gatehousepm.co",
-      "domain": "gatehousepm.co.uk",
-      "description": "Primary Sector: Real Estate and Construction | Primary Subsector: Property Management Services | Short Description: Provider of commercial property management, asset management, and facilities management | Detailed Description: Provider of commercial property management, asset management, and facilities management. The company delivers services covering property management, asset management, facilities management, and accounting. It offers clients a bespoke service, tailoring to specific needs. The company provides advice on lease transactions and letting negotiations. | All Locations: United Kingdom   | Name: gatehousepm.co | Website Url: https://gatehousepm.co.uk | Stage: Unfunded | Location Country: United Kingdom | All Locations: [{\"country\":\"United Kingdom\"}] | Countries Count: 1 | Linkedin Url: https://linkedin.com/company/gatehouse-property-management",
-      "rank": 12,
-      "extra": {
-        "linkedin_url": "https://linkedin.com/company/gatehouse-property-management",
+        "linkedin_url": "https://linkedin.com/company/measures-and-company",
         "source_url": null,
         "source_urls": null,
         "confidence": null
       },
       "relevant": true,
-      "rationale": "Both provide commercial property, asset, facilities, and lease management services to commercial real estate owners and occupiers."
+      "rationale": "Anchor true: commercial real estate services firm; overlap in asset management.",
+      "anchor_match": true,
+      "capabilities_matched": [
+        "asset management"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Anchor true: commercial real estate services firm; overlap in asset management."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Anchor match: property asset management and development services firm for investors, same category as CBRE. Overlap: asset management only."
+        }
+      ]
     },
     {
-      "name": "Megalithrealty",
-      "domain": "megalithrealty.co.uk",
-      "description": "Primary Sector: Real Estate and Construction | Primary Subsector: Property Management Services | Short Description: Provider of high-end property management and asset management services | Detailed Description: Provider of high-end property management and asset management services. It offers a complete property service for landlords and investors, encompassing property management, asset management, portfolio management, and bespoke services. These services include advice on property valuation, coordination of lettings, refinancing assistance, and project management for property development and conversion. The firm acts as a single point of contact for all property investment and management needs. | All Locations: United Kingdom   | Name: Megalithrealty | Website Url: http://megalithrealty.co.uk | Stage: Unfunded | Location Country: United Kingdom | All Locations: [{\"country\":\"United Kingdom\"}] | Countries Count: 1",
-      "rank": 13,
-      "extra": {
-        "linkedin_url": null,
-        "source_url": "https://platform.tracxn.com/a/d/company/5a56998de4b0920f049422ff/megalithrealty?utm_source=parallel&utm_medium=ai#a:about",
-        "source_urls": null,
-        "confidence": null
-      },
-      "relevant": true,
-      "rationale": "Both provide property and asset management, valuation, and leasing-related services to landlords and real estate investors."
-    },
-    {
-      "name": "Silver Moon Estates",
-      "domain": "silvermoonestates.co.uk",
-      "description": "Primary Sector: Real Estate and Construction | Primary Subsector: Property Management Services | Short Description: Provider of property investment, consulting, maintenance, and asset management services | Detailed Description: Provider of property investment, consulting, maintenance, and asset management services. They deliver property investment services designed to maximise returns and minimise complexity. The company offers acquisition strategy, portfolio consultancy, maintenance, and asset optimisation. They partner with business investors to unlock long-term value across commercial and residential markets. The company provides compliance and risk management. | All Locations: United Kingdom England Camberley | Name: Silver Moon Estates | Website Url: https://www.silvermoonestates.co.uk/ | Stage: Unfunded | Location Country: United Kingdom | Location State: England | Location City: Camberley | All Locations: [{\"country\":\"United Kingdom\",\"city\":\"Camberley\",\"state\":\"England\"}]",
-      "rank": 14,
-      "extra": {
-        "linkedin_url": null,
-        "source_url": "https://platform.tracxn.com/a/d/company/5a5c5c9be4b09744d8dd78ed/silver%20moon%20estates?utm_source=parallel&utm_medium=ai#a:about",
-        "source_urls": null,
-        "confidence": null
-      },
-      "relevant": true,
-      "rationale": "Both provide commercial property investment consulting, maintenance, and asset management services to business investors and property owners."
-    },
-    {
-      "name": "Harrisons Property",
-      "domain": "harrisons.property",
-      "description": "Primary Sector: Real Estate and Construction | Primary Subsector: Property Management Services | Short Description: Provider of property valuation, building surveying, and management services | Detailed Description: Provider of property valuation, building surveying, and management services. The firm offers agency services for commercial sales, lettings, investment, and development disposals. It provides professional and management services, including asset management, expert witness, and arbitration. The company also handles landlord and tenant matters, building surveying, and compulsory purchase advice. | All Locations: United Kingdom   | Name: Harrisons Property | Website Url: https://harrisons.property | Stage: Unfunded | Location Country: United Kingdom | All Locations: [{\"country\":\"United Kingdom\"}] | Countries Count: 1 | Founded Year: 1984 | Employee Count Official: 14 | Linkedin Url: https://linkedin.com/company/harrisons-chartered-surveyors",
-      "rank": 15,
-      "extra": {
-        "linkedin_url": "https://linkedin.com/company/harrisons-chartered-surveyors",
-        "source_url": null,
-        "source_urls": null,
-        "confidence": null
-      },
-      "relevant": true,
-      "rationale": "Both provide commercial real estate valuation, leasing/agency, surveying, and asset or property management services to overlapping property owners and investors."
-    },
-    {
-      "name": "Prorealty USA",
+      "name": "Relevatech Group",
       "domain": null,
-      "description": "Primary Sector: Real Estate and Construction Tech | Primary Subsector: Property Management Tech | Short Description: Provider of property management, homeowner association, and real estate services | Detailed Description: Provider of property management, homeowner association, and real estate services. They offer financial reporting, repairs and maintenance, and project management. The company also provides property marketing, rent collection, legal guidance, and property inspections. Additionally, tenant screening and resident center access are available. | Other Taxonomy Tags: [\"Enterprise Applications\",\"SaaS\",\"US Tech\",\"Consumer Digital - US\",\"SaaS - US\",\"Trending Themes in Real Estate Tech\",\"Property Management Suite\",\"New York Tech\",\"Consumer Digital - New York\",\"Enterprise Tech - New York\",\"Enterprise Tech - US\"] | All Locations: United States New York Brooklyn | Special Flags: Tech YES Consumer YES Enterprise YES SaaS YES Software YES | Achievements: Trending Theme Market {theme",
-      "rank": 16,
+      "description": "Name: Relevatech Group | Short Description: Real estate investment firm, general contractor, and construction syndicate manager | Detailed Description: Real estate investment firm, general contractor, and construction syndicate manager. It executes construction projects, manages private funds in real estate, and operates a syndicate of construction firms. It handles project planning, design, procurement, on-site construction, and compliance for residential, commercial, and industrial buildings. The firm provides investment management services, including market research, financial performance analysis, and risk assessment. It deploys capital into real estate, focusing on location quality, asset type, and market trends. It offers asset management and property development solutions, including portfolio optimization, cost reduction, and sustainable developments. It maximizes returns through financial performance enhancement, value-add strategies, and exit planning. | Primary Sector: Real E",
+      "rank": 35,
       "extra": {
-        "linkedin_url": "https://linkedin.com/company/pro-realty-team",
+        "linkedin_url": null,
+        "source_url": "https://platform.tracxn.com/a/d/company/67cf38fcf316b77a33c84e8a/relevatech%20group?utm_source=parallel&utm_medium=ai#a:about",
+        "source_urls": null,
+        "confidence": null
+      },
+      "relevant": false,
+      "rationale": "Anchor false: real estate investor/general contractor, not a commercial real estate services and investment firm; overlaps asset management.",
+      "anchor_match": false,
+      "capabilities_matched": [
+        "asset management"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Anchor false: real estate investor/general contractor, not a commercial real estate services and investment firm; overlaps asset management."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "judge error: Error code: 429 - {'error': {'object': 'error', 'type': 'invalid_request_error', 'code': 'invalid_request_error', 'message': 'rate limit exceeded, please try again later'}}"
+        }
+      ]
+    },
+    {
+      "name": "Knight Frank",
+      "domain": "knightfrank.ie",
+      "description": "Name: Knight Frank | Short Description: Provider of commercial and residential property sales, rentals, and advisory | Detailed Description: Provider of commercial and residential property sales, rentals, and advisory. The company offers services across various property types, including development land, industrial, offices, and retail. It provides building consultancy, property management, and valuation services. The company also offers advice for residential buying, selling, and new home acquisitions. | Primary Sector: Real Estate and Construction | Primary Subsector: Real Estate Brokers | All Locations: Ireland Leinster Dublin | Website Url: https://www.knightfrank.ie/ | Founded Year: 2004 | Stage: Acquired | Location Country: Ireland | Location State: Leinster | Location City: Dublin | All Locations: [{\"country\":\"Ireland\",\"city\":\"Dublin\",\"state\":\"Leinster\"}] | Countries Count: 1 | Geo Served: [\"Ireland\"] | Employee Count Official: 97 | Acquisitions As Target Count: 1",
+      "rank": 36,
+      "extra": {
+        "linkedin_url": "https://linkedin.com/company/knightfrankireland",
+        "source_url": null,
+        "source_urls": null,
+        "confidence": null
+      },
+      "relevant": true,
+      "rationale": "Anchor true: commercial real estate services firm; overlaps property leasing, facilities, valuation, and asset management.",
+      "anchor_match": true,
+      "capabilities_matched": [
+        "property leasing",
+        "facilities",
+        "valuation",
+        "asset management"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Anchor true: commercial real estate services firm; overlaps property leasing, facilities, valuation, and asset management."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "judge error: Error code: 429 - {'error': {'object': 'error', 'type': 'invalid_request_error', 'code': 'invalid_request_error', 'message': 'rate limit exceeded, please try again later'}}"
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Commercial real estate services firm; overlaps leasing/rentals, valuation, property management."
+        }
+      ]
+    },
+    {
+      "name": "Apeglitsis",
+      "domain": "apeglitsis.com",
+      "description": "Name: Apeglitsis | Short Description: Provider of property valuations, investment consulting, and asset management services | Detailed Description: Provider of property valuations, investment consulting, and asset management services. The firm delivers valuations for residential, commercial, and industrial properties. Investment consulting includes detailed analysis and feasibility studies. Asset management focuses on enhancing market value and rental income. | Primary Sector: Real Estate and Construction | Primary Subsector: Real Estate Appraisal Services | Website Url: https://apeglitsis.com | Stage: Unfunded",
+      "rank": 37,
+      "extra": {
+        "linkedin_url": null,
+        "source_url": "https://platform.tracxn.com/a/d/company/662d28eeab6b8b73591b2802/apeglitsis?utm_source=parallel&utm_medium=ai#a:about",
+        "source_urls": null,
+        "confidence": null
+      },
+      "relevant": true,
+      "rationale": "Anchor true: commercial real estate services firm; overlaps valuation and asset management.",
+      "anchor_match": true,
+      "capabilities_matched": [
+        "valuation",
+        "asset management"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Anchor true: commercial real estate services firm; overlaps valuation and asset management."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Real estate services firm (commercial included) offering valuation and asset management \u2014 same category as CBRE's services anchor; overlaps valuation and asset management."
+        }
+      ]
+    },
+    {
+      "name": "Atrium Cbre",
+      "domain": "atrium-cbre.fr",
+      "description": "Name: Atrium Cbre | Short Description: Provider of commercial real estate services for businesses | Detailed Description: Provider of commercial real estate services for businesses. This includes the sale and lease of office spaces, commercial properties, warehouses, retail spaces, and land. Services encompass property management, project conception and management, and real estate consulting. The firm assists businesses in finding suitable locations and navigating the complexities of commercial real estate transactions. They offer expertise in property valuation and support throughout the entire process, from initial search to final closing. | Primary Sector: Real Estate and Construction | Primary Subsector: Real Estate Multiple Listing Services | All Locations: France   | Website Url: http://atrium-cbre.fr | Stage: Unfunded | Location Country: France | All Locations: [{\"country\":\"France\"}] | Countries Count: 1 | Linkedin Url: http://linkedin.com/company/atrium-cbre",
+      "rank": 38,
+      "extra": {
+        "linkedin_url": "http://linkedin.com/company/atrium-cbre",
+        "source_url": null,
+        "source_urls": null,
+        "confidence": null
+      },
+      "relevant": true,
+      "rationale": "Anchor true: commercial real estate services for businesses; overlaps property leasing and valuation.",
+      "anchor_match": true,
+      "capabilities_matched": [
+        "property leasing",
+        "valuation",
+        "asset management"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Anchor true: commercial real estate services for businesses; overlaps property leasing and valuation."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Anchor fails: Atrium CBRE is CBRE's French subsidiary/affiliate (name and domain), effectively the seed itself, not a distinct lookalike."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Commercial real estate services firm (CBRE affiliate in France); overlaps leasing, valuation, property/asset management."
+        }
+      ]
+    },
+    {
+      "name": "Real Koam",
+      "domain": "realkoam.com",
+      "description": "Name: Real Koam | Short Description: Provider of commercial real estate asset management and family office services | Detailed Description: Provider of commercial real estate asset management and family office services. It offers portfolio investment strategy and financial advisory services to owners. The company facilitates property management, leasing, acquisitions, dispositions, financing, insurance, and tax issue resolution. It provides asset management services for family-owned commercial real estate portfolios. | Primary Sector: Real Estate and Construction Tech | Primary Subsector: Property Management Tech | Other Taxonomy Tags: [\"Trending Themes in Real Estate Tech\",\"Property Management Suite\"] | All Locations: United States Kansas Kansas City | Website Url: https://www.realkoam.com/ | Founded Year: 2020 | Stage: Unfunded | Location Country: United States | Location State: Kansas | Location City: Kansas City | All Locations: [{\"country\":\"United States\",\"city\":\"Kansas City\",\"sta",
+      "rank": 39,
+      "extra": {
+        "linkedin_url": "https://linkedin.com/company/realko-asset-managment",
+        "source_url": null,
+        "source_urls": null,
+        "confidence": null
+      },
+      "relevant": true,
+      "rationale": "Anchor true: commercial real estate services firm; overlap includes property leasing and asset management.",
+      "anchor_match": true,
+      "capabilities_matched": [
+        "property leasing",
+        "asset management"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Anchor true: commercial real estate services firm; overlap includes property leasing and asset management."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "judge error: Error code: 429 - {'error': {'object': 'error', 'type': 'invalid_request_error', 'code': 'invalid_request_error', 'message': 'rate limit exceeded, please try again later'}}"
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Commercial real estate services firm; overlaps on leasing and asset management."
+        }
+      ]
+    },
+    {
+      "name": "CBRE Hungary",
+      "domain": "cbre.hu",
+      "description": "Name: CBRE Hungary | Short Description: Provider of commercial real estate services and property portfolio management | Detailed Description: Provider of commercial real estate services and property portfolio management. Services include investment advisory, facility planning, leasing, and construction project management. Professional analysis and market research data support these operations across various business sectors. Environmental sustainability strategies and resource management initiatives are integrated into the provided professional real estate and property administration services. | Primary Sector: Financial Services | Primary Subsector: Services for Investment Industry | All Locations: Hungary   | Website Url: http://cbre.hu | Founded Year: 1994 | Stage: Public | Location Country: Hungary | All Locations: [{\"country\":\"Hungary\"}] | Countries Count: 1 | Linkedin Url: https://linkedin.com/company/cbre-hungary | Phone Country Code: +36 | Phone Number: 304845112",
+      "rank": 40,
+      "extra": {
+        "linkedin_url": "https://linkedin.com/company/cbre-hungary",
         "source_url": null,
         "source_urls": null,
         "confidence": null
       },
       "relevant": false,
-      "rationale": "Prorealty focuses on residential and HOA property management, while CBRE primarily serves commercial real estate owners with broader leasing, facilities, and investment services."
+      "rationale": "Anchor false: CBRE Hungary is a regional CBRE entity/duplicate, though it overlaps in leasing, facilities, and asset management.",
+      "anchor_match": false,
+      "capabilities_matched": [
+        "property leasing",
+        "facilities",
+        "asset management"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Anchor false: CBRE Hungary is a regional CBRE entity/duplicate, though it overlaps in leasing, facilities, and asset management."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "judge error: Error code: 429 - {'error': {'object': 'error', 'type': 'invalid_request_error', 'code': 'invalid_request_error', 'message': 'rate limit exceeded, please try again later'}}"
+        }
+      ]
     },
     {
-      "name": "Alsangs",
-      "domain": "alsangs.com",
-      "description": "Primary Sector: Real Estate and Construction | Primary Subsector: Property Management Services | Short Description: Provider of real estate asset management and brokerage services | Detailed Description: Provider of real estate asset management and brokerage services. This includes property sales and rentals, property valuations, and administrative services related to real estate transactions. These administrative services encompass document processing, inheritance legalizations, and energy efficiency certifications. The company facilitates the entire real estate process, from acquisition to legal completion. | Name: Alsangs | Website Url: https://www.alsangs.com | Stage: Unfunded | Linkedin Url: https://linkedin.com/company/alsan-global-solutions-sl | Employee Count Official: 3",
-      "rank": 17,
+      "name": "Clarkweightman",
+      "domain": null,
+      "description": "Name: Clarkweightman | Short Description: Provider of chartered surveying, property valuation, and asset management services | Detailed Description: Provider of chartered surveying, property valuation, and asset management services. The company delivers property services spanning the full property lifecycle, assisting investors, developers, occupiers, and financial institutions. Services include building consultancy, lease consultancy, and business rates management. They offer expert guidance to help clients achieve their property goals. | Primary Sector: Real Estate and Construction | Primary Subsector: Real Estate & Infrastructure Developers | All Locations: United Kingdom   United States   | Acquisition Details: Business Acquisition  | Recent News: Property consultancy grows regional footprint with acquisition Deals https://www.thebusinessdesk.com/yorkshire/news/2135954-property-consultancy-grows-regional-footprint-with-acquisition 2025-03  Sanderson Weatherall buys Humber stalwart ",
+      "rank": 41,
       "extra": {
-        "linkedin_url": "https://linkedin.com/company/alsan-global-solutions-sl",
+        "linkedin_url": "https://linkedin.com/company/clark-weightman-ltd",
         "source_url": null,
         "source_urls": null,
         "confidence": null
       },
       "relevant": true,
-      "rationale": "Both provide real estate brokerage, valuation, and asset management services to property owners and investors."
+      "rationale": "Anchor true: commercial property services firm; overlaps valuation and asset management.",
+      "anchor_match": true,
+      "capabilities_matched": [
+        "valuation",
+        "asset management",
+        "property leasing"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Anchor true: commercial property services firm; overlaps valuation and asset management."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Anchor true: commercial real estate services/consultancy for investors and occupiers; overlaps valuation, asset management, lease consultancy (property leasing)."
+        }
+      ]
     },
     {
-      "name": "Jpelliott",
-      "domain": "jpelliott.co.uk",
-      "description": "Primary Sector: Real Estate and Construction | Primary Subsector: Property Management Services | Short Description: Provider of commercial property investment, sales, acquisition, and asset management advice | Detailed Description: Provider of commercial property investment, sales, acquisition, and asset management advice. The company offers property services including commercial and residential property management. It also provides shopping centre management and lettings. Additional services include environmental solutions, EPCs, air conditioning inspections, and right to manage. | All Locations: United Kingdom England London | Name: Jpelliott | Website Url: https://jpelliott.co.uk | Stage: Unfunded | Location Country: United Kingdom | Location State: England | Location City: London | All Locations: [{\"country\":\"United Kingdom\",\"city\":\"London\",\"state\":\"England\"}] | Countries Count: 1 | Geo Served: [\"United Kingdom\"] | Linkedin Url: https://linkedin.com/company/jp-elliott",
-      "rank": 18,
+      "name": "CBRE Global Investors",
+      "domain": "cbreglobalinvestors.com",
+      "description": "Name: CBRE Global Investors | Short Description: Real estate fund focused on multiple strategies | Primary Sector: Investment Industry | Primary Subsector: Real Estate Funds | All Locations: United States California Los Angeles | Website Url: http://cbreglobalinvestors.com | Founded Year: 1972 | Stage: Unfunded | Location Country: United States | Location State: California | Location City: Los Angeles | All Locations: [{\"country\":\"United States\",\"city\":\"Los Angeles\",\"state\":\"California\"}] | Countries Count: 1 | Geo Served: [\"United States\"] | Acquisitions As Acquirer Count: 7 | Board Member Count: 7 | Acquisitions Made: Business Acquisition 2017-11 Business Acquisition 2017-01 Business Acquisition 2017-01 Business Acquisition 2017-02 Business Acquisition 2015-12 Business Acquisition  Business Acquisition  | Cxo Team: Rik Eertink CEO & President | Recent News: CBRE GI acquires resi quarter in Berlin from Hines https://www.property-magazine.eu/cbre-gi-acquires-resi-quarter-in-berlin-from",
+      "rank": 42,
       "extra": {
-        "linkedin_url": "https://linkedin.com/company/jp-elliott",
+        "linkedin_url": "https://linkedin.com/company/american-retirement-villas-properties-ii-%C3%A2%C2%A0lp",
+        "source_url": null,
+        "source_urls": null,
+        "confidence": null
+      },
+      "relevant": false,
+      "rationale": "Anchor false: CBRE Global Investors is CBRE's affiliated investment-management arm, not an independent lookalike; overlap: asset management.",
+      "anchor_match": false,
+      "capabilities_matched": [
+        "asset management"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Anchor false: CBRE Global Investors is CBRE's affiliated investment-management arm, not an independent lookalike; overlap: asset management."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "judge error: Error code: 429 - {'error': {'object': 'error', 'type': 'invalid_request_error', 'code': 'invalid_request_error', 'message': 'rate limit exceeded, please try again later'}}"
+        }
+      ]
+    },
+    {
+      "name": "Fortuna Management",
+      "domain": "fortuna-management.com",
+      "description": "Name: Fortuna Management | Short Description: Provider of real estate asset management and related property services | Detailed Description: Provider of real estate asset management and related property services. The company develops and implements strategic business plans tailored for each management assignment. It focuses on lease structure, tenant relations, retention, and capital improvements. The company aims to lower operating costs while creating new revenue streams. It prioritizes investment strategy to achieve long-term value maximization. | Primary Sector: Real Estate and Construction Tech | Primary Subsector: Property Management Tech | Other Taxonomy Tags: [\"Trending Themes in Real Estate Tech\",\"Property Management Suite\"] | All Locations: United States California Santa Monica | Website Url: https://www.fortuna-management.com/ | Stage: Public | Location Country: United States | All Locations: [{\"country\":\"United States\",\"city\":\"Santa Monica\",\"state\":\"California\"}]",
+      "rank": 43,
+      "extra": {
+        "linkedin_url": "https://linkedin.com/company/fortuna-asset-management",
         "source_url": null,
         "source_urls": null,
         "confidence": null
       },
       "relevant": true,
-      "rationale": "Both provide commercial real estate investment, sales, leasing, property management, and asset management services to property owners and investors."
+      "rationale": "Anchor true: real estate asset-management services for property owners; overlaps property leasing and asset management.",
+      "anchor_match": true,
+      "capabilities_matched": [
+        "property leasing",
+        "asset management"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Anchor true: real estate asset-management services for property owners; overlaps property leasing and asset management."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Anchor true: real estate asset/property management services firm for owners/investors, same category as CBRE. Overlaps asset management and leasing (lease structure, tenant retention)."
+        }
+      ]
+    },
+    {
+      "name": "Simon Bradley Property",
+      "domain": "simonbradleyproperty.com",
+      "description": "Name: Simon Bradley Property | Short Description: Provider of property valuations, asset management, and leasehold advisory services | Detailed Description: Provider of property valuations, asset management, and leasehold advisory services. They offer support with managing property holdings to minimise liabilities. The company undertakes commercial and residential property valuations for trust, probate, and taxation purposes. They also provide dispute resolution services and third-party determinations. | Primary Sector: Real Estate and Construction | Primary Subsector: Real Estate Appraisal Services | All Locations: United Kingdom London  | Website Url: https://simonbradleyproperty.com | Stage: Unfunded | Location Country: United Kingdom | All Locations: [{\"country\":\"United Kingdom\",\"state\":\"London\"}] | Countries Count: 1 | Legal Entity Count: 1 | Legal Entity Names: [\"SIMON BRADLEY LTD\"] | Earliest Incorporation Date: 2020-11-25 | Total Assets Latest Usd: 51847.81 | Founded Year: 2020",
+      "rank": 44,
+      "extra": {
+        "linkedin_url": null,
+        "source_url": "https://platform.tracxn.com/a/d/company/5fb889588d0ccb18d441b5e5/simon%20bradley%20property?utm_source=parallel&utm_medium=ai#a:about",
+        "source_urls": null,
+        "confidence": null
+      },
+      "relevant": true,
+      "rationale": "Anchor true: commercial property-services firm; overlaps valuation and asset management.",
+      "anchor_match": true,
+      "capabilities_matched": [
+        "valuation",
+        "asset management"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Anchor true: commercial property-services firm; overlaps valuation and asset management."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Anchor true: real estate services firm doing commercial valuations and asset management, same category as CBRE services. Overlap: valuation, asset management."
+        }
+      ]
+    },
+    {
+      "name": "Croudace Properties",
+      "domain": "croudaceproperties.co.uk",
+      "description": "Name: Croudace Properties | Short Description: Provider of commercial property investment, development, finance, and asset management | Detailed Description: Provider of commercial property investment, development, finance, and asset management. The organization invests in a mixed portfolio of properties. It sources and delivers refurbishment and development projects. The company provides funds to group companies and other developers for property projects. The team also carries out asset and property management for organizations. | Primary Sector: Real Estate and Construction | Primary Subsector: Real Estate & Infrastructure Developers | All Locations: United Kingdom   | Website Url: https://www.croudaceproperties.co.uk/ | Stage: Unfunded | Location Country: United Kingdom | All Locations: [{\"country\":\"United Kingdom\"}] | Countries Count: 1",
+      "rank": 45,
+      "extra": {
+        "linkedin_url": null,
+        "source_url": "https://platform.tracxn.com/a/d/company/55e082f0e4b0672c6cbc5d4f/croudace%20properties?utm_source=parallel&utm_medium=ai#a:about",
+        "source_urls": null,
+        "confidence": null
+      },
+      "relevant": true,
+      "rationale": "Anchor true: commercial property investment and services firm; overlap includes asset management.",
+      "anchor_match": true,
+      "capabilities_matched": [
+        "asset management"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Anchor true: commercial property investment and services firm; overlap includes asset management."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Anchor true: commercial real estate investment/services firm like CBRE. Provides asset and property management to organizations; overlaps on asset management."
+        }
+      ]
+    },
+    {
+      "name": "Redbonnet Capital",
+      "domain": "redbonnetcapital.com",
+      "description": "Name: Redbonnet Capital | Short Description: Commercial real estate firm specializing in acquisition, development, asset management, disposition | Detailed Description: Commercial real estate firm specializing in acquisition, development, asset management, disposition. It identifies high-potential properties and transforms them into commercial spaces. The firm's approach combines market research, design, and strategic planning. Asset management strategies are designed to maximize the performance and profitability of properties. Disposition services are tailored to optimize returns and align with strategic goals. | Primary Sector: Real Estate and Construction | Primary Subsector: Real Estate & Infrastructure Developers | All Locations: United States Texas Dallas | Website Url: https://redbonnetcapital.com | Stage: Unfunded | Location Country: United States | All Locations: [{\"country\":\"United States\",\"city\":\"Dallas\",\"state\":\"Texas\"}] | Countries Count: 1 | Location State: Texas",
+      "rank": 46,
+      "extra": {
+        "linkedin_url": null,
+        "source_url": "https://platform.tracxn.com/a/d/company/6772dae979e6db21277e8788/redbonnet%20capital?utm_source=parallel&utm_medium=ai#a:about",
+        "source_urls": null,
+        "confidence": null
+      },
+      "relevant": true,
+      "rationale": "Anchor true: commercial real estate investment firm; overlap includes asset management.",
+      "anchor_match": true,
+      "capabilities_matched": [
+        "asset management"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Anchor true: commercial real estate investment firm; overlap includes asset management."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Anchor true: commercial real estate investment firm; overlaps on asset management, no evidence of leasing, facilities, or valuation."
+        }
+      ]
+    },
+    {
+      "name": "Peak Street",
+      "domain": "peakstreet.realestate",
+      "description": "Name: Peak Street | Short Description: Provider of real estate investment, development, and asset management solutions | Detailed Description: Provider of real estate investment, development, and asset management solutions. The company offers expertise in green field projects, mixed-use properties, multi-family properties, and single-family transactions. It guides clients through every stage of investing, developing, buying, and selling properties. The company delivers full-service real estate assistance. | Primary Sector: Real Estate and Construction | Primary Subsector: Real Estate & Infrastructure Developers | All Locations: United States New York Windham | Website Url: https://peakstreet.realestate | Stage: Unfunded | Location Country: United States | Location State: New York | Location City: Windham | All Locations: [{\"country\":\"United States\",\"city\":\"Windham\",\"state\":\"New York\"}] | Countries Count: 1 | Geo Served: [\"United States\"]",
+      "rank": 47,
+      "extra": {
+        "linkedin_url": null,
+        "source_url": "https://platform.tracxn.com/a/d/company/67e832968e53e17639693f47/peak%20street?utm_source=parallel&utm_medium=ai#a:about",
+        "source_urls": null,
+        "confidence": null
+      },
+      "relevant": true,
+      "rationale": "Anchor true: real estate investment and services firm like CBRE; overlaps on asset management only.",
+      "anchor_match": true,
+      "capabilities_matched": [
+        "asset management"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Anchor false: primarily a real estate developer/investment advisor, not clearly a commercial real estate services firm; overlaps asset management."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Anchor true: real estate investment and services firm like CBRE; overlaps on asset management only."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Real estate investment/services firm with asset management, though development-focused; anchor accepted, asset management overlaps."
+        }
+      ]
+    },
+    {
+      "name": "CBRE Caledon",
+      "domain": "cbrecaledon.com",
+      "description": "Name: CBRE Caledon | Short Description: Private equity firm focused on B2B and online retail business | Primary Sector: Investment Industry | Primary Subsector: Private Equity Funds | All Locations: Canada Ontario Toronto | Key People Education: Andreas Kottering Doctor of Philosophy Doctoral University of Oxford Andreas Kottering Bachelor of Science Bachelors London School of Economics and Political Science | Website Url: http://cbrecaledon.com | Founded Year: 2006 | Stage: Unfunded | Location Country: Canada | Location State: Ontario | Location City: Toronto | All Locations: [{\"country\":\"Canada\",\"city\":\"Toronto\",\"state\":\"Ontario\"}] | Countries Count: 1 | Geo Served: [\"Canada\"] | Acquisitions As Acquirer Count: 3 | Work Experience People Count: 23 | Key People Education: [{\"degree\":\"Doctor of Philosophy\",\"institution_name\":\"University of Oxford\",\"person_name\":\"Andreas Kottering\",\"level\":\"Doctoral\"},{\"degree\":\"Bachelor of Science\",\"institution_name\":\"London School of Economics and Poli",
+      "rank": 48,
+      "extra": {
+        "linkedin_url": "http://linkedin.com/company/caledon-capital-management-inc",
+        "source_url": null,
+        "source_urls": null,
+        "confidence": null
+      },
+      "relevant": false,
+      "rationale": "Anchor false: private equity firm focused on B2B and online retail, not a commercial real estate services and investment firm; no listed overlap.",
+      "anchor_match": false,
+      "capabilities_matched": [],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Anchor false: private equity firm focused on B2B and online retail, not a commercial real estate services and investment firm; no listed overlap."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Anchor fails: private equity fund manager (B2B/online retail), effectively a CBRE investment subsidiary, not a commercial real estate services firm. No capability overlap."
+        }
+      ]
+    },
+    {
+      "name": "Tilmon Properties",
+      "domain": "tilmonproperties.com",
+      "description": "Name: Tilmon Properties | Short Description: Provider of real estate asset management, development, and property management | Detailed Description: Provider of real estate asset management, development, and property management. The company offers sales and lease services. It provides asset management and development services for investors and houses of worship. The company focuses on providing homes and amenities for the community. | Primary Sector: Real Estate and Construction Tech | Primary Subsector: Property Management Tech | Other Taxonomy Tags: [\"US Tech\",\"Consumer Digital - US\",\"Trending Themes in Real Estate Tech\",\"Property Management Suite\",\"Enterprise Tech - US\"] | All Locations: United States Maryland Upper Marlboro | Website Url: https://tilmonproperties.com | Stage: Unfunded | Location Country: United States | Location State: Maryland | Location City: Upper Marlboro | All Locations: [{\"country\":\"United States\",\"city\":\"Upper Marlboro\",\"state\":\"Maryland\"}]",
+      "rank": 49,
+      "extra": {
+        "linkedin_url": "https://linkedin.com/company/tilmon-properties",
+        "source_url": null,
+        "source_urls": null,
+        "confidence": null
+      },
+      "relevant": true,
+      "rationale": "Anchor true: commercial real estate services firm offering lease sales and asset management.",
+      "anchor_match": true,
+      "capabilities_matched": [
+        "property leasing",
+        "asset management"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Anchor true: commercial real estate services firm offering lease sales and asset management."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Anchor true: real estate services firm (asset management, property management, leasing) like CBRE. Overlap: property leasing, asset management; no evidence of facilities or valuation."
+        }
+      ]
+    },
+    {
+      "name": "JLL",
+      "domain": null,
+      "description": "Name: JLL | Short Description: Offers a listing platform to find commercial properties | Detailed Description: Offers a listing platform to find commercial properties. The platform enables users to browse through listings by applying the location filter. The platform provides users with information about commercial spaces and the latest events and activities in the commercial market. The platform offers information and research materials publications covering the real estate market. | Primary Sector: Real Estate and Construction | Primary Subsector: Real Estate Brokers | Other Taxonomy Tags: [\"Generic Company Lists\",\"Fortune 500\",\"Global 2000\"] | All Locations: United States Illinois Chicago | Special Flags: Enterprise YES | All Funding Rounds: Conventional Debt 2018-11-28 MetLife Conventional Debt 2018-07-19 Raymond James Bank Grant (prize money) 2015-11-02 Europa Unattributed 2010-07-02  | Acquisitions Made: Business Acquisition 2023-04 Business Acquisition 2019-07 Business Acquisiti",
+      "rank": 50,
+      "extra": {
+        "linkedin_url": "https://linkedin.com/company/jll",
+        "source_url": null,
+        "source_urls": null,
+        "confidence": null
+      },
+      "relevant": true,
+      "rationale": "Anchor true: JLL is a commercial real estate services and investment firm; overlaps property leasing, facilities, valuation, and asset management.",
+      "anchor_match": true,
+      "capabilities_matched": [
+        "property leasing",
+        "facilities",
+        "valuation",
+        "asset management"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Anchor true: JLL is a commercial real estate services and investment firm; overlaps property leasing, facilities, valuation, and asset management."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "JLL is a commercial real estate services and investment firm like CBRE; offers leasing, facilities, valuation, and asset management."
+        }
+      ]
+    },
+    {
+      "name": "Donovan Williams",
+      "domain": "dwa.properties",
+      "description": "Name: Donovan Williams | Short Description: Provider of property management, rental properties, and asset management services | Detailed Description: Provider of property management, rental properties, and asset management services. The company offers property maintenance, leasing, and tenant management. It also assists property owners in maximizing their real estate investments. The firm provides services to both property owners and prospective tenants. | Primary Sector: Real Estate and Construction Tech | Primary Subsector: Property Management Tech | Other Taxonomy Tags: [\"Enterprise Applications\",\"SaaS\",\"US Tech\",\"Consumer Digital - US\",\"SaaS - US\",\"Trending Themes in Real Estate Tech\",\"Property Management Suite\",\"Enterprise Tech - US\"] | All Locations: United States North Carolina Charlotte | Website Url: https://dwa.properties | Stage: Unfunded | Location Country: United States | All Locations: [{\"country\":\"United States\",\"city\":\"Charlotte\",\"state\":\"North Carolina\"}]",
+      "rank": 51,
+      "extra": {
+        "linkedin_url": null,
+        "source_url": "https://platform.tracxn.com/a/d/company/593e1cb2e4b0e1f581147bb8/donovan%20williams?utm_source=parallel&utm_medium=ai#a:about",
+        "source_urls": null,
+        "confidence": null
+      },
+      "relevant": false,
+      "rationale": "Anchor false: property-management provider without evidence of commercial real estate services; overlaps property leasing and asset management.",
+      "anchor_match": false,
+      "capabilities_matched": [
+        "property leasing",
+        "asset management"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Anchor false: property-management provider without evidence of commercial real estate services; overlaps property leasing and asset management."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Anchor false: residential property management/rental firm serving landlords and tenants, not a commercial real estate services firm. Overlap irrelevant after gate."
+        }
+      ]
+    },
+    {
+      "name": "CBRE Technical Division",
+      "domain": "cbre.it",
+      "description": "Name: CBRE Technical Division | Short Description: Provider of commercial real estate services for investors, occupiers, and operators | Detailed Description: Provider of commercial real estate services for investors, occupiers, and operators. The company addresses challenges in the evolving market. It helps clients imagine and create future spaces. The company offers a unique perspective to help clients achieve their goals. | Primary Sector: Real Estate and Construction | Primary Subsector: Real Estate Appraisal Services | All Locations: Italy   | Special Flags: Enterprise YES | Recent News: CBRE, Cristiana Fragola new Head of ESG & Sustainability Solutions https://www.ilgiornaleditalia.it/news/mondo-imprese/469014/cbre-cristiana-fragola-nuova-head-of-esg-sustainability-solutions.html 2023-03 | Website Url: http://cbre.it | Founded Year: 1989 | Stage: Funding Raised | Funded: Yes | Location Country: Italy | All Locations: [{\"country\":\"Italy\"}] | Countries Count: 1",
+      "rank": 52,
+      "extra": {
+        "linkedin_url": "https://linkedin.com/company/cbregwstd",
+        "source_url": null,
+        "source_urls": null,
+        "confidence": null
+      },
+      "relevant": false,
+      "rationale": "Anchor false: CBRE Technical Division appears to be CBRE itself or a division, despite overlap in commercial real estate services.",
+      "anchor_match": false,
+      "capabilities_matched": [
+        "property leasing",
+        "facilities",
+        "valuation",
+        "asset management"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Anchor false: CBRE Technical Division appears to be CBRE itself or a division, despite overlap in commercial real estate services."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "judge error: Error code: 429 - {'error': {'object': 'error', 'type': 'invalid_request_error', 'code': 'invalid_request_error', 'message': 'rate limit exceeded, please try again later'}}"
+        }
+      ]
+    },
+    {
+      "name": "EGP UK",
+      "domain": "egpuk.com",
+      "description": "Name: EGP UK | Short Description: Provider of commercial property asset management and investment advisory services | Detailed Description: Provider of commercial property asset management and investment advisory services. Operations include the maintenance and oversight of building facilities and the identification of real estate opportunities for purchase. Services cover tenant relations, safety compliance, and the management of building operations for single and multi-let commercial spaces. | Primary Sector: Real Estate and Construction Tech | Primary Subsector: Property Management Tech | Other Taxonomy Tags: [\"Trending Themes in Real Estate Tech\",\"Property Management Suite\"] | All Locations: United States Massachusetts Lincoln | Website Url: https://egpuk.com | Founded Year: 2009 | Stage: Unfunded | Location Country: United States | All Locations: [{\"country\":\"United States\",\"city\":\"Lincoln\",\"state\":\"Massachusetts\"}] | Countries Count: 1 | Linkedin Url: https://linkedin.com/company",
+      "rank": 53,
+      "extra": {
+        "linkedin_url": "https://linkedin.com/company/equity-growth-partners",
+        "source_url": null,
+        "source_urls": null,
+        "confidence": null
+      },
+      "relevant": true,
+      "rationale": "Anchor true: commercial real estate asset manager and investment adviser; overlaps in facilities and asset management.",
+      "anchor_match": true,
+      "capabilities_matched": [
+        "facilities",
+        "asset management"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Anchor true: commercial real estate asset manager and investment adviser; overlaps in facilities and asset management."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Anchor match: commercial property asset management/investment services firm, same market as CBRE. Overlaps on facilities oversight and asset management."
+        }
+      ]
+    },
+    {
+      "name": "CBRE Realty Finance",
+      "domain": "cbrerealtyfinance.com",
+      "description": "Name: CBRE Realty Finance | Short Description: Limited information available | All Locations: United States Connecticut Hartford | Cxo Team: Kenneth Witkin CEO & President | Website Url: http://cbrerealtyfinance.com | Founded Year: 2005 | Stage: Public | Has Been Public: Yes | Location Country: United States | Location State: Connecticut | Location City: Hartford | All Locations: [{\"country\":\"United States\",\"city\":\"Hartford\",\"state\":\"Connecticut\"}] | Countries Count: 1 | Geo Served: [\"United States\"] | Ipo Date: 2012-09-21 | Stock Exchange Countries: [\"United States\"] | Cxo Team: [{\"title\":\"CEO & President\",\"full_name\":\"Kenneth Witkin\"}] | Work Experience People Count: 1 | Legal Entity Count: 1 | Legal Entity Names: [\"CBRE REALTY FINANCE INC\"] | Earliest Incorporation Date: 2000-01-01",
+      "rank": 54,
+      "extra": {
+        "linkedin_url": null,
+        "source_url": "https://platform.tracxn.com/a/d/company/58dcd2bde4b0e8400e3721c6/cbre%20realty%20finance?utm_source=parallel&utm_medium=ai#a:about",
+        "source_urls": null,
+        "confidence": null
+      },
+      "relevant": false,
+      "rationale": "Anchor false: CBRE Realty Finance is a commercial real-estate finance/investment vehicle, not a full commercial real-estate services and investment firm; no listed overlap evidenced.",
+      "anchor_match": false,
+      "capabilities_matched": [],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Anchor false: CBRE Realty Finance is a commercial real-estate finance/investment vehicle, not a full commercial real-estate services and investment firm; no listed overlap evidenced."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Anchor false: CBRE Realty Finance is a subsidiary/affiliate of the seed CBRE itself, not an independent lookalike; no capability evidence."
+        }
+      ]
+    },
+    {
+      "name": "Synergeticagroup",
+      "domain": "synergeticagroup.com",
+      "description": "Name: Synergeticagroup | Short Description: Provider of multifamily asset management, renovations, and investment fund management | Detailed Description: Provider of multifamily asset management, renovations, and investment fund management. They acquire and manage multifamily investment properties. The company oversees property improvements and unit renovations. They manage investment funds for multifamily projects. | Primary Sector: Real Estate and Construction | Primary Subsector: Real Estate & Infrastructure Developers | All Locations: United States Florida St. Petersburg | Website Url: https://synergeticagroup.com | Stage: Unfunded | Location Country: United States | Location State: Florida | Location City: St. Petersburg | All Locations: [{\"country\":\"United States\",\"city\":\"St. Petersburg\",\"state\":\"Florida\"}] | Countries Count: 1 | Geo Served: [\"United States\"]",
+      "rank": 55,
+      "extra": {
+        "linkedin_url": null,
+        "source_url": "https://platform.tracxn.com/a/d/company/58bee969e4b0dc135c90c42e/synergeticagroup?utm_source=parallel&utm_medium=ai#a:about",
+        "source_urls": null,
+        "confidence": null
+      },
+      "relevant": true,
+      "rationale": "Anchor true: commercial real estate investment firm; overlaps on asset management.",
+      "anchor_match": true,
+      "capabilities_matched": [
+        "asset management"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Anchor true: commercial real estate investment firm; overlaps on asset management."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Anchor true: multifamily real estate investment and asset management firm (multifamily is a CRE asset class); overlaps on asset management."
+        }
+      ]
+    },
+    {
+      "name": "Black Mountain Properties",
+      "domain": "blackmountainproperties.com",
+      "description": "Name: Black Mountain Properties | Short Description: Developer of commercial real estate properties and property management services | Detailed Description: Developer of commercial real estate properties and property management services. The company develops and manages commercial properties. It offers property management services for tenants. | Primary Sector: Real Estate and Construction | Primary Subsector: Real Estate & Infrastructure Developers | Other Taxonomy Tags: [\"Trending Themes in Real Estate Tech\",\"Property Management Suite\"] | All Locations: United States California San Carlos | Website Url: https://blackmountainproperties.com | Founded Year: 1937 | Stage: Unfunded | Location Country: United States | Location State: California | Location City: San Carlos | All Locations: [{\"country\":\"United States\",\"city\":\"San Carlos\",\"state\":\"California\"}] | Countries Count: 1 | Geo Served: [\"United States\"] | Employee Count Official: 13 | Linkedin Url: https://linkedin.com/company/black",
+      "rank": 56,
+      "extra": {
+        "linkedin_url": "https://linkedin.com/company/black-mountain-properties-llc",
+        "source_url": null,
+        "source_urls": null,
+        "confidence": null
+      },
+      "relevant": false,
+      "rationale": "Anchor false: commercial property developer/manager, not a commercial real estate services and investment firm; no listed capability overlap evidenced.",
+      "anchor_match": false,
+      "capabilities_matched": [
+        "asset management"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Anchor false: commercial property developer/manager, not a commercial real estate services and investment firm; no listed capability overlap evidenced."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Commercial real estate firm offering property management services; same CRE services market as CBRE, overlapping facilities and asset management."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "Developer/owner of commercial properties, not a CRE services and investment brokerage firm; different category."
+        }
+      ]
+    },
+    {
+      "name": "Ohad Group",
+      "domain": "ohad-group.com",
+      "description": "Name: Ohad Group | Short Description: Provider of real estate investment, property renovation, and asset management | Detailed Description: Provider of real estate investment, property renovation, and asset management. The company offers expertise in maximizing the potential of real estate assets. It provides services such as property maintenance and building renovation. The company\u2019s services include property sales and property management. | Primary Sector: Real Estate and Construction Tech | Primary Subsector: Property Management Tech | Other Taxonomy Tags: [\"Trending Themes in Real Estate Tech\",\"Property Management Suite\"] | All Locations: United States Ohio Cincinnati | Achievements: Trending Theme Market {themes=[{id=5d3956c8878707017c0d49a2}]} | Website Url: https://www.ohad-group.com/ | Founded Year: 2019 | Stage: Unfunded | Location Country: United States | Location State: Ohio | Location City: Cincinnati | All Locations: [{\"country\":\"United States\",\"city\":\"Cincinnati\",\"state\":",
+      "rank": 57,
+      "extra": {
+        "linkedin_url": "https://linkedin.com/company/ohad-group",
+        "source_url": null,
+        "source_urls": null,
+        "confidence": null
+      },
+      "relevant": true,
+      "rationale": "Anchor true: real estate investment and management firm; overlaps on asset management.",
+      "anchor_match": true,
+      "capabilities_matched": [
+        "asset management",
+        "facilities"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Anchor true: real estate investment and management firm; overlaps on asset management."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Anchor true: real estate investment and property/asset management firm like CBRE. Overlaps asset management and facilities via property maintenance; no leasing or valuation evidence."
+        }
+      ]
+    },
+    {
+      "name": "CBRE Caledon Capital Management",
+      "domain": "caledoncapital.com",
+      "description": "Name: CBRE Caledon Capital Management | Short Description: Private equity investment firm | Detailed Description: CBRE Caledon is a private equity investment firm in North America. They offer private equity investment for buyouts, growth, distress, venture and acquisitions. They make investments in a wide variety of sectors including retail and software. | Primary Sector: Investment Industry | Primary Subsector: Private Equity Funds | All Locations: Canada Ontario Toronto | Recent News: CBRE Group completes Caledon acquisition https://www.pehub.com/2017/08/cbre-group-completes-caledon-acquisition/ 2017-08  Caledon Capital to go global with CBRE deal https://www.pehub.com/buyouts/caledon-capital-to-go-global-with-cbre-deal/ 2017-06  | Website Url: http://caledoncapital.com | Founded Year: 2006 | Stage: Acquired | Location Country: Canada | All Locations: [{\"country\":\"Canada\",\"city\":\"Toronto\",\"state\":\"Ontario\"}] | Countries Count: 1 | Employee Count Official: 41 | Acquisitions As Target ",
+      "rank": 58,
+      "extra": {
+        "linkedin_url": "https://linkedin.com/company/cbre-investment-management",
+        "source_url": null,
+        "source_urls": null,
+        "confidence": null
+      },
+      "relevant": false,
+      "rationale": "Anchor false: acquired private-equity firm, not a commercial real-estate services firm; overlaps on asset management.",
+      "anchor_match": false,
+      "capabilities_matched": [
+        "asset management"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Anchor false: acquired private-equity firm, not a commercial real-estate services firm; overlaps on asset management."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Anchor false: CBRE subsidiary running a general private equity fund, not a commercial real estate services firm; no capability overlap."
+        }
+      ]
+    },
+    {
+      "name": "Kyley Group",
+      "domain": "kyleygroup.co.uk",
+      "description": "Name: Kyley Group | Short Description: Provider of property investment, development, asset management, and land services | Detailed Description: Provider of property investment, development, asset management, and land services. The firm focuses on acquiring and repositioning properties to enhance value. It identifies investment opportunities across residential, commercial, and development sectors. The company leverages market insights to secure deals and build a diversified portfolio. | Primary Sector: Real Estate and Construction | Primary Subsector: Real Estate & Infrastructure Developers | All Locations: United Kingdom   | Website Url: https://www.kyleygroup.co.uk/ | Stage: Unfunded | Location Country: United Kingdom | All Locations: [{\"country\":\"United Kingdom\"}] | Countries Count: 1 | Employee Count Official: 2 | Linkedin Url: https://linkedin.com/company/kyley-group-properties",
+      "rank": 59,
+      "extra": {
+        "linkedin_url": "https://linkedin.com/company/kyley-group-properties",
+        "source_url": null,
+        "source_urls": null,
+        "confidence": null
+      },
+      "relevant": false,
+      "rationale": "Anchor false: property developer/principal investor rather than a commercial real estate services firm; overlap: asset management.",
+      "anchor_match": false,
+      "capabilities_matched": [
+        "asset management"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Anchor false: property developer/principal investor rather than a commercial real estate services firm; overlap: asset management."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "judge error: Error code: 429 - {'error': {'object': 'error', 'type': 'invalid_request_error', 'code': 'invalid_request_error', 'message': 'rate limit exceeded, please try again later'}}"
+        }
+      ]
+    },
+    {
+      "name": "Maven",
+      "domain": "mave",
+      "description": "Name: Maven | Short Description: Provider of property valuation, real estate, and fixed asset management services | Detailed Description: Provider of property valuation, real estate, and fixed asset management services.  This firm offers consultancy services within the real estate industry, specializing in property valuation for various purposes including financial reporting and land acquisition.  They also provide real estate agency services encompassing buying, selling, and leasing of properties.  Additionally, they offer fixed asset management services, including physical verification, condition assessment, codification, and valuation of assets such as furniture, equipment, and vehicles.  Property management services encompass the daily operations of commercial and residential properties, including rent collection and maintenance. | Primary Sector: Real Estate and Construction | Primary Subsector: Real Estate Appraisal Services | All Locations: Tanzania   | Website Url: https://mave",
+      "rank": 60,
+      "extra": {
+        "linkedin_url": null,
+        "source_url": "https://platform.tracxn.com/a/d/company/64977f741c235e286404d14e/maven?utm_source=parallel&utm_medium=ai#a:about",
+        "source_urls": null,
+        "confidence": null
+      },
+      "relevant": true,
+      "rationale": "Anchor true: commercial real estate services firm; overlaps property leasing, valuation, and asset management.",
+      "anchor_match": true,
+      "capabilities_matched": [
+        "property leasing",
+        "valuation",
+        "asset management",
+        "facilities"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Anchor true: commercial real estate services firm; overlaps property leasing, valuation, and asset management."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Anchor true: real estate services firm offering valuation, leasing, asset and property management, matching CBRE's category and capabilities."
+        }
+      ]
+    },
+    {
+      "name": "C Pacific Group",
+      "domain": "scpacificgroup.com",
+      "description": "Name: C Pacific Group | Short Description: Provider of real estate development, construction, and asset management services | Detailed Description: Provider of real estate development, construction, and asset management services. It specializes in planning, designing, building, and managing various property types. With experience as an owner, developer, construction manager, and fee builder, it helps clients achieve project goals and enhance property value. Project experience includes custom homes, production housing, multi-family units, student housing, high-rise condominiums, golf clubhouses, office buildings, industrial complexes, R & D facilities, and shopping centers. This experience enhances project teams and ensures successful service completion. | Primary Sector: Real Estate and Construction | Primary Subsector: Real Estate & Infrastructure Developers | All Locations: United States California Laguna Niguel | Website Url: https://scpacificgroup.com | Stage: Unfunded",
+      "rank": 61,
+      "extra": {
+        "linkedin_url": null,
+        "source_url": "https://platform.tracxn.com/a/d/company/588d3887e4b0b5a51f39794e/c%20pacific%20group?utm_source=parallel&utm_medium=ai#a:about",
+        "source_urls": null,
+        "confidence": null
+      },
+      "relevant": false,
+      "rationale": "Anchor false: real estate developer/construction manager, not a commercial real estate services and investment firm; overlaps asset management.",
+      "anchor_match": false,
+      "capabilities_matched": [
+        "asset management"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Anchor false: real estate developer/construction manager, not a commercial real estate services and investment firm; overlaps asset management."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Anchor false: real estate developer/construction manager, not a CRE services and investment firm. Overlap: asset management."
+        }
+      ]
+    },
+    {
+      "name": "castlecrownpropertiesltd.co.uk",
+      "domain": "castlecrownpropertiesltd.co.uk",
+      "description": "Name: castlecrownpropertiesltd.co.uk | Short Description: Developer of commercial properties focused on asset management and value creation | Detailed Description: Developer of commercial properties focused on asset management and value creation. The company specialises in managing assets to increase value and generate returns. It focuses on identifying and developing opportunities. The company uses market knowledge to inform its investment decisions. | Primary Sector: Real Estate and Construction | Primary Subsector: Real Estate & Infrastructure Developers | All Locations: United Kingdom   | Website Url: https://castlecrownpropertiesltd.co.uk | Stage: Unfunded | Location Country: United Kingdom | All Locations: [{\"country\":\"United Kingdom\"}] | Countries Count: 1",
+      "rank": 62,
+      "extra": {
+        "linkedin_url": null,
+        "source_url": "https://platform.tracxn.com/a/d/company/5905ba7ce4b02ce7b1242122/castlecrownpropertiesltd.co.uk?utm_source=parallel&utm_medium=ai#a:about",
+        "source_urls": null,
+        "confidence": null
+      },
+      "relevant": false,
+      "rationale": "Anchor false: commercial property developer, not a commercial real estate services and investment firm; overlaps asset management.",
+      "anchor_match": false,
+      "capabilities_matched": [
+        "asset management"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Anchor false: commercial property developer, not a commercial real estate services and investment firm; overlaps asset management."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Anchor false: commercial property developer, not a CRE services/investment firm; asset management is for its own developments, not client services."
+        }
+      ]
+    },
+    {
+      "name": "CBRE Residential Agency",
+      "domain": "cbreresidentialagency.com.au",
+      "description": "Name: CBRE Residential Agency | Short Description: Provider of brokerage services for selling of luxury homes | Primary Sector: Real Estate and Construction | Primary Subsector: Real Estate Brokers | All Locations: Australia New South Wales North Sydney | Website Url: http://cbreresidentialagency.com.au | Stage: Unfunded | Location Country: Australia | Location State: New South Wales | Location City: North Sydney | All Locations: [{\"country\":\"Australia\",\"city\":\"North Sydney\",\"state\":\"New South Wales\"}] | Countries Count: 1 | Geo Served: [\"Australia\"]",
+      "rank": 63,
+      "extra": {
+        "linkedin_url": null,
+        "source_url": "https://platform.tracxn.com/a/d/company/5cf4522fb1807d0f4b6726b0/cbre%20residential%20agency?utm_source=parallel&utm_medium=ai#a:about",
+        "source_urls": null,
+        "confidence": null
+      },
+      "relevant": false,
+      "rationale": "Anchor false: residential luxury-home brokerage differs from commercial real estate services and investment; no listed capability overlap evidenced.",
+      "anchor_match": false,
+      "capabilities_matched": [],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Anchor false: residential luxury-home brokerage differs from commercial real estate services and investment; no listed capability overlap evidenced."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Anchor false: residential luxury-home brokerage, not commercial real estate services; also a CBRE-branded duplicate. No capability overlap (selling, not leasing)."
+        }
+      ]
+    },
+    {
+      "name": "Vaught",
+      "domain": "vaught.in",
+      "description": "Name: Vaught | Short Description: Provider of real estate asset management, construction, brokerage, and sales | Detailed Description: Provider of real estate asset management, construction, brokerage, and sales. The company specializes in managing real estate assets and portfolios, taking a portfolio approach to manage cashflow and budgets. Construction services range from new builds and development to unit rehabilitation and maintenance. The company has residential and investment property teams to help clients buy and sell properties. The company also provides partnership and construction services. | Primary Sector: Real Estate and Construction | Primary Subsector: Real Estate & Infrastructure Developers | All Locations: United States California Chico | Website Url: https://vaught.in | Stage: Unfunded | Location Country: United States | Location State: California | Location City: Chico | All Locations: [{\"country\":\"United States\",\"city\":\"Chico\",\"state\":\"California\"}]",
+      "rank": 64,
+      "extra": {
+        "linkedin_url": "https://linkedin.com/company/vaught-enterprises",
+        "source_url": null,
+        "source_urls": null,
+        "confidence": null
+      },
+      "relevant": true,
+      "rationale": "Anchor true: commercial real estate services firm; overlaps property leasing, facilities, and asset management.",
+      "anchor_match": true,
+      "capabilities_matched": [
+        "property leasing",
+        "facilities",
+        "asset management"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Anchor true: commercial real estate services firm; overlaps property leasing, facilities, and asset management."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Anchor false: residential/investment-property asset manager, broker and builder, not a commercial real estate services firm like CBRE; only asset management overlaps."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Real estate services firm with brokerage and asset management; largely residential/investment, but same category and services overlap."
+        }
+      ]
+    },
+    {
+      "name": "SICEMCO",
+      "domain": "sicemco.com",
+      "description": "Name: SICEMCO | Short Description: Real estate firm specializing in investment, development, and asset management | Detailed Description: Real estate firm specializing in investment, development, and asset management. It covers the full real estate lifecycle, from concept and construction to efficient asset management and optimized investment returns. The firm launches projects, enhances their value, and ensures profits for investors. It delivers commercial and residential investment projects across the full lifecycle, integrating in-house experience with global trends and partnering with industry leaders to provide functional, market-ready real estate solutions. The firm also provides services to investors, funds, landowners, and real estate holders, delivering expert management of development projects. | Primary Sector: Real Estate and Construction | Primary Subsector: Real Estate & Infrastructure Developers | Website Url: https://sicemco.com | Stage: Unfunded | Countries Count: 1",
+      "rank": 65,
+      "extra": {
+        "linkedin_url": null,
+        "source_url": "https://platform.tracxn.com/a/d/company/67894cd31381fc515f93b2c0/sicemco?utm_source=parallel&utm_medium=ai#a:about",
+        "source_urls": null,
+        "confidence": null
+      },
+      "relevant": true,
+      "rationale": "Anchor true: commercial real estate investment firm; overlaps on asset management.",
+      "anchor_match": true,
+      "capabilities_matched": [
+        "asset management"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Anchor true: commercial real estate investment firm; overlaps on asset management."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Anchor true: real estate investment/services firm serving investors and owners, same market as CBRE. Overlap: asset management only; no evidence of leasing, facilities, or valuation."
+        }
+      ]
+    },
+    {
+      "name": "CBRE Acquisition Holdings",
+      "domain": null,
+      "description": "Name: CBRE Acquisition Holdings | Short Description: Blank check company focused on multiple sectors | Primary Sector: Investment Industry | Primary Subsector: Special Purpose Acquisition Companies | All Locations: United States Texas Dallas | Recent News: Altus Power, Inc. Announces the Results of the Completed Redemption of all Outstanding Public and Private Warrants http://www.businesswire.com/news/home/20221020006029/en/Altus-Power-Inc.-Announces-the-Results-of-the-Completed-Redemption-of-all-Outstanding-Public-and-Private-Warrants/ 2022-10  CBRE Acquisition Holdings, Inc. Announces Stockholder Approval of Business Combination with Altus Power, Inc. http://www.businesswire.com/news/home/20211206005820/en/CBRE-Acquisition-Holdings-Inc.-Announces-Stockholder-Approval-of-Business-Combination-with-Altus-Power-Inc./ 2021-12  Altus Power concludes $1.5bn business merger with CBRE https://www.power-technology.com/news/altus-power-concludes-1-5bn-business-merger-with-cbre/ 2021-12  CBRE Ac",
+      "rank": 66,
+      "extra": {
+        "linkedin_url": "https://linkedin.com/company/cbre-acquisition-holdings",
+        "source_url": null,
+        "source_urls": null,
+        "confidence": null
+      },
+      "relevant": false,
+      "rationale": "Anchor false: this is a blank-check acquisition company, not a commercial real estate services and investment firm; no evidenced overlap.",
+      "anchor_match": false,
+      "capabilities_matched": [],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Anchor false: this is a blank-check acquisition company, not a commercial real estate services and investment firm; no evidenced overlap."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Anchor false: a SPAC/blank-check investment vehicle, not a commercial real estate services firm; no listed capabilities offered."
+        }
+      ]
+    },
+    {
+      "name": "Brandst",
+      "domain": "brandst.com",
+      "description": "Name: Brandst | Short Description: Provider of real estate investment, development, and asset management services | Detailed Description: Provider of real estate investment, development, and asset management services. The company delivers operating services with investment focus, solutions, and results. With an integrated platform, the company combines an entrepreneurial mindset with institutional capabilities. The company focuses on retail and mixed-use properties. The company\u2019s development capabilities include ground up construction and redevelopment projects. | Primary Sector: Real Estate and Construction | Primary Subsector: Real Estate & Infrastructure Developers | All Locations: United States California Studio City | Recent News: Brand Street, Barings Acquire Hartford-Area Retail from PGIM https://www.connectcre.com/stories/brand-street-barings-acquire-hartford-area-retail-from-pgim 2026-01  | Website Url: https://brandst.com | Stage: Unfunded | Location Country: United States",
+      "rank": 67,
+      "extra": {
+        "linkedin_url": "https://linkedin.com/company/brand-street-properties",
+        "source_url": null,
+        "source_urls": null,
+        "confidence": null
+      },
+      "relevant": true,
+      "rationale": "Anchor true: commercial real estate investment and services firm; overlap includes asset management.",
+      "anchor_match": true,
+      "capabilities_matched": [
+        "asset management"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Anchor true: commercial real estate investment and services firm; overlap includes asset management."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Commercial real estate investment and asset management firm, same category/customer as CBRE; overlaps on asset management only."
+        }
+      ]
+    },
+    {
+      "name": "Jade Mountain Investments",
+      "domain": "jademtninvestments.com",
+      "description": "Name: Jade Mountain Investments | Short Description: Developer of residential and commercial properties | Detailed Description: Investment firm located in Greenville, SC, offering personalized financial solutions for clients. Contact information for Tim Grant available on RocketReach. | Primary Sector: Real Estate and Construction | Primary Subsector: Real Estate & Infrastructure Developers | All Locations: United States South Carolina Greenville | Website Url: https://www.jademtninvestments.com/i/construction | Stage: Unfunded | Location Country: United States | All Locations: [{\"country\":\"United States\",\"city\":\"Greenville\",\"state\":\"South Carolina\"}] | Countries Count: 1 | Founded Year: 2017 | Location State: South Carolina | Location City: Greenville | Geo Served: [\"United States\"]",
+      "rank": 68,
+      "extra": {
+        "linkedin_url": null,
+        "source_url": "https://platform.tracxn.com/a/d/company/596b9691e4b0e68b235e104c/jade%20mountain%20investments?utm_source=parallel&utm_medium=ai#a:about",
+        "source_urls": null,
+        "confidence": null
+      },
+      "relevant": false,
+      "rationale": "Anchor false: real estate developer/investment firm, not a commercial real estate services and investment firm; no verified listed capability overlap.",
+      "anchor_match": false,
+      "capabilities_matched": [],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Anchor false: real estate developer/investment firm, not a commercial real estate services and investment firm; no verified listed capability overlap."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Anchor false: property developer/investment firm, not a commercial real estate services firm; no evidence of leasing, facilities, valuation, or asset management."
+        }
+      ]
     }
   ],
-  "error": null,
-  "relevant_count_at_25": 16,
-  "precision_at_25": 64.0
+  "error": null
 }

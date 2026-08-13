@@ -7,18 +7,20 @@
     "name": "domain_similarity"
   },
   "k": 100,
-  "relevant_count": 50,
-  "precision_at_k": 50.0,
+  "relevant_count": 59,
+  "precision_at_k": 59.0,
   "relevant_count_at_10": 8,
-  "relevant_count_at_100": 50,
+  "relevant_count_at_25": 19,
+  "relevant_count_at_100": 59,
   "precision_at_10": 80.0,
-  "precision_at_100": 50.0,
+  "precision_at_25": 76.0,
+  "precision_at_100": 59.0,
   "latency_ms": 1092,
   "cost_usd": null,
   "duplicates_removed": 4,
   "max_results": null,
-  "judge_model": "gpt-5.6",
-  "judged_at": "2026-07-27T03:49:49Z",
+  "judge_model": "majority(n=3): claude-opus-5,gpt-5.6-terra,kimi-k3",
+  "judged_at": "2026-08-10T19:45:58Z",
   "candidates": [
     {
       "name": "Monzo Bank Limited",
@@ -52,7 +54,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Monzo is a digital banking platform offering consumers and businesses accounts, cards, payments, savings, and investments, substantially overlapping Revolut\u2019s core offerings and users."
+      "rationale": "Monzo is a digital bank offering mobile accounts, cards, payments, savings, credit, and investments\u2014the same consumer financial-super-app space as Revolut.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Monzo is a digital bank offering mobile accounts, cards, payments, savings, credit, and investments\u2014the same consumer financial-super-app space as Revolut."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Monzo is a digital challenger bank offering app-based accounts, cards, and payments \u2014 a direct competitor and comparable to Revolut on product, market, and model."
+        }
+      ]
     },
     {
       "name": "DepositScout Ltd.",
@@ -78,7 +92,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "DepositScout is a savings-account comparison and rate-alert site, not a digital bank offering accounts, cards, payments, FX, or investing."
+      "rationale": "Savings-account comparison and information site, not a digital bank offering payments, cards, FX, or investing products.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Savings-account comparison and information site, not a digital bank offering payments, cards, FX, or investing products."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Savings-account comparison/aggregator site, not a digital bank or financial super-app; complements rather than competes with Revolut."
+        }
+      ]
     },
     {
       "name": "Starling Bank Limited",
@@ -114,7 +140,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Starling is a digital bank offering personal and business accounts, cards, payments, and financial management, substantially overlapping Revolut\u2019s products and customer base."
+      "rationale": "Digital challenger bank offering consumer and business accounts, cards, payments, and financial-management features, directly comparable to Revolut.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Digital challenger bank offering consumer and business accounts, cards, payments, and financial-management features, directly comparable to Revolut."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are digital challenger banks offering mobile-first consumer and business banking, cards, and payments \u2014 direct competitors in the neobank space."
+        }
+      ]
     },
     {
       "name": "Rebind SAS",
@@ -141,7 +179,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both offer consumer financial apps with deposit accounts, savings products, payments, and account management, serving users seeking app-based banking alternatives."
+      "rationale": "Consumer financial app offering account-based savings, deposits, spending, and investment products; a narrower but credible digital-banking comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Consumer financial app offering account-based savings, deposits, spending, and investment products; a narrower but credible digital-banking comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Consumer digital finance app offering savings accounts, personal IBANs, and spending features \u2014 directly comparable to Revolut's B2C digital banking model."
+        }
+      ]
     },
     {
       "name": "thisbank",
@@ -167,7 +217,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both are app-based consumer banking providers offering digital financial accounts and money management, with overlapping users seeking mobile-first banking products."
+      "rationale": "UK digital bank offering mobile savings and lending products to consumers; comparable retail banking model despite narrower product range.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "UK digital bank offering mobile savings and lending products to consumers; comparable retail banking model despite narrower product range."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Digital-first consumer bank offering app-based savings and lending; competes with Revolut's core digital-banking product for the same retail customers."
+        }
+      ]
     },
     {
       "name": "Wio Bank PJSC",
@@ -196,7 +258,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both are digital banking platforms offering consumers mobile accounts, cards, payments, foreign exchange, budgeting, and investment-related financial services."
+      "rationale": "Digital bank offering mobile accounts, cards, FX, lending, investing, and personal-finance tools\u2014directly comparable to Revolut's consumer banking super-app.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Digital bank offering mobile accounts, cards, FX, lending, investing, and personal-finance tools\u2014directly comparable to Revolut's consumer banking super-app."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Digital-first bank offering app-based accounts, cards, FX, and investing tools for consumers \u2014 same product, market, and model as Revolut."
+        }
+      ]
     },
     {
       "name": "You Technologies Group Limited",
@@ -224,7 +298,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "YouTrip overlaps Revolut\u2019s consumer offering through app-based multi-currency wallets, cards, foreign exchange, payments, and rewards for travelers."
+      "rationale": "YouTrip offers a consumer multi-currency wallet, payment card, FX exchange, and rewards\u2014core Revolut consumer banking-super-app functions.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "YouTrip offers a consumer multi-currency wallet, payment card, FX exchange, and rewards\u2014core Revolut consumer banking-super-app functions."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Multi-currency digital wallet with cards, FX, and mobile payments for consumers\u2014direct fintech competitor to Revolut's core offering."
+        }
+      ]
     },
     {
       "name": "RUUT",
@@ -256,7 +342,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "RUUT overlaps Revolut\u2019s business banking offering through SME accounts, debit cards, payments, transfers, savings, and app-based financial management."
+      "rationale": "SME-focused digital financial platform offering business accounts, cards, payments, transfers, and savings, directly comparable to Revolut Business.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "SME-focused digital financial platform offering business accounts, cards, payments, transfers, and savings, directly comparable to Revolut Business."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Digital banking/fintech app offering business accounts, payments, debit cards, and transfers \u2014 directly comparable to Revolut's business banking product."
+        }
+      ]
     },
     {
       "name": "Pay.com.au Limited",
@@ -285,7 +383,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both offer businesses payment, expense, cash-flow, and international transaction tools, serving finance teams managing company spending and supplier payments."
+      "rationale": "B2B fintech platform for business payments, international bill settlement, cash-flow and expense management, overlapping Revolut Business\u2019s payment and spend-management use cases.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "B2B fintech platform for business payments, international bill settlement, cash-flow and expense management, overlapping Revolut Business\u2019s payment and spend-management use cases."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "B2B payments and international transfer fintech with expense management; overlaps Revolut's business payments/FX offering as a comparable digital-finance platform."
+        }
+      ]
     },
     {
       "name": "LeComparatif.com",
@@ -308,7 +418,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "LeComparatif is a comparison and lead-generation marketplace, not a digital bank offering its own payments, cards, FX, or investment products."
+      "rationale": "Financial-product comparison marketplace, not a digital bank providing accounts, payments, cards, FX, or investing services.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Financial-product comparison marketplace, not a digital bank providing accounts, payments, cards, FX, or investing services."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Comparison/affiliate site for financial products, not a digital bank or financial services provider itself; serves the category, doesn't compete."
+        }
+      ]
     },
     {
       "name": "Tesco Bank",
@@ -337,8 +459,20 @@
           "https://x.com/tescobankhelp"
         ]
       },
-      "relevant": false,
-      "rationale": "Tesco Bank is a traditional consumer lender and savings provider, not a digital financial super-app spanning business payments, cards, FX, and investing."
+      "relevant": true,
+      "rationale": "Retail bank offering consumer cards, savings, loans, mobile banking, and investing; a comparable financial-services provider despite less super-app breadth.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Retail bank offering consumer cards, savings, loans, mobile banking, and investing; a comparable financial-services provider despite less super-app breadth."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Consumer retail bank offering cards, savings, loans via mobile apps \u2014 same consumer-banking market and product overlap as Revolut, a genuine comparable."
+        }
+      ]
     },
     {
       "name": "Felicity Trust Corp",
@@ -361,7 +495,19 @@
         "social_urls": []
       },
       "relevant": true,
-      "rationale": "Both offer digital personal and business banking, cards, payments, and investment products to substantially overlapping users and buyers."
+      "rationale": "Offers digital personal and business banking, cards, payments, investing, and financial-management tools, making it a direct banking-platform comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Offers digital personal and business banking, cards, payments, investing, and financial-management tools, making it a direct banking-platform comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Digital bank offering consumer and business banking, cards, payments, and investment products \u2014 same product and market as Revolut."
+        }
+      ]
     },
     {
       "name": "Your Financial Freedom",
@@ -386,7 +532,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "It primarily provides crypto guidance and access to third-party wallets, not a digital banking super-app offering integrated payments, cards, FX, and investing."
+      "rationale": "Crypto education and wallet/card promotion, not an independent digital banking and financial super-app comparable to Revolut.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Crypto education and wallet/card promotion, not an independent digital banking and financial super-app comparable to Revolut."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Affiliate-style crypto education site directing users to third-party wallets; not a digital bank or comparable financial platform."
+        }
+      ]
     },
     {
       "name": "Capital on Tap",
@@ -417,7 +575,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both offer app-managed business cards and spending/payment tools to business customers, despite Revolut\u2019s broader banking and financial platform."
+      "rationale": "Business-focused fintech offering cards, spending management, and savings; overlaps Revolut Business's core financial-services product, though narrower.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Business-focused fintech offering cards, spending management, and savings; overlaps Revolut Business's core financial-services product, though narrower."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "UK digital-first fintech offering app-managed business credit cards and financial products, a direct competitor to Revolut's business banking and card offering."
+        }
+      ]
     },
     {
       "name": "iFAST Global Bank",
@@ -448,7 +618,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide app-based multi-currency banking, international transfers, savings, and investment services to retail customers."
+      "rationale": "Digital bank offering multicurrency accounts, cross-border payments, mobile banking, savings, and investments\u2014directly comparable to Revolut\u2019s consumer financial super-app.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Digital bank offering multicurrency accounts, cross-border payments, mobile banking, savings, and investments\u2014directly comparable to Revolut\u2019s consumer financial super-app."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "UK digital bank offering multi-currency accounts, cross-border transfers, savings, and investing via mobile app \u2014 directly comparable to Revolut's banking product."
+        }
+      ]
     },
     {
       "name": "Trading 212 Ltd.",
@@ -477,7 +659,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide app-based retail investing in stocks and ETFs, serving consumers evaluating digital platforms to manage investments across currencies."
+      "rationale": "Both are consumer-facing fintech platforms offering mobile investing and multi-currency financial services, making Trading 212 a credible Revolut comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both are consumer-facing fintech platforms offering mobile investing and multi-currency financial services, making Trading 212 a credible Revolut comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are consumer fintech super-apps offering commission-free investing, multi-currency accounts, and app-based money management to retail users \u2014 genuine comparables/competitors."
+        }
+      ]
     },
     {
       "name": "Prograd Limited",
@@ -505,7 +699,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Prograd is a consumer rewards and side-hustle platform, not a digital banking super-app offering accounts, cards, payments, FX, or investing."
+      "rationale": "Prograd is a rewards and side-hustle platform, not a digital bank offering payments, cards, FX, investing, or business financial services.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Prograd is a rewards and side-hustle platform, not a digital bank offering payments, cards, FX, investing, or business financial services."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Prograd is a survey/rewards side-hustle app, not digital banking, payments, cards, FX, or investing \u2014 no shared product, market, or model with Revolut."
+        }
+      ]
     },
     {
       "name": "BBVA Bank",
@@ -533,7 +739,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both offer app-based digital banking, accounts, cards, payments, budgeting, and investments to consumers seeking an integrated financial platform."
+      "rationale": "BBVA Italia is a digital consumer bank offering accounts, cards, payments, lending, investments, and app-based financial management, directly comparable to Revolut.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "BBVA Italia is a digital consumer bank offering accounts, cards, payments, lending, investments, and app-based financial management, directly comparable to Revolut."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Digital-first bank offering accounts, cards, and investing via app \u2014 same product and consumer market as Revolut, per Nubank precedent."
+        }
+      ]
     },
     {
       "name": "DT&T Corporation Ltd",
@@ -563,7 +781,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "DT&T overlaps Revolut\u2019s core multi-currency accounts, international payments, remittances, and debit cards for both personal and business users."
+      "rationale": "Digital financial platform offering multi-currency accounts, international payments, debit cards, and business/personal services, closely overlapping Revolut\u2019s core banking and FX products.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Digital financial platform offering multi-currency accounts, international payments, debit cards, and business/personal services, closely overlapping Revolut\u2019s core banking and FX products."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Digital money app with multi-currency wallets, international transfers, and debit cards for consumers and businesses\u2014same product and market as Revolut."
+        }
+      ]
     },
     {
       "name": "Crest Point LTD",
@@ -586,7 +816,19 @@
         "social_urls": []
       },
       "relevant": true,
-      "rationale": "Both provide digital banking products, including accounts, cards, payments, and business financial services, serving customers with overlapping everyday banking needs."
+      "rationale": "Both offer consumer-focused banking products, cards, mobile payments, and digital account access, making them comparable financial-services platforms.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both offer consumer-focused banking products, cards, mobile payments, and digital account access, making them comparable financial-services platforms."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Bank offering credit cards, payments, savings, and mobile banking for consumers and businesses \u2014 direct comparable to Revolut's core banking products."
+        }
+      ]
     },
     {
       "name": "Am I Poor?",
@@ -610,7 +852,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Am I Poor? is a consumer retirement-planning and budgeting tool, not a digital bank offering payments, cards, FX, and investment accounts."
+      "rationale": "Personal retirement planning and budgeting tool, not a digital bank or payments, cards, FX, and investing super-app.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Personal retirement planning and budgeting tool, not a digital bank or payments, cards, FX, and investing super-app."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Consumer retirement-planning/advice tool, not digital banking; no payments, cards, FX, or banking products. Adjacent personal finance, not a comparable."
+        }
+      ]
     },
     {
       "name": "LHV Bank Limited",
@@ -638,7 +892,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "LHV offers app-based personal and business banking, cards, FX, savings, and investments, substantially overlapping Revolut\u2019s core services and customers."
+      "rationale": "Digital bank offering consumer and business accounts, cards, FX, and investments, directly comparable to Revolut's core financial-super-app services.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Digital bank offering consumer and business accounts, cards, FX, and investments, directly comparable to Revolut's core financial-super-app services."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "App-based digital bank offering current accounts, savings, debit cards, FX rates and investing for consumers and businesses \u2014 a direct Revolut comparable."
+        }
+      ]
     },
     {
       "name": "Virgin Money",
@@ -673,7 +939,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide app-accessible personal and business banking, accounts, cards, payments, savings, and investment products to overlapping financial-services customers."
+      "rationale": "Both provide consumer and business banking products, including accounts, cards, payments, savings, and app-based financial management.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both provide consumer and business banking products, including accounts, cards, payments, savings, and app-based financial management."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Full-service bank with digital/app banking for consumers and businesses; direct competitor to Revolut in banking, cards, and money management."
+        }
+      ]
     },
     {
       "name": "Bank of Between Rios",
@@ -704,7 +982,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide app-based consumer and business banking, accounts, payments, cards, and investments to customers managing everyday finances."
+      "rationale": "Retail and business bank offering accounts, payments, cards, investments, and mobile banking\u2014directly comparable to Revolut's digital financial-services model.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Retail and business bank offering accounts, payments, cards, investments, and mobile banking\u2014directly comparable to Revolut's digital financial-services model."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Retail bank offering consumer/business accounts, mobile payments, and investing via app; overlapping product and market despite different region and legacy model."
+        }
+      ]
     },
     {
       "name": "AwayPay",
@@ -730,7 +1020,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "AwayPay is a niche airline-crew allowance platform, not a digital bank offering comparable cards, payments, FX, and investing services."
+      "rationale": "Niche airline-crew allowance and travel-expense tool, not a broad digital bank or financial super-app competing with Revolut.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Niche airline-crew allowance and travel-expense tool, not a broad digital bank or financial super-app competing with Revolut."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Niche allowance/expense tool for airline crews, not a digital bank; no shared product breadth (cards, FX, investing) or general banking market."
+        }
+      ]
     },
     {
       "name": "Barclays",
@@ -767,7 +1069,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide app-based personal and business banking, cards, payments, and investment services to substantially overlapping customers."
+      "rationale": "Barclays is a consumer and business banking provider offering accounts, cards, payments, investing, and mobile banking, directly comparable to Revolut.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Barclays is a consumer and business banking provider offering accounts, cards, payments, investing, and mobile banking, directly comparable to Revolut."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Full-service bank competing directly with Revolut in consumer banking: accounts, cards, payments, investing via mobile app \u2014 same market and overlapping product."
+        }
+      ]
     },
     {
       "name": "MoCo",
@@ -790,8 +1104,20 @@
           "https://www.linkedin.com/company/mocomortgage/"
         ]
       },
-      "relevant": false,
-      "rationale": "MoCo primarily offers savings and mortgages, not Revolut\u2019s core digital payments, cards, FX, and financial super-app experience."
+      "relevant": true,
+      "rationale": "MoCo is a consumer digital savings and mortgage provider, overlapping Revolut's retail banking market despite its narrower product scope.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "MoCo is a consumer digital savings and mortgage provider, overlapping Revolut's retail banking market despite its narrower product scope."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Consumer digital financial-services provider offering savings/mortgages; same B2C banking customer persona and comparable consumer fintech model as Revolut."
+        }
+      ]
     },
     {
       "name": "Royal Bank of Scotland",
@@ -824,7 +1150,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide consumer and business banking accounts, cards, payments, digital money management, and investment services to overlapping customer segments."
+      "rationale": "Both provide consumer and business banking, accounts, cards, payments, lending, savings, and digital financial services.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both provide consumer and business banking, accounts, cards, payments, lending, savings, and digital financial services."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Full-service bank with digital banking, cards, FX, and investing for consumers and businesses \u2014 competes directly with Revolut for the same banking customers."
+        }
+      ]
     },
     {
       "name": "118 118 Money",
@@ -854,7 +1192,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "118 118 Money primarily offers consumer loans and credit cards, not Revolut\u2019s digital banking, payments, FX, and investing super-app."
+      "rationale": "Consumer lender and credit-card provider, not a digital banking super-app for payments, FX, business banking, and investing.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Consumer lender and credit-card provider, not a digital banking super-app for payments, FX, business banking, and investing."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "UK consumer lender focused on personal loans and credit cards, not a digital banking super-app spanning payments, FX, and investing; product overlap is weak."
+        }
+      ]
     },
     {
       "name": "Bank Boost",
@@ -876,7 +1226,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Bank Boost aggregates and guides users to third-party bank-switching and cashback offers; it is not a digital bank offering accounts, cards, FX, or investing."
+      "rationale": "Consumer-facing bank-offer and cashback affiliate platform, not a digital bank providing accounts, cards, payments, FX, or investing.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Consumer-facing bank-offer and cashback affiliate platform, not a digital bank providing accounts, cards, payments, FX, or investing."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Affiliate deal-aggregator promoting bank-switch bonuses and cashback; not a digital bank or financial super-app itself, so not a peer of Revolut."
+        }
+      ]
     },
     {
       "name": "Paycores",
@@ -901,7 +1263,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Paycores is a comparison and referral marketplace for financial providers, not a digital bank offering its own accounts, cards, payments, or FX."
+      "rationale": "Paycores is a financial-product comparison and referral marketplace, not a digital bank offering Revolut-like accounts, cards, FX, and investing.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Paycores is a financial-product comparison and referral marketplace, not a digital bank offering Revolut-like accounts, cards, FX, and investing."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Comparison/matching marketplace referring users to banking providers, not a digital bank itself; serves the category rather than competing with Revolut."
+        }
+      ]
     },
     {
       "name": "Cyberbank",
@@ -926,7 +1300,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both offer digital banking platforms for consumers and businesses, including accounts, payments, spending management, savings, credit, and investments."
+      "rationale": "Digital banking platform for consumers and businesses offering accounts, payments, cards, lending, savings, and investments\u2014directly comparable to Revolut.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Digital banking platform for consumers and businesses offering accounts, payments, cards, lending, savings, and investments\u2014directly comparable to Revolut."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Digital banking platform offering accounts, payments, cards, loans, and investing for consumers and businesses\u2014same product and market as Revolut."
+        }
+      ]
     },
     {
       "name": "Thers Finance",
@@ -949,7 +1335,19 @@
         "social_urls": []
       },
       "relevant": true,
-      "rationale": "Both provide digital banking, payments, cards, and account-management services to consumers and businesses, creating substantial product and buyer overlap."
+      "rationale": "Digital banking provider offering accounts, cards, payments, mobile banking, and business services, making it a comparable banking-platform prospect.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Digital banking provider offering accounts, cards, payments, mobile banking, and business services, making it a comparable banking-platform prospect."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Digital/online banking institution offering accounts, cards, payments, and loans to consumers and businesses \u2014 same product and market as Revolut."
+        }
+      ]
     },
     {
       "name": "GTC",
@@ -972,7 +1370,19 @@
         "social_urls": []
       },
       "relevant": true,
-      "rationale": "GTC offers digital personal and business banking, cards, FX, and investments, directly overlapping Revolut\u2019s core products and target users."
+      "rationale": "Online consumer and business banking offering accounts, cards, FX, investments, and mobile services closely overlaps Revolut\u2019s digital-bank model.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Online consumer and business banking offering accounts, cards, FX, investments, and mobile services closely overlaps Revolut\u2019s digital-bank model."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Online bank offering consumer and business accounts, FX, cards, and investing \u2014 same digital-banking product and market as Revolut."
+        }
+      ]
     },
     {
       "name": "Kent Reliance",
@@ -999,7 +1409,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Kent Reliance is primarily a traditional savings and mortgage bank, not a digital financial super-app spanning payments, cards, FX, and investing."
+      "rationale": "Kent Reliance is primarily a savings, bonds, and mortgage bank, not a digital payments, cards, FX, and financial-super-app competitor.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Kent Reliance is primarily a savings, bonds, and mortgage bank, not a digital payments, cards, FX, and financial-super-app competitor."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Traditional branch-based UK savings and mortgage bank; lacks Revolut's digital payments, cards, FX, and investing super-app product."
+        }
+      ]
     },
     {
       "name": "Monument Bank Limited",
@@ -1027,7 +1449,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both are app-based digital banks offering consumers banking and investment products, with overlapping users seeking mobile-first financial services."
+      "rationale": "Digital consumer bank offering app-based savings and investment products; narrower than Revolut but a genuine retail banking comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Digital consumer bank offering app-based savings and investment products; narrower than Revolut but a genuine retail banking comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "App-based digital challenger bank for consumers, same digital-banking market and model as Revolut, though narrower savings focus."
+        }
+      ]
     },
     {
       "name": "Trust Bank Singapore",
@@ -1054,7 +1488,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both are app-based digital banks offering consumers accounts, cards, payments, rewards, and investment-related financial services."
+      "rationale": "Digital consumer bank offering accounts, cards, loans, insurance, and investments; directly comparable to Revolut's financial super-app model.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Digital consumer bank offering accounts, cards, loans, insurance, and investments; directly comparable to Revolut's financial super-app model."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Digital bank offering app-based consumer accounts, cards, loans, and investing \u2014 same product, market, and model as Revolut, differing only in region."
+        }
+      ]
     },
     {
       "name": "Bittl",
@@ -1079,7 +1525,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Bittl similarly offers consumers an integrated financial app for fiat accounts, payments, international transfers, currency exchange, wallets, and spending management."
+      "rationale": "Crypto-fiat financial app with IBANs, payments, transfers, wallets, and cashback resembles Revolut\u2019s consumer digital-banking super-app model.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Crypto-fiat financial app with IBANs, payments, transfers, wallets, and cashback resembles Revolut\u2019s consumer digital-banking super-app model."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Consumer fintech app offering EU IBAN accounts, fiat/crypto exchange, mobile payments, and spending controls \u2014 same product and market as Revolut's digital banking super-app."
+        }
+      ]
     },
     {
       "name": "Prosper Savings Limited",
@@ -1103,8 +1561,25 @@
           "https://www.linkedin.com/company/prospersavings/"
         ]
       },
-      "relevant": false,
-      "rationale": "Prosper is primarily a wealth and savings platform, not a digital banking super-app spanning payments, cards, and FX like Revolut."
+      "relevant": true,
+      "rationale": "Consumer financial platform offering investments, savings, pensions, and wealth management; overlaps Revolut\u2019s retail investing and digital-finance market, though narrower.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Consumer financial platform offering investments, savings, pensions, and wealth management; overlaps Revolut\u2019s retail investing and digital-finance market, though narrower."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "UK consumer investment/savings platform; overlaps only Revolut's secondary investing feature, lacking its core banking, payments, cards, and FX super-app product."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Consumer fintech app for savings/investing in UK; overlaps Revolut's consumer digital finance and investing offering., You are an evaluator scoring company lookalike results for a B2B benchmark."
+        }
+      ]
     },
     {
       "name": "Emma",
@@ -1135,8 +1610,25 @@
           "https://x.com/emma_finance"
         ]
       },
-      "relevant": false,
-      "rationale": "Emma is primarily a budgeting and account-tracking app, not a digital bank offering core payments, cards, and FX services."
+      "relevant": true,
+      "rationale": "Consumer financial app overlapping in budgeting, savings, investing, and payments, though less full-service banking than Revolut.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Consumer financial app overlapping in budgeting, savings, investing, and payments, though less full-service banking than Revolut."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Emma is a budgeting/spend-tracking app layered on existing banks, not a digital bank offering accounts, cards, payments, or FX like Revolut."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Consumer fintech app offering budgeting, savings, investing and payments \\financfinance super-app comparable to Revolut's consumer side."
+        }
+      ]
     },
     {
       "name": "Payment Logic Pty Ltd",
@@ -1168,7 +1660,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Payment Logic is a card-funded bill-payment and rewards service, not a digital banking platform; buyers would not typically evaluate both for the same need."
+      "rationale": "Payment Logic is a rewards-focused bill-payment intermediary, not a digital bank or broad financial super-app offering accounts, FX, cards, and investing.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Payment Logic is a rewards-focused bill-payment intermediary, not a digital bank or broad financial super-app offering accounts, FX, cards, and investing."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Payment Logic is a niche rewards-based bill-payment processor, not a digital banking/payments super-app; overlap with Revolut's core product is weak."
+        }
+      ]
     },
     {
       "name": "The Co-operative Bank",
@@ -1203,7 +1707,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide personal and business banking accounts, cards, payments, and digital money management to overlapping banking customers."
+      "rationale": "Both provide consumer and business banking, accounts, cards, payments, and mobile financial services; Co-operative Bank is a direct banking comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both provide consumer and business banking, accounts, cards, payments, and mobile financial services; Co-operative Bank is a direct banking comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are banks offering consumer and business accounts, cards, and payments with mobile banking; direct competitors in UK retail banking market."
+        }
+      ]
     },
     {
       "name": "InvestScience",
@@ -1234,7 +1750,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "InvestScience is a financial content and comparison publisher, not a digital banking platform offering payments, cards, FX, or investing services."
+      "rationale": "Financial-media comparison and advice site, not a digital banking, payments, cards, FX, or investing platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Financial-media comparison and advice site, not a digital banking, payments, cards, FX, or investing platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Finance comparison/content media site, not a digital bank or financial product provider; different product and business model."
+        }
+      ]
     },
     {
       "name": "ING",
@@ -1263,7 +1791,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide digital banking accounts, payments, cards, savings, and investments to consumers, serving overlapping financial-management needs and users."
+      "rationale": "ING is a digital consumer bank offering accounts, payments, savings, loans, and investments, directly comparable to Revolut\u2019s core banking super-app services.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "ING is a digital consumer bank offering accounts, payments, savings, loans, and investments, directly comparable to Revolut\u2019s core banking super-app services."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Digital-first retail bank offering consumer accounts, payments, savings, and investing online \u2014 direct competitor/comparable to Revolut's consumer digital banking."
+        }
+      ]
     },
     {
       "name": "Amex Fin Cash Plc",
@@ -1286,7 +1826,24 @@
         "social_urls": []
       },
       "relevant": true,
-      "rationale": "Both provide digital banking products for consumers and businesses, including accounts, cards, payments, savings, and investments."
+      "rationale": "Offers consumer and business digital banking, accounts, cards, payments, loans, savings, and investments\u2014directly comparable to Revolut's financial super-app.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Offers consumer and business digital banking, accounts, cards, payments, loans, savings, and investments\u2014directly comparable to Revolut's financial super-app."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Apparent impersonation/clone entity mimicking Amex branding, not a genuine digital-banking competitor comparable to Revolut."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Offers consumer/business banking, cards, loans, investing with online/mobile access \\u2014 comparable digital banking provider."
+        }
+      ]
     },
     {
       "name": "Sherwood Crown Investment Ltd",
@@ -1311,7 +1868,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "The entity is inconsistent: Sherwood Crown is described as \u201cMultiBank,\u201d with mismatched branding and unrelated social links, suggesting a spurious entry."
+      "rationale": "Candidate appears to be a generic, possibly misattributed bank profile rather than a verified digital-banking super-app comparable to Revolut.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Candidate appears to be a generic, possibly misattributed bank profile rather than a verified digital-banking super-app comparable to Revolut."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Incoherent record: investment-firm name mismatches boilerplate 'MultiBank' description and links to a theme vendor's Facebook \u2014 likely fake/duplicate, not a genuine digital-banking comparable."
+        }
+      ]
     },
     {
       "name": "Airtime Rewards Limited",
@@ -1338,7 +1907,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Airtime Rewards is a shopping rewards and mobile-bill credit app, not a digital banking platform offering cards, payments, FX, or investing."
+      "rationale": "Airtime is a consumer shopping rewards app for mobile-bill credit, not a digital bank offering payments, cards, FX, or investing.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Airtime is a consumer shopping rewards app for mobile-bill credit, not a digital bank offering payments, cards, FX, or investing."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Cashback/rewards app offsetting mobile phone bills, not a digital bank; no banking, payments, FX, or investing products comparable to Revolut."
+        }
+      ]
     },
     {
       "name": "The Owl King",
@@ -1360,7 +1941,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "The Owl King is a financial comparison and advice publisher, not a digital bank offering accounts, cards, payments, FX, or investing services."
+      "rationale": "Financial-content and comparison platform, not a digital bank offering accounts, payments, cards, FX, and investing products.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Financial-content and comparison platform, not a digital bank offering accounts, payments, cards, FX, and investing products."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Content/affiliate comparison site for credit cards and loans, not a digital bank or fintech service provider like Revolut."
+        }
+      ]
     },
     {
       "name": "BankingGeek",
@@ -1400,7 +1993,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "BankingGeek is a financial comparison and content website, not a digital banking platform offering accounts, payments, cards, FX, or investing."
+      "rationale": "Financial-product comparison media site, not a digital banking, payments, cards, FX, or investing platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Financial-product comparison media site, not a digital banking, payments, cards, FX, or investing platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Comparison/review media site for financial products, not a digital bank or fintech product; publisher, not competitor or comparable to Revolut."
+        }
+      ]
     },
     {
       "name": "Upward Saver Bank Corporation",
@@ -1423,7 +2028,19 @@
         "social_urls": []
       },
       "relevant": true,
-      "rationale": "Both offer digital banking for consumers and businesses, including accounts, payments, international transfers, FX, investments, and mobile financial services."
+      "rationale": "Digital bank offering consumer and business accounts, transfers, FX, loans, and investments\u2014directly comparable to Revolut's financial super-app.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Digital bank offering consumer and business accounts, transfers, FX, loans, and investments\u2014directly comparable to Revolut's financial super-app."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Digital bank for consumers and businesses offering accounts, international transfers, FX, and investing\u2014direct product and market match to Revolut."
+        }
+      ]
     },
     {
       "name": "Safe Company",
@@ -1451,8 +2068,20 @@
           "https://www.linkedin.com/company/the-safecompany/"
         ]
       },
-      "relevant": false,
-      "rationale": "Safe Company is a financial-products marketplace and planning tool, not a digital bank offering comparable payments, cards, or FX services."
+      "relevant": true,
+      "rationale": "Digital financial platform offering savings, investments, credit, and personal/business finance tools, overlapping Revolut's consumer and business financial-super-app market.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Digital financial platform offering savings, investments, credit, and personal/business finance tools, overlapping Revolut's consumer and business financial-super-app market."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Digital consumer fintech app offering savings, investing, credit, and budgeting\u2014overlaps Revolut's financial super-app product and consumer market."
+        }
+      ]
     },
     {
       "name": "Lopay",
@@ -1488,7 +2117,24 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both offer small-business payment acceptance, cards, and transaction management, targeting merchants seeking integrated financial and payment tools."
+      "rationale": "Fintech payment app offering business cards, payments, and payouts\u2014overlaps Revolut's business payments/cards product on product and model axes.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Lopay is primarily an SMB merchant payments and POS provider, not a digital banking and financial super-app comparable to Revolut."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Fintech payment app offering business cards, payments, and payouts\u2014overlaps Revolut's business payments/cards product on product and model axes."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Fintech payments app with cards and business accounts for SMBs \\u2014 comparable to Revolut Business, overlapping payments/card space., You must respond with valid JSON."
+        }
+      ]
     },
     {
       "name": "Atom bank",
@@ -1515,7 +2161,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both are app-based digital banks serving consumers and businesses with overlapping deposit and financial-management products for customers seeking digital banking alternatives."
+      "rationale": "Atom Bank is an app-based digital bank offering consumer and business financial products, making it a direct comparable to Revolut.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Atom Bank is an app-based digital bank offering consumer and business financial products, making it a direct comparable to Revolut."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are app-based digital banks serving consumers and businesses; Atom is a direct comparable in digital banking despite narrower product range."
+        }
+      ]
     },
     {
       "name": "Investing Insiders",
@@ -1545,7 +2203,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Investing Insiders is a financial education and comparison website, not a digital banking platform offering accounts, payments, cards, FX, or investing services."
+      "rationale": "Financial education and comparison content site, not a digital banking platform offering payments, cards, accounts, FX, or investment products.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Financial education and comparison content site, not a digital banking platform offering payments, cards, accounts, FX, or investment products."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Investing Insiders is a financial content/media site with guides and comparison tools, not a digital banking or financial super-app like Revolut."
+        }
+      ]
     },
     {
       "name": "cahoot",
@@ -1568,7 +2238,19 @@
         "social_urls": []
       },
       "relevant": true,
-      "rationale": "Both provide digital banking accounts, cards, payments, and related financial products to consumers seeking online alternatives to traditional banking."
+      "rationale": "Online consumer banking offering current accounts, cards, payments, savings, and international transactions; a direct digital-bank comparable to Revolut.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Online consumer banking offering current accounts, cards, payments, savings, and international transactions; a direct digital-bank comparable to Revolut."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Online bank offering current accounts, cards, payments, FX, and investing to consumers \u2014 same product, market, and digital-banking model as Revolut."
+        }
+      ]
     },
     {
       "name": "Chase UK",
@@ -1596,7 +2278,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both offer app-based consumer banking, cards, savings, rewards, and investments, serving customers evaluating digital alternatives for everyday financial management."
+      "rationale": "Digital consumer bank offering accounts, debit cards, rewards, savings, and investing; directly comparable to Revolut\u2019s financial super-app.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Digital consumer bank offering accounts, debit cards, rewards, savings, and investing; directly comparable to Revolut\u2019s financial super-app."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Digital consumer bank offering current accounts, cards, savings, and investing \u2014 same product, market, and app-first model as Revolut."
+        }
+      ]
     },
     {
       "name": "1click2pay",
@@ -1619,7 +2313,19 @@
         "social_urls": []
       },
       "relevant": true,
-      "rationale": "Both offer consumer and business digital accounts for cross-border payments, transfers, and card transactions, serving overlapping users and financial needs."
+      "rationale": "Global digital payment accounts for consumers and businesses, with cross-border transfers, cards, and SEPA services, closely overlap Revolut's fintech banking model.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Global digital payment accounts for consumers and businesses, with cross-border transfers, cards, and SEPA services, closely overlap Revolut's fintech banking model."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Digital payments fintech offering personal/business accounts, cross-border transfers, SEPA, cards \u2014 same product and market as Revolut's core money app."
+        }
+      ]
     },
     {
       "name": "COROFIN",
@@ -1641,7 +2347,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "COROFIN compares and refers users to third-party financial products; Revolut directly provides digital banking, cards, payments, FX, and investing services."
+      "rationale": "Corofin compares third-party financial products; it is a comparison portal, not a digital banking and payments super-app like Revolut.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Corofin compares third-party financial products; it is a comparison portal, not a digital banking and payments super-app like Revolut."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Corofin is a financial comparison/affiliate portal, not a digital bank or financial super-app; it aggregates others' products rather than offering banking services."
+        }
+      ]
     },
     {
       "name": "Explore Amex Global Lounge Collection",
@@ -1668,8 +2386,20 @@
           "https://x.com/amexuk"
         ]
       },
-      "relevant": false,
-      "rationale": "This is primarily an airport-lounge access offering, not a digital banking super-app spanning payments, FX, cards, and investing."
+      "relevant": true,
+      "rationale": "American Express offers consumer and business cards, payments, rewards, and travel benefits, making it a meaningful fintech/card-services comparable to Revolut.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "American Express offers consumer and business cards, payments, rewards, and travel benefits, making it a meaningful fintech/card-services comparable to Revolut."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "American Express is a major card/payments financial services company for consumers and businesses, comparable to Revolut on product and market."
+        }
+      ]
     },
     {
       "name": "Tiny Debit",
@@ -1694,7 +2424,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Tiny Debit facilitates small direct debits for bank-switching rewards, not a digital bank offering integrated accounts, cards, FX, payments, and investing."
+      "rationale": "Bank-switching utility using small direct debits, not a digital banking super-app offering accounts, cards, FX, payments, and investing.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Bank-switching utility using small direct debits, not a digital banking super-app offering accounts, cards, FX, payments, and investing."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Niche micro-direct-debit gimmick for bank switching, not a digital bank or financial super-app; no banking, cards, FX, or investing products."
+        }
+      ]
     },
     {
       "name": "Zitra Bank",
@@ -1723,7 +2465,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide app-based financial accounts and money-management products for consumers and businesses, with overlap in savings, investing, and digital banking."
+      "rationale": "Digital bank serving consumers and businesses with accounts, transfers, spending tools, loans, and investments; comparable to Revolut's financial super-app model.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Digital bank serving consumers and businesses with accounts, transfers, spending tools, loans, and investments; comparable to Revolut's financial super-app model."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Digital bank offering app-based accounts, savings, investments, and loans for consumers and businesses \u2014 same digital-banking product and market as Revolut, different region."
+        }
+      ]
     },
     {
       "name": "Digital Pecunia",
@@ -1746,7 +2500,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Digital Pecunia is a financial-product comparison and review marketplace, not a digital bank directly providing accounts, payments, cards, FX, or investing."
+      "rationale": "Financial-product comparison and review site, not a digital bank providing accounts, cards, payments, FX, or investing services.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Financial-product comparison and review site, not a digital bank providing accounts, cards, payments, FX, or investing services."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Comparison/affiliate review site for financial products, not an actual provider of banking, payments, or investing services like Revolut."
+        }
+      ]
     },
     {
       "name": "Altery EU Ltd.",
@@ -1775,7 +2541,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide digital multi-currency accounts, payments, cards, FX, and cross-border transfers to consumers and businesses."
+      "rationale": "Multi-currency e-money service with cards, transfers, FX, and mobile financial management directly overlaps Revolut\u2019s core digital-banking offering.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Multi-currency e-money service with cards, transfers, FX, and mobile financial management directly overlaps Revolut\u2019s core digital-banking offering."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Multi-currency e-money app with cards, FX, and cross-border payments \u2014 direct product and market overlap with Revolut's consumer fintech offering."
+        }
+      ]
     },
     {
       "name": "mind.money",
@@ -1796,8 +2574,20 @@
         "city": "London",
         "social_urls": []
       },
-      "relevant": false,
-      "rationale": "mind.money primarily aggregates personal data and services; it lacks Revolut\u2019s core digital banking, card, FX, and investing offering."
+      "relevant": true,
+      "rationale": "Consumer financial platform combining money transfers, bill payments, and financial services in a super-app-like dashboard, overlapping Revolut\u2019s core consumer fintech use case.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Consumer financial platform combining money transfers, bill payments, and financial services in a super-app-like dashboard, overlapping Revolut\u2019s core consumer fintech use case."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Consumer financial super-app with payments, money transfers, bill pay, subscriptions, travel, and insurance\u2014closely mirrors Revolut's B2C product and market."
+        }
+      ]
     },
     {
       "name": "Be Clever With Your Cash",
@@ -1832,7 +2622,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Candidate is a financial advice and comparison publisher, not a digital banking platform offering accounts, payments, cards, FX, or investing services."
+      "rationale": "Financial advice and comparison publisher, not a digital banking or financial-services platform offering accounts, cards, payments, or investing.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Financial advice and comparison publisher, not a digital banking or financial-services platform offering accounts, cards, payments, or investing."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Personal-finance advice and comparison media site, not a digital bank or fintech product; serves consumers as content, not as a banking competitor."
+        }
+      ]
     },
     {
       "name": "NatWest Rooster Money",
@@ -1863,7 +2665,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both offer app-based prepaid cards and money management; parents may compare Rooster Card with Revolut\u2019s youth banking offering for children."
+      "rationale": "Youth-focused prepaid-card and money-management app; a niche digital-banking comparable to Revolut's consumer card and financial-app offerings.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Youth-focused prepaid-card and money-management app; a niche digital-banking comparable to Revolut's consumer card and financial-app offerings."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Consumer fintech prepaid debit card plus money-management app; mirrors Revolut's youth card product and consumer digital-banking model."
+        }
+      ]
     },
     {
       "name": "QualiBanca",
@@ -1893,7 +2707,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "QualiBanca compares third-party financial products; it does not provide digital banking, payments, cards, FX, or investing services like Revolut."
+      "rationale": "Independent comparison publisher for banking products, not a digital bank offering accounts, cards, payments, FX, or investing services.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Independent comparison publisher for banking products, not a digital bank offering accounts, cards, payments, FX, or investing services."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Comparison/affiliate media site for banking products, not a digital bank or fintech provider itself; no product or model resemblance to Revolut."
+        }
+      ]
     },
     {
       "name": "Orbit",
@@ -1921,7 +2747,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Orbit overlaps Revolut\u2019s digital banking model through app-based accounts, international transfers, spending, saving, and services for consumers and businesses."
+      "rationale": "Digital banking app offering accounts, payments, transfers, cards-like spending, and savings to consumers and businesses, directly comparable to Revolut.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Digital banking app offering accounts, payments, transfers, cards-like spending, and savings to consumers and businesses, directly comparable to Revolut."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Digital banking app with international transfers, spending/saving accounts for consumers and businesses \u2014 same product and market as Revolut."
+        }
+      ]
     },
     {
       "name": "SpendZenly",
@@ -1945,8 +2783,25 @@
           "https://x.com/spendzenly"
         ]
       },
-      "relevant": false,
-      "rationale": "SpendZenly assists international students with banking administration and budgeting, but does not offer a digital bank, cards, payments, FX, or investing platform."
+      "relevant": true,
+      "rationale": "Consumer fintech offering digital banking onboarding, spending tracking, and payment tools \u2014 a niche neobank comparable to Revolut's consumer product.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Student-focused financial and administrative support service, not a digital banking or multi-product financial platform comparable to Revolut."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Consumer fintech offering digital banking onboarding, spending tracking, and payment tools \u2014 a niche neobank comparable to Revolut's consumer product."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Consumer fintech offering digital account setup, spend tracking and payments for international students \ncomparable to Revolut's neobank onboarding niche."
+        }
+      ]
     },
     {
       "name": "TaylorFinance",
@@ -1970,7 +2825,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "TaylorFinance primarily offers insurance and mortgages, not a digital banking super-app centered on payments, cards, FX, and investing."
+      "rationale": "Primarily an insurance and mortgage provider; credit cards and rewards alone do not make it a digital banking, payments, FX, or investing peer.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Primarily an insurance and mortgage provider; credit cards and rewards alone do not make it a digital banking, payments, FX, or investing peer."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Primarily an insurance/mortgage provider, not a digital banking or payments super-app; credit-card overlap alone is too weak a resemblance."
+        }
+      ]
     },
     {
       "name": "Utoppia",
@@ -2000,7 +2867,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide app-based global financial accounts, cards, payments, FX, and investments to consumers managing money across borders."
+      "rationale": "Global consumer financial platform offering accounts, cards, FX, payments, and investments; directly comparable to Revolut despite its remote-worker focus.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Global consumer financial platform offering accounts, cards, FX, payments, and investments; directly comparable to Revolut despite its remote-worker focus."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Neobank-style consumer fintech offering USD accounts, cards, FX, and investing globally \u2014 matches Revolut on product, market, and model."
+        }
+      ]
     },
     {
       "name": "Brigit",
@@ -2035,7 +2914,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Brigit focuses on consumer cash advances, credit building, and budgeting, not Revolut\u2019s core digital banking, payments, cards, FX, or investing platform."
+      "rationale": "Consumer fintech app, but primarily cash advances, credit building, and budgeting rather than Revolut's digital banking, payments, cards, FX, and investing platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Consumer fintech app, but primarily cash advances, credit building, and budgeting rather than Revolut's digital banking, payments, cards, FX, and investing platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Consumer cash-advance and credit-building app; lacks digital banking, payments, cards, or FX products that define Revolut's super-app."
+        }
+      ]
     },
     {
       "name": "Bank of Santa Fe",
@@ -2064,8 +2955,20 @@
           "https://x.com/banco_santafe"
         ]
       },
-      "relevant": false,
-      "rationale": "Bank of Santa Fe is a traditional regional bank, not a digital-first financial super-app or neobank comparable to Revolut."
+      "relevant": true,
+      "rationale": "Traditional bank offering consumer and business digital banking, payments, cards, financing, and investments\u2014overlapping Revolut\u2019s core financial-services model.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Traditional bank offering consumer and business digital banking, payments, cards, financing, and investments\u2014overlapping Revolut\u2019s core financial-services model."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are retail banks offering consumer and business accounts, cards, payments, and investing with digital banking apps \u2014 direct competitors for the same customers."
+        }
+      ]
     },
     {
       "name": "Paypilot",
@@ -2090,7 +2993,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "PayPilot primarily offers earned-wage access and budgeting, not digital banking across payments, cards, FX, and investing like Revolut."
+      "rationale": "Consumer fintech app centered on earned-wage access, not Revolut's broad digital banking, payments, cards, FX, and investing platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Consumer fintech app centered on earned-wage access, not Revolut's broad digital banking, payments, cards, FX, and investing platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Earned-wage-advance app, not a digital bank; lacks Revolut's core banking, payments, cards, FX products \u2014 different primary product and job-to-be-done."
+        }
+      ]
     },
     {
       "name": "Spendways",
@@ -2118,7 +3033,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Spendways is primarily a financial comparison and advice site, not a digital banking platform offering its own payments, cards, FX, and investing services."
+      "rationale": "Spendways appears to be a financial comparison and advice site, not a digital banking platform offering its own payments, cards, FX, or investing products.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Spendways appears to be a financial comparison and advice site, not a digital banking platform offering its own payments, cards, FX, or investing products."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Comparison/media site recommending bank accounts and cards (including Revolut's); not a digital bank or fintech competitor itself."
+        }
+      ]
     },
     {
       "name": "Paycap",
@@ -2144,7 +3071,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Paycap overlaps Revolut\u2019s core payments, international transfers, FX, and business expense-management offerings, serving similar consumer and business financial users."
+      "rationale": "Payment platform offering transfers, FX, expense tracking, and mobile notifications for consumers and businesses, closely overlapping Revolut's core financial-services model.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Payment platform offering transfers, FX, expense tracking, and mobile notifications for consumers and businesses, closely overlapping Revolut's core financial-services model."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Fintech app offering consumer/business payments, international transfers, and currency exchange \u2014 direct product and market overlap with Revolut's payments/FX offering."
+        }
+      ]
     },
     {
       "name": "1st Finance",
@@ -2167,7 +3106,24 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "A traditional credit union centered on deposits and loans does not offer Revolut\u2019s digital-first payments, cards, FX, and investing super-app."
+      "rationale": "Traditional member-owned credit union, not a digital-first banking super-app; conventional banking services lack the fintech product/model resemblance.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Member-owned credit union provides digital personal and business banking, accounts, loans, and investments\u2014comparable financial services despite a narrower traditional model."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Traditional member-owned credit union, not a digital-first banking super-app; conventional banking services lack the fintech product/model resemblance."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "Traditional member-owned credit union, not a digital-first neobank/fintech super-app; different model and product focus."
+        }
+      ]
     },
     {
       "name": "Lendable Ltd",
@@ -2193,7 +3149,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Lendable is a single-purpose consumer lender, not a digital banking super-app spanning payments, cards, FX, investing, and business banking."
+      "rationale": "Lendable is a consumer personal-loan lender, not a digital banking or financial super-app offering Revolut\u2019s payments, cards, FX, and investing products.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Lendable is a consumer personal-loan lender, not a digital banking or financial super-app offering Revolut\u2019s payments, cards, FX, and investing products."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Single-product consumer personal lender, not a digital banking/payments super-app; product and customer job-to-be-done differ fundamentally."
+        }
+      ]
     },
     {
       "name": "Quidsy",
@@ -2220,7 +3188,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Quidsy is a cashback-offer discovery and rewards guidance service, not a digital bank offering accounts, payments, cards, FX, or investing."
+      "rationale": "Quidsy is a cashback and loyalty-offer discovery platform, not a digital banking, payments, cards, FX, or investing provider.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Quidsy is a cashback and loyalty-offer discovery platform, not a digital banking, payments, cards, FX, or investing provider."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Cashback/loyalty-offer aggregator and comparison site, not a digital bank or payments platform; no shared product or business model with Revolut."
+        }
+      ]
     },
     {
       "name": "Revet pay",
@@ -2244,8 +3224,25 @@
           "https://www.linkedin.com/company/revetpay/"
         ]
       },
-      "relevant": false,
-      "rationale": "Revet Pay is a traditional full-service credit union, not a digital financial super-app centered on payments, cards, FX, and investing."
+      "relevant": true,
+      "rationale": "Full-service credit union offering consumer and business accounts, payments, and mobile banking; it is a banking-services comparable to Revolut.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Full-service credit union offering consumer and business accounts, payments, and mobile banking; it is a banking-services comparable to Revolut."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Traditional community credit union, not a digital banking/fintech super-app; name and tiny size suggest a copycat/duplicate entry rather than a peer."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Consumer/business banking provider with accounts, cards, loans and mobile app \\Revolut peer in retail banking, albeit credit-union model.\u00bb,"
+        }
+      ]
     },
     {
       "name": "Payology",
@@ -2269,7 +3266,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Payology overlaps Revolut Business in digital business accounts, payments, international transfers, payroll, and money management for SMEs."
+      "rationale": "Business-focused digital banking platform offering accounts, payments, transfers, cards, and related financial services, directly comparable to Revolut Business.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Business-focused digital banking platform offering accounts, payments, transfers, cards, and related financial services, directly comparable to Revolut Business."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Digital business banking with payments, international transfers, and investment products \u2014 directly comparable to Revolut's business offering."
+        }
+      ]
     },
     {
       "name": "Airtip",
@@ -2297,7 +3306,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Airtip is a niche digital tipping tool, not a digital bank or financial super-app offering cards, FX, accounts, and investing."
+      "rationale": "Airtip is a niche tipping-payment app for service workers, not a broad digital banking, cards, FX, or investing platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Airtip is a niche tipping-payment app for service workers, not a broad digital banking, cards, FX, or investing platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Niche tipping app for service workers; not a digital bank or payments super-app. Only shares a generic fintech label, no strong product/market/model overlap."
+        }
+      ]
     },
     {
       "name": "RCI Bank UK Limited",
@@ -2322,7 +3343,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "RCI Bank is primarily a consumer savings/deposit provider, not a financial super-app spanning payments, cards, FX, investing, and business banking."
+      "rationale": "Savings-focused retail bank, not a digital financial super-app offering Revolut's broad payments, cards, FX, and investing products.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Savings-focused retail bank, not a digital financial super-app offering Revolut's broad payments, cards, FX, and investing products."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Traditional savings/deposit bank only; lacks Revolut's payments, cards, FX, investing super-app product. Overlaps weakly on consumer banking, not on core product or model."
+        }
+      ]
     },
     {
       "name": "Cash App",
@@ -2352,7 +3385,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both are consumer financial super-apps offering payments, debit cards, savings, and investing for similar money-management needs."
+      "rationale": "Consumer financial super-app offering payments, card spending, direct deposit, crypto, and stock investing; directly comparable to Revolut.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Consumer financial super-app offering payments, card spending, direct deposit, crypto, and stock investing; directly comparable to Revolut."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Cash App is a mobile financial super-app offering P2P payments, debit cards, and investing\u2014directly matching Revolut's product, market, and model."
+        }
+      ]
     },
     {
       "name": "Coricks",
@@ -2375,7 +3420,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Coricks provides financial education content, not digital banking, payments, cards, FX, or investment account services competing with Revolut."
+      "rationale": "Financial-literacy content publisher, not a digital bank offering payments, cards, FX, or investing products.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Financial-literacy content publisher, not a digital bank offering payments, cards, FX, or investing products."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Financial literacy content site, not a digital bank or fintech product; no banking, payments, or investing services like Revolut."
+        }
+      ]
     },
     {
       "name": "EagleStore.su",
@@ -2398,7 +3455,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "EagleStore resells third-party financial and crypto accounts, rather than providing a digital banking super-app with native payments, cards, FX, and investing."
+      "rationale": "Sells or consults on third-party financial and crypto accounts, not a regulated digital banking platform offering its own payments, cards, FX, and investing services.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Sells or consults on third-party financial and crypto accounts, not a regulated digital banking platform offering its own payments, cards, FX, and investing services."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Sells pre-made third-party financial accounts (Wise/PayPal), a gray-market reseller, not a digital bank or fintech platform comparable to Revolut."
+        }
+      ]
     },
     {
       "name": "Zyzbank",
@@ -2421,7 +3490,19 @@
         "social_urls": []
       },
       "relevant": true,
-      "rationale": "Both provide mobile banking, cards, accounts, and investment services to consumers and businesses for managing everyday finances."
+      "rationale": "Digital bank offering consumer and business accounts, cards, payments-related services, and financial management; directly comparable to Revolut's banking platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Digital bank offering consumer and business accounts, cards, payments-related services, and financial management; directly comparable to Revolut's banking platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Digital bank offering accounts, cards, investing for consumers and businesses with fee-free mobile-first model \u2014 direct Revolut comparable."
+        }
+      ]
     },
     {
       "name": "Bank Sp\u00f3dzielnie w Kodzek",
@@ -2443,8 +3524,25 @@
         "city": "K\u0142odzko",
         "social_urls": []
       },
-      "relevant": true,
-      "rationale": "Both provide consumer and business banking accounts, cards, payments, transfers, and digital account management for overlapping financial-services needs."
+      "relevant": false,
+      "rationale": "Traditional regional cooperative bank with branch-based services; lacks Revolut's digital-first fintech super-app model (FX, investing, app-native banking).",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Traditional cooperative bank offering consumer and business accounts, cards, payments, loans, and digital banking; a comparable banking provider despite narrower product breadth."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Traditional regional cooperative bank with branch-based services; lacks Revolut's digital-first fintech super-app model (FX, investing, app-native banking)."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "Traditional local cooperative bank with branch-based retail banking, not a digital-first neobank/fintech super-app like Revolut."
+        }
+      ]
     },
     {
       "name": "Avant Money",
@@ -2475,7 +3573,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Avant Money is primarily a consumer lender for mortgages and loans, not a digital banking super-app spanning payments, FX, investing, and business finance."
+      "rationale": "Consumer financial-services provider offering cards and deposits, but primarily lending and mortgages rather than a broad digital banking super-app.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Consumer financial-services provider offering cards and deposits, but primarily lending and mortgages rather than a broad digital banking super-app."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Traditional consumer lender (mortgages, personal loans); lacks Revolut's digital banking, payments, FX, and super-app product core."
+        }
+      ]
     },
     {
       "name": "TgMotos",
@@ -2497,7 +3607,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "TgMotos is a financial education and recommendation publisher, not a digital banking platform offering payments, cards, FX, or investing services."
+      "rationale": "Financial education and recommendation portal, not a digital banking, payments, card, FX, or investing product provider.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Financial education and recommendation portal, not a digital banking, payments, card, FX, or investing product provider."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Financial education content portal, not a digital bank or fintech product; media site about finance, no banking/payments offering."
+        }
+      ]
     },
     {
       "name": "Nexus Finance",
@@ -2519,7 +3641,19 @@
         "social_urls": []
       },
       "relevant": true,
-      "rationale": "Both provide app-based personal and business banking, payments, card, and financial-management services for overlapping users and use cases."
+      "rationale": "Digital banking app offering payments, cards, personal/business money management and rewards, directly comparable to Revolut\u2019s financial super-app.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Digital banking app offering payments, cards, personal/business money management and rewards, directly comparable to Revolut\u2019s financial super-app."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Digital banking app for consumers and businesses with payments, cards, and money management \u2014 same product and market as Revolut."
+        }
+      ]
     },
     {
       "name": "Zempler Bank",
@@ -2547,7 +3681,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Zempler\u2019s digital business banking, payments, cards, and financial-management tools overlap Revolut Business and target the same SME banking buyers."
+      "rationale": "Digital business bank offering accounts, payments, cards, and financial-management tools for SMEs, directly comparable to Revolut Business.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Digital business bank offering accounts, payments, cards, and financial-management tools for SMEs, directly comparable to Revolut Business."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "UK digital challenger bank offering app-based business accounts, payments, and cards \u2014 direct competitor to Revolut's digital banking model."
+        }
+      ]
     },
     {
       "name": "Coventry Building Society",
@@ -2577,7 +3723,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Coventry is a traditional building society focused on savings and mortgages, not a digital financial super-app spanning payments, cards, FX, and investing."
+      "rationale": "Traditional building society focused on savings and mortgages, not a digital banking super-app for payments, cards, FX, and investing.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Traditional building society focused on savings and mortgages, not a digital banking super-app for payments, cards, FX, and investing."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Traditional mutual focused on savings and mortgages, not a digital banking super-app with payments, cards, FX, and investing; different product and model."
+        }
+      ]
     },
     {
       "name": "Qonto",
@@ -2609,7 +3767,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both offer digital business accounts, payment cards, expense management, and financial tools to SMEs, serving overlapping buyers and banking use cases."
+      "rationale": "Qonto is a digital business banking platform for SMEs, overlapping Revolut Business in accounts, payments, expense management, invoicing, and multicurrency services.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Qonto is a digital business banking platform for SMEs, overlapping Revolut Business in accounts, payments, expense management, invoicing, and multicurrency services."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Qonto is a digital business banking platform with multi-currency accounts and expense management \u2014 direct competitor to Revolut's business banking arm."
+        }
+      ]
     },
     {
       "name": "EgaCard",
@@ -2634,7 +3804,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "EgaCard overlaps Revolut in multi-currency accounts, cards, wallets, and global payments for consumer and business banking users."
+      "rationale": "Digital financial platform offering multi-currency accounts, cards, payments, wallets, and global transfers\u2014directly comparable to Revolut\u2019s core banking super-app services.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Digital financial platform offering multi-currency accounts, cards, payments, wallets, and global transfers\u2014directly comparable to Revolut\u2019s core banking super-app services."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Digital banking platform offering multi-currency accounts, cards, and global money transfers \u2014 directly matches Revolut's core consumer fintech product and market."
+        }
+      ]
     },
     {
       "name": "Jollof+",
@@ -2664,10 +3846,20 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both offer app-based consumer financial accounts, including savings products, targeting users seeking to deposit, manage, and earn returns on money."
+      "rationale": "Nigerian consumer fintech offering savings and financial-management products; overlaps Revolut's digital-banking audience, though with a narrower savings focus.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Nigerian consumer fintech offering savings and financial-management products; overlaps Revolut's digital-banking audience, though with a narrower savings focus."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Consumer digital-first fintech app offering licensed savings/financial products; same B2C digital banking market and model as Revolut, narrower product scope."
+        }
+      ]
     }
   ],
-  "error": null,
-  "relevant_count_at_25": 18,
-  "precision_at_25": 72.0
+  "error": null
 }

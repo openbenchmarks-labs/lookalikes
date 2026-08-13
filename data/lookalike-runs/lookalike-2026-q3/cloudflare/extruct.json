@@ -7,20 +7,20 @@
     "name": "domain_similarity"
   },
   "k": 100,
-  "relevant_count": 58,
-  "precision_at_k": 58.0,
+  "relevant_count": 57,
+  "precision_at_k": 57.0,
   "relevant_count_at_10": 9,
   "relevant_count_at_25": 23,
-  "relevant_count_at_100": 58,
+  "relevant_count_at_100": 57,
   "precision_at_10": 90.0,
   "precision_at_25": 92.0,
-  "precision_at_100": 58.0,
+  "precision_at_100": 57.0,
   "latency_ms": 3525,
   "cost_usd": null,
   "duplicates_removed": 3,
   "max_results": null,
-  "judge_model": "gpt-5.6",
-  "judged_at": "2026-07-27T06:49:49Z",
+  "judge_model": "majority(n=3): claude-opus-5,gpt-5.6-terra,kimi-k3",
+  "judged_at": "2026-08-10T20:02:43Z",
   "candidates": [
     {
       "name": "Fastly",
@@ -37,7 +37,19 @@
         "employee_count": "1001-5000"
       },
       "relevant": true,
-      "rationale": "Fastly directly overlaps Cloudflare in edge cloud, CDN/performance, application security, DDoS protection, and programmable infrastructure for similar technical buyers."
+      "rationale": "Fastly directly competes in edge cloud, CDN, web performance, WAF, DDoS protection, and application security.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Fastly directly competes in edge cloud, CDN, web performance, WAF, DDoS protection, and application security."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Edge cloud platform with CDN, WAF, DDoS protection, and edge compute \u2014 a direct Cloudflare competitor on product, market, and model."
+        }
+      ]
     },
     {
       "name": "F5",
@@ -54,7 +66,19 @@
         "employee_count": "5001-10000"
       },
       "relevant": true,
-      "rationale": "F5 and Cloudflare both provide application security, delivery, networking, and performance solutions for enterprises operating across cloud environments."
+      "rationale": "F5 directly overlaps in application security, load balancing, networking, API protection, and multicloud application delivery, serving similar enterprise infrastructure buyers.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "F5 directly overlaps in application security, load balancing, networking, API protection, and multicloud application delivery, serving similar enterprise infrastructure buyers."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "F5 competes directly with Cloudflare in application security, delivery, WAF, DDoS/bot defense, and multicloud networking\u2014same products, same enterprise buyers."
+        }
+      ]
     },
     {
       "name": "Zayo",
@@ -71,7 +95,24 @@
         "employee_count": "1001-5000"
       },
       "relevant": false,
-      "rationale": "Zayo is primarily a fiber connectivity carrier, not an application security, CDN, developer-edge, or cloud networking platform comparable to Cloudflare."
+      "rationale": "Zayo is a fiber transport/connectivity carrier; Cloudflare is an edge application security, performance, and developer platform \u2014 different infrastructure layers and buyers.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Zayo provides enterprise fiber and network connectivity infrastructure, overlapping Cloudflare\u2019s networking offerings, though not its broader edge security platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Zayo is a fiber transport/connectivity carrier; Cloudflare is an edge application security, performance, and developer platform \u2014 different infrastructure layers and buyers."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "Zayo is a physical fiber/carrier network operator, not an edge software security/CDN platform like Cloudflare."
+        }
+      ]
     },
     {
       "name": "Barracuda Networks",
@@ -88,7 +129,19 @@
         "employee_count": "1001-5000"
       },
       "relevant": true,
-      "rationale": "Both provide enterprise network and application security, including SASE-related protection, and target security and IT teams managing internet-facing infrastructure."
+      "rationale": "Barracuda overlaps on network and application security, offering comparable cybersecurity infrastructure products despite lacking Cloudflare's broader edge platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Barracuda overlaps on network and application security, offering comparable cybersecurity infrastructure products despite lacking Cloudflare's broader edge platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both sell network security, application protection (WAF), and SASE to enterprise IT buyers; overlapping security product lines make them genuine competitors and comparables."
+        }
+      ]
     },
     {
       "name": "Akamai Technologies",
@@ -105,7 +158,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Akamai directly overlaps Cloudflare in CDN, edge networking, application performance, DDoS mitigation, API protection, and enterprise cloud security buyers."
+      "rationale": "Akamai directly competes in CDN, edge computing, application delivery, networking, and web security for digital applications.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Akamai directly competes in CDN, edge computing, application delivery, networking, and web security for digital applications."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Akamai is a direct competitor: CDN, edge computing, application security, and cloud delivery platform overlapping Cloudflare's core products and market."
+        }
+      ]
     },
     {
       "name": "Amazon CloudFront",
@@ -122,7 +187,19 @@
         "employee_count": null
       },
       "relevant": true,
-      "rationale": "CloudFront directly overlaps Cloudflare\u2019s CDN, DDoS protection, and edge-computing offerings and is evaluated by the same web infrastructure buyers."
+      "rationale": "CloudFront is a competing CDN and edge-delivery platform, overlapping Cloudflare\u2019s performance, security, and edge-compute offerings.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "CloudFront is a competing CDN and edge-delivery platform, overlapping Cloudflare\u2019s performance, security, and edge-compute offerings."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "CDN with DDoS protection, traffic encryption, and edge compute directly competes with Cloudflare's core networking, performance, and edge platform."
+        }
+      ]
     },
     {
       "name": "Zscaler",
@@ -139,7 +216,19 @@
         "employee_count": "5001-10000"
       },
       "relevant": true,
-      "rationale": "Both provide cloud-delivered zero-trust security, secure internet access, threat protection, and private application access to enterprise security teams."
+      "rationale": "Both provide globally distributed enterprise network-security platforms; Zscaler's zero-trust access and Cloudflare's security/networking services are close competitive comparables.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both provide globally distributed enterprise network-security platforms; Zscaler's zero-trust access and Cloudflare's security/networking services are close competitive comparables."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are cloud-delivered security and networking platforms (zero trust, SASE, application security) competing for the same enterprise buyers."
+        }
+      ]
     },
     {
       "name": "Netskope",
@@ -156,7 +245,19 @@
         "employee_count": "1001-5000"
       },
       "relevant": true,
-      "rationale": "Both offer enterprise SASE, zero-trust access, cloud security, and network connectivity platforms evaluated by security and networking teams."
+      "rationale": "Netskope's SASE/SSE platform overlaps Cloudflare's security, zero-trust networking, and cloud-edge services for enterprise customers.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Netskope's SASE/SSE platform overlaps Cloudflare's security, zero-trust networking, and cloud-edge services for enterprise customers."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both offer unified cloud security and networking platforms (SASE/zero trust, edge network) to enterprises; direct competitors on product and market."
+        }
+      ]
     },
     {
       "name": "Fortinet",
@@ -173,7 +274,19 @@
         "employee_count": "10001+"
       },
       "relevant": true,
-      "rationale": "Both provide enterprise network security, cloud application protection, SASE, and secure connectivity solutions evaluated by security and IT infrastructure teams."
+      "rationale": "Fortinet and Cloudflare both provide enterprise network security, secure access, cloud application protection, and networking platforms.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Fortinet and Cloudflare both provide enterprise network security, secure access, cloud application protection, and networking platforms."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both provide enterprise network and application security (SASE, zero trust, WAF); genuine competitors in security/networking infrastructure market."
+        }
+      ]
     },
     {
       "name": "GTT",
@@ -190,7 +303,19 @@
         "employee_count": "1001-5000"
       },
       "relevant": true,
-      "rationale": "GTT and Cloudflare both offer enterprise secure networking, SASE, cloud security, and WAN services to organizations modernizing global infrastructure."
+      "rationale": "GTT provides managed enterprise networking and security services, overlapping Cloudflare's networking/security market, though with a managed-service delivery model.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "GTT provides managed enterprise networking and security services, overlapping Cloudflare's networking/security market, though with a managed-service delivery model."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both provide secure networking and cloud security as a service (SASE, Zero Trust, network security) to enterprises \u2014 overlapping products and market."
+        }
+      ]
     },
     {
       "name": "bunny.net",
@@ -207,7 +332,19 @@
         "employee_count": "51-200"
       },
       "relevant": true,
-      "rationale": "Both provide global edge infrastructure spanning CDN, performance optimization, security, DNS, and developer services to businesses and developers."
+      "rationale": "bunny.net is an edge platform offering CDN, security, DNS, and compute services, directly overlapping Cloudflare\u2019s performance and infrastructure products.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "bunny.net is an edge platform offering CDN, security, DNS, and compute services, directly overlapping Cloudflare\u2019s performance and infrastructure products."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Global edge platform offering CDN, DDoS security, DNS, and edge compute \u2014 direct competitor to Cloudflare on product and market."
+        }
+      ]
     },
     {
       "name": "Infoblox",
@@ -224,7 +361,19 @@
         "employee_count": "1001-5000"
       },
       "relevant": true,
-      "rationale": "Both provide enterprise DNS, network security, and hybrid-cloud networking solutions evaluated by network and security teams."
+      "rationale": "Both provide enterprise DNS, networking, and security services; Infoblox is a credible adjacent infrastructure and DNS-security comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both provide enterprise DNS, networking, and security services; Infoblox is a credible adjacent infrastructure and DNS-security comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both provide enterprise networking and DNS-layer security infrastructure; Infoblox's DNS security and network services overlap Cloudflare's DNS/security offerings for the same enterprise buyers."
+        }
+      ]
     },
     {
       "name": "Versa Networks",
@@ -241,7 +390,19 @@
         "employee_count": "501-1000"
       },
       "relevant": true,
-      "rationale": "Both offer SASE, zero-trust security, and enterprise networking platforms evaluated by CISOs, network engineers, and IT security teams."
+      "rationale": "Versa\u2019s SASE platform combines enterprise networking, zero-trust security, and cloud-edge access, overlapping Cloudflare\u2019s security and networking offerings.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Versa\u2019s SASE platform combines enterprise networking, zero-trust security, and cloud-edge access, overlapping Cloudflare\u2019s security and networking offerings."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Versa's SASE platform (zero trust, secure web gateway, network security) directly competes with Cloudflare One in converged networking and security."
+        }
+      ]
     },
     {
       "name": "Extreme Networks",
@@ -258,7 +419,19 @@
         "employee_count": "1001-5000"
       },
       "relevant": false,
-      "rationale": "Extreme primarily provides enterprise LAN/WLAN infrastructure, while Cloudflare delivers internet-edge security, performance, and developer services; their core evaluation jobs differ."
+      "rationale": "Extreme focuses on enterprise LAN/Wi-Fi hardware and network management, not Cloudflare's edge-delivered application security, performance, and developer platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Extreme focuses on enterprise LAN/Wi-Fi hardware and network management, not Cloudflare's edge-delivered application security, performance, and developer platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Extreme sells enterprise campus networking hardware/Wi-Fi; Cloudflare provides edge cloud security/performance services\u2014different product categories and jobs despite shared 'networking' label."
+        }
+      ]
     },
     {
       "name": "StackPath",
@@ -275,7 +448,19 @@
         "employee_count": "201-500"
       },
       "relevant": true,
-      "rationale": "StackPath overlaps Cloudflare in edge computing, CDN delivery, and web application security for enterprise IT and application teams."
+      "rationale": "StackPath directly overlaps Cloudflare in edge computing, CDN/delivery, and web application security for latency-sensitive applications.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "StackPath directly overlaps Cloudflare in edge computing, CDN/delivery, and web application security for latency-sensitive applications."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Edge computing, CDN, and security platform directly competing with Cloudflare's edge delivery, WAF, and performance services for the same buyers."
+        }
+      ]
     },
     {
       "name": "Cedexis",
@@ -292,7 +477,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Cedexis provides DNS-based global traffic management and web performance optimization, overlapping Cloudflare\u2019s application networking and performance offerings for infrastructure teams."
+      "rationale": "Cedexis provides DNS traffic management and web-performance optimization for global applications, overlapping Cloudflare's networking and performance platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Cedexis provides DNS traffic management and web-performance optimization for global applications, overlapping Cloudflare's networking and performance platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Cedexis provides DNS traffic management, global load balancing, and web performance optimization \u2014 overlapping Cloudflare's networking and performance infrastructure as a peer."
+        }
+      ]
     },
     {
       "name": "Azion Technologies",
@@ -309,7 +506,19 @@
         "employee_count": "201-500"
       },
       "relevant": true,
-      "rationale": "Azion overlaps Cloudflare in edge computing, application security, content delivery, and performance for developers and security teams."
+      "rationale": "Azion provides edge application delivery, serverless computing, caching, WAF, DDoS, and bot protection\u2014directly overlapping Cloudflare\u2019s security, performance, and developer platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Azion provides edge application delivery, serverless computing, caching, WAF, DDoS, and bot protection\u2014directly overlapping Cloudflare\u2019s security, performance, and developer platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Edge platform offering CDN/cache, serverless edge functions, WAF, DDoS and bot protection \u2014 direct competitor to Cloudflare's core security, performance, and developer platform."
+        }
+      ]
     },
     {
       "name": "NGINX",
@@ -326,7 +535,19 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "Both provide application delivery, traffic management, performance, and web/API security infrastructure to DevOps, cloud, security, and IT operations teams."
+      "rationale": "NGINX provides application delivery, load balancing, API security, and cloud-native infrastructure overlapping Cloudflare's networking, performance, and security platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "NGINX provides application delivery, load balancing, API security, and cloud-native infrastructure overlapping Cloudflare's networking, performance, and security platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both sell application delivery, web security (WAF/DoS), and performance infrastructure to the same DevOps/security buyers; direct competitors in edge/app-delivery space."
+        }
+      ]
     },
     {
       "name": "Total Uptime Technologies",
@@ -343,7 +564,19 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "Both provide cloud DNS, traffic routing, application security, performance, and availability services for DevOps teams operating critical web applications."
+      "rationale": "Offers cloud DNS, load balancing, web/API protection, multicloud networking, and traffic routing\u2014directly overlapping Cloudflare\u2019s security, performance, and networking platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Offers cloud DNS, load balancing, web/API protection, multicloud networking, and traffic routing\u2014directly overlapping Cloudflare\u2019s security, performance, and networking platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Provides cloud DNS, global load balancing, WAF/API protection, and multicloud traffic routing\u2014directly overlapping Cloudflare's networking, performance, and security infrastructure for the same buyers."
+        }
+      ]
     },
     {
       "name": "A10 Networks",
@@ -360,7 +593,19 @@
         "employee_count": "501-1000"
       },
       "relevant": true,
-      "rationale": "A10 overlaps Cloudflare in DDoS protection, web application/API security, load balancing, and application delivery for enterprise network and security buyers."
+      "rationale": "Network security, DDoS protection, application delivery, and large-scale infrastructure overlap directly with Cloudflare\u2019s core platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Network security, DDoS protection, application delivery, and large-scale infrastructure overlap directly with Cloudflare\u2019s core platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "A10 sells DDoS protection, application delivery, and web app/API security \u2014 overlapping Cloudflare's security, networking, and performance products as a direct competitor."
+        }
+      ]
     },
     {
       "name": "CacheFly CDN",
@@ -377,7 +622,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "CacheFly\u2019s CDN directly overlaps Cloudflare\u2019s core content-delivery and performance services, targeting the same technical buyers and delivery use cases."
+      "rationale": "CacheFly directly competes in CDN, edge content delivery, performance, and networking services\u2014core components of Cloudflare\u2019s platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "CacheFly directly competes in CDN, edge content delivery, performance, and networking services\u2014core components of Cloudflare\u2019s platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "CacheFly is a CDN/edge content-delivery platform, directly competing with Cloudflare's core CDN and performance products for the same buyers."
+        }
+      ]
     },
     {
       "name": "NetActuate",
@@ -394,7 +651,19 @@
         "employee_count": "51-200"
       },
       "relevant": true,
-      "rationale": "NetActuate offers overlapping edge networking, DDoS mitigation, load balancing, and global infrastructure for the same DevOps and SaaS buyers."
+      "rationale": "Provides global edge networking, anycast, DNS, load balancing and DDoS mitigation for developers and enterprises, directly overlapping Cloudflare\u2019s infrastructure platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Provides global edge networking, anycast, DNS, load balancing and DDoS mitigation for developers and enterprises, directly overlapping Cloudflare\u2019s infrastructure platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Global edge network with anycast routing, DDoS mitigation, and edge compute\u2014overlaps Cloudflare's infrastructure, performance, and security offerings for the same buyers."
+        }
+      ]
     },
     {
       "name": "Radware Italia",
@@ -411,7 +680,19 @@
         "employee_count": "1001-5000"
       },
       "relevant": true,
-      "rationale": "Radware overlaps Cloudflare in enterprise DDoS protection, WAF, API security, bot management, and application delivery for security and network teams."
+      "rationale": "Radware directly competes in cloud WAF, DDoS mitigation, bot/API security, and application delivery\u2014core Cloudflare security and performance offerings.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Radware directly competes in cloud WAF, DDoS mitigation, bot/API security, and application delivery\u2014core Cloudflare security and performance offerings."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Radware offers DDoS protection, WAF, bot and API security plus application delivery \u2014 direct competitor to Cloudflare's security/performance platform."
+        }
+      ]
     },
     {
       "name": "RAKsmart",
@@ -428,7 +709,24 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "Both provide internet infrastructure, CDN, and DDoS protection to enterprises deploying and securing globally distributed applications."
+      "rationale": "Offers CDN, DDoS protection, and global cloud infrastructure to similar application operators, overlapping Cloudflare\u2019s performance and security platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Offers CDN, DDoS protection, and global cloud infrastructure to similar application operators, overlapping Cloudflare\u2019s performance and security platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "RAKsmart is primarily server hosting/IaaS; CDN and DDoS are add-ons, not an edge security/performance platform like Cloudflare. Weak single-axis overlap."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Offers CDN, DDoS protection, and global cloud/edge infrastructure to similar developer/enterprise buyers \\u2014 an overlapping competitor comparable.public"
+        }
+      ]
     },
     {
       "name": "Cato Networks",
@@ -445,7 +743,19 @@
         "employee_count": "1001-5000"
       },
       "relevant": true,
-      "rationale": "Both provide enterprise cloud networking and security platforms, including SASE, secure access, threat protection, and network performance for IT/security buyers."
+      "rationale": "Cloud-native networking and security platform with global backbone overlaps Cloudflare's Zero Trust, network security, and performance offerings.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Cloud-native networking and security platform with global backbone overlaps Cloudflare's Zero Trust, network security, and performance offerings."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Cato's SASE platform competes directly with Cloudflare's networking and security edge services, targeting the same enterprise network-security buyers."
+        }
+      ]
     },
     {
       "name": "CyberGlobal",
@@ -462,7 +772,19 @@
         "employee_count": "1001-5000"
       },
       "relevant": false,
-      "rationale": "CyberGlobal is primarily a cybersecurity services/consulting provider, not an internet infrastructure platform offering Cloudflare-like edge security, networking, and performance products."
+      "rationale": "CyberGlobal is a cybersecurity services provider, not an internet infrastructure platform offering Cloudflare's integrated networking, edge, performance, and security products.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "CyberGlobal is a cybersecurity services provider, not an internet infrastructure platform offering Cloudflare's integrated networking, edge, performance, and security products."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Cybersecurity services firm (pen testing, SOC, assessments), not an internet infrastructure/edge security platform; services the category rather than competing as product peer."
+        }
+      ]
     },
     {
       "name": "Bigleaf",
@@ -479,7 +801,19 @@
         "employee_count": "51-200"
       },
       "relevant": true,
-      "rationale": "Bigleaf\u2019s cloud-managed WAN connectivity and network optimization overlap Cloudflare\u2019s networking and performance offerings for enterprise IT and network teams."
+      "rationale": "Bigleaf provides managed WAN connectivity, optimization, and failover for enterprises, overlapping Cloudflare\u2019s networking and performance infrastructure offerings.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Bigleaf provides managed WAN connectivity, optimization, and failover for enterprises, overlapping Cloudflare\u2019s networking and performance infrastructure offerings."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both sell network infrastructure: Bigleaf's SD-WAN/cloud connectivity optimization overlaps Cloudflare's networking and performance products (e.g., Magic WAN), same IT buyer."
+        }
+      ]
     },
     {
       "name": "Gcore",
@@ -496,7 +830,19 @@
         "employee_count": "501-1000"
       },
       "relevant": true,
-      "rationale": "Gcore offers CDN, edge cloud, DDoS protection, and application infrastructure for enterprises, directly overlapping Cloudflare\u2019s security, performance, and edge platform."
+      "rationale": "Gcore offers CDN, edge cloud, hosting, and DDoS protection, directly overlapping Cloudflare's performance, networking, and application-security infrastructure.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Gcore offers CDN, edge cloud, hosting, and DDoS protection, directly overlapping Cloudflare's performance, networking, and application-security infrastructure."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both provide CDN, edge computing, DDoS protection, and cloud infrastructure \u2014 direct competitor across product, market, and business model."
+        }
+      ]
     },
     {
       "name": "Constellix",
@@ -513,7 +859,19 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "Constellix overlaps Cloudflare in managed DNS, traffic optimization, DDoS protection, and web security for enterprise infrastructure, DevOps, and security teams."
+      "rationale": "Managed DNS, traffic optimization, DDoS/WAF, and API security overlap Cloudflare\u2019s core internet security, performance, and networking platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Managed DNS, traffic optimization, DDoS/WAF, and API security overlap Cloudflare\u2019s core internet security, performance, and networking platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Managed DNS, DDoS protection, WAF, and multi-CDN traffic optimization directly overlap Cloudflare's core infrastructure, security, and performance products for the same buyers."
+        }
+      ]
     },
     {
       "name": "Skyhigh Security",
@@ -530,7 +888,19 @@
         "employee_count": "501-1000"
       },
       "relevant": true,
-      "rationale": "Both offer cloud-delivered SSE and Zero Trust security, including secure web gateways, CASB, data protection, and private access for enterprise security teams."
+      "rationale": "Both provide enterprise web/network security at the cloud edge, though Skyhigh emphasizes SSE and data protection rather than Cloudflare\u2019s broader infrastructure platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both provide enterprise web/network security at the cloud edge, though Skyhigh emphasizes SSE and data protection rather than Cloudflare\u2019s broader infrastructure platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both sell cloud-delivered enterprise security platforms; Skyhigh's SSE/CASB/web gateway directly overlaps Cloudflare One's security and networking market."
+        }
+      ]
     },
     {
       "name": "NordLayer",
@@ -547,7 +917,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Both provide cloud-based network security, Zero Trust access, and threat protection for IT and security teams managing distributed workforces."
+      "rationale": "Both provide cloud-delivered network security, including zero-trust access and threat protection, though NordLayer focuses on workforce remote access.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both provide cloud-delivered network security, including zero-trust access and threat protection, though NordLayer focuses on workforce remote access."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "NordLayer's ZTNA/business VPN platform directly competes with Cloudflare One's Zero Trust and secure access products for the same IT/security buyers."
+        }
+      ]
     },
     {
       "name": "C3 Complete",
@@ -564,7 +946,19 @@
         "employee_count": "51-200"
       },
       "relevant": false,
-      "rationale": "C3 Complete is primarily a managed IT and consulting provider, not an internet edge infrastructure and application platform comparable to Cloudflare."
+      "rationale": "C3 Complete is a managed IT and cybersecurity services provider, not an internet infrastructure, edge network, or application-security platform competitor.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "C3 Complete is a managed IT and cybersecurity services provider, not an internet infrastructure, edge network, or application-security platform competitor."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Managed IT services/MSP firm, not an internet infrastructure, edge, or application-security platform; serves IT buyers as a service provider, not a Cloudflare peer."
+        }
+      ]
     },
     {
       "name": "Conceal",
@@ -581,7 +975,19 @@
         "employee_count": "51-200"
       },
       "relevant": true,
-      "rationale": "Conceal\u2019s browser-native SSE, Zero Trust access, threat protection, and DLP overlap Cloudflare One and target the same enterprise security teams."
+      "rationale": "Conceal is a security service-edge platform offering zero-trust access and threat protection, overlapping Cloudflare's Zero Trust and application security services.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Conceal is a security service-edge platform offering zero-trust access and threat protection, overlapping Cloudflare's Zero Trust and application security services."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Browser-native Security Service Edge with Zero Trust access, VPN replacement, and DLP directly competes with Cloudflare's Zero Trust/SSE security offerings."
+        }
+      ]
     },
     {
       "name": "Aviatrix",
@@ -598,7 +1004,19 @@
         "employee_count": "201-500"
       },
       "relevant": true,
-      "rationale": "Both provide enterprise cloud networking and network-layer security platforms for IT teams securing and connecting multicloud workloads."
+      "rationale": "Both provide enterprise cloud networking and security platforms, with overlapping zero-trust and multicloud network-security use cases.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both provide enterprise cloud networking and security platforms, with overlapping zero-trust and multicloud network-security use cases."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both sell cloud networking and security (zero-trust, firewall, network-layer protection) to enterprises; genuine comparables in secure cloud networking."
+        }
+      ]
     },
     {
       "name": "Davis PPC Consulting",
@@ -615,7 +1033,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "Davis PPC Consulting is a service consultancy implementing Cloudflare for clients, not an internet infrastructure platform offering a competing product."
+      "rationale": "Consultancy using Cloudflare infrastructure to serve small-business websites, not an internet infrastructure platform competing with Cloudflare.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Consultancy using Cloudflare infrastructure to serve small-business websites, not an internet infrastructure platform competing with Cloudflare."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Consultancy built on Cloudflare's infrastructure serving small businesses; a customer/implementer of the seed, not a competing infrastructure platform."
+        }
+      ]
     },
     {
       "name": "InterCloud",
@@ -632,7 +1062,19 @@
         "employee_count": "51-200"
       },
       "relevant": true,
-      "rationale": "Both provide software-defined enterprise networking and secure multi-cloud connectivity, evaluated by network architects and cloud operations teams."
+      "rationale": "InterCloud provides enterprise cloud networking and secure multi-cloud connectivity, overlapping Cloudflare's networking and performance infrastructure offerings.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "InterCloud provides enterprise cloud networking and secure multi-cloud connectivity, overlapping Cloudflare's networking and performance infrastructure offerings."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both provide enterprise network infrastructure and cloud connectivity services; InterCloud's cloud interconnect competes with Cloudflare's networking/interconnect offerings for the same enterprise buyers."
+        }
+      ]
     },
     {
       "name": "Cloudbric",
@@ -649,7 +1091,19 @@
         "employee_count": "201-500"
       },
       "relevant": true,
-      "rationale": "Cloudbric overlaps Cloudflare\u2019s core application-security offering through cloud WAF, API protection, and DDoS defense for enterprise security buyers."
+      "rationale": "Cloudbric\u2019s cloud WAF, API protection, and DDoS defense overlap directly with Cloudflare\u2019s application-security offerings.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Cloudbric\u2019s cloud WAF, API protection, and DDoS defense overlap directly with Cloudflare\u2019s application-security offerings."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Cloud-based WAF, DDoS, and API security platform directly overlapping Cloudflare's application security product line; a genuine competitor."
+        }
+      ]
     },
     {
       "name": "Claro Enterprise Solutions",
@@ -666,7 +1120,19 @@
         "employee_count": "201-500"
       },
       "relevant": false,
-      "rationale": "Claro primarily provides managed IT, endpoint security, and LAN services, not Cloudflare-like internet-edge security, performance, and developer infrastructure."
+      "rationale": "Managed IT, endpoint security, and telecom services provider, not an internet-edge security, performance, and developer platform comparable to Cloudflare.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Managed IT, endpoint security, and telecom services provider, not an internet-edge security, performance, and developer platform comparable to Cloudflare."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Managed IT/security services provider (MDR, endpoint, managed LAN), not an internet infrastructure, CDN, or edge-computing platform competitor."
+        }
+      ]
     },
     {
       "name": "BrightCloud",
@@ -683,7 +1149,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "BrightCloud supplies embedded threat-intelligence feeds to security vendors, while Cloudflare primarily sells network, application, and edge services to enterprises and developers."
+      "rationale": "BrightCloud supplies threat-intelligence feeds to security vendors, whereas Cloudflare is a broad internet infrastructure and edge security platform for end customers.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "BrightCloud supplies threat-intelligence feeds to security vendors, whereas Cloudflare is a broad internet infrastructure and edge security platform for end customers."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "BrightCloud sells OEM threat-intelligence feeds to security vendors; Cloudflare is an edge infrastructure/security platform. Supplier to the category, not a peer or comparable."
+        }
+      ]
     },
     {
       "name": "CloudfloorDNS",
@@ -700,7 +1178,19 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "CloudfloorDNS overlaps Cloudflare\u2019s managed authoritative DNS, traffic routing, and failover offerings, serving enterprise IT teams seeking resilient global DNS infrastructure."
+      "rationale": "Managed Anycast DNS, failover, GEO routing, and DNS load balancing overlap Cloudflare\u2019s core networking and performance services.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Managed Anycast DNS, failover, GEO routing, and DNS load balancing overlap Cloudflare\u2019s core networking and performance services."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Managed Anycast DNS with failover and GEO DNS directly overlaps Cloudflare's authoritative DNS/edge network product line; a competitor in internet infrastructure."
+        }
+      ]
     },
     {
       "name": "CyberOne Security",
@@ -717,7 +1207,19 @@
         "employee_count": "51-200"
       },
       "relevant": false,
-      "rationale": "CyberOne is a cybersecurity consultancy and managed-services provider, not an internet infrastructure platform offering Cloudflare-like networking, edge, performance, and application-security products."
+      "rationale": "CyberOne is a cybersecurity consulting and managed-services provider, not an internet infrastructure, CDN, edge network, or application-security platform competitor.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "CyberOne is a cybersecurity consulting and managed-services provider, not an internet infrastructure, CDN, edge network, or application-security platform competitor."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "CyberOne is a cybersecurity consulting/services firm, not an internet infrastructure or edge security platform like Cloudflare; consultancies serving the category don't count."
+        }
+      ]
     },
     {
       "name": "Twister5",
@@ -734,7 +1236,24 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "Twister5 appears primarily to resell and implement Cloudflare and other vendors\u2019 security products, rather than offer a competing internet infrastructure platform."
+      "rationale": "MSSP/reseller distributing Cloudflare, Cato, Palo Alto solutions; partner serving the category rather than a competitor with its own platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Provides CDN acceleration, DDoS defense, WAF, and cloud-security services, overlapping Cloudflare\u2019s security and performance offerings despite a reseller/services component."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "MSSP/reseller distributing Cloudflare, Cato, Palo Alto solutions; partner serving the category rather than a competitor with its own platform."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "Reseller/MSSP deploying Cloudflare, Cato and Palo Alto products for clients, not a competing internet infrastructure platform vendor."
+        }
+      ]
     },
     {
       "name": "Fl\u014d Networks",
@@ -751,7 +1270,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "Fl\u014d is primarily a telecom connectivity and managed WAN provider, not an edge application security, performance, and developer infrastructure platform."
+      "rationale": "Fl\u014d is primarily a telecom connectivity and managed SD-WAN provider, not an edge security, CDN, and developer-services platform comparable to Cloudflare.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Fl\u014d is primarily a telecom connectivity and managed SD-WAN provider, not an edge security, CDN, and developer-services platform comparable to Cloudflare."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Carrier selling IP transit, DIA and managed SD-WAN connectivity; lacks Cloudflare's edge security, performance and developer platform products. Generic network-infrastructure overlap only."
+        }
+      ]
     },
     {
       "name": "BayInfotech",
@@ -768,7 +1299,19 @@
         "employee_count": "51-200"
       },
       "relevant": false,
-      "rationale": "BayInfotech is primarily an IT services and cloud-management consultancy, not an internet edge, application security, and networking platform comparable to Cloudflare."
+      "rationale": "BayInfotech is a cloud/cybersecurity professional-services provider, not an internet infrastructure, edge network, or application-security platform competitor.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "BayInfotech is a cloud/cybersecurity professional-services provider, not an internet infrastructure, edge network, or application-security platform competitor."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "IT services/consulting firm offering cloud and security professional services, not an internet infrastructure/edge platform competitor like Cloudflare."
+        }
+      ]
     },
     {
       "name": "Cloud4C",
@@ -785,7 +1328,19 @@
         "employee_count": "1001-5000"
       },
       "relevant": false,
-      "rationale": "Cloud4C primarily delivers managed cloud, migration, and compliance services, not Cloudflare-like edge networking, application delivery, and internet security infrastructure."
+      "rationale": "Cloud4C is a managed cloud migration, operations, and security-services provider, not an internet edge, networking, and application-delivery platform comparable to Cloudflare.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Cloud4C is a managed cloud migration, operations, and security-services provider, not an internet edge, networking, and application-delivery platform comparable to Cloudflare."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Managed cloud services provider (MSP/consulting model), not an internet infrastructure/security platform like Cloudflare; different product and business model."
+        }
+      ]
     },
     {
       "name": "Tempesta Technologies",
@@ -802,7 +1357,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Both provide web application security, DDoS protection, traffic acceleration, and CDN/edge infrastructure for enterprises and infrastructure operators."
+      "rationale": "Offers CDN, web application firewall, DDoS mitigation, traffic acceleration, and load balancing\u2014core Cloudflare security and performance infrastructure functions.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Offers CDN, web application firewall, DDoS mitigation, traffic acceleration, and load balancing\u2014core Cloudflare security and performance infrastructure functions."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "CDN, WAF, DDoS mitigation, and web-performance acceleration directly overlap Cloudflare's core security/performance infrastructure product and market."
+        }
+      ]
     },
     {
       "name": "Claranet",
@@ -819,7 +1386,19 @@
         "employee_count": "1001-5000"
       },
       "relevant": false,
-      "rationale": "Claranet is primarily a managed IT/cloud services provider, not an internet infrastructure, edge networking, and application security product platform like Cloudflare."
+      "rationale": "Claranet is a managed IT and cybersecurity services provider, not an internet infrastructure, edge network, or application-security platform competitor.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Claranet is a managed IT and cybersecurity services provider, not an internet infrastructure, edge network, or application-security platform competitor."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Claranet is a managed cloud/IT services consultancy, not an internet infrastructure or edge security platform like Cloudflare."
+        }
+      ]
     },
     {
       "name": "AIONCLOUD",
@@ -836,7 +1415,19 @@
         "employee_count": "51-200"
       },
       "relevant": true,
-      "rationale": "AIONCLOUD overlaps Cloudflare in WAAP, CDN, DDoS mitigation, SASE, and zero-trust security for enterprise IT and security teams."
+      "rationale": "Converged cloud security platform overlaps Cloudflare's WAF, API protection, CDN, DDoS mitigation, zero-trust networking, and enterprise security buyers.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Converged cloud security platform overlaps Cloudflare's WAF, API protection, CDN, DDoS mitigation, zero-trust networking, and enterprise security buyers."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Converged cloud security/SASE platform with WAF, CDN, DDoS mitigation, and zero-trust networking \u2014 directly overlaps Cloudflare's core application security and edge infrastructure products."
+        }
+      ]
     },
     {
       "name": "Prosimo",
@@ -853,7 +1444,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Both provide enterprise cloud networking, security, performance, and observability platforms evaluated by cloud operations and IT infrastructure teams."
+      "rationale": "Multi-cloud networking platform combining security, performance, and edge infrastructure for enterprise applications, closely overlapping Cloudflare's networking and security offerings.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Multi-cloud networking platform combining security, performance, and edge infrastructure for enterprise applications, closely overlapping Cloudflare's networking and security offerings."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both provide cloud networking, security, and performance infrastructure for enterprises; Prosimo is a comparable in Cloudflare's networking/edge space."
+        }
+      ]
     },
     {
       "name": "CenterGrid",
@@ -870,7 +1473,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "CenterGrid is a managed IT and cloud hosting provider, not an edge networking, application security, performance, or developer platform comparable to Cloudflare."
+      "rationale": "Managed IT and cloud-services provider, not an internet edge, application-security, CDN, or networking platform comparable to Cloudflare.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Managed IT and cloud-services provider, not an internet edge, application-security, CDN, or networking platform comparable to Cloudflare."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Managed IT/cloud services agency, not an internet infrastructure, security, or edge platform; serves rather than competes with Cloudflare."
+        }
+      ]
     },
     {
       "name": "GlobalDots",
@@ -887,7 +1502,19 @@
         "employee_count": "51-200"
       },
       "relevant": false,
-      "rationale": "GlobalDots is a vendor-agnostic cloud solutions provider and services partner, not an internet infrastructure platform offering directly comparable security and edge products."
+      "rationale": "GlobalDots is a cloud consultancy and managed-services provider, not an internet infrastructure platform competing in Cloudflare's core CDN, edge, and security products.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "GlobalDots is a cloud consultancy and managed-services provider, not an internet infrastructure platform competing in Cloudflare's core CDN, edge, and security products."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Vendor-agnostic cloud consultancy/reseller curating others' security and performance solutions, not a competing infrastructure platform."
+        }
+      ]
     },
     {
       "name": "Trustgrid",
@@ -904,7 +1531,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Both provide zero-trust networking and edge connectivity for securely linking cloud applications, users, and private customer environments."
+      "rationale": "Secure networking, zero-trust access, and edge computing platform overlaps Cloudflare's core security and connectivity offerings, albeit for SaaS-to-customer-environment use cases.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Secure networking, zero-trust access, and edge computing platform overlaps Cloudflare's core security and connectivity offerings, albeit for SaaS-to-customer-environment use cases."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both sell zero-trust networking, secure connectivity, and edge-computing infrastructure; Trustgrid is a comparable network-security platform vendor."
+        }
+      ]
     },
     {
       "name": "UpCloud",
@@ -920,8 +1559,25 @@
         "industries": null,
         "employee_count": "51-200"
       },
-      "relevant": false,
-      "rationale": "UpCloud primarily sells VM, GPU, and private-cloud infrastructure, while Cloudflare centers on edge networking, security, performance, and serverless developer services."
+      "relevant": true,
+      "rationale": "Both provide developer-focused cloud infrastructure, including compute and networking capabilities, making UpCloud a plausible infrastructure-platform comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both provide developer-focused cloud infrastructure, including compute and networking capabilities, making UpCloud a plausible infrastructure-platform comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "UpCloud sells IaaS hosting (VMs, Kubernetes, GPU servers); Cloudflare's core is edge security, CDN, and networking\u2014different product and job to be done."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Both sell cloud/internet infrastructure to developers and businesses; overlapping compute, networking, and developer-platform offerings make them plausible comparables."
+        }
+      ]
     },
     {
       "name": "Privafy",
@@ -938,7 +1594,19 @@
         "employee_count": "51-200"
       },
       "relevant": true,
-      "rationale": "Privafy overlaps Cloudflare\u2019s zero-trust, firewall, DDoS, and edge-security offerings for enterprise IT and security buyers."
+      "rationale": "Cloud-native edge security platform offering firewall, DDoS protection, secure access, and network protection\u2014overlapping Cloudflare\u2019s security and connectivity offerings.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Cloud-native edge security platform offering firewall, DDoS protection, secure access, and network protection\u2014overlapping Cloudflare\u2019s security and connectivity offerings."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Cloud-native edge security platform (firewall, DDoS, zero-trust access) directly overlaps Cloudflare's security and networking products and market."
+        }
+      ]
     },
     {
       "name": "Arvancloud",
@@ -955,7 +1623,19 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "Arvancloud overlaps Cloudflare in CDN, edge computing, cloud infrastructure, performance, and security for businesses delivering and protecting internet applications."
+      "rationale": "Arvancloud is a cloud-edge infrastructure platform offering CDN, compute, storage, containers, and security-adjacent services comparable to Cloudflare.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Arvancloud is a cloud-edge infrastructure platform offering CDN, compute, storage, containers, and security-adjacent services comparable to Cloudflare."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Arvancloud offers CDN, secure edge computing, and cloud infrastructure\u2014directly matching Cloudflare's core product, market, and business model."
+        }
+      ]
     },
     {
       "name": "Transparent Edge",
@@ -972,7 +1652,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Both provide CDN, web/API security, DDoS protection, and edge computing to organizations securing and accelerating internet applications."
+      "rationale": "European CDN, edge computing, WAF, DDoS, and bot-mitigation platform directly overlaps Cloudflare\u2019s security and performance infrastructure offerings.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "European CDN, edge computing, WAF, DDoS, and bot-mitigation platform directly overlaps Cloudflare\u2019s security and performance infrastructure offerings."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "European CDN with WAF, DDoS protection, bot mitigation, and edge computing \u2014 directly matches Cloudflare's core CDN/security/edge platform; a clear competitor."
+        }
+      ]
     },
     {
       "name": "Render",
@@ -989,7 +1681,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Render\u2019s application deployment platform overlaps Cloudflare\u2019s developer and edge-computing services, serving developers seeking scalable infrastructure to deploy web applications."
+      "rationale": "Render and Cloudflare both provide developer-focused cloud infrastructure for deploying, scaling, and operating web applications, overlapping Cloudflare\u2019s developer-services and edge platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Render and Cloudflare both provide developer-focused cloud infrastructure for deploying, scaling, and operating web applications, overlapping Cloudflare\u2019s developer-services and edge platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are developer-focused cloud infrastructure platforms for deploying and running apps at the edge; overlapping products like Cloudflare Workers/Pages make Render a comparable."
+        }
+      ]
     },
     {
       "name": "F9C Security",
@@ -1006,7 +1710,19 @@
         "employee_count": "51-200"
       },
       "relevant": false,
-      "rationale": "F9C appears to be a cybersecurity integrator and managed-services provider, not an internet infrastructure and edge platform directly comparable to Cloudflare."
+      "rationale": "Cybersecurity solutions provider and support partner, not an internet infrastructure, edge network, or application-security platform comparable to Cloudflare.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Cybersecurity solutions provider and support partner, not an internet infrastructure, edge network, or application-security platform comparable to Cloudflare."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Cybersecurity services/integrator (MSSP) implementing and supporting security solutions for clients, not an internet infrastructure/edge platform competing with Cloudflare."
+        }
+      ]
     },
     {
       "name": "CheckRed",
@@ -1023,7 +1739,19 @@
         "employee_count": "51-200"
       },
       "relevant": false,
-      "rationale": "CheckRed focuses on cloud/SaaS security posture management, not Cloudflare\u2019s core edge application security, networking, performance, and developer infrastructure."
+      "rationale": "CheckRed is a security-posture platform for customers\u2019 cloud/SaaS/DNS environments, not an edge network, CDN, application-security, or developer infrastructure provider.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "CheckRed is a security-posture platform for customers\u2019 cloud/SaaS/DNS environments, not an edge network, CDN, application-security, or developer infrastructure provider."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "CheckRed is cloud/SaaS misconfiguration posture management; Cloudflare delivers inline application security, networking, and edge infrastructure\u2014adjacent security categories, not competitors or comparables."
+        }
+      ]
     },
     {
       "name": "Claranet India",
@@ -1040,7 +1768,19 @@
         "employee_count": "51-200"
       },
       "relevant": false,
-      "rationale": "Claranet is primarily a managed IT services provider, not an edge networking, application security, and developer infrastructure product platform like Cloudflare."
+      "rationale": "Claranet is a managed IT services provider, not an internet infrastructure platform offering Cloudflare\u2019s core CDN, edge, networking, and security products.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Claranet is a managed IT services provider, not an internet infrastructure platform offering Cloudflare\u2019s core CDN, edge, networking, and security products."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Claranet is a managed services provider/consultancy; Cloudflare is a self-service internet infrastructure platform. Different business models, not competitors."
+        }
+      ]
     },
     {
       "name": "FluidOne",
@@ -1057,7 +1797,19 @@
         "employee_count": "201-500"
       },
       "relevant": false,
-      "rationale": "FluidOne is primarily a managed IT, connectivity, and consulting provider, not an internet infrastructure and edge platform comparable to Cloudflare."
+      "rationale": "Managed connectivity, SASE, and cybersecurity services overlap Cloudflare networking/security, but FluidOne is primarily a consultative managed-services provider rather than a comparable platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Managed connectivity, SASE, and cybersecurity services overlap Cloudflare networking/security, but FluidOne is primarily a consultative managed-services provider rather than a comparable platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "FluidOne is a managed IT/telecom services and consultancy provider, not an internet infrastructure platform; serves the category rather than competing with Cloudflare."
+        }
+      ]
     },
     {
       "name": "Cloud Proven Networks",
@@ -1074,7 +1826,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "Cloud Proven primarily provides isolated private-cloud hosting, backup, and disaster recovery, not Cloudflare-like edge networking, application delivery, or web security."
+      "rationale": "Private cloud hosting, backup, and isolated infrastructure security are distinct from Cloudflare\u2019s edge networking, CDN, and application-security platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Private cloud hosting, backup, and isolated infrastructure security are distinct from Cloudflare\u2019s edge networking, CDN, and application-security platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Private cloud hosting provider, not an edge/application security and performance network like Cloudflare; different product and model."
+        }
+      ]
     },
     {
       "name": "Brixio",
@@ -1091,7 +1855,19 @@
         "employee_count": "51-200"
       },
       "relevant": false,
-      "rationale": "Brixio is an IT services partner implementing Cloudflare, cloud, and cybersecurity solutions, not a competing internet infrastructure or edge platform."
+      "rationale": "Brixio is an IT services partner implementing Cloudflare and cloud security, not an internet infrastructure platform competitor or comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Brixio is an IT services partner implementing Cloudflare and cloud security, not an internet infrastructure platform competitor or comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "IT services firm that resells/implements Cloudflare services; a partner/customer of the seed, not a competing infrastructure platform."
+        }
+      ]
     },
     {
       "name": "Blockbit",
@@ -1108,7 +1884,19 @@
         "employee_count": "51-200"
       },
       "relevant": true,
-      "rationale": "Both provide enterprise secure networking and integrated cybersecurity, targeting IT security teams evaluating SD-WAN, firewall, and network protection capabilities."
+      "rationale": "Secure SD-WAN and network-security platform overlaps Cloudflare's networking and application-security offerings for enterprise IT teams.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Secure SD-WAN and network-security platform overlaps Cloudflare's networking and application-security offerings for enterprise IT teams."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both sell network security platforms (firewall, Zero Trust/SASE, secure networking) to enterprise IT security buyers; overlapping product and market."
+        }
+      ]
     },
     {
       "name": "Timus Networks",
@@ -1125,7 +1913,19 @@
         "employee_count": "51-200"
       },
       "relevant": true,
-      "rationale": "Both offer SASE, Zero Trust access, secure web gateways, and cloud network security for organizations managing distributed users and infrastructure."
+      "rationale": "SASE/zero-trust security and network-edge services substantially overlap Cloudflare\u2019s application security and networking platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "SASE/zero-trust security and network-edge services substantially overlap Cloudflare\u2019s application security and networking platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Timus sells a SASE platform (ZTNA, cloud firewall, secure web gateway) directly overlapping Cloudflare One's Zero Trust/network-security product line."
+        }
+      ]
     },
     {
       "name": "SkyFort",
@@ -1141,8 +1941,20 @@
         "industries": null,
         "employee_count": "1-10"
       },
-      "relevant": true,
-      "rationale": "SkyFort\u2019s cloud-delivered phishing and malware protection overlaps Cloudflare Zero Trust\u2019s secure web gateway capabilities for IT and security buyers."
+      "relevant": false,
+      "rationale": "SkyFort is endpoint/browser-focused anti-malware and privacy protection, not an internet edge, application security, networking, or performance platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "SkyFort is endpoint/browser-focused anti-malware and privacy protection, not an internet edge, application security, networking, or performance platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Consumer/SMB antivirus, phishing and ad-blocking tool; not internet infrastructure, CDN, edge, or application-security platform like Cloudflare. Generic 'cloud security' overlap insufficient."
+        }
+      ]
     },
     {
       "name": "ITCloudSEC",
@@ -1159,7 +1971,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "ITCloudSEC is a security consultancy and OT/ICS testing provider, not an internet edge platform offering Cloudflare-like networking, performance, and application services."
+      "rationale": "ITCloudSEC provides enterprise cloud and cybersecurity testing/consulting solutions, not a broad edge network, CDN, application-security, and developer platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "ITCloudSEC provides enterprise cloud and cybersecurity testing/consulting solutions, not a broad edge network, CDN, application-security, and developer platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "OT/ICS security testing and visibility services firm, not an edge network/application delivery platform; only weak generic security overlap with Cloudflare."
+        }
+      ]
     },
     {
       "name": "Cipherwire Networks",
@@ -1176,7 +2000,24 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "Cipherwire appears to be a security integrator/reseller offering third-party products and managed services, not a competing internet infrastructure platform."
+      "rationale": "Appears to be a security reseller/integrator deploying third-party products (FireEye, MetaDefender, Waterfall) for critical-infrastructure clients, not a competing platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Provides enterprise network and cloud security, overlapping Cloudflare\u2019s security and connectivity offerings, though focused on managed critical-infrastructure solutions."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Appears to be a security reseller/integrator deploying third-party products (FireEye, MetaDefender, Waterfall) for critical-infrastructure clients, not a competing platform."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "Cipherwire resells/integrates third-party security appliances as a solutions provider, not a self-built internet infrastructure/edge platform like Cloudflare."
+        }
+      ]
     },
     {
       "name": "BoltFlare",
@@ -1193,7 +2034,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "BoltFlare is a managed WordPress host using Cloudflare CDN, not an internet infrastructure, edge networking, or security platform competing with Cloudflare."
+      "rationale": "Managed WordPress host using CDN and security features; it is a hosting provider, not a broad internet infrastructure, edge, and security platform peer.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Managed WordPress host using CDN and security features; it is a hosting provider, not a broad internet infrastructure, edge, and security platform peer."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Managed WordPress hosting provider, not an internet infrastructure/security/edge platform; uses CDN features rather than competing with Cloudflare."
+        }
+      ]
     },
     {
       "name": "Cosmic Global Networks",
@@ -1210,7 +2063,19 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "Both offer global enterprise networking and DDoS protection for organizations requiring secure, low-latency internet infrastructure."
+      "rationale": "Global low-latency network and DDoS protection resemble Cloudflare\u2019s networking, performance, and security infrastructure offerings.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Global low-latency network and DDoS protection resemble Cloudflare\u2019s networking, performance, and security infrastructure offerings."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Global network infrastructure with DDoS protection and low-latency enterprise networking overlaps Cloudflare's networking/security platform on product and market axes."
+        }
+      ]
     },
     {
       "name": "Virtis-US",
@@ -1227,7 +2092,19 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "Virtis overlaps Cloudflare\u2019s application-security stack through WAF, API security, DDoS, and bot protection, targeting the same security and DevOps buyers."
+      "rationale": "Cloud-native WAF, API security, DDoS, and bot management directly overlap Cloudflare\u2019s application-security and edge-protection offerings.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Cloud-native WAF, API security, DDoS, and bot management directly overlap Cloudflare\u2019s application-security and edge-protection offerings."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Cloud-native WAF, API security, and DDoS/bot protection directly overlap Cloudflare's core application-security product line for the same buyers."
+        }
+      ]
     },
     {
       "name": "CloudFence",
@@ -1243,8 +2120,20 @@
         "industries": null,
         "employee_count": "11-50"
       },
-      "relevant": true,
-      "rationale": "Both provide cloud-delivered network security and threat detection for security teams protecting cloud workloads and traffic, despite CloudFence\u2019s narrower focus."
+      "relevant": false,
+      "rationale": "CloudFence provides cloud-workload egress threat detection, not Cloudflare's broader edge network, application security, and performance infrastructure platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "CloudFence provides cloud-workload egress threat detection, not Cloudflare's broader edge network, application security, and performance infrastructure platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "CloudFence is a narrow cloud-workload egress/NDR visibility tool, not an edge application security, networking, and performance platform like Cloudflare."
+        }
+      ]
     },
     {
       "name": "Stellar Technologies",
@@ -1261,7 +2150,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "Stellar primarily provides private-cloud migration, backup, and disaster recovery services, not Cloudflare-like edge networking, application delivery, or web security."
+      "rationale": "Stellar is a managed cloud, backup, disaster-recovery, and migration provider, not an edge networking, CDN, application-security, or developer platform peer.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Stellar is a managed cloud, backup, disaster-recovery, and migration provider, not an edge networking, CDN, application-security, or developer platform peer."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Managed cloud hosting/DRaaS provider for VMware migration, not edge security/performance network infrastructure like Cloudflare; different product and buyer job."
+        }
+      ]
     },
     {
       "name": "BlazingCDN",
@@ -1278,7 +2179,19 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "BlazingCDN\u2019s core CDN and content-delivery services overlap Cloudflare\u2019s performance and network offerings for businesses distributing web, video, and software content."
+      "rationale": "BlazingCDN is a global content-delivery and edge infrastructure provider, overlapping Cloudflare\u2019s performance and networking platform services.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "BlazingCDN is a global content-delivery and edge infrastructure provider, overlapping Cloudflare\u2019s performance and networking platform services."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Global Anycast CDN directly competes with Cloudflare's core content delivery, performance, and edge networking product."
+        }
+      ]
     },
     {
       "name": "Bluella",
@@ -1295,7 +2208,19 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "Bluella offers managed DNS, DDoS protection, CDN, and cloud security, overlapping Cloudflare\u2019s core infrastructure products and enterprise buyer needs."
+      "rationale": "Bluella provides managed DNS, DDoS protection, CDN, and cloud security\u2014core internet-performance and security services comparable to Cloudflare.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Bluella provides managed DNS, DDoS protection, CDN, and cloud security\u2014core internet-performance and security services comparable to Cloudflare."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Offers managed DNS, DDoS protection, CDN, and cloud security \u2014 same core product set and market as Cloudflare, despite small size."
+        }
+      ]
     },
     {
       "name": "CloudSec LLC",
@@ -1312,7 +2237,24 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "CloudSec monitors cloud infrastructure threats and performance, while Cloudflare primarily secures and accelerates applications and networks; buyer overlap does not imply the same job."
+      "rationale": "CloudSec is a narrow AI monitoring tool for AWS environments, not an internet infrastructure, edge security, or networking platform comparable to Cloudflare.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "CloudSec offers cloud security monitoring and threat detection for IT teams, overlapping Cloudflare's application security and performance platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "CloudSec is a narrow AI monitoring tool for AWS environments, not an internet infrastructure, edge security, or networking platform comparable to Cloudflare."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "Cloud posture/threat monitoring tool, not edge network, CDN, or application-delivery infrastructure; overlap only via generic \"cloud security\" label."
+        }
+      ]
     },
     {
       "name": "Bizfly Cloud",
@@ -1329,7 +2271,19 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "Both provide CDN, DDoS protection, load balancing, and scalable internet infrastructure for IT teams optimizing application performance and security."
+      "rationale": "Cloud infrastructure provider offering CDN, load balancing, anti-DDoS, and scalable edge-adjacent services to similar IT and web-performance buyers.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Cloud infrastructure provider offering CDN, load balancing, anti-DDoS, and scalable edge-adjacent services to similar IT and web-performance buyers."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Cloud infrastructure provider offering CDN, anti-DDoS, load balancing, and cloud servers\u2014direct product and market overlap with Cloudflare's core infrastructure services."
+        }
+      ]
     },
     {
       "name": "Medianova",
@@ -1346,7 +2300,19 @@
         "employee_count": "51-200"
       },
       "relevant": true,
-      "rationale": "Medianova offers CDN, edge performance, and application security services evaluated by the same web infrastructure and security buyers as Cloudflare."
+      "rationale": "Medianova directly competes in CDN, edge content delivery, DDoS protection, WAF, and cloud security\u2014core Cloudflare products.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Medianova directly competes in CDN, edge content delivery, DDoS protection, WAF, and cloud security\u2014core Cloudflare products."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "CDN and cloud security provider with WAF, DDoS protection, and edge caching \u2014 directly competes with Cloudflare's core security and performance products."
+        }
+      ]
     },
     {
       "name": "cloudfort",
@@ -1363,7 +2329,19 @@
         "employee_count": null
       },
       "relevant": true,
-      "rationale": "Cloudfort overlaps Cloudflare\u2019s core CDN, DDoS protection, and DNS offerings, targeting businesses seeking website security and performance infrastructure."
+      "rationale": "Cloudfort directly offers Cloudflare-like CDN, DDoS protection, DNS, and web-performance infrastructure services.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Cloudfort directly offers Cloudflare-like CDN, DDoS protection, DNS, and web-performance infrastructure services."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Russian CDN/DDoS/DNS platform explicitly positioned as a Cloudflare alternative \u2014 same product and market."
+        }
+      ]
     },
     {
       "name": "ITGLOBAL.COM",
@@ -1380,7 +2358,19 @@
         "employee_count": "51-200"
       },
       "relevant": false,
-      "rationale": "ITGLOBAL.COM is a managed cloud infrastructure/services provider, not an edge networking, application security, performance, and developer platform comparable to Cloudflare."
+      "rationale": "Managed cloud infrastructure and IT services provider, not an internet edge security, CDN, networking, and developer platform competitor.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Managed cloud infrastructure and IT services provider, not an internet edge security, CDN, networking, and developer platform competitor."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Managed IT/cloud services provider (MSP), not an edge security/performance infrastructure platform; serves rather than competes with Cloudflare's category."
+        }
+      ]
     },
     {
       "name": "CDNify",
@@ -1397,7 +2387,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "CDNify\u2019s CDN, SSL, caching, and web-performance services overlap Cloudflare\u2019s core content-delivery offering and target the same developers and web businesses."
+      "rationale": "CDNify is a CDN and web-content security/performance provider, directly overlapping Cloudflare\u2019s core edge delivery and application-performance services.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "CDNify is a CDN and web-content security/performance provider, directly overlapping Cloudflare\u2019s core edge delivery and application-performance services."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "CDNify is a content delivery network with security, SSL, and caching features, directly overlapping Cloudflare's core CDN/edge performance product."
+        }
+      ]
     },
     {
       "name": "appfleet",
@@ -1414,7 +2416,19 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "Both provide edge application hosting, global traffic routing, and low-latency infrastructure for developers and DevOps teams deploying globally distributed applications."
+      "rationale": "Edge container hosting with global routing and low-latency deployment overlaps Cloudflare\u2019s developer platform, edge computing, networking, and performance services.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Edge container hosting with global routing and low-latency deployment overlaps Cloudflare\u2019s developer platform, edge computing, networking, and performance services."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Edge container hosting with global routing and low-latency delivery directly mirrors Cloudflare's edge compute and developer platform offering."
+        }
+      ]
     },
     {
       "name": "Interforce Networks BV",
@@ -1431,7 +2445,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "Interforce is a managed IT and private-cloud provider, not an internet edge, application security, CDN, or developer platform comparable to Cloudflare."
+      "rationale": "Managed Dutch cloud and IT services provider, not an internet edge, application-security, and developer platform comparable to Cloudflare.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Managed Dutch cloud and IT services provider, not an internet edge, application-security, and developer platform comparable to Cloudflare."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Regional managed IT/cloud hosting provider for Dutch SMEs (workspaces, VoIP, backup), not an edge security/performance platform comparable to Cloudflare."
+        }
+      ]
     },
     {
       "name": "TomCloud",
@@ -1447,8 +2473,20 @@
         "industries": null,
         "employee_count": "1-10"
       },
-      "relevant": false,
-      "rationale": "TomCloud is primarily general-purpose cloud compute, storage, and migration infrastructure, not Cloudflare\u2019s edge delivery and application-security platform."
+      "relevant": true,
+      "rationale": "Multi-cloud infrastructure provider overlaps Cloudflare in enterprise networking, security, traffic performance, and serverless/cloud-native deployment services.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Multi-cloud infrastructure provider overlaps Cloudflare in enterprise networking, security, traffic performance, and serverless/cloud-native deployment services."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are internet/cloud infrastructure providers offering compute, global networking, storage, and network security to enterprise IT/DevOps buyers."
+        }
+      ]
     },
     {
       "name": "Elevate",
@@ -1465,7 +2503,24 @@
         "employee_count": "201-500"
       },
       "relevant": false,
-      "rationale": "Elevate is primarily a regional connectivity and managed-services provider, not a cloud edge, application security, and developer infrastructure platform like Cloudflare."
+      "rationale": "Elevate is a UK ISP/managed connectivity provider; Cloudflare is an application security and edge infrastructure platform. Shared SASE/security keywords don't establish product resemblance.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Managed connectivity, SD-WAN, SASE, and cloud security overlap Cloudflare\u2019s networking and security platform offerings."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Elevate is a UK ISP/managed connectivity provider; Cloudflare is an application security and edge infrastructure platform. Shared SASE/security keywords don't establish product resemblance."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "Elevate is a UK fibre ISP/managed network provider, not a global internet infrastructure/CDN and edge platform like Cloudflare."
+        }
+      ]
     },
     {
       "name": "Technium",
@@ -1482,7 +2537,19 @@
         "employee_count": "51-200"
       },
       "relevant": false,
-      "rationale": "Technium primarily delivers managed networking, monitoring, and professional services, not a self-service edge application security and performance platform comparable to Cloudflare."
+      "rationale": "Managed network and security services provider, not a self-service internet infrastructure, edge computing, CDN, or application-security platform competitor.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Managed network and security services provider, not a self-service internet infrastructure, edge computing, CDN, or application-security platform competitor."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Managed network services/MSP with professional services, not an internet infrastructure or edge platform; serves the category rather than competing with Cloudflare."
+        }
+      ]
     },
     {
       "name": "Bay Area IT Solutions",
@@ -1499,7 +2566,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "Bay Area IT Solutions is a managed IT consultancy/provider, not an internet infrastructure, edge networking, and application-security platform like Cloudflare."
+      "rationale": "Managed IT consultancy providing security and networking services, not an internet infrastructure, edge network, or application-security platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Managed IT consultancy providing security and networking services, not an internet infrastructure, edge network, or application-security platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Managed IT services/consulting firm serving clients, not an internet infrastructure or security platform competing with Cloudflare."
+        }
+      ]
     },
     {
       "name": "Connect2CloudX",
@@ -1516,7 +2595,24 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "Connect2CloudX is a managed connectivity services provider, not an internet infrastructure and edge security platform comparable to Cloudflare."
+      "rationale": "Managed WAN/connectivity services broker aggregating partners, not an internet infrastructure or edge security platform competitor.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Provides hybrid WAN, SD-WAN, SASE, and cloud connectivity services overlapping Cloudflare's enterprise networking and secure-access offerings."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Managed WAN/connectivity services broker aggregating partners, not an internet infrastructure or edge security platform competitor."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "Managed network services reseller/integrator for connectivity, not a self-serve edge security/performance platform like Cloudflare; different model."
+        }
+      ]
     },
     {
       "name": "Greypanel",
@@ -1533,7 +2629,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Greypanel overlaps Cloudflare\u2019s core CDN, DNS, WAF, load balancing, and DDoS protection offerings for businesses securing and accelerating internet applications."
+      "rationale": "Global CDN, DNS, load balancing, WAF, and DDoS mitigation directly overlap Cloudflare's core security, performance, and networking platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Global CDN, DNS, load balancing, WAF, and DDoS mitigation directly overlap Cloudflare's core security, performance, and networking platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Greypanel offers CDN, DDoS mitigation, WAF, DNS, and SSL \u2014 core Cloudflare product lines; direct competitor in edge security/performance."
+        }
+      ]
     },
     {
       "name": "Commercial Noise",
@@ -1549,8 +2657,20 @@
         "industries": null,
         "employee_count": "1-10"
       },
-      "relevant": true,
-      "rationale": "Both provide scalable, security-focused web hosting/serverless infrastructure for businesses deploying and protecting websites and applications."
+      "relevant": false,
+      "rationale": "Serverless web hosting offers performance and security, but lacks Cloudflare's broad edge network, CDN, application security, and developer infrastructure platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Serverless web hosting offers performance and security, but lacks Cloudflare's broad edge network, CDN, application security, and developer infrastructure platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Resells AWS-based serverless web hosting for small businesses; lacks Cloudflare's edge network, CDN, and security-platform product core."
+        }
+      ]
     },
     {
       "name": "Cloud Security Solutions USA",
@@ -1567,7 +2687,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "Candidate provides cybersecurity research, vendor validation, and introductions, not Cloudflare-like security, networking, performance, or edge infrastructure products."
+      "rationale": "Provides cybersecurity research, peer validation, and vendor introductions\u2014not an internet infrastructure, edge, security, or networking platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Provides cybersecurity research, peer validation, and vendor introductions\u2014not an internet infrastructure, edge, security, or networking platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Advisory/research service providing peer cybersecurity intelligence to CISOs, not an internet infrastructure or security platform competitor to Cloudflare."
+        }
+      ]
     },
     {
       "name": "MONITORAPP",
@@ -1584,7 +2716,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "MONITORAPP overlaps Cloudflare\u2019s application-security portfolio through cloud WAF, API protection, and zero-trust access for the same enterprise security buyers."
+      "rationale": "Cloudflare and MONITORAPP both provide cloud-based web application and API security, including WAF-style protection, to enterprise security and DevOps teams.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Cloudflare and MONITORAPP both provide cloud-based web application and API security, including WAF-style protection, to enterprise security and DevOps teams."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Cloud-based WAF, API security, and zero-trust platform directly overlapping Cloudflare's application security and Zero Trust product lines for the same buyers."
+        }
+      ]
     },
     {
       "name": "Infinigate Deutschland",
@@ -1601,7 +2745,19 @@
         "employee_count": "201-500"
       },
       "relevant": false,
-      "rationale": "Infinigate is a channel distributor/reseller of third-party cybersecurity products, including Cloudflare, not an internet infrastructure and edge-platform provider."
+      "rationale": "Cybersecurity distributor and channel partner, not an internet infrastructure, edge networking, or application-security platform comparable to Cloudflare.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Cybersecurity distributor and channel partner, not an internet infrastructure, edge networking, or application-security platform comparable to Cloudflare."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Value-add cybersecurity distributor/channel partner that resells vendors like Cloudflare; a go-to-market partner, not an infrastructure-platform competitor."
+        }
+      ]
     },
     {
       "name": "7Clouds\u00ae",
@@ -1618,7 +2774,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "7Clouds is a managed IT and cloud consultancy, not an edge networking, application security, or developer infrastructure platform comparable to Cloudflare."
+      "rationale": "Managed cloud, IT, and cybersecurity services firm; not an internet infrastructure, edge network, or application-security platform comparable to Cloudflare.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Managed cloud, IT, and cybersecurity services firm; not an internet infrastructure, edge network, or application-security platform comparable to Cloudflare."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "7Clouds is a managed IT/cloud services provider for SMBs, not an internet infrastructure or edge platform; serves the category rather than competing."
+        }
+      ]
     },
     {
       "name": "FCOOS Technologies",
@@ -1635,7 +2803,19 @@
         "employee_count": "51-200"
       },
       "relevant": false,
-      "rationale": "FCOOS provides enterprise IT solutions such as firewalls, backup, and VPNs, not a comparable edge network, application security, and developer platform."
+      "rationale": "Primarily an open-source infrastructure and security solutions provider, not an internet edge, CDN, or application-security platform comparable to Cloudflare.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Primarily an open-source infrastructure and security solutions provider, not an internet edge, CDN, or application-security platform comparable to Cloudflare."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "IT services/integrator reselling third-party firewall, backup, VPN solutions, not an internet infrastructure/edge security platform like Cloudflare."
+        }
+      ]
     },
     {
       "name": "CloudIT",
@@ -1652,7 +2832,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "CloudIT is an SMB-focused managed IT services provider, not an internet edge infrastructure, application security, or developer platform competing with Cloudflare."
+      "rationale": "CloudIT is an SMB-focused managed IT services provider, not an internet infrastructure platform competing in edge networking, performance, or developer services.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "CloudIT is an SMB-focused managed IT services provider, not an internet infrastructure platform competing in edge networking, performance, or developer services."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "SMB IT services/MSP consultancy, not an internet infrastructure, edge security, or developer platform; serves the category rather than competing with Cloudflare."
+        }
+      ]
     },
     {
       "name": "Edgecast",
@@ -1669,7 +2861,20 @@
         "employee_count": "51-200"
       },
       "relevant": true,
-      "rationale": "Edgecast overlaps Cloudflare in CDN, edge performance, DDoS mitigation, WAAP, and API security for developers, DevOps, and security teams."
+      "rationale": "Edgecast offers a global CDN, edge functions, DDoS mitigation, WAAP, API security, and bot management\u2014core Cloudflare infrastructure and security products.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Edgecast offers a global CDN, edge functions, DDoS mitigation, WAAP, API security, and bot management\u2014core Cloudflare infrastructure and security products."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Global CDN with WAAP, DDoS protection, bot management, and edge functions \u2014 direct competitor to Cloudflare on product and market."
+        }
+      ]
     }
-  ]
+  ],
+  "error": null
 }

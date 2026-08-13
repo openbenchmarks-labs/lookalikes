@@ -10,15 +10,17 @@
   "relevant_count": 2,
   "precision_at_k": 2.0,
   "relevant_count_at_10": 2,
+  "relevant_count_at_25": 2,
   "relevant_count_at_100": 2,
   "precision_at_10": 20.0,
+  "precision_at_25": 8.0,
   "precision_at_100": 2.0,
   "latency_ms": 319,
   "cost_usd": null,
   "duplicates_removed": 0,
   "max_results": 10,
-  "judge_model": "gpt-5.6",
-  "judged_at": "2026-07-27T03:31:25Z",
+  "judge_model": "majority(n=3): claude-opus-5,gpt-5.6-terra,kimi-k3",
+  "judged_at": "2026-08-10T19:31:42Z",
   "candidates": [
     {
       "name": "crowdstrike",
@@ -34,7 +36,19 @@
         "confidence_level": 99
       },
       "relevant": false,
-      "rationale": "CrowdStrike provides enterprise cybersecurity, not field-service management software for trades contractors; its core product and buyer job differ from ServiceTitan."
+      "rationale": "CrowdStrike sells enterprise cybersecurity and endpoint protection, unrelated to field-service management software for trades contractors.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "CrowdStrike sells enterprise cybersecurity and endpoint protection, unrelated to field-service management software for trades contractors."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "CrowdStrike is endpoint/cloud cybersecurity software; ServiceTitan is field-service management SaaS for trades contractors. No product, market, or model overlap."
+        }
+      ]
     },
     {
       "name": "doordash",
@@ -50,7 +64,19 @@
         "confidence_level": 99
       },
       "relevant": false,
-      "rationale": "DoorDash is a delivery marketplace and logistics platform, not field-service management software for trades contractors; its buyers and jobs differ."
+      "rationale": "DoorDash is an on-demand delivery marketplace and logistics platform, not field-service management software for trades contractors.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "DoorDash is an on-demand delivery marketplace and logistics platform, not field-service management software for trades contractors."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "DoorDash is a food-delivery logistics marketplace, not field-service management software for trades contractors; no product, market, or model overlap."
+        }
+      ]
     },
     {
       "name": "highlevel",
@@ -66,7 +92,19 @@
         "confidence_level": 99
       },
       "relevant": false,
-      "rationale": "HighLevel is a general marketing CRM for agencies and businesses, not trades-focused field-service management with dispatch and contractor operations."
+      "rationale": "HighLevel is a generic, agency-focused marketing and CRM platform, not a field-service operations system built for trades contractors.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "HighLevel is a generic, agency-focused marketing and CRM platform, not a field-service operations system built for trades contractors."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "HighLevel is white-labeled marketing/CRM software for agencies, not field-service management for trades contractors; different product and market."
+        }
+      ]
     },
     {
       "name": "housecall pro",
@@ -82,7 +120,19 @@
         "confidence_level": 99
       },
       "relevant": true,
-      "rationale": "Housecall Pro provides scheduling, dispatch, payments, and customer-management software to the same home-service trades contractors targeted by ServiceTitan."
+      "rationale": "Field-service SaaS for home-service trades, offering scheduling, dispatch, payments, CRM, and operations tools\u2014the same core market and product category.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Field-service SaaS for home-service trades, offering scheduling, dispatch, payments, CRM, and operations tools\u2014the same core market and product category."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Field-service management SaaS for home service trades (HVAC, plumbing, electrical): scheduling, dispatch, payments\u2014direct ServiceTitan competitor on product, market, and model."
+        }
+      ]
     },
     {
       "name": "jerry",
@@ -98,7 +148,19 @@
         "confidence_level": 99
       },
       "relevant": false,
-      "rationale": "Jerry is a consumer car-ownership and insurance app, not field-service management SaaS for trades contractors."
+      "rationale": "Consumer auto-insurance and car-ownership app, not field-service management software for trades contractors.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Consumer auto-insurance and car-ownership app, not field-service management software for trades contractors."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Jerry is a consumer car-insurance/ownership app; ServiceTitan is B2B field-service management SaaS for trades contractors. No shared product, market, or model."
+        }
+      ]
     },
     {
       "name": "jobber",
@@ -114,7 +176,19 @@
         "confidence_level": 99
       },
       "relevant": true,
-      "rationale": "Jobber and ServiceTitan both provide field-service management software for home-service contractors, covering scheduling, customer management, billing, and operations."
+      "rationale": "Jobber provides field-service operations software for home-service trades, including core workflows ServiceTitan serves, making it a direct vertical SaaS comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Jobber provides field-service operations software for home-service trades, including core workflows ServiceTitan serves, making it a direct vertical SaaS comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Field-service management software for home service businesses \u2014 same product, market, and business model as ServiceTitan; direct competitor."
+        }
+      ]
     },
     {
       "name": "pandadoc",
@@ -130,7 +204,19 @@
         "confidence_level": 99
       },
       "relevant": false,
-      "rationale": "PandaDoc is general document workflow and e-signature software, not field-service management software for trades contractors."
+      "rationale": "PandaDoc is general document creation and e-signature software, not a field-service management platform for trades contractors.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "PandaDoc is general document creation and e-signature software, not a field-service management platform for trades contractors."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "PandaDoc is document management/e-signature software, not field-service or trades-contractor operations software; different product and market."
+        }
+      ]
     },
     {
       "name": "servicetitan armenia",
@@ -146,7 +232,19 @@
         "confidence_level": 99
       },
       "relevant": false,
-      "rationale": "This is ServiceTitan\u2019s Armenia office and engineering presence, not a distinct company offering a comparable product."
+      "rationale": "ServiceTitan Armenia is a regional office/employer presence of the seed company, not an independent competitor or comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "ServiceTitan Armenia is a regional office/employer presence of the seed company, not an independent competitor or comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Duplicate entry: the seed's own Armenian office, not a distinct competitor or comparable company."
+        }
+      ]
     },
     {
       "name": "stripe",
@@ -162,7 +260,19 @@
         "confidence_level": 99
       },
       "relevant": false,
-      "rationale": "Stripe is a general payments infrastructure platform, not field-service management software for trades contractors; buyers and core jobs differ."
+      "rationale": "Stripe provides general payment infrastructure, not trades-focused field-service management, dispatch, CRM, or contractor operations software.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Stripe provides general payment infrastructure, not trades-focused field-service management, dispatch, CRM, or contractor operations software."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Stripe is a horizontal payments infrastructure provider, not vertical SaaS for trades contractors' field service operations."
+        }
+      ]
     },
     {
       "name": "upstart",
@@ -178,10 +288,20 @@
         "confidence_level": 99
       },
       "relevant": false,
-      "rationale": "Upstart is an AI lending marketplace for financial institutions, not field-service management software for trades contractors."
+      "rationale": "Upstart is an AI lending marketplace for banks and consumers, not field-service management software for trades contractors.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Upstart is an AI lending marketplace for banks and consumers, not field-service management software for trades contractors."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Upstart is an AI consumer-lending marketplace; no resemblance to ServiceTitan's field-service management SaaS for trades contractors on any axis."
+        }
+      ]
     }
   ],
-  "error": null,
-  "relevant_count_at_25": 2,
-  "precision_at_25": 8.0
+  "error": null
 }

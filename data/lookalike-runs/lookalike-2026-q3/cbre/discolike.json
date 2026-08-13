@@ -7,18 +7,20 @@
     "name": "domain_similarity"
   },
   "k": 100,
-  "relevant_count": 32,
-  "precision_at_k": 32.0,
+  "relevant_count": 36,
+  "precision_at_k": 36.0,
   "relevant_count_at_10": 5,
-  "relevant_count_at_100": 32,
+  "relevant_count_at_25": 12,
+  "relevant_count_at_100": 36,
   "precision_at_10": 50.0,
-  "precision_at_100": 32.0,
+  "precision_at_25": 48.0,
+  "precision_at_100": 36.0,
   "latency_ms": 1133,
   "cost_usd": null,
   "duplicates_removed": 7,
   "max_results": null,
-  "judge_model": "gpt-5.6",
-  "judged_at": "2026-07-27T03:48:09Z",
+  "judge_model": "majority(n=3): claude-opus-5,gpt-5.6-terra,kimi-k3",
+  "judged_at": "2026-08-10T19:43:41Z",
   "candidates": [
     {
       "name": "CBRE",
@@ -44,7 +46,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Candidate is CBRE itself under an alternate/local domain, making it a duplicate rather than a distinct lookalike prospect."
+      "rationale": "Duplicate CBRE entry with a mismatched domain, not a distinct commercial real estate competitor or comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Duplicate CBRE entry with a mismatched domain, not a distinct commercial real estate competitor or comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Duplicate entry of the seed company itself (same name, description, socials) on a different domain; duplicates are not lookalikes."
+        }
+      ]
     },
     {
       "name": "CBRE Investment Management",
@@ -69,7 +83,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "CBRE Investment Management is CBRE\u2019s investment-management business, making it an affiliated division rather than an independent lookalike prospect."
+      "rationale": "CBRE Investment Management is part of the CBRE group, not an independent competitor or lookalike.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "CBRE Investment Management is part of the CBRE group, not an independent competitor or lookalike."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "CBRE Investment Management is a subsidiary of CBRE itself, not a competitor or comparable; same-family entities are excluded."
+        }
+      ]
     },
     {
       "name": "Newmark Solutions",
@@ -99,7 +125,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Newmark directly overlaps CBRE in commercial real estate leasing, capital markets, valuation, property management, and advisory services for enterprise property clients."
+      "rationale": "Newmark is a commercial real estate services firm offering leasing, capital markets, property management, valuation, and advisory services directly comparable to CBRE.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Newmark is a commercial real estate services firm offering leasing, capital markets, property management, valuation, and advisory services directly comparable to CBRE."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Newmark is a global commercial real estate services firm offering leasing, capital markets, property management, and valuation \u2014 direct CBRE competitor on all axes."
+        }
+      ]
     },
     {
       "name": "CBRE Poland",
@@ -125,7 +163,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "CBRE Poland is a regional branch of the seed company, not an independent lookalike prospect."
+      "rationale": "CBRE Poland is a regional CBRE entity, not an independent competitor, comparable, or ICP-expansion company.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "CBRE Poland is a regional CBRE entity, not an independent competitor, comparable, or ICP-expansion company."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "CBRE Poland is CBRE's own regional subsidiary \u2014 a duplicate/branch of the seed, not an independent competitor or comparable."
+        }
+      ]
     },
     {
       "name": "Colliers",
@@ -156,7 +206,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Colliers directly overlaps CBRE in commercial real estate leasing, property management, consulting, valuation, project services, and investment management for similar clients."
+      "rationale": "Global commercial real estate services peer offering leasing, property and investment management, consulting, and project management to the same property-sector clients.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Global commercial real estate services peer offering leasing, property and investment management, consulting, and project management to the same property-sector clients."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Colliers is a direct global competitor to CBRE: same commercial real estate services\u2014leasing, property/facilities management, valuation, investment management\u2014for the same clients."
+        }
+      ]
     },
     {
       "name": "West Coast Brokerage",
@@ -183,7 +245,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide commercial real estate brokerage and advisory services, including investment sales and tenant representation, to commercial property clients."
+      "rationale": "Commercial real estate brokerage offering investment sales, tenant representation, and advisory services closely overlaps CBRE's core leasing and property services.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Commercial real estate brokerage offering investment sales, tenant representation, and advisory services closely overlaps CBRE's core leasing and property services."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Commercial real estate brokerage offering investment sales, tenant representation, and advisory\u2014same services and market as CBRE, a direct smaller competitor."
+        }
+      ]
     },
     {
       "name": "Allegro",
@@ -207,7 +281,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide B2B commercial real estate brokerage, leasing, portfolio, facility management, and advisory services to organizations managing properties."
+      "rationale": "Commercial real estate brokerage and advisory firm offering leasing, transactions, portfolio, and facilities management\u2014directly comparable to CBRE.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Commercial real estate brokerage and advisory firm offering leasing, transactions, portfolio, and facilities management\u2014directly comparable to CBRE."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Commercial real estate brokerage and advisory firm offering leasing, transaction, facility, and portfolio management \u2014 same product, market, and business model as CBRE."
+        }
+      ]
     },
     {
       "name": "ListLeaseSell.Com",
@@ -233,7 +319,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide commercial real estate brokerage, leasing, sales, marketing, and property-management services to commercial property owners and occupiers."
+      "rationale": "Commercial real estate brokerage platform providing listing, leasing, sales, management, and market-analysis services, directly comparable to CBRE's property services.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Commercial real estate brokerage platform providing listing, leasing, sales, management, and market-analysis services, directly comparable to CBRE's property services."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Commercial real estate brokerage platform offering listing, leasing, selling, and property services \u2014 same market and services as CBRE, a direct comparable."
+        }
+      ]
     },
     {
       "name": "Connect Media",
@@ -262,7 +360,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Connect Media is a CRE-focused media and marketing agency, not a commercial property services, leasing, valuation, or asset-management firm."
+      "rationale": "CRE-focused media and marketing agency, not a commercial real estate services, leasing, valuation, facilities, or investment-management competitor.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "CRE-focused media and marketing agency, not a commercial real estate services, leasing, valuation, facilities, or investment-management competitor."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Connect is a CRE-focused media/PR and marketing agency serving the industry, not a commercial real estate services firm competing with CBRE."
+        }
+      ]
     },
     {
       "name": "GlobeSt",
@@ -288,7 +398,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "GlobeSt is a CRE news and events publisher, not a provider of property leasing, facilities, valuation, or asset-management services."
+      "rationale": "GlobeSt is a commercial-real-estate media and events platform, not a provider of brokerage, property, facilities, valuation, or asset-management services.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "GlobeSt is a commercial-real-estate media and events platform, not a provider of brokerage, property, facilities, valuation, or asset-management services."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "GlobeSt is a CRE news/media platform, not a real estate services or investment firm; it serves the industry rather than competing with CBRE."
+        }
+      ]
     },
     {
       "name": "American Realty Advisors",
@@ -314,7 +436,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide commercial real estate investment and asset management services to institutional investors seeking portfolio strategy and advisory expertise."
+      "rationale": "Both provide commercial real estate investment and asset management services to institutional property investors.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both provide commercial real estate investment and asset management services to institutional property investors."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "ARA is a commercial real estate investment and asset management firm, directly comparable to CBRE's investment/asset management business across the same CRE sectors."
+        }
+      ]
     },
     {
       "name": "Accelerate Infrastructure Opportunities",
@@ -340,8 +474,25 @@
           "https://www.linkedin.com/company/accelerate-real-asset-management/"
         ]
       },
-      "relevant": true,
-      "rationale": "Both provide commercial real estate investment, financing, and transaction solutions to landowners, developers, and property operators."
+      "relevant": false,
+      "rationale": "Niche infrastructure-land investment capital firm; CBRE is a commercial real estate services firm (leasing, facilities, valuation, asset management). Overlap is only a generic real-estate label.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both operate as real-estate investment firms, with Accelerate specializing in infrastructure land and lease transactions rather than CBRE\u2019s broader commercial-property services."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Niche infrastructure-land investment capital firm; CBRE is a commercial real estate services firm (leasing, facilities, valuation, asset management). Overlap is only a generic real-estate label."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "Niche infrastructure land investor/principal buyer, not a commercial real estate services brokerage/management firm like CBRE.J'ai"
+        }
+      ]
     },
     {
       "name": "Prosperity Through Real Estate Investor's Association",
@@ -370,7 +521,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "PTRE is an investor education and networking association, not a commercial real estate services, leasing, valuation, facilities, or asset-management firm."
+      "rationale": "Investor education and networking association, not a commercial real estate services, leasing, facilities, valuation, or asset-management firm.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Investor education and networking association, not a commercial real estate services, leasing, facilities, valuation, or asset-management firm."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Investor education and networking association, not a commercial real estate services firm; serves investors with training, not CRE leasing, facilities, or valuation services."
+        }
+      ]
     },
     {
       "name": "Colliers Canada",
@@ -400,7 +563,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide commercial real estate leasing, investment advisory, valuation, asset management, and project services to property owners and investors."
+      "rationale": "Commercial real estate firm offering leasing, sales, valuation, asset advisory, project management, and investment services directly comparable to CBRE.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Commercial real estate firm offering leasing, sales, valuation, asset advisory, project management, and investment services directly comparable to CBRE."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Direct competitor: commercial real estate services firm offering leasing, valuation, asset management, and advisory\u2014same product, market, and business model as CBRE."
+        }
+      ]
     },
     {
       "name": "Corcoran Commercial Real Estate",
@@ -428,7 +603,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide commercial real estate brokerage, leasing representation, and property management services to property owners and business tenants."
+      "rationale": "Commercial real estate brokerage, leasing, tenant/landlord representation, and property management directly overlap CBRE's core service model.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Commercial real estate brokerage, leasing, tenant/landlord representation, and property management directly overlap CBRE's core service model."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Commercial real estate brokerage and property management firm offering leasing, tenant/landlord representation, and property management\u2014same services and market as CBRE."
+        }
+      ]
     },
     {
       "name": "Connected Investors",
@@ -456,7 +643,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Connected Investors sells software to property investors, while CBRE primarily provides commercial real estate brokerage, facilities, valuation, and asset-management services."
+      "rationale": "Real-estate investment software for deal sourcing differs from CBRE's commercial property brokerage, facilities, valuation, and asset-management services.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Real-estate investment software for deal sourcing differs from CBRE's commercial property brokerage, facilities, valuation, and asset-management services."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "CBRE is a commercial real estate services/brokerage firm; candidate sells software tools for property investors \u2014 a supplier to the industry, not a peer or comparable."
+        }
+      ]
     },
     {
       "name": "RecruiterMixer",
@@ -485,7 +684,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "RecruiterMixer is a niche recruiting platform, not a commercial real estate services, leasing, facilities, valuation, or asset management firm."
+      "rationale": "Multifamily real-estate recruiting platform, not a commercial real-estate services, leasing, facilities, valuation, or asset-management peer.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Multifamily real-estate recruiting platform, not a commercial real-estate services, leasing, facilities, valuation, or asset-management peer."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Job board for multifamily real estate hiring; HR/recruiting platform, not commercial real estate services or investment peer of CBRE."
+        }
+      ]
     },
     {
       "name": "CBRE | WTW",
@@ -512,7 +723,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "CBRE | WTW is CBRE\u2019s Malaysian affiliate, making it a related/duplicate entity rather than an independent lookalike prospect."
+      "rationale": "CBRE | WTW is a CBRE-branded Malaysia affiliate, not an independent competitor or ICP-expansion lookalike.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "CBRE | WTW is a CBRE-branded Malaysia affiliate, not an independent competitor or ICP-expansion lookalike."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "CBRE joint venture/affiliate of the seed itself (CBRE | WTW), not an independent competitor or comparable."
+        }
+      ]
     },
     {
       "name": "Quore Real Estate Advisors",
@@ -538,7 +761,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide commercial real estate advisory, development/project management, and asset management services to institutional property owners and other organizations."
+      "rationale": "Commercial real estate advisory firm offering asset management, development management, and strategic property services to institutional owners and similar clients.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Commercial real estate advisory firm offering asset management, development management, and strategic property services to institutional owners and similar clients."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Commercial real estate advisory firm offering asset management and development management \u2014 same CRE services market and business model as CBRE, a comparable competitor."
+        }
+      ]
     },
     {
       "name": "Lee & Associates",
@@ -568,7 +803,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide integrated commercial real estate brokerage, leasing, property management, and related services to property owners, investors, and occupiers."
+      "rationale": "Commercial real estate firm offering leasing, property transactions, management, and related services, directly comparable to CBRE.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Commercial real estate firm offering leasing, property transactions, management, and related services, directly comparable to CBRE."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are commercial real estate services firms offering brokerage, leasing, and property management \u2014 direct competitors across product, market, and business model."
+        }
+      ]
     },
     {
       "name": "Alvarez & Marsal Holdings, LLC",
@@ -601,7 +848,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Alvarez & Marsal primarily provides management and corporate advisory, not commercial property leasing, facilities, or real estate asset management services."
+      "rationale": "A&M is a broad management consulting firm; its valuation and transaction advisory are not commercial real estate brokerage, facilities, or asset-management services.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "A&M is a broad management consulting firm; its valuation and transaction advisory are not commercial real estate brokerage, facilities, or asset-management services."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "A&M is a management consulting firm; not a commercial real estate services/investment firm. Shared valuation services are ancillary, not a product/market match."
+        }
+      ]
     },
     {
       "name": "Commercialstream.com",
@@ -623,7 +882,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Commercialstream is a referral marketplace for real estate professionals, not a direct commercial real estate services and investment firm like CBRE."
+      "rationale": "Marketplace matching clients with commercial real estate professionals; related sector but not a comparable full-service commercial real estate firm.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Marketplace matching clients with commercial real estate professionals; related sector but not a comparable full-service commercial real estate firm."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Lead-generation marketplace matching users to CRE professionals, not a CRE services/investment firm itself; serves the category rather than competing with CBRE."
+        }
+      ]
     },
     {
       "name": "CenterSquare Investment Management LLC",
@@ -650,7 +921,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide real estate investment and asset management services to institutional investors seeking portfolio strategies and market expertise."
+      "rationale": "Both provide commercial real estate investment and asset management services to institutional investors, making CenterSquare a strong comparable despite its narrower focus.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both provide commercial real estate investment and asset management services to institutional investors, making CenterSquare a strong comparable despite its narrower focus."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are real estate investment management firms; CenterSquare mirrors CBRE's investment/asset-management arm in the same market and model."
+        }
+      ]
     },
     {
       "name": "Grace River Capital",
@@ -676,7 +959,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide commercial real estate investment services and connect investors with opportunities across major property types."
+      "rationale": "Commercial real estate investment firm offering property investment opportunities; comparable to CBRE's real estate investment and asset-management business.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Commercial real estate investment firm offering property investment opportunities; comparable to CBRE's real estate investment and asset-management business."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are commercial real estate investment firms across multifamily, industrial, office, and retail; candidate parallels CBRE's investment business, size irrelevant."
+        }
+      ]
     },
     {
       "name": "Commercialrep.com",
@@ -705,7 +1000,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Commercialrep.com is a referral marketplace for real estate professionals, not a commercial real estate services and investment firm directly comparable to CBRE."
+      "rationale": "Marketplace matching clients with commercial real estate professionals; it does not directly provide CBRE's brokerage, property, valuation, or asset-management services.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Marketplace matching clients with commercial real estate professionals; it does not directly provide CBRE's brokerage, property, valuation, or asset-management services."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Matching marketplace connecting users to CRE professionals, not a commercial real estate services firm itself; intermediary model, not a peer competitor to CBRE."
+        }
+      ]
     },
     {
       "name": "Diversity_CRE",
@@ -728,7 +1035,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Diversity_CRE is a professional development and networking platform, not a provider of commercial property leasing, facilities, valuation, or asset-management services."
+      "rationale": "Diversity_CRE is a diversity-focused professional community and events platform, not a commercial real estate brokerage, property-services, or investment-management competitor.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Diversity_CRE is a diversity-focused professional community and events platform, not a commercial real estate brokerage, property-services, or investment-management competitor."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Diversity_CRE is a D&I professional-development/networking community for CRE, not a commercial real estate services firm; serves the industry rather than competing with CBRE."
+        }
+      ]
     },
     {
       "name": "Commercial Real Estate Development Association",
@@ -756,7 +1075,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "CREDA is an industry membership and advocacy association, not a provider of commercial property, facilities, valuation, or asset-management services."
+      "rationale": "Industry association providing advocacy, education, and networking, not commercial real estate brokerage, facilities, valuation, or asset-management services.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Industry association providing advocacy, education, and networking, not commercial real estate brokerage, facilities, valuation, or asset-management services."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Industry association offering membership, education, and advocacy, not a commercial real estate services firm; serves rather than competes with CBRE."
+        }
+      ]
     },
     {
       "name": "CRE-Library",
@@ -788,7 +1119,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "CRE-Library provides real estate career training and recruitment resources, not commercial property leasing, valuation, facilities, or asset-management services."
+      "rationale": "CRE-Library provides real estate career training and recruiting resources, not commercial property brokerage, valuation, facilities, or asset-management services.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "CRE-Library provides real estate career training and recruiting resources, not commercial property brokerage, valuation, facilities, or asset-management services."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "CRE-Library is a training/recruitment platform for aspiring agents, not a commercial real estate services firm; no product, market, or model overlap with CBRE."
+        }
+      ]
     },
     {
       "name": "TopCREBrokers",
@@ -812,8 +1155,25 @@
           "https://x.com/lovable_dev"
         ]
       },
-      "relevant": false,
-      "rationale": "TopCREBrokers is primarily a broker-investor networking and listings platform, not an integrated commercial real estate services and investment firm like CBRE."
+      "relevant": true,
+      "rationale": "Commercial real estate broker network offers overlapping leasing, investment sales, advisory, and property-management services, making it a sector comparable to CBRE.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Commercial real estate broker network offers overlapping leasing, investment sales, advisory, and property-management services, making it a sector comparable to CBRE."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Networking platform serving CRE brokers, not a CRE services/brokerage firm competing with CBRE; serves the category rather than resembling it."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Commercial real estate network offering investment sales, leasing, advisory and property management \\u2E Same CRE services market as CBRE.', ok"
+        }
+      ]
     },
     {
       "name": "SRS Real Estate Partners",
@@ -842,7 +1202,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide commercial real estate advisory, leasing, capital markets, and investment services to property owners, occupiers, buyers, and investors."
+      "rationale": "Commercial real estate advisory firm offering leasing, investment sales, market analysis, and capital-markets services, directly comparable to CBRE.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Commercial real estate advisory firm offering leasing, investment sales, market analysis, and capital-markets services, directly comparable to CBRE."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are commercial real estate services firms offering brokerage, leasing, and capital markets advisory; direct competitors on product, market, and business model."
+        }
+      ]
     },
     {
       "name": "Best Ever",
@@ -868,7 +1240,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Best Ever CRE is an investor media, education, and events platform, not a provider of commercial property services or investment management."
+      "rationale": "Media, events, and educational resources for CRE investors, not a commercial real estate brokerage, valuation, facilities, or asset-management services firm.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Media, events, and educational resources for CRE investors, not a commercial real estate brokerage, valuation, facilities, or asset-management services firm."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Best Ever is a CRE media/newsletter/events platform, not a real estate services or investment firm like CBRE; content provider, not competitor or comparable."
+        }
+      ]
     },
     {
       "name": "wRight Resources",
@@ -892,7 +1276,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "wRight Resources recruits real estate personnel; it does not provide CBRE\u2019s commercial property leasing, facilities, valuation, or asset-management services."
+      "rationale": "Executive search firm serving real estate employers, not a commercial real estate services, leasing, facilities, valuation, or asset-management competitor.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Executive search firm serving real estate employers, not a commercial real estate services, leasing, facilities, valuation, or asset-management competitor."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Executive search firm serving real estate sector, not a commercial real estate services/investment peer; supplier to the industry, not a lookalike."
+        }
+      ]
     },
     {
       "name": "Brevitas",
@@ -917,8 +1313,20 @@
           "https://x.com/brevitascre"
         ]
       },
-      "relevant": false,
-      "rationale": "Brevitas is a property-listing marketplace and deal tool, while CBRE primarily provides brokerage, facilities, valuation, and investment-management services."
+      "relevant": true,
+      "rationale": "Commercial real estate marketplace for property sales and leasing, serving similar transaction and investment stakeholders as CBRE's brokerage business.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Commercial real estate marketplace for property sales and leasing, serving similar transaction and investment stakeholders as CBRE's brokerage business."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Commercial real estate marketplace for buying, selling, and leasing investment properties; overlaps CBRE's CRE transaction market and serves the same deal-making personas."
+        }
+      ]
     },
     {
       "name": "Vestian",
@@ -944,7 +1352,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Vestian provides commercial real estate advisory, transaction, workplace, and portfolio services to corporate occupiers, directly overlapping CBRE\u2019s offerings and buyers."
+      "rationale": "Vestian is a commercial real estate services firm offering workplace strategy, transaction management, and portfolio services comparable to CBRE.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Vestian is a commercial real estate services firm offering workplace strategy, transaction management, and portfolio services comparable to CBRE."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Vestian is a commercial real estate services firm offering occupier, workplace, and transaction services \u2014 direct peer/competitor to CBRE on product, market, and model."
+        }
+      ]
     },
     {
       "name": "Xpirealty Limited",
@@ -971,7 +1391,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Xpirealty appears primarily a residential property marketplace and agency, not a commercial real estate services, facilities, valuation, and asset-management firm."
+      "rationale": "Xpirealty is a consumer-focused residential property listings and brokerage platform, not a commercial real estate services, facilities, valuation, or asset-management peer.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Xpirealty is a consumer-focused residential property listings and brokerage platform, not a commercial real estate services, facilities, valuation, or asset-management peer."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Consumer residential property listing/rental portal; CBRE is a commercial real estate services firm \u2014 different product and buyer market."
+        }
+      ]
     },
     {
       "name": "Lincoln Property Company",
@@ -997,7 +1429,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide commercial real estate leasing, property management, investment, and advisory services to owners, occupiers, and real estate decision-makers."
+      "rationale": "Global commercial real estate services firm offering leasing, property management, and investment solutions, directly comparable to CBRE.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Global commercial real estate services firm offering leasing, property management, and investment solutions, directly comparable to CBRE."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Global commercial real estate services firm offering leasing, management, and investment\u2014direct competitor to CBRE on product, market, and model."
+        }
+      ]
     },
     {
       "name": "AARE Real Estate Services",
@@ -1032,7 +1476,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide commercial real estate and property management services to owners and investors, despite AARE\u2019s additional residential and mortgage offerings."
+      "rationale": "Both provide commercial real estate investment and property-management services, making AARE a plausible smaller comparable despite its residential and mortgage offerings.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both provide commercial real estate investment and property-management services, making AARE a plausible smaller comparable despite its residential and mortgage offerings."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Diversified real estate services and investment firm offering property management and CRE services\u2014direct peer/comparable to CBRE on product and business model."
+        }
+      ]
     },
     {
       "name": "Square Real Estate Solutions",
@@ -1057,7 +1513,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide commercial real estate services spanning leasing, acquisitions, asset strategy, and property management to property owners and investors."
+      "rationale": "Commercial real estate firm offering overlapping leasing, asset strategy, acquisitions, and property management services to property owners and investors.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Commercial real estate firm offering overlapping leasing, asset strategy, acquisitions, and property management services to property owners and investors."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Commercial real estate services firm offering leasing, asset strategy, and property management\u2014same product and market as CBRE, a smaller peer competitor."
+        }
+      ]
     },
     {
       "name": "NAI NorCal",
@@ -1090,7 +1558,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide commercial real estate brokerage and leasing services to property owners, developers, investors, and business tenants."
+      "rationale": "Commercial real estate brokerage serving owners, developers, and investors with leasing, sales, and related property services, directly comparable to CBRE.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Commercial real estate brokerage serving owners, developers, and investors with leasing, sales, and related property services, directly comparable to CBRE."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are commercial real estate services firms offering brokerage, leasing, and advisory for property owners and investors; direct regional competitor."
+        }
+      ]
     },
     {
       "name": "Real Estate Jobs",
@@ -1118,7 +1598,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Real Estate Jobs is an industry-specific recruiting marketplace, not a commercial property services, leasing, valuation, facilities, or asset-management firm."
+      "rationale": "Real Estate Jobs is a recruitment marketplace for real estate agencies, not a commercial real estate services, leasing, valuation, or asset-management firm.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Real Estate Jobs is a recruitment marketplace for real estate agencies, not a commercial real estate services, leasing, valuation, or asset-management firm."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Job board for real estate hiring; CBRE is a commercial real estate services and investment firm. Different product and business model \u2014 not a competitor or comparable."
+        }
+      ]
     },
     {
       "name": "CRELookUp",
@@ -1144,8 +1636,20 @@
           "https://www.youtube.com/channel/UCBzKIEiHxa6lx_Tx5G27PNA?view_as=subscriber"
         ]
       },
-      "relevant": false,
-      "rationale": "CRELookUp is a property-listing and transaction platform, not a commercial real estate services, facilities, valuation, and asset-management firm like CBRE."
+      "relevant": true,
+      "rationale": "Commercial real estate marketplace facilitating property sales and leasing transactions, overlapping CBRE's brokerage and transaction-services market.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Commercial real estate marketplace facilitating property sales and leasing transactions, overlapping CBRE's brokerage and transaction-services market."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Commercial real estate marketplace connecting buyers, sellers, agents for property transactions \u2014 same CRE market and deal-making job as CBRE, a credible comparable."
+        }
+      ]
     },
     {
       "name": "CBTS",
@@ -1178,7 +1682,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "CBTS provides IT consulting and managed technology services, not commercial real estate leasing, facilities, valuation, or asset management services."
+      "rationale": "CBTS provides managed IT, cloud, cybersecurity, and consulting services, not commercial real estate leasing, facilities, valuation, or asset management.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "CBTS provides managed IT, cloud, cybersecurity, and consulting services, not commercial real estate leasing, facilities, valuation, or asset management."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "CBTS is an IT services/consulting firm; CBRE is commercial real estate services. Different industry, product, and market entirely."
+        }
+      ]
     },
     {
       "name": "AAREP DFW",
@@ -1204,7 +1720,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "AAREP DFW is a professional membership and networking nonprofit, not a commercial real estate services, leasing, valuation, or asset-management firm."
+      "rationale": "Nonprofit professional association supporting commercial real estate professionals, not a commercial real estate services, investment, or property-management competitor.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Nonprofit professional association supporting commercial real estate professionals, not a commercial real estate services, investment, or property-management competitor."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Nonprofit professional association/networking group for CRE professionals, not a commercial real estate services or investment firm; not a competitor or comparable."
+        }
+      ]
     },
     {
       "name": "LeadingRE",
@@ -1233,7 +1761,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "LeadingRE is primarily a residential property-search and brokerage network, not a commercial real estate services, facilities, valuation, and asset-management firm."
+      "rationale": "LeadingRE is primarily a residential real estate brokerage network and property-search platform, not a commercial real estate services, facilities, valuation, or asset-management peer.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "LeadingRE is primarily a residential real estate brokerage network and property-search platform, not a commercial real estate services, facilities, valuation, or asset-management peer."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Residential-focused brokerage network and consumer property-search portal, not a commercial real estate services firm like CBRE."
+        }
+      ]
     },
     {
       "name": "CBRE, Inc.",
@@ -1255,7 +1795,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "This is a CBRE-operated property leasing microsite, not an independent commercial real estate services firm or competing lookalike."
+      "rationale": "Appears to be a CBRE-branded property leasing microsite, not an independent commercial real estate services company or lookalike.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Appears to be a CBRE-branded property leasing microsite, not an independent commercial real estate services company or lookalike."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Duplicate of seed name; domain is a single-property leasing microsite, not a commercial real estate services firm comparable to CBRE."
+        }
+      ]
     },
     {
       "name": "Knight Frank",
@@ -1287,7 +1839,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide commercial real estate advisory, leasing, valuation, occupier strategy, and investment services to overlapping corporate and property-investor buyers."
+      "rationale": "Global commercial real estate advisory offering leasing, valuation, occupier strategy, and investment services directly comparable to CBRE.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Global commercial real estate advisory offering leasing, valuation, occupier strategy, and investment services directly comparable to CBRE."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Knight Frank is a global real estate services and advisory firm, directly competing with CBRE in commercial property services, valuation, and occupier solutions."
+        }
+      ]
     },
     {
       "name": "Hines",
@@ -1318,7 +1882,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide commercial real estate investment, development, property management, and asset management services to institutional investors and property owners."
+      "rationale": "Hines is a global commercial real estate investment, development, and property-management firm, directly comparable to CBRE\u2019s real estate services and asset-management business.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Hines is a global commercial real estate investment, development, and property-management firm, directly comparable to CBRE\u2019s real estate services and asset-management business."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are global commercial real estate firms offering investment management, development, and property/facilities services \u2014 direct comparables like JLL or Cushman."
+        }
+      ]
     },
     {
       "name": "Market Analysis",
@@ -1347,7 +1923,24 @@
         ]
       },
       "relevant": false,
-      "rationale": "Market Analysis primarily provides real-estate market data, not CBRE-like brokerage, leasing, facilities, valuation, or asset-management services."
+      "rationale": "Real-estate market data/analytics platform, not a CRE services/brokerage peer; likely a data supplier to firms like CBRE rather than a competitor or comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Provides commercial real estate market data, property analytics, and investment insights, overlapping CBRE's research, valuation, and advisory services."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Real-estate market data/analytics platform, not a CRE services/brokerage peer; likely a data supplier to firms like CBRE rather than a competitor or comparable."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "CRE market data/analytics provider, not a brokerage or property services firm like CBRE; different product and model.Please answer in less than 4000 characters. Please answer in less than 4000 characters. Please answer in less than 4000 cha"
+        }
+      ]
     },
     {
       "name": "ConstructionWire",
@@ -1376,7 +1969,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "ConstructionWire sells construction project lead intelligence, not commercial real estate leasing, facilities, valuation, or asset management services."
+      "rationale": "ConstructionWire sells construction project-lead data and marketing tools, not commercial real estate brokerage, facilities, valuation, or asset-management services.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "ConstructionWire sells construction project-lead data and marketing tools, not commercial real estate brokerage, facilities, valuation, or asset-management services."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "ConstructionWire sells construction project lead data; CBRE provides commercial real estate services. Different product and buyer job \u2014 not a competitor or comparable."
+        }
+      ]
     },
     {
       "name": "CashflowPockets, LLC",
@@ -1399,7 +2004,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "CashFlow is an investor education, tools, and networking platform, not a commercial real estate services and investment-management firm like CBRE."
+      "rationale": "Investor education and community platform, not a commercial real estate brokerage, valuation, facilities, or asset-management services competitor.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Investor education and community platform, not a commercial real estate brokerage, valuation, facilities, or asset-management services competitor."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Consumer education/community platform for real estate investors, not a commercial real estate services firm; different product, buyer, and model."
+        }
+      ]
     },
     {
       "name": "The Birmingham Group",
@@ -1428,7 +2045,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "The Birmingham Group is a construction recruitment agency, not a commercial real estate services, leasing, facilities, valuation, or asset-management firm."
+      "rationale": "Construction-industry executive recruitment agency, not a commercial real estate services, leasing, valuation, facilities, or asset-management provider.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Construction-industry executive recruitment agency, not a commercial real estate services, leasing, valuation, facilities, or asset-management provider."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Construction recruitment agency, not commercial real estate services; staffing firm serving contractors, no product/market overlap with CBRE."
+        }
+      ]
     },
     {
       "name": "ApexRE",
@@ -1451,7 +2080,19 @@
         "social_urls": []
       },
       "relevant": true,
-      "rationale": "Both provide commercial real estate brokerage and advisory services to investors, owners, and businesses buying or selling commercial properties."
+      "rationale": "Commercial real estate brokerage and advisory services overlap directly with CBRE's leasing, property transaction, valuation, and investment-services business.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Commercial real estate brokerage and advisory services overlap directly with CBRE's leasing, property transaction, valuation, and investment-services business."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are commercial real estate services firms; ApexRE's brokerage of office/retail/industrial properties matches CBRE's core CRE advisory and transaction business."
+        }
+      ]
     },
     {
       "name": "Heidrick & Struggles International, Inc.",
@@ -1480,7 +2121,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Heidrick & Struggles provides executive search and leadership consulting, not commercial real estate leasing, facilities, valuation, or asset management services."
+      "rationale": "Executive search and leadership consulting are human-resources services, not commercial real estate leasing, valuation, facilities, or asset management.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Executive search and leadership consulting are human-resources services, not commercial real estate leasing, valuation, facilities, or asset management."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Executive search/HR consulting firm, not commercial real estate services; different product, market, and business model."
+        }
+      ]
     },
     {
       "name": "Northmarq",
@@ -1512,7 +2165,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide commercial real estate investment sales, financing, advisory, and related property services to overlapping owners and investors."
+      "rationale": "Commercial real estate services firm offering investment sales, financing, and loan servicing, making it a direct comparable to CBRE's property advisory business.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Commercial real estate services firm offering investment sales, financing, and loan servicing, making it a direct comparable to CBRE's property advisory business."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Commercial real estate services firm offering investment sales, financing, and loan servicing \u2014 direct competitor/comparable to CBRE on product and market."
+        }
+      ]
     },
     {
       "name": "Location Advisor.com",
@@ -1538,7 +2203,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "LocationAdvisor is a directory marketplace for finding site-selection professionals, not a commercial real estate services and investment firm like CBRE."
+      "rationale": "It is a directory connecting businesses to site-selection advisors, not a commercial real estate services and investment firm like CBRE.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "It is a directory connecting businesses to site-selection advisors, not a commercial real estate services and investment firm like CBRE."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Directory/marketplace listing site-selection advisors, not a CRE services firm itself; doesn't compete with CBRE's leasing, valuation, or asset-management services."
+        }
+      ]
     },
     {
       "name": "Careers Building Communities",
@@ -1565,7 +2242,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Career education and resources for real estate students do not overlap CBRE\u2019s commercial property services or serve the same buyer need."
+      "rationale": "Career education resource for real-estate roles, not a commercial real-estate services, investment, or property-management firm.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Career education resource for real-estate roles, not a commercial real-estate services, investment, or property-management firm."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Career-education nonprofit for real estate jobs, not a commercial real estate services firm; not a competitor or comparable to CBRE."
+        }
+      ]
     },
     {
       "name": "CT Real Estate Group LLC",
@@ -1587,7 +2276,19 @@
         "social_urls": []
       },
       "relevant": true,
-      "rationale": "Both provide commercial real estate investment, leasing, development, and asset-management solutions for property investors and owners."
+      "rationale": "Commercial real estate investment firm offering leasing, acquisition, asset management, and development services comparable to CBRE's real estate services business.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Commercial real estate investment firm offering leasing, acquisition, asset management, and development services comparable to CBRE's real estate services business."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Commercial real estate investment and services firm offering leasing strategy and asset management, matching CBRE's core CRE services model."
+        }
+      ]
     },
     {
       "name": "Business Facilities",
@@ -1619,7 +2320,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Business Facilities is primarily a media and site-selection information platform, not a commercial real estate services, facilities, valuation, or asset-management firm."
+      "rationale": "Media and site-selection information platform, not a commercial real estate services, leasing, facilities, valuation, or asset-management provider.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Media and site-selection information platform, not a commercial real estate services, leasing, facilities, valuation, or asset-management provider."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Media publication covering site selection and economic development; an industry content outlet, not a commercial real estate services competitor or comparable."
+        }
+      ]
     },
     {
       "name": "6 Summit Partners",
@@ -1643,7 +2356,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide commercial real estate brokerage and advisory services to corporate occupiers and investors seeking portfolio and transaction support."
+      "rationale": "Commercial real estate brokerage and advisory services for corporate occupiers and investors directly overlap CBRE's leasing and advisory business.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Commercial real estate brokerage and advisory services for corporate occupiers and investors directly overlap CBRE's leasing and advisory business."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Commercial real estate brokerage and advisory (occupier consulting, investor advisory) matching CBRE's core services and corporate client market."
+        }
+      ]
     },
     {
       "name": "MarketRelease.com",
@@ -1665,7 +2390,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "MarketRelease is a rental-services referral marketplace, not an integrated commercial real estate advisory, leasing, facilities, valuation, and investment firm."
+      "rationale": "Rental-services lead-generation marketplace for landlords, not a commercial real estate brokerage, facilities, valuation, or asset-management firm.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Rental-services lead-generation marketplace for landlords, not a commercial real estate brokerage, facilities, valuation, or asset-management firm."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Lead-gen marketplace matching landlords/tenants with rental service pros; not a commercial real estate services firm, different product, market, and model."
+        }
+      ]
     },
     {
       "name": "RealEstatePro",
@@ -1688,7 +2425,19 @@
         "social_urls": []
       },
       "relevant": true,
-      "rationale": "Both provide commercial leasing, property management, valuations, and investment advisory services to property owners and investors."
+      "rationale": "Offers commercial leasing, property management, and valuation services overlapping CBRE's core commercial real-estate advisory and management business.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Offers commercial leasing, property management, and valuation services overlapping CBRE's core commercial real-estate advisory and management business."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Real estate services firm offering commercial leasing, property management, and valuations\u2014directly comparable service lines to CBRE's core business."
+        }
+      ]
     },
     {
       "name": "Partners Real Estate",
@@ -1716,7 +2465,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide commercial real estate brokerage, property and asset management, investment, and advisory services to commercial property owners and investors."
+      "rationale": "Commercial real estate firm offering leasing-adjacent brokerage, property management, advisory, asset sales, and investment services, directly comparable to CBRE.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Commercial real estate firm offering leasing-adjacent brokerage, property management, advisory, asset sales, and investment services, directly comparable to CBRE."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "National commercial real estate services firm offering brokerage, property management, and investment advisory \u2014 direct competitor/comparable to CBRE on product, market, and model."
+        }
+      ]
     },
     {
       "name": "Commercial Property Spotlight, Inc.",
@@ -1739,7 +2500,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Candidate is a commercial-property listing software platform for agents, not a commercial real estate services, facilities, valuation, or asset-management firm."
+      "rationale": "Commercial-property listing software for agents, not a commercial real-estate services, brokerage, facilities, valuation, or asset-management firm like CBRE.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Commercial-property listing software for agents, not a commercial real-estate services, brokerage, facilities, valuation, or asset-management firm like CBRE."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Candidate is a CRE listing-marketing platform for agents, not a brokerage/services firm; tool provider, not a competitor or comparable to CBRE."
+        }
+      ]
     },
     {
       "name": "Cushman & Wakefield",
@@ -1773,7 +2546,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both are global commercial real estate services firms offering leasing, tenant representation, asset services, valuation, and development support to property stakeholders."
+      "rationale": "Direct commercial real estate services competitor, offering leasing, property transactions, valuation-related advisory, asset services, and project support to similar clients.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Direct commercial real estate services competitor, offering leasing, property transactions, valuation-related advisory, asset services, and project support to similar clients."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Global commercial real estate services firm offering leasing, asset management, and capital markets \u2014 direct competitor to CBRE on all axes."
+        }
+      ]
     },
     {
       "name": "Vestmo",
@@ -1796,7 +2581,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Vestmo provides general investment research and strategy tools, not commercial real estate leasing, facilities, valuation, or property asset-management services."
+      "rationale": "Investment research and strategy platform, not commercial real estate brokerage, property services, valuation, or facilities/asset management.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Investment research and strategy platform, not commercial real estate brokerage, property services, valuation, or facilities/asset management."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Vestmo is an investment research/analytics platform ranking asset markets, not a commercial real estate services firm; no shared product or market."
+        }
+      ]
     },
     {
       "name": "A.CRE",
@@ -1832,7 +2629,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "A.CRE sells commercial real estate modeling education and tools, not CBRE\u2019s brokerage, facilities, valuation, or asset-management services."
+      "rationale": "A.CRE provides commercial-real-estate modeling education and templates, not property brokerage, facilities, valuation, or asset-management services.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "A.CRE provides commercial-real-estate modeling education and templates, not property brokerage, facilities, valuation, or asset-management services."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "A.CRE sells real estate financial-modeling education and tools, not commercial real estate services, leasing, or investment management like CBRE."
+        }
+      ]
     },
     {
       "name": "Waltre",
@@ -1855,7 +2664,19 @@
         "social_urls": []
       },
       "relevant": true,
-      "rationale": "Both serve commercial landlords and tenants seeking to market, discover, and execute property leases, though Waltre delivers this through a software platform."
+      "rationale": "Commercial real estate leasing platform serving tenants and landlords, directly comparable to CBRE's leasing services despite a software-led model.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Commercial real estate leasing platform serving tenants and landlords, directly comparable to CBRE's leasing services despite a software-led model."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both operate in commercial real estate leasing, connecting tenants and landlords for the same job; a leasing marketplace is a comparable/competitor to CBRE's leasing business."
+        }
+      ]
     },
     {
       "name": "Commercial Real Estate Exchange, Inc.",
@@ -1884,8 +2705,20 @@
           "https://www.youtube.com/c/CREXi/featured"
         ]
       },
-      "relevant": false,
-      "rationale": "Crexi is a property listing marketplace and broker tool, while CBRE primarily provides brokerage, facilities, valuation, and investment-management services."
+      "relevant": true,
+      "rationale": "Crexi is a commercial real estate marketplace for property sales and leasing, overlapping CBRE's brokerage, leasing, and investment-sales services.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Crexi is a commercial real estate marketplace for property sales and leasing, overlapping CBRE's brokerage, leasing, and investment-sales services."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Crexi operates in commercial real estate transactions\u2014buying, selling, leasing, broker tools, market data\u2014overlapping CBRE's core brokerage/leasing business as a genuine comparable."
+        }
+      ]
     },
     {
       "name": "DevelopmentCentre.com",
@@ -1913,7 +2746,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "DevelopmentCentre.com is a consumer-oriented marketplace for home-service professionals, not a commercial real estate services, leasing, valuation, or asset-management firm."
+      "rationale": "Consumer marketplace matching homeowners with local property-service professionals, not a commercial real estate services and investment firm.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Consumer marketplace matching homeowners with local property-service professionals, not a commercial real estate services and investment firm."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "B2C marketplace matching homeowners with local contractors; not commercial real estate services, leasing, valuation, or asset management comparable to CBRE."
+        }
+      ]
     },
     {
       "name": "Commonwealth",
@@ -1942,7 +2787,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide commercial real estate advisory, leasing, property management, asset management, and investment services to property owners and investors."
+      "rationale": "Commercial real estate advisory firm offering the same leasing, property, asset, investment, and project management services as CBRE.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Commercial real estate advisory firm offering the same leasing, property, asset, investment, and project management services as CBRE."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Full-service commercial real estate advisory: sales/leasing, property, asset, and investment management \u2014 same services and market as CBRE."
+        }
+      ]
     },
     {
       "name": "Apollo Investment Group",
@@ -1968,7 +2825,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide commercial real estate brokerage, leasing, property management, and transaction services to property owners and investors."
+      "rationale": "Commercial real estate brokerage providing leasing, sales, property management, and transaction services directly comparable to CBRE's core real estate-services business.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Commercial real estate brokerage providing leasing, sales, property management, and transaction services directly comparable to CBRE's core real estate-services business."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are commercial real estate services firms offering brokerage, leasing, and property management across office, retail, and industrial sectors \u2014 same product and market."
+        }
+      ]
     },
     {
       "name": "Commercialsuite.com",
@@ -2001,7 +2870,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Cryogenic temperature-monitoring IoT for laboratories does not overlap CBRE\u2019s commercial real estate services or serve the same purchasing need."
+      "rationale": "Cryogenic laboratory temperature-monitoring hardware serves healthcare and labs, not commercial real estate leasing, facilities, valuation, or asset management.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Cryogenic laboratory temperature-monitoring hardware serves healthcare and labs, not commercial real estate leasing, facilities, valuation, or asset management."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "IoT cryogenic temperature monitoring for laboratories, not commercial real estate services; no product, market, or model overlap with CBRE."
+        }
+      ]
     },
     {
       "name": "Real Estate Pro Desk",
@@ -2030,7 +2911,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Real Estate Pro Desk sells education and membership resources to agents, not commercial property leasing, valuation, facilities, or asset-management services."
+      "rationale": "Membership training and resources for agents/property managers, not commercial real estate brokerage, valuation, facilities, or investment services.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Membership training and resources for agents/property managers, not commercial real estate brokerage, valuation, facilities, or investment services."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "CBRE provides commercial real estate services (leasing, facilities, valuation); candidate is an education/membership platform training agents, not a CRE services competitor."
+        }
+      ]
     },
     {
       "name": "RealWealth",
@@ -2063,7 +2956,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "RealWealth is a consumer property-investment education and rental marketplace, not a commercial real estate services firm serving corporate property and facilities buyers."
+      "rationale": "RealWealth is a consumer-focused residential investment education and referral platform, not a commercial real estate services, leasing, or facilities-management peer.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "RealWealth is a consumer-focused residential investment education and referral platform, not a commercial real estate services, leasing, or facilities-management peer."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "CBRE provides B2B commercial real estate services; RealWealth is a B2C platform educating individual investors on rentals/syndications\u2014different product, market, and model."
+        }
+      ]
     },
     {
       "name": "BCREN",
@@ -2090,7 +2995,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "BCREN is a professional networking and DEI nonprofit, not a provider of commercial real estate leasing, valuation, facilities, or asset-management services."
+      "rationale": "BCREN is a professional nonprofit network for commercial real estate members, not a commercial real estate services, leasing, or investment firm.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "BCREN is a professional nonprofit network for commercial real estate members, not a commercial real estate services, leasing, or investment firm."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "BCREN is a nonprofit networking/DEI organization for Black CRE professionals, not a commercial real estate services firm competing with or comparable to CBRE."
+        }
+      ]
     },
     {
       "name": "Integrity Commercial Real Estate",
@@ -2114,7 +3031,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide commercial real estate investment, property advisory, and asset optimization services to owners and investors."
+      "rationale": "Commercial real estate investment, property services, and asset optimization overlap directly with CBRE's commercial real estate services and investment business.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Commercial real estate investment, property services, and asset optimization overlap directly with CBRE's commercial real estate services and investment business."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both provide commercial real estate investment and services across property types; same market and product, size difference ignored."
+        }
+      ]
     },
     {
       "name": "Rentalresort.com",
@@ -2137,7 +3066,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Rentalresort.com is a landlord-tenant services marketplace, not a commercial real estate services and investment firm offering CBRE-like capabilities."
+      "rationale": "Marketplace connecting landlords and tenants to rental-service professionals, not a commercial real estate brokerage, investment, or facilities-management peer.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Marketplace connecting landlords and tenants to rental-service professionals, not a commercial real estate brokerage, investment, or facilities-management peer."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "CBRE is a commercial real estate services firm; candidate is a residential rental marketplace matching landlords with service pros, not a competitor or comparable."
+        }
+      ]
     },
     {
       "name": "Canadian Apartment Properties REIT",
@@ -2167,7 +3108,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "CAPREIT primarily owns and rents residential properties, while CBRE provides commercial real estate services to property owners, investors, and occupiers."
+      "rationale": "CAPREIT is a residential property-owning REIT and landlord, not a commercial real estate services, advisory, or facilities-management peer of CBRE.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "CAPREIT is a residential property-owning REIT and landlord, not a commercial real estate services, advisory, or facilities-management peer of CBRE."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "CAPREIT is a residential landlord REIT owning apartments, not a commercial real estate services firm; more like a potential client than a peer."
+        }
+      ]
     },
     {
       "name": "A.D. Real Estate Investors, Inc.",
@@ -2191,11 +3144,21 @@
           "https://www.linkedin.com/company/ad-real-estate-investors/"
         ]
       },
-      "relevant": false,
-      "rationale": "ADRE is primarily a localized property investor/owner-operator, not a commercial real estate services firm serving external occupiers and investors like CBRE."
+      "relevant": true,
+      "rationale": "Commercial real estate investor and property manager offering leasing and asset management, overlapping CBRE's core services despite a narrower owner-operator focus.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Commercial real estate investor and property manager offering leasing and asset management, overlapping CBRE's core services despite a narrower owner-operator focus."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are real estate investment and services firms offering leasing, property/asset management; same product and market, smaller regional scale is irrelevant."
+        }
+      ]
     }
   ],
-  "error": null,
-  "relevant_count_at_25": 13,
-  "precision_at_25": 52.0
+  "error": null
 }

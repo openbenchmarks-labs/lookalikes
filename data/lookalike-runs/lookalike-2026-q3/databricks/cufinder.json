@@ -19,8 +19,8 @@
   "cost_usd": null,
   "duplicates_removed": 0,
   "max_results": 10,
-  "judge_model": "gpt-5.6",
-  "judged_at": "2026-07-27T06:53:48Z",
+  "judge_model": "majority(n=3): claude-opus-5,gpt-5.6-terra,kimi-k3",
+  "judged_at": "2026-08-10T19:59:53Z",
   "candidates": [
     {
       "name": "anthropic",
@@ -36,7 +36,19 @@
         "confidence_level": 94
       },
       "relevant": false,
-      "rationale": "Anthropic provides foundation models and assistants, while Databricks is primarily a data, analytics, and ML platform; their offerings are generally complementary."
+      "rationale": "Anthropic primarily sells foundation models and AI assistants, while Databricks is a data, analytics, and AI development platform; it is more partner/supplier than peer.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Anthropic primarily sells foundation models and AI assistants, while Databricks is a data, analytics, and AI development platform; it is more partner/supplier than peer."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Foundation-model/AI-assistant maker, not a data engineering and analytics platform; potential model supplier rather than peer competitor to Databricks."
+        }
+      ]
     },
     {
       "name": "atlassian",
@@ -52,7 +64,19 @@
         "confidence_level": 94
       },
       "relevant": false,
-      "rationale": "Atlassian provides team collaboration and work-management tools, not a data engineering, analytics, machine learning, or enterprise AI platform."
+      "rationale": "Atlassian sells team collaboration and work-management software, not a data engineering, analytics, machine-learning, or enterprise AI platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Atlassian sells team collaboration and work-management software, not a data engineering, analytics, machine-learning, or enterprise AI platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Atlassian sells team collaboration/project-management software (Jira, Confluence), not a data/AI platform; different product and buyer job-to-be-done."
+        }
+      ]
     },
     {
       "name": "datadog",
@@ -68,7 +92,19 @@
         "confidence_level": 94
       },
       "relevant": false,
-      "rationale": "Datadog provides cloud observability for DevOps, while Databricks provides data engineering, analytics, and AI; they address different core jobs and buyers."
+      "rationale": "Datadog is an observability platform for DevOps, not a data engineering, analytics, machine-learning, or enterprise AI platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Datadog is an observability platform for DevOps, not a data engineering, analytics, machine-learning, or enterprise AI platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Datadog is infrastructure observability/monitoring for DevOps; Databricks is a data engineering, analytics, and ML/AI platform. Different jobs and buyers."
+        }
+      ]
     },
     {
       "name": "google",
@@ -84,7 +120,24 @@
         "confidence_level": 94
       },
       "relevant": false,
-      "rationale": "Google\u2019s primary business is search and advertising; Google Cloud overlaps Databricks, but the overall company is not the same kind of vendor."
+      "rationale": "Diversified tech conglomerate whose primary business is search/ads; data/AI platform is not its primary product, so not a true Databricks lookalike.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Google Cloud's BigQuery, Dataproc, and Vertex AI compete in enterprise data engineering, analytics, machine learning, and AI platforms."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Diversified tech conglomerate whose primary business is search/ads; data/AI platform is not its primary product, so not a true Databricks lookalike."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "Google is a diversified consumer/ads/cloud conglomerate, not a comparable data & AI platform vendor peer."
+        }
+      ]
     },
     {
       "name": "microsoft",
@@ -100,7 +153,19 @@
         "confidence_level": 94
       },
       "relevant": true,
-      "rationale": "Microsoft\u2019s Azure data and AI services compete with Databricks for enterprise data engineering, analytics, machine learning, and AI workloads."
+      "rationale": "Microsoft\u2019s Azure and Fabric offerings provide enterprise data engineering, analytics, machine learning, and AI platforms, directly overlapping Databricks.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Microsoft\u2019s Azure and Fabric offerings provide enterprise data engineering, analytics, machine learning, and AI platforms, directly overlapping Databricks."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Microsoft's Azure data and AI platform (Fabric, Synapse, Azure ML) directly competes with Databricks' data engineering, analytics, and ML platform."
+        }
+      ]
     },
     {
       "name": "nvidia",
@@ -116,7 +181,19 @@
         "confidence_level": 94
       },
       "relevant": false,
-      "rationale": "NVIDIA primarily provides accelerated computing hardware and infrastructure, complementing rather than replacing Databricks\u2019 data engineering, analytics, and ML software platform."
+      "rationale": "NVIDIA primarily sells accelerated-computing hardware and infrastructure; it is a supplier to AI platforms like Databricks, not a directly comparable data platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "NVIDIA primarily sells accelerated-computing hardware and infrastructure; it is a supplier to AI platforms like Databricks, not a directly comparable data platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Nvidia is a GPU/accelerated-computing hardware company supplying infrastructure, not a data engineering/analytics/ML platform peer like Databricks."
+        }
+      ]
     },
     {
       "name": "openai",
@@ -132,7 +209,19 @@
         "confidence_level": 94
       },
       "relevant": false,
-      "rationale": "OpenAI primarily provides foundation models and APIs; Databricks primarily provides enterprise data engineering, analytics, and ML infrastructure, serving distinct core jobs."
+      "rationale": "Both provide enterprise AI capabilities, but OpenAI is primarily a foundation-model/API provider rather than a unified data and AI platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Both provide enterprise AI capabilities, but OpenAI is primarily a foundation-model/API provider rather than a unified data and AI platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "OpenAI builds foundation models, not a data engineering/analytics platform; complementary AI provider, not a competitor or comparable to Databricks."
+        }
+      ]
     },
     {
       "name": "salesforce",
@@ -148,7 +237,19 @@
         "confidence_level": 94
       },
       "relevant": false,
-      "rationale": "Salesforce is primarily a CRM and customer-app platform, not a data engineering, analytics, and machine-learning platform evaluated for the same core job."
+      "rationale": "Salesforce primarily sells CRM and customer-engagement applications, not a data engineering, analytics, and AI platform comparable to Databricks.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Salesforce primarily sells CRM and customer-engagement applications, not a data engineering, analytics, and AI platform comparable to Databricks."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Salesforce's primary product is CRM/customer apps, not a data engineering, analytics, and ML platform; overlapping AI/data messaging doesn't substitute."
+        }
+      ]
     },
     {
       "name": "snowflake",
@@ -164,7 +265,19 @@
         "confidence_level": 94
       },
       "relevant": true,
-      "rationale": "Snowflake directly overlaps Databricks in enterprise data engineering, analytics, data science, AI, and cloud data-platform workloads for the same buyers."
+      "rationale": "Snowflake directly competes as an enterprise cloud data and AI platform for warehousing, engineering, analytics, data science, and data applications.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Snowflake directly competes as an enterprise cloud data and AI platform for warehousing, engineering, analytics, data science, and data applications."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Direct competitor: cloud data platform for warehousing, engineering, analytics, and AI/ML workloads \u2014 same product, market, and model."
+        }
+      ]
     },
     {
       "name": "stripe",
@@ -180,7 +293,20 @@
         "confidence_level": 94
       },
       "relevant": false,
-      "rationale": "Stripe provides payments and financial infrastructure, not enterprise data engineering, analytics, or AI platforms; buyers and jobs-to-be-done differ."
+      "rationale": "Stripe provides payments and financial infrastructure, not data engineering, analytics, machine learning, or enterprise AI platforms.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Stripe provides payments and financial infrastructure, not data engineering, analytics, machine learning, or enterprise AI platforms."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Stripe is payments/financial infrastructure; Databricks is a data and AI analytics platform. Different products, buyers, and business models."
+        }
+      ]
     }
-  ]
+  ],
+  "error": null
 }

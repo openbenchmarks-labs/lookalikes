@@ -9,16 +9,18 @@
   "k": 100,
   "relevant_count": 33,
   "precision_at_k": 33.0,
-  "relevant_count_at_10": 4,
+  "relevant_count_at_10": 3,
+  "relevant_count_at_25": 10,
   "relevant_count_at_100": 33,
-  "precision_at_10": 40.0,
+  "precision_at_10": 30.0,
+  "precision_at_25": 40.0,
   "precision_at_100": 33.0,
   "latency_ms": 1015,
   "cost_usd": null,
   "duplicates_removed": 7,
   "max_results": null,
-  "judge_model": "gpt-5.6",
-  "judged_at": "2026-07-27T03:44:12Z",
+  "judge_model": "majority(n=3): claude-opus-5,gpt-5.6-terra,kimi-k3",
+  "judged_at": "2026-08-10T19:45:49Z",
   "candidates": [
     {
       "name": "Grab",
@@ -59,7 +61,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "The unrelated cabinetry domain and mixed social profiles indicate a misattributed duplicate of Grab, not a distinct lookalike company."
+      "rationale": "Mismatched cabinet-maker domain and mixed social profiles indicate a duplicate/misattributed record, not a distinct lookalike company.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Mismatched cabinet-maker domain and mixed social profiles indicate a duplicate/misattributed record, not a distinct lookalike company."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Duplicate of the seed itself: description and social links are Grab's own (Grab Indonesia), with a mismatched cabinet-maker domain \u2014 not a lookalike."
+        }
+      ]
     },
     {
       "name": "2C2P",
@@ -91,8 +105,25 @@
           "https://x.com/https://x.com/2c2p"
         ]
       },
-      "relevant": true,
-      "rationale": "Both provide Southeast Asian merchants with digital payment acceptance, wallet, processing, and settlement services for the same commerce payment needs."
+      "relevant": false,
+      "rationale": "B2B payment processor only; Grab's core is ride-hailing/delivery marketplace super-app. Payments overlap is one weak slice, like Shopify vs payment processor.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Southeast Asian payments and wallet platform comparable to Grab\u2019s payments, financial-services, and merchant-services businesses."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "B2B payment processor only; Grab's core is ride-hailing/delivery marketplace super-app. Payments overlap is one weak slice, like Shopify vs payment processor."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "B2B payment processor only; lacks ride-hailing/delivery super-app marketplace model of seed.', per payment-processor exclusion."
+        }
+      ]
     },
     {
       "name": "3Efreet",
@@ -125,7 +156,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "3Efreet\u2019s app-based, on-demand courier marketplace overlaps Grab\u2019s delivery services and serves individuals and businesses needing local pickup and drop-off."
+      "rationale": "On-demand delivery marketplace with consumer ordering and rider partners, comparable to Grab's delivery platform despite lacking its broader super-app scope.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "On-demand delivery marketplace with consumer ordering and rider partners, comparable to Grab's delivery platform despite lacking its broader super-app scope."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "On-demand delivery marketplace with gig rider network and consumer app, matching Grab's delivery arm on product and business model."
+        }
+      ]
     },
     {
       "name": "Deliveryforyou",
@@ -150,7 +193,24 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide delivery platforms for merchants, with restaurants and retailers potentially evaluating either for last-mile delivery and logistics management."
+      "rationale": "Deliveryforyou operates a delivery platform for restaurants, supermarkets, and e-commerce, overlapping Grab's on-demand delivery and merchant-services business.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Deliveryforyou operates a delivery platform for restaurants, supermarkets, and e-commerce, overlapping Grab's on-demand delivery and merchant-services business."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "B2B last-mile delivery logistics service for businesses, not a consumer super-app or delivery marketplace peer to Grab; supplier-like rather than competitor."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "On-demand delivery platform for restaurants/retail, overlapping Grab's food/parcel delivery marketplace business."
+        }
+      ]
     },
     {
       "name": "USER",
@@ -174,7 +234,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "USER is a digital gift-card marketplace, not a ride-hailing, delivery, payments, or merchant-services super-app serving the same job to be done."
+      "rationale": "Digital gift-card marketplace, not an on-demand ride-hailing, delivery, payments, or super-app platform comparable to Grab.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Digital gift-card marketplace, not an on-demand ride-hailing, delivery, payments, or super-app platform comparable to Grab."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Digital gift-card rewards platform; no ride-hailing, delivery marketplace, or super-app model comparable to Grab."
+        }
+      ]
     },
     {
       "name": "Grabit",
@@ -197,7 +269,19 @@
         "social_urls": []
       },
       "relevant": true,
-      "rationale": "Grabit similarly combines on-demand ride-hailing, parcel delivery, local shopping, payments, and merchant/driver services in a consumer super-app."
+      "rationale": "Multi-service platform for ride booking, local delivery, payments, drivers, and merchants closely matches Grab's super-app marketplace model.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Multi-service platform for ride booking, local delivery, payments, drivers, and merchants closely matches Grab's super-app marketplace model."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Ride-hailing, parcel delivery, and local shopping app with payments and driver marketplace \u2014 same product, market, and business model as Grab, just smaller."
+        }
+      ]
     },
     {
       "name": "Pick Network",
@@ -224,7 +308,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Pick Network provides parcel-locker infrastructure, not an on-demand ride-hailing, delivery, payments, or super-app marketplace evaluated for the same job."
+      "rationale": "Parcel locker infrastructure for e-commerce logistics, not an on-demand ride-hailing, delivery marketplace, payments, or super-app competitor.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Parcel locker infrastructure for e-commerce logistics, not an on-demand ride-hailing, delivery marketplace, payments, or super-app competitor."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Parcel-locker infrastructure for e-commerce logistics, not an on-demand ride-hailing/delivery marketplace or super-app; delivery adjacency alone is too weak."
+        }
+      ]
     },
     {
       "name": "Pelago by Singapore Airlines",
@@ -254,7 +350,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Pelago is a travel-activities booking platform, not an on-demand ride-hailing, delivery, payments, or merchant-services super-app."
+      "rationale": "Pelago is a travel-experiences booking platform, not an on-demand ride-hailing, delivery, payments, or super-app marketplace comparable to Grab.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Pelago is a travel-experiences booking platform, not an on-demand ride-hailing, delivery, payments, or super-app marketplace comparable to Grab."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Pelago books travel activities and experiences; Grab is a ride-hailing, delivery, and fintech super-app. Different product, market, and business model."
+        }
+      ]
     },
     {
       "name": "InsureGuru",
@@ -280,7 +388,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "InsureGuru is an insurance comparison and brokerage platform, not a ride-hailing, delivery, payments, or merchant-services super-app."
+      "rationale": "Insurance comparison and brokerage platform, not an on-demand ride-hailing, delivery, payments, or super-app marketplace.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Insurance comparison and brokerage platform, not an on-demand ride-hailing, delivery, payments, or super-app marketplace."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Insurance comparison/broker platform; not a super-app, ride-hailing, delivery, or payments peer. Overlaps only Grab's minor insurance arm, not its core business."
+        }
+      ]
     },
     {
       "name": "Enterprise Singapore",
@@ -309,7 +429,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Enterprise Singapore is a government business-support agency, not an on-demand ride-hailing, delivery, payments, or merchant-services super-app."
+      "rationale": "Government business-support agency, not an on-demand ride-hailing, delivery, payments, or super-app marketplace.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Government business-support agency, not an on-demand ride-hailing, delivery, payments, or super-app marketplace."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Government agency supporting businesses, not a ride-hailing/delivery/payments super-app; no product, market, or model resemblance to Grab."
+        }
+      ]
     },
     {
       "name": "ManyChef",
@@ -340,7 +472,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "ManyChef\u2019s food-ordering marketplace with delivery and pickup overlaps Grab\u2019s food-delivery platform and serves the same diners and food merchants."
+      "rationale": "Food-ordering marketplace connecting consumers with independent kitchens for delivery or pickup, comparable to Grab's food-delivery service.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Food-ordering marketplace connecting consumers with independent kitchens for delivery or pickup, comparable to Grab's food-delivery service."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Food-ordering and delivery marketplace in Singapore, directly comparable to GrabFood's delivery marketplace business and buyer market."
+        }
+      ]
     },
     {
       "name": "EasyParcel SG",
@@ -374,8 +518,20 @@
           "https://x.com/easyparcel"
         ]
       },
-      "relevant": true,
-      "rationale": "Both provide online parcel-delivery booking and tracking for consumers and merchants, creating overlap with Grab\u2019s delivery services and users."
+      "relevant": false,
+      "rationale": "EasyParcel is a parcel-shipping aggregator, not an on-demand ride-hailing and multi-service super-app comparable to Grab.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "EasyParcel is a parcel-shipping aggregator, not an on-demand ride-hailing and multi-service super-app comparable to Grab."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Parcel-courier booking platform for e-commerce shipping; not a ride-hailing/delivery super-app or on-demand marketplace comparable to Grab."
+        }
+      ]
     },
     {
       "name": "Giftano",
@@ -403,7 +559,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Giftano is a gift marketplace, not a ride-hailing, delivery, payments, or super-app platform serving the same core jobs and buyers."
+      "rationale": "Giftano is a gift marketplace, not an on-demand ride-hailing, delivery, payments, or super-app platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Giftano is a gift marketplace, not an on-demand ride-hailing, delivery, payments, or super-app platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Giftano is a gifting e-commerce platform (gift cards, flowers, hampers), not ride-hailing, delivery, or payments \u2014 no product or market resemblance to Grab."
+        }
+      ]
     },
     {
       "name": "Deliveroo",
@@ -434,7 +602,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Deliveroo\u2019s on-demand food and grocery delivery marketplace overlaps Grab\u2019s delivery platform and serves the same consumers, merchants, and couriers."
+      "rationale": "Deliveroo is an on-demand delivery marketplace, directly comparable to Grab's food and grocery delivery services, though it lacks Grab's broader mobility and fintech scope.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Deliveroo is an on-demand delivery marketplace, directly comparable to Grab's food and grocery delivery services, though it lacks Grab's broader mobility and fintech scope."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Deliveroo is an on-demand food/grocery delivery marketplace, directly matching Grab's delivery arm; genuine comparable on product, market, and model."
+        }
+      ]
     },
     {
       "name": "Benefit Share",
@@ -459,7 +639,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Benefit Share is a consumer deals and rewards app, not an on-demand ride-hailing, delivery, payments, or financial-services platform."
+      "rationale": "Local deals and rewards app, not an on-demand ride-hailing, delivery, payments, or super-app platform comparable to Grab.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Local deals and rewards app, not an on-demand ride-hailing, delivery, payments, or super-app platform comparable to Grab."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Local deals/voucher rewards app; no ride-hailing, delivery, payments, or super-app marketplace model comparable to Grab."
+        }
+      ]
     },
     {
       "name": "EveryDeal Hub",
@@ -483,7 +675,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "EveryDeal Hub is a travel-booking aggregator, not an on-demand ride-hailing, delivery, payments, or merchant-services super-app."
+      "rationale": "Travel booking deals, hotels, and tours are not an on-demand ride-hailing, delivery, payments, or super-app platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Travel booking deals, hotels, and tours are not an on-demand ride-hailing, delivery, payments, or super-app platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Travel booking aggregator (flights, hotels, tours); not an on-demand ride-hailing/delivery/payments marketplace or super-app comparable to Grab."
+        }
+      ]
     },
     {
       "name": "Takeaway Voucher Ltd.",
@@ -507,7 +711,19 @@
         "social_urls": []
       },
       "relevant": true,
-      "rationale": "Both operate consumer-facing local food-ordering platforms connecting diners with independent restaurants, serving overlapping consumers and merchant partners."
+      "rationale": "Mobile platform connects consumers with local takeaways for ordering and offers, resembling Grab\u2019s food-delivery marketplace component.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Mobile platform connects consumers with local takeaways for ordering and offers, resembling Grab\u2019s food-delivery marketplace component."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Food-ordering marketplace connecting consumers to local takeaways, directly comparable to Grab's food-delivery vertical (GrabFood)."
+        }
+      ]
     },
     {
       "name": "Yofoodie",
@@ -532,7 +748,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both operate consumer food-ordering and delivery marketplaces connecting restaurants, customers, and riders, with overlapping merchant-service and delivery use cases."
+      "rationale": "Food-ordering and delivery marketplace serving consumers, restaurants, and riders; directly comparable to Grab\u2019s delivery vertical despite narrower scope.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Food-ordering and delivery marketplace serving consumers, restaurants, and riders; directly comparable to Grab\u2019s delivery vertical despite narrower scope."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Food-delivery ordering marketplace matches Grab's core GrabFood arm on product and business model; a direct comparable in Grab's space."
+        }
+      ]
     },
     {
       "name": "Optimise Media Group Limited",
@@ -562,7 +790,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Optimise is an affiliate marketing platform, not a consumer super-app offering ride-hailing, delivery, payments, and related marketplace services."
+      "rationale": "Affiliate marketing platform for brands and publishers, not an on-demand ride-hailing, delivery, payments, or consumer super-app competitor.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Affiliate marketing platform for brands and publishers, not an on-demand ride-hailing, delivery, payments, or consumer super-app competitor."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Affiliate marketing platform; no resemblance to Grab's ride-hailing, delivery, or payments super-app business."
+        }
+      ]
     },
     {
       "name": "Metrobank",
@@ -590,7 +830,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Metrobank is a traditional bank, not a super-app offering ride-hailing, delivery, and integrated merchant marketplace services."
+      "rationale": "Metrobank is a traditional full-service bank; it lacks Grab\u2019s on-demand mobility, delivery, and super-app marketplace model.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Metrobank is a traditional full-service bank; it lacks Grab\u2019s on-demand mobility, delivery, and super-app marketplace model."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Metrobank is a traditional full-service bank, not a ride-hailing/delivery super-app; no genuine product or model resemblance to Grab."
+        }
+      ]
     },
     {
       "name": "Liwas",
@@ -614,7 +866,19 @@
         "social_urls": []
       },
       "relevant": true,
-      "rationale": "Liwas combines app-based taxi rides, food and grocery delivery, and parcel services, overlapping Grab\u2019s core super-app offerings and consumer use cases."
+      "rationale": "Liwas is a multi-service app combining ride-hailing, food/grocery delivery, parcels, shopping, and merchant selling, closely matching Grab\u2019s super-app model.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Liwas is a multi-service app combining ride-hailing, food/grocery delivery, parcels, shopping, and merchant selling, closely matching Grab\u2019s super-app model."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Multi-service app combining taxi/ride-hailing with food, grocery, and parcel delivery plus marketplace \u2014 same product and business model as Grab's super-app."
+        }
+      ]
     },
     {
       "name": "FindTheLoan",
@@ -642,7 +906,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "FindTheLoan is an SME loan-comparison marketplace, not a super-app offering ride-hailing, delivery, payments, and integrated financial services."
+      "rationale": "SME loan-comparison marketplace, not a ride-hailing, delivery, or broad super-app platform; limited fintech overlap is insufficient.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "SME loan-comparison marketplace, not a ride-hailing, delivery, or broad super-app platform; limited fintech overlap is insufficient."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Loan-comparison marketplace for MSMEs; only weakly overlaps Grab's lending arm, not a super-app, ride-hailing, delivery, or payments peer."
+        }
+      ]
     },
     {
       "name": "Pickup.ph",
@@ -669,7 +945,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Pickup.ph is a merchant storefront SaaS, not a consumer ride-hailing and delivery marketplace; its model and primary buyer proposition differ from Grab."
+      "rationale": "White-label ordering SaaS for retailers, not a consumer ride-hailing and delivery marketplace/super-app comparable to Grab.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "White-label ordering SaaS for retailers, not a consumer ride-hailing and delivery marketplace/super-app comparable to Grab."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Pickup.ph is B2B SaaS letting retailers build branded online stores; a merchant-tool supplier, not a consumer delivery/ride-hailing marketplace peer like Grab."
+        }
+      ]
     },
     {
       "name": "ShopeeFood",
@@ -697,7 +985,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "ShopeeFood\u2019s restaurant delivery marketplace directly overlaps GrabFood, serving the same consumers and restaurant merchants for on-demand meal ordering and fulfillment."
+      "rationale": "ShopeeFood operates an on-demand food-delivery marketplace, a core service offered by Grab, serving similar consumers and restaurant merchants.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "ShopeeFood operates an on-demand food-delivery marketplace, a core service offered by Grab, serving similar consumers and restaurant merchants."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Online food-delivery marketplace in Southeast Asia, directly competing with GrabFood, a core Grab super-app service."
+        }
+      ]
     },
     {
       "name": "Uber",
@@ -732,7 +1032,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Uber directly overlaps Grab in app-based ride-hailing and delivery, serving the same consumers, drivers, merchants, and business transportation buyers."
+      "rationale": "Direct competitor super-app: ride-hailing marketplace plus food delivery, serving urban riders, drivers, and merchants.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Direct competitor super-app: ride-hailing marketplace plus food delivery, serving urban riders, drivers, and merchants."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Uber matches Grab on ride-hailing marketplace, food delivery, and logistics \u2014 same product, market, and business model; direct global competitor."
+        }
+      ]
     },
     {
       "name": "Edge Insurance Brokers LLC",
@@ -762,7 +1074,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Edge is an insurance brokerage, not an on-demand ride-hailing, delivery, payments, or merchant-services super-app like Grab."
+      "rationale": "Insurance brokerage selling coverage and claims support, not an on-demand ride-hailing, delivery, payments, or super-app marketplace.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Insurance brokerage selling coverage and claims support, not an on-demand ride-hailing, delivery, payments, or super-app marketplace."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Insurance brokerage; no ride-hailing, delivery, payments, or super-app platform resemblance to Grab."
+        }
+      ]
     },
     {
       "name": "SMRT Corporation",
@@ -797,7 +1121,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "SMRT operates scheduled public transit, not an on-demand ride-hailing, delivery, payments, and merchant-services marketplace like Grab."
+      "rationale": "SMRT operates fixed-route public rail and buses, not an on-demand ride-hailing, delivery, payments, or super-app marketplace.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "SMRT operates fixed-route public rail and buses, not an on-demand ride-hailing, delivery, payments, or super-app marketplace."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Traditional public-transit operator (trains/buses), not an on-demand ride-hailing marketplace or super-app; analogous to car-rental example."
+        }
+      ]
     },
     {
       "name": "PWA Marketplace",
@@ -820,7 +1156,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "PWA Marketplace is an app discovery/distribution platform, not a ride-hailing, delivery, payments, or merchant-services super-app."
+      "rationale": "PWA app marketplace does not offer ride-hailing, delivery, payments, or an on-demand consumer-services marketplace.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "PWA app marketplace does not offer ride-hailing, delivery, payments, or an on-demand consumer-services marketplace."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "PWA Marketplace is a directory of progressive web apps; no overlap with Grab's ride-hailing, delivery, payments, or super-app model."
+        }
+      ]
     },
     {
       "name": "Geolah Pte. Ltd.",
@@ -848,7 +1196,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Geolah\u2019s on-demand ride-hailing and parcel-delivery marketplace overlaps Grab\u2019s core mobility and delivery offerings for the same consumers, drivers, and merchants."
+      "rationale": "Geolah operates an on-demand ride-booking and parcel-delivery mobility platform, directly comparable to Grab\u2019s core transportation marketplace.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Geolah operates an on-demand ride-booking and parcel-delivery mobility platform, directly comparable to Grab\u2019s core transportation marketplace."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Ride-hailing and parcel-delivery mobility app in Singapore, directly competing with Grab's core ride-hailing marketplace."
+        }
+      ]
     },
     {
       "name": "MemberBuy",
@@ -879,7 +1239,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "MemberBuy is a local loyalty and promotions platform, not a ride-hailing, delivery, payments, or financial-services super-app serving the same job."
+      "rationale": "Local merchant loyalty and deals app, not an on-demand ride-hailing, delivery, payments, and super-app marketplace comparable to Grab.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Local merchant loyalty and deals app, not an on-demand ride-hailing, delivery, payments, and super-app marketplace comparable to Grab."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "MemberBuy is a local loyalty-rewards/deals app, not a ride-hailing, delivery, or super-app platform; only a weak payments overlap with Grab."
+        }
+      ]
     },
     {
       "name": "OnDrive",
@@ -902,7 +1274,19 @@
         "social_urls": []
       },
       "relevant": true,
-      "rationale": "OnDrive is an on-demand ride-hailing marketplace connecting riders and drivers, directly overlapping Grab\u2019s core mobility offering and user job to be done."
+      "rationale": "On-demand ride-hailing marketplace connecting riders and drivers, directly comparable to Grab\u2019s core mobility service.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "On-demand ride-hailing marketplace connecting riders and drivers, directly comparable to Grab\u2019s core mobility service."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "On-demand ride-hailing marketplace connecting riders with drivers, directly competing with Grab's core mobility business on product and market."
+        }
+      ]
     },
     {
       "name": "Amazing Travels",
@@ -925,7 +1309,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Amazing Travels is a travel-booking agency/platform, not an on-demand ride-hailing, delivery, payments, or merchant-services super-app."
+      "rationale": "Travel booking agency/platform for flights and hotels, not an on-demand ride-hailing, delivery, payments, or super-app marketplace.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Travel booking agency/platform for flights and hotels, not an on-demand ride-hailing, delivery, payments, or super-app marketplace."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Travel booking agency for flights/hotels; no ride-hailing marketplace, delivery, or payments super-app resemblance to Grab."
+        }
+      ]
     },
     {
       "name": "Credit Advisor Pte Ltd",
@@ -948,7 +1344,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Credit Advisor is a financial-product comparison marketplace, not a super-app offering ride-hailing, delivery, payments, or directly comparable financial services."
+      "rationale": "Consumer financial-product comparison platform, not an on-demand mobility, delivery, payments, and merchant-services super-app.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Consumer financial-product comparison platform, not an on-demand mobility, delivery, payments, and merchant-services super-app."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Financial product comparison/lead-gen site, not a ride-hailing, delivery, or payments super-app; doesn't provide financial services like Grab, just compares others'."
+        }
+      ]
     },
     {
       "name": "JobXphere",
@@ -972,7 +1380,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "JobXphere is an employment marketplace, not a ride-hailing, delivery, payments, or merchant-services super-app; its users and jobs-to-be-done differ."
+      "rationale": "JobXphere is a job-search and career platform, unrelated to Grab's on-demand mobility, delivery, payments, and merchant-services super-app.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "JobXphere is a job-search and career platform, unrelated to Grab's on-demand mobility, delivery, payments, and merchant-services super-app."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Job-search platform in HR; no overlap with Grab's ride-hailing, delivery, or payments super-app on any axis."
+        }
+      ]
     },
     {
       "name": "Consumers Connect",
@@ -995,7 +1415,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Consumers Connect is a contests and consumer-engagement platform, not an on-demand ride-hailing, delivery, payments, or merchant-services super-app."
+      "rationale": "Consumer contests and survey engagement are unrelated to Grab\u2019s on-demand mobility, delivery, payments, and super-app marketplace services.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Consumer contests and survey engagement are unrelated to Grab\u2019s on-demand mobility, delivery, payments, and super-app marketplace services."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Consumer contests/giveaways/survey platform, unrelated to ride-hailing, delivery, or payments super-app."
+        }
+      ]
     },
     {
       "name": "Playbot Pro",
@@ -1022,7 +1454,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Playbot Pro is a B2B messaging automation tool, not a ride-hailing, delivery, payments, or merchant-services super-app serving the same job."
+      "rationale": "WhatsApp chatbot software for business engagement, not a ride-hailing, delivery, payments, or consumer super-app marketplace.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "WhatsApp chatbot software for business engagement, not a ride-hailing, delivery, payments, or consumer super-app marketplace."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "WhatsApp chatbot automation SaaS has no overlap with Grab's ride-hailing, delivery, and payments super-app on any axis."
+        }
+      ]
     },
     {
       "name": "Grab N Go Express",
@@ -1048,7 +1492,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Grab N Go Express sells packaged meals, not a ride-hailing, delivery, payments, or merchant-services super-app."
+      "rationale": "Freeze-dried meal retailer, not an on-demand ride-hailing, delivery, payments, or super-app platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Freeze-dried meal retailer, not an on-demand ride-hailing, delivery, payments, or super-app platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Freeze-dried meal retailer, not a ride-hailing/delivery marketplace super-app; name similarity only, no shared product or business model."
+        }
+      ]
     },
     {
       "name": "HudHud",
@@ -1073,7 +1529,19 @@
         "social_urls": []
       },
       "relevant": true,
-      "rationale": "HudHud similarly combines on-demand ride-hailing, food/grocery delivery, courier services, and integrated payments in a single mobility and delivery platform."
+      "rationale": "Multi-service app offering taxi rides, deliveries, groceries, payments, and merchant operations closely matches Grab's mobility-and-delivery super-app model.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Multi-service app offering taxi rides, deliveries, groceries, payments, and merchant operations closely matches Grab's mobility-and-delivery super-app model."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Multi-service delivery and mobility app offering ride-hailing, food/grocery delivery, and courier services \u2014 a direct Grab-style super-app comparable."
+        }
+      ]
     },
     {
       "name": "FWD Singapore Pte. Ltd.",
@@ -1103,7 +1571,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "FWD is an online insurance carrier, not a ride-hailing, delivery, payments, or merchant-services super-app serving the same user need."
+      "rationale": "FWD Singapore is an online insurer; it does not operate Grab's ride-hailing, delivery, payments, or merchant-services marketplace.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "FWD Singapore is an online insurer; it does not operate Grab's ride-hailing, delivery, payments, or merchant-services marketplace."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Online insurance carrier, not a super-app or marketplace; insurance is only a peripheral Grab offering, no shared core product or market."
+        }
+      ]
     },
     {
       "name": "SingPost",
@@ -1135,7 +1615,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "SingPost is a traditional postal and parcel carrier, not an on-demand ride-hailing, delivery, payments, or merchant-services super-app."
+      "rationale": "SingPost is a traditional postal and parcel-delivery operator, not an on-demand ride-hailing, delivery marketplace, payments, or super-app platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "SingPost is a traditional postal and parcel-delivery operator, not an on-demand ride-hailing, delivery marketplace, payments, or super-app platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Traditional postal/parcel carrier, not an on-demand ride-hailing/delivery super-app marketplace; no product or business-model resemblance to Grab."
+        }
+      ]
     },
     {
       "name": "Border Bank",
@@ -1164,7 +1656,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Border Bank is a traditional bank, not a super-app offering ride-hailing, delivery, and an integrated merchant-services ecosystem."
+      "rationale": "Border Bank is a traditional retail bank; it lacks Grab\u2019s on-demand ride-hailing, delivery marketplace, and super-app model.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Border Bank is a traditional retail bank; it lacks Grab\u2019s on-demand ride-hailing, delivery marketplace, and super-app model."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Traditional retail bank with no super-app, marketplace, or payments-platform model; only overlaps Grab's minor financial-services arm, like a car-rental vs Grab."
+        }
+      ]
     },
     {
       "name": "Grab3",
@@ -1187,7 +1691,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Grab3 is a clothing e-commerce store, not a ride-hailing, delivery, payments, or merchant-services super-app."
+      "rationale": "Grab3 is a clothing e-commerce store, not an on-demand ride-hailing, delivery, payments, or super-app platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Grab3 is a clothing e-commerce store, not an on-demand ride-hailing, delivery, payments, or super-app platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Online clothing store; no ride-hailing, delivery, payments, or super-app resemblance to Grab. Name similarity only."
+        }
+      ]
     },
     {
       "name": "Deliver Nearby",
@@ -1210,7 +1726,19 @@
         "social_urls": []
       },
       "relevant": true,
-      "rationale": "Both operate on-demand local delivery platforms connecting merchants or users with independent drivers, serving overlapping delivery and logistics needs."
+      "rationale": "Local on-demand delivery marketplace connecting merchants and independent drivers, comparable to Grab's delivery and merchant-services business.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Local on-demand delivery marketplace connecting merchants and independent drivers, comparable to Grab's delivery and merchant-services business."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "On-demand delivery marketplace connecting merchants with drivers mirrors Grab's delivery arm; same product, market, and two-sided marketplace model."
+        }
+      ]
     },
     {
       "name": "OnTrip",
@@ -1235,7 +1763,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "OnTrip is a travel-planning and booking companion, not an on-demand ride-hailing, delivery, payments, or merchant-services platform like Grab."
+      "rationale": "Travel-planning and booking companion, not an on-demand ride-hailing, delivery, payments, or multi-service marketplace comparable to Grab.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Travel-planning and booking companion, not an on-demand ride-hailing, delivery, payments, or multi-service marketplace comparable to Grab."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Travel itinerary/booking management app, not an on-demand ride-hailing or delivery marketplace; no shared product or business-model axis with Grab's super-app."
+        }
+      ]
     },
     {
       "name": "Movve",
@@ -1259,7 +1799,19 @@
         "social_urls": []
       },
       "relevant": true,
-      "rationale": "Movve directly overlaps Grab\u2019s core ride-hailing and delivery marketplace offerings, serving the same riders, senders, merchants, and drivers."
+      "rationale": "Ride-hailing and food/package delivery marketplace with driver network closely matches Grab\u2019s core mobility and delivery super-app services.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Ride-hailing and food/package delivery marketplace with driver network closely matches Grab\u2019s core mobility and delivery super-app services."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Ride-hailing, food, and package delivery app matching Grab's core product and marketplace model, just operating in Africa."
+        }
+      ]
     },
     {
       "name": "OoNt Services LTD",
@@ -1285,7 +1837,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "OoNt overlaps Grab\u2019s on-demand delivery and urban ride services, serving consumers seeking app-based local transport and commerce fulfillment."
+      "rationale": "On-demand delivery, logistics, and ride services resemble Grab\u2019s consumer mobility and delivery super-app model.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "On-demand delivery, logistics, and ride services resemble Grab\u2019s consumer mobility and delivery super-app model."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "On-demand delivery and ride-hailing marketplace app, matching Grab's core delivery and mobility marketplace model."
+        }
+      ]
     },
     {
       "name": "Task2bid",
@@ -1315,7 +1879,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Task2Bid brokers local freelance tasks, not ride-hailing or delivery; users would not evaluate it against Grab for the same job."
+      "rationale": "Task2Bid is a general task-services marketplace, not a ride-hailing, delivery, payments, or super-app platform comparable to Grab.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Task2Bid is a general task-services marketplace, not a ride-hailing, delivery, payments, or super-app platform comparable to Grab."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Task2Bid is a gig-task marketplace (TaskRabbit-style), not ride-hailing, delivery, or payments; different buyer need, not a Grab competitor or comparable."
+        }
+      ]
     },
     {
       "name": "Deliverect",
@@ -1341,7 +1917,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Deliverect provides restaurant order-management SaaS, not Grab\u2019s consumer ride-hailing and delivery marketplace; buyers use them for different jobs."
+      "rationale": "Deliverect sells B2B restaurant order-management software, not a consumer ride-hailing and delivery marketplace or super-app.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Deliverect sells B2B restaurant order-management software, not a consumer ride-hailing and delivery marketplace or super-app."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "B2B order-management SaaS for restaurants that integrates with delivery platforms \u2014 a supplier to the category, not a peer super-app/marketplace."
+        }
+      ]
     },
     {
       "name": "Paycon Technology Inc.",
@@ -1367,7 +1955,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Paycon provides retail order-picking and fulfillment software, not Grab\u2019s consumer ride-hailing, delivery marketplace, payments, or super-app model."
+      "rationale": "Retail order-picking and fulfillment software, not an on-demand ride-hailing, delivery marketplace, payments, or consumer super-app.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Retail order-picking and fulfillment software, not an on-demand ride-hailing, delivery marketplace, payments, or consumer super-app."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "B2B retail order-picking/fulfillment software; not a consumer super-app, ride-hailing, delivery marketplace, or payments peer of Grab."
+        }
+      ]
     },
     {
       "name": "Changi Airport",
@@ -1401,7 +2001,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Changi Airport operates airport facilities and traveler information services, not an on-demand ride-hailing, delivery, payments, or merchant-services super-app."
+      "rationale": "Changi Airport operates airport infrastructure and traveler amenities, not an on-demand ride-hailing, delivery, payments, or super-app marketplace.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Changi Airport operates airport infrastructure and traveler amenities, not an on-demand ride-hailing, delivery, payments, or super-app marketplace."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Changi Airport is an airport operator/travel info site, not a ride-hailing, delivery, or payments platform; no product or business-model overlap with Grab."
+        }
+      ]
     },
     {
       "name": "Good Doctor",
@@ -1433,7 +2045,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Good Doctor is a telehealth platform, not a ride-hailing, delivery, payments, or merchant-services super-app serving the same core job."
+      "rationale": "Telehealth platform in Indonesia; it does not offer Grab's core ride-hailing, delivery, payments, or broad on-demand super-app marketplace.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Telehealth platform in Indonesia; it does not offer Grab's core ride-hailing, delivery, payments, or broad on-demand super-app marketplace."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Telehealth platform for medical consultations; no overlap with Grab's ride-hailing, delivery, payments, or super-app marketplace model."
+        }
+      ]
     },
     {
       "name": "QBANK",
@@ -1461,7 +2085,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "QBANK is a traditional member-owned bank, not a super-app offering ride-hailing, delivery, and integrated merchant ecosystem services."
+      "rationale": "QBANK is a member-owned retail bank; it lacks Grab's on-demand ride-hailing, delivery marketplace, and super-app operating model.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "QBANK is a member-owned retail bank; it lacks Grab's on-demand ride-hailing, delivery marketplace, and super-app operating model."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Traditional member-owned retail bank offering loans, insurance, savings; lacks Grab's super-app marketplace model \u2014 only weak financial-services overlap."
+        }
+      ]
     },
     {
       "name": "Ubank",
@@ -1495,7 +2131,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Ubank is a traditional digital bank, not a super-app offering ride-hailing, delivery, merchant services, and integrated payments."
+      "rationale": "Ubank is a consumer digital bank focused on accounts and home loans, not an on-demand mobility, delivery, and merchant super-app marketplace.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Ubank is a consumer digital bank focused on accounts and home loans, not an on-demand mobility, delivery, and merchant super-app marketplace."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Ubank is a consumer digital bank (savings, home loans); Grab is a ride-hailing/delivery super-app with payments. No shared marketplace or merchant-services business model."
+        }
+      ]
     },
     {
       "name": "Dropdrinx",
@@ -1519,7 +2167,19 @@
         "social_urls": []
       },
       "relevant": true,
-      "rationale": "Both operate consumer ordering and delivery platforms for food, groceries, parcels, and merchants, with overlapping users and commerce use cases."
+      "rationale": "Delivery marketplace/platform spanning food, grocery, parcel, pharmacy, ordering, tracking, and payments overlaps strongly with Grab's delivery super-app services.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Delivery marketplace/platform spanning food, grocery, parcel, pharmacy, ordering, tracking, and payments overlaps strongly with Grab's delivery super-app services."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Multi-vertical delivery marketplace (food, grocery, parcel, pharmacy) with consumer ordering app and payments, resembling Grab's delivery and commerce business."
+        }
+      ]
     },
     {
       "name": "Wexo Innovation Pvt Ltd.",
@@ -1550,7 +2210,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Wexo overlaps Grab\u2019s core on-demand delivery marketplace, serving consumers ordering food, groceries, and parcels while providing merchant delivery tools."
+      "rationale": "On-demand food, grocery, pharmacy, and parcel delivery platform, directly comparable to Grab's delivery marketplace services.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "On-demand food, grocery, pharmacy, and parcel delivery platform, directly comparable to Grab's delivery marketplace services."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "On-demand multi-category delivery marketplace (food, grocery, parcel) with partner network\u2014matches Grab's core delivery business on product, market, and model."
+        }
+      ]
     },
     {
       "name": "askPepper",
@@ -1577,7 +2249,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "askPepper provides restaurant ordering and payment software, not Grab\u2019s consumer ride-hailing, delivery marketplace, or super-app model."
+      "rationale": "Restaurant ordering and payment SaaS, not a consumer on-demand mobility/delivery marketplace or super-app comparable to Grab.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Restaurant ordering and payment SaaS, not a consumer on-demand mobility/delivery marketplace or super-app comparable to Grab."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Restaurant ordering/payment SaaS serving merchants, not a consumer super-app or ride-hailing/delivery marketplace; supplier to Grab's category, not a peer."
+        }
+      ]
     },
     {
       "name": "BoxKuBox",
@@ -1606,7 +2290,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "BoxKuBox is a multi-service consumer platform offering ride-hailing and delivery, overlapping Grab\u2019s core services and serving similar users and merchants."
+      "rationale": "Ugandan multi-service platform offering ride booking, delivery, groceries, and merchant reach, closely matching Grab\u2019s super-app marketplace model.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Ugandan multi-service platform offering ride booking, delivery, groceries, and merchant reach, closely matching Grab\u2019s super-app marketplace model."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Multi-service app combining ride-hailing, delivery, and commerce like Grab's super-app model; strong product and business-model match despite smaller scale."
+        }
+      ]
     },
     {
       "name": "JustOrder",
@@ -1633,7 +2329,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "JustOrder\u2019s multi-category ordering, delivery, tracking, and merchant-management platform overlaps Grab\u2019s food/grocery delivery marketplace and merchant-services offerings."
+      "rationale": "Multi-service marketplace for food, grocery, pharmacy delivery, rentals, and merchant tools resembles Grab\u2019s super-app and delivery platform model.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Multi-service marketplace for food, grocery, pharmacy delivery, rentals, and merchant tools resembles Grab\u2019s super-app and delivery platform model."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "On-demand multi-service marketplace for food, grocery, and pharmacy delivery with merchant tools and real-time tracking \u2014 same model as Grab's core business."
+        }
+      ]
     },
     {
       "name": "HSBC Bank (Singapore) Limited",
@@ -1661,7 +2369,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "HSBC is a traditional bank; it does not offer Grab\u2019s core ride-hailing, delivery, or on-demand super-app marketplace services."
+      "rationale": "Traditional bank offering consumer financial products, not an on-demand ride-hailing, delivery, and merchant super-app marketplace.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Traditional bank offering consumer financial products, not an on-demand ride-hailing, delivery, and merchant super-app marketplace."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Traditional retail bank; no ride-hailing, delivery, or super-app marketplace \u2014 core Grab resemblance absent, banking overlap alone insufficient."
+        }
+      ]
     },
     {
       "name": "Fomorre",
@@ -1689,7 +2409,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Fomorre is an itinerary and local-experience concierge, not an on-demand ride-hailing, delivery, payments, or merchant-services super-app."
+      "rationale": "Fomorre is a concierge and local-experience discovery service, not an on-demand ride-hailing, delivery, payments, or merchant-services marketplace.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Fomorre is a concierge and local-experience discovery service, not an on-demand ride-hailing, delivery, payments, or merchant-services marketplace."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Fomorre is an AI concierge for planning local experiences and itineraries, not ride-hailing, delivery, payments, or merchant services like Grab's super-app."
+        }
+      ]
     },
     {
       "name": "Capital Drive",
@@ -1713,7 +2445,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Capital Drive sells operational booking software to chauffeur fleets, not an on-demand ride-hailing marketplace or consumer super-app like Grab."
+      "rationale": "Trip-management SaaS for chauffeurs and fleets, not an on-demand ride-hailing marketplace or consumer super-app.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Trip-management SaaS for chauffeurs and fleets, not an on-demand ride-hailing marketplace or consumer super-app."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "B2B booking-management software for chauffeurs, not an on-demand ride-hailing marketplace; serves drivers rather than competing with Grab."
+        }
+      ]
     },
     {
       "name": "DriveU MOBILITY SOLUTIONS PRIVATE LIMITED",
@@ -1742,7 +2486,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "DriveU offers app-based, on-demand driver booking, overlapping Grab\u2019s core mobility marketplace and serving consumers seeking convenient urban transportation."
+      "rationale": "On-demand app marketplace connecting customers with professional drivers for urban trips, making it a close ride-hailing and urban-mobility comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "On-demand app marketplace connecting customers with professional drivers for urban trips, making it a close ride-hailing and urban-mobility comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "On-demand app-based driver booking marketplace, directly comparable to Grab's ride-hailing core; same product and business model axis."
+        }
+      ]
     },
     {
       "name": "DriverPartners.net",
@@ -1769,7 +2525,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "DriverPartners supports rideshare drivers with leasing and benefits; it does not operate a consumer ride-hailing, delivery, or super-app marketplace like Grab."
+      "rationale": "Driver support and benefits network serving rideshare workers, including Grab drivers; it is a supplier ecosystem participant, not a competing mobility marketplace.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Driver support and benefits network serving rideshare workers, including Grab drivers; it is a supplier ecosystem participant, not a competing mobility marketplace."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Serves drivers working on platforms like Grab with discounts and benefits; a supplier-side service, not a ride-hailing marketplace or super-app competitor."
+        }
+      ]
     },
     {
       "name": "Delivertoo",
@@ -1793,7 +2561,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide on-demand delivery platforms for merchants, with overlapping logistics, order-management, and last-mile delivery needs."
+      "rationale": "Provides on-demand last-mile delivery and order-management services to merchants, overlapping Grab\u2019s delivery and merchant logistics offerings.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Provides on-demand last-mile delivery and order-management services to merchants, overlapping Grab\u2019s delivery and merchant logistics offerings."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "On-demand delivery platform for restaurants, supermarkets, e-commerce \u2014 directly overlaps Grab's delivery marketplace arm on product and business model."
+        }
+      ]
     },
     {
       "name": "Dollar Bureau",
@@ -1825,7 +2605,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Dollar Bureau is a personal-finance content and advisory resource, not a ride-hailing, delivery, payments, or merchant-services super-app."
+      "rationale": "Personal-finance content and advisory site, not an on-demand ride-hailing, delivery, payments, or merchant-services marketplace.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Personal-finance content and advisory site, not an on-demand ride-hailing, delivery, payments, or merchant-services marketplace."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Personal finance content/advice media site, not a ride-hailing, delivery, or payments platform; no product or business-model overlap with Grab's super-app."
+        }
+      ]
     },
     {
       "name": "Letschop",
@@ -1858,7 +2650,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both operate consumer food-ordering marketplaces connecting diners with local meal providers, overlapping Grab\u2019s food-delivery offering and customer job to be done."
+      "rationale": "Food-ordering marketplace connecting consumers to local cooks and kitchens, comparable to GrabFood\u2019s delivery marketplace despite narrower scope.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Food-ordering marketplace connecting consumers to local cooks and kitchens, comparable to GrabFood\u2019s delivery marketplace despite narrower scope."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Two-sided food marketplace connecting users with kitchens/chefs for meal ordering, matching Grab's food-delivery marketplace axis, a genuine comparable."
+        }
+      ]
     },
     {
       "name": "TwalaMeals",
@@ -1888,7 +2692,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "TwalaMeals operates an app-based restaurant and grocery delivery marketplace, directly overlapping Grab\u2019s core on-demand delivery offering and customer use case."
+      "rationale": "On-demand marketplace delivering restaurant meals and groceries, directly comparable to Grab\u2019s food-delivery service.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "On-demand marketplace delivering restaurant meals and groceries, directly comparable to Grab\u2019s food-delivery service."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "On-demand food-delivery marketplace matching Grab's core delivery vertical; same business model and customer job to be done."
+        }
+      ]
     },
     {
       "name": "LevelUp SG Pte Ltd.",
@@ -1921,7 +2737,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "LevelUp is an online professional education platform, not a ride-hailing, delivery, payments, or merchant-services super-app."
+      "rationale": "Learning and career-upskilling platform, not a ride-hailing, delivery, payments, or super-app marketplace.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Learning and career-upskilling platform, not a ride-hailing, delivery, payments, or super-app marketplace."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Candidate is an online learning/upskilling platform, unrelated to Grab's ride-hailing, delivery, and payments super-app on any axis."
+        }
+      ]
     },
     {
       "name": "Speed Credit Pte Ltd.",
@@ -1946,7 +2774,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Speed Credit provides vehicle financing, not Grab\u2019s core on-demand ride-hailing, delivery, payments, or merchant-platform services; buyers and jobs differ."
+      "rationale": "Car-loan broker/financier, not an on-demand ride-hailing, delivery, payments, or super-app platform comparable to Grab.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Car-loan broker/financier, not an on-demand ride-hailing, delivery, payments, or super-app platform comparable to Grab."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Niche auto-loan financier, not a super-app; no ride-hailing, delivery, payments, or merchant platform. Weak single-axis overlap on lending only."
+        }
+      ]
     },
     {
       "name": "ManyHands",
@@ -1975,7 +2815,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "ManyHands provides SMB website, marketing, and operations software, not a consumer super-app or on-demand ride-hailing/delivery marketplace like Grab."
+      "rationale": "SMB digital-presence and delivery-management tools are not an on-demand ride-hailing, delivery marketplace, payments, or super-app competitor.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "SMB digital-presence and delivery-management tools are not an on-demand ride-hailing, delivery marketplace, payments, or super-app competitor."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "SMB website-builder and marketing SaaS with delivery tools; not a consumer super-app marketplace for ride-hailing, delivery, or payments like Grab."
+        }
+      ]
     },
     {
       "name": "Scoco Delivery",
@@ -2005,7 +2857,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Scoco operates an on-demand food and grocery delivery marketplace, directly overlapping Grab\u2019s delivery platform for consumers, merchants, and couriers."
+      "rationale": "On-demand marketplace for food, groceries, and essentials with courier partners, directly comparable to Grab's delivery platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "On-demand marketplace for food, groceries, and essentials with courier partners, directly comparable to Grab's delivery platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "On-demand food/grocery delivery marketplace with courier network, matching Grab's core delivery business; comparable model despite smaller scale."
+        }
+      ]
     },
     {
       "name": "HurryAPP",
@@ -2028,7 +2892,19 @@
         "social_urls": []
       },
       "relevant": true,
-      "rationale": "Both operate multi-service marketplaces connecting consumers, merchants, and drivers for on-demand delivery, commerce, and related merchant services."
+      "rationale": "On-demand delivery marketplace connecting customers, drivers, and local merchants resembles Grab's delivery and merchant-services platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "On-demand delivery marketplace connecting customers, drivers, and local merchants resembles Grab's delivery and merchant-services platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Multi-service app combining on-demand delivery marketplace with driver network and e-commerce, closely mirroring Grab's delivery and marketplace arms."
+        }
+      ]
     },
     {
       "name": "PostFinance",
@@ -2062,7 +2938,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "PostFinance is a traditional banking and financial-services provider, not a ride-hailing, delivery, and merchant-services super-app."
+      "rationale": "PostFinance is primarily a traditional bank and insurer, not an on-demand ride-hailing, delivery, and merchant-services super-app.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "PostFinance is primarily a traditional bank and insurer, not an on-demand ride-hailing, delivery, and merchant-services super-app."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Traditional Swiss retail bank; only weak overlap on financial services, no ride-hailing/delivery super-app marketplace model."
+        }
+      ]
     },
     {
       "name": "TravelUnited",
@@ -2085,7 +2973,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "TravelUnited is a travel-booking platform, not an on-demand ride-hailing, delivery, payments, or merchant-services super-app serving the same job."
+      "rationale": "Online travel booking for flights and hotels is not an on-demand ride-hailing, delivery, payments, or super-app marketplace.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Online travel booking for flights and hotels is not an on-demand ride-hailing, delivery, payments, or super-app marketplace."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Travel booking platform, not a ride-hailing/delivery/payments super-app marketplace; different product and job to be done."
+        }
+      ]
     },
     {
       "name": "Klook",
@@ -2121,7 +3021,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "A hotel-booking platform does not overlap Grab\u2019s core on-demand ride-hailing, delivery, payments, or merchant-services jobs."
+      "rationale": "Hotel-booking marketplace serves travelers but lacks Grab's on-demand ride-hailing, delivery, payments, and super-app model.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Hotel-booking marketplace serves travelers but lacks Grab's on-demand ride-hailing, delivery, payments, and super-app model."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Klook is a hotel/travel booking platform, not a ride-hailing/delivery/payments super-app; no meaningful product or market overlap with Grab."
+        }
+      ]
     },
     {
       "name": "DeliveryDriverDirectory",
@@ -2143,8 +3055,25 @@
         "city": null,
         "social_urls": []
       },
-      "relevant": false,
-      "rationale": "A driver directory and job-listing site is not an on-demand ride-hailing, delivery, payments, or merchant-services super-app."
+      "relevant": true,
+      "rationale": "Two-sided marketplace connecting delivery drivers with customers for logistics and ride-sharing, matching Grab's core delivery/transport marketplace model.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Driver job-listing directory, not an on-demand consumer ride-hailing, delivery, payments, and super-app marketplace."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Two-sided marketplace connecting delivery drivers with customers for logistics and ride-sharing, matching Grab's core delivery/transport marketplace model."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Marketplace connecting delivery/ride drivers with customers \\u2014 same on-demand logistics marketplace model, narrower scope than Grab."
+        }
+      ]
     },
     {
       "name": "Collectiv Sg",
@@ -2167,7 +3096,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Collectiv Sg is a retail e-commerce store, not a ride-hailing, delivery, payments, or merchant-services super-app."
+      "rationale": "Collectiv is a general online retailer, not an on-demand ride-hailing, delivery, payments, or multi-service marketplace platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Collectiv is a general online retailer, not an on-demand ride-hailing, delivery, payments, or multi-service marketplace platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Niche online retail store for kids/pets/home goods; no ride-hailing, delivery marketplace, or payments super-app resemblance to Grab."
+        }
+      ]
     },
     {
       "name": "DriverX Mobile",
@@ -2197,7 +3138,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "DriverX sells telecom data plans to drivers; it does not offer Grab-like ride-hailing, delivery, payments, or marketplace services."
+      "rationale": "Telecom data-plan provider serving rideshare and delivery drivers, not an on-demand mobility, delivery, payments, or super-app platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Telecom data-plan provider serving rideshare and delivery drivers, not an on-demand mobility, delivery, payments, or super-app platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Telecom selling data plans to drivers; a supplier to gig workers, not a ride-hailing/delivery super-app competitor or comparable."
+        }
+      ]
     },
     {
       "name": "Zipeat",
@@ -2227,7 +3180,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Zipeat operates a restaurant food-ordering and delivery marketplace, directly overlapping GrabFood for consumers and restaurant merchants."
+      "rationale": "Restaurant ordering and delivery marketplace overlaps directly with Grab's food-delivery super-app service.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Restaurant ordering and delivery marketplace overlaps directly with Grab's food-delivery super-app service."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Online food-delivery marketplace matching GrabFood, a core Grab segment; same consumer marketplace model, genuine competitor/comparable."
+        }
+      ]
     },
     {
       "name": "GrabEat.fr",
@@ -2254,7 +3219,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both operate restaurant ordering marketplaces with digital payments, tracking, and merchant tools, serving diners and restaurant operators for meal-order fulfillment."
+      "rationale": "Restaurant ordering and pickup platform overlaps Grab's food-delivery marketplace and merchant tools, though focused on click-and-collect.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Restaurant ordering and pickup platform overlaps Grab's food-delivery marketplace and merchant tools, though focused on click-and-collect."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Food-ordering marketplace with payments and restaurant tools, directly comparable to Grab's food-delivery arm; genuine product and market overlap."
+        }
+      ]
     },
     {
       "name": "Level Up",
@@ -2278,7 +3255,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Level Up is a standalone merchant payment processor, not a ride-hailing and delivery super-app; limited payments overlap does not make it comparable."
+      "rationale": "Level is a standalone B2B payment gateway, not a consumer super-app or on-demand mobility and delivery marketplace like Grab.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Level is a standalone B2B payment gateway, not a consumer super-app or on-demand mobility and delivery marketplace like Grab."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "B2B payment-processing platform, not a consumer super-app or ride-hailing/delivery marketplace; shares only a generic payments keyword with Grab."
+        }
+      ]
     },
     {
       "name": "Finance Now Limited",
@@ -2305,7 +3294,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Finance Now is primarily a lending and retail-finance provider, not a ride-hailing, delivery, payments, and merchant-services super-app like Grab."
+      "rationale": "Consumer and retail financing lender, not a ride-hailing, delivery, payments, and merchant-services super-app comparable to Grab.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Consumer and retail financing lender, not a ride-hailing, delivery, payments, and merchant-services super-app comparable to Grab."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Pure consumer/business lender in NZ; lacks Grab's on-demand ride-hailing/delivery marketplace super-app model. Financial-services overlap alone is too weak."
+        }
+      ]
     },
     {
       "name": "Auto Europe",
@@ -2332,7 +3333,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Auto Europe is a traditional car-rental comparison and booking platform, not an on-demand ride-hailing, delivery, payments, or merchant-services super-app."
+      "rationale": "Car rental booking platform, not an on-demand ride-hailing marketplace or multi-service super-app.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Car rental booking platform, not an on-demand ride-hailing marketplace or multi-service super-app."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Traditional car-rental booking platform, not an on-demand ride-hailing/delivery marketplace like Grab's super-app model."
+        }
+      ]
     },
     {
       "name": "Tr1pp",
@@ -2360,8 +3373,20 @@
           "https://www.youtube.com/channel/UC9K_3iI4_eidY8oFzDIiA4g"
         ]
       },
-      "relevant": false,
-      "rationale": "Tr1pp is primarily a payments/remittance app; its vague ride and delivery references do not establish Grab-like on-demand marketplaces."
+      "relevant": true,
+      "rationale": "Mobile app combines ride services, delivery, payments, and financial offerings, closely paralleling Grab's super-app model.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Mobile app combines ride services, delivery, payments, and financial offerings, closely paralleling Grab's super-app model."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Multi-service app combining ride, payments, money transfer, and local delivery \u2014 mirrors Grab's super-app model across the same axes."
+        }
+      ]
     },
     {
       "name": "iZoCo",
@@ -2383,7 +3408,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "iZoCo is a home-rental and property-management platform, not an on-demand ride-hailing, delivery, payments, or merchant-services super-app."
+      "rationale": "Rental housing discovery and home-management platform; it does not offer Grab\u2019s on-demand mobility, delivery, or financial-services marketplace.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Rental housing discovery and home-management platform; it does not offer Grab\u2019s on-demand mobility, delivery, or financial-services marketplace."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Real-estate rental platform, not ride-hailing/delivery/payments super-app; different product, market, and business model."
+        }
+      ]
     },
     {
       "name": "Qantas Airways Limited",
@@ -2413,7 +3450,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Qantas Money is an airline-linked financial and travel service, not an on-demand ride-hailing, delivery, and merchant super-app like Grab."
+      "rationale": "Qantas is primarily an airline and travel-finance/rewards provider, not an on-demand ride-hailing, delivery, and merchant-services marketplace.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Qantas is primarily an airline and travel-finance/rewards provider, not an on-demand ride-hailing, delivery, and merchant-services marketplace."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Airline-branded consumer credit cards, home loans, and travel booking; no ride-hailing, delivery marketplace, or merchant-services model resembling Grab's super-app."
+        }
+      ]
     },
     {
       "name": "The Daily Grab",
@@ -2435,7 +3484,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "The Daily Grab is a general online retailer, not a ride-hailing, delivery, payments, or financial-services super-app."
+      "rationale": "Unrelated general e-commerce retailer; it does not offer ride-hailing, on-demand delivery marketplace, payments, or super-app services.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Unrelated general e-commerce retailer; it does not offer ride-hailing, on-demand delivery marketplace, payments, or super-app services."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Generic online retail store; no ride-hailing, delivery marketplace, or fintech. Name similarity only, not a Grab lookalike."
+        }
+      ]
     },
     {
       "name": "Book A Travel",
@@ -2461,7 +3522,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Book A Travel is a travel-booking portal, not an on-demand ride-hailing, delivery, payments, and merchant-services super-app."
+      "rationale": "Travel booking for flights, hotels, and rentals is distinct from Grab\u2019s on-demand ride-hailing, delivery, and super-app marketplace.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Travel booking for flights, hotels, and rentals is distinct from Grab\u2019s on-demand ride-hailing, delivery, and super-app marketplace."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Travel booking platform (flights, hotels, car rentals), not a ride-hailing/delivery/payments marketplace; different product and market."
+        }
+      ]
     },
     {
       "name": "Hungry Time",
@@ -2489,7 +3562,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Hungry Time\u2019s restaurant delivery marketplace overlaps Grab\u2019s core food-delivery offering, serving the same diners, restaurants, and delivery workers."
+      "rationale": "Food-delivery marketplace with restaurant ordering, payments, and delivery workers, directly comparable to Grab\u2019s delivery vertical.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Food-delivery marketplace with restaurant ordering, payments, and delivery workers, directly comparable to Grab\u2019s delivery vertical."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "On-demand food delivery marketplace with driver network, matching Grab's core GrabFood product and business model."
+        }
+      ]
     },
     {
       "name": "Seemyticket",
@@ -2512,7 +3597,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Seemyticket is a travel-booking aggregator, not an on-demand ride-hailing, delivery, payments, or merchant-services super-app."
+      "rationale": "Online travel booking for flights and hotels is not an on-demand ride-hailing, delivery, payments, or merchant-services marketplace.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Online travel booking for flights and hotels is not an on-demand ride-hailing, delivery, payments, or merchant-services marketplace."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Online travel booking (flights/hotels/tours) differs from Grab's ride-hailing/delivery/payments super-app; no on-demand marketplace or matching core product."
+        }
+      ]
     },
     {
       "name": "AdFoodz",
@@ -2535,7 +3632,19 @@
         "social_urls": []
       },
       "relevant": true,
-      "rationale": "AdFoodz operates an on-demand food delivery marketplace connecting restaurants, drivers, and consumers, directly overlapping Grab\u2019s food-delivery offering and user base."
+      "rationale": "On-demand food-delivery marketplace connecting consumers, restaurants, and drivers, directly comparable to GrabFood despite its commission-free model.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "On-demand food-delivery marketplace connecting consumers, restaurants, and drivers, directly comparable to GrabFood despite its commission-free model."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "On-demand food-delivery marketplace, directly comparable to Grab's delivery arm; same product, market, and marketplace model on the delivery axis."
+        }
+      ]
     },
     {
       "name": "Flute",
@@ -2563,7 +3672,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Flute is a standalone business payment processor, not a consumer super-app or on-demand ride-hailing and delivery marketplace like Grab."
+      "rationale": "Flute is a standalone merchant payment processor, not an on-demand ride-hailing, delivery, and consumer marketplace super-app comparable to Grab.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Flute is a standalone merchant payment processor, not an on-demand ride-hailing, delivery, and consumer marketplace super-app comparable to Grab."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Payment processor for merchants only; lacks Grab's ride-hailing/delivery super-app marketplace, akin to Shopify vs. a payment processor."
+        }
+      ]
     },
     {
       "name": "Quickstore",
@@ -2595,10 +3716,20 @@
         ]
       },
       "relevant": true,
-      "rationale": "Quickstore overlaps Grab\u2019s on-demand food, grocery, and parcel delivery marketplace, serving both local consumers and merchants through payments and seller tools."
+      "rationale": "Multi-vendor food, grocery, pharmacy, parcel delivery, payments, and merchant tools resemble Grab\u2019s local-services super-app and marketplace model.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Multi-vendor food, grocery, pharmacy, parcel delivery, payments, and merchant tools resemble Grab\u2019s local-services super-app and marketplace model."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Multi-service marketplace for food/grocery delivery with payments and vendor tools, mirroring Grab's delivery and merchant-services super-app model."
+        }
+      ]
     }
   ],
-  "error": null,
-  "relevant_count_at_25": 12,
-  "precision_at_25": 48.0
+  "error": null
 }

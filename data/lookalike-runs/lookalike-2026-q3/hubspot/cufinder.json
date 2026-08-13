@@ -10,15 +10,17 @@
   "relevant_count": 1,
   "precision_at_k": 1.0,
   "relevant_count_at_10": 1,
+  "relevant_count_at_25": 1,
   "relevant_count_at_100": 1,
   "precision_at_10": 10.0,
+  "precision_at_25": 4.0,
   "precision_at_100": 1.0,
   "latency_ms": 744,
   "cost_usd": null,
   "duplicates_removed": 0,
   "max_results": 10,
-  "judge_model": "gpt-5.6",
-  "judged_at": "2026-07-27T03:31:16Z",
+  "judge_model": "majority(n=3): claude-opus-5,gpt-5.6-terra,kimi-k3",
+  "judged_at": "2026-08-10T19:18:06Z",
   "candidates": [
     {
       "name": "airbnb",
@@ -34,7 +36,19 @@
         "confidence_level": 95
       },
       "relevant": false,
-      "rationale": "Airbnb is a travel accommodations marketplace, not a CRM or marketing automation platform for go-to-market teams."
+      "rationale": "Airbnb is a consumer travel marketplace for stays and experiences, not a CRM or marketing-automation platform for go-to-market teams.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Airbnb is a consumer travel marketplace for stays and experiences, not a CRM or marketing-automation platform for go-to-market teams."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Airbnb is a travel marketplace for stays and experiences, not a CRM or marketing-automation platform; no product, market, or model overlap."
+        }
+      ]
     },
     {
       "name": "atlassian",
@@ -50,7 +64,19 @@
         "confidence_level": 95
       },
       "relevant": false,
-      "rationale": "Atlassian primarily offers project collaboration and developer workflow tools, not CRM or marketing automation for go-to-market teams."
+      "rationale": "Atlassian sells team collaboration and project-management tools, not CRM or marketing automation for go-to-market teams.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Atlassian sells team collaboration and project-management tools, not CRM or marketing automation for go-to-market teams."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Atlassian sells team collaboration/project-management tools (Jira, Confluence), not CRM or marketing automation; different product and buyer persona."
+        }
+      ]
     },
     {
       "name": "canva",
@@ -66,7 +92,19 @@
         "confidence_level": 95
       },
       "relevant": false,
-      "rationale": "Canva provides visual design and content creation, not CRM or marketing automation; marketers may use both, but for different jobs to be done."
+      "rationale": "Canva is a visual-design and content-creation platform, not a CRM or marketing-automation system for managing go-to-market operations.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Canva is a visual-design and content-creation platform, not a CRM or marketing-automation system for managing go-to-market operations."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Canva is a graphic-design/visual-communications tool, not CRM or marketing automation; different product and buyer job than HubSpot."
+        }
+      ]
     },
     {
       "name": "gitlab",
@@ -82,7 +120,19 @@
         "confidence_level": 95
       },
       "relevant": false,
-      "rationale": "GitLab is a DevSecOps software-development platform, not a CRM or marketing-automation solution for go-to-market teams."
+      "rationale": "GitLab provides DevSecOps and software lifecycle tooling for engineering teams, not CRM or marketing automation for go-to-market teams.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "GitLab provides DevSecOps and software lifecycle tooling for engineering teams, not CRM or marketing automation for go-to-market teams."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "GitLab is a DevOps/software development platform for engineering teams, not CRM or marketing automation; different product and buyer persona."
+        }
+      ]
     },
     {
       "name": "google",
@@ -98,7 +148,19 @@
         "confidence_level": 95
       },
       "relevant": false,
-      "rationale": "Google\u2019s core business is search, advertising, and broad technology products, not CRM and marketing automation for go-to-market teams."
+      "rationale": "Google is a broad technology company; its primary products are not an SMB CRM and marketing-automation platform comparable to HubSpot.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Google is a broad technology company; its primary products are not an SMB CRM and marketing-automation platform comparable to HubSpot."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Google is a broad consumer tech/search company, not a CRM or marketing-automation platform; no product or market resemblance to HubSpot's core offering."
+        }
+      ]
     },
     {
       "name": "infracloud technologies - an improving company",
@@ -114,7 +176,19 @@
         "confidence_level": 95
       },
       "relevant": false,
-      "rationale": "InfraCloud is a cloud-native engineering consultancy, not a CRM or marketing automation platform for go-to-market teams."
+      "rationale": "Cloud-native infrastructure consultancy, not a CRM or marketing-automation platform for go-to-market teams.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Cloud-native infrastructure consultancy, not a CRM or marketing-automation platform for go-to-market teams."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Cloud-native IT consulting/services firm, not a CRM or marketing-automation platform; unrelated product and market to HubSpot."
+        }
+      ]
     },
     {
       "name": "salesforce",
@@ -130,7 +204,19 @@
         "confidence_level": 95
       },
       "relevant": true,
-      "rationale": "Salesforce and HubSpot both offer CRM and marketing automation platforms for go-to-market teams addressing the same customer-management jobs."
+      "rationale": "Salesforce is a CRM platform with marketing and customer-success applications, directly comparable to HubSpot for go-to-market teams.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Salesforce is a CRM platform with marketing and customer-success applications, directly comparable to HubSpot for go-to-market teams."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Salesforce is the leading CRM platform with sales, marketing, and service clouds \u2014 direct competitor to HubSpot on product, market, and model."
+        }
+      ]
     },
     {
       "name": "stripe",
@@ -146,7 +232,19 @@
         "confidence_level": 95
       },
       "relevant": false,
-      "rationale": "Stripe is a payments and financial infrastructure platform, not a CRM or marketing automation solution evaluated for the same job."
+      "rationale": "Stripe is payments and financial infrastructure, not a CRM or marketing-automation platform for go-to-market teams.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Stripe is payments and financial infrastructure, not a CRM or marketing-automation platform for go-to-market teams."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Stripe is payments/financial infrastructure, not CRM or marketing automation; different product and buyer persona than HubSpot's go-to-market teams."
+        }
+      ]
     },
     {
       "name": "slack",
@@ -162,7 +260,19 @@
         "confidence_level": 95
       },
       "relevant": false,
-      "rationale": "Slack is a workplace collaboration and messaging platform, not a CRM or marketing automation solution evaluated for the same core job."
+      "rationale": "Slack is a team communication and collaboration platform, not an SMB CRM or marketing-automation product.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Slack is a team communication and collaboration platform, not an SMB CRM or marketing-automation product."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Slack is a team messaging/collaboration platform, not a CRM or marketing-automation product; different product category and buyer job-to-be-done."
+        }
+      ]
     },
     {
       "name": "zapier",
@@ -178,10 +288,20 @@
         "confidence_level": 95
       },
       "relevant": false,
-      "rationale": "Zapier is a general workflow-integration platform, not a CRM or marketing-automation system; buyers use it alongside HubSpot rather than as an alternative."
+      "rationale": "Zapier is a general workflow and app-integration automation platform, not a CRM or marketing-automation system for go-to-market teams.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Zapier is a general workflow and app-integration automation platform, not a CRM or marketing-automation system for go-to-market teams."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Zapier is an app-integration/workflow-automation (iPaaS) tool, not a CRM or marketing-automation platform; complements HubSpot rather than competing with it."
+        }
+      ]
     }
   ],
-  "error": null,
-  "relevant_count_at_25": 1,
-  "precision_at_25": 4.0
+  "error": null
 }

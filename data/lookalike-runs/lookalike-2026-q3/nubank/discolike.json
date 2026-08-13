@@ -7,18 +7,20 @@
     "name": "domain_similarity"
   },
   "k": 100,
-  "relevant_count": 9,
-  "precision_at_k": 9.0,
-  "relevant_count_at_10": 2,
-  "relevant_count_at_100": 9,
-  "precision_at_10": 20.0,
-  "precision_at_100": 9.0,
+  "relevant_count": 10,
+  "precision_at_k": 10.0,
+  "relevant_count_at_10": 3,
+  "relevant_count_at_25": 5,
+  "relevant_count_at_100": 10,
+  "precision_at_10": 30.0,
+  "precision_at_25": 20.0,
+  "precision_at_100": 10.0,
   "latency_ms": 1324,
   "cost_usd": null,
   "duplicates_removed": 1,
   "max_results": null,
-  "judge_model": "gpt-5.6",
-  "judged_at": "2026-07-27T03:44:26Z",
+  "judge_model": "majority(n=3): claude-opus-5,gpt-5.6-terra,kimi-k3",
+  "judged_at": "2026-08-10T19:47:36Z",
   "candidates": [
     {
       "name": "InvestNews",
@@ -52,7 +54,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "InvestNews is a financial media and investment-information publisher, not a digital bank offering accounts, cards, lending, or payments."
+      "rationale": "InvestNews is a financial news and education publisher, not a digital bank offering accounts, cards, lending, payments, or comparable financial products.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "InvestNews is a financial news and education publisher, not a digital bank offering accounts, cards, lending, payments, or comparable financial products."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "InvestNews is a financial news/media platform, not a digital bank or fintech offering accounts, cards, or lending; different product and model."
+        }
+      ]
     },
     {
       "name": "Ideas and Finance",
@@ -79,7 +93,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Ideas and Finance is a financial education and content platform, not a digital bank offering accounts, cards, lending, or payments."
+      "rationale": "Financial education and media content provider, not a digital bank offering accounts, cards, lending, or payments.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Financial education and media content provider, not a digital bank offering accounts, cards, lending, or payments."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Personal-finance content and courses media site, not a digital bank or fintech product provider; no competing banking, card, or lending offering."
+        }
+      ]
     },
     {
       "name": "CF Credit",
@@ -102,8 +128,20 @@
           "https://www.instagram.com/cfcreditofinance?igshid=mmvlmjlkmtbhmg=="
         ]
       },
-      "relevant": false,
-      "rationale": "CF Credit is primarily a loan brokerage partnering with banks, not a full digital bank offering integrated accounts, cards, payments, and lending."
+      "relevant": true,
+      "rationale": "Consumer-facing digital credit platform offering loans, financing, and card accounts, overlapping Nubank\u2019s lending and retail-finance products.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Consumer-facing digital credit platform offering loans, financing, and card accounts, overlapping Nubank\u2019s lending and retail-finance products."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Brazilian digital consumer-credit fintech offering loans and credit card accounts; overlaps Nubank on lending product and same customer market."
+        }
+      ]
     },
     {
       "name": "BV Bank",
@@ -136,7 +174,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "BV Bank overlaps Nubank in digital banking, credit cards, lending, accounts, and financial services for Brazilian consumers and businesses."
+      "rationale": "Brazilian retail bank offering digital banking, cards, loans, financing, and payments\u2014directly comparable to Nubank's core fintech services.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Brazilian retail bank offering digital banking, cards, loans, financing, and payments\u2014directly comparable to Nubank's core fintech services."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Brazilian bank offering credit cards, loans, and financial services to the same consumer market; direct banking competitor to Nubank despite more traditional model."
+        }
+      ]
     },
     {
       "name": "O Portal LTDA",
@@ -158,7 +208,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "O Portal is an informational media site covering finance, insurance, and travel, not a digital bank offering accounts, cards, lending, or payments."
+      "rationale": "Informational website covering insurance, banking, and travel; it does not operate a digital banking or fintech product.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Informational website covering insurance, banking, and travel; it does not operate a digital banking or fintech product."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Content/media portal about insurance and banking topics, not a digital bank or fintech product; no product, market, or model overlap with Nubank."
+        }
+      ]
     },
     {
       "name": "Aigenpress",
@@ -180,7 +242,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Aigenpress is a cross-industry business-process and customer-support platform, not a digital bank offering accounts, cards, lending, and payments."
+      "rationale": "Aigenpress appears to be a B2B customer-support and business-process platform, not a digital bank offering consumer financial products.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Aigenpress appears to be a B2B customer-support and business-process platform, not a digital bank offering consumer financial products."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Aigenpress is a vague B2B IT-services platform across multiple sectors, not a digital bank or consumer fintech; no product or market resemblance to Nubank."
+        }
+      ]
     },
     {
       "name": "Metrobank",
@@ -208,7 +282,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide consumer and business banking accounts, lending, payments, cards, and digital financial management to overlapping banking customers."
+      "rationale": "Metrobank is a bank offering accounts, cards, loans, payments, and digital banking, making it a direct financial-services comparable to Nubank.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Metrobank is a bank offering accounts, cards, loans, payments, and digital banking, making it a direct financial-services comparable to Nubank."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Full-service bank offering accounts, cards, loans, and payments to consumers\u2014same products and market as Nubank, a genuine banking comparable in another region."
+        }
+      ]
     },
     {
       "name": "NucleoWeb",
@@ -234,7 +320,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "NucleoWeb sells website creation and maintenance to insurance brokers, not digital banking, cards, lending, payments, or consumer financial services."
+      "rationale": "Website creation and maintenance service for insurance brokers, not a digital banking or consumer fintech platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Website creation and maintenance service for insurance brokers, not a digital banking or consumer fintech platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Website-building service for insurance brokers, not a digital bank or fintech; no product, market, or model overlap with Nubank."
+        }
+      ]
     },
     {
       "name": "Online Business Now",
@@ -259,7 +357,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Online Business Now provides digital-marketing education, not digital banking, cards, lending, payments, or related financial services."
+      "rationale": "Digital-marketing training platform, not a digital bank or fintech offering accounts, cards, lending, or payments.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Digital-marketing training platform, not a digital bank or fintech offering accounts, cards, lending, or payments."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Digital marketing courses/training platform, not a bank or fintech; no product, market, or model overlap with Nubank's financial services."
+        }
+      ]
     },
     {
       "name": "Happy Receitas",
@@ -281,7 +391,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Happy Receitas is a financial education/content website, not a digital bank offering accounts, cards, lending, payments, or comparable financial products."
+      "rationale": "Financial education and budgeting content site, not a digital bank offering accounts, cards, lending, or payments.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Financial education and budgeting content site, not a digital bank offering accounts, cards, lending, or payments."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Financial-advice content website, not a bank or fintech offering accounts, cards, or lending; media model, not comparable to Nubank."
+        }
+      ]
     },
     {
       "name": "Demalia O\u00dc",
@@ -304,7 +426,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Demalia appears to be a shopping and promotions content site offering financial advice, not a digital bank providing accounts, cards, and payments."
+      "rationale": "Promotional shopping and financial-advice site, not a digital bank offering accounts, cards, payments, and lending as core products.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Promotional shopping and financial-advice site, not a digital bank offering accounts, cards, payments, and lending as core products."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Italian e-commerce/promotions and loan-comparison site, not a digital bank; merely promotes financial products rather than offering banking services."
+        }
+      ]
     },
     {
       "name": "Banco Santander (Brazil) S.A.",
@@ -335,7 +469,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Santander Brazil offers digital accounts, cards, lending, payments, and investments to the same banking customers, directly overlapping Nubank\u2019s core financial services."
+      "rationale": "Santander Brasil is a bank offering comparable consumer financial services, including accounts, cards, lending, and payments.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Santander Brasil is a bank offering comparable consumer financial services, including accounts, cards, lending, and payments."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Full-service Brazilian retail bank offering accounts, cards, lending, payments \u2014 direct competitor to Nubank in the same market with the same products."
+        }
+      ]
     },
     {
       "name": "Corredori Avila",
@@ -363,7 +509,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Corredori Avila is an insurance brokerage, not a digital bank offering accounts, cards, lending, and payments to banking customers."
+      "rationale": "Insurance brokerage selling policies and advisory services, not a digital banking platform offering accounts, cards, lending, and payments.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Insurance brokerage selling policies and advisory services, not a digital banking platform offering accounts, cards, lending, and payments."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Insurance brokerage in Spain, not a digital bank or fintech platform; different product, market, and business model from Nubank."
+        }
+      ]
     },
     {
       "name": "Pr\u00e1tica Academy",
@@ -389,7 +547,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Pr\u00e1tica Academy provides training and support for oven retailers, not digital banking, cards, lending, payments, or related financial services."
+      "rationale": "Digital training and support platform for commercial oven professionals, not a digital banking or fintech product.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Digital training and support platform for commercial oven professionals, not a digital banking or fintech product."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Digital training platform for high-speed oven retailers; no banking, fintech, or financial services resemblance to Nubank."
+        }
+      ]
     },
     {
       "name": "Zurich Santander",
@@ -415,7 +585,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Zurich Santander is primarily an insurer, not a digital banking platform offering core accounts, cards, lending, and payments."
+      "rationale": "Insurance provider, not a digital bank offering accounts, cards, lending, and payments; it serves a distinct financial-services product category.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Insurance provider, not a digital bank offering accounts, cards, lending, and payments; it serves a distinct financial-services product category."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Zurich Santander sells insurance products, not digital banking/cards/lending; different industry and product axis from Nubank."
+        }
+      ]
     },
     {
       "name": "Mercedes-Benz",
@@ -446,7 +628,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Mercedes-Benz primarily manufactures and sells vehicles, while Nubank provides digital banking and fintech services; their core offerings and buyer jobs differ."
+      "rationale": "Mercedes-Benz is an automotive manufacturer; its vehicle sales and related services do not resemble Nubank\u2019s digital banking and fintech products.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Mercedes-Benz is an automotive manufacturer; its vehicle sales and related services do not resemble Nubank\u2019s digital banking and fintech products."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Luxury automaker, not a digital bank or fintech; shared Brazilian market and similarity score do not create product, market, or model resemblance."
+        }
+      ]
     },
     {
       "name": "National Health",
@@ -473,7 +667,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "National Health administers health and dental insurance plans, not digital banking, cards, lending, payments, or comparable financial services."
+      "rationale": "Health-plan and dental-insurance administrator/broker, not a digital bank offering broad banking, cards, lending, and payments.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Health-plan and dental-insurance administrator/broker, not a digital bank offering broad banking, cards, lending, and payments."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Health plan/dental insurance administrator, not a digital bank or fintech; different product and market despite shared Brazil location."
+        }
+      ]
     },
     {
       "name": "Convexa Investments",
@@ -502,7 +708,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Convexa is an investment advisory firm, not a digital banking platform offering cards, accounts, lending, and payments for the same banking needs."
+      "rationale": "Investment advisory firm provides wealth-management services, not Nubank\u2019s digital banking, payments, cards, or lending platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Investment advisory firm provides wealth-management services, not Nubank\u2019s digital banking, payments, cards, or lending platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Investment advisory firm offering personalized advice, not a digital bank with accounts, cards, lending, or payments; different product and business model."
+        }
+      ]
     },
     {
       "name": "Become Investor Ltda",
@@ -528,7 +746,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Become Investor is a financial education and investing-content platform, not a digital bank offering accounts, cards, lending, and payments."
+      "rationale": "Investment education and financial-content platform, not a digital bank offering accounts, cards, lending, or payments.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Investment education and financial-content platform, not a digital bank offering accounts, cards, lending, or payments."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Financial education/media site with calculators and courses, not a digital bank or fintech offering accounts, cards, or lending."
+        }
+      ]
     },
     {
       "name": "opebo",
@@ -553,7 +783,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "opebo provides AI review-management and marketing software, not digital banking, payments, cards, lending, or comparable consumer financial services."
+      "rationale": "OPebo is a B2B customer-review and reputation-management tool, not a digital banking or consumer-financial-services platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "OPebo is a B2B customer-review and reputation-management tool, not a digital banking or consumer-financial-services platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Opebo is an AI review-automation marketing SaaS, not a digital bank or fintech; no shared product, market, or business model with Nubank."
+        }
+      ]
     },
     {
       "name": "Rubino Corretora",
@@ -579,7 +821,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Rubino is an insurance brokerage, not a digital bank offering accounts, cards, lending, and payments; buyers would not evaluate them for the same need."
+      "rationale": "Insurance brokerage sells and advises on third-party policies, not digital banking, accounts, cards, lending, or payments products.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Insurance brokerage sells and advises on third-party policies, not digital banking, accounts, cards, lending, or payments products."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Insurance brokerage, not a digital bank or fintech platform; different product and business model from Nubank's banking services."
+        }
+      ]
     },
     {
       "name": "BiBank S.A.",
@@ -605,7 +859,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both are Latin American digital banks offering accounts, credit, payments, and related financial services, with overlap in business-banking customers."
+      "rationale": "Digital bank offering accounts, credit, cash management, and API-enabled financial services; comparable fintech banking model despite B2B focus.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Digital bank offering accounts, credit, cash management, and API-enabled financial services; comparable fintech banking model despite B2B focus."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Digital bank in Latin America (Argentina) offering accounts, credit, and payments \u2014 same region and digital-banking business model as Nubank."
+        }
+      ]
     },
     {
       "name": "CM Brasil",
@@ -633,7 +899,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "CM Brasil provides business software for microcredit professionals, not consumer digital banking, cards, accounts, or lending services comparable to Nubank."
+      "rationale": "CM Brasil provides business and marketing tools for microcredit professionals, not a consumer-facing digital bank offering accounts, cards, lending, and payments.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "CM Brasil provides business and marketing tools for microcredit professionals, not a consumer-facing digital bank offering accounts, cards, lending, and payments."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "CM Brasil sells B2B software tools to microcredit professionals, not consumer banking, cards, accounts, or lending like Nubank."
+        }
+      ]
     },
     {
       "name": "Open Castle",
@@ -660,7 +938,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Open Castle provides B2B cross-border mortgage underwriting and guarantees, not consumer digital banking, cards, accounts, or general lending services."
+      "rationale": "Open Castle provides B2B mortgage credit support and default guarantees to lenders, not a consumer-facing digital banking platform like Nubank.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Open Castle provides B2B mortgage credit support and default guarantees to lenders, not a consumer-facing digital banking platform like Nubank."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "B2B mortgage-underwriting service for lenders, not a consumer digital bank; supplier to lenders rather than peer or comparable fintech bank."
+        }
+      ]
     },
     {
       "name": "Condominios.cl",
@@ -683,7 +973,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Condominios.cl provides property and condominium services, not digital banking, cards, lending, payments, or comparable consumer financial products."
+      "rationale": "Property and condominium-services marketplace, not a digital banking or fintech platform offering financial products.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Property and condominium-services marketplace, not a digital banking or fintech platform offering financial products."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Condominios.cl is a real-estate services marketplace for condominium management in Chile; no fintech, banking, lending, or payments product overlap with Nubank."
+        }
+      ]
     },
     {
       "name": "Nedbank",
@@ -714,7 +1016,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide consumer and business banking, including accounts, cards, lending, payments, and digital banking, serving overlapping financial-services customers."
+      "rationale": "Nedbank offers consumer and business accounts, cards, lending, payments, and digital banking, making it a direct banking-services comparable to Nubank.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Nedbank offers consumer and business accounts, cards, lending, payments, and digital banking, making it a direct banking-services comparable to Nubank."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are consumer banks offering accounts, cards, loans, and digital banking; Nedbank is a direct banking comparable/competitor serving the same retail customers in another region."
+        }
+      ]
     },
     {
       "name": "Zurich Group",
@@ -742,7 +1056,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Zurich is primarily an insurer, not a digital bank offering accounts, cards, lending, and payments; buyers would not evaluate them for the same job."
+      "rationale": "Zurich is primarily an insurance carrier, not a digital banking platform offering accounts, cards, lending, and payments.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Zurich is primarily an insurance carrier, not a digital banking platform offering accounts, cards, lending, and payments."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Zurich is a traditional insurance carrier, not a digital bank or fintech; no overlap in product, market, or business model with Nubank."
+        }
+      ]
     },
     {
       "name": "FiveMDEV",
@@ -766,7 +1092,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "FiveMDEV is a gaming community and digital-content platform, not a digital bank offering financial accounts, cards, lending, or payments."
+      "rationale": "Gaming-community content and creative services platform, not a digital bank or fintech provider offering financial products.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Gaming-community content and creative services platform, not a digital bank or fintech provider offering financial products."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Gaming mod community platform; no overlap with Nubank's digital banking, payments, or fintech products."
+        }
+      ]
     },
     {
       "name": "SURA Investments",
@@ -795,7 +1133,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "SURA provides investment and asset-management solutions, not digital banking, cards, accounts, lending, or payments for Nubank\u2019s core users."
+      "rationale": "Investment-management firm offering tailored international portfolios, not a digital bank providing consumer accounts, cards, lending, and payments.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Investment-management firm offering tailored international portfolios, not a digital bank providing consumer accounts, cards, lending, and payments."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "SURA is an investment/asset-management firm (private equity, real estate), not a digital bank offering consumer accounts, cards, or payments like Nubank."
+        }
+      ]
     },
     {
       "name": "Allabest Demalia O\u00dc",
@@ -817,7 +1167,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Allabest Demalia is a shopping, deals, and travel portal, not a digital bank offering accounts, cards, payments, and lending."
+      "rationale": "Consumer deals and shopping portal offering miscellaneous vouchers and loans, not a digital banking or fintech platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Consumer deals and shopping portal offering miscellaneous vouchers and loans, not a digital banking or fintech platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Italian e-commerce deals/gift aggregator, not a digital bank or fintech platform; no meaningful resemblance to Nubank."
+        }
+      ]
     },
     {
       "name": "Iperproducts Demalia O\u00dc",
@@ -840,7 +1202,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Iperproducts is a promotions and consumer-advice marketplace, not a digital bank offering integrated accounts, cards, payments, and lending."
+      "rationale": "A promotional e-commerce platform offering assorted products and financing options is not a digital bank or broad fintech financial-services platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "A promotional e-commerce platform offering assorted products and financing options is not a digital bank or broad fintech financial-services platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Content/lead-gen portal mixing gifts, travel, and loan advice; not a digital bank or fintech platform like Nubank."
+        }
+      ]
     },
     {
       "name": "5500bet15.com",
@@ -863,7 +1237,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "The candidate is a consumer sports-betting platform, not a digital bank offering accounts, cards, lending, payments, or comparable financial services."
+      "rationale": "Online sports betting is a gambling service, not a digital banking or broad consumer-fintech platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Online sports betting is a gambling service, not a digital banking or broad consumer-fintech platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Online sports betting platform, not a digital bank or fintech; no resemblance in product, market, or business model."
+        }
+      ]
     },
     {
       "name": "Misitio",
@@ -885,7 +1271,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Misitio is a retail e-commerce site, not a digital bank or fintech platform offering financial services."
+      "rationale": "Misitio appears to be a retail marketplace for consumer goods, not a digital bank or fintech offering financial products.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Misitio appears to be a retail marketplace for consumer goods, not a digital bank or fintech offering financial products."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Candidate is an e-commerce retailer selling clothing, home goods, and electronics \u2014 no resemblance to Nubank's digital banking/fintech products."
+        }
+      ]
     },
     {
       "name": "SUCURSAL24.COM",
@@ -911,7 +1309,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "SUCURSAL24 provides website hosting and online-presence services, not digital banking, cards, lending, payments, or comparable consumer financial services."
+      "rationale": "Web presence, hosting, and marketing services are unrelated to Nubank's digital banking, card, lending, and payments products.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Web presence, hosting, and marketing services are unrelated to Nubank's digital banking, card, lending, and payments products."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "SUCURSAL24 sells website design, domains, and hosting services \u2014 not digital banking or fintech. No product, market, or business-model resemblance to Nubank."
+        }
+      ]
     },
     {
       "name": "Explord0r",
@@ -934,7 +1344,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Explord0r is a personal-development and lifestyle content site, not a digital bank offering financial accounts, cards, lending, or payments."
+      "rationale": "Explord0r is a personal-development and lifestyle content site, not a digital banking or fintech platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Explord0r is a personal-development and lifestyle content site, not a digital banking or fintech platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Personal-development/home-improvement content site, not banking or fintech; no product, market, or model overlap with a digital bank."
+        }
+      ]
     },
     {
       "name": "VIAR",
@@ -957,7 +1379,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "VIAR is an automotive sales and financing business, not a digital banking platform offering comparable consumer financial services."
+      "rationale": "Automotive vehicle retailer offering ancillary financing and insurance, not a digital bank or broad consumer fintech platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Automotive vehicle retailer offering ancillary financing and insurance, not a digital bank or broad consumer fintech platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Automotive sales dealer with financing; not a digital bank or fintech platform like Nubank."
+        }
+      ]
     },
     {
       "name": "Volkswagen Group Espan a Distribucio, S.A.",
@@ -979,7 +1413,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Volkswagen\u2019s incentive-program data portal is automotive-related, not a digital bank offering consumer financial accounts, cards, lending, and payments."
+      "rationale": "Volkswagen\u2019s Spanish distribution entity manages automotive incentive-program data, not digital banking, lending, payments, or consumer financial services.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Volkswagen\u2019s Spanish distribution entity manages automotive incentive-program data, not digital banking, lending, payments, or consumer financial services."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Automotive distributor's incentive-program data site; no banking, fintech, or financial-services resemblance to Nubank."
+        }
+      ]
     },
     {
       "name": "Claro S. A.",
@@ -1012,7 +1458,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Claro is a telecommunications provider, not a digital banking or fintech platform; its core services and buyer use cases do not overlap Nubank\u2019s."
+      "rationale": "Claro is a telecommunications carrier selling connectivity and entertainment, not digital banking, cards, lending, or fintech financial services.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Claro is a telecommunications carrier selling connectivity and entertainment, not digital banking, cards, lending, or fintech financial services."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Claro is a telecommunications provider (internet, mobile plans, TV), not a digital bank or fintech; no product, market, or model overlap with Nubank."
+        }
+      ]
     },
     {
       "name": "AMB Consultoria Tributaria",
@@ -1035,7 +1493,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "AMB is a tax and labor consulting firm, not a digital bank offering consumer financial accounts, cards, lending, or payments."
+      "rationale": "Tax and labor consulting firm, not a digital bank or fintech offering consumer financial products.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Tax and labor consulting firm, not a digital bank or fintech offering consumer financial products."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Tax/labor consulting firm, not a digital bank or fintech; unrelated industry and a consultancy rather than a comparable product."
+        }
+      ]
     },
     {
       "name": "DECO PROTESTe",
@@ -1067,7 +1537,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "DECO PROTESTe provides consumer advocacy, product comparisons, and advice, not digital banking, cards, lending, payments, or financial accounts."
+      "rationale": "Consumer advocacy and comparison publisher, not a digital bank offering accounts, cards, lending, payments, or fintech services.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Consumer advocacy and comparison publisher, not a digital bank offering accounts, cards, lending, payments, or fintech services."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Consumer protection/media platform with product comparisons and advice, not a digital bank or fintech; no product, market, or model overlap with Nubank."
+        }
+      ]
     },
     {
       "name": "NEOSEG Insurance Broker LTDA.",
@@ -1093,7 +1575,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "NEOSEG is an insurance brokerage, not a digital bank offering accounts, cards, lending, and payments; buyers would not evaluate them for the same need."
+      "rationale": "Insurance brokerage sells and advises on insurance, not a digital bank offering accounts, cards, lending, and payments.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Insurance brokerage sells and advises on insurance, not a digital bank offering accounts, cards, lending, and payments."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Insurance broker, not a digital bank or fintech platform; different product and industry from Nubank's banking/lending services."
+        }
+      ]
     },
     {
       "name": "SGB Cooperative Banks Group",
@@ -1119,8 +1613,25 @@
           "https://www.youtube.com/@SGBBankSA"
         ]
       },
-      "relevant": false,
-      "rationale": "SGB is a traditional cooperative banking group with digital channels, not a digital-first neobank/fintech platform comparable to Nubank."
+      "relevant": true,
+      "rationale": "Both provide consumer and business banking accounts, loans, payments, and digital banking services, making SGB a comparable banking institution.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both provide consumer and business banking accounts, loans, payments, and digital banking services, making SGB a comparable banking institution."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Traditional branch-based cooperative banking group, not a digital-first neobank; shared retail-banking label alone is insufficient resemblance to Nubank's model."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Retail/business bank offering accounts, loans, digital banking \though though coomodel; broadly comparable consumer banking peer."
+        }
+      ]
     },
     {
       "name": "SegurosOnline",
@@ -1145,7 +1656,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "SegurosOnline is an insurance comparison/brokerage platform, not a digital bank offering accounts, cards, lending, and payments for the same financial jobs."
+      "rationale": "Online insurance quoting and comparison platform, not a digital bank offering deposit accounts, cards, lending, and payment services.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Online insurance quoting and comparison platform, not a digital bank offering deposit accounts, cards, lending, and payment services."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Insurance quote marketplace, not a digital bank; different product (insurance vs accounts/lending/payments) and different customer job to be done."
+        }
+      ]
     },
     {
       "name": "Fintechs",
@@ -1172,7 +1695,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Fintechs.com.br is a fintech news and information publisher, not a digital bank offering accounts, cards, lending, or payments."
+      "rationale": "Media and information site covering fintech, not a digital bank or financial-services platform competing with Nubank.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Media and information site covering fintech, not a digital bank or financial-services platform competing with Nubank."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "A media/content site about Brazilian fintech news, not a digital bank or fintech product; covers the category rather than competing in it."
+        }
+      ]
     },
     {
       "name": "momentoinfo",
@@ -1194,7 +1729,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Momentoinfo is an informational media site, not a digital bank offering accounts, cards, lending, payments, or other financial services."
+      "rationale": "Informational media site about financial topics; it explicitly does not provide banking or financial services like Nubank.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Informational media site about financial topics; it explicitly does not provide banking or financial services like Nubank."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Content/media site with finance tips; offers no banking, cards, or fintech products itself \u2014 not a competitor or comparable."
+        }
+      ]
     },
     {
       "name": "10 Graphics",
@@ -1218,7 +1765,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "10 Graphics is an electronics e-commerce retailer, not a digital bank offering cards, accounts, lending, payments, or related financial services."
+      "rationale": "Consumer electronics e-commerce store, not a digital bank or fintech offering financial accounts, cards, lending, or payments.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Consumer electronics e-commerce store, not a digital bank or fintech offering financial accounts, cards, lending, or payments."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Electronics e-commerce store, not a digital bank or fintech; no product, market, or model resemblance to Nubank."
+        }
+      ]
     },
     {
       "name": "denationalize.me",
@@ -1245,7 +1804,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "International mobility and tax consulting does not overlap Nubank\u2019s digital banking platform or serve the same financial-services job to be done."
+      "rationale": "International mobility and tax consulting service, not a digital bank or fintech platform offering consumer financial products.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "International mobility and tax consulting service, not a digital bank or fintech platform offering consumer financial products."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Consulting service for expatriation, tax, and citizenship \u2014 not a digital bank or fintech platform; no product or market overlap with Nubank."
+        }
+      ]
     },
     {
       "name": "Paolo Mazzetto",
@@ -1274,7 +1845,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "An individual financial consultant offering investment advice is not a digital banking platform providing accounts, cards, lending, and payments."
+      "rationale": "Individual financial consultant providing advice and education, not a digital banking platform offering accounts, cards, lending, and payments.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Individual financial consultant providing advice and education, not a digital banking platform offering accounts, cards, lending, and payments."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Individual financial consultant offering advice services, not a digital bank or fintech platform; no product/market/model resemblance to Nubank."
+        }
+      ]
     },
     {
       "name": "Combuss",
@@ -1296,7 +1879,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Combuss provides domain registration and management, not digital banking, cards, lending, or consumer financial services."
+      "rationale": "Combuss provides domain registration and management, not digital banking, cards, lending, or fintech financial services.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Combuss provides domain registration and management, not digital banking, cards, lending, or fintech financial services."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Domain registration service, unrelated to digital banking/fintech; no product, market, or model resemblance to Nubank."
+        }
+      ]
     },
     {
       "name": "Primezert",
@@ -1320,7 +1915,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Primezert provides data-protection compliance services, not digital banking, cards, lending, payments, or consumer financial products."
+      "rationale": "Primezert is a data-protection compliance service, not a digital banking or consumer-fintech platform offering accounts, cards, lending, or payments.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Primezert is a data-protection compliance service, not a digital banking or consumer-fintech platform offering accounts, cards, lending, or payments."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Nubank is a digital bank/fintech; Primezert is a German data-protection compliance service. No overlap in product, market, or business model."
+        }
+      ]
     },
     {
       "name": "Alondra Nizar",
@@ -1348,7 +1955,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Alondra Nizar is an advertising agency, not a digital bank or fintech platform offering consumer financial services."
+      "rationale": "Advertising agency providing marketing services, not a digital bank or fintech offering financial products.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Advertising agency providing marketing services, not a digital bank or fintech offering financial products."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Advertising/marketing agency, no overlap with digital banking or fintech products, market, or business model."
+        }
+      ]
     },
     {
       "name": "LZ NEGOCIOS DIGITAIS LTDA",
@@ -1371,7 +1990,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Vumrez is an advertising-supported financial content and affiliate publisher, not a digital bank providing accounts, cards, lending, or payments."
+      "rationale": "Content publisher offering financial-product advice and affiliate comparisons, not a digital bank providing accounts, cards, lending, and payments.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Content publisher offering financial-product advice and affiliate comparisons, not a digital bank providing accounts, cards, lending, and payments."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Affiliate-funded financial advice content publisher, not a digital bank or fintech offering accounts, cards, or lending; no product or model resemblance."
+        }
+      ]
     },
     {
       "name": "ComerciosDelSur.com",
@@ -1394,7 +2025,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "ComerciosDelSur is an online commerce marketplace, not a digital bank offering consumer accounts, cards, lending, and financial services."
+      "rationale": "Marketplace for buying and selling goods, not a digital bank or provider of core consumer financial services.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Marketplace for buying and selling goods, not a digital bank or provider of core consumer financial services."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Candidate is a used-goods marketplace with account/wallet features, not a digital bank or fintech lender like Nubank."
+        }
+      ]
     },
     {
       "name": "NUCOES",
@@ -1416,7 +2059,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "NUCOES provides business energy pricing and consumption services, not digital banking, cards, lending, payments, or comparable financial services."
+      "rationale": "Energy-services provider for business electricity pricing and tracking, not a digital bank or fintech financial-services platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Energy-services provider for business electricity pricing and tracking, not a digital bank or fintech financial-services platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "NUCOES is a B2B energy services provider, unrelated to Nubank's digital banking and fintech products."
+        }
+      ]
     },
     {
       "name": "Digital Dossier",
@@ -1439,7 +2094,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Digital Dossier provides vehicle-history data, not digital banking, cards, lending, payments, or comparable financial services for the same customer need."
+      "rationale": "Vehicle-information lookup platform, not a digital bank or provider of cards, accounts, lending, payments, and broader financial services.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Vehicle-information lookup platform, not a digital bank or provider of cards, accounts, lending, payments, and broader financial services."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Vehicle history/data lookup platform for automotive professionals; no banking, fintech, or financial services resemblance to Nubank."
+        }
+      ]
     },
     {
       "name": "Seto Eyewear",
@@ -1462,7 +2129,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Seto Eyewear is an online eyewear retailer, not a digital bank or fintech platform offering financial services."
+      "rationale": "Online eyewear retailer, not a digital bank or fintech offering financial products and services.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Online eyewear retailer, not a digital bank or fintech offering financial products and services."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Eyewear e-commerce retailer, unrelated to digital banking/fintech; no product, market, or model resemblance."
+        }
+      ]
     },
     {
       "name": "Presence Broker",
@@ -1488,7 +2167,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Presence Broker is an insurance brokerage, not a digital bank offering accounts, cards, lending, and payment services."
+      "rationale": "Insurance brokerage selling policies, not a digital banking or broad fintech platform offering accounts, cards, lending, and payments.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Insurance brokerage selling policies, not a digital banking or broad fintech platform offering accounts, cards, lending, and payments."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Insurance brokerage, not a digital bank or fintech platform; different product and business model from Nubank."
+        }
+      ]
     },
     {
       "name": "Financial Tips",
@@ -1510,7 +2201,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Financial Tips is an advisory consultancy, not a digital bank offering integrated accounts, cards, lending, and payments for the same banking job."
+      "rationale": "Independent financial consulting service, not a digital bank offering its own accounts, cards, lending, and payments platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Independent financial consulting service, not a digital bank offering its own accounts, cards, lending, and payments platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Financial consulting/advisory service, not a digital bank or fintech product platform; consultancy serving the category, not a competitor to Nubank."
+        }
+      ]
     },
     {
       "name": "Pay Veloz Payment Institution Ltda",
@@ -1540,8 +2243,20 @@
           "https://x.com/pagueveloz"
         ]
       },
-      "relevant": true,
-      "rationale": "Both provide digital payment and account services to Brazilian customers and entrepreneurs, including receiving funds, credit, and installment-based financial products."
+      "relevant": false,
+      "rationale": "Merchant payment-link and sales-receivables platform for businesses, not a broad consumer digital bank offering accounts, cards, and lending.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Merchant payment-link and sales-receivables platform for businesses, not a broad consumer digital bank offering accounts, cards, and lending."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Merchant payment-acceptance institution (receivables, payment links) serving businesses, not a consumer digital bank offering accounts, cards, lending like Nubank."
+        }
+      ]
     },
     {
       "name": "EV Bank",
@@ -1565,7 +2280,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "EV Bank is a merchant payment gateway, while Nubank is primarily a digital bank offering consumer and business financial accounts, cards, and lending."
+      "rationale": "EV Bank is a B2B payment gateway, not a digital bank offering consumer accounts, cards, lending, and broad banking services.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "EV Bank is a B2B payment gateway, not a digital bank offering consumer accounts, cards, lending, and broad banking services."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "B2B payment gateway, not a digital bank offering consumer accounts, cards, and lending; supplier-type fintech, not a comparable."
+        }
+      ]
     },
     {
       "name": "A.S.D. Almese Calcio",
@@ -1588,7 +2315,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "A.S.D. Almese Calcio appears related to web design/marketing or a sports club, not digital banking or consumer fintech services."
+      "rationale": "Website design and marketing services are unrelated to Nubank's digital banking, card, lending, and payments platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Website design and marketing services are unrelated to Nubank's digital banking, card, lending, and payments platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Italian amateur football club website with generic web/marketing services description; no banking, fintech, or financial services resemblance to Nubank."
+        }
+      ]
     },
     {
       "name": "Gallart Eseores",
@@ -1613,7 +2352,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Gallart Asesores is an accounting, tax, and legal advisory firm, not a digital bank offering consumer financial products like Nubank."
+      "rationale": "Social-security, tax, and legal-assistance services are not a digital banking platform offering consumer accounts, cards, payments, and lending.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Social-security, tax, and legal-assistance services are not a digital banking platform offering consumer accounts, cards, payments, and lending."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Small Spanish advisory firm for social security, tax, and legal paperwork; not a digital bank or fintech platform like Nubank."
+        }
+      ]
     },
     {
       "name": "EvaluationCompany",
@@ -1635,7 +2386,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "EvaluationCompany is a consumer-review platform, not a digital bank offering accounts, cards, lending, payments, or comparable financial services."
+      "rationale": "Customer-review platform, not a digital bank or fintech offering accounts, cards, lending, payments, or comparable financial services.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Customer-review platform, not a digital bank or fintech offering accounts, cards, lending, payments, or comparable financial services."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Consumer review platform, not a digital bank or fintech; no shared product, market, or business model with Nubank."
+        }
+      ]
     },
     {
       "name": "Grecer Seguro",
@@ -1662,7 +2425,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Crecer Seguros is primarily an insurance carrier, not a digital banking platform offering integrated accounts, cards, lending, and payments."
+      "rationale": "Insurance carrier, not a digital banking platform offering accounts, cards, payments, and lending as its core product.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Insurance carrier, not a digital banking platform offering accounts, cards, payments, and lending as its core product."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Insurance company (life, accident, retirement), not a digital bank or fintech platform; different product and market from Nubank."
+        }
+      ]
     },
     {
       "name": "Alliante",
@@ -1687,7 +2462,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Alliante appears to provide broad business services, not a digital banking platform offering accounts, cards, lending, and payments to financial consumers."
+      "rationale": "Alliante appears to provide broad business, legal, marketing, and financial-management services, not a digital banking or fintech platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Alliante appears to provide broad business, legal, marketing, and financial-management services, not a digital banking or fintech platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Generic business-services site (legal, marketing, real estate), not a digital bank or fintech; no product or market resemblance to Nubank."
+        }
+      ]
     },
     {
       "name": "Passo Won",
@@ -1710,7 +2497,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Passo Won is a B2B operations, loyalty, and marketing platform, not a digital bank offering consumer accounts, cards, lending, and payments."
+      "rationale": "B2B sales, loyalty, and marketing-operations platform, not a digital bank offering consumer accounts, cards, lending, or broad financial services.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "B2B sales, loyalty, and marketing-operations platform, not a digital bank offering consumer accounts, cards, lending, or broad financial services."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "B2B SaaS loyalty/marketing platform for businesses, not a digital bank or consumer fintech; no product, market, or model overlap with Nubank."
+        }
+      ]
     },
     {
       "name": "Falabella Bank",
@@ -1739,7 +2538,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both are digital banking platforms offering consumers app-managed accounts, credit cards, savings, loans, and related financial services in Latin America."
+      "rationale": "Digital retail bank offering accounts, cards, loans, and app-based financial services, directly comparable to Nubank\u2019s consumer fintech model.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Digital retail bank offering accounts, cards, loans, and app-based financial services, directly comparable to Nubank\u2019s consumer fintech model."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Digital bank in Latin America offering accounts, loans, and credit cards via app \u2014 same product, market, and consumer fintech model as Nubank."
+        }
+      ]
     },
     {
       "name": "Santander Private Banking International",
@@ -1768,7 +2579,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Santander Private Banking primarily serves high-net-worth clients with wealth management, unlike Nubank\u2019s mass-market digital banking, cards, lending, and payments platform."
+      "rationale": "Private banking and wealth advisory for high-net-worth clients, not a broad digital retail banking and fintech platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Private banking and wealth advisory for high-net-worth clients, not a broad digital retail banking and fintech platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "HNW wealth-management advisory arm of a traditional bank; not a digital retail bank, different product and customer segment from Nubank."
+        }
+      ]
     },
     {
       "name": "ALAB s.r.l.",
@@ -1790,7 +2613,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "ALAB is a digital marketing consultancy, not a digital bank or fintech platform offering consumer financial services."
+      "rationale": "Marketing consultancy and web-development agency, not a digital bank or fintech offering accounts, cards, lending, or payments.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Marketing consultancy and web-development agency, not a digital bank or fintech offering accounts, cards, lending, or payments."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Marketing/advertising consulting agency, not a digital bank or fintech; no product, market, or model overlap with Nubank."
+        }
+      ]
     },
     {
       "name": "Numerica Credit Union",
@@ -1823,7 +2658,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide consumer and business banking accounts, lending, payments, cards, and digital banking for substantially the same financial needs."
+      "rationale": "Credit union offering consumer accounts, loans, cards/payments, and digital banking; a retail banking comparable to Nubank despite its cooperative model.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Credit union offering consumer accounts, loans, cards/payments, and digital banking; a retail banking comparable to Nubank despite its cooperative model."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both provide retail banking\u2014accounts, cards, loans, payments, digital banking\u2014to the same consumer banking customers; strong product and market overlap despite traditional credit-union form."
+        }
+      ]
     },
     {
       "name": "Orgaseg",
@@ -1850,7 +2697,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Orgaseg is an insurance brokerage, not a digital banking platform offering accounts, cards, lending, and payments for comparable financial jobs."
+      "rationale": "Insurance brokerage selling coverage and advisory services, not a digital banking or broad fintech platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Insurance brokerage selling coverage and advisory services, not a digital banking or broad fintech platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Orgaseg is an insurance brokerage, not a digital bank or fintech; different industry and product from Nubank's banking, cards, and lending platform."
+        }
+      ]
     },
     {
       "name": "Mercatto Shop",
@@ -1874,7 +2733,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Mercatto Shop is an online retailer, not a digital bank or fintech offering accounts, cards, lending, or payment services."
+      "rationale": "Mercatto Shop is a consumer e-commerce retailer, not a digital bank or fintech offering financial accounts, cards, lending, or payments infrastructure.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Mercatto Shop is a consumer e-commerce retailer, not a digital bank or fintech offering financial accounts, cards, lending, or payments infrastructure."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Nubank is a digital bank/fintech; Mercatto Shop is a discount e-commerce retailer with no financial services product."
+        }
+      ]
     },
     {
       "name": "PAGAR LTDA.",
@@ -1901,7 +2772,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Pagar is a B2B payment-management platform, not a digital bank offering comparable accounts, cards, lending, and consumer financial services."
+      "rationale": "Pagar is a B2B/B2G payment-automation platform, not a consumer-facing digital bank offering accounts, cards, and lending like Nubank.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Pagar is a B2B/B2G payment-automation platform, not a consumer-facing digital bank offering accounts, cards, and lending like Nubank."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "B2B payment-management platform for businesses/government, not a consumer digital bank offering accounts, cards, and lending like Nubank."
+        }
+      ]
     },
     {
       "name": "LuxMag",
@@ -1924,7 +2807,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "LuxMag is a luxury content and e-commerce site, not a digital bank offering accounts, cards, lending, payments, or related financial services."
+      "rationale": "Luxury lifestyle e-commerce magazine, not a digital banking or fintech platform offering financial products.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Luxury lifestyle e-commerce magazine, not a digital banking or fintech platform offering financial products."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Luxury e-commerce magazine/retailer, not digital banking or fintech; no product, market, or model overlap with Nubank."
+        }
+      ]
     },
     {
       "name": "Biprotec",
@@ -1949,7 +2844,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Biprotec is an e-commerce retailer/platform for consumer products, not a digital bank offering accounts, cards, lending, or financial services."
+      "rationale": "E-commerce retailer/platform selling consumer goods, not a digital bank or fintech offering accounts, cards, lending, and payments.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "E-commerce retailer/platform selling consumer goods, not a digital bank or fintech offering accounts, cards, lending, and payments."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Candidate is an e-commerce store selling personal care/cleaning products; no banking or fintech resemblance to Nubank."
+        }
+      ]
     },
     {
       "name": "Kontrabajo",
@@ -1971,7 +2878,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Kontrabajo is a community interaction and complaint-management platform, not a digital bank offering accounts, cards, lending, or payments."
+      "rationale": "Community interaction and complaint-management platform, not a digital bank or fintech offering accounts, cards, lending, or payments.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Community interaction and complaint-management platform, not a digital bank or fintech offering accounts, cards, lending, or payments."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Community/social interaction platform with complaint tools; no banking, fintech, or financial-services overlap with Nubank."
+        }
+      ]
     },
     {
       "name": "Todayame Demalia O\u00dc",
@@ -1993,7 +2912,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Todayame is primarily a broad lifestyle and e-commerce platform, not a digital bank offering integrated accounts, cards, payments, and lending."
+      "rationale": "Lifestyle, shopping, and advice portal with incidental loan options; not a digital bank or broad fintech financial-services platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Lifestyle, shopping, and advice portal with incidental loan options; not a digital bank or broad fintech financial-services platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Generic e-commerce/lifestyle content site with tips and promotions, not a digital bank or fintech platform; no product or model resemblance to Nubank."
+        }
+      ]
     },
     {
       "name": "Promotion Iper",
@@ -2016,7 +2947,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Promotion Iper is a promotions and e-commerce platform, not a digital bank offering comparable accounts, cards, lending, and payment services."
+      "rationale": "Discount-shopping and promotions platform, not a digital bank offering core accounts, cards, payments, and lending products.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Discount-shopping and promotions platform, not a digital bank offering core accounts, cards, payments, and lending products."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "E-commerce promotions/discount platform, not a digital bank or fintech; financing offers are incidental, no product or model resemblance to Nubank."
+        }
+      ]
     },
     {
       "name": "My Baby, My Life...",
@@ -2038,7 +2981,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Family insurance brokerage and coaching does not overlap Nubank\u2019s digital banking, cards, lending, or payments platform."
+      "rationale": "Insurance advisory service for families, not a digital bank offering accounts, cards, lending, and payments.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Insurance advisory service for families, not a digital bank offering accounts, cards, lending, and payments."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Insurance advisory/coaching service for families, not a digital bank or fintech platform; no product or market overlap with Nubank."
+        }
+      ]
     },
     {
       "name": "QuoLaborem",
@@ -2060,7 +3015,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "QuoLaborem provides labor-law consulting and legal services, not digital banking, cards, lending, payments, or other consumer fintech products."
+      "rationale": "Labor-law consulting and legal services are unrelated to Nubank\u2019s digital banking, cards, lending, and payments platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Labor-law consulting and legal services are unrelated to Nubank\u2019s digital banking, cards, lending, and payments platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Labor-law consulting firm; no overlap with Nubank's digital banking, cards, lending, or fintech products on any axis."
+        }
+      ]
     },
     {
       "name": "Klavi",
@@ -2085,7 +3052,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Klavi sells data intelligence and payment infrastructure to financial institutions, while Nubank primarily provides digital banking products to consumers and businesses."
+      "rationale": "Klavi provides B2B financial-data and payment intelligence to institutions, whereas Nubank is a consumer-facing digital bank offering financial products.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Klavi provides B2B financial-data and payment intelligence to institutions, whereas Nubank is a consumer-facing digital bank offering financial products."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Klavi is a B2B data-intelligence/payments vendor serving financial institutions, not a consumer digital bank competitor like Nubank."
+        }
+      ]
     },
     {
       "name": "Zurich Seguros Ecuador",
@@ -2113,7 +3092,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Zurich Ecuador is primarily an insurance carrier, not a digital bank offering accounts, cards, lending, and payments for the same financial jobs."
+      "rationale": "Zurich Seguros is primarily an insurer offering protection products, not a digital bank providing accounts, cards, lending, and payments.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Zurich Seguros is primarily an insurer offering protection products, not a digital bank providing accounts, cards, lending, and payments."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Insurance carrier offering life/home/liability policies, not a digital bank or fintech; different product and business model from Nubank."
+        }
+      ]
     },
     {
       "name": "Nero",
@@ -2137,7 +3128,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Nero is a web design and marketing agency, not a digital bank or fintech platform offering consumer financial services."
+      "rationale": "Web design and marketing agency/site builder, not a digital bank or fintech financial-services platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Web design and marketing agency/site builder, not a digital bank or fintech financial-services platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Italian web design agency; no banking, fintech, or financial services overlap with Nubank."
+        }
+      ]
     },
     {
       "name": "Tanner",
@@ -2164,7 +3167,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Tanner primarily offers auto financing, insurance, and investments, not a comparable digital banking platform with cards, accounts, and payments."
+      "rationale": "Tanner primarily provides automotive finance, insurance, and investments, not Nubank-like digital banking with consumer accounts, cards, and payments.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Tanner primarily provides automotive finance, insurance, and investments, not Nubank-like digital banking with consumer accounts, cards, and payments."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Tanner is primarily an auto-financing/insurance/factoring institution, not a digital bank; product and core market differ from Nubank's cards/accounts neobank model."
+        }
+      ]
     },
     {
       "name": "Lefebre Subastas",
@@ -2191,7 +3206,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Lefebre Subastas is an auction and legal-support platform, not a digital bank offering accounts, cards, lending, or comparable financial services."
+      "rationale": "Auction and legal-compliance services are not digital banking, payments, lending, or consumer fintech products.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Auction and legal-compliance services are not digital banking, payments, lending, or consumer fintech products."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Auction platform, not a digital bank or fintech; no product, market, or business-model overlap with Nubank."
+        }
+      ]
     },
     {
       "name": "Boutique 08 Events Ltda.",
@@ -2217,7 +3244,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Boutique 08 is an experiential marketing and events agency, not a digital bank or provider of consumer financial products."
+      "rationale": "Marketing-events agency, not a digital bank or fintech offering financial products.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Marketing-events agency, not a digital bank or fintech offering financial products."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Marketing/events agency, not a digital bank or fintech; no product, market, or business-model overlap with Nubank."
+        }
+      ]
     },
     {
       "name": "CookieScript",
@@ -2246,7 +3285,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "CookieScript provides website privacy-compliance software, not digital banking, cards, lending, payments, or consumer financial services."
+      "rationale": "Cookie compliance SaaS is unrelated to Nubank's digital banking, lending, cards, and payments products.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Cookie compliance SaaS is unrelated to Nubank's digital banking, lending, cards, and payments products."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Cookie-consent compliance SaaS, unrelated to Nubank's digital banking, payments, and lending products and market."
+        }
+      ]
     },
     {
       "name": "Openfinance",
@@ -2272,7 +3323,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Openfinance sells B2B wealth-management technology, while Nubank provides consumer digital banking, cards, lending, and payments; buyers and jobs differ."
+      "rationale": "Openfinance sells B2B portfolio-management software to wealth firms, while Nubank is a consumer-focused digital bank offering financial products.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Openfinance sells B2B portfolio-management software to wealth firms, while Nubank is a consumer-focused digital bank offering financial products."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "B2B SaaS for asset managers, not a consumer digital bank; different product, market, and model than Nubank."
+        }
+      ]
     },
     {
       "name": "Family Economy",
@@ -2294,7 +3357,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Family Economy sells consumer financial education and debt coaching, not digital banking products such as accounts, cards, lending, or payments."
+      "rationale": "Consumer financial education and debt coaching, not a digital banking or fintech platform providing accounts, cards, lending, or payments.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Consumer financial education and debt coaching, not a digital banking or fintech platform providing accounts, cards, lending, or payments."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Family Economy sells financial-education courses for debt relief, not banking or fintech products; different industry, no product or model overlap with Nubank."
+        }
+      ]
     },
     {
       "name": "FULL Services",
@@ -2322,7 +3397,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "FULL Services provides WordPress website management, not digital banking, cards, lending, payments, or comparable consumer financial services."
+      "rationale": "WordPress website management platform, not a digital bank or fintech offering cards, accounts, lending, or payments.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "WordPress website management platform, not a digital bank or fintech offering cards, accounts, lending, or payments."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "WordPress site-management SaaS, not banking or fintech; no product, market, or model resemblance to Nubank's digital-bank platform."
+        }
+      ]
     },
     {
       "name": "Comeback Business & Sports",
@@ -2348,7 +3435,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Comeback is a sports marketing and branding agency, not a digital bank or fintech platform offering consumer financial services."
+      "rationale": "Sports marketing and branding agency, not a digital bank or fintech financial-services platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Sports marketing and branding agency, not a digital bank or fintech financial-services platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Sports marketing/branding agency, unrelated to digital banking or fintech; no shared product, market, or business model with Nubank."
+        }
+      ]
     },
     {
       "name": "Portal123",
@@ -2370,7 +3469,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Portal123 is a network-marketing business automation platform, not a digital bank offering consumer accounts, cards, lending, and financial services."
+      "rationale": "Network-marketing automation and entrepreneur tools are not digital banking, lending, cards, or consumer financial-services products.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Network-marketing automation and entrepreneur tools are not digital banking, lending, cards, or consumer financial-services products."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Network-marketing/MLM income platform, not a digital bank or consumer fintech; no product, market, or model resemblance to Nubank."
+        }
+      ]
     },
     {
       "name": "Equisuiza",
@@ -2397,7 +3508,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Equisuiza is an insurance brokerage, not a digital banking platform offering accounts, cards, payments, and lending for the same financial jobs."
+      "rationale": "Insurance brokerage selling policies and advisory services, not a digital bank or broad fintech platform offering accounts, cards, lending, and payments.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Insurance brokerage selling policies and advisory services, not a digital bank or broad fintech platform offering accounts, cards, lending, and payments."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Insurance brokerage, not a digital bank or fintech platform; different product and business model despite Latin America overlap."
+        }
+      ]
     },
     {
       "name": "Personalcob",
@@ -2423,7 +3546,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Personalcob is a debt negotiation and payment service, not a digital bank offering accounts, cards, lending, and broader banking services."
+      "rationale": "Personalcob is a consumer debt-negotiation service, not a digital bank offering accounts, cards, lending, and payments as a core platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Personalcob is a consumer debt-negotiation service, not a digital bank offering accounts, cards, lending, and payments as a core platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Personalcob is a debt negotiation/collection service, not a digital bank offering accounts, cards, or lending like Nubank."
+        }
+      ]
     },
     {
       "name": "SuperVia",
@@ -2455,7 +3590,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "SuperVia operates passenger rail transportation, not digital banking, cards, lending, payments, or fintech services evaluated by Nubank\u2019s customers."
+      "rationale": "SuperVia operates passenger rail transportation, not digital banking or fintech products.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "SuperVia operates passenger rail transportation, not digital banking or fintech products."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "SuperVia is a passenger rail transit operator, not a fintech or digital bank; no product, market, or business-model overlap with Nubank."
+        }
+      ]
     },
     {
       "name": "Mibanco del Microemppresa S.A.",
@@ -2484,7 +3631,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide banking accounts, lending, payments, and digital financial tools to Latin American consumers and small businesses."
+      "rationale": "Peruvian bank offering consumer and small-business accounts, loans, payments, and digital access\u2014strong regional digital-banking and fintech comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Peruvian bank offering consumer and small-business accounts, loans, payments, and digital access\u2014strong regional digital-banking and fintech comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Latin American bank offering accounts, loans, and financial services to individuals and SMBs; same product and market as Nubank, a regional comparable."
+        }
+      ]
     },
     {
       "name": "Stardflow Digital",
@@ -2506,7 +3665,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Stardflow is a personal budgeting, savings, and financial-training tool, not a digital bank offering accounts, cards, lending, and payments."
+      "rationale": "Personal budgeting and savings tools are not a digital bank offering accounts, cards, lending, and payments.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Personal budgeting and savings tools are not a digital bank offering accounts, cards, lending, and payments."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Stardflow is a personal budgeting/finance-planning tool, not a digital bank offering accounts, cards, or lending like Nubank. Mirroring the Brex/budgeting-software example."
+        }
+      ]
     },
     {
       "name": "Boada",
@@ -2534,7 +3705,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Boada is an insurance brokerage, not a digital banking platform offering accounts, cards, lending, and payments to similar financial-services users."
+      "rationale": "Insurance brokerage providing advisory and policy management, not a digital bank offering accounts, cards, lending, and payments.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Insurance brokerage providing advisory and policy management, not a digital bank offering accounts, cards, lending, and payments."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Boada is a traditional Spanish insurance brokerage, not a digital bank or fintech; different product, market, and model from Nubank."
+        }
+      ]
     },
     {
       "name": "ficaadicaconcurseiro",
@@ -2556,10 +3739,20 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Candidate is a financial-information and comparison content website, not a digital bank offering accounts, cards, lending, payments, or related banking services."
+      "rationale": "Content/information website covering financial comparisons, not a digital bank offering accounts, cards, lending, payments, or financial products.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Content/information website covering financial comparisons, not a digital bank offering accounts, cards, lending, payments, or financial products."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Content/affiliate blog about credit cards and finance tips, not a digital bank or fintech provider; media site, not a competitor."
+        }
+      ]
     }
   ],
-  "error": null,
-  "relevant_count_at_25": 4,
-  "precision_at_25": 16.0
+  "error": null
 }

@@ -7,18 +7,20 @@
     "name": "domain_lookalikes"
   },
   "k": 100,
-  "relevant_count": 1,
-  "precision_at_k": 1.0,
-  "relevant_count_at_10": 1,
-  "relevant_count_at_100": 1,
-  "precision_at_10": 10.0,
-  "precision_at_100": 1.0,
+  "relevant_count": 2,
+  "precision_at_k": 2.0,
+  "relevant_count_at_10": 2,
+  "relevant_count_at_25": 2,
+  "relevant_count_at_100": 2,
+  "precision_at_10": 20.0,
+  "precision_at_25": 8.0,
+  "precision_at_100": 2.0,
   "latency_ms": 376,
   "cost_usd": null,
   "duplicates_removed": 0,
   "max_results": 10,
-  "judge_model": "gpt-5.6",
-  "judged_at": "2026-07-27T03:31:38Z",
+  "judge_model": "majority(n=3): claude-opus-5,gpt-5.6-terra,kimi-k3",
+  "judged_at": "2026-08-10T19:44:25Z",
   "candidates": [
     {
       "name": "agoda",
@@ -34,7 +36,19 @@
         "confidence_level": 98
       },
       "relevant": false,
-      "rationale": "Agoda is an online travel-booking marketplace, not a ride-hailing, delivery, payments, or merchant-services super-app; users choose them for different jobs."
+      "rationale": "Agoda is an online travel booking marketplace, not an on-demand ride-hailing, delivery, payments, or super-app platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Agoda is an online travel booking marketplace, not an on-demand ride-hailing, delivery, payments, or super-app platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Agoda is a travel/hotel booking platform; Grab is a ride-hailing, delivery, and payments super-app. Different products, markets, and buyer needs."
+        }
+      ]
     },
     {
       "name": "google",
@@ -50,7 +64,19 @@
         "confidence_level": 98
       },
       "relevant": false,
-      "rationale": "Google is primarily a search, advertising, cloud, and software company, not an on-demand ride-hailing, delivery, and merchant-services super-app."
+      "rationale": "Google is a broad technology company; its primary offering is not an on-demand ride-hailing, delivery, payments, and merchant-services super-app.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Google is a broad technology company; its primary offering is not an on-demand ride-hailing, delivery, payments, and merchant-services super-app."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Google is a general software/search giant, not a ride-hailing, delivery, or payments super-app competitor to Grab."
+        }
+      ]
     },
     {
       "name": "goto group",
@@ -66,7 +92,19 @@
         "confidence_level": 98
       },
       "relevant": true,
-      "rationale": "GoTo closely matches Grab\u2019s super-app model, offering on-demand transport/delivery, merchant services, payments, and financial services to overlapping users."
+      "rationale": "GoTo/Gojek is a Southeast Asian on-demand mobility, delivery, payments, and financial-services super-app directly comparable to Grab.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "GoTo/Gojek is a Southeast Asian on-demand mobility, delivery, payments, and financial-services super-app directly comparable to Grab."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Direct competitor: GoTo (Gojek) is a Southeast Asian super-app combining ride-hailing, delivery, payments, and financial services, matching Grab on every axis."
+        }
+      ]
     },
     {
       "name": "lazada",
@@ -82,7 +120,19 @@
         "confidence_level": 98
       },
       "relevant": false,
-      "rationale": "Lazada is primarily an e-commerce marketplace, not a ride-hailing and on-demand services super-app; logistics and payments overlap only as supporting capabilities."
+      "rationale": "Lazada is an e-commerce marketplace; despite regional logistics and payments overlap, it lacks Grab\u2019s ride-hailing and on-demand super-app model.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Lazada is an e-commerce marketplace; despite regional logistics and payments overlap, it lacks Grab\u2019s ride-hailing and on-demand super-app model."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Lazada is an e-commerce marketplace; Grab is a ride-hailing/delivery super-app. Different core products and buyer jobs \u2014 no strong axis resemblance."
+        }
+      ]
     },
     {
       "name": "paragoncorp",
@@ -98,7 +148,19 @@
         "confidence_level": 98
       },
       "relevant": false,
-      "rationale": "ParagonCorp is a beauty-products manufacturer, not a ride-hailing, delivery, payments, or merchant-services super-app like Grab."
+      "rationale": "Indonesian beauty-products company; it does not operate ride-hailing, delivery, payments, or a super-app marketplace.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Indonesian beauty-products company; it does not operate ride-hailing, delivery, payments, or a super-app marketplace."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Indonesian beauty/cosmetics brand company; no resemblance to Grab's ride-hailing, delivery, or payments super-app business."
+        }
+      ]
     },
     {
       "name": "tiket.com",
@@ -114,7 +176,19 @@
         "confidence_level": 98
       },
       "relevant": false,
-      "rationale": "tiket.com is primarily an online travel booking agency, not an on-demand ride-hailing, delivery, payments, and merchant-services super-app."
+      "rationale": "Online travel agency for booking travel and transport, not an on-demand ride-hailing, delivery, payments, and merchant-services super-app.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Online travel agency for booking travel and transport, not an on-demand ride-hailing, delivery, payments, and merchant-services super-app."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Online travel agency for flights/hotels; not a ride-hailing, delivery, or payments super-app competitor."
+        }
+      ]
     },
     {
       "name": "shopee",
@@ -129,8 +203,20 @@
         "country": "singapore",
         "confidence_level": 98
       },
-      "relevant": false,
-      "rationale": "Shopee is primarily an e-commerce marketplace, not an on-demand ride-hailing and local delivery super-app; overlap in payments/logistics is ancillary."
+      "relevant": true,
+      "rationale": "Shopee is a Southeast Asian consumer commerce platform with payments and logistics, overlapping Grab\u2019s super-app merchant and consumer ecosystem.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Shopee is a Southeast Asian consumer commerce platform with payments and logistics, overlapping Grab\u2019s super-app merchant and consumer ecosystem."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both Southeast Asian consumer super-apps: Shopee overlaps Grab in payments, food delivery, logistics, and digital financial services for the same regional consumers and merchants."
+        }
+      ]
     },
     {
       "name": "tiktok",
@@ -146,7 +232,19 @@
         "confidence_level": 98
       },
       "relevant": false,
-      "rationale": "TikTok is a social entertainment platform, not a ride-hailing, delivery, payments, or merchant-services super-app serving the same job to be done."
+      "rationale": "TikTok is a social video entertainment platform, not an on-demand ride-hailing, delivery, payments, or merchant-services marketplace.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "TikTok is a social video entertainment platform, not an on-demand ride-hailing, delivery, payments, or merchant-services marketplace."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "TikTok is a short-video entertainment platform; no overlap with Grab's ride-hailing, delivery, payments super-app on any axis."
+        }
+      ]
     },
     {
       "name": "traveloka",
@@ -162,7 +260,19 @@
         "confidence_level": 98
       },
       "relevant": false,
-      "rationale": "Traveloka is a travel-booking platform, not an on-demand ride-hailing, delivery, payments, or merchant-services super-app serving the same job to be done."
+      "rationale": "Traveloka is an online travel-booking platform for flights and hotels, not an on-demand ride-hailing, delivery, payments, and merchant-services super-app.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Traveloka is an online travel-booking platform for flights and hotels, not an on-demand ride-hailing, delivery, payments, and merchant-services super-app."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Traveloka is a travel-booking platform (flights, hotels), not ride-hailing, delivery, or payments\u2014different product and market from Grab's super-app."
+        }
+      ]
     },
     {
       "name": "unilever",
@@ -178,10 +288,20 @@
         "confidence_level": 98
       },
       "relevant": false,
-      "rationale": "Unilever manufactures consumer goods; it does not offer Grab-like ride-hailing, delivery, payments, or merchant marketplace services."
+      "rationale": "Unilever is a consumer-goods manufacturer, not an on-demand mobility, delivery, payments, or super-app platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Unilever is a consumer-goods manufacturer, not an on-demand mobility, delivery, payments, or super-app platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Unilever is a consumer packaged goods manufacturer; no overlap with Grab's ride-hailing, delivery, or fintech super-app on any axis."
+        }
+      ]
     }
   ],
-  "error": null,
-  "relevant_count_at_25": 1,
-  "precision_at_25": 4.0
+  "error": null
 }

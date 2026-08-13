@@ -7,18 +7,20 @@
     "name": "domain_lookalikes"
   },
   "k": 100,
-  "relevant_count": 7,
-  "precision_at_k": 7.0,
-  "relevant_count_at_10": 7,
-  "relevant_count_at_100": 7,
-  "precision_at_10": 70.0,
-  "precision_at_100": 7.0,
+  "relevant_count": 9,
+  "precision_at_k": 9.0,
+  "relevant_count_at_10": 9,
+  "relevant_count_at_25": 9,
+  "relevant_count_at_100": 9,
+  "precision_at_10": 90.0,
+  "precision_at_25": 36.0,
+  "precision_at_100": 9.0,
   "latency_ms": 702,
   "cost_usd": null,
   "duplicates_removed": 0,
   "max_results": 10,
-  "judge_model": "gpt-5.6",
-  "judged_at": "2026-07-27T03:31:18Z",
+  "judge_model": "majority(n=3): claude-opus-5,gpt-5.6-terra,kimi-k3",
+  "judged_at": "2026-08-10T19:21:48Z",
   "candidates": [
     {
       "name": "atlassian",
@@ -34,7 +36,19 @@
         "confidence_level": 95
       },
       "relevant": false,
-      "rationale": "Atlassian primarily provides collaboration, project management, and productivity software, not endpoint security, threat intelligence, or incident response cybersecurity."
+      "rationale": "Atlassian sells collaboration, project-management, and IT workflow tools, not endpoint cybersecurity, threat intelligence, or incident-response products.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Atlassian sells collaboration, project-management, and IT workflow tools, not endpoint cybersecurity, threat intelligence, or incident-response products."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Atlassian sells team collaboration/productivity software (Jira, Confluence), not cybersecurity; no product or market overlap with endpoint protection."
+        }
+      ]
     },
     {
       "name": "cisco",
@@ -50,7 +64,24 @@
         "confidence_level": 95
       },
       "relevant": true,
-      "rationale": "Cisco offers enterprise endpoint security, XDR, threat intelligence, and incident response products evaluated by the same security buyers as CrowdStrike."
+      "rationale": "Cisco sells enterprise cybersecurity, including endpoint security and threat detection, making it a broad but genuine CrowdStrike competitor/comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Cisco sells enterprise cybersecurity, including endpoint security and threat detection, making it a broad but genuine CrowdStrike competitor/comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Cisco is primarily a networking infrastructure company; endpoint security is not its primary product, so resemblance to CrowdStrike is weak."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Cisco's security portfolio (Secure Endpoint, Talos threat intel) directly competes with CrowdStrike, despite broader networking focus."
+        }
+      ]
     },
     {
       "name": "cloudflare",
@@ -65,8 +96,20 @@
         "country": "united states",
         "confidence_level": 95
       },
-      "relevant": false,
-      "rationale": "Cloudflare primarily provides network, application, and edge security, not CrowdStrike\u2019s core endpoint protection and incident-response platform for the same job."
+      "relevant": true,
+      "rationale": "Cloudflare offers cloud-native network and application security, overlapping cybersecurity buyers and threat protection, though it is less endpoint-focused than CrowdStrike.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Cloudflare offers cloud-native network and application security, overlapping cybersecurity buyers and threat protection, though it is less endpoint-focused than CrowdStrike."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are cloud-native cybersecurity platforms selling enterprise security (Cloudflare's Zero Trust/threat protection) to the same security buyers; genuine comparables."
+        }
+      ]
     },
     {
       "name": "fortinet",
@@ -82,7 +125,19 @@
         "confidence_level": 95
       },
       "relevant": true,
-      "rationale": "Fortinet offers enterprise endpoint, network, and threat-security products evaluated by the same cybersecurity buyers as CrowdStrike."
+      "rationale": "Fortinet is a cybersecurity vendor offering network and endpoint security, threat protection, and enterprise security platforms comparable to CrowdStrike.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Fortinet is a cybersecurity vendor offering network and endpoint security, threat protection, and enterprise security platforms comparable to CrowdStrike."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Fortinet is an enterprise cybersecurity platform (firewall, endpoint, network security); direct competitor and comparable to CrowdStrike's security platform."
+        }
+      ]
     },
     {
       "name": "microsoft",
@@ -98,7 +153,19 @@
         "confidence_level": 95
       },
       "relevant": true,
-      "rationale": "Microsoft Defender offers endpoint protection, threat intelligence, and incident response, making it a direct alternative evaluated by the same security buyers."
+      "rationale": "Microsoft Defender is a major endpoint security, threat detection, and incident-response platform competing directly with CrowdStrike.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Microsoft Defender is a major endpoint security, threat detection, and incident-response platform competing directly with CrowdStrike."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Microsoft's Defender/Sentinel line competes directly with CrowdStrike in endpoint protection and threat detection; genuine competitor despite broader portfolio."
+        }
+      ]
     },
     {
       "name": "okta",
@@ -113,8 +180,25 @@
         "country": "united states",
         "confidence_level": 95
       },
-      "relevant": false,
-      "rationale": "Okta primarily provides identity and access management, not endpoint protection; shared security buyers do not make the products substitutes for the same job."
+      "relevant": true,
+      "rationale": "Both are enterprise cloud cybersecurity platforms sold to security buyers; identity security is a comparable, adjacent security category and business model.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Okta is an identity and access management security platform, not an endpoint protection or threat detection competitor."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are enterprise cloud cybersecurity platforms sold to security buyers; identity security is a comparable, adjacent security category and business model."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Both are large cloud-native enterprise cybersecurity platforms selling to CISOs; adjacent identity vs endpoint security peers/comparables.', ''.', ''.', ''.', ''.', ''.', ''.'.', ''.'.'.'.'.'.'.'.'.'.'"
+        }
+      ]
     },
     {
       "name": "palo alto networks",
@@ -130,7 +214,19 @@
         "confidence_level": 95
       },
       "relevant": true,
-      "rationale": "Both offer enterprise cybersecurity platforms with overlapping endpoint protection, threat detection, cloud security, and incident-response capabilities for security teams."
+      "rationale": "Integrated cybersecurity platform with endpoint, cloud, network security, threat detection, and response offerings; a direct enterprise security competitor.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Integrated cybersecurity platform with endpoint, cloud, network security, threat detection, and response offerings; a direct enterprise security competitor."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are enterprise cybersecurity platforms protecting endpoints, networks, and clouds with threat intelligence; direct competitors in the same market."
+        }
+      ]
     },
     {
       "name": "sentinelone",
@@ -146,7 +242,19 @@
         "confidence_level": 95
       },
       "relevant": true,
-      "rationale": "SentinelOne directly overlaps CrowdStrike in endpoint protection, threat detection, incident response, and cloud security for enterprise security teams."
+      "rationale": "SentinelOne directly competes in cloud-native endpoint protection, threat detection, incident response, and managed security operations.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "SentinelOne directly competes in cloud-native endpoint protection, threat detection, incident response, and managed security operations."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Direct competitor: AI-powered endpoint protection, threat detection, and incident response cybersecurity platform matching CrowdStrike on product, market, and model."
+        }
+      ]
     },
     {
       "name": "wiz",
@@ -162,7 +270,19 @@
         "confidence_level": 95
       },
       "relevant": true,
-      "rationale": "Both provide cloud-native security platforms for enterprise security teams, overlapping in cloud workload protection, risk reduction, threat detection, and response."
+      "rationale": "Wiz is a cloud-security platform for threat detection and risk reduction, directly comparable to CrowdStrike's cloud-native cybersecurity offerings.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Wiz is a cloud-security platform for threat detection and risk reduction, directly comparable to CrowdStrike's cloud-native cybersecurity offerings."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are cloud-native security platforms protecting enterprise workloads; Wiz is a direct cybersecurity competitor/comparable for security teams."
+        }
+      ]
     },
     {
       "name": "zscaler",
@@ -178,10 +298,20 @@
         "confidence_level": 95
       },
       "relevant": true,
-      "rationale": "Both provide enterprise cloud-native security platforms protecting users, devices, and workloads, with overlapping zero-trust capabilities and CISO/security-team buyers."
+      "rationale": "Both are enterprise cybersecurity platforms protecting endpoints, users, devices, and cloud environments against threats; Zscaler is a strong security-market comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both are enterprise cybersecurity platforms protecting endpoints, users, devices, and cloud environments against threats; Zscaler is a strong security-market comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are cloud-native enterprise cybersecurity platforms serving the same security buyers; zero-trust and endpoint protection are peer comparables in enterprise security."
+        }
+      ]
     }
   ],
-  "error": null,
-  "relevant_count_at_25": 7,
-  "precision_at_25": 28.0
+  "error": null
 }

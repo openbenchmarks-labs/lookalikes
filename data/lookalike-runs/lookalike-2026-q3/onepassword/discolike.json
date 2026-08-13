@@ -7,20 +7,20 @@
     "name": "domain_similarity"
   },
   "k": 100,
-  "relevant_count": 28,
-  "precision_at_k": 28.0,
-  "relevant_count_at_10": 6,
-  "relevant_count_at_25": 11,
-  "relevant_count_at_100": 28,
-  "precision_at_10": 60.0,
-  "precision_at_25": 44.0,
-  "precision_at_100": 28.0,
+  "relevant_count": 38,
+  "precision_at_k": 38.0,
+  "relevant_count_at_10": 8,
+  "relevant_count_at_25": 15,
+  "relevant_count_at_100": 38,
+  "precision_at_10": 80.0,
+  "precision_at_25": 60.0,
+  "precision_at_100": 38.0,
   "latency_ms": 1162,
   "cost_usd": null,
   "duplicates_removed": 12,
   "max_results": null,
-  "judge_model": "gpt-5.6",
-  "judged_at": "2026-07-27T06:55:17Z",
+  "judge_model": "majority(n=3): claude-opus-5,gpt-5.6-terra,kimi-k3",
+  "judged_at": "2026-08-10T20:03:32Z",
   "candidates": [
     {
       "name": "1Password",
@@ -48,7 +48,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "This is a duplicate/staging-domain entry for the seed company itself, not a distinct prospectable lookalike."
+      "rationale": "Duplicate/staging-domain entry for the seed company, not a distinct lookalike candidate.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Duplicate/staging-domain entry for the seed company, not a distinct lookalike candidate."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Duplicate of the seed itself: same name, same official social URLs, staging domain (1pstage.com). Duplicates are excluded."
+        }
+      ]
     },
     {
       "name": "Bravura Security",
@@ -76,7 +88,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both offer enterprise password and access-security management, targeting organizations managing employee identities, credentials, and privileged access."
+      "rationale": "Bravura provides enterprise password management, identity lifecycle, and privileged access controls, directly overlapping 1Password\u2019s access-security platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Bravura provides enterprise password management, identity lifecycle, and privileged access controls, directly overlapping 1Password\u2019s access-security platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Enterprise identity and password-management platform with privileged access controls \u2014 same product category and buyer as 1Password's business offering."
+        }
+      ]
     },
     {
       "name": "Passwork",
@@ -115,7 +139,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Passwork directly overlaps 1Password\u2019s business password and secrets management, serving organizations needing secure credential storage, sharing, and access controls."
+      "rationale": "Business password and secrets-management platform with credential sharing and access-security features, directly comparable to 1Password.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Business password and secrets-management platform with credential sharing and access-security features, directly comparable to 1Password."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Business password/secrets manager directly competing with 1Password on product, buyer, and B2B model; self-hosted angle is minor variation."
+        }
+      ]
     },
     {
       "name": "Onepriv",
@@ -139,7 +175,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Onepriv offers business password management, employee credentialing, access controls, and device trust, overlapping 1Password\u2019s workforce access-security use cases."
+      "rationale": "Platform manages passwords, employee credentials, access controls, and device trust for businesses, directly overlapping 1Password's password-management and access-security product.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Platform manages passwords, employee credentials, access controls, and device trust for businesses, directly overlapping 1Password's password-management and access-security product."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Password management, credential security, and access control platform for businesses\u2014direct product and market overlap with 1Password."
+        }
+      ]
     },
     {
       "name": "SSOBOX",
@@ -165,7 +213,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide business credential and access-management software for IT/security teams, including password management, authentication, onboarding, and access controls."
+      "rationale": "SSOBOX provides business SSO, password management, and access controls, directly overlapping 1Password\u2019s identity and access-security platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "SSOBOX provides business SSO, password management, and access controls, directly overlapping 1Password\u2019s identity and access-security platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are B2B access-security platforms: SSOBOX offers SSO plus password management and access controls, directly comparable to 1Password's password-management and access-security product."
+        }
+      ]
     },
     {
       "name": "Bitwarden",
@@ -198,7 +258,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide business password management and access security, serving organizations securing employee, developer, and machine credentials."
+      "rationale": "Bitwarden directly competes in password management and business access security, offering encrypted credential storage, sharing, passkeys, and enterprise controls.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Bitwarden directly competes in password management and business access security, offering encrypted credential storage, sharing, passkeys, and enterprise controls."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Direct competitor: password-management and credential-security platform for individuals and businesses, matching 1Password on product, market, and model."
+        }
+      ]
     },
     {
       "name": "FusionAuth",
@@ -228,8 +300,25 @@
           "https://x.com/fusionauth"
         ]
       },
-      "relevant": false,
-      "rationale": "FusionAuth provides application/customer identity authentication, while 1Password primarily manages workforce credentials and passwords; their core buyers and jobs differ."
+      "relevant": true,
+      "rationale": "Both are identity/access-security platforms for businesses and developers; FusionAuth's authentication and access-management product overlaps 1Password's access-security market.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "FusionAuth is primarily a customer identity/authentication platform, while 1Password is a password and workforce access-security platform; they are more complementary than competitive."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are identity/access-security platforms for businesses and developers; FusionAuth's authentication and access-management product overlaps 1Password's access-security market."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Identity and access management/authentication software; adjacent competitor in credential and access-security space serving businesses and developers., You must respond with valid JSON that conforms to the following JSON schema:"
+        }
+      ]
     },
     {
       "name": "Passpack",
@@ -255,7 +344,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Passpack is a business password-management and secure credential-sharing platform serving the same teams and access-security use case as 1Password."
+      "rationale": "Business password-management platform with encrypted credential storage, team sharing, and access controls; directly comparable to 1Password.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Business password-management platform with encrypted credential storage, team sharing, and access controls; directly comparable to 1Password."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "B2B password manager with team credential sharing and encryption, directly competing with 1Password on product, market, and business model."
+        }
+      ]
     },
     {
       "name": "Payouts.com",
@@ -281,7 +382,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Payouts.com provides payment and vendor payout automation, not employee password management or access security; buyers and jobs-to-be-done differ."
+      "rationale": "Global payouts and banking-compliance automation is fintech operations software, not password management or access-security.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Global payouts and banking-compliance automation is fintech operations software, not password management or access-security."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Payouts automation fintech; no overlap with password management or access-security product, market, or model."
+        }
+      ]
     },
     {
       "name": "RSA",
@@ -310,8 +423,20 @@
           "https://x.com/rsasecurity"
         ]
       },
-      "relevant": false,
-      "rationale": "RSA focuses on enterprise authentication and identity governance, not password management; despite shared security buyers, the primary jobs and evaluation categories differ."
+      "relevant": true,
+      "rationale": "RSA provides enterprise identity, authentication, and access-security products for the same organizational access-management buyers as 1Password.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "RSA provides enterprise identity, authentication, and access-security products for the same organizational access-management buyers as 1Password."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "RSA is an identity and access-security vendor (MFA, passwordless auth, identity governance) \u2014 direct competitor/comparable to 1Password's access-security platform for businesses."
+        }
+      ]
     },
     {
       "name": "HYPR",
@@ -342,7 +467,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide enterprise workforce identity and access security, targeting IT/security buyers seeking secure authentication and reduced password-related risk."
+      "rationale": "HYPR provides enterprise passwordless authentication and identity security, closely overlapping 1Password\u2019s access-security and credential-management market.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "HYPR provides enterprise passwordless authentication and identity security, closely overlapping 1Password\u2019s access-security and credential-management market."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are B2B identity-and-access security platforms for workforce authentication; HYPR's passwordless/FIDO2 offering directly competes with 1Password's access-security space."
+        }
+      ]
     },
     {
       "name": "PrivateNetAI",
@@ -364,7 +501,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "PrivateNetAI is primarily a privacy-tool comparison and AI automation site, not an employee password-management and access-security platform."
+      "rationale": "Primarily a privacy/cybersecurity information and AI automation platform; password management is only one ancillary tool, not a comparable business access-security product.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Primarily a privacy/cybersecurity information and AI automation platform; password management is only one ancillary tool, not a comparable business access-security product."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Content/comparison site about privacy tools plus AI content agents; not a password-management or access-security product competitor."
+        }
+      ]
     },
     {
       "name": "Curity",
@@ -390,8 +539,25 @@
           "https://x.com/curityio"
         ]
       },
-      "relevant": false,
-      "rationale": "Curity focuses on customer/API identity and authentication, not employee password, secrets, and access management; buyers would evaluate them for different jobs."
+      "relevant": true,
+      "rationale": "Curity is an identity and access management platform (authentication, SSO, secure access), overlapping 1Password's access-security market and buyer persona as a comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Curity is an API-focused IAM and authentication platform, not primarily an employee password-management and access-security product like 1Password."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Curity is an identity and access management platform (authentication, SSO, secure access), overlapping 1Password's access-security market and buyer persona as a comparable."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Identity and access management/authentication security software for businesses and developers \\u2014 adjacent competitor in access-security space.<json_schema>Bad</json_schema>"
+        }
+      ]
     },
     {
       "name": "Reco",
@@ -418,7 +584,24 @@
         ]
       },
       "relevant": false,
-      "rationale": "Reco secures AI agents and SaaS application posture, while 1Password primarily manages credentials and workforce access; their core jobs differ."
+      "rationale": "Reco is a SaaS and AI-agent security posture platform, not a password-management or credential-access platform like 1Password.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Reco is a SaaS and AI-agent security posture platform, not a password-management or credential-access platform like 1Password."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are B2B security platforms for workforce access and identity governance, serving the same IT/security buyer protecting employee access to business apps and data."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "SaaS/AI-agent security posture management, not password/credential management; only broad cybersecurity overlap with 1Password.098 Different buyer job.', ''"
+        }
+      ]
     },
     {
       "name": "PassageWay",
@@ -441,7 +624,19 @@
         "social_urls": []
       },
       "relevant": true,
-      "rationale": "PassageWay offers cross-device password management, autofill, vault synchronization, authentication, and business support, directly overlapping 1Password\u2019s core access-security use case."
+      "rationale": "Password-management platform with vault sync, autofill, MFA, and business support directly overlaps 1Password's access-security product.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Password-management platform with vault sync, autofill, MFA, and business support directly overlaps 1Password's access-security product."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Password-management platform with autofill, 2FA, vault sync, and imports from 1Password/LastPass \u2014 direct product and market competitor. Small size is irrelevant per rules."
+        }
+      ]
     },
     {
       "name": "TeamPassword",
@@ -470,7 +665,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both offer business password management, secure credential sharing, and team access controls to the same organizational buyers and users."
+      "rationale": "TeamPassword directly competes in business password management, offering secure credential storage, sharing, access controls, and team administration.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "TeamPassword directly competes in business password management, offering secure credential storage, sharing, access controls, and team administration."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Same product: team password management with secure sharing, 2FA, and access controls \u2014 a direct competitor to 1Password."
+        }
+      ]
     },
     {
       "name": "One Identity",
@@ -503,7 +710,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide enterprise identity and access security, including authentication and privileged-access capabilities, targeting the same IT and security buyers."
+      "rationale": "Identity-security platform providing access management, privileged access controls, and authentication for enterprises; a close access-security comparable to 1Password.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Identity-security platform providing access management, privileged access controls, and authentication for enterprises; a close access-security comparable to 1Password."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both sell enterprise identity and access-security platforms (password management, authentication, privileged access); same buyer and product category, direct competitors."
+        }
+      ]
     },
     {
       "name": "RCDevs",
@@ -533,7 +752,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide B2B identity and access-security platforms, including secure authentication, access policies, and credential-related controls for IT and security teams."
+      "rationale": "Identity and access-control platform offering MFA and password security for organizations; a close access-security comparable to 1Password.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Identity and access-control platform offering MFA and password security for organizations; a close access-security comparable to 1Password."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both sell business access-security products: 1Password password management, RCDevs identity management and MFA/authentication\u2014direct competitors in workforce access security."
+        }
+      ]
     },
     {
       "name": "License Dashboard",
@@ -560,7 +791,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "License Dashboard manages software assets, licensing, and compliance, not employee credentials, password management, or access security."
+      "rationale": "Software asset and license management platform, not a password manager or access-security product.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Software asset and license management platform, not a password manager or access-security product."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Software asset/license management and compliance, not password management or access security; different product and buyer problem."
+        }
+      ]
     },
     {
       "name": "DataBreachToday",
@@ -587,7 +830,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "DataBreachToday is primarily cybersecurity media and training, not a password-management or workforce access-security platform evaluated for the same job."
+      "rationale": "Cybersecurity media and training outlet, not a password-management or employee access-security platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Cybersecurity media and training outlet, not a password-management or employee access-security platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Cybersecurity media/news and training outlet (ISMG), not a password-management or access-security product; no product or market overlap with 1Password."
+        }
+      ]
     },
     {
       "name": "Onetime Secret",
@@ -608,8 +863,25 @@
         "city": "Toronto",
         "social_urls": []
       },
-      "relevant": false,
-      "rationale": "Onetime Secret provides ephemeral secret sharing, not ongoing password management or workforce access security; buyers would use it for a different job."
+      "relevant": true,
+      "rationale": "Secure credential-sharing platform in same access-security space, serving same business buyer for protecting sensitive credentials; genuine comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "One-time encrypted secret sharing is adjacent to, but not a password-management or access-security platform comparable to 1Password."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Secure credential-sharing platform in same access-security space, serving same business buyer for protecting sensitive credentials; genuine comparable."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Secure credential-sharing tool for the same security-conscious business buyers; adjacent competitor to 1Password's secret-sharing capability.', ' ok"
+        }
+      ]
     },
     {
       "name": "Gorilla",
@@ -632,7 +904,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Gorilla is a complementary governance and rotation tool built around 1Password, not a standalone password-management platform evaluated for the same job."
+      "rationale": "Gorilla is a 1Password-specific administration and offboarding tool, complementing rather than competing with the core password-management platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Gorilla is a 1Password-specific administration and offboarding tool, complementing rather than competing with the core password-management platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Gorilla is an add-on built on top of 1Password for 1Password customers, not a competing or comparable password-management platform."
+        }
+      ]
     },
     {
       "name": "BankInfoSecurity",
@@ -658,7 +942,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "BankInfoSecurity is cybersecurity media and training, not a password-management or employee access-security software platform evaluated for the same job."
+      "rationale": "Cybersecurity news and training publisher for financial institutions, not a password-management or access-security software platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Cybersecurity news and training publisher for financial institutions, not a password-management or access-security software platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Cybersecurity news/training media platform, not a password-management or access-security software product; serves the category as media, not competitor."
+        }
+      ]
     },
     {
       "name": "LayerX",
@@ -684,7 +980,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "LayerX focuses on browser, SaaS, and AI interaction security, not password management or employee credential access for the same core job."
+      "rationale": "LayerX provides browser and SaaS interaction security, not password management or credential-based access security.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "LayerX provides browser and SaaS interaction security, not password management or credential-based access security."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Both enterprise cybersecurity, but LayerX sells browser/AI governance and DLP, not password/credential or access management; different product and job-to-be-done."
+        }
+      ]
     },
     {
       "name": "Adversis Solutions",
@@ -710,7 +1018,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Adversis provides cybersecurity consulting, penetration testing, and compliance services, not employee password management or access-security software for the same job."
+      "rationale": "Cybersecurity consultancy offering testing, advisory, and compliance services, not a password-management or access-security software platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Cybersecurity consultancy offering testing, advisory, and compliance services, not a password-management or access-security software platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Security services/consultancy (pen testing, compliance advisory), not a password-management or access-security product competitor."
+        }
+      ]
     },
     {
       "name": "NordPass",
@@ -739,7 +1059,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "NordPass directly overlaps 1Password in business password management, credential security, access controls, and organizational password-policy enforcement."
+      "rationale": "NordPass is a business password-management and access-security platform, directly comparable to 1Password.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "NordPass is a business password-management and access-security platform, directly comparable to 1Password."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Direct competitor: business password manager with secure credential storage, matching 1Password on product, market, and business model."
+        }
+      ]
     },
     {
       "name": "Microsoft 365",
@@ -769,7 +1101,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Microsoft 365 primarily provides productivity and collaboration applications, not password management or employee access security for the same job to be done."
+      "rationale": "Microsoft 365 is a productivity suite, not a password-management or access-security platform comparable to 1Password.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Microsoft 365 is a productivity suite, not a password-management or access-security platform comparable to 1Password."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Productivity/office suite, not password management or access security; different product and buyer need. Suspicious mismatched domain."
+        }
+      ]
     },
     {
       "name": "50skills",
@@ -801,7 +1145,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "50skills automates HR workflows and employee journeys; it does not provide password management or access-security capabilities for the same job."
+      "rationale": "HR workflow automation for onboarding and offboarding, not password management or access-security software.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "HR workflow automation for onboarding and offboarding, not password management or access-security software."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "50skills sells HR workflow automation; 1Password is password management and access security. Different product, market, and buyer."
+        }
+      ]
     },
     {
       "name": "Prompt Security",
@@ -832,7 +1188,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Prompt Security secures enterprise AI usage and applications, not employee credentials, passwords, or access management for the same job to be done."
+      "rationale": "Prompt Security focuses on AI-tool risk, data leakage, and agent security, not password management or business access-security management.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Prompt Security focuses on AI-tool risk, data leakage, and agent security, not password management or business access-security management."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "AI-tool security platform, not password/access management; different product and job-to-be-done despite shared cybersecurity umbrella."
+        }
+      ]
     },
     {
       "name": "DNSFilter",
@@ -863,7 +1231,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "DNSFilter provides DNS-layer threat and content filtering, not password management or employee access security; the core products solve different security jobs."
+      "rationale": "DNS filtering protects networks from threats and content, whereas 1Password manages credentials and access; they are distinct security product categories.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "DNS filtering protects networks from threats and content, whereas 1Password manages credentials and access; they are distinct security product categories."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Both B2B cybersecurity SaaS, but DNS filtering is a different product and job than password/access management; taxonomy alone doesn't suffice."
+        }
+      ]
     },
     {
       "name": "X0PA",
@@ -892,7 +1272,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "X0PA provides AI recruitment and applicant-tracking software, not password management or employee access security; buyers and jobs to be done differ."
+      "rationale": "X0PA provides AI recruitment and applicant-tracking software, not password management or access-security products.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "X0PA provides AI recruitment and applicant-tracking software, not password management or access-security products."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "X0PA is an AI recruitment/HR platform; no overlap with password management or access security on any axis."
+        }
+      ]
     },
     {
       "name": "zSecurity",
@@ -928,7 +1320,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "zSecurity primarily sells cybersecurity training and penetration-testing services, not employee password management or access-security software for business buyers."
+      "rationale": "Cybersecurity training and penetration-testing consulting, not a password-management or business access-security platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Cybersecurity training and penetration-testing consulting, not a password-management or business access-security platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Cybersecurity training/courses and consulting platform, not a password-management or access-security product; no product or market overlap as a peer."
+        }
+      ]
     },
     {
       "name": "Keeper Security",
@@ -956,7 +1360,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Keeper directly overlaps 1Password in business password management, secure credential storage, and workforce access security for the same IT/security buyers."
+      "rationale": "Keeper Security directly competes in password management and access security for individuals and businesses.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Keeper Security directly competes in password management and access security for individuals and businesses."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Direct competitor: password-management and access-security platform for businesses, matching 1Password on product, market, and business model."
+        }
+      ]
     },
     {
       "name": "ProNoesis",
@@ -981,7 +1397,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "ProNoesis is primarily an IAM consulting and implementation services firm, not a competing password-management or access-security software platform."
+      "rationale": "ProNoesis is primarily an IAM advisory and implementation consultancy, not a password-management/access-security software platform comparable to 1Password.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "ProNoesis is primarily an IAM advisory and implementation consultancy, not a password-management/access-security software platform comparable to 1Password."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "IAM consulting and implementation services firm advising on the category, not a password-management product competitor to 1Password."
+        }
+      ]
     },
     {
       "name": "Swif, Inc.",
@@ -1010,7 +1438,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Swif.ai primarily manages devices and compliance, not workforce passwords, credentials, or identity access for the same core job."
+      "rationale": "Swif.ai primarily provides device management and compliance automation, not password management or secrets-based access security.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Swif.ai primarily provides device management and compliance automation, not password management or secrets-based access security."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Swif is device management/MDM compliance software, not password/credential management; shared cybersecurity label alone insufficient, like Rippling vs device-security example."
+        }
+      ]
     },
     {
       "name": "LastPass",
@@ -1044,7 +1484,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "LastPass directly overlaps 1Password in business password management, credential sharing, MFA, and employee access security for the same organizational buyers."
+      "rationale": "LastPass is a direct competitor offering enterprise password management, credential vaults, sharing, access controls, and security governance.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "LastPass is a direct competitor offering enterprise password management, credential vaults, sharing, access controls, and security governance."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Direct competitor: password manager with enterprise access controls, same product, market, and business model as 1Password."
+        }
+      ]
     },
     {
       "name": "CloudEagle.ai",
@@ -1071,7 +1523,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "CloudEagle primarily handles SaaS procurement, licenses, and governance, not password management or credential-based access security; buyer overlap alone is insufficient."
+      "rationale": "CloudEagle.ai focuses on SaaS procurement, license, and contract governance; its access features do not make it a password-management or access-security platform peer.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "CloudEagle.ai focuses on SaaS procurement, license, and contract governance; its access features do not make it a password-management or access-security platform peer."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "CloudEagle is SaaS spend/procurement and license management; 1Password is password and access-security. Different primary products despite adjacent access-governance features."
+        }
+      ]
     },
     {
       "name": "Leet Service",
@@ -1098,7 +1562,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide business password management, centralized credential vaults, secure team sharing, and access-security features for modern organizations."
+      "rationale": "Secure team password manager with credential sharing, centralized vaults, access controls, and breach monitoring directly overlaps 1Password\u2019s product.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Secure team password manager with credential sharing, centralized vaults, access controls, and breach monitoring directly overlaps 1Password\u2019s product."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Direct competitor: team-focused password manager with secure vault, credential sharing, and breach monitoring \u2014 same product and market as 1Password."
+        }
+      ]
     },
     {
       "name": "SAASPASS",
@@ -1126,7 +1602,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "SAASPASS provides business identity and access security, including SSO and authentication, overlapping 1Password\u2019s employee access-management offering and buyers."
+      "rationale": "SAASPASS provides business passwordless authentication, SSO, MFA, and access management, directly overlapping 1Password's access-security and credential-management market.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "SAASPASS provides business passwordless authentication, SSO, MFA, and access management, directly overlapping 1Password's access-security and credential-management market."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Direct competitor: offers password manager, SSO, and MFA identity/access security for businesses, same product and market as 1Password."
+        }
+      ]
     },
     {
       "name": "Pointsharp",
@@ -1156,7 +1644,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide enterprise identity and access security, including authentication and credential-access controls, targeting organizational IT and security teams."
+      "rationale": "Pointsharp offers enterprise identity, authentication, and access-security solutions, closely overlapping 1Password\u2019s business password-management and secure-access market.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Pointsharp offers enterprise identity, authentication, and access-security solutions, closely overlapping 1Password\u2019s business password-management and secure-access market."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both sell business access-security products: authentication, passwordless, SSO/IAM \u2014 direct competitors in workforce identity security."
+        }
+      ]
     },
     {
       "name": "Dark Reading",
@@ -1185,7 +1685,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Dark Reading is a cybersecurity news and media platform, not a password-management or workforce access-security product evaluated for the same job."
+      "rationale": "Cybersecurity news and media platform, not a password-management or access-security product competitor or comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Cybersecurity news and media platform, not a password-management or access-security product competitor or comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Dark Reading is a cybersecurity news/media publication, not a password-management or access-security product vendor; no product, market, or model overlap."
+        }
+      ]
     },
     {
       "name": "Fells Code",
@@ -1211,7 +1723,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide business identity and access-security software, including credential vaulting and modern authentication, targeting security and IT teams."
+      "rationale": "Provides B2B passwordless authentication, encrypted vaults, and identity-security tooling, closely overlapping 1Password's access-security and credential-management market.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Provides B2B passwordless authentication, encrypted vaults, and identity-security tooling, closely overlapping 1Password's access-security and credential-management market."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Identity/authentication security software with encrypted password vaults; competes in 1Password's access-security space."
+        }
+      ]
     },
     {
       "name": "Password Manager Help",
@@ -1235,7 +1759,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "This is a coaching and setup service for 1Password users, not a competing password-management or access-security software platform."
+      "rationale": "Coaching service that implements 1Password for clients, not a password-management or access-security platform competitor.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Coaching service that implements 1Password for clients, not a password-management or access-security platform competitor."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Coaching/consultancy that helps clients implement 1Password, not a competing password-management product; serves the category rather than competing."
+        }
+      ]
     },
     {
       "name": "Admin By Request",
@@ -1268,7 +1804,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both offer B2B access-security software for IT teams, managing employee or administrator credentials and privileged access across organizational systems."
+      "rationale": "Both provide business access-security software, managing privileged credentials and user access for IT/security teams.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both provide business access-security software, managing privileged credentials and user access for IT/security teams."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "B2B access-security platform managing credentials and privileged access for organizations \u2014 same buyer and adjacent product space as 1Password's access management."
+        }
+      ]
     },
     {
       "name": "Apono",
@@ -1292,8 +1840,20 @@
           "https://x.com/apono_official"
         ]
       },
-      "relevant": false,
-      "rationale": "Apono governs just-in-time cloud infrastructure permissions, while 1Password primarily manages credentials and workforce access; their core jobs differ despite shared security buyers."
+      "relevant": true,
+      "rationale": "Both provide B2B access-security products for managing and securing workforce/developer access, though Apono focuses on cloud permissions and 1Password on credentials.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both provide B2B access-security products for managing and securing workforce/developer access, though Apono focuses on cloud permissions and 1Password on credentials."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are B2B access-security platforms controlling employee/developer permissions; Apono's privileged-access governance directly overlaps 1Password's access-management market."
+        }
+      ]
     },
     {
       "name": "Inboxflows",
@@ -1316,7 +1876,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Inboxflows provides competitive email-marketing research, not password management or workforce access security; buyers and jobs-to-be-done differ."
+      "rationale": "Email marketing intelligence and competitor monitoring, not password management or business access security.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Email marketing intelligence and competitor monitoring, not password management or business access security."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Email marketing and competitor-monitoring tool; no password management or access-security product overlap with 1Password."
+        }
+      ]
     },
     {
       "name": "LogMeOnce",
@@ -1347,7 +1919,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "LogMeOnce offers business password management and access authentication, overlapping 1Password\u2019s core product and serving the same organizational security buyers and users."
+      "rationale": "Password-management platform with MFA and passwordless authentication for business users, directly comparable to 1Password.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Password-management platform with MFA and passwordless authentication for business users, directly comparable to 1Password."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Password-management platform with MFA for businesses and consumers; direct competitor to 1Password on product and market."
+        }
+      ]
     },
     {
       "name": "Infosec",
@@ -1374,7 +1958,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Candidate provides cybersecurity news and professional training, not password management or employee access-security software for the same job to be done."
+      "rationale": "Cybersecurity news and professional training publisher, not a password-management or access-security product platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Cybersecurity news and professional training publisher, not a password-management or access-security product platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Cybersecurity news, training, and media platform; not a password-management or access-security product competitor."
+        }
+      ]
     },
     {
       "name": "Akeyless",
@@ -1403,7 +1999,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide enterprise credential, secrets, and access management for security and DevOps teams securing human and machine identities."
+      "rationale": "Both provide enterprise credential and access-security platforms, managing secrets and identities for employees and developers across business environments.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both provide enterprise credential and access-security platforms, managing secrets and identities for employees and developers across business environments."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both sell credential/secrets management and access-security platforms to businesses and developers; direct product and market overlap."
+        }
+      ]
     },
     {
       "name": "Kolide",
@@ -1429,7 +2037,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Kolide focuses device posture and conditional access for Okta, not password or credential management; a shared security buyer alone is insufficient."
+      "rationale": "Kolide provides device-trust and endpoint-posture controls for Okta, complementing rather than competing with 1Password's password and access-management platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Kolide provides device-trust and endpoint-posture controls for Okta, complementing rather than competing with 1Password's password and access-management platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Kolide is device-posture/Zero-Trust endpoint security for Okta, not password/credential management; adjacent security category, different product and job-to-be-done."
+        }
+      ]
     },
     {
       "name": "InfoRiskToday",
@@ -1455,7 +2075,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "InfoRiskToday is cybersecurity media and training, not a password-management or employee access-security software platform serving the same job to be done."
+      "rationale": "Cybersecurity news, training, and events publisher, not a password-management or access-security software platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Cybersecurity news, training, and events publisher, not a password-management or access-security software platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Cybersecurity news/training media platform, not a password-management or access-security product; serves the category as media, not a competitor."
+        }
+      ]
     },
     {
       "name": "BeyondTrust Corporation",
@@ -1486,7 +2118,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide enterprise credential and access-security platforms, serving IT and security teams managing identities, privileged access, and zero-trust controls."
+      "rationale": "Both provide enterprise access security and credential management; BeyondTrust focuses on privileged access while 1Password manages passwords and secrets.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both provide enterprise access security and credential management; BeyondTrust focuses on privileged access while 1Password manages passwords and secrets."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both sell enterprise access-security products to the same security buyers; BeyondTrust's privileged-access management is a direct adjacent comparable to 1Password's access management."
+        }
+      ]
     },
     {
       "name": "Specops Software",
@@ -1514,8 +2158,20 @@
           "https://x.com/specopssoftware"
         ]
       },
-      "relevant": false,
-      "rationale": "Specops secures Active Directory passwords and authentication but is not an enterprise password manager; the products address distinct, often complementary jobs."
+      "relevant": true,
+      "rationale": "Provides enterprise password security, authentication, and access-management tools for similar IT/security buyers, making it a close access-security comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Provides enterprise password security, authentication, and access-management tools for similar IT/security buyers, making it a close access-security comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both sell password-management and authentication-security products to organizations; Specops' AD password policy tools are a direct comparable in access security."
+        }
+      ]
     },
     {
       "name": "ClearVector Inc.",
@@ -1541,7 +2197,24 @@
         ]
       },
       "relevant": false,
-      "rationale": "ClearVector provides identity threat detection and response, not password management or employee access credential security for the same job to be done."
+      "rationale": "Identity-driven threat detection and response differs from password management and access-security credential platform products.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Identity-driven threat detection and response differs from password management and access-security credential platform products."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are B2B identity-security platforms protecting employee identities and access; same security buyer, adjacent identity/access-security product category."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "Cloud identity threat detection/response, not password management or credential access tooling; different product and buyer job.EOF"
+        }
+      ]
     },
     {
       "name": "ADITS",
@@ -1570,7 +2243,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "ADITS is a managed IT services and cybersecurity consultancy, not a password-management and employee access-security software platform."
+      "rationale": "ADITS is a managed IT and cybersecurity services provider; password management is ancillary, not a competing access-security platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "ADITS is a managed IT and cybersecurity services provider; password management is ancillary, not a competing access-security platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Managed IT services/consultancy firm, not a password-management software product; serves the category rather than competing with 1Password."
+        }
+      ]
     },
     {
       "name": "Subscribed.fyi",
@@ -1597,7 +2282,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Subscribed.fyi is a software review and discovery platform, not an employee password-management or access-security product."
+      "rationale": "Software reviews and discovery community, not a password-management or access-security platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Software reviews and discovery community, not a password-management or access-security platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Software-review/community platform, not password management or access security; no product, market, or business-model overlap with 1Password."
+        }
+      ]
     },
     {
       "name": "Checkmarx",
@@ -1627,7 +2324,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Checkmarx focuses on application code security and vulnerability scanning, not workforce password management, credential security, or access management."
+      "rationale": "Checkmarx provides application-security testing and code vulnerability management, not password management, credential storage, or access-security tools.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Checkmarx provides application-security testing and code vulnerability management, not password management, credential storage, or access-security tools."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Checkmarx is application-security testing/vulnerability scanning for code; 1Password is password and access management. Different security products, buyers, and jobs."
+        }
+      ]
     },
     {
       "name": "Clutch",
@@ -1653,7 +2362,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide enterprise identity, access, and secrets security evaluated by security teams, though Clutch specializes in non-human identities."
+      "rationale": "Clutch provides identity, secrets, and access-security management for businesses, closely overlapping 1Password\u2019s enterprise access-security and developer-secrets use cases.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Clutch provides identity, secrets, and access-security management for businesses, closely overlapping 1Password\u2019s enterprise access-security and developer-secrets use cases."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both secure identities, secrets, and access for businesses; Clutch's non-human identity/secrets security overlaps 1Password's access-security market as a comparable peer."
+        }
+      ]
     },
     {
       "name": "CLOUDCS",
@@ -1681,7 +2402,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "CLOUDCS is a broad IT services and consulting provider, not a password-management or workforce access-security software platform."
+      "rationale": "CLOUDCS is an IT infrastructure and consulting provider, not a password-management or access-security platform competitor.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "CLOUDCS is an IT infrastructure and consulting provider, not a password-management or access-security platform competitor."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "IT consulting/services firm offering cloud and app development, not a password-management or access-security product competitor."
+        }
+      ]
     },
     {
       "name": "Equus Software",
@@ -1710,7 +2443,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Equus manages HR and global employee mobility, not password management or access security; buyers and core jobs differ."
+      "rationale": "Equus provides HR global-mobility and payroll management, not password management or access-security products.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Equus provides HR global-mobility and payroll management, not password management or access-security products."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Equus is an HR global-mobility platform (payroll, immigration, travel); no overlap with 1Password's password management and access-security product or market."
+        }
+      ]
     },
     {
       "name": "TweakPass",
@@ -1738,8 +2483,20 @@
           "https://x.com/tweakingtech"
         ]
       },
-      "relevant": false,
-      "rationale": "TweakPass is primarily a consumer password vault, lacking 1Password\u2019s business-focused employee access management, administration, and organizational buyer persona."
+      "relevant": true,
+      "rationale": "Password manager and secure credential vault with autofill and encryption; directly comparable to 1Password despite consumer-focused positioning.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Password manager and secure credential vault with autofill and encryption; directly comparable to 1Password despite consumer-focused positioning."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Password manager with encrypted vault, autofill, cross-device sync \u2014 same core product as 1Password; size/consumer focus not disqualifying."
+        }
+      ]
     },
     {
       "name": "PasswordLab",
@@ -1766,7 +2523,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "PasswordLab offers business password management and credential security, directly overlapping 1Password\u2019s core product and serving the same organizational buyers and users."
+      "rationale": "Business password manager with encrypted credential storage, MFA, browser extensions, and enterprise deployment options; directly comparable to 1Password.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Business password manager with encrypted credential storage, MFA, browser extensions, and enterprise deployment options; directly comparable to 1Password."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Self-hosted business password manager with encryption, 2FA, browser extension \u2014 same product and market as 1Password; direct competitor."
+        }
+      ]
     },
     {
       "name": "TouchClass",
@@ -1794,7 +2563,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "TouchClass is an enterprise learning management system, not a password-management or access-security platform; buyers and jobs to be done differ."
+      "rationale": "TouchClass is an enterprise learning-management platform, not a password-management or access-security product.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "TouchClass is an enterprise learning-management platform, not a password-management or access-security product."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "TouchClass is an enterprise LMS for training; no overlap with password management or access security in product, market, or model."
+        }
+      ]
     },
     {
       "name": "Computerworld",
@@ -1821,7 +2602,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Computerworld is a technology news publisher, not a password-management or employee access-security platform evaluated for the same job."
+      "rationale": "Computerworld is a technology news and buyer-guidance publisher, not a password-management or access-security software provider.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Computerworld is a technology news and buyer-guidance publisher, not a password-management or access-security software provider."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Computerworld is a tech news/media publication, not a password-management or access-security product; no product, market, or model overlap with 1Password."
+        }
+      ]
     },
     {
       "name": "CUInfoSecurity",
@@ -1848,7 +2641,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "CUInfoSecurity provides cybersecurity news and training, not password management or employee access-security software for the same job to be done."
+      "rationale": "Cybersecurity news and training publisher for financial institutions, not a password-management or access-security software platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Cybersecurity news and training publisher for financial institutions, not a password-management or access-security software platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "CUInfoSecurity is a cybersecurity news/training media platform for credit unions, not a password-management or access-security product."
+        }
+      ]
     },
     {
       "name": "Secrets",
@@ -1875,8 +2680,20 @@
           "https://youtube.com/@SecretsApp"
         ]
       },
-      "relevant": false,
-      "rationale": "Secrets is a consumer-focused Apple password manager, not a business access-security platform evaluated by enterprise IT or security buyers."
+      "relevant": true,
+      "rationale": "Both provide encrypted password management, passkey storage, autofill, and multi-device credential access; Secrets is a consumer-focused comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both provide encrypted password management, passkey storage, autofill, and multi-device credential access; Secrets is a consumer-focused comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Password manager storing credentials, passkeys, OTPs with sync\u2014same core product as 1Password, direct competitor despite consumer focus and smaller size."
+        }
+      ]
     },
     {
       "name": "OneSupport",
@@ -1902,7 +2719,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "OneSupport provides managed IT and contact-center services, not password management or employee access-security software evaluated for the same job."
+      "rationale": "OneSupport provides contact-center and managed IT services, not password management or access-security software.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "OneSupport provides contact-center and managed IT services, not password management or access-security software."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Cloud contact center and managed IT services; no password-management or access-security product, different market entirely."
+        }
+      ]
     },
     {
       "name": "OneTrust",
@@ -1932,7 +2761,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "OneTrust focuses on privacy, compliance, and data governance, not employee password management or access security; buyers would not evaluate them for the same job."
+      "rationale": "OneTrust focuses on privacy, AI governance, and compliance management rather than password management or employee access-security products.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "OneTrust focuses on privacy, AI governance, and compliance management rather than password management or employee access-security products."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "OneTrust is privacy/GRC compliance software, not password or access-management; different product and buyer job despite broad security adjacency."
+        }
+      ]
     },
     {
       "name": "OneLogin",
@@ -1962,7 +2803,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide enterprise identity and access-security platforms for managing secure employee access, credentials, authentication, and privileged accounts."
+      "rationale": "Both provide business access-security products for workforce users, including password/access management and authentication; OneLogin is a close IAM competitor/comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both provide business access-security products for workforce users, including password/access management and authentication; OneLogin is a close IAM competitor/comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both sell workforce access-security products (password management vs SSO/MFA/IAM) to the same business buyers; direct competitors in identity/access security."
+        }
+      ]
     },
     {
       "name": "Grip Security",
@@ -1987,7 +2840,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide B2B workforce identity and SaaS access-security platforms for security teams managing employee access, credentials, and application risk."
+      "rationale": "Both provide business identity and access-security platforms for managing employee credentials, SaaS access, and related security risks.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both provide business identity and access-security platforms for managing employee credentials, SaaS access, and related security risks."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are B2B identity/access-security platforms helping businesses manage credentials, access, and identity risk; genuine comparables in access security."
+        }
+      ]
     },
     {
       "name": "Sentry Interactive",
@@ -2012,7 +2877,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Sentry Interactive manages physical-access credentials, while 1Password manages digital passwords and workforce application access; buyers and jobs-to-be-done differ."
+      "rationale": "Physical-access mobile credential software, not password management or workforce access-security for digital accounts.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Physical-access mobile credential software, not password management or workforce access-security for digital accounts."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Physical building access control via NFC credentials, not digital password/identity management; different product and job-to-be-done despite shared 'access security' label."
+        }
+      ]
     },
     {
       "name": "Essal LLC",
@@ -2038,7 +2915,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Essal is a broad operations and document collaboration platform, not a password-management or employee access-security solution evaluated for the same job."
+      "rationale": "General business-operations platform with document access controls, not a password-management or access-security product comparable to 1Password.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "General business-operations platform with document access controls, not a password-management or access-security product comparable to 1Password."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Generic business-operations/ERP platform; access control is a minor feature, not password/access-security product like 1Password."
+        }
+      ]
     },
     {
       "name": "Security Curated",
@@ -2060,7 +2949,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Security Curated is a cybersecurity news publisher, not a password-management or access-security software platform evaluated for the same job."
+      "rationale": "Security news and information publisher, not a password-management or access-security software platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Security news and information publisher, not a password-management or access-security software platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Security news/media content site, not a password-management or access-security product; no product, market, or model overlap with 1Password."
+        }
+      ]
     },
     {
       "name": "ID Dataweb Inc.",
@@ -2088,7 +2989,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "ID Dataweb provides customer identity verification and fraud prevention, not workforce password management or employee access security for the same job."
+      "rationale": "Identity-fraud detection and verification platform, not a password manager or employee access-security platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Identity-fraud detection and verification platform, not a password manager or employee access-security platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Adjacent identity-security space but different job: ID Dataweb does fraud detection/identity verification for transactions, not password management or workforce access security."
+        }
+      ]
     },
     {
       "name": "LevelBlue",
@@ -2115,7 +3028,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "LevelBlue provides managed security operations and incident response, not employee password management or access-security software for the same job to be done."
+      "rationale": "Managed security services and incident response differ from 1Password's password-management and access-security platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Managed security services and incident response differ from 1Password's password-management and access-security platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Both in cybersecurity, but 1Password is password/access-management software; LevelBlue is a managed security services provider (SOC, incident response), not a comparable product."
+        }
+      ]
     },
     {
       "name": "Auth0",
@@ -2145,8 +3070,25 @@
           "https://x.com/okta"
         ]
       },
-      "relevant": false,
-      "rationale": "Auth0 provides customer identity and application authentication, while 1Password primarily manages workforce passwords, secrets, and employee access; distinct use cases and evaluations."
+      "relevant": true,
+      "rationale": "Both are identity and access-security platforms; 1Password secures employee credentials, Auth0 secures app authentication \u2014 overlapping market and product axis.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Auth0 provides customer/application identity and access management, while 1Password primarily manages employee and developer passwords and secrets; adjacent but distinct products."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are identity and access-security platforms; 1Password secures employee credentials, Auth0 secures app authentication \u2014 overlapping market and product axis."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Both sell identity/access-security software to businesses; adjacent competitors in the credential and access management space."
+        }
+      ]
     },
     {
       "name": "1Key Card",
@@ -2172,7 +3114,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "1Key Card manages physical building-access credentials, while 1Password manages digital passwords and application access; they solve distinct security jobs."
+      "rationale": "Manages physical building-access cards and NFC credentials, not passwords, secrets, or digital identity access for business systems.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Manages physical building-access cards and NFC credentials, not passwords, secrets, or digital identity access for business systems."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Physical access-card/NFC door-entry management, not digital password or credential security; different product and buyer than 1Password."
+        }
+      ]
     },
     {
       "name": "Guideflow",
@@ -2198,7 +3152,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Guideflow creates interactive product demos for sales and marketing; it does not provide password management or employee access security."
+      "rationale": "Guideflow sells interactive product-demo software for marketing and sales, not password management or access-security tools.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Guideflow sells interactive product-demo software for marketing and sales, not password management or access-security tools."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Guideflow makes interactive product-demo software for marketing/sales; no overlap with password management or access security."
+        }
+      ]
     },
     {
       "name": "Innovation & Tech Today",
@@ -2231,7 +3197,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Innovation & Tech Today is a technology media publisher, not a password-management or workforce access-security platform."
+      "rationale": "Technology media publisher, not a password-management or access-security product provider.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Technology media publisher, not a password-management or access-security product provider."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Tech news and media publication, not password-management or access-security software; no product, market, or model overlap."
+        }
+      ]
     },
     {
       "name": "iDenfy",
@@ -2266,7 +3244,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "iDenfy provides customer KYC/AML identity verification, not employee password management or workforce access security; buyers and jobs-to-be-done differ."
+      "rationale": "iDenfy provides customer KYC/AML identity verification and fraud prevention, not employee/developer password management or access-security software.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "iDenfy provides customer KYC/AML identity verification and fraud prevention, not employee/developer password management or access-security software."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "iDenfy sells KYC/AML identity-verification for compliance, not password management or access security; different product, buyer, and job to be done."
+        }
+      ]
     },
     {
       "name": "One.email",
@@ -2289,7 +3279,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "One.email manages inbox productivity, while 1Password provides credential management and access security; they solve different jobs for different evaluations."
+      "rationale": "AI email organization and scheduling tool, not a password-management or access-security platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "AI email organization and scheduling tool, not a password-management or access-security platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "One.email is an AI email-organization tool, not password or access-security software; different product, buyer, and job to be done."
+        }
+      ]
     },
     {
       "name": "CISA.one",
@@ -2315,7 +3317,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "CISA.one provides cybersecurity consulting and testing services, not employee password management or identity/access-security software evaluated for the same job."
+      "rationale": "Cybersecurity consultancy offering pentesting and incident response, not a password-management or access-security software platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Cybersecurity consultancy offering pentesting and incident response, not a password-management or access-security software platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Cybersecurity services firm (pentesting, incident response, compliance consulting), not a password/access-management product; serves the category rather than competing with 1Password."
+        }
+      ]
     },
     {
       "name": "RightCrowd",
@@ -2343,7 +3357,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "RightCrowd manages physical identities and facility access, while 1Password manages digital credentials and application access; their core jobs differ."
+      "rationale": "RightCrowd manages physical site access, visitors, and safety; it does not offer password management or enterprise credential-security products.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "RightCrowd manages physical site access, visitors, and safety; it does not offer password management or enterprise credential-security products."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "RightCrowd does physical identity/access management (visitors, badges, evacuations); 1Password does digital credential and password security\u2014different products and buyers."
+        }
+      ]
     },
     {
       "name": "Osano",
@@ -2370,7 +3396,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Osano provides privacy compliance and consent management, not password management or workforce access security; buyers and jobs to be done differ."
+      "rationale": "Osano provides privacy compliance and consent management, not password management or business access-security products.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Osano provides privacy compliance and consent management, not password management or business access-security products."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Osano is privacy-compliance software (cookie consent, DSAR, GDPR), not password/access-security; shared cybersecurity/SaaS labels alone don't establish resemblance."
+        }
+      ]
     },
     {
       "name": "perc.pass sp. z o.o.",
@@ -2399,7 +3437,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide business password management, secure credential sharing, access controls, and organizational security features for teams and companies."
+      "rationale": "Business password-management platform with shared access, permissions, encryption, and MFA; directly comparable to 1Password Business.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Business password-management platform with shared access, permissions, encryption, and MFA; directly comparable to 1Password Business."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Password-management platform for teams and businesses with 2FA, zero-knowledge encryption, and shared access \u2014 direct product and market match to 1Password."
+        }
+      ]
     },
     {
       "name": "Josys",
@@ -2426,8 +3476,20 @@
           "https://www.youtube.com/channel/UCosMsYGc4sDAIkjEeHnZoiQ"
         ]
       },
-      "relevant": false,
-      "rationale": "Josys focuses on SaaS identity governance and license management, not password and credential management; overlapping IT buyers do not share the same core job."
+      "relevant": true,
+      "rationale": "Josys provides SaaS access, identity governance, and automated user lifecycle management for IT teams, closely overlapping 1Password's business access-security use case.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Josys provides SaaS access, identity governance, and automated user lifecycle management for IT teams, closely overlapping 1Password's business access-security use case."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are B2B access-security platforms for IT teams governing employee access to apps and credentials; adjacent competitors in identity/access management."
+        }
+      ]
     },
     {
       "name": "Password Secure",
@@ -2452,7 +3514,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide business password-management and access-security software evaluated by organizations seeking secure credential storage, policies, and authentication controls."
+      "rationale": "Business password-management and access-security platform with MFA, policy controls, and cloud/on-premises deployment; directly comparable to 1Password.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Business password-management and access-security platform with MFA, policy controls, and cloud/on-premises deployment; directly comparable to 1Password."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Enterprise password-management software with MFA and policy controls \u2014 direct product and market competitor to 1Password."
+        }
+      ]
     },
     {
       "name": "Future Bot",
@@ -2476,7 +3550,20 @@
         ]
       },
       "relevant": false,
-      "rationale": "Future Bot provides workflow automation and compliance operations, not password management or employee access security for the same job to be done."
+      "rationale": "Future Bot provides general workflow automation and compliance processes, not password management, credential security, or access control.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Future Bot provides general workflow automation and compliance processes, not password management, credential security, or access control."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Workflow automation and compliance reporting platform; no password-management or access-security product, so no overlap with 1Password's core market."
+        }
+      ]
     }
-  ]
+  ],
+  "error": null
 }

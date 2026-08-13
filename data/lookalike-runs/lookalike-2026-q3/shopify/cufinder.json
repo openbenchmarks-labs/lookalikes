@@ -10,15 +10,17 @@
   "relevant_count": 1,
   "precision_at_k": 1.0,
   "relevant_count_at_10": 1,
+  "relevant_count_at_25": 1,
   "relevant_count_at_100": 1,
   "precision_at_10": 10.0,
+  "precision_at_25": 4.0,
   "precision_at_100": 1.0,
   "latency_ms": 626,
   "cost_usd": null,
   "duplicates_removed": 0,
   "max_results": 10,
-  "judge_model": "gpt-5.6",
-  "judged_at": "2026-07-27T03:31:20Z",
+  "judge_model": "majority(n=3): claude-opus-5,gpt-5.6-terra,kimi-k3",
+  "judged_at": "2026-08-10T19:23:36Z",
   "candidates": [
     {
       "name": "airbnb",
@@ -34,7 +36,19 @@
         "confidence_level": 97
       },
       "relevant": false,
-      "rationale": "Airbnb is a travel accommodation marketplace, not an e-commerce storefront platform merchants evaluate for online retail operations."
+      "rationale": "Airbnb is a two-sided travel lodging marketplace, not a merchant commerce platform for operating online stores, payments, fulfillment, and retail.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Airbnb is a two-sided travel lodging marketplace, not a merchant commerce platform for operating online stores, payments, fulfillment, and retail."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Airbnb is a travel-stays marketplace, not a commerce/storefront platform for merchants; different product, buyers, and business model."
+        }
+      ]
     },
     {
       "name": "amazon",
@@ -49,8 +63,20 @@
         "country": null,
         "confidence_level": 97
       },
-      "relevant": false,
-      "rationale": "Amazon is primarily a retail marketplace and cloud provider, not a merchant-owned online-store commerce platform evaluated for the same core job."
+      "relevant": true,
+      "rationale": "Amazon provides a merchant e-commerce marketplace with seller tools, fulfillment, and payments, making it a strong commerce-platform comparable to Shopify.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Amazon provides a merchant e-commerce marketplace with seller tools, fulfillment, and payments, making it a strong commerce-platform comparable to Shopify."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Amazon Marketplace competes directly with Shopify for merchants selling online; same commerce-enablement market and comparable business model."
+        }
+      ]
     },
     {
       "name": "atlassian",
@@ -66,7 +92,19 @@
         "confidence_level": 97
       },
       "relevant": false,
-      "rationale": "Atlassian provides team collaboration and software-development tools, not an e-commerce storefront and retail operations platform for merchants."
+      "rationale": "Atlassian sells team collaboration and software-development productivity tools, not merchant storefront, commerce, payments, fulfillment, or retail operations software.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Atlassian sells team collaboration and software-development productivity tools, not merchant storefront, commerce, payments, fulfillment, or retail operations software."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Atlassian sells team collaboration software (Jira, Confluence), not a commerce/storefront platform for merchants \u2014 different product and market."
+        }
+      ]
     },
     {
       "name": "gitlab",
@@ -82,7 +120,19 @@
         "confidence_level": 97
       },
       "relevant": false,
-      "rationale": "GitLab is a software development and DevSecOps platform, not an e-commerce storefront and retail operations platform for merchants."
+      "rationale": "GitLab provides DevSecOps and software lifecycle tooling, not merchant storefront, commerce, payment, fulfillment, or retail operations software.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "GitLab provides DevSecOps and software lifecycle tooling, not merchant storefront, commerce, payment, fulfillment, or retail operations software."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "GitLab is a DevOps/software development platform, not a commerce or e-commerce platform; different product, market, and buyer."
+        }
+      ]
     },
     {
       "name": "google",
@@ -98,7 +148,19 @@
         "confidence_level": 97
       },
       "relevant": false,
-      "rationale": "Google\u2019s primary business is search, advertising, and general technology, not an online-store commerce platform evaluated by merchants for storefront operations."
+      "rationale": "Google is a broad technology company; its primary offering is not a merchant commerce platform comparable to Shopify.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Google is a broad technology company; its primary offering is not a merchant commerce platform comparable to Shopify."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Google is a general tech/advertising/search company, not a commerce platform for merchants; no meaningful product or market overlap with Shopify."
+        }
+      ]
     },
     {
       "name": "hubspot",
@@ -114,7 +176,19 @@
         "confidence_level": 97
       },
       "relevant": false,
-      "rationale": "HubSpot primarily provides CRM, marketing, sales, and service software, not an online-store commerce platform for merchants."
+      "rationale": "HubSpot primarily sells CRM, marketing, sales, and service software, not a merchant commerce/storefront platform comparable to Shopify.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "HubSpot primarily sells CRM, marketing, sales, and service software, not a merchant commerce/storefront platform comparable to Shopify."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "HubSpot is a CRM/marketing-automation platform, not a commerce/storefront platform; different product and buyer job to be done than Shopify."
+        }
+      ]
     },
     {
       "name": "salesforce",
@@ -129,8 +203,20 @@
         "country": "united states",
         "confidence_level": 97
       },
-      "relevant": true,
-      "rationale": "Salesforce Commerce Cloud directly overlaps Shopify\u2019s e-commerce platform, serving merchants evaluating storefront, order, and customer-commerce capabilities."
+      "relevant": false,
+      "rationale": "Salesforce is primarily a CRM and customer-success platform, not an online-store and merchant-commerce operations platform like Shopify.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Salesforce is primarily a CRM and customer-success platform, not an online-store and merchant-commerce operations platform like Shopify."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Primary product is CRM/customer-success software, not a merchant commerce/storefront platform; different product and buyer job than Shopify."
+        }
+      ]
     },
     {
       "name": "spotify",
@@ -146,7 +232,19 @@
         "confidence_level": 97
       },
       "relevant": false,
-      "rationale": "Spotify is an audio streaming service, not an e-commerce storefront and merchant operations platform; its product and buyers do not overlap Shopify\u2019s."
+      "rationale": "Spotify is a music/audio streaming service, not a merchant commerce platform or online-store provider.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Spotify is a music/audio streaming service, not a merchant commerce platform or online-store provider."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Spotify is a music-streaming consumer service, unrelated to Shopify's merchant e-commerce platform; only superficial name similarity."
+        }
+      ]
     },
     {
       "name": "stripe",
@@ -162,7 +260,19 @@
         "confidence_level": 97
       },
       "relevant": false,
-      "rationale": "Stripe primarily provides payment infrastructure, not an online-store and commerce management platform; merchants would not evaluate both for the same core job."
+      "rationale": "Stripe is primarily a payments and financial infrastructure provider, not an online-store and commerce-operations platform like Shopify.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Stripe is primarily a payments and financial infrastructure provider, not an online-store and commerce-operations platform like Shopify."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Payment processor with no storefront/commerce platform; payments are only one component of Shopify's merchant platform, not a peer product."
+        }
+      ]
     },
     {
       "name": "wealthsimple",
@@ -178,10 +288,20 @@
         "confidence_level": 97
       },
       "relevant": false,
-      "rationale": "Wealthsimple is a consumer investing and financial-services platform, not an e-commerce storefront and merchant-operations platform."
+      "rationale": "Wealthsimple is a consumer financial-services platform, not a merchant e-commerce storefront and retail-operations platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Wealthsimple is a consumer financial-services platform, not a merchant e-commerce storefront and retail-operations platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Wealthsimple is a consumer banking and investing fintech, not a merchant commerce or online-store platform like Shopify."
+        }
+      ]
     }
   ],
-  "error": null,
-  "relevant_count_at_25": 1,
-  "precision_at_25": 4.0
+  "error": null
 }

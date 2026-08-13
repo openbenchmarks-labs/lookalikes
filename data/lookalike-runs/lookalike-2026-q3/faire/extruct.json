@@ -7,20 +7,20 @@
     "name": "domain_similarity"
   },
   "k": 100,
-  "relevant_count": 39,
-  "precision_at_k": 39.0,
+  "relevant_count": 35,
+  "precision_at_k": 35.0,
   "relevant_count_at_10": 6,
-  "relevant_count_at_25": 15,
-  "relevant_count_at_100": 39,
+  "relevant_count_at_25": 14,
+  "relevant_count_at_100": 35,
   "precision_at_10": 60.0,
-  "precision_at_25": 60.0,
-  "precision_at_100": 39.0,
+  "precision_at_25": 56.0,
+  "precision_at_100": 35.0,
   "latency_ms": 2578,
   "cost_usd": null,
   "duplicates_removed": 2,
   "max_results": null,
-  "judge_model": "gpt-5.6",
-  "judged_at": "2026-07-27T06:49:46Z",
+  "judge_model": "majority(n=3): claude-opus-5,gpt-5.6-terra,kimi-k3",
+  "judged_at": "2026-08-10T20:08:05Z",
   "candidates": [
     {
       "name": "Retailer Web Services",
@@ -37,7 +37,19 @@
         "employee_count": "51-200"
       },
       "relevant": false,
-      "rationale": "Retailer Web Services sells ecommerce and retail-management technology, not a wholesale marketplace connecting retailers with brands and suppliers."
+      "rationale": "Provides ecommerce and retail technology to independent retailers, but is a supplier to Faire\u2019s retailer buyers rather than a wholesale marketplace comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Provides ecommerce and retail technology to independent retailers, but is a supplier to Faire\u2019s retailer buyers rather than a wholesale marketplace comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "RWS sells ecommerce software/services to retailers; Faire is a wholesale marketplace linking retailers with brands. Different product and business model, not a competitor."
+        }
+      ]
     },
     {
       "name": "FARFETCH",
@@ -54,7 +66,19 @@
         "employee_count": "1001-5000"
       },
       "relevant": false,
-      "rationale": "FARFETCH is a consumer luxury-fashion marketplace, while Faire is a B2B wholesale marketplace serving independent retailers sourcing inventory."
+      "rationale": "FARFETCH is a consumer luxury-fashion retail marketplace, whereas Faire is a B2B wholesale marketplace for independent retailers sourcing brands.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "FARFETCH is a consumer luxury-fashion retail marketplace, whereas Faire is a B2B wholesale marketplace for independent retailers sourcing brands."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "FARFETCH is a B2C luxury fashion marketplace for consumers; Faire is a B2B wholesale marketplace serving independent retailers. Different buyers and jobs."
+        }
+      ]
     },
     {
       "name": "Brandboom",
@@ -71,7 +95,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Both provide B2B wholesale platforms connecting brands with retail buyers and facilitating product discovery, ordering, and payments."
+      "rationale": "B2B wholesale platform connecting brands and retail buyers, directly comparable to Faire\u2019s marketplace despite a stronger sales-tools focus.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "B2B wholesale platform connecting brands and retail buyers, directly comparable to Faire\u2019s marketplace despite a stronger sales-tools focus."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "B2B wholesale marketplace connecting brands with retail buyers, including order capture and payments \u2014 same product, market, and model as Faire."
+        }
+      ]
     },
     {
       "name": "B-Stock Solutions",
@@ -88,7 +124,19 @@
         "employee_count": "201-500"
       },
       "relevant": true,
-      "rationale": "Both are B2B inventory marketplaces where retailers and resellers source wholesale goods, though B-Stock specializes in liquidated and returned merchandise."
+      "rationale": "Both operate B2B wholesale marketplaces connecting retailers/resellers with brands or suppliers, though B-Stock focuses on liquidation inventory and auctions.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both operate B2B wholesale marketplaces connecting retailers/resellers with brands or suppliers, though B-Stock focuses on liquidation inventory and auctions."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both run B2B wholesale marketplaces connecting retailers with brands/suppliers for inventory sourcing; same business model and buyer persona, differing only in liquidation vs new goods."
+        }
+      ]
     },
     {
       "name": "Fulfil",
@@ -105,7 +153,19 @@
         "employee_count": "51-200"
       },
       "relevant": false,
-      "rationale": "Fulfil is ERP software for brands and distributors, not a wholesale marketplace where retailers discover and purchase from suppliers."
+      "rationale": "Fulfil is back-office ERP for brands and distributors, not a wholesale marketplace connecting independent retailers with suppliers.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Fulfil is back-office ERP for brands and distributors, not a wholesale marketplace connecting independent retailers with suppliers."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Fulfil is ERP software for brands; Faire is a wholesale marketplace. Different product and model \u2014 not a marketplace competitor or comparable."
+        }
+      ]
     },
     {
       "name": "Shezaar",
@@ -122,7 +182,24 @@
         "employee_count": "201-500"
       },
       "relevant": false,
-      "rationale": "Shezaar liquidates fashion brands\u2019 excess and returned inventory via stylists, unlike Faire\u2019s general wholesale marketplace connecting brands with independent retailers."
+      "rationale": "B2B fashion recommerce for excess inventory targets brands and stylists, not independent retailers sourcing wholesale goods through a broad marketplace.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "B2B fashion recommerce for excess inventory targets brands and stylists, not independent retailers sourcing wholesale goods through a broad marketplace."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "B2B marketplace connecting fashion brands with buyers to move inventory\u2014same wholesale marketplace model linking brands and retail buyers as Faire."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "judge error: Connection error."
+        }
+      ]
     },
     {
       "name": "JOOR",
@@ -139,7 +216,19 @@
         "employee_count": "201-500"
       },
       "relevant": true,
-      "rationale": "Both are B2B wholesale commerce platforms connecting brands with retailers and supporting product discovery, ordering, and payments."
+      "rationale": "JOOR is a wholesale B2B marketplace connecting fashion brands and retailers, directly comparable to Faire\u2019s retailer-supplier marketplace model.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "JOOR is a wholesale B2B marketplace connecting fashion brands and retailers, directly comparable to Faire\u2019s retailer-supplier marketplace model."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are B2B wholesale marketplaces connecting brands with retail buyers; same product, market, and business model \u2014 direct competitors."
+        }
+      ]
     },
     {
       "name": "FashionGo",
@@ -156,7 +245,19 @@
         "employee_count": "51-200"
       },
       "relevant": true,
-      "rationale": "Both are B2B wholesale marketplaces connecting independent retailers with brands, with FashionGo specializing in apparel and accessories."
+      "rationale": "B2B wholesale marketplace connecting independent retailers with brands; FashionGo is a fashion-specialized direct comparable to Faire.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "B2B wholesale marketplace connecting independent retailers with brands; FashionGo is a fashion-specialized direct comparable to Faire."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "B2B wholesale marketplace connecting independent retailers with brands/vendors, same model and buyer persona as Faire, focused on fashion vertical."
+        }
+      ]
     },
     {
       "name": "Airgoods",
@@ -173,7 +274,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Both are wholesale marketplaces connecting independent retailers with brands, with Airgoods specializing in food and beverage."
+      "rationale": "Direct comparable: both operate wholesale marketplaces connecting independent retailers with brands; Airgoods specializes in food and beverage.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Direct comparable: both operate wholesale marketplaces connecting independent retailers with brands; Airgoods specializes in food and beverage."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are B2B wholesale marketplaces connecting independent retailers with brands; Airgoods is a vertical (specialty food) equivalent of Faire's model."
+        }
+      ]
     },
     {
       "name": "FGmarket",
@@ -190,7 +303,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Both are online wholesale marketplaces connecting independent retailers with brands, suppliers, and manufacturers for product sourcing."
+      "rationale": "Both operate wholesale marketplaces connecting independent retailers with brands and suppliers for product sourcing.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both operate wholesale marketplaces connecting independent retailers with brands and suppliers for product sourcing."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are B2B wholesale marketplaces connecting independent retailers with brands/suppliers; direct competitors on product, market, and model."
+        }
+      ]
     },
     {
       "name": "Grovara",
@@ -207,7 +332,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Both are B2B wholesale marketplaces connecting consumer brands with retail buyers for product sourcing and distribution."
+      "rationale": "Both operate B2B wholesale marketplaces connecting brands and suppliers with retail buyers; Grovara specializes in global CPG distribution.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both operate B2B wholesale marketplaces connecting brands and suppliers with retail buyers; Grovara specializes in global CPG distribution."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are B2B wholesale marketplaces connecting brands with retail buyers; same product, market, and business model, differing mainly in category focus (CPG)."
+        }
+      ]
     },
     {
       "name": "Rave Retailer",
@@ -224,7 +361,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "Rave Retailer builds and manages ecommerce websites; it is not a wholesale marketplace connecting independent retailers with brands and suppliers."
+      "rationale": "Rave Retailer provides managed ecommerce storefronts and marketing tools, not a wholesale marketplace connecting independent retailers with brands and suppliers.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Rave Retailer provides managed ecommerce storefronts and marketing tools, not a wholesale marketplace connecting independent retailers with brands and suppliers."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Managed ecommerce website builder/service, not a wholesale marketplace connecting retailers with brands; different product and business model."
+        }
+      ]
     },
     {
       "name": "Envoy B2B",
@@ -241,7 +390,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Both enable brands to sell wholesale to independent retailers through digital ordering platforms, serving overlapping brand sales teams and retail buyers."
+      "rationale": "Both operate B2B wholesale platforms connecting brands with retailers and facilitating ordering, catalogs, and retail relationships.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both operate B2B wholesale platforms connecting brands with retailers and facilitating ordering, catalogs, and retail relationships."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Wholesale B2B platform connecting brands with retailers for ordering and catalogs\u2014direct comparable to Faire's wholesale marketplace on product and market axes."
+        }
+      ]
     },
     {
       "name": "goooods",
@@ -258,7 +419,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Both are B2B wholesale marketplaces connecting independent retailers with brands for product sourcing, including retailer-friendly purchasing terms."
+      "rationale": "Both operate B2B wholesale marketplaces connecting independent retailers with brands for product sourcing and direct brand-to-retailer sales.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both operate B2B wholesale marketplaces connecting independent retailers with brands for product sourcing and direct brand-to-retailer sales."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "B2B wholesale marketplace connecting independent retailers with unique brands, same product, market, and model as Faire \u2014 a direct comparable."
+        }
+      ]
     },
     {
       "name": "Ankorstore",
@@ -275,7 +448,19 @@
         "employee_count": "501-1000"
       },
       "relevant": true,
-      "rationale": "Both are wholesale marketplaces connecting independent retailers with brands, offering product discovery, purchasing terms, and distribution support for the same buyers."
+      "rationale": "Wholesale marketplace connecting independent retailers with curated brands, directly matching Faire\u2019s product, customers, and marketplace model.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Wholesale marketplace connecting independent retailers with curated brands, directly matching Faire\u2019s product, customers, and marketplace model."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Wholesale marketplace connecting independent retailers with unique brands \u2014 direct competitor to Faire on product, market, and business model."
+        }
+      ]
     },
     {
       "name": "Sourcify",
@@ -292,7 +477,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "Sourcify helps brands source factories and manage manufacturing; Faire helps retailers buy finished wholesale goods from brands, serving different buyers and jobs."
+      "rationale": "Sourcify is a factory-sourcing service for brands, not a wholesale marketplace connecting independent retailers with brands.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Sourcify is a factory-sourcing service for brands, not a wholesale marketplace connecting independent retailers with brands."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Sourcify matches brands with factories for manufacturing; Faire is a wholesale marketplace connecting brands to retailers. Different job and buyer relationship."
+        }
+      ]
     },
     {
       "name": "Fairy",
@@ -309,7 +506,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "Fairy is a local consumer services marketplace, not a wholesale platform where retailers source inventory from brands and suppliers."
+      "rationale": "Fairy is a local services and direct-to-consumer marketplace, not a B2B wholesale platform connecting retailers with brands and suppliers.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Fairy is a local services and direct-to-consumer marketplace, not a B2B wholesale platform connecting retailers with brands and suppliers."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Fairy is a local consumer services/goods marketplace for neighborhood entrepreneurs, not a B2B wholesale marketplace connecting retailers with brands."
+        }
+      ]
     },
     {
       "name": "Fashion Cloud",
@@ -326,7 +535,19 @@
         "employee_count": "201-500"
       },
       "relevant": true,
-      "rationale": "Both connect brands and retailers through B2B wholesale ordering platforms, serving overlapping fashion wholesale buyers and workflows."
+      "rationale": "Both facilitate B2B wholesale commerce between brands and retailers, with Fashion Cloud focused on fashion ordering, replenishment, and digital showrooms.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both facilitate B2B wholesale commerce between brands and retailers, with Fashion Cloud focused on fashion ordering, replenishment, and digital showrooms."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "B2B wholesale platform connecting fashion brands and retailers with digital showroom and ordering\u2014same marketplace model and market as Faire."
+        }
+      ]
     },
     {
       "name": "Alibaba",
@@ -343,7 +564,19 @@
         "employee_count": "10001+"
       },
       "relevant": true,
-      "rationale": "Both are B2B wholesale marketplaces where retailers source products in bulk from brands and suppliers."
+      "rationale": "Both operate B2B wholesale marketplaces connecting retailers or business buyers with brands and suppliers for product sourcing and bulk purchasing.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both operate B2B wholesale marketplaces connecting retailers or business buyers with brands and suppliers for product sourcing and bulk purchasing."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are B2B wholesale marketplaces connecting retailers with brands/suppliers for bulk purchasing; same product, market, and business model."
+        }
+      ]
     },
     {
       "name": "Fabrikant",
@@ -360,7 +593,19 @@
         "employee_count": "51-200"
       },
       "relevant": false,
-      "rationale": "Fabrikant serves enterprise, government, and industrial procurement, unlike Faire\u2019s wholesale marketplace for independent retailers sourcing consumer brands."
+      "rationale": "B2B marketplace model overlaps, but Fabrikant is an industrial and state-procurement platform rather than wholesale sourcing for independent retailers.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "B2B marketplace model overlaps, but Fabrikant is an industrial and state-procurement platform rather than wholesale sourcing for independent retailers."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Both are B2B marketplaces, but Fabrikant is industrial/defense/state corporate procurement, not wholesale goods for independent retailers\u2014different buyers, products, and space."
+        }
+      ]
     },
     {
       "name": "Salesorder.com",
@@ -377,7 +622,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "Salesorder.com is ERP software for wholesalers and integrates with Faire; it is not a wholesale marketplace connecting retailers with brands."
+      "rationale": "Wholesale ERP for brands and suppliers, including Faire integrations; it supports marketplace participants rather than operating a wholesale marketplace.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Wholesale ERP for brands and suppliers, including Faire integrations; it supports marketplace participants rather than operating a wholesale marketplace."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "ERP software serving wholesalers (integrates with Faire) \u2014 a supplier/tool for the category, not a competing wholesale marketplace."
+        }
+      ]
     },
     {
       "name": "Mable",
@@ -394,7 +651,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Both operate B2B wholesale marketplaces connecting emerging brands and suppliers with retailers seeking products, with Mable focused on grocery and convenience."
+      "rationale": "Both operate B2B marketplaces connecting retailers with emerging brands and wholesale suppliers, though Mable specializes in dropshipping for grocery and convenience.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both operate B2B marketplaces connecting retailers with emerging brands and wholesale suppliers, though Mable specializes in dropshipping for grocery and convenience."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are B2B marketplaces connecting emerging brands/suppliers with retailers; wholesale/dropship marketplace model directly parallels Faire's wholesale marketplace."
+        }
+      ]
     },
     {
       "name": "BrandsGateway",
@@ -410,8 +679,25 @@
         "industries": null,
         "employee_count": "11-50"
       },
-      "relevant": true,
-      "rationale": "Both enable independent and e-commerce retailers to source branded inventory wholesale, serving the same retail buyers and procurement job."
+      "relevant": false,
+      "rationale": "BrandsGateway is a luxury fashion distributor/supplier, not a two-sided wholesale marketplace; it would sell through Faire rather than compete with it.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both connect retailers with brands for wholesale sourcing, though BrandsGateway specializes in luxury fashion distribution rather than a broad marketplace."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "BrandsGateway is a luxury fashion distributor/supplier, not a two-sided wholesale marketplace; it would sell through Faire rather than compete with it."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "judge error: Connection error."
+        }
+      ]
     },
     {
       "name": "Candid Wholesale",
@@ -428,7 +714,19 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "Both provide wholesale commerce platforms connecting brands and retailers, supporting B2B ordering, invoicing, storefronts, and wholesale transaction management."
+      "rationale": "Wholesale B2B platform connecting and managing brand-retailer transactions; closely comparable to Faire's wholesale marketplace, though with more software-oriented tooling.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Wholesale B2B platform connecting and managing brand-retailer transactions; closely comparable to Faire's wholesale marketplace, though with more software-oriented tooling."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "B2B wholesale ecommerce platform connecting brands and retail buyers with ordering, invoicing, showrooms \u2014 direct comparable to Faire's wholesale marketplace model."
+        }
+      ]
     },
     {
       "name": "Fashion For Globe",
@@ -445,7 +743,24 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "Fashion For Globe sells fashion designs and design talent for product development, not wholesale inventory connecting brands with independent retailers."
+      "rationale": "It is a fashion design and product-development talent marketplace, not a wholesale marketplace for retailers to buy inventory from brands.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "It is a fashion design and product-development talent marketplace, not a wholesale marketplace for retailers to buy inventory from brands."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Two-sided B2B fashion marketplace connecting retailers/brands with upstream suppliers; comparable wholesale-sourcing marketplace model in the same retail space."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "judge error: Connection error."
+        }
+      ]
     },
     {
       "name": "Orderchamp",
@@ -462,7 +777,19 @@
         "employee_count": "51-200"
       },
       "relevant": true,
-      "rationale": "Both operate wholesale marketplaces connecting independent retailers with brands for product discovery, ordering, and market access."
+      "rationale": "Direct wholesale marketplace competitor connecting independent retailers with brands for product discovery and ordering.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Direct wholesale marketplace competitor connecting independent retailers with brands for product discovery and ordering."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Direct competitor: wholesale marketplace connecting independent retailers with brands, identical product, market, and business model to Faire."
+        }
+      ]
     },
     {
       "name": "Creoate",
@@ -479,7 +806,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Both are online wholesale marketplaces connecting independent retailers with brands for product sourcing and inventory procurement."
+      "rationale": "Wholesale marketplace connecting independent retailers with brands, directly matching Faire's product, customers, and B2B marketplace model.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Wholesale marketplace connecting independent retailers with brands, directly matching Faire's product, customers, and B2B marketplace model."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Online wholesale marketplace connecting independent retailers with brands, same product, market, and B2B model as Faire; direct competitor."
+        }
+      ]
     },
     {
       "name": "Shoppingfeed",
@@ -496,7 +835,19 @@
         "employee_count": "51-200"
       },
       "relevant": false,
-      "rationale": "Shoppingfeed is seller-side marketplace listing and feed-management software, not a wholesale marketplace connecting retailers with brands for procurement."
+      "rationale": "Shoppingfeed is a seller-side marketplace listing and feed-management tool, not a wholesale marketplace connecting independent retailers with brands.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Shoppingfeed is a seller-side marketplace listing and feed-management tool, not a wholesale marketplace connecting independent retailers with brands."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Faire is a wholesale marketplace; Shoppingfeed is feed-management SaaS for sellers, a supplier-side tool, not a marketplace competitor."
+        }
+      ]
     },
     {
       "name": "middleman",
@@ -513,7 +864,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "Middleman is a growth agency serving brands on Faire, not a wholesale marketplace connecting retailers with suppliers."
+      "rationale": "Growth agency serving brands on Faire, not a wholesale marketplace connecting retailers with suppliers.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Growth agency serving brands on Faire, not a wholesale marketplace connecting retailers with suppliers."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Growth agency serving brands on Faire's marketplace, not a wholesale marketplace itself; an agency serving the category, not a competitor or comparable."
+        }
+      ]
     },
     {
       "name": "ResellMe",
@@ -530,7 +893,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Both are wholesale sourcing marketplaces connecting independent retailers or resellers with brands and manufacturers for inventory procurement and resale."
+      "rationale": "Marketplace connecting resellers and boutique buyers directly with manufacturers for wholesale sourcing, comparable to Faire\u2019s retailer-to-brand wholesale model.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Marketplace connecting resellers and boutique buyers directly with manufacturers for wholesale sourcing, comparable to Faire\u2019s retailer-to-brand wholesale model."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are wholesale marketplaces connecting resellers/retailers with manufacturers and brands at factory/wholesale prices; same business model and market."
+        }
+      ]
     },
     {
       "name": "SKUE",
@@ -547,7 +922,19 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "Both operate wholesale marketplaces connecting independent brands or makers with retail buyers for product sourcing and ordering."
+      "rationale": "Both operate wholesale marketplaces connecting independent brands or makers with retail buyers, making SKUE a direct marketplace comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both operate wholesale marketplaces connecting independent brands or makers with retail buyers, making SKUE a direct marketplace comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are wholesale marketplaces connecting independent brands/makers with retail buyers \u2014 same product, market, and business model."
+        }
+      ]
     },
     {
       "name": "Fifth Shelf",
@@ -564,7 +951,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "Fifth Shelf is an Amazon-focused inventory buyer and managed growth partner, not a wholesale marketplace connecting brands with independent retail buyers."
+      "rationale": "E-commerce accelerator and wholesale partner for brands, not a two-sided wholesale marketplace connecting independent retailers with suppliers.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "E-commerce accelerator and wholesale partner for brands, not a two-sided wholesale marketplace connecting independent retailers with suppliers."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Fifth Shelf is a brand accelerator/agency buying inventory and managing Amazon sales, not a two-sided wholesale marketplace connecting retailers and brands like Faire."
+        }
+      ]
     },
     {
       "name": "Beauty Fashion Sales Group",
@@ -580,8 +979,25 @@
         "industries": null,
         "employee_count": "11-50"
       },
-      "relevant": true,
-      "rationale": "Both help independent retailers source indie brands wholesale; beauty retailers could evaluate either for inventory procurement, despite the candidate\u2019s category specialization."
+      "relevant": false,
+      "rationale": "Distributor/sales agency supplying beauty brands to retailers, not a two-sided wholesale marketplace platform like Faire; acts as supplier, not comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Wholesale distributor curating indie beauty brands for independent retailers, serving the same retail-buying need as Faire despite a narrower category and non-marketplace model."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Distributor/sales agency supplying beauty brands to retailers, not a two-sided wholesale marketplace platform like Faire; acts as supplier, not comparable."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "judge error: Connection error."
+        }
+      ]
     },
     {
       "name": "Bharat Reselling",
@@ -598,7 +1014,19 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "Both are B2B wholesale marketplaces connecting independent retailers or resellers with brands and manufacturers for product sourcing at wholesale terms."
+      "rationale": "B2B wholesale marketplace connecting independent retailers/resellers with verified manufacturers and product brands, directly comparable to Faire.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "B2B wholesale marketplace connecting independent retailers/resellers with verified manufacturers and product brands, directly comparable to Faire."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are B2B wholesale marketplaces connecting independent retailers/resellers with brands and manufacturers; same product and business model, different geography."
+        }
+      ]
     },
     {
       "name": "Foundation",
@@ -615,7 +1043,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "Foundation provides wholesale e-commerce infrastructure for sellers, while Faire is a multi-vendor marketplace connecting brands with independent retailers."
+      "rationale": "Foundation provides B2B commerce software for suppliers' direct ordering, not a marketplace connecting independent retailers with brands for discovery and wholesale transactions.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Foundation provides B2B commerce software for suppliers' direct ordering, not a marketplace connecting independent retailers with brands for discovery and wholesale transactions."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Foundation is B2B eCommerce SaaS for manufacturers/distributors, not a wholesale marketplace; serves Faire's supply side as software vendor, not a marketplace peer."
+        }
+      ]
     },
     {
       "name": "Conduit Commerce",
@@ -632,7 +1072,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "Conduit provides integration and storefront infrastructure, not a wholesale marketplace connecting brands with independent retailers for product discovery and ordering."
+      "rationale": "Wholesale commerce infrastructure for suppliers and retailers, but not a marketplace connecting independent retailers with brands; primarily enables partner storefronts and integrations.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Wholesale commerce infrastructure for suppliers and retailers, but not a marketplace connecting independent retailers with brands; primarily enables partner storefronts and integrations."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Conduit is integration/storefront-enablement software for suppliers, not a wholesale marketplace connecting retailers with brands like Faire."
+        }
+      ]
     },
     {
       "name": "NexDeal Inc.",
@@ -649,7 +1101,19 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "Both operate wholesale marketplaces where retailers and resellers source bulk consumer products from brands or suppliers for resale."
+      "rationale": "Both operate wholesale marketplaces connecting retailers/resellers with brands or bulk suppliers for inventory sourcing.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both operate wholesale marketplaces connecting retailers/resellers with brands or bulk suppliers for inventory sourcing."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both operate wholesale marketplaces connecting product suppliers with retail resellers; same business model and market, differing only in buyer segment focus."
+        }
+      ]
     },
     {
       "name": "Single Serve Merch",
@@ -666,7 +1130,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "Single Serve Merch is a branded-merchandise storefront and fulfillment platform, not a wholesale marketplace connecting independent retailers with brands and suppliers."
+      "rationale": "Merchandise print-on-demand and fulfillment platform, not a wholesale marketplace connecting independent retailers with brands and suppliers.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Merchandise print-on-demand and fulfillment platform, not a wholesale marketplace connecting independent retailers with brands and suppliers."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Faire is a wholesale marketplace linking retailers to brands; candidate is a print-on-demand store builder and fulfillment service, a supplier-side tool, not a peer marketplace."
+        }
+      ]
     },
     {
       "name": "ViaShopModa",
@@ -683,7 +1159,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "ViaShopModa provides branded wholesale storefront software, not a multi-supplier marketplace connecting independent retailers with brands for discovery and purchasing."
+      "rationale": "ViaShopModa is B2B e-commerce/CRM software for fashion wholesalers, not a wholesale marketplace connecting independent retailers with brands.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "ViaShopModa is B2B e-commerce/CRM software for fashion wholesalers, not a wholesale marketplace connecting independent retailers with brands."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "White-label store-builder/CRM for fashion manufacturers; serves Faire's supply-side brands rather than operating a two-sided wholesale marketplace."
+        }
+      ]
     },
     {
       "name": "Forager",
@@ -700,7 +1188,19 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "Both enable retailers to discover suppliers and manage wholesale purchasing; Forager is a local-food-focused version serving overlapping grocery buyers."
+      "rationale": "Both operate B2B wholesale marketplaces connecting buyers with suppliers; Forager specializes in local-food procurement for grocers and foodservice buyers.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both operate B2B wholesale marketplaces connecting buyers with suppliers; Forager specializes in local-food procurement for grocers and foodservice buyers."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are B2B wholesale marketplaces connecting suppliers with retail buyers; Forager does this in the local food vertical, matching Faire's model."
+        }
+      ]
     },
     {
       "name": "FactoryPrice",
@@ -717,7 +1217,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Both provide wholesale product sourcing platforms for independent retailers, with FactoryPrice specializing in fashion and serving the same retail procurement job."
+      "rationale": "Wholesale platform supplying fashion inventory to independent retailers and e-commerce sellers, comparable to Faire's brand-retailer marketplace despite narrower vertical focus.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Wholesale platform supplying fashion inventory to independent retailers and e-commerce sellers, comparable to Faire's brand-retailer marketplace despite narrower vertical focus."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "B2B wholesale platform serving independent retailers and boutiques sourcing products to resell \u2014 same buyer persona and wholesale business model as Faire, narrowed to fashion."
+        }
+      ]
     },
     {
       "name": "Ecom Diversify",
@@ -734,7 +1246,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "Ecom Diversify is a retail-channel onboarding service, not a wholesale marketplace where retailers discover and purchase inventory from brands."
+      "rationale": "Agency-like retail account onboarding and management service, not a wholesale marketplace connecting independent retailers with brands.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Agency-like retail account onboarding and management service, not a wholesale marketplace connecting independent retailers with brands."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Agency/service that onboards brands onto retail channels, not a wholesale marketplace connecting retailers and brands; serves the category rather than competing."
+        }
+      ]
     },
     {
       "name": "El Famoso",
@@ -751,7 +1275,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "El Famoso is a managed e-commerce and fulfillment provider for merchandise brands, not a wholesale marketplace connecting retailers with suppliers."
+      "rationale": "El Famoso is a managed e-commerce, merchandising, and fulfillment service for artists, not a wholesale marketplace connecting retailers with brands.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "El Famoso is a managed e-commerce, merchandising, and fulfillment service for artists, not a wholesale marketplace connecting retailers with brands."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Faire is a wholesale marketplace connecting retailers with brands; El Famoso is a merch fulfillment/e-commerce ops service for artists, not a marketplace peer."
+        }
+      ]
     },
     {
       "name": "D1 Brands",
@@ -768,7 +1304,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "D1 Brands acquires Amazon FBA businesses, while Faire connects retailers with wholesale brands; their offerings, buyers, and transaction purposes differ."
+      "rationale": "D1 Brands acquires Amazon FBA businesses; it is not a wholesale marketplace connecting independent retailers with brands and suppliers.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "D1 Brands acquires Amazon FBA businesses; it is not a wholesale marketplace connecting independent retailers with brands and suppliers."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "FBA business aggregator/acquirer, not a wholesale marketplace connecting retailers with brands; different product, market, and model."
+        }
+      ]
     },
     {
       "name": "Amazon.com",
@@ -785,7 +1333,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "Amazon is primarily a consumer retail marketplace; Faire enables independent retailers to source wholesale inventory from brands, serving a different transaction and job."
+      "rationale": "Amazon Marketplace connects third-party sellers with consumers, whereas Faire is a wholesale marketplace connecting brands and independent retailers.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Amazon Marketplace connects third-party sellers with consumers, whereas Faire is a wholesale marketplace connecting brands and independent retailers."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Amazon is a consumer-facing retail marketplace; Faire is a B2B wholesale marketplace for retailers buying from brands \u2014 different buyer persona and job to be done."
+        }
+      ]
     },
     {
       "name": "Ordro",
@@ -802,7 +1362,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Both are B2B wholesale marketplaces connecting independent retailers with brands or suppliers for product sourcing and purchasing."
+      "rationale": "B2B marketplace connecting independent retailers with suppliers, directly comparable to Faire's wholesale marketplace model despite FMCG specialization.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "B2B marketplace connecting independent retailers with suppliers, directly comparable to Faire's wholesale marketplace model despite FMCG specialization."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "B2B wholesale marketplace connecting independent retailers with suppliers \u2014 same model and market as Faire, just FMCG-focused in Saudi Arabia."
+        }
+      ]
     },
     {
       "name": "F5 Branding Co.",
@@ -819,7 +1391,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "F5 is a branding and promotional-products service, not a wholesale marketplace connecting independent retailers with brands and suppliers."
+      "rationale": "Branding agency procuring promotional goods for businesses, not a marketplace connecting independent retailers with brands and wholesale suppliers.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Branding agency procuring promotional goods for businesses, not a marketplace connecting independent retailers with brands and wholesale suppliers."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Promotional-branding services firm selling branded merch, not a wholesale marketplace connecting independent retailers with brands."
+        }
+      ]
     },
     {
       "name": "Faiza Express",
@@ -836,7 +1420,24 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "Faiza Express is a direct wholesale distributor, not a multi-brand marketplace connecting independent retailers with third-party brands and suppliers."
+      "rationale": "Traditional wholesale distributor holding/selling goods itself, not a marketplace platform connecting retailers with brands; closer to a supplier than a peer.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both connect retailers to wholesale consumer-goods suppliers, but Faiza is a distributor rather than a two-sided marketplace; still a comparable sourcing channel."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Traditional wholesale distributor holding/selling goods itself, not a marketplace platform connecting retailers with brands; closer to a supplier than a peer."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "judge error: Connection error."
+        }
+      ]
     },
     {
       "name": "Fieldera",
@@ -853,7 +1454,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "Fieldera enables direct-to-consumer food sales and farm operations, unlike Faire\u2019s B2B wholesale marketplace connecting brands with independent retailers."
+      "rationale": "Fieldera is direct-to-consumer commerce software for food producers, not a wholesale marketplace connecting independent retailers with brands.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Fieldera is direct-to-consumer commerce software for food producers, not a wholesale marketplace connecting independent retailers with brands."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Faire is a B2B wholesale marketplace; Fieldera is a D2C SaaS tool for farms selling to consumers \u2014 different model and buyer market."
+        }
+      ]
     },
     {
       "name": "SparkLayer",
@@ -870,7 +1483,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "SparkLayer is merchant-owned wholesale e-commerce software, while Faire is a two-sided wholesale marketplace offering retailer discovery and distribution."
+      "rationale": "SparkLayer is B2B wholesale storefront software for brands, not a marketplace connecting independent retailers with suppliers.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "SparkLayer is B2B wholesale storefront software for brands, not a marketplace connecting independent retailers with suppliers."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "SparkLayer is B2B eCommerce software for merchants' own sites, not a two-sided wholesale marketplace connecting retailers with brands; different business model."
+        }
+      ]
     },
     {
       "name": "Furniture.com",
@@ -887,7 +1512,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "Furniture.com is a consumer furniture marketplace, while Faire is a B2B wholesale platform for retailers sourcing inventory from brands."
+      "rationale": "Consumer furniture comparison marketplace, not a B2B wholesale platform connecting independent retailers with brands and suppliers.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Consumer furniture comparison marketplace, not a B2B wholesale platform connecting independent retailers with brands and suppliers."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "B2C consumer furniture shopping marketplace; Faire is B2B wholesale connecting retailers with brands. Different buyer persona and business model."
+        }
+      ]
     },
     {
       "name": "RivellePro",
@@ -904,7 +1541,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "RivellePro is an Amazon distribution and marketplace-management partner, not a wholesale marketplace connecting brands with independent retail buyers."
+      "rationale": "RivellePro is an Amazon-focused distribution and marketplace-optimization partner for brands, not a wholesale marketplace connecting independent retailers with suppliers.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "RivellePro is an Amazon-focused distribution and marketplace-optimization partner for brands, not a wholesale marketplace connecting independent retailers with suppliers."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "RivellePro is an Amazon FBA service agency managing listings and ads for brands, not a wholesale marketplace connecting retailers with brands."
+        }
+      ]
     },
     {
       "name": "Grow ECommerce",
@@ -921,7 +1570,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "Grow ECommerce is a managed sales and retailer-onboarding service, not a wholesale marketplace connecting brands with independent retailers."
+      "rationale": "Agency-like managed sales and fulfillment service for manufacturers, not a self-serve wholesale marketplace connecting independent retailers and brands.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Agency-like managed sales and fulfillment service for manufacturers, not a self-serve wholesale marketplace connecting independent retailers and brands."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Grow ECommerce is a sales-management agency helping manufacturers sell into big-box retailers, not a wholesale marketplace; serves the category rather than competing with Faire."
+        }
+      ]
     },
     {
       "name": "Fedshi",
@@ -937,8 +1598,20 @@
         "industries": null,
         "employee_count": "11-50"
       },
-      "relevant": false,
-      "rationale": "Fedshi is a managed social-commerce and fulfillment platform for individual resellers, not a wholesale marketplace connecting independent retailers directly with brands."
+      "relevant": true,
+      "rationale": "Both provide wholesale product access through a marketplace-like platform, connecting sellers with suppliers; Fedshi focuses on social resellers and fulfillment.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both provide wholesale product access through a marketplace-like platform, connecting sellers with suppliers; Fedshi focuses on social resellers and fulfillment."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Wholesale-supply marketplace connecting small sellers/resellers with products and fulfillment, mirroring Faire's retailer\u2013brand wholesale marketplace model."
+        }
+      ]
     },
     {
       "name": "Global Store Supply Inc.",
@@ -955,7 +1628,24 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "Global Store Supply provides managed factory sourcing and private-label supply-chain services, not a wholesale marketplace connecting independent retailers with brands."
+      "rationale": "Private-label sourcing/supply-chain service provider, not a wholesale marketplace connecting independent retailers with brands; different product and business model.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both help retailers source wholesale inventory, though Global Store Supply emphasizes factory sourcing and private-label supply-chain services rather than a marketplace."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Private-label sourcing/supply-chain service provider, not a wholesale marketplace connecting independent retailers with brands; different product and business model."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "judge error: Connection error."
+        }
+      ]
     },
     {
       "name": "Find My Manufacturer",
@@ -972,7 +1662,24 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "Faire helps retailers source finished wholesale inventory; Find My Manufacturer helps brands source contract manufacturing, serving different buyers and procurement jobs."
+      "rationale": "Connects product creators to contract manufacturers for production sourcing, not independent retailers to wholesale brands and inventory suppliers.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Connects product creators to contract manufacturers for production sourcing, not independent retailers to wholesale brands and inventory suppliers."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are two-sided B2B marketplaces connecting business buyers with suppliers/manufacturers for product sourcing; same business model and comparable buyer-sourcing job."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "judge error: Connection error."
+        }
+      ]
     },
     {
       "name": "H and H fashion INC",
@@ -989,7 +1696,19 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "Both operate wholesale marketplaces connecting independent retailers with brands, with overlapping fashion inventory, purchasing workflows, and boutique-retailer buyers."
+      "rationale": "Both operate wholesale marketplaces connecting independent retailers with brands and suppliers, with comparable retail purchasing workflows.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both operate wholesale marketplaces connecting independent retailers with brands and suppliers, with comparable retail purchasing workflows."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Wholesale marketplace connecting independent retailers with fashion vendors - same product, market, and business model as Faire, focused on fashion vertical."
+        }
+      ]
     },
     {
       "name": "Current Commerce",
@@ -1006,7 +1725,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "Current Commerce is an e-commerce design and managed-services agency, not a wholesale marketplace connecting retailers with brands and suppliers."
+      "rationale": "Current Commerce is an e-commerce design and managed-services agency, not a wholesale marketplace connecting independent retailers with brands.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Current Commerce is an e-commerce design and managed-services agency, not a wholesale marketplace connecting independent retailers with brands."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Agency building/managing eCommerce sites for retailers, not a wholesale marketplace; serves the category rather than competing with Faire."
+        }
+      ]
     },
     {
       "name": "Firmament",
@@ -1023,7 +1754,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "Firmament is a managed e-commerce distribution partner, not a wholesale marketplace connecting independent retailers and brands like Faire."
+      "rationale": "Firmament is a distribution and e-commerce services partner for brands, not a wholesale marketplace connecting independent retailers with suppliers.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Firmament is a distribution and e-commerce services partner for brands, not a wholesale marketplace connecting independent retailers with suppliers."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Firmament is a distribution services agency managing brand listings on e-commerce platforms, not a wholesale marketplace platform like Faire; it serves the category rather than competing."
+        }
+      ]
     },
     {
       "name": "Sewport",
@@ -1040,7 +1783,24 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "Sewport connects fashion brands with manufacturers for production, while Faire connects retailers with brands to buy finished wholesale inventory; buyers and jobs differ."
+      "rationale": "Sewport is a sourcing marketplace linking fashion brands to manufacturers, whereas Faire connects independent retailers with wholesale brands for purchasing inventory.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Sewport is a sourcing marketplace linking fashion brands to manufacturers, whereas Faire connects independent retailers with wholesale brands for purchasing inventory."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are two-sided B2B online marketplaces connecting business buyers with suppliers/manufacturers for sourcing; same marketplace business model in commerce sourcing."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "judge error: Connection error."
+        }
+      ]
     },
     {
       "name": "FEW MODA",
@@ -1057,7 +1817,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Both offer wholesale marketplaces where retailers source products from brands or suppliers, with FEW MODA specializing in fashion inventory."
+      "rationale": "Both operate wholesale marketplaces connecting retailers with brands and suppliers; FEW MODA specializes in fashion sourcing.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both operate wholesale marketplaces connecting retailers with brands and suppliers; FEW MODA specializes in fashion sourcing."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Wholesale marketplace connecting retailers with fashion brands/designers\u2014same business model and market as Faire, vertically focused on fashion."
+        }
+      ]
     },
     {
       "name": "Manufactured",
@@ -1074,7 +1846,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "Manufactured enables private-label production and supply-chain financing, not a wholesale marketplace where independent retailers purchase inventory from existing brands."
+      "rationale": "Manufactured provides sourcing and private-label manufacturing services, not a wholesale marketplace connecting independent retailers with brands.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Manufactured provides sourcing and private-label manufacturing services, not a wholesale marketplace connecting independent retailers with brands."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Manufacturing/sourcing service for brands, not a wholesale marketplace connecting retailers and brands; supplier-side service, not a marketplace peer."
+        }
+      ]
     },
     {
       "name": "e-figures.com",
@@ -1091,7 +1875,19 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "Both connect independent retailers with brands or manufacturers for wholesale product sourcing, serving the same retail buyers and procurement job."
+      "rationale": "Wholesale platform connecting independent specialty retailers with brands/manufacturers, directly comparable to Faire despite its narrow hobby-miniatures focus.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Wholesale platform connecting independent specialty retailers with brands/manufacturers, directly comparable to Faire despite its narrow hobby-miniatures focus."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Wholesale distribution platform connecting independent retailers with manufacturers/brands \u2014 same B2B marketplace model as Faire, niche vertical."
+        }
+      ]
     },
     {
       "name": "The Fair Store",
@@ -1108,7 +1904,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "The Fair Store is a consumer retailer, not a B2B wholesale marketplace connecting independent retailers with brands and suppliers."
+      "rationale": "Direct-to-consumer home goods retailer, not a wholesale marketplace connecting independent retailers with brands and suppliers.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Direct-to-consumer home goods retailer, not a wholesale marketplace connecting independent retailers with brands and suppliers."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Faire is a B2B wholesale marketplace; The Fair Store is a direct-to-consumer online retailer of home goods \u2014 different model and market, no resemblance."
+        }
+      ]
     },
     {
       "name": "Exchange Collective",
@@ -1125,7 +1933,24 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "Exchange Collective enables distributed DTC/drop-ship retail, not Faire\u2019s wholesale inventory sourcing and purchasing job."
+      "rationale": "Connects brands and retailers for product distribution, but primarily enables DTC fulfillment across retailer e-commerce channels rather than wholesale buying.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Connects brands and retailers for product distribution, but primarily enables DTC fulfillment across retailer e-commerce channels rather than wholesale buying."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Two-sided marketplace connecting brands with retailers for product distribution, closely matching Faire's wholesale brand-retailer marketplace model."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "judge error: Connection error."
+        }
+      ]
     },
     {
       "name": "B2B Store",
@@ -1142,7 +1967,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "B2B Store provides commerce infrastructure for managing dealer sales, not a wholesale marketplace connecting independent retailers with third-party brands and suppliers."
+      "rationale": "B2B Store is commerce and dealer-management software, not a wholesale marketplace connecting independent retailers with brands and suppliers.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "B2B Store is commerce and dealer-management software, not a wholesale marketplace connecting independent retailers with brands and suppliers."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Sells B2B e-commerce software for companies' own storefronts, not a two-sided wholesale marketplace; different product and business model than Faire."
+        }
+      ]
     },
     {
       "name": "FdsCo LLC",
@@ -1159,7 +1996,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "FdsCo is an Amazon FBA wholesaler/retailer selling its own sourced inventory, not a multi-brand wholesale marketplace connecting retailers and suppliers."
+      "rationale": "FdsCo is an Amazon FBA wholesale seller, not a two-sided marketplace connecting independent retailers with brands and suppliers.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "FdsCo is an Amazon FBA wholesale seller, not a two-sided marketplace connecting independent retailers with brands and suppliers."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "FdsCo is an Amazon FBA reseller/retailer, not a wholesale marketplace connecting retailers with brands; it's a potential marketplace participant, not a peer."
+        }
+      ]
     },
     {
       "name": "Efashion Paris",
@@ -1176,7 +2025,19 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "Both are B2B wholesale marketplaces connecting independent retailers with brands and suppliers; Efashion Paris specializes in fashion inventory."
+      "rationale": "B2B wholesale marketplace connecting suppliers and independent retailers, directly comparable to Faire, with a fashion-specific focus.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "B2B wholesale marketplace connecting suppliers and independent retailers, directly comparable to Faire, with a fashion-specific focus."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "B2B wholesale marketplace connecting retailers with suppliers; same product and business model as Faire, narrowed to fashion vertical."
+        }
+      ]
     },
     {
       "name": "MinMaxDeals LLC",
@@ -1193,7 +2054,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "MinMaxDeals is an inventory-owning beauty/FMCG distributor, not a multi-brand wholesale marketplace connecting independent retailers directly with brands."
+      "rationale": "Traditional beauty/FMCG wholesale distributor supplying retailers, not a marketplace connecting independent retailers with multiple brands and suppliers.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Traditional beauty/FMCG wholesale distributor supplying retailers, not a marketplace connecting independent retailers with multiple brands and suppliers."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Faire is a two-sided wholesale marketplace platform; MinMaxDeals is a traditional inventory-holding distributor of beauty/FMCG \u2014 a potential marketplace supplier, not a peer."
+        }
+      ]
     },
     {
       "name": "Fleek",
@@ -1210,7 +2083,19 @@
         "employee_count": "51-200"
       },
       "relevant": true,
-      "rationale": "Both are B2B wholesale marketplaces connecting retailers or resellers with brands and suppliers to source inventory, with Fleek specializing in second-hand fashion."
+      "rationale": "Both operate B2B wholesale marketplaces connecting retailers or resellers with brands and suppliers, despite Fleek's second-hand fashion specialization.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both operate B2B wholesale marketplaces connecting retailers or resellers with brands and suppliers, despite Fleek's second-hand fashion specialization."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are B2B wholesale marketplaces connecting independent retailers/resellers with brands and suppliers; same model and market, different vertical."
+        }
+      ]
     },
     {
       "name": "Mainfactor",
@@ -1227,7 +2112,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "Mainfactor operates D2C e-commerce businesses for creators, while Faire is a B2B wholesale marketplace connecting brands with independent retailers."
+      "rationale": "Mainfactor operates D2C storefronts and services for creators; Faire is a B2B wholesale marketplace connecting retailers with brands.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Mainfactor operates D2C storefronts and services for creators; Faire is a B2B wholesale marketplace connecting retailers with brands."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Mainfactor is a D2C e-commerce service agency for music creators, not a wholesale marketplace connecting retailers with brands; different model and market."
+        }
+      ]
     },
     {
       "name": "Fulfill",
@@ -1244,7 +2141,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "Fulfill provides managed factory sourcing and logistics, not a wholesale marketplace where independent retailers discover and purchase inventory from brands."
+      "rationale": "Fulfill is a sourcing and logistics service for e-commerce operators, not a wholesale marketplace matching independent retailers with brands.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Fulfill is a sourcing and logistics service for e-commerce operators, not a wholesale marketplace matching independent retailers with brands."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Fulfill is a white-glove sourcing/fulfillment service for e-commerce sellers, not a wholesale marketplace connecting retailers with brands\u2014different business model, supplier-side service."
+        }
+      ]
     },
     {
       "name": "FAUME",
@@ -1261,7 +2170,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "FAUME provides branded resale infrastructure, while Faire is a wholesale marketplace connecting retailers with suppliers; buyers and core jobs differ."
+      "rationale": "FAUME provides white-label resale technology and logistics for fashion brands, not a wholesale marketplace connecting independent retailers with suppliers.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "FAUME provides white-label resale technology and logistics for fashion brands, not a wholesale marketplace connecting independent retailers with suppliers."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "FAUME is resale software/services for fashion brands' secondhand programs, not a B2B wholesale marketplace connecting retailers with brands."
+        }
+      ]
     },
     {
       "name": "fnxradio",
@@ -1277,8 +2198,20 @@
         "industries": null,
         "employee_count": "1-10"
       },
-      "relevant": false,
-      "rationale": "fnxradio is a broad China-focused industrial sourcing directory, not a wholesale marketplace primarily serving independent retailers buying from consumer brands."
+      "relevant": true,
+      "rationale": "Both operate B2B wholesale marketplaces connecting buyers/retailers with brands, manufacturers, and suppliers, though fnxradio emphasizes China-based industrial sourcing.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both operate B2B wholesale marketplaces connecting buyers/retailers with brands, manufacturers, and suppliers, though fnxradio emphasizes China-based industrial sourcing."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both operate B2B wholesale online marketplaces connecting buyers with suppliers/manufacturers; same business model and product category, different sourcing focus."
+        }
+      ]
     },
     {
       "name": "AndMakers",
@@ -1294,8 +2227,20 @@
         "industries": null,
         "employee_count": "1-10"
       },
-      "relevant": true,
-      "rationale": "Both connect product brands or manufacturers with U.S. retailers, offering wholesale distribution access to suppliers seeking retail sales channels."
+      "relevant": false,
+      "rationale": "AndMakers is a sourcing, fulfillment, and retail-access service for manufacturers, not a wholesale marketplace where retailers discover and buy brands.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "AndMakers is a sourcing, fulfillment, and retail-access service for manufacturers, not a wholesale marketplace where retailers discover and buy brands."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "AndMakers is a sourcing/fulfillment service placing manufacturers into U.S. retail channels, not a two-sided wholesale marketplace; service provider, not marketplace peer."
+        }
+      ]
     },
     {
       "name": "Flixmedia",
@@ -1312,7 +2257,19 @@
         "employee_count": "51-200"
       },
       "relevant": false,
-      "rationale": "Flixmedia syndicates product-page content, while Faire is a wholesale marketplace for retailer-brand sourcing; they solve different jobs for different buyers."
+      "rationale": "Flixmedia supplies content-syndication tools to brands and retailers, not a wholesale marketplace connecting independent retailers with suppliers.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Flixmedia supplies content-syndication tools to brands and retailers, not a wholesale marketplace connecting independent retailers with suppliers."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Flixmedia syndicates branded rich content to retailer product pages; it is not a wholesale marketplace connecting retailers with brands."
+        }
+      ]
     },
     {
       "name": "Fairling",
@@ -1329,7 +2286,19 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "Both are wholesale marketplaces connecting brands and suppliers with independent retailers for product discovery and distribution."
+      "rationale": "Wholesale marketplace connecting brands with independent retailers, directly matching Faire\u2019s core product, participants, and business model.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Wholesale marketplace connecting brands with independent retailers, directly matching Faire\u2019s core product, participants, and business model."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are B2B wholesale marketplaces connecting brands with independent retailers; same product, buyer, and business model\u2014direct comparable despite smaller size."
+        }
+      ]
     },
     {
       "name": "YORK MNGMT",
@@ -1346,7 +2315,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "YORK MNGMT is an agency managing brands\u2019 presence on marketplaces like Faire, not a wholesale marketplace connecting retailers and suppliers."
+      "rationale": "YORK MNGMT is a service agency managing wholesale marketplace presence for CPG brands, not a wholesale marketplace connecting retailers and suppliers.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "YORK MNGMT is a service agency managing wholesale marketplace presence for CPG brands, not a wholesale marketplace connecting retailers and suppliers."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Agency managing brands' Faire/marketplace presence, not a wholesale marketplace itself; serves the category rather than competing with Faire."
+        }
+      ]
     },
     {
       "name": "cobai",
@@ -1363,7 +2344,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "Cobai provides white-label retailer storefronts, not a wholesale sourcing marketplace where independent retailers discover and order inventory from brands."
+      "rationale": "Cobai sells white-label storefront software to wholesalers, not a wholesale marketplace connecting independent retailers with brands.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Cobai sells white-label storefront software to wholesalers, not a wholesale marketplace connecting independent retailers with brands."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Cobai sells white-label store software to manufacturers/wholesalers, not a two-sided wholesale marketplace connecting brands and retailers like Faire."
+        }
+      ]
     },
     {
       "name": "FashFed",
@@ -1380,7 +2373,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "FashFed is a consumer fashion retailer, not a B2B wholesale marketplace connecting independent retailers with brands and suppliers."
+      "rationale": "FashFed is a consumer fashion retail marketplace, whereas Faire is a B2B wholesale platform for independent retailers sourcing brands.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "FashFed is a consumer fashion retail marketplace, whereas Faire is a B2B wholesale platform for independent retailers sourcing brands."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "FashFed is a B2C consumer fashion retailer; Faire is a B2B wholesale marketplace for retailers. Different buyer persona and business model."
+        }
+      ]
     },
     {
       "name": "FASHOP",
@@ -1397,7 +2402,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "FASHOP provides fashion wholesale intelligence and retailer prospecting, not a transactional wholesale marketplace connecting brands and independent retailers."
+      "rationale": "FASHOP sells market intelligence and prospecting tools to fashion brands, rather than operating a wholesale marketplace connecting retailers and suppliers.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "FASHOP sells market intelligence and prospecting tools to fashion brands, rather than operating a wholesale marketplace connecting retailers and suppliers."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "FASHOP sells market-intelligence and prospecting analytics to brands, not a wholesale marketplace connecting retailers and suppliers; different product and business model."
+        }
+      ]
     },
     {
       "name": "Facon de Faire",
@@ -1413,8 +2430,20 @@
         "industries": null,
         "employee_count": "1-10"
       },
-      "relevant": false,
-      "rationale": "Facon de Faire matches buyers with textile manufacturers for custom French production, not retailers with wholesale brands for inventory purchasing."
+      "relevant": true,
+      "rationale": "Both are B2B marketplaces connecting retail/fashion buyers with suppliers, though Facon de Faire focuses on French textile manufacturing rather than wholesale inventory.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both are B2B marketplaces connecting retail/fashion buyers with suppliers, though Facon de Faire focuses on French textile manufacturing rather than wholesale inventory."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "B2B marketplace matching brands/retailers with suppliers (French textile ateliers) \u2014 same business model and market as Faire, narrower niche."
+        }
+      ]
     },
     {
       "name": "Orderspace",
@@ -1430,8 +2459,25 @@
         "industries": null,
         "employee_count": "11-50"
       },
-      "relevant": true,
-      "rationale": "Both enable brands and independent retailers to conduct B2B wholesale ordering online, serving overlapping users and the same wholesale commerce workflow."
+      "relevant": false,
+      "rationale": "Orderspace is wholesale order-management software, not a marketplace connecting retailers with brands; different product and business model.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Orderspace is B2B wholesale ordering software for retailers and brands, overlapping Faire's wholesale commerce market, though it is not a marketplace."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Orderspace is wholesale order-management software, not a marketplace connecting retailers with brands; different product and business model."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "judge error: Connection error."
+        }
+      ]
     },
     {
       "name": "Brand Expand",
@@ -1448,7 +2494,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "Brand Expand is marketplace-launch and sales-optimization software for ecommerce sellers, not a wholesale sourcing marketplace connecting retailers with brands."
+      "rationale": "Brand Expand is a marketplace-seller launch and promotion SaaS, not a B2B wholesale marketplace connecting independent retailers with brands.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Brand Expand is a marketplace-seller launch and promotion SaaS, not a B2B wholesale marketplace connecting independent retailers with brands."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "SaaS helping sellers launch products on Amazon/Walmart via buyer promos; not a B2B wholesale marketplace connecting retailers with brands."
+        }
+      ]
     },
     {
       "name": "Retwho",
@@ -1465,7 +2523,19 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "Both are B2B wholesale marketplaces connecting retailers with multiple brands or wholesalers for sourcing, ordering, inventory, and supplier management."
+      "rationale": "Both operate B2B wholesale marketplaces connecting retailers with suppliers/wholesalers and facilitating multi-vendor ordering.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both operate B2B wholesale marketplaces connecting retailers with suppliers/wholesalers and facilitating multi-vendor ordering."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "B2B wholesale marketplace connecting wholesalers and retailers, same product, market, and business model as Faire."
+        }
+      ]
     },
     {
       "name": "Fashion Index",
@@ -1482,7 +2552,24 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "Fashion Index helps fashion creators source materials and manufacturers, while Faire helps retailers source finished wholesale goods from brands; buyers and jobs differ."
+      "rationale": "judge error: Connection error.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "B2B marketplace connecting fashion businesses with suppliers, comparable to Faire's retailer-brand wholesale marketplace despite its fashion-specific sourcing focus."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "judge error: Connection error."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "judge error: Connection error."
+        }
+      ]
     },
     {
       "name": "Bubble Goods",
@@ -1499,7 +2586,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "Bubble Goods is a consumer food marketplace, while Faire is a B2B wholesale platform for retailer sourcing; buyers and purchasing jobs differ."
+      "rationale": "Bubble Goods is a direct-to-consumer food marketplace, whereas Faire is a B2B wholesale marketplace connecting brands with independent retailers.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Bubble Goods is a direct-to-consumer food marketplace, whereas Faire is a B2B wholesale marketplace connecting brands with independent retailers."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "judge error: Connection error."
+        }
+      ]
     },
     {
       "name": "Fabrago",
@@ -1516,7 +2615,19 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "Fabrago is a wholesale B2B marketplace connecting brands with retailers in categories central to Faire, serving the same sourcing and distribution needs."
+      "rationale": "B2B wholesale marketplace connecting independent brands and retailers, directly comparable to Faire despite a narrower category focus.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "B2B wholesale marketplace connecting independent brands and retailers, directly comparable to Faire despite a narrower category focus."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "B2B wholesale marketplace connecting brands with retailers, same product, market, and business model as Faire; direct competitor."
+        }
+      ]
     },
     {
       "name": "Razor Group",
@@ -1533,7 +2644,19 @@
         "employee_count": "201-500"
       },
       "relevant": false,
-      "rationale": "Razor Group acquires and operates Amazon FBA brands; it is not a wholesale marketplace connecting brands with independent retailers."
+      "rationale": "Razor acquires and scales Amazon FBA brands; it is an e-commerce aggregator, not a wholesale marketplace connecting independent retailers with suppliers.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Razor acquires and scales Amazon FBA brands; it is an e-commerce aggregator, not a wholesale marketplace connecting independent retailers with suppliers."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Razor Group acquires and operates Amazon FBA brands (aggregator); Faire is a wholesale marketplace connecting brands and retailers. Different business model and market."
+        }
+      ]
     },
     {
       "name": "Zhe800",
@@ -1550,7 +2673,19 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "Both are B2B wholesale marketplaces enabling retailers to discover suppliers, compare products, and source inventory directly."
+      "rationale": "Both operate B2B wholesale marketplaces connecting retailers or buyers with brands, suppliers, and product inventory.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both operate B2B wholesale marketplaces connecting retailers or buyers with brands, suppliers, and product inventory."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are B2B wholesale marketplaces connecting retailers with suppliers/brands for inventory sourcing; same product and business model, different region."
+        }
+      ]
     },
     {
       "name": "BrandsDistribution",
@@ -1566,8 +2701,25 @@
         "industries": null,
         "employee_count": "11-50"
       },
-      "relevant": true,
-      "rationale": "Both are B2B wholesale platforms enabling retailers to source products from multiple brands, with BrandsDistribution specifically focused on fashion."
+      "relevant": false,
+      "rationale": "judge error: Connection error.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "B2B wholesale platform supplying brands and inventory to independent retailers, directly comparable to Faire despite its fashion specialization."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "judge error: Connection error."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "judge error: Connection error."
+        }
+      ]
     },
     {
       "name": "FreeMyStore",
@@ -1584,7 +2736,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "FreeMyStore is a fulfillment and merchandise-services provider, not a wholesale marketplace connecting retailers with brands and suppliers."
+      "rationale": "FreeMyStore is a fulfillment and merch-development service for brands, not a wholesale marketplace connecting independent retailers with suppliers.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "FreeMyStore is a fulfillment and merch-development service for brands, not a wholesale marketplace connecting independent retailers with suppliers."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "judge error: Connection error."
+        }
+      ]
     },
     {
       "name": "VentasxMayor",
@@ -1601,7 +2765,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "VentasxMayor provides direct B2B storefront software for individual wholesalers, while Faire is a multi-brand wholesale marketplace connecting suppliers with independent retailers."
+      "rationale": "VentasxMayor provides e-commerce infrastructure to wholesalers, rather than a wholesale marketplace connecting independent retailers with brands.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "VentasxMayor provides e-commerce infrastructure to wholesalers, rather than a wholesale marketplace connecting independent retailers with brands."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "judge error: Connection error."
+        }
+      ]
     },
     {
       "name": "CloudOrder",
@@ -1617,8 +2793,25 @@
         "industries": null,
         "employee_count": "1-10"
       },
-      "relevant": true,
-      "rationale": "Both are B2B product-sourcing marketplaces connecting retailers with brands, serving merchants seeking inventory despite differing wholesale and dropshipping fulfillment models."
+      "relevant": false,
+      "rationale": "judge error: Connection error.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both operate B2B marketplaces connecting retailers with brands and suppliers for wholesale product sourcing; CloudOrder specializes in dropshipping."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "judge error: Connection error."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "judge error: Connection error."
+        }
+      ]
     },
     {
       "name": "Brinde.me",
@@ -1635,7 +2828,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "Brinde.me is e-commerce operations software for promotional-gift sellers, not a wholesale marketplace where retailers source inventory from brands."
+      "rationale": "Brinde.me is commerce and quoting software for promotional-gift businesses, not a wholesale marketplace connecting independent retailers with brands.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Brinde.me is commerce and quoting software for promotional-gift businesses, not a wholesale marketplace connecting independent retailers with brands."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "judge error: Connection error."
+        }
+      ]
     },
     {
       "name": "Faverie",
@@ -1652,7 +2857,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "Faverie is a consumer fashion retailer, not a B2B wholesale marketplace connecting independent retailers with brands and suppliers."
+      "rationale": "Faverie is a consumer fashion retailer, not a B2B wholesale marketplace connecting independent retailers with brands and suppliers.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Faverie is a consumer fashion retailer, not a B2B wholesale marketplace connecting independent retailers with brands and suppliers."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "judge error: Connection error."
+        }
+      ]
     },
     {
       "name": "Mirta",
@@ -1668,8 +2885,25 @@
         "industries": null,
         "employee_count": "201-500"
       },
-      "relevant": true,
-      "rationale": "Both are B2B wholesale marketplaces enabling independent retailers to discover brands and manage inventory purchasing; Mirta specializes in contemporary fashion."
+      "relevant": false,
+      "rationale": "judge error: Connection error.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Wholesale marketplace connecting independent retailers with brands; Mirta is a fashion-focused direct comparable to Faire."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "judge error: Connection error."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "judge error: Connection error."
+        }
+      ]
     },
     {
       "name": "E-leevate",
@@ -1686,7 +2920,20 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "E-leevate is an Amazon e-commerce operations service, not a wholesale marketplace directly connecting independent retailers with brands and suppliers."
+      "rationale": "E-leevate is an Amazon wholesale consulting/service provider, not a marketplace connecting independent retailers with brands and suppliers.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "E-leevate is an Amazon wholesale consulting/service provider, not a marketplace connecting independent retailers with brands and suppliers."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "judge error: Connection error."
+        }
+      ]
     }
-  ]
+  ],
+  "error": null
 }

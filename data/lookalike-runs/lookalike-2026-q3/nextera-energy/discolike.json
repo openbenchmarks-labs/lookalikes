@@ -7,18 +7,20 @@
     "name": "domain_similarity"
   },
   "k": 100,
-  "relevant_count": 16,
-  "precision_at_k": 16.0,
-  "relevant_count_at_10": 2,
-  "relevant_count_at_100": 16,
-  "precision_at_10": 20.0,
-  "precision_at_100": 16.0,
+  "relevant_count": 23,
+  "precision_at_k": 23.0,
+  "relevant_count_at_10": 3,
+  "relevant_count_at_25": 6,
+  "relevant_count_at_100": 23,
+  "precision_at_10": 30.0,
+  "precision_at_25": 24.0,
+  "precision_at_100": 23.0,
   "latency_ms": 1067,
   "cost_usd": null,
   "duplicates_removed": 2,
   "max_results": null,
-  "judge_model": "gpt-5.6",
-  "judged_at": "2026-07-27T03:47:41Z",
+  "judge_model": "majority(n=3): claude-opus-5,gpt-5.6-terra,kimi-k3",
+  "judged_at": "2026-08-10T19:39:27Z",
   "candidates": [
     {
       "name": "NextEra Energy Services",
@@ -44,7 +46,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "This affiliated retail energy supplier differs from NextEra\u2019s core utility, power-generation, transmission, and clean-infrastructure business model."
+      "rationale": "NextEra Energy Services is an affiliated NextEra entity, not an independent competitor or ICP-expansion lookalike.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "NextEra Energy Services is an affiliated NextEra entity, not an independent competitor or ICP-expansion lookalike."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "NextEra Energy Services is a subsidiary of the seed (same corporate family), not an independent comparable; also retail supply vs generation."
+        }
+      ]
     },
     {
       "name": "NextEra Energy Resources",
@@ -74,7 +88,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "NextEra Energy Resources is a subsidiary and core business unit of the seed, not an independent lookalike prospect."
+      "rationale": "NextEra Energy Resources is a subsidiary/business unit of the seed, not an independent competitor or comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "NextEra Energy Resources is a subsidiary/business unit of the seed, not an independent competitor or comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "NextEra Energy Resources is a subsidiary of the seed company itself, not an independent competitor or comparable."
+        }
+      ]
     },
     {
       "name": "Florida Power & Light Company",
@@ -107,7 +133,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "FPL is NextEra Energy\u2019s regulated utility subsidiary, not an independent lookalike prospect despite offering overlapping electric utility services."
+      "rationale": "Florida Power & Light is a NextEra Energy subsidiary, not an independent competitor or comparable lookalike.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Florida Power & Light is a NextEra Energy subsidiary, not an independent competitor or comparable lookalike."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Florida Power & Light is a subsidiary of NextEra Energy, not a competitor or comparable \u2014 it is part of the seed itself."
+        }
+      ]
     },
     {
       "name": "NextEra Infrastructure Solutions",
@@ -133,7 +171,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Provides broadband, lighting, and efficiency infrastructure services rather than electric utility operations, power generation, transmission, or renewable energy development."
+      "rationale": "Infrastructure contractor offering broadband, lighting, and efficiency services, not an electric utility or renewable power generation and transmission operator.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Infrastructure contractor offering broadband, lighting, and efficiency services, not an electric utility or renewable power generation and transmission operator."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Sells fiber broadband, LED lighting, and efficiency services\u2014utility-adjacent contractor, not power generation/renewables utility; name similarity doesn't imply product/market match."
+        }
+      ]
     },
     {
       "name": "FPL Energy Services, Inc.",
@@ -158,7 +208,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "FPL Energy Services sells downstream energy and home/business services, not utility-scale power generation, transmission, or renewable infrastructure comparable to NextEra."
+      "rationale": "Energy-services provider offering customer-side equipment, fuel, and repairs, not an electric utility or renewable generation and transmission infrastructure peer.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Energy-services provider offering customer-side equipment, fuel, and repairs, not an electric utility or renewable generation and transmission infrastructure peer."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Subsidiary of NextEra (FPL affiliate), and sells energy services like lighting/generators, not utility-scale power generation\u2014a related entity, not a peer."
+        }
+      ]
     },
     {
       "name": "FPL Home",
@@ -188,7 +250,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "FPL Home sells home repair and protection plans, not electric utility, power generation, transmission, or renewable energy infrastructure services."
+      "rationale": "FPL Home sells home repair and protection plans, not electric generation, transmission, utility service, or clean-energy infrastructure.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "FPL Home sells home repair and protection plans, not electric generation, transmission, utility service, or clean-energy infrastructure."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "FPL Home sells home warranty/protection plans, not power generation or utility services; it's an affiliate-style service provider, not a comparable energy company."
+        }
+      ]
     },
     {
       "name": "Citizens for Lower Electric Rates",
@@ -214,7 +288,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Candidate is an advocacy organization focused on electricity rates, not a utility or renewable power generation and infrastructure company."
+      "rationale": "Consumer advocacy nonprofit opposing utility rate increases; it neither generates/transmits power nor operates as an energy utility.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Consumer advocacy nonprofit opposing utility rate increases; it neither generates/transmits power nor operates as an energy utility."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Consumer advocacy nonprofit opposing rate hikes, not a power generator or utility; no product, market, or model resemblance to NextEra."
+        }
+      ]
     },
     {
       "name": "APR Energy",
@@ -241,8 +327,20 @@
           "https://x.com/aprenergy"
         ]
       },
-      "relevant": false,
-      "rationale": "APR provides fast-track temporary and turnkey generation to utilities and industrial sites, while NextEra primarily owns and operates utility and renewable infrastructure."
+      "relevant": true,
+      "rationale": "Deploys and operates power-generation plants and energy infrastructure for utilities and industry, making it a relevant power-sector comparable despite its temporary-power focus.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Deploys and operates power-generation plants and energy infrastructure for utilities and industry, making it a relevant power-sector comparable despite its temporary-power focus."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both own and operate power generation plants; APR is an independent power producer serving utilities and industry, overlapping NextEra's generation business."
+        }
+      ]
     },
     {
       "name": "American Electric Power Company, Inc.",
@@ -270,7 +368,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both are major electric utilities operating power generation, transmission, distribution, grid infrastructure, and clean-energy initiatives for overlapping energy customers and stakeholders."
+      "rationale": "AEP is a major electric utility operating generation, transmission, and distribution infrastructure, directly comparable to NextEra's core utility business.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "AEP is a major electric utility operating generation, transmission, and distribution infrastructure, directly comparable to NextEra's core utility business."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "AEP is a large US electric utility in power generation, transmission, and distribution \u2014 a direct competitor and comparable to NextEra Energy."
+        }
+      ]
     },
     {
       "name": "Southern Company",
@@ -301,7 +411,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both are major U.S. utilities operating power generation and distribution infrastructure, with substantial clean-energy and renewable-energy portfolios."
+      "rationale": "Major electric utility with power generation, transmission/distribution, wholesale operations, and clean-energy investments; a direct peer and competitor to NextEra.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Major electric utility with power generation, transmission/distribution, wholesale operations, and clean-energy investments; a direct peer and competitor to NextEra."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are large US electric utilities focused on power generation, distribution, and clean energy transition \u2014 direct peers and comparables."
+        }
+      ]
     },
     {
       "name": "Americans for Energy Dominance",
@@ -327,7 +449,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "An energy advocacy organization promoting home batteries is not an electric utility, power generator, or clean-energy infrastructure operator."
+      "rationale": "Nonprofit advocacy movement promoting home batteries, not an electric utility or renewable-energy infrastructure operator.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Nonprofit advocacy movement promoting home batteries, not an electric utility or renewable-energy infrastructure operator."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Advocacy nonprofit promoting home batteries, not a power generation or utility company; no product/market/model overlap with NextEra."
+        }
+      ]
     },
     {
       "name": "NRG Energy, Inc.",
@@ -362,7 +496,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both are major energy companies providing electricity generation, retail energy solutions, and clean-energy offerings to residential and commercial customers."
+      "rationale": "NRG is a North American electricity and natural-gas energy provider, comparable to NextEra as a large power-sector utility and generation company.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "NRG is a North American electricity and natural-gas energy provider, comparable to NextEra as a large power-sector utility and generation company."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "NRG is a large North American power generation and utility company selling electricity and natural gas, a direct peer and competitor of NextEra Energy."
+        }
+      ]
     },
     {
       "name": "Solar Boss Systems LLC",
@@ -409,7 +555,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Solar Boss is a residential solar installer, not a utility-scale power generator, transmission operator, or clean-energy infrastructure developer serving comparable buyers."
+      "rationale": "Residential solar installer serving homeowners, not an electric utility or clean-energy infrastructure developer/operator comparable to NextEra.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Residential solar installer serving homeowners, not an electric utility or clean-energy infrastructure developer/operator comparable to NextEra."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Residential rooftop-solar installer (B2C service), not a power generator or utility; different product and business model from NextEra."
+        }
+      ]
     },
     {
       "name": "Enabled Energy, Inc.",
@@ -434,7 +592,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Enabled Energy is an energy-efficiency engineering and advisory provider for data centers, not an electric utility, power generator, or renewable infrastructure operator."
+      "rationale": "Energy-efficiency engineering and construction consultancy for data centers, not an electric utility or renewable power generation and infrastructure operator.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Energy-efficiency engineering and construction consultancy for data centers, not an electric utility or renewable power generation and infrastructure operator."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Data-center energy-efficiency engineering services firm, not a power generator or utility; different product, market, and business model."
+        }
+      ]
     },
     {
       "name": "NextVolt TM",
@@ -458,7 +628,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both develop, own, and operate renewable energy and battery storage infrastructure for grid capacity and reliability, serving overlapping utility and energy buyers."
+      "rationale": "Develops, owns, and operates renewable and battery-storage infrastructure, directly comparable to NextEra\u2019s clean-energy generation and grid assets.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Develops, owns, and operates renewable and battery-storage infrastructure, directly comparable to NextEra\u2019s clean-energy generation and grid assets."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Develops, owns, and operates renewable energy and battery storage projects \u2014 same clean-energy infrastructure business model and market as NextEra; size ignored per rules."
+        }
+      ]
     },
     {
       "name": "Impact Allies",
@@ -483,7 +665,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Impact Allies is a nonprofit research, education, and technical-services organization, not an electric utility, power generator, or clean-energy infrastructure operator."
+      "rationale": "Nonprofit research, education, and workforce-development services do not operate electric utility, power generation, transmission, or clean-energy infrastructure businesses.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Nonprofit research, education, and workforce-development services do not operate electric utility, power generation, transmission, or clean-energy infrastructure businesses."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Nonprofit workforce-development/education services firm touching energy topics; not a utility or renewable power generator \u2014 no product, market, or model overlap."
+        }
+      ]
     },
     {
       "name": "Total Energy Solutions",
@@ -515,7 +709,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "TES sells and services backup generators and onsite power systems; NextEra primarily generates, transmits, and sells utility-scale electricity and renewable energy."
+      "rationale": "TES is a generator equipment, rental, and maintenance provider, not an electric utility or large-scale renewable power generation and transmission operator.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "TES is a generator equipment, rental, and maintenance provider, not an electric utility or large-scale renewable power generation and transmission operator."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Sells and services backup generators and rentals; not a utility-scale power generator or renewable energy developer like NextEra."
+        }
+      ]
     },
     {
       "name": "Constellation Energy Corporation",
@@ -550,7 +756,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both are major U.S. power producers offering utility-scale clean energy generation and infrastructure to commercial and wholesale energy buyers."
+      "rationale": "Major U.S. energy company generating and supplying low-carbon electricity, directly comparable to NextEra\u2019s utility and clean-energy infrastructure business.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Major U.S. energy company generating and supplying low-carbon electricity, directly comparable to NextEra\u2019s utility and clean-energy infrastructure business."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are large US clean-energy power generators (nuclear, wind, solar, hydro) selling electricity to businesses and homes \u2014 direct competitors and comparables."
+        }
+      ]
     },
     {
       "name": "Powering Prosperity",
@@ -572,7 +790,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Powering Prosperity is an energy-policy advocacy initiative, not an electric utility, power generator, or clean-energy infrastructure operator."
+      "rationale": "Policy advocacy initiative promoting energy reform, not an electric utility or renewable-energy infrastructure operator.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Policy advocacy initiative promoting energy reform, not an electric utility or renewable-energy infrastructure operator."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Policy advocacy initiative for energy permitting reform, not a power generation or utility company; not a competitor or comparable to NextEra."
+        }
+      ]
     },
     {
       "name": "Association of Energy Services Professionals",
@@ -600,7 +830,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "AESP is a professional membership and training association, not an electric utility, power generator, or clean-energy infrastructure developer."
+      "rationale": "Industry association providing training and networking, not an electric utility, power generator, or clean-energy infrastructure operator.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Industry association providing training and networking, not an electric utility, power generator, or clean-energy infrastructure operator."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "AESP is a nonprofit professional association offering training and networking, not power generation or utility services \u2014 not a competitor or comparable."
+        }
+      ]
     },
     {
       "name": "Sunstorm Energy",
@@ -628,7 +870,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Sunstorm is a local solar installer serving property owners, not an electric utility or large-scale power generation and transmission operator."
+      "rationale": "Solar installer and energy-efficiency provider, not an electric utility or large-scale power generation, transmission, and clean-energy infrastructure operator.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Solar installer and energy-efficiency provider, not an electric utility or large-scale power generation, transmission, and clean-energy infrastructure operator."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Sunstorm is a residential solar installer/service provider, not a power generation or utility-scale clean energy company; different value-chain position, not a peer."
+        }
+      ]
     },
     {
       "name": "American Superconductor Corporation",
@@ -655,7 +909,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "AMSC supplies grid and renewable power-control equipment, while NextEra owns and operates utilities and generation assets; they serve different buyers and roles."
+      "rationale": "AMSC supplies grid power-control and renewable integration technology, rather than operating electric utilities, generation assets, or transmission infrastructure like NextEra.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "AMSC supplies grid power-control and renewable integration technology, rather than operating electric utilities, generation assets, or transmission infrastructure like NextEra."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "AMSC supplies power-control equipment and grid components to utilities; it is a vendor/supplier to the utility sector, not a power generator or utility peer."
+        }
+      ]
     },
     {
       "name": "Florida City Gas",
@@ -683,7 +949,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "The candidate is described as a mobile auto-detailing service, with no overlap in electric utility, power generation, or clean-energy infrastructure offerings."
+      "rationale": "Candidate description is a mobile auto-detailing service, unrelated to electric utilities, power generation, transmission, or renewable-energy infrastructure.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Candidate description is a mobile auto-detailing service, unrelated to electric utilities, power generation, transmission, or renewable-energy infrastructure."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Candidate record describes mobile auto detailing, unrelated to power generation; description/name mismatch indicates a corrupted duplicate entry."
+        }
+      ]
     },
     {
       "name": "Vote Solar",
@@ -716,7 +994,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Vote Solar is a nonprofit policy advocacy organization, not an electric utility, power generator, or clean-energy infrastructure developer."
+      "rationale": "Vote Solar is a clean-energy advocacy nonprofit, not a power-generation, transmission, or utility operator comparable to NextEra.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Vote Solar is a clean-energy advocacy nonprofit, not a power-generation, transmission, or utility operator comparable to NextEra."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Nonprofit policy advocacy group, not a power generator or utility; doesn't compete or compare with NextEra's energy production business."
+        }
+      ]
     },
     {
       "name": "Aspire Solar Energy",
@@ -743,7 +1033,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Aspire is a local solar installation contractor, not an electric utility, power generator, or large-scale clean-energy infrastructure developer serving comparable buyers."
+      "rationale": "Local solar installer serving end customers; it does not operate utility-scale generation, transmission, or clean-energy infrastructure like NextEra.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Local solar installer serving end customers; it does not operate utility-scale generation, transmission, or clean-energy infrastructure like NextEra."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Residential solar installer serving homeowners, not a utility-scale power generator; customer of the utility sector, not a peer."
+        }
+      ]
     },
     {
       "name": "AmeriCrew",
@@ -770,7 +1072,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "AmeriCrew provides workforce development and staffing for infrastructure sectors, not electric utility operations, power generation, transmission, or renewable energy infrastructure."
+      "rationale": "AmeriCrew is a workforce-development and employment organization, not an electric utility or renewable-power infrastructure operator.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "AmeriCrew is a workforce-development and employment organization, not an electric utility or renewable-power infrastructure operator."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "AmeriCrew is a veteran workforce-staffing firm serving telecom/clean energy sectors, not a power generation or renewable energy utility peer."
+        }
+      ]
     },
     {
       "name": "Green Supply Company",
@@ -797,7 +1111,24 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide renewable energy solutions and energy products to organizations seeking cleaner power procurement and sustainability outcomes."
+      "rationale": "Provides renewable energy solutions and energy credits, making it a smaller clean-energy provider comparable to NextEra's renewable energy business.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Provides renewable energy solutions and energy credits, making it a smaller clean-energy provider comparable to NextEra's renewable energy business."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Retail green-energy marketer/consultancy selling energy credits and efficiency services, not power generation or utility infrastructure like NextEra."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Renewable energy provider/retail supplier of clean power; comparable in clean-energy space though much smaller and services-oriented.<response clipped>"
+        }
+      ]
     },
     {
       "name": "WattLogic",
@@ -827,7 +1158,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "WattLogic is an energy-efficiency equipment installer, not an electric utility or large-scale power generation, transmission, and renewable infrastructure operator."
+      "rationale": "WattLogic is an energy-efficiency and renewable-equipment installer, not a utility or large-scale power generation, transmission, and clean-energy infrastructure operator.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "WattLogic is an energy-efficiency and renewable-equipment installer, not a utility or large-scale power generation, transmission, and clean-energy infrastructure operator."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "WattLogic installs efficiency/solar equipment for end customers; it doesn't generate or transmit power, so not a peer utility\u2014more a downstream installer."
+        }
+      ]
     },
     {
       "name": "ENERGY STAR",
@@ -854,7 +1197,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "ENERGY STAR is a government efficiency certification and education program, not an electric utility, power generator, or clean-energy infrastructure developer."
+      "rationale": "ENERGY STAR is a government energy-efficiency certification and education program, not an electric utility or renewable power infrastructure operator.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "ENERGY STAR is a government energy-efficiency certification and education program, not an electric utility or renewable power infrastructure operator."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Government energy-efficiency certification program, not a power generator or utility; not a competitor or comparable to NextEra."
+        }
+      ]
     },
     {
       "name": "Energy GPS",
@@ -879,7 +1234,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Energy GPS is an energy-market analytics consultancy, not an electric utility, power generator, or clean-energy infrastructure operator."
+      "rationale": "Energy GPS is an energy-market consulting and analytics firm, not an electric utility or renewable power generation and infrastructure operator.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Energy GPS is an energy-market consulting and analytics firm, not an electric utility or renewable power generation and infrastructure operator."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Energy GPS is an energy-market analytics consultancy serving utilities, not a power generator or renewable infrastructure peer; consultants to the category don't count."
+        }
+      ]
     },
     {
       "name": "Innovation Energy Services",
@@ -901,7 +1268,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Innovation Energy Services is an energy procurement consultancy, not a utility, power generator, or clean-energy infrastructure operator serving the same core need."
+      "rationale": "Energy consulting and procurement firm serving commercial buyers, not an electric utility or renewable generation and transmission infrastructure operator.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Energy consulting and procurement firm serving commercial buyers, not an electric utility or renewable generation and transmission infrastructure operator."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Energy consulting/brokerage firm serving buyers, not a power generator or utility; not a competitor or comparable to NextEra's generation business."
+        }
+      ]
     },
     {
       "name": "Amerigy Energy",
@@ -929,7 +1308,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Amerigy is an electricity-rate brokerage, not a utility, power generator, transmission operator, or renewable infrastructure developer like NextEra."
+      "rationale": "Energy-rate broker serving retail customers, not a power generator, utility, transmission operator, or clean-energy infrastructure provider.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Energy-rate broker serving retail customers, not a power generator, utility, transmission operator, or clean-energy infrastructure provider."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Energy rate-comparison broker, not a power generator/utility; serves retail customers as intermediary, not a peer in generation or clean infrastructure."
+        }
+      ]
     },
     {
       "name": "American Power & Gas",
@@ -956,8 +1347,25 @@
           "https://x.com/apandg"
         ]
       },
-      "relevant": false,
-      "rationale": "AP&G is primarily a retail energy supplier, not a power-generation, transmission, utility, and clean-infrastructure operator like NextEra."
+      "relevant": true,
+      "rationale": "Retail electricity and renewable-energy supplier, comparable to NextEra\u2019s utility and clean-energy business despite a narrower retail focus.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Retail electricity and renewable-energy supplier, comparable to NextEra\u2019s utility and clean-energy business despite a narrower retail focus."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Retail energy reseller with no generation or transmission assets; different business model from NextEra's utility-scale power generation and clean-energy infrastructure focus."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Retail electricity/gas supplier with renewable options; same energy sector selling power to customers \to Next\": ] ok comparable.You must respond with valid JSON.}, plausible peer."
+        }
+      ]
     },
     {
       "name": "MidAmerican Energy Company",
@@ -989,7 +1397,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both are electric utilities with substantial power generation, distribution, renewable energy, and clean-energy infrastructure operations serving residential and business customers."
+      "rationale": "Electric and natural-gas utility with solar generation, serving residential and business customers; directly comparable to NextEra\u2019s utility and clean-energy operations.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Electric and natural-gas utility with solar generation, serving residential and business customers; directly comparable to NextEra\u2019s utility and clean-energy operations."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are large electric utilities providing power generation and delivery with significant renewable energy investments; direct comparable/competitor in the same industry."
+        }
+      ]
     },
     {
       "name": "Slipstream Group, Inc.",
@@ -1020,7 +1440,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Slipstream is a nonprofit providing building-efficiency research, training, and tools, not an electric utility or power generation and transmission operator."
+      "rationale": "Nonprofit energy-efficiency training, research, and advocacy organization, not an electric utility or renewable power-generation and transmission operator.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Nonprofit energy-efficiency training, research, and advocacy organization, not an electric utility or renewable power-generation and transmission operator."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Nonprofit providing building-efficiency training and advocacy, not power generation or utility-scale clean energy; not a competitor or comparable to NextEra."
+        }
+      ]
     },
     {
       "name": "International Electric Power",
@@ -1044,8 +1476,25 @@
           "https://www.linkedin.com/company/international-electric-power-llc/"
         ]
       },
-      "relevant": false,
-      "rationale": "International Electric Power is a turnkey project developer/integrator, while NextEra primarily owns and operates utility and generation assets; buyers differ."
+      "relevant": true,
+      "rationale": "Develops and operates renewable, thermal, and storage energy infrastructure, closely overlapping NextEra's power-generation and clean-energy infrastructure business.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Develops and operates renewable, thermal, and storage energy infrastructure, closely overlapping NextEra's power-generation and clean-energy infrastructure business."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Turnkey energy-infrastructure/EPC firm building projects for clients, not an owner-operator power generator/utility; serves the category rather than competing as a peer."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Independent power producer developing renewable and thermal generation plus storage \u2014 a smaller comparable to NextEra's generation/development business."
+        }
+      ]
     },
     {
       "name": "Phillips 66",
@@ -1074,7 +1523,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Phillips 66 primarily refines and transports petroleum, while NextEra centers on electric utilities and renewable power infrastructure; their core offerings and buyers differ."
+      "rationale": "Phillips 66 is primarily a downstream oil, refining, and chemicals company, not an electric utility or renewable power-generation and transmission peer.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Phillips 66 is primarily a downstream oil, refining, and chemicals company, not an electric utility or renewable power-generation and transmission peer."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Phillips 66 is oil refining/midstream/chemicals; NextEra is electric utility and renewable power generation \u2014 different industry, not a comparable."
+        }
+      ]
     },
     {
       "name": "Madison Energy Infrastructure",
@@ -1099,7 +1560,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both develop and provide renewable power and clean-energy infrastructure, including solar and storage, for organizations and communities."
+      "rationale": "Develops and deploys renewable-energy infrastructure, including solar and storage, making it a credible clean-energy utility-sector comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Develops and deploys renewable-energy infrastructure, including solar and storage, making it a credible clean-energy utility-sector comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both develop and operate clean energy infrastructure (solar, storage, renewables); Madison is a smaller-scale comparable in NextEra's renewable energy space."
+        }
+      ]
     },
     {
       "name": "BIP U.S.",
@@ -1129,7 +1602,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "BIP U.S. is a technology and business consultancy, not an electric utility, power generator, or renewable energy infrastructure operator."
+      "rationale": "Technology and business consulting firm serving energy clients, not an electric utility or renewable power infrastructure operator.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Technology and business consulting firm serving energy clients, not an electric utility or renewable power infrastructure operator."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "IT/business consulting firm serving energy clients among others; not a utility or renewable power generator, so no product, market, or model resemblance."
+        }
+      ]
     },
     {
       "name": "Energia Americana",
@@ -1152,7 +1637,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Energia Americana is a solar project-management and advisory services firm, not a power utility or renewable generation and infrastructure operator like NextEra."
+      "rationale": "Solar project management and advisory services support renewable developers rather than operating as an electric utility or energy infrastructure peer.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Solar project management and advisory services support renewable developers rather than operating as an electric utility or energy infrastructure peer."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Solar project services/consulting firm (development assistance, legal, audits, maintenance) serving clients, not a power generator/utility like NextEra."
+        }
+      ]
     },
     {
       "name": "Hispanics in Energy",
@@ -1181,7 +1678,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "HIE is an industry membership nonprofit, not an electric utility, power generator, or clean-energy infrastructure provider."
+      "rationale": "Nonprofit professional association for energy-sector inclusion, not an electric utility or renewable power infrastructure operator.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Nonprofit professional association for energy-sector inclusion, not an electric utility or renewable power infrastructure operator."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Nonprofit professional association for energy-industry inclusion, not a power generation or renewable energy utility; no product/market overlap with NextEra."
+        }
+      ]
     },
     {
       "name": "Solar Specialist inc",
@@ -1206,7 +1715,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Solar Specialist is an installation contractor, not an electric utility or large-scale power generation and transmission operator; buyers would not evaluate them similarly."
+      "rationale": "Solar installer and contractor, not an electric utility or large-scale power generation, transmission, and clean-energy infrastructure operator.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Solar installer and contractor, not an electric utility or large-scale power generation, transmission, and clean-energy infrastructure operator."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Solar installation contractor serving end customers, not a power generator or utility; downstream service provider rather than competitor or comparable."
+        }
+      ]
     },
     {
       "name": "Hecate Energy",
@@ -1230,7 +1751,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both develop renewable power generation, storage, and grid infrastructure for utilities and large energy buyers, addressing the same clean-energy procurement needs."
+      "rationale": "Develops utility-scale renewable generation, storage, and grid infrastructure, directly comparable to NextEra's clean-energy development and power infrastructure business.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Develops utility-scale renewable generation, storage, and grid infrastructure, directly comparable to NextEra's clean-energy development and power infrastructure business."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both develop renewable power generation and storage infrastructure; Hecate is a direct comparable in clean-energy project development."
+        }
+      ]
     },
     {
       "name": "American Public Power Association",
@@ -1261,7 +1794,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "APPA is a trade association serving and advocating for utilities, not an electric utility or power generation and infrastructure operator."
+      "rationale": "Trade association representing public utilities; it does not operate electric generation, transmission, or renewable-energy infrastructure.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Trade association representing public utilities; it does not operate electric generation, transmission, or renewable-energy infrastructure."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "APPA is a trade association/advocacy group serving utilities, not a power generator or utility itself; no product or model resemblance to NextEra."
+        }
+      ]
     },
     {
       "name": "RES",
@@ -1288,7 +1833,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "RES rents and services temporary industrial power and HVAC equipment; it is not an electric utility or renewable power infrastructure operator."
+      "rationale": "RES rents and services temporary industrial power equipment; it is not an electric utility or renewable generation and transmission infrastructure operator.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "RES rents and services temporary industrial power equipment; it is not an electric utility or renewable generation and transmission infrastructure operator."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Rents power/HVAC equipment to industrial sites; a supplier, not a utility or renewable-power generator like NextEra."
+        }
+      ]
     },
     {
       "name": "I Power Energy Solutions",
@@ -1311,7 +1868,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "I Power is an energy brokerage and advisory service, not an electric utility, power generator, transmission operator, or clean-energy infrastructure developer."
+      "rationale": "Energy-rate brokerage and utility advisory service, not an electric utility or renewable power generation and infrastructure operator.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Energy-rate brokerage and utility advisory service, not an electric utility or renewable power generation and infrastructure operator."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Energy rate-shopping brokerage/advisory service, not power generation or utility infrastructure; serves energy buyers rather than competing with NextEra."
+        }
+      ]
     },
     {
       "name": "Renewable Power USA",
@@ -1337,7 +1906,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Residential solar installation for homeowners differs from NextEra\u2019s utility-scale generation, transmission, and infrastructure offerings and buyers."
+      "rationale": "Residential solar installer serving homeowners, not an electric utility or large-scale power generation and transmission infrastructure comparable to NextEra.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Residential solar installer serving homeowners, not an electric utility or large-scale power generation and transmission infrastructure comparable to NextEra."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Residential solar installer serving homeowners, not a utility-scale power generator; a service provider in the category, not a peer or competitor."
+        }
+      ]
     },
     {
       "name": "The Energy Academy",
@@ -1366,7 +1947,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "The candidate provides renewable-energy education and workforce training, not electric utility services, power generation, transmission, or clean-energy infrastructure."
+      "rationale": "Renewable-energy education and workforce training platform, not a power generator, utility, transmission operator, or clean-energy infrastructure developer.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Renewable-energy education and workforce training platform, not a power generator, utility, transmission operator, or clean-energy infrastructure developer."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Educational/career training platform for renewable energy workers, not a power generation or utility company; different industry and business model."
+        }
+      ]
     },
     {
       "name": "Bloom Energy",
@@ -1396,8 +1989,20 @@
           "https://x.com/bloom_energy"
         ]
       },
-      "relevant": false,
-      "rationale": "Bloom sells onsite fuel-cell systems, while NextEra primarily develops and operates utility-scale generation, transmission, and electric utility services."
+      "relevant": true,
+      "rationale": "Bloom Energy is a clean-power generation company, providing distributed fuel-cell energy infrastructure comparable to NextEra's renewable generation business.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Bloom Energy is a clean-power generation company, providing distributed fuel-cell energy infrastructure comparable to NextEra's renewable generation business."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are clean-energy power generation companies; Bloom produces low-emission onsite electricity (equipment plus power agreements), a genuine comparable in clean power."
+        }
+      ]
     },
     {
       "name": "American Tower Corporation",
@@ -1423,7 +2028,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "American Tower owns telecommunications infrastructure, not electric generation, transmission, or renewable energy assets serving utility power buyers."
+      "rationale": "American Tower operates telecommunications infrastructure, not electric power generation, transmission, utility service, or renewable-energy infrastructure as its primary business.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "American Tower operates telecommunications infrastructure, not electric power generation, transmission, utility service, or renewable-energy infrastructure as its primary business."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Communications tower/data-center infrastructure REIT, not power generation, transmission, or clean energy; different industry despite shared 'infrastructure' label."
+        }
+      ]
     },
     {
       "name": "EEI 168+",
@@ -1451,7 +2068,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "EEI is an industry trade association serving electric utilities, not a utility or renewable power generation and infrastructure operator."
+      "rationale": "EEI is a trade association advocating for investor-owned utilities, not an electric utility or clean-energy infrastructure operator.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "EEI is a trade association advocating for investor-owned utilities, not an electric utility or clean-energy infrastructure operator."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Trade association representing electric utilities, not a power generator/utility itself; serves the industry rather than competing with NextEra."
+        }
+      ]
     },
     {
       "name": "Duke Energy Corporation",
@@ -1483,7 +2112,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both are major electric utilities operating power generation, transmission, customer energy services, and clean-energy infrastructure for overlapping residential and business markets."
+      "rationale": "Major U.S. electric utility with power generation, transmission, customer service, grid investment, and clean-energy transition activities directly comparable to NextEra.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Major U.S. electric utility with power generation, transmission, customer service, grid investment, and clean-energy transition activities directly comparable to NextEra."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are large US electric utilities focused on power generation, transmission, and clean energy transition \u2014 direct competitors and comparables."
+        }
+      ]
     },
     {
       "name": "Fort Pierce Utilities Authority Gas",
@@ -1512,8 +2153,25 @@
           "https://x.com/teamfpua"
         ]
       },
-      "relevant": false,
-      "rationale": "FPUA is a local natural-gas utility, not an electric generation, transmission, or renewable-infrastructure provider serving the same procurement need."
+      "relevant": true,
+      "rationale": "Both are energy utilities serving residential and commercial customers; shared regulated-utility model and energy-delivery market make it a comparable, despite gas versus electric difference.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Municipal natural-gas distributor, not an electric power generation, transmission, or renewable-energy utility comparable to NextEra."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are energy utilities serving residential and commercial customers; shared regulated-utility model and energy-delivery market make it a comparable, despite gas versus electric difference."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Both are regulated utilities delivering energy to residential/commercial customers in Florida; municipal gas utility is a smaller peer comparable."
+        }
+      ]
     },
     {
       "name": "Resource Innovations",
@@ -1541,7 +2199,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Resource Innovations sells software and advisory services to utilities; it does not primarily generate, transmit, or sell electricity like NextEra."
+      "rationale": "Energy-transition software and advisory provider serving utilities, not an electric utility or renewable power-generation and infrastructure operator.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Energy-transition software and advisory provider serving utilities, not an electric utility or renewable power-generation and infrastructure operator."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Resource Innovations sells software and advisory services to utilities \u2014 a vendor serving the category, not a power generator or utility peer."
+        }
+      ]
     },
     {
       "name": "ENGIE Resources",
@@ -1569,7 +2239,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide commercial electricity and renewable energy solutions, including power purchase arrangements, serving organizations seeking stable, lower-carbon energy supply."
+      "rationale": "Competitive energy provider offering renewable electricity, PPAs, and business energy solutions, overlapping NextEra's clean-power generation and utility market.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Competitive energy provider offering renewable electricity, PPAs, and business energy solutions, overlapping NextEra's clean-power generation and utility market."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are US electricity providers with strong renewable-energy focus; ENGIE Resources is a peer power supplier, comparable to NextEra's energy supply business."
+        }
+      ]
     },
     {
       "name": "Florida Municipal Electric Association",
@@ -1598,7 +2280,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "FMEA is a trade association serving municipal utilities, not an electric utility or renewable power generation and infrastructure company."
+      "rationale": "Industry association serving municipal utilities, not an electric utility or renewable-energy infrastructure operator comparable to NextEra.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Industry association serving municipal utilities, not an electric utility or renewable-energy infrastructure operator comparable to NextEra."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "FMEA is a trade association advocating for municipal utilities, not a power generator or utility itself; it serves the category rather than competing with NextEra."
+        }
+      ]
     },
     {
       "name": "The Utility Network",
@@ -1625,7 +2319,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "The candidate is an energy brokerage and cost-management service, not a power generator, utility operator, or clean-energy infrastructure company."
+      "rationale": "Energy-plan brokerage and bill-saving service, not a power generation, transmission, or clean-energy infrastructure utility comparable to NextEra.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Energy-plan brokerage and bill-saving service, not a power generation, transmission, or clean-energy infrastructure utility comparable to NextEra."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Energy broker/marketplace helping customers shop suppliers and plans, not a power generator or utility; intermediary, not a peer of NextEra."
+        }
+      ]
     },
     {
       "name": "Energy Transition Net",
@@ -1648,7 +2354,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "ETN is a consultancy serving power utilities, not an electric utility or renewable power generation and infrastructure operator like NextEra Energy."
+      "rationale": "Consulting firm serving utilities, not an electric utility or renewable energy infrastructure owner/operator comparable to NextEra.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Consulting firm serving utilities, not an electric utility or renewable energy infrastructure owner/operator comparable to NextEra."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Consulting firm serving utilities, not a power generator/utility itself; supplier/advisor to the category rather than a competitor or comparable."
+        }
+      ]
     },
     {
       "name": "American Energy Forum",
@@ -1670,7 +2388,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "American Energy Forum is a policy and networking organization, not an electric utility, power generator, or clean-energy infrastructure operator."
+      "rationale": "AEF is an energy-industry networking and policy forum, not an electric utility or renewable energy infrastructure operator.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "AEF is an energy-industry networking and policy forum, not an electric utility or renewable energy infrastructure operator."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Nonprofit networking/advocacy forum hosting energy events, not a power generator or utility; serves the industry rather than competing with NextEra."
+        }
+      ]
     },
     {
       "name": "Greenlight Data Centers",
@@ -1696,7 +2426,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Greenlight develops data centers and procures utility power; it does not primarily generate, transmit, or sell electricity and renewable-energy infrastructure."
+      "rationale": "Greenlight develops AI/cloud data centers; it consumes and integrates power infrastructure rather than operating as an electric utility or renewable-energy provider.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Greenlight develops AI/cloud data centers; it consumes and integrates power infrastructure rather than operating as an electric utility or renewable-energy provider."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Data center developer, not power generation or utility; a consumer of energy infrastructure rather than a peer utility/renewables generator."
+        }
+      ]
     },
     {
       "name": "Natural Gas Does More",
@@ -1719,8 +2461,20 @@
         "city": "Oklahoma City",
         "social_urls": []
       },
-      "relevant": false,
-      "rationale": "Natural Gas Does More appears to be an informational natural-gas promotion/rebate initiative, not a power-generation, transmission, or clean-energy utility operator."
+      "relevant": true,
+      "rationale": "A regulated natural-gas utility serving residential and commercial energy customers is a comparable energy-utility business, despite differing fuel and infrastructure focus.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "A regulated natural-gas utility serving residential and commercial energy customers is a comparable energy-utility business, despite differing fuel and infrastructure focus."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Utility service provider offering natural gas distribution to residential and commercial customers\u2014same market and business model as NextEra's electric utility operations."
+        }
+      ]
     },
     {
       "name": "SmartestEnergy US LLC",
@@ -1747,7 +2501,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both supply electricity and renewable-energy solutions to commercial customers pursuing reliable power and net-zero goals."
+      "rationale": "Retail electricity supplier offering renewable energy and net-zero solutions; a comparable clean-energy utility-market participant despite less generation infrastructure.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Retail electricity supplier offering renewable energy and net-zero solutions; a comparable clean-energy utility-market participant despite less generation infrastructure."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both sell electricity and renewable energy solutions; SmartestEnergy is a retail power supplier, a peer/comparable in the electricity market like NextEra's utility arm."
+        }
+      ]
     },
     {
       "name": "Generator Supercenter",
@@ -1773,7 +2539,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Generator Supercenter sells generator franchises and installations, not utility-scale power generation, transmission, or renewable energy infrastructure for the same buyers."
+      "rationale": "Generator installation and maintenance franchise, not an electric utility or renewable power generation and transmission operator.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Generator installation and maintenance franchise, not an electric utility or renewable power generation and transmission operator."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Sells/installs residential standby generators via franchise; not utility-scale power generation or clean energy infrastructure \u2014 different product and market."
+        }
+      ]
     },
     {
       "name": "Volunteer Solar",
@@ -1799,7 +2577,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Volunteer Solar is a distributed solar installer, not an electric utility or utility-scale power generation and transmission company like NextEra."
+      "rationale": "Residential and commercial solar installer, not an electric utility or large-scale power generation, transmission, and clean-energy infrastructure operator.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Residential and commercial solar installer, not an electric utility or large-scale power generation, transmission, and clean-energy infrastructure operator."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Small residential solar installer/service provider, not a power-generation utility; serves different market role than NextEra's generation and transmission business."
+        }
+      ]
     },
     {
       "name": "Green House Solar & Air",
@@ -1823,7 +2613,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Green House is a distributed solar installation contractor, not an electric utility or large-scale power generation and transmission operator."
+      "rationale": "Solar installer serving end customers, not an electric utility or power-generation, transmission, and clean-energy infrastructure operator.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Solar installer serving end customers, not an electric utility or power-generation, transmission, and clean-energy infrastructure operator."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "NextEra is a utility-scale power generator; candidate is a residential/commercial solar installation contractor \u2014 a customer-facing installer, not a peer generator."
+        }
+      ]
     },
     {
       "name": "Modern Brokers of America",
@@ -1846,7 +2648,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "The candidate is a marketing and growth consultancy serving solar businesses, not an electric utility, power generator, or clean-energy infrastructure operator."
+      "rationale": "Solar-industry marketing consultancy serving energy businesses, not an electric utility, power generator, or clean-energy infrastructure operator.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Solar-industry marketing consultancy serving energy businesses, not an electric utility, power generator, or clean-energy infrastructure operator."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Marketing consultancy serving solar businesses, not a power generator or renewable utility; serves the category rather than competing with NextEra."
+        }
+      ]
     },
     {
       "name": "Rodan Energy Solutions",
@@ -1873,7 +2687,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Rodan sells energy-management and demand-response services to utilities and businesses; NextEra primarily generates, transmits, and supplies electricity and develops energy infrastructure."
+      "rationale": "Rodan provides energy-management and demand-response services, primarily to commercial customers and utilities, rather than operating power generation, transmission, or utility infrastructure.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Rodan provides energy-management and demand-response services, primarily to commercial customers and utilities, rather than operating power generation, transmission, or utility infrastructure."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Energy-management services vendor serving utilities and C&I clients, not a power generator or utility comparable to NextEra."
+        }
+      ]
     },
     {
       "name": "Clean Future Florida",
@@ -1896,7 +2722,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Clean Future Florida is an informational advocacy resource, not an electric utility, power generator, or clean-energy infrastructure operator."
+      "rationale": "A nonprofit-style clean-energy resource and advocacy platform, not an electric utility, power generator, transmission operator, or infrastructure developer.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "A nonprofit-style clean-energy resource and advocacy platform, not an electric utility, power generator, transmission operator, or infrastructure developer."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Advocacy/information resource platform for clean energy adoption, not a power generator or utility; no product, market, or business-model overlap with NextEra."
+        }
+      ]
     },
     {
       "name": "StarPlus Energy",
@@ -1923,7 +2761,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "StarPlus primarily manufactures EV batteries, while NextEra operates electric utilities, power generation, transmission, and renewable infrastructure; their core offerings and buyers differ."
+      "rationale": "EV battery-cell manufacturer, not an electric utility or power-generation, transmission, and clean-energy infrastructure operator.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "EV battery-cell manufacturer, not an electric utility or power-generation, transmission, and clean-energy infrastructure operator."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "StarPlus manufactures EV battery cells for automakers; NextEra is an electric utility generating and transmitting power. Different products and buyers\u2014supplier-category, not peer."
+        }
+      ]
     },
     {
       "name": "Rewiring America",
@@ -1954,7 +2804,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Rewiring America is an electrification advocacy nonprofit, not an electric utility, power generator, or clean-energy infrastructure operator serving the same buyers."
+      "rationale": "Nonprofit electrification advocate offering household resources, not an electric utility or power-generation, transmission, and clean-infrastructure operator.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Nonprofit electrification advocate offering household resources, not an electric utility or power-generation, transmission, and clean-infrastructure operator."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Nonprofit electrification advocacy group, not a power generator or utility; promotes clean energy rather than competing with the seed."
+        }
+      ]
     },
     {
       "name": "QPO Energy",
@@ -1976,7 +2838,24 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "QPO sells distributed battery and smart-home solutions, unlike NextEra\u2019s utility-scale electricity generation, transmission, and renewable infrastructure operations."
+      "rationale": "QPO sells residential/business battery storage and smart-home products, not utility-scale power generation or transmission; different buyers and products, only shared 'clean energy' label.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Provides renewable power and energy-storage solutions, overlapping NextEra's clean-energy infrastructure and serving energy customers, though at a smaller distributed scale."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "QPO sells residential/business battery storage and smart-home products, not utility-scale power generation or transmission; different buyers and products, only shared 'clean energy' label."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "Seed is a utility-scale power generator/utility; candidate sells modular battery storage products for homes/businesses \";\u0100 different product and buyer."
+        }
+      ]
     },
     {
       "name": "Origin Solar",
@@ -2018,7 +2897,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Origin Solar is a local solar installation contractor, not an electric utility or large-scale power generation and transmission operator."
+      "rationale": "Residential/commercial solar installer and roofing contractor, not an electric utility or power-generation, transmission, and clean-energy infrastructure operator.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Residential/commercial solar installer and roofing contractor, not an electric utility or power-generation, transmission, and clean-energy infrastructure operator."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "NextEra is a utility-scale power generator; Origin Solar is a residential solar installation/roofing contractor \u2014 different business model, merely adjacent category."
+        }
+      ]
     },
     {
       "name": "LUPE Energy",
@@ -2042,7 +2933,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "LUPE advises homeowners on solar and batteries, while NextEra develops and operates utility-scale generation, transmission, and clean-energy infrastructure."
+      "rationale": "Consumer solar and battery advisory service, not an electric utility or clean-energy infrastructure owner/operator.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Consumer solar and battery advisory service, not an electric utility or clean-energy infrastructure owner/operator."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "LUPE is a consumer advisory service for home solar, not a power generator or utility; it advises the category rather than competing in it."
+        }
+      ]
     },
     {
       "name": "Frontline Power Solutions",
@@ -2067,7 +2970,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "FPS primarily brokers and consults on commercial energy procurement, rather than generating, transmitting, or developing power infrastructure like NextEra."
+      "rationale": "FPS is an energy procurement and cost-consulting provider for businesses, not a power-generation, transmission, or clean-energy infrastructure utility comparable to NextEra.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "FPS is an energy procurement and cost-consulting provider for businesses, not a power-generation, transmission, or clean-energy infrastructure utility comparable to NextEra."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Energy procurement broker/consultancy for commercial clients, not a power generator or utility; serves the category rather than competing with NextEra's generation and renewables business."
+        }
+      ]
     },
     {
       "name": "HoustonEnergy.com",
@@ -2089,7 +3004,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "HoustonEnergy.com is an energy-industry insights and media platform, not an electric utility, power generator, or clean-energy infrastructure operator."
+      "rationale": "Energy-industry insights and media platform, not an electric utility or renewable power-generation, transmission, and infrastructure operator.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Energy-industry insights and media platform, not an electric utility or renewable power-generation, transmission, and infrastructure operator."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Media/insights platform covering the energy industry, not a power generator or utility; different product and market."
+        }
+      ]
     },
     {
       "name": "Energy Dominance Political Action Committee",
@@ -2111,7 +3038,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Candidate is a political advocacy committee, not an electric utility, power generator, or clean-energy infrastructure company serving the same buyers."
+      "rationale": "Political advocacy organization, not an electric utility or renewable-energy infrastructure operator.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Political advocacy organization, not an electric utility or renewable-energy infrastructure operator."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Political action committee advocating energy policy, not a power generation or utility company; no product, market, or business-model resemblance."
+        }
+      ]
     },
     {
       "name": "Chesapeake Utilities Corporation",
@@ -2137,7 +3076,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both are regulated energy utilities delivering electricity and developing energy infrastructure, with overlapping utility-sector customers, partners, and procurement stakeholders."
+      "rationale": "Diversified regulated utility delivering natural gas and electricity, comparable to NextEra's power and energy-infrastructure business despite less generation emphasis.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Diversified regulated utility delivering natural gas and electricity, comparable to NextEra's power and energy-infrastructure business despite less generation emphasis."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are regulated energy utilities providing power/gas delivery with clean energy initiatives; comparable utility business models and markets."
+        }
+      ]
     },
     {
       "name": "Citizens for Responsible Energy Solutions",
@@ -2166,7 +3117,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "CRES is an energy-policy advocacy nonprofit, not an electric utility, power generator, or clean-energy infrastructure operator serving the same buyers."
+      "rationale": "CRES is a clean-energy policy advocacy nonprofit, not an electric utility or renewable-energy infrastructure developer/operator.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "CRES is a clean-energy policy advocacy nonprofit, not an electric utility or renewable-energy infrastructure developer/operator."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Nonprofit clean-energy policy advocacy organization, not a power generator or utility; no product or business-model resemblance to NextEra."
+        }
+      ]
     },
     {
       "name": "Power Kiosk",
@@ -2191,7 +3154,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Power Kiosk is energy procurement software and a supplier marketplace, not an electric utility, power generator, or clean-energy infrastructure operator."
+      "rationale": "Energy-procurement software marketplace serving brokers and commercial buyers, not a power generation, transmission, or utility operator comparable to NextEra.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Energy-procurement software marketplace serving brokers and commercial buyers, not a power generation, transmission, or utility operator comparable to NextEra."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "NextEra generates/transmits power as a utility; Power Kiosk is a software marketplace for energy procurement brokers \u2014 different product, market, and model."
+        }
+      ]
     },
     {
       "name": "Mobile Homes Pros",
@@ -2214,7 +3189,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Mobile Homes Pros is a manufactured-housing marketplace, not an electric utility, power generator, or renewable energy infrastructure provider."
+      "rationale": "Manufactured-housing marketplace is unrelated to electric utility operations, power generation, transmission, or renewable energy infrastructure.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Manufactured-housing marketplace is unrelated to electric utility operations, power generation, transmission, or renewable energy infrastructure."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Manufactured-housing real estate marketplace; unrelated to electric utility and renewable power generation."
+        }
+      ]
     },
     {
       "name": "Ecoenergy Construction LLC",
@@ -2242,7 +3229,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "EcoEnergy is a customer-facing solar installation contractor, not an electric utility, power generator, or large-scale clean-energy infrastructure operator."
+      "rationale": "Solar installation contractor serving end customers, not an electric utility or power-generation, transmission, and clean-energy infrastructure operator.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Solar installation contractor serving end customers, not an electric utility or power-generation, transmission, and clean-energy infrastructure operator."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Different scale and focus: NextEra is large-scale power generation, Ecoenergy is residential/commercial solar installation services."
+        }
+      ]
     },
     {
       "name": "Siteworker",
@@ -2269,7 +3268,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Siteworker is a renewable-energy labor marketplace, not an electric utility, power generator, or clean-energy infrastructure operator serving the same buyer need."
+      "rationale": "Renewable-energy staffing marketplace; it supplies labor to project companies rather than generating, transmitting, or selling electric power.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Renewable-energy staffing marketplace; it supplies labor to project companies rather than generating, transmitting, or selling electric power."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Siteworker is a staffing marketplace for renewable-energy contractors, not a power generator or utility; it's a service provider, not a competitor or comparable."
+        }
+      ]
     },
     {
       "name": "Alternative Utility Services, Inc.",
@@ -2298,7 +3309,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Candidate is an energy-efficiency consultancy, not an electric utility or power generation, transmission, and renewable infrastructure operator."
+      "rationale": "Energy-efficiency consultancy serving building owners, not an electric utility or power-generation and transmission infrastructure operator.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Energy-efficiency consultancy serving building owners, not an electric utility or power-generation and transmission infrastructure operator."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Energy consulting/efficiency services firm, not a power generator or utility; consultancies serving the energy category don't compete with NextEra."
+        }
+      ]
     },
     {
       "name": "Boardwalk Pipelines",
@@ -2325,7 +3348,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Boardwalk operates natural-gas pipelines and storage, not electric generation, transmission, or renewable-power infrastructure; buyers and jobs-to-be-done differ."
+      "rationale": "Boardwalk is a natural-gas pipeline and storage operator, not an electric utility or renewable-power developer; its midstream customers and core service differ.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Boardwalk is a natural-gas pipeline and storage operator, not an electric utility or renewable-power developer; its midstream customers and core service differ."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "NextEra is an electric utility/renewable power generator; Boardwalk is a natural-gas pipeline and storage midstream operator \u2014 different products, markets, and buyers."
+        }
+      ]
     },
     {
       "name": "Homegreen",
@@ -2349,7 +3384,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Homegreen is a property-level solar and green-construction installer, not an electric utility or large-scale power generation and transmission operator."
+      "rationale": "Homegreen is a solar and energy-systems design/install contractor, not an electric utility or large-scale power generation and transmission operator.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Homegreen is a solar and energy-systems design/install contractor, not an electric utility or large-scale power generation and transmission operator."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Residential solar/construction installer, not a power generation or utility-scale renewable company; different product and business model than NextEra."
+        }
+      ]
     },
     {
       "name": "United Energy Services",
@@ -2375,7 +3422,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "UES is primarily an outsourced energy sales and marketing agency, not an electric utility, power generator, or clean-energy infrastructure operator."
+      "rationale": "UES is an outsourced energy sales and marketing agency, not a power generation, transmission, utility, or clean-energy infrastructure operator.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "UES is an outsourced energy sales and marketing agency, not a power generation, transmission, utility, or clean-energy infrastructure operator."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Outsourced sales/marketing agency serving energy providers, not a power generator or utility; serves the category rather than competing with NextEra."
+        }
+      ]
     },
     {
       "name": "Energy Dialogues",
@@ -2403,7 +3462,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Energy Dialogues is an industry forum and events platform, not an electric utility, power generator, or clean-energy infrastructure developer."
+      "rationale": "Energy Dialogues is an industry events and policy-discussion platform, not an electric utility or renewable power infrastructure operator.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Energy Dialogues is an industry events and policy-discussion platform, not an electric utility or renewable power infrastructure operator."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Energy Dialogues is an industry events/networking platform serving the energy sector, not a power generator or utility \u2014 not a competitor or comparable."
+        }
+      ]
     },
     {
       "name": "Energies da Nature",
@@ -2436,7 +3507,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Candidate is a distributed solar installer serving homes and SMBs, not a utility-scale power generator, transmission operator, or infrastructure developer."
+      "rationale": "Solar installer serving residential and small-business customers, not an electric utility or large-scale power generation and transmission operator.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Solar installer serving residential and small-business customers, not an electric utility or large-scale power generation and transmission operator."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Residential/commercial solar installer, not a power generator or utility; different role in value chain \u2014 analogous to contractor vs software/platform peer."
+        }
+      ]
     },
     {
       "name": "Francis Energy",
@@ -2467,7 +3550,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Francis Energy primarily operates EV charging stations, not electric generation, transmission, or utility services; buyers and core jobs differ."
+      "rationale": "Francis Energy operates EV charging stations, not electric power generation, transmission, utility service, or renewable-energy infrastructure comparable to NextEra\u2019s core business.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Francis Energy operates EV charging stations, not electric power generation, transmission, utility service, or renewable-energy infrastructure comparable to NextEra\u2019s core business."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "NextEra is a power generation/transmission utility; Francis operates EV charging stations\u2014adjacent energy sector but different product, buyers, and business model."
+        }
+      ]
     },
     {
       "name": "Emera Inc.",
@@ -2494,7 +3589,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both operate electric utilities and energy infrastructure, including power generation and transmission, serving substantially overlapping energy-market buyers and stakeholders."
+      "rationale": "Emera is a North American electric and gas utility, directly comparable to NextEra's regulated utility and energy infrastructure business.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Emera is a North American electric and gas utility, directly comparable to NextEra's regulated utility and energy infrastructure business."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Emera is a regulated electric and gas utility focused on power generation and clean energy transition \u2014 direct comparable to NextEra on product, market, and model."
+        }
+      ]
     },
     {
       "name": "CRES Forum",
@@ -2523,7 +3630,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "CRES Forum is a clean-energy policy advocacy nonprofit, not an electric utility, power generator, or energy infrastructure operator."
+      "rationale": "CRES Forum is a clean-energy advocacy nonprofit, not a power generation, transmission, utility, or clean-energy infrastructure operator.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "CRES Forum is a clean-energy advocacy nonprofit, not a power generation, transmission, utility, or clean-energy infrastructure operator."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Non-profit clean energy advocacy/policy forum, not a power generator or utility; no product, market, or business-model overlap with NextEra."
+        }
+      ]
     },
     {
       "name": "Sustainable Energy Education & Support Development",
@@ -2552,7 +3671,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "SEEDS is an education and energy-efficiency nonprofit, not an electric utility, power generator, or clean-energy infrastructure operator."
+      "rationale": "Nonprofit providing energy education and assessments, not an electric utility or renewable power generation and infrastructure operator.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Nonprofit providing energy education and assessments, not an electric utility or renewable power generation and infrastructure operator."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Nonprofit energy-education advocacy group, not a power generator or utility; shares only a generic renewable-energy theme, no product/market/model overlap."
+        }
+      ]
     },
     {
       "name": "Conservative Texans for Energy Innovation Foundation",
@@ -2582,7 +3713,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "CTEI is a nonprofit policy advocacy organization, not an electric utility, power generator, or clean-energy infrastructure operator."
+      "rationale": "Clean-energy policy advocacy nonprofit, not an electric utility or renewable generation, transmission, and infrastructure operator.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Clean-energy policy advocacy nonprofit, not an electric utility or renewable generation, transmission, and infrastructure operator."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Nonprofit policy advocacy group for clean energy, not a utility or power generator; does not compete with or resemble NextEra's energy business."
+        }
+      ]
     },
     {
       "name": "Beaches Energy Services",
@@ -2610,7 +3753,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both are electric utilities providing power infrastructure and customer energy services, with overlapping utility operations and stakeholder personas."
+      "rationale": "Both are electric utilities providing power delivery, customer energy services, and electrical infrastructure; Beaches Energy is a smaller comparable utility.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both are electric utilities providing power delivery, customer energy services, and electrical infrastructure; Beaches Energy is a smaller comparable utility."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Municipal electric utility providing power generation and distribution, same product and market as NextEra, despite smaller scale."
+        }
+      ]
     },
     {
       "name": "Future Energy Solar",
@@ -2637,7 +3792,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Candidate description identifies a computer wholesaler/software services business, not an electric utility, power generator, or clean-energy infrastructure company."
+      "rationale": "Description identifies a laptop-and-accessories wholesaler with software services, not an electric utility or renewable energy infrastructure company.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Description identifies a laptop-and-accessories wholesaler with software services, not an electric utility or renewable energy infrastructure company."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Candidate description is a laptop wholesaler/software shop, not power generation or renewables; no resemblance to NextEra's utility business."
+        }
+      ]
     },
     {
       "name": "Peoples Gas",
@@ -2666,8 +3833,20 @@
           "https://x.com/tecopeoplesgas"
         ]
       },
-      "relevant": false,
-      "rationale": "Peoples Gas distributes natural gas, while NextEra\u2019s core offerings are electricity generation, transmission, and renewable power infrastructure; buyers do not evaluate them interchangeably."
+      "relevant": true,
+      "rationale": "Both are regulated energy utilities operating large-scale infrastructure and serving residential, commercial, and industrial customers, though their energy sources differ.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both are regulated energy utilities operating large-scale infrastructure and serving residential, commercial, and industrial customers, though their energy sources differ."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both regulated energy utilities serving Florida homes and businesses; comparable utility business model despite gas distribution versus electric generation focus."
+        }
+      ]
     },
     {
       "name": "Georgia Power",
@@ -2697,7 +3876,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both are electric utilities providing power generation, distribution, renewable energy, and energy solutions to residential and business customers."
+      "rationale": "Electric utility providing power generation and customer energy services, directly comparable to NextEra's utility and clean-energy operations.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Electric utility providing power generation and customer energy services, directly comparable to NextEra's utility and clean-energy operations."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are large US electric utilities generating and delivering power with clean energy initiatives; direct comparables on product, market, and business model."
+        }
+      ]
     },
     {
       "name": "Hycell Energy",
@@ -2721,10 +3912,20 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Hycell sells distributed energy systems and technical services, while NextEra primarily operates utilities and large-scale power generation infrastructure; buyers differ."
+      "rationale": "Hycell sells distributed energy systems and services, not utility-scale power generation, transmission, or regulated electricity delivery.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Hycell sells distributed energy systems and services, not utility-scale power generation, transmission, or regulated electricity delivery."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Hycell sells energy solutions/equipment services (storage, transformers, off-grid systems), not utility-scale power generation/transmission like NextEra; different product and model."
+        }
+      ]
     }
   ],
-  "error": null,
-  "relevant_count_at_25": 5,
-  "precision_at_25": 20.0
+  "error": null
 }

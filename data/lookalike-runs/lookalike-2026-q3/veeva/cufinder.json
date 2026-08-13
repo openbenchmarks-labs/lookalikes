@@ -10,15 +10,17 @@
   "relevant_count": 3,
   "precision_at_k": 3.0,
   "relevant_count_at_10": 3,
+  "relevant_count_at_25": 3,
   "relevant_count_at_100": 3,
   "precision_at_10": 30.0,
+  "precision_at_25": 12.0,
   "precision_at_100": 3.0,
   "latency_ms": 313,
   "cost_usd": null,
   "duplicates_removed": 0,
   "max_results": 10,
-  "judge_model": "gpt-5.6",
-  "judged_at": "2026-07-27T03:31:32Z",
+  "judge_model": "majority(n=3): claude-opus-5,gpt-5.6-terra,kimi-k3",
+  "judged_at": "2026-08-10T19:33:21Z",
   "candidates": [
     {
       "name": "deloitte",
@@ -34,7 +36,19 @@
         "confidence_level": 99
       },
       "relevant": false,
-      "rationale": "Deloitte is a professional services and consulting network, not a life-sciences cloud software platform offering CRM or operational applications."
+      "rationale": "Deloitte is a professional-services consultancy, not a life-sciences CRM, clinical, regulatory, quality, or content software platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Deloitte is a professional-services consultancy, not a life-sciences CRM, clinical, regulatory, quality, or content software platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Deloitte is a global professional-services consultancy, not life-sciences cloud software; it serves the category rather than competing with Veeva."
+        }
+      ]
     },
     {
       "name": "eli lilly and company",
@@ -50,7 +64,19 @@
         "confidence_level": 99
       },
       "relevant": false,
-      "rationale": "Eli Lilly is a pharmaceutical manufacturer and potential Veeva customer, not a competing life-sciences software platform."
+      "rationale": "Eli Lilly is a pharmaceutical manufacturer and likely Veeva customer, not a life-sciences CRM, clinical, regulatory, or quality software provider.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Eli Lilly is a pharmaceutical manufacturer and likely Veeva customer, not a life-sciences CRM, clinical, regulatory, or quality software provider."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Eli Lilly is a pharmaceutical manufacturer - a customer of Veeva's life-sciences software, not a competing software vendor."
+        }
+      ]
     },
     {
       "name": "iqvia",
@@ -65,8 +91,20 @@
         "country": "united states",
         "confidence_level": 99
       },
-      "relevant": false,
-      "rationale": "IQVIA primarily provides CRO services, healthcare data, and analytics, not Veeva-like cloud operational software evaluated for the same job."
+      "relevant": true,
+      "rationale": "IQVIA serves life-sciences companies with clinical and commercial technology, data, and execution solutions, overlapping Veeva\u2019s core buyers and operational workflows.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "IQVIA serves life-sciences companies with clinical and commercial technology, data, and execution solutions, overlapping Veeva\u2019s core buyers and operational workflows."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "IQVIA serves life sciences with clinical research tech, commercial software (OCE competes with Veeva CRM) and data analytics\u2014same buyers, genuine competitor/comparable."
+        }
+      ]
     },
     {
       "name": "medidata solutions",
@@ -82,7 +120,19 @@
         "confidence_level": 99
       },
       "relevant": true,
-      "rationale": "Medidata\u2019s clinical-trial software directly overlaps Veeva\u2019s clinical operations offering and serves the same life-sciences organizations and clinical-development users."
+      "rationale": "Medidata provides clinical trial operations software to life sciences companies, directly overlapping Veeva\u2019s clinical solutions and buyer market.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Medidata provides clinical trial operations software to life sciences companies, directly overlapping Veeva\u2019s clinical solutions and buyer market."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Medidata provides clinical trial software for life sciences, directly overlapping Veeva's clinical operations products \u2014 a true competitor and comparable."
+        }
+      ]
     },
     {
       "name": "oracle",
@@ -98,7 +148,24 @@
         "confidence_level": 99
       },
       "relevant": true,
-      "rationale": "Oracle offers life-sciences clinical operations software that overlaps Veeva Vault Clinical, targeting the same pharmaceutical clinical and data-management buyers."
+      "rationale": "Oracle offers life-sciences clinical and healthcare applications that overlap Veeva\u2019s clinical-operations software, making it a credible enterprise competitor despite its broader portfolio.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Oracle offers life-sciences clinical and healthcare applications that overlap Veeva\u2019s clinical-operations software, making it a credible enterprise competitor despite its broader portfolio."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Oracle is a general-purpose cloud/database/enterprise software giant; life sciences is not its primary product, so no strong product or market resemblance to Veeva."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Oracle sells enterprise cloud applications including life-sciences/clinical trial and health suites, a genuine Veeva competitor and comparable.', ' ' ' ' '"
+        }
+      ]
     },
     {
       "name": "roche",
@@ -114,7 +181,19 @@
         "confidence_level": 99
       },
       "relevant": false,
-      "rationale": "Roche is a pharmaceutical and diagnostics company\u2014a potential Veeva customer\u2014not a competing life-sciences cloud software provider."
+      "rationale": "Roche is a life-sciences pharmaceutical and diagnostics manufacturer, not a provider of CRM, clinical, regulatory, quality, or content operations software.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Roche is a life-sciences pharmaceutical and diagnostics manufacturer, not a provider of CRM, clinical, regulatory, quality, or content operations software."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Roche is a pharmaceutical/diagnostics company \u2014 a Veeva customer, not a life-sciences software competitor or comparable."
+        }
+      ]
     },
     {
       "name": "salesforce",
@@ -129,8 +208,20 @@
         "country": "united states",
         "confidence_level": 99
       },
-      "relevant": true,
-      "rationale": "Salesforce offers CRM and dedicated life-sciences solutions that overlap Veeva\u2019s commercial CRM, serving the same life-sciences sales and customer-engagement buyers."
+      "relevant": false,
+      "rationale": "Salesforce is a broad horizontal CRM platform, not primarily life-sciences-specific CRM or clinical, regulatory, quality, and content operations software.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Salesforce is a broad horizontal CRM platform, not primarily life-sciences-specific CRM or clinical, regulatory, quality, and content operations software."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Generic CRM platform with no life-sciences focus; benchmark example explicitly excludes generic CRM as Veeva lookalike."
+        }
+      ]
     },
     {
       "name": "sanofi",
@@ -146,7 +237,19 @@
         "confidence_level": 99
       },
       "relevant": false,
-      "rationale": "Sanofi is a biopharmaceutical manufacturer and potential Veeva customer, not a competing life-sciences software platform."
+      "rationale": "Sanofi is a life-sciences company that would buy Veeva software, not a peer software vendor or comparable product provider.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Sanofi is a life-sciences company that would buy Veeva software, not a peer software vendor or comparable product provider."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Sanofi is a biopharma manufacturer \u2014 a customer of Veeva's life-sciences software, not a competing software provider."
+        }
+      ]
     },
     {
       "name": "syneos health",
@@ -162,7 +265,19 @@
         "confidence_level": 99
       },
       "relevant": false,
-      "rationale": "Syneos Health is a biopharmaceutical CRO and commercialization services provider, not a life-sciences cloud software platform evaluated for Veeva\u2019s jobs."
+      "rationale": "Syneos Health is a CRO and biopharma services organization, not a life-sciences CRM, clinical, regulatory, or quality software platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Syneos Health is a CRO and biopharma services organization, not a life-sciences CRM, clinical, regulatory, or quality software platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Syneos is a CRO/biopharma services firm, not life-sciences cloud software; serves the industry as a service provider, not a software competitor."
+        }
+      ]
     },
     {
       "name": "thermo fisher scientific",
@@ -178,10 +293,20 @@
         "confidence_level": 99
       },
       "relevant": false,
-      "rationale": "Thermo Fisher primarily sells laboratory instruments, reagents, diagnostics, and pharmaceutical services, not life-sciences CRM or operations software evaluated for Veeva\u2019s use cases."
+      "rationale": "Thermo Fisher supplies laboratory technologies and pharmaceutical services, rather than life-sciences CRM, clinical, regulatory, quality, and content software.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Thermo Fisher supplies laboratory technologies and pharmaceutical services, rather than life-sciences CRM, clinical, regulatory, quality, and content software."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Thermo Fisher sells lab instruments, diagnostics, and pharma services; Veeva sells life-sciences cloud software. Supplier in the space, not a software competitor or comparable."
+        }
+      ]
     }
   ],
-  "error": null,
-  "relevant_count_at_25": 3,
-  "precision_at_25": 12.0
+  "error": null
 }

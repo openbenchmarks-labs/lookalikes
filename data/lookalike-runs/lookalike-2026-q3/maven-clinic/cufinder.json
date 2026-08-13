@@ -7,20 +7,20 @@
     "name": "domain_lookalikes"
   },
   "k": 100,
-  "relevant_count": 5,
-  "precision_at_k": 5.0,
-  "relevant_count_at_10": 5,
-  "relevant_count_at_25": 5,
-  "relevant_count_at_100": 5,
-  "precision_at_10": 50.0,
-  "precision_at_25": 20.0,
-  "precision_at_100": 5.0,
+  "relevant_count": 9,
+  "precision_at_k": 9.0,
+  "relevant_count_at_10": 9,
+  "relevant_count_at_25": 9,
+  "relevant_count_at_100": 9,
+  "precision_at_10": 90.0,
+  "precision_at_25": 36.0,
+  "precision_at_100": 9.0,
   "latency_ms": 262,
   "cost_usd": null,
   "duplicates_removed": 0,
   "max_results": 10,
-  "judge_model": "gpt-5.6",
-  "judged_at": "2026-07-27T06:54:01Z",
+  "judge_model": "majority(n=3): claude-opus-5,gpt-5.6-terra,kimi-k3",
+  "judged_at": "2026-08-10T20:12:13Z",
   "candidates": [
     {
       "name": "carrot",
@@ -36,7 +36,19 @@
         "confidence_level": 97
       },
       "relevant": true,
-      "rationale": "Both provide employer-sponsored virtual fertility, family-building, pregnancy, and women\u2019s health benefits to employers and health plans."
+      "rationale": "Both provide employer-sponsored virtual care and benefits for fertility, pregnancy, menopause, and broader family health.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both provide employer-sponsored virtual care and benefits for fertility, pregnancy, menopause, and broader family health."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are employer-sponsored virtual care/benefits platforms for fertility, women's, and family health \u2014 direct competitors with same buyers and model."
+        }
+      ]
     },
     {
       "name": "charlie health",
@@ -51,8 +63,25 @@
         "country": "united states",
         "confidence_level": 97
       },
-      "relevant": false,
-      "rationale": "Charlie Health provides high-acuity virtual behavioral treatment, not a women\u2019s and family-health benefits platform; buyers and care needs differ."
+      "relevant": true,
+      "rationale": "Both are virtual-care providers delivering specialized clinical care (women's/family vs behavioral health) reimbursed through health plans and employers \u2014 comparable digital-health models.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Both provide virtual care, but Charlie Health delivers behavioral-health IOP treatment rather than women\u2019s and family health benefits."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are virtual-care providers delivering specialized clinical care (women's/family vs behavioral health) reimbursed through health plans and employers \u2014 comparable digital-health models."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Both are virtual-care providers delivering specialized digital health services; Charlie Health is a comparable telehealth peer in a different specialty.', ok"
+        }
+      ]
     },
     {
       "name": "headway",
@@ -67,8 +96,20 @@
         "country": "united states",
         "confidence_level": 97
       },
-      "relevant": false,
-      "rationale": "Headway is an insurance-enabled mental-health provider network, not a women\u2019s and family-health virtual-care benefits platform serving the same care need."
+      "relevant": true,
+      "rationale": "Both are healthcare-access platforms delivering specialized virtual care through employer, payer, and insurance channels, though Headway focuses on mental health.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both are healthcare-access platforms delivering specialized virtual care through employer, payer, and insurance channels, though Headway focuses on mental health."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are virtual-care platforms connecting patients to providers via insurance; Headway's mental-health network overlaps Maven's family-health telehealth model, making them comparable digital-health companies."
+        }
+      ]
     },
     {
       "name": "hinge health",
@@ -83,8 +124,20 @@
         "country": "united states",
         "confidence_level": 97
       },
-      "relevant": false,
-      "rationale": "Both sell virtual-care benefits to employers, but Hinge\u2019s core musculoskeletal care does not overlap Maven\u2019s women\u2019s and family-health offering."
+      "relevant": true,
+      "rationale": "Both are employer-facing virtual-care benefits platforms delivering specialized, clinician-supported healthcare programs, though focused on different conditions.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both are employer-facing virtual-care benefits platforms delivering specialized, clinician-supported healthcare programs, though focused on different conditions."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are employer-sponsored virtual-care benefits platforms delivering digital clinical care; same model and buyer, different clinical focus."
+        }
+      ]
     },
     {
       "name": "included health",
@@ -100,7 +153,19 @@
         "confidence_level": 97
       },
       "relevant": true,
-      "rationale": "Both sell employer and health-plan buyers virtual-care benefits and care-navigation platforms, with overlapping family healthcare access and advocacy use cases."
+      "rationale": "Both offer employer-oriented virtual-care platforms with care navigation and coordinated health benefits, though Included Health is broader than women\u2019s and family health.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both offer employer-oriented virtual-care platforms with care navigation and coordinated health benefits, though Included Health is broader than women\u2019s and family health."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are employer-sponsored virtual-care and health-benefits platforms; direct competitors in digital health benefits, differing mainly in population focus."
+        }
+      ]
     },
     {
       "name": "kindbody",
@@ -116,7 +181,19 @@
         "confidence_level": 97
       },
       "relevant": true,
-      "rationale": "Both provide employer-focused women\u2019s and family health benefits with virtual care, including fertility, pregnancy, and family-building support."
+      "rationale": "Employer-focused virtual and clinical fertility, family-building, and women\u2019s health benefits platform directly overlaps Maven Clinic\u2019s core offering.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Employer-focused virtual and clinical fertility, family-building, and women\u2019s health benefits platform directly overlaps Maven Clinic\u2019s core offering."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are women's/family-health benefits platforms combining virtual care and employer benefit solutions \u2014 direct competitors on product, market, and model."
+        }
+      ]
     },
     {
       "name": "lyra health",
@@ -132,7 +209,19 @@
         "confidence_level": 97
       },
       "relevant": true,
-      "rationale": "Both provide employer-sponsored virtual health benefits sold to HR leaders, with overlapping digital care delivery despite different specialty focuses."
+      "rationale": "Both are employer benefits platforms delivering specialized virtual healthcare, though Lyra focuses on mental health and Maven on women's and family health.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both are employer benefits platforms delivering specialized virtual healthcare, though Lyra focuses on mental health and Maven on women's and family health."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are employer-sold virtual-care benefits platforms; Lyra focuses on mental health vs Maven's women's/family health\u2014same model and buyer."
+        }
+      ]
     },
     {
       "name": "midi health",
@@ -148,7 +237,19 @@
         "confidence_level": 97
       },
       "relevant": true,
-      "rationale": "Both provide virtual women\u2019s health care, including menopause support, serving overlapping patients and benefits or health-plan buyers."
+      "rationale": "Virtual women's-health clinic delivering insurance-covered telehealth, directly comparable to Maven's women's and family-health care platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Virtual women's-health clinic delivering insurance-covered telehealth, directly comparable to Maven's women's and family-health care platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are virtual-care clinics focused on women's health; Midi targets midlife/menopause care, a direct overlap in product and market."
+        }
+      ]
     },
     {
       "name": "spring health",
@@ -163,8 +264,21 @@
         "country": "united states",
         "confidence_level": 97
       },
-      "relevant": false,
-      "rationale": "Both sell employer-sponsored virtual health benefits, but Spring\u2019s behavioral-health offering does not overlap Maven\u2019s core women\u2019s and family-health use case."
+      "relevant": true,
+      "rationale": "Both are employer-sponsored virtual-care benefits platforms, though Spring specializes in behavioral health while Maven focuses on women\u2019s and family health.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both are employer-sponsored virtual-care benefits platforms, though Spring specializes in behavioral health while Maven focuses on women\u2019s and family health."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are employer-sold virtual-care benefits platforms with care navigation; differing clinical focus (women's/family vs mental health) but same model and buyer."
+        }
+      ]
     }
-  ]
+  ],
+  "error": null
 }

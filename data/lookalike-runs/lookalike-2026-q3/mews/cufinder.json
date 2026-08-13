@@ -7,20 +7,20 @@
     "name": "domain_lookalikes"
   },
   "k": 100,
-  "relevant_count": 2,
-  "precision_at_k": 2.0,
-  "relevant_count_at_10": 2,
-  "relevant_count_at_25": 2,
-  "relevant_count_at_100": 2,
-  "precision_at_10": 20.0,
-  "precision_at_25": 8.0,
-  "precision_at_100": 2.0,
+  "relevant_count": 4,
+  "precision_at_k": 4.0,
+  "relevant_count_at_10": 4,
+  "relevant_count_at_25": 4,
+  "relevant_count_at_100": 4,
+  "precision_at_10": 40.0,
+  "precision_at_25": 16.0,
+  "precision_at_100": 4.0,
   "latency_ms": 371,
   "cost_usd": null,
   "duplicates_removed": 0,
   "max_results": 10,
-  "judge_model": "gpt-5.6",
-  "judged_at": "2026-07-27T06:54:12Z",
+  "judge_model": "majority(n=3): claude-opus-5,gpt-5.6-terra,kimi-k3",
+  "judged_at": "2026-08-10T20:24:52Z",
   "candidates": [
     {
       "name": "cloudbeds",
@@ -36,7 +36,19 @@
         "confidence_level": 95
       },
       "relevant": true,
-      "rationale": "Cloudbeds directly overlaps Mews as a cloud hotel property-management platform covering operations, reservations/distribution, revenue, and guest experience for hoteliers."
+      "rationale": "Cloudbeds is a hotel-focused cloud PMS covering operations, reservations, distribution, payments, and guest experience, directly comparable to Mews.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Cloudbeds is a hotel-focused cloud PMS covering operations, reservations, distribution, payments, and guest experience, directly comparable to Mews."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Cloud hotel property-management platform covering operations, distribution, and guest experience \u2014 direct competitor to Mews on product, market, and business model."
+        }
+      ]
     },
     {
       "name": "duetto",
@@ -51,8 +63,25 @@
         "country": "united states",
         "confidence_level": 95
       },
-      "relevant": false,
-      "rationale": "Duetto is hotel revenue-management software, while Mews is a property-management system; they serve hoteliers but address distinct, complementary jobs."
+      "relevant": true,
+      "rationale": "Both are cloud SaaS platforms sold to hoteliers for core hotel operations; Duetto's revenue/pricing software is a direct comparable in hospitality tech.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Duetto provides hotel revenue-management and pricing optimization, a complementary system to Mews\u2019 core property-management platform rather than a direct comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are cloud SaaS platforms sold to hoteliers for core hotel operations; Duetto's revenue/pricing software is a direct comparable in hospitality tech."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Cloud SaaS for hotels (revenue management/pricing) \bervhjacent to Mews PMS; same hotelier buyer, comparable hospitality software model."
+        }
+      ]
     },
     {
       "name": "elevenlabs",
@@ -68,7 +97,19 @@
         "confidence_level": 95
       },
       "relevant": false,
-      "rationale": "ElevenLabs provides AI voice, media, and conversational-agent technology, not hotel property-management software for reservations, payments, and operations."
+      "rationale": "ElevenLabs provides AI voice and agent technologies, not hotel property-management software for reservations, payments, and operations.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "ElevenLabs provides AI voice and agent technologies, not hotel property-management software for reservations, payments, and operations."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "ElevenLabs sells AI voice/audio models and agents; Mews is hotel property-management software. No product, market, or business-model overlap."
+        }
+      ]
     },
     {
       "name": "helsing",
@@ -84,7 +125,19 @@
         "confidence_level": 95
       },
       "relevant": false,
-      "rationale": "Helsing develops defense AI and autonomous systems, not hotel property-management software for reservations, payments, operations, or guest experience."
+      "rationale": "Helsing develops AI autonomy systems for defense, not hotel property-management, reservations, payments, or guest operations software.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Helsing develops AI autonomy systems for defense, not hotel property-management, reservations, payments, or guest operations software."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Helsing builds defense AI for governments; Mews is hotel property-management software. No overlap in product, market, or business model."
+        }
+      ]
     },
     {
       "name": "lighthouse",
@@ -99,8 +152,25 @@
         "country": "united states",
         "confidence_level": 95
       },
-      "relevant": false,
-      "rationale": "Lighthouse provides hotel revenue intelligence and pricing tools, not the core property-management, reservations, payments, and operations platform offered by Mews."
+      "relevant": true,
+      "rationale": "Both are B2B SaaS platforms built for hotels; Lighthouse sells revenue/pricing intelligence to the same hospitality buyer persona, making it a strong hotel-tech comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Lighthouse provides hotel market intelligence and revenue-pricing tools, not core property-management, reservations, payments, and operations software."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are B2B SaaS platforms built for hotels; Lighthouse sells revenue/pricing intelligence to the same hospitality buyer persona, making it a strong hotel-tech comparable."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Both sell SaaS to hotels; Lighthouse offers revenue/pricing intelligence, a peer hospitality tech platform serving the same hotelier buyer."
+        }
+      ]
     },
     {
       "name": "lovable",
@@ -116,7 +186,19 @@
         "confidence_level": 95
       },
       "relevant": false,
-      "rationale": "Lovable is an AI app-building platform, not hotel property-management software; its product and buyer job-to-be-done do not overlap with Mews."
+      "rationale": "Lovable is an AI app and website builder, not a hotel property-management platform for reservations, payments, and hotel operations.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Lovable is an AI app and website builder, not a hotel property-management platform for reservations, payments, and hotel operations."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Lovable is an AI app/website builder; no overlap with Mews's hotel property-management platform in product, market, or model."
+        }
+      ]
     },
     {
       "name": "n8n",
@@ -132,7 +214,19 @@
         "confidence_level": 95
       },
       "relevant": false,
-      "rationale": "n8n provides general-purpose workflow automation, not hotel property management for reservations, payments, operations, and guest experience."
+      "rationale": "n8n is a general workflow automation platform, not a hotel property-management system for reservations, payments, operations, and guest experience.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "n8n is a general workflow automation platform, not a hotel property-management system for reservations, payments, operations, and guest experience."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "n8n is a generic workflow-automation platform, not hotel property-management software; no shared product, market, or model with Mews."
+        }
+      ]
     },
     {
       "name": "parloa",
@@ -148,7 +242,19 @@
         "confidence_level": 95
       },
       "relevant": false,
-      "rationale": "Parloa provides enterprise conversational AI, not hotel property-management software for reservations, payments, and operations; buyers and core jobs differ."
+      "rationale": "Parloa provides enterprise conversational AI for customer experiences, not hotel property-management software for reservations, payments, and operations.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Parloa provides enterprise conversational AI for customer experiences, not hotel property-management software for reservations, payments, and operations."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Parloa is an agentic AI customer-service platform, not hotel property-management software; no product or market overlap with Mews."
+        }
+      ]
     },
     {
       "name": "pennylane",
@@ -164,7 +270,19 @@
         "confidence_level": 95
       },
       "relevant": false,
-      "rationale": "Pennylane is general SME accounting and financial-management software, not a hotel property-management platform for reservations, operations, payments, and guest experience."
+      "rationale": "Pennylane provides SME accounting and financial operations software, not hotel property management, reservations, guest operations, or hospitality payments.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Pennylane provides SME accounting and financial operations software, not hotel property management, reservations, guest operations, or hospitality payments."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Pennylane is SME accounting/financial-OS software; Mews is hotel property-management software. Different products, buyers, and markets \u2014 no resemblance on any axis."
+        }
+      ]
     },
     {
       "name": "siteminder",
@@ -180,7 +298,20 @@
         "confidence_level": 95
       },
       "relevant": true,
-      "rationale": "Both provide hotel management software covering reservations and operations for accommodation providers, with overlapping hotelier buyers and core property-management needs."
+      "rationale": "Hotel-focused distribution, revenue, and management software directly overlaps Mews\u2019s hospitality property-management and operations platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Hotel-focused distribution, revenue, and management software directly overlaps Mews\u2019s hospitality property-management and operations platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Hotel software platform: distribution/revenue plus Little Hotelier property management \u2014 same product category and hotel buyer as Mews; direct competitor."
+        }
+      ]
     }
-  ]
+  ],
+  "error": null
 }

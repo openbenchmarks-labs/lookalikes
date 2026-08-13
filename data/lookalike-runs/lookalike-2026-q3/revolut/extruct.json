@@ -7,17 +7,20 @@
     "name": "domain_similarity"
   },
   "k": 100,
-  "relevant_count": 96,
-  "precision_at_k": 96.0,
-  "relevant_count_at_10": 9,
-  "relevant_count_at_100": 96,
-  "precision_at_10": 90.0,
-  "precision_at_100": 96.0,
+  "relevant_count": 95,
+  "precision_at_k": 95.0,
+  "relevant_count_at_10": 10,
+  "relevant_count_at_25": 24,
+  "relevant_count_at_100": 95,
+  "precision_at_10": 100.0,
+  "precision_at_25": 96.0,
+  "precision_at_100": 95.0,
   "latency_ms": 1816,
   "cost_usd": null,
   "duplicates_removed": 0,
-  "judge_model": "gpt-5.6",
-  "judged_at": "2026-07-27T03:22:24Z",
+  "max_results": null,
+  "judge_model": "majority(n=3): claude-opus-5,gpt-5.6-terra,kimi-k3",
+  "judged_at": "2026-08-10T19:45:35Z",
   "candidates": [
     {
       "name": "Monzo",
@@ -34,7 +37,19 @@
         "employee_count": "1001-5000"
       },
       "relevant": true,
-      "rationale": "Both are app-based digital banks offering consumers and small businesses accounts, cards, payments, budgeting, savings, and international money features."
+      "rationale": "Monzo is a digital bank offering mobile accounts, cards, payments, savings, credit, and investments\u2014the same consumer financial-super-app space as Revolut.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Monzo is a digital bank offering mobile accounts, cards, payments, savings, credit, and investments\u2014the same consumer financial-super-app space as Revolut."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Monzo is a digital challenger bank offering app-based accounts, cards, and payments \u2014 a direct competitor and comparable to Revolut on product, market, and model."
+        }
+      ]
     },
     {
       "name": "Wise",
@@ -51,7 +66,19 @@
         "employee_count": "5001-10000"
       },
       "relevant": true,
-      "rationale": "Both offer multi-currency accounts, international transfers, FX, and debit cards to consumers and businesses managing cross-border finances."
+      "rationale": "Wise is a digital financial platform offering multi-currency accounts, cards, international payments, and business services, directly comparable to Revolut.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Wise is a digital financial platform offering multi-currency accounts, cards, international payments, and business services, directly comparable to Revolut."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are digital fintech platforms offering multi-currency accounts, cross-border payments, cards, and FX to consumers and businesses \u2014 direct competitors."
+        }
+      ]
     },
     {
       "name": "Starling Bank",
@@ -68,7 +95,19 @@
         "employee_count": "1001-5000"
       },
       "relevant": true,
-      "rationale": "Both are app-based digital banks offering personal and business accounts, cards, payments, and foreign-currency transaction features to overlapping users."
+      "rationale": "Digital challenger bank offering consumer and business accounts, cards, payments, and financial-management features, directly comparable to Revolut.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Digital challenger bank offering consumer and business accounts, cards, payments, and financial-management features, directly comparable to Revolut."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are digital challenger banks offering mobile-first consumer and business banking, cards, and payments \u2014 direct competitors in the neobank space."
+        }
+      ]
     },
     {
       "name": "WorldRemit",
@@ -85,7 +124,19 @@
         "employee_count": "1001-5000"
       },
       "relevant": true,
-      "rationale": "WorldRemit directly overlaps Revolut\u2019s international transfers and currency conversion, serving consumers and small businesses seeking cross-border payment services."
+      "rationale": "International digital payments and FX/remittance service overlaps Revolut's cross-border transfer and currency capabilities, though it is narrower.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "International digital payments and FX/remittance service overlaps Revolut's cross-border transfer and currency capabilities, though it is narrower."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Digital cross-border payments and FX fintech; competes directly with Revolut's core international transfer and currency-exchange product for the same consumers."
+        }
+      ]
     },
     {
       "name": "Emma",
@@ -101,8 +152,25 @@
         "industries": null,
         "employee_count": "11-50"
       },
-      "relevant": false,
-      "rationale": "Emma is primarily an account-aggregation and budgeting app, not a digital bank offering core cards, accounts, payments, and FX like Revolut."
+      "relevant": true,
+      "rationale": "Consumer financial app overlapping in budgeting, savings, investing, and payments, though less full-service banking than Revolut.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Consumer financial app overlapping in budgeting, savings, investing, and payments, though less full-service banking than Revolut."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Budgeting and account-aggregation app layered atop existing banks, not a digital bank offering accounts, cards, payments, or FX; complements rather than competes with Revolut."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Consumer fintech app offering budgeting, savings, investing and payments \\financfinance super-app comparable to Revolut's consumer side."
+        }
+      ]
     },
     {
       "name": "TransferGo",
@@ -119,7 +187,19 @@
         "employee_count": "201-500"
       },
       "relevant": true,
-      "rationale": "Both offer digital cross-border payments, international transfers, and currency exchange to consumers and businesses seeking low-cost global money movement."
+      "rationale": "Digital fintech offering cross-border transfers, multi-currency accounts, and FX to consumers and businesses, overlapping Revolut\u2019s core payments and banking use cases.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Digital fintech offering cross-border transfers, multi-currency accounts, and FX to consumers and businesses, overlapping Revolut\u2019s core payments and banking use cases."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Digital money-transfer fintech with multi-currency accounts and FX, overlapping Revolut's core payments/FX product, market, and business model."
+        }
+      ]
     },
     {
       "name": "Jeton",
@@ -136,7 +216,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Jeton overlaps Revolut\u2019s core digital wallet, payments, card, and currency-exchange offerings for consumers, freelancers, and small businesses."
+      "rationale": "Digital wallet offers payments, cards, currency exchange, and personal/business financial management, closely overlapping Revolut\u2019s core fintech super-app services.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Digital wallet offers payments, cards, currency exchange, and personal/business financial management, closely overlapping Revolut\u2019s core fintech super-app services."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "European digital wallet with payments, card, and currency exchange for consumers and businesses \u2014 direct fintech competitor to Revolut's core payments/FX/card offering."
+        }
+      ]
     },
     {
       "name": "Privalgo",
@@ -153,7 +245,19 @@
         "employee_count": "51-200"
       },
       "relevant": true,
-      "rationale": "Both provide multi-currency accounts, international payments, and FX services to businesses managing cross-border transactions and cash flows."
+      "rationale": "FX, international payments, and multi-currency business accounts overlap Revolut's financial platform, serving businesses and affluent individuals with cross-border money needs.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "FX, international payments, and multi-currency business accounts overlap Revolut's financial platform, serving businesses and affluent individuals with cross-border money needs."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Digital FX and international payments platform with multi-currency accounts and e-wallets, directly competing with Revolut's core payments/FX offering like Wise or OFX."
+        }
+      ]
     },
     {
       "name": "Airwallex",
@@ -170,7 +274,19 @@
         "employee_count": "1001-5000"
       },
       "relevant": true,
-      "rationale": "Both offer business-focused global payments, multi-currency accounts, international transfers, corporate cards, and expense management to overlapping business finance buyers."
+      "rationale": "Business-focused financial platform offering multi-currency accounts, transfers, cards, payments, and expense management, directly comparable to Revolut Business.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Business-focused financial platform offering multi-currency accounts, transfers, cards, payments, and expense management, directly comparable to Revolut Business."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Fintech platform for multi-currency business accounts, FX, international transfers, and corporate cards \u2014 direct competitor to Revolut Business."
+        }
+      ]
     },
     {
       "name": "Bilderlings Pay",
@@ -187,7 +303,19 @@
         "employee_count": "51-200"
       },
       "relevant": true,
-      "rationale": "Both offer consumer and business digital accounts, cards, multi-currency payments, and international transfers to overlapping fintech users."
+      "rationale": "Multi-currency consumer and business accounts, cards, payments, and transfers directly overlap Revolut's digital banking super-app offering.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Multi-currency consumer and business accounts, cards, payments, and transfers directly overlap Revolut's digital banking super-app offering."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "FCA-authorised digital banking alternative offering multi-currency accounts, cards, payments, and crypto for consumers and businesses \u2014 direct Revolut competitor."
+        }
+      ]
     },
     {
       "name": "Trade Republic",
@@ -204,7 +332,19 @@
         "employee_count": "1001-5000"
       },
       "relevant": true,
-      "rationale": "Both are consumer fintech apps offering investing, cash management, and card services to users seeking an integrated digital financial platform."
+      "rationale": "Consumer financial app combining investing, cash management, debit cards, and everyday payments; a direct digital-banking super-app comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Consumer financial app combining investing, cash management, debit cards, and everyday payments; a direct digital-banking super-app comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "European consumer fintech app combining investing, interest-bearing cash accounts, and debit card \u2014 direct Revolut competitor in digital consumer finance."
+        }
+      ]
     },
     {
       "name": "WorldFirst",
@@ -221,7 +361,19 @@
         "employee_count": "1001-5000"
       },
       "relevant": true,
-      "rationale": "WorldFirst overlaps Revolut Business in multi-currency accounts, international payments, FX, and business cards for globally operating companies."
+      "rationale": "Multi-currency business accounts, international payments, cards, and FX make it a direct comparable to Revolut Business, despite its narrower focus.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Multi-currency business accounts, international payments, cards, and FX make it a direct comparable to Revolut Business, despite its narrower focus."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both offer multi-currency accounts, FX, and international payments; WorldFirst competes directly with Revolut's business banking offering."
+        }
+      ]
     },
     {
       "name": "Viva Republica",
@@ -238,7 +390,19 @@
         "employee_count": "1001-5000"
       },
       "relevant": true,
-      "rationale": "Toss and Revolut are consumer financial super-apps offering overlapping account management, transfers, cards, loans, and investing to similar users."
+      "rationale": "Toss is a consumer financial super-app offering transfers, cards/accounts, loans, credit management, and investments, directly comparable to Revolut.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Toss is a consumer financial super-app offering transfers, cards/accounts, loans, credit management, and investments, directly comparable to Revolut."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Toss is a financial super-app offering payments, banking, and investing \u2014 same product and business model as Revolut, in a different region (like Nubank example)."
+        }
+      ]
     },
     {
       "name": "Eversend",
@@ -255,7 +419,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Both offer digital multi-currency accounts, cross-border payments, FX, and virtual cards to consumers and businesses managing international finances."
+      "rationale": "Multi-currency wallets, cards, FX, remittances, and business payments make it a direct digital-finance comparable to Revolut.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Multi-currency wallets, cards, FX, remittances, and business payments make it a direct digital-finance comparable to Revolut."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Mobile-first multi-currency wallet, FX, virtual cards, and cross-border payments for consumers and businesses\u2014direct Revolut comparable in a different region."
+        }
+      ]
     },
     {
       "name": "Cash App",
@@ -272,7 +448,19 @@
         "employee_count": "1001-5000"
       },
       "relevant": true,
-      "rationale": "Both are consumer financial super-apps offering mobile payments, cards, money management, stock investing, and cryptocurrency services to overlapping users."
+      "rationale": "Consumer financial super-app offering payments, card spending, direct deposit, crypto, and stock investing; directly comparable to Revolut.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Consumer financial super-app offering payments, card spending, direct deposit, crypto, and stock investing; directly comparable to Revolut."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Cash App is a mobile financial super-app offering P2P payments, debit cards, and investing\u2014directly matching Revolut's product, market, and model."
+        }
+      ]
     },
     {
       "name": "Fintuitive",
@@ -289,7 +477,24 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "Fintuitive overlaps Revolut Business in multi-currency accounts, cross-border FX, cash management, and FX risk solutions for internationally operating businesses."
+      "rationale": "Offers cross-border FX, multi-currency accounts, and cash management for businesses, overlapping Revolut Business's payments and FX services.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Offers cross-border FX, multi-currency accounts, and cash management for businesses, overlapping Revolut Business's payments and FX services."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "FX/cash-management advisory for enterprises, not a digital banking super-app; narrower scope, services-led model, no consumer banking/cards/investing products."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Offers multi-currency accounts and FX for businesses, overlapping Revolut Business's core cross-border payments/FX proposition.', a comparable fintech.\u00bb, ok"
+        }
+      ]
     },
     {
       "name": "Robinhood",
@@ -306,7 +511,19 @@
         "employee_count": "1001-5000"
       },
       "relevant": true,
-      "rationale": "Both offer mobile investing and cryptocurrency services to individual consumers, who could evaluate either platform for low-cost trading and investment management."
+      "rationale": "Both are consumer fintech platforms offering investing and crypto alongside mobile financial services, making Robinhood a credible comparable despite its narrower banking scope.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both are consumer fintech platforms offering investing and crypto alongside mobile financial services, making Robinhood a credible comparable despite its narrower banking scope."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are consumer fintech super-apps offering commission-free investing, cards, and money management to retail users; genuine competitors/comparables in consumer finance."
+        }
+      ]
     },
     {
       "name": "N26",
@@ -323,7 +540,19 @@
         "employee_count": "1001-5000"
       },
       "relevant": true,
-      "rationale": "Both are mobile-first neobanks offering app-based accounts, cards, savings, investing, and travel-friendly financial services to digitally savvy consumers."
+      "rationale": "N26 is a digital bank offering consumer banking, cards, payments, and related financial services, directly comparable to Revolut.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "N26 is a digital bank offering consumer banking, cards, payments, and related financial services, directly comparable to Revolut."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "N26 is a digital-native consumer bank offering app-based banking, cards, and payments \u2014 a direct competitor to Revolut on product, market, and business model."
+        }
+      ]
     },
     {
       "name": "Trading 212",
@@ -340,7 +569,19 @@
         "employee_count": "501-1000"
       },
       "relevant": true,
-      "rationale": "Both offer consumer investing and stock-trading products, targeting individuals seeking accessible, low-cost investment accounts."
+      "rationale": "Both are consumer-facing fintech platforms offering mobile investing and multi-currency financial services, making Trading 212 a credible Revolut comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both are consumer-facing fintech platforms offering mobile investing and multi-currency financial services, making Trading 212 a credible Revolut comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are consumer fintech super-apps offering commission-free investing, multi-currency accounts, and app-based money management to retail users \u2014 genuine comparables/competitors."
+        }
+      ]
     },
     {
       "name": "OpenPayd",
@@ -357,7 +598,24 @@
         "employee_count": "51-200"
       },
       "relevant": false,
-      "rationale": "OpenPayd sells embedded banking infrastructure to fintechs, while Revolut primarily offers direct digital banking; buyers and core jobs differ."
+      "rationale": "OpenPayd sells B2B banking-as-a-service infrastructure to fintechs, not an end-user digital banking app; an enabler/supplier in the space, not a Revolut competitor or comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "API-led BaaS overlaps Revolut Business in multi-currency accounts, payments, and FX, serving businesses needing global financial operations."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "OpenPayd sells B2B banking-as-a-service infrastructure to fintechs, not an end-user digital banking app; an enabler/supplier in the space, not a Revolut competitor or comparable."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "OpenPayd is B2B embedded-finance/BaaS infrastructure sold to fintechs, not a consumer/business neobank app like Revolut."
+        }
+      ]
     },
     {
       "name": "BABB",
@@ -374,7 +632,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "BABB overlaps Revolut\u2019s consumer fintech offering through digital accounts, wallets, P2P payments, fiat/crypto conversion, and multi-asset money management."
+      "rationale": "Hybrid digital financial account offering fiat payments, transfers, and crypto management resembles Revolut's consumer banking and financial super-app model.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Hybrid digital financial account offering fiat payments, transfers, and crypto management resembles Revolut's consumer banking and financial super-app model."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Digital banking app combining fiat accounts, crypto, and P2P payments for consumers \u2014 direct competitor to Revolut on product and market."
+        }
+      ]
     },
     {
       "name": "Currensea",
@@ -391,7 +661,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Both offer consumer payment cards emphasizing low-cost foreign exchange, and travelers could evaluate either for spending abroad."
+      "rationale": "Travel-focused card and low-cost FX offering overlaps Revolut\u2019s payments, cards, and foreign-exchange services for consumers.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Travel-focused card and low-cost FX offering overlaps Revolut\u2019s payments, cards, and foreign-exchange services for consumers."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Consumer fintech card with low-fee FX spending abroad \u2014 direct competitor to Revolut's card/FX offering for the same travelers."
+        }
+      ]
     },
     {
       "name": "STICPAY",
@@ -408,7 +690,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Both provide multi-currency digital accounts, cards, payments, and cross-border transfers to consumers and businesses with substantially overlapping financial needs."
+      "rationale": "Multi-currency digital wallet offering cross-border transfers, cards, and personal/business accounts overlaps Revolut\u2019s payments and FX banking proposition.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Multi-currency digital wallet offering cross-border transfers, cards, and personal/business accounts overlaps Revolut\u2019s payments and FX banking proposition."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Multi-currency e-wallet with international transfers, cards, and business/personal accounts \u2014 same product and market as Revolut's core payments/FX offering."
+        }
+      ]
     },
     {
       "name": "Sends",
@@ -425,7 +719,19 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "Both provide multi-currency digital accounts and cross-border payments to consumers and businesses, serving overlapping international banking needs."
+      "rationale": "Both offer digital multi-currency banking, payments, and business/personal financial accounts, serving similar cross-border consumer and business users.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both offer digital multi-currency banking, payments, and business/personal financial accounts, serving similar cross-border consumer and business users."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "FCA-authorised multi-currency digital banking for consumers and businesses with global transfers \u2014 same product, market, and model as Revolut."
+        }
+      ]
     },
     {
       "name": "Verto",
@@ -442,7 +748,19 @@
         "employee_count": "201-500"
       },
       "relevant": true,
-      "rationale": "Verto overlaps Revolut Business in multi-currency accounts, cards, cross-border payments, and FX for companies and treasury teams."
+      "rationale": "Cross-border payments, FX, multi-currency accounts, and business cards overlap directly with Revolut Business\u2019s core financial-platform offering.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Cross-border payments, FX, multi-currency accounts, and business cards overlap directly with Revolut Business\u2019s core financial-platform offering."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Cross-border payments, FX, and multi-currency accounts with cards directly overlap Revolut's core business banking offering; genuine fintech competitor."
+        }
+      ]
     },
     {
       "name": "Volopa",
@@ -459,7 +777,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Volopa overlaps Revolut Business in multicurrency corporate cards, international payments, FX, and expense management for finance teams."
+      "rationale": "Business-focused fintech offering multicurrency cards, international payments, FX, and expense management\u2014overlapping Revolut Business\u2019s core products and buyer needs.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Business-focused fintech offering multicurrency cards, international payments, FX, and expense management\u2014overlapping Revolut Business\u2019s core products and buyer needs."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Multicurrency business cards, FX engine, and global payments platform directly overlapping Revolut's business offering \u2014 a smaller fintech competitor."
+        }
+      ]
     },
     {
       "name": "Inter",
@@ -476,7 +806,19 @@
         "employee_count": "51-200"
       },
       "relevant": true,
-      "rationale": "Both offer integrated digital banking apps spanning accounts, cards, international payments, and investments to consumers and small businesses."
+      "rationale": "Digital banking super-app offering accounts, cards, international transactions, shopping, and investments to consumers and small businesses.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Digital banking super-app offering accounts, cards, international transactions, shopping, and investments to consumers and small businesses."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Digital bank super-app combining accounts, cards, investments, and international transactions \u2014 same product, market, and model as Revolut, like the Nubank example."
+        }
+      ]
     },
     {
       "name": "ZEN.COM",
@@ -493,7 +835,19 @@
         "employee_count": "201-500"
       },
       "relevant": true,
-      "rationale": "ZEN.COM overlaps Revolut\u2019s core multi-currency accounts, cards, payments, FX, and transfers for consumers and small businesses."
+      "rationale": "Licensed multi-currency account, payment cards, international transfers, FX, and consumer/business financial app directly overlap Revolut's digital banking model.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Licensed multi-currency account, payment cards, international transfers, FX, and consumer/business financial app directly overlap Revolut's digital banking model."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "ZEN offers multi-currency accounts, cards, and international payments for consumers and businesses, directly matching Revolut's product and market."
+        }
+      ]
     },
     {
       "name": "YooMoney",
@@ -510,7 +864,19 @@
         "employee_count": "501-1000"
       },
       "relevant": true,
-      "rationale": "Both offer consumer and business digital financial services, including payments, money transfers, virtual cards, and merchant payment acceptance."
+      "rationale": "Digital wallet/payment platform offering transfers, virtual cards, consumer finance, and merchant payments; overlaps Revolut\u2019s payments and card services.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Digital wallet/payment platform offering transfers, virtual cards, consumer finance, and merchant payments; overlaps Revolut\u2019s payments and card services."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Digital payments and e-money platform offering virtual cards, transfers, and merchant payments\u2014overlaps Revolut's core consumer/business payments and card product and market."
+        }
+      ]
     },
     {
       "name": "Privat 3 Money",
@@ -527,7 +893,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Both provide digital multi-currency accounts, cards, FX, cross-border payments, and investing capabilities to consumers and businesses managing global finances."
+      "rationale": "Digital finance platform offers multi-currency accounts, cards, FX, cross-border payments, and investing\u2014core Revolut products for similar consumers and businesses.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Digital finance platform offers multi-currency accounts, cards, FX, cross-border payments, and investing\u2014core Revolut products for similar consumers and businesses."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "FCA-regulated digital banking platform with multi-currency accounts, FX, debit cards, and payments\u2014direct competitor to Revolut across product, market, and model."
+        }
+      ]
     },
     {
       "name": "Vivid Money",
@@ -544,7 +922,19 @@
         "employee_count": "201-500"
       },
       "relevant": true,
-      "rationale": "Vivid Money overlaps Revolut\u2019s business banking offering across accounts, cards, payments, transfers, and financial management for freelancers and companies."
+      "rationale": "Business-focused digital banking offering accounts, cards, transfers, interest, and financing\u2014directly comparable to Revolut Business.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Business-focused digital banking offering accounts, cards, transfers, interest, and financing\u2014directly comparable to Revolut Business."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Digital banking fintech offering business accounts, cards, transfers, and interest \u2014 direct competitor to Revolut's business banking product."
+        }
+      ]
     },
     {
       "name": "LemFi",
@@ -561,7 +951,19 @@
         "employee_count": "201-500"
       },
       "relevant": true,
-      "rationale": "Both offer consumer fintech apps for cross-border payments, international transfers, multi-currency wallets, and currency conversion, serving overlapping users and financial jobs."
+      "rationale": "Digital financial app offering international transfers, multi-currency wallets, and FX-like balance conversion; a narrower but genuine consumer fintech comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Digital financial app offering international transfers, multi-currency wallets, and FX-like balance conversion; a narrower but genuine consumer fintech comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Fintech offering international money transfers and multi-currency wallets, directly overlapping Revolut's cross-border payments and FX product line."
+        }
+      ]
     },
     {
       "name": "Up",
@@ -578,7 +980,19 @@
         "employee_count": null
       },
       "relevant": true,
-      "rationale": "Both offer app-based consumer banking with spending management, savings tools, and international finance features for digitally savvy individuals."
+      "rationale": "Digital bank offering consumer accounts, spending controls, savings tools, and fee-free international banking, directly comparable to Revolut's consumer financial super-app.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Digital bank offering consumer accounts, spending controls, savings tools, and fee-free international banking, directly comparable to Revolut's consumer financial super-app."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Digital neobank offering consumer banking, spending tools, and fee-free international banking \u2014 same product, market, and model as Revolut."
+        }
+      ]
     },
     {
       "name": "Global66",
@@ -595,7 +1009,19 @@
         "employee_count": "201-500"
       },
       "relevant": true,
-      "rationale": "Both offer digital multi-currency accounts, international transfers, FX, and cards to consumers and businesses managing global finances."
+      "rationale": "Multi-currency accounts, international transfers, FX, and card payments closely overlap Revolut\u2019s digital banking product and consumer/business financial-management market.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Multi-currency accounts, international transfers, FX, and card payments closely overlap Revolut\u2019s digital banking product and consumer/business financial-management market."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Multi-currency digital finance app with international transfers, FX, and payment card \u2014 direct competitor to Revolut's core consumer offering."
+        }
+      ]
     },
     {
       "name": "Rova",
@@ -612,7 +1038,19 @@
         "employee_count": "51-200"
       },
       "relevant": true,
-      "rationale": "Rova overlaps Revolut\u2019s core consumer digital banking offering through multi-currency accounts, international transfers, savings, and cross-border spending for global users."
+      "rationale": "Rova offers multi-currency digital banking, accounts, payments, transfers, and savings for cross-border users, directly comparable to Revolut\u2019s core consumer financial platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Rova offers multi-currency digital banking, accounts, payments, transfers, and savings for cross-border users, directly comparable to Revolut\u2019s core consumer financial platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Multi-currency digital banking with cross-border payments and FX\u2014same product, market, and model as Revolut."
+        }
+      ]
     },
     {
       "name": "MultiPass",
@@ -629,7 +1067,19 @@
         "employee_count": "51-200"
       },
       "relevant": true,
-      "rationale": "MultiPass overlaps Revolut Business in multi-currency accounts, international payments, FX, and corporate cards for globally operating businesses."
+      "rationale": "MultiPass provides business multi-currency accounts, FX, payments, and cards\u2014core fintech services overlapping Revolut Business.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "MultiPass provides business multi-currency accounts, FX, payments, and cards\u2014core fintech services overlapping Revolut Business."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "MultiPass offers multi-currency business accounts, FX, and corporate cards\u2014directly comparable to Revolut's business banking offering."
+        }
+      ]
     },
     {
       "name": "Rutland FX",
@@ -646,7 +1096,19 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "Both provide multi-currency accounts, cross-border payments, and FX services to businesses and individuals managing international transactions."
+      "rationale": "FX, multi-currency accounts, and cross-border payments overlap directly with Revolut\u2019s core consumer and business financial services.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "FX, multi-currency accounts, and cross-border payments overlap directly with Revolut\u2019s core consumer and business financial services."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "FX and cross-border payments provider with multi-currency accounts, competing directly with Revolut's core FX/payments offering for consumers and businesses."
+        }
+      ]
     },
     {
       "name": "Regent FE",
@@ -663,7 +1125,19 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "Regent FE overlaps Revolut Business in multi-currency business accounts, international payments, and FX for globally operating entrepreneurs and SMEs."
+      "rationale": "Multi-currency business accounts, international payments, and FX services directly overlap Revolut Business\u2019s core financial platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Multi-currency business accounts, international payments, and FX services directly overlap Revolut Business\u2019s core financial platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Offers multi-currency business accounts, international payments, and FX conversion\u2014core product overlap with Revolut's digital banking/FX offering."
+        }
+      ]
     },
     {
       "name": "ALT21",
@@ -680,7 +1154,19 @@
         "employee_count": "51-200"
       },
       "relevant": true,
-      "rationale": "Both offer business multi-currency accounts, cross-border payments, and FX services evaluated by finance teams managing international transactions and currency exposure."
+      "rationale": "ALT21 provides multi-currency accounts, cross-border payments, and FX trading for businesses, overlapping Revolut Business's international finance and FX offering.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "ALT21 provides multi-currency accounts, cross-border payments, and FX trading for businesses, overlapping Revolut Business's international finance and FX offering."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Fintech offering multi-currency accounts, FX, and cross-border payments\u2014directly overlaps Revolut's core FX/payments product and competes for the same customers."
+        }
+      ]
     },
     {
       "name": "Jupiter",
@@ -697,7 +1183,19 @@
         "employee_count": "1001-5000"
       },
       "relevant": true,
-      "rationale": "Jupiter is a digital financial super-app offering banking, payments, credit, savings, and investing to consumers, closely overlapping Revolut\u2019s core platform."
+      "rationale": "Jupiter is a consumer digital banking super-app offering accounts, payments, cards, savings, and investments, directly comparable to Revolut.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Jupiter is a consumer digital banking super-app offering accounts, payments, cards, savings, and investments, directly comparable to Revolut."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Jupiter is a digital neobank app offering banking, expense tracking, and investing \u2014 same product and consumer fintech model as Revolut, different region."
+        }
+      ]
     },
     {
       "name": "TradeFarm",
@@ -714,7 +1212,24 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "Both are consumer fintech platforms offering multi-currency wallets and securities/crypto trading, serving overlapping users seeking integrated investing and money management."
+      "rationale": "Consumer fintech platform offering trading and a multi-currency wallet, overlapping Revolut's investing, FX, and payments-oriented financial-super-app model.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Consumer fintech platform offering trading and a multi-currency wallet, overlapping Revolut's investing, FX, and payments-oriented financial-super-app model."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "TradeFarm is a zero-commission trading brokerage; Revolut is a digital banking super-app. Overlap limited to retail investing feature only\u2014no banking, payments, or cards product."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Consumer fintech offering commission-free multi-asset investing plus multi-currency wallet, overlapping Revolut's trading/wallet consumer proposition.# Reminder of your instructions...(the rest is truncated)"
+        }
+      ]
     },
     {
       "name": "Volet.com",
@@ -731,7 +1246,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Both provide multi-currency digital wallets, cards, FX, transfers, and business payments to consumers and SMEs managing cross-border finances."
+      "rationale": "Multi-currency wallet, cards, payments, FX, and business payout services closely overlap Revolut\u2019s digital banking and financial super-app offering.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Multi-currency wallet, cards, payments, FX, and business payout services closely overlap Revolut\u2019s digital banking and financial super-app offering."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Multi-currency e-wallet with cards, P2P transfers, FX and crypto exchange directly overlaps Revolut's core digital-banking product and market."
+        }
+      ]
     },
     {
       "name": "FairFX",
@@ -748,7 +1275,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Both offer consumers multi-currency cards, foreign exchange, and international payments for travel and cross-border spending."
+      "rationale": "FairFX offers multi-currency cards, international payments, and digital-wallet access for consumers, directly overlapping Revolut's core banking and FX proposition.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "FairFX offers multi-currency cards, international payments, and digital-wallet access for consumers, directly overlapping Revolut's core banking and FX proposition."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Multi-currency card and international payments platform for consumers; directly overlaps Revolut's core card/FX offering and serves same traveler persona."
+        }
+      ]
     },
     {
       "name": "Caxton",
@@ -765,7 +1304,19 @@
         "employee_count": "51-200"
       },
       "relevant": true,
-      "rationale": "Caxton overlaps Revolut in multi-currency accounts, international transfers, prepaid cards, and business expense management for consumers and businesses."
+      "rationale": "Both offer regulated digital financial services including multi-currency accounts, cards, international payments, FX, and business expense tools.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both offer regulated digital financial services including multi-currency accounts, cards, international payments, FX, and business expense tools."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "FCA-regulated fintech offering multi-currency accounts, FX-free travel cards, and international transfers \u2014 directly overlaps Revolut's payments/FX/card product and market."
+        }
+      ]
     },
     {
       "name": "ACE",
@@ -782,7 +1333,19 @@
         "employee_count": "51-200"
       },
       "relevant": true,
-      "rationale": "ACE overlaps Revolut\u2019s digital banking, cards, budgeting, payments, and cross-border transfer offering for consumers, freelancers, and small businesses."
+      "rationale": "ACE offers consumer money management, cards, payments, and cross-border transfers, closely overlapping Revolut's digital banking and financial super-app model.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "ACE offers consumer money management, cards, payments, and cross-border transfers, closely overlapping Revolut's digital banking and financial super-app model."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Digital banking app with cards, budget tracking, and cross-border transfers for consumers/freelancers\u2014direct Revolut-style neobank competitor."
+        }
+      ]
     },
     {
       "name": "Broad",
@@ -799,7 +1362,19 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "Broad\u2019s consumer multi-currency digital account, FX, and card offering directly overlaps Revolut\u2019s core banking and international payments use cases."
+      "rationale": "Multi-currency accounts, payment cards, and real-time FX closely match Revolut\u2019s core consumer digital-banking product.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Multi-currency accounts, payment cards, and real-time FX closely match Revolut\u2019s core consumer digital-banking product."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Digital multi-currency account with cards and real-time FX, directly mirroring Revolut's core consumer product and market."
+        }
+      ]
     },
     {
       "name": "Business Fintech",
@@ -816,7 +1391,19 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "Both offer businesses multi-currency accounts, international payments, and FX services for managing cross-border transactions and currency exposure."
+      "rationale": "Offers business multi-currency accounts, international payments, and FX, overlapping Revolut Business\u2019s core financial-services product.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Offers business multi-currency accounts, international payments, and FX, overlapping Revolut Business\u2019s core financial-services product."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Offers multi-currency accounts, international payments, and FX for businesses \u2014 directly overlaps Revolut's business banking offering on product and market axes."
+        }
+      ]
     },
     {
       "name": "Global Remit",
@@ -833,7 +1420,19 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "Both offer digital international money transfers, FX, and business cross-border payments to individuals and businesses seeking fast, low-cost remittance services."
+      "rationale": "Cross-border remittance, FX, and business payouts overlap strongly with Revolut's payments and international money-transfer offerings.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Cross-border remittance, FX, and business payouts overlap strongly with Revolut's payments and international money-transfer offerings."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Digital-first cross-border payments and FX service for consumers and businesses, directly competing with Revolut's core international money-transfer offering."
+        }
+      ]
     },
     {
       "name": "Albert",
@@ -850,7 +1449,19 @@
         "employee_count": "51-200"
       },
       "relevant": true,
-      "rationale": "Both offer consumer financial super-apps combining digital banking, spending management, savings, and investing for individuals."
+      "rationale": "Consumer fintech app offering banking, spending, savings, and investing, overlapping Revolut's digital financial super-app model.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Consumer fintech app offering banking, spending, savings, and investing, overlapping Revolut's digital financial super-app model."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Consumer all-in-one finance app combining banking, debit card, savings, and investing\u2014same consumer fintech super-app product and market as Revolut."
+        }
+      ]
     },
     {
       "name": "LootRush",
@@ -867,7 +1478,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Both provide consumers with digital multi-currency accounts, cross-border payments, virtual cards, and tools for managing money internationally."
+      "rationale": "Both offer consumer-focused digital financial accounts with multi-currency balances, cards, payments, and cross-border money movement.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both offer consumer-focused digital financial accounts with multi-currency balances, cards, payments, and cross-border money movement."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Fintech offering multi-currency accounts, cross-border payments, and virtual cards for globally mobile consumers \u2014 same product and market as Revolut."
+        }
+      ]
     },
     {
       "name": "Unicorn Currencies",
@@ -884,7 +1507,19 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "Both offer multi-currency accounts, international transfers, and FX services to consumers and businesses managing cross-border payments."
+      "rationale": "Cross-border payments, multi-currency accounts, and FX for consumers and businesses directly overlap Revolut's core financial-services offering.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Cross-border payments, multi-currency accounts, and FX for consumers and businesses directly overlap Revolut's core financial-services offering."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Offers international money transfers, multi-currency accounts, and FX to consumers and SMEs\u2014core overlap with Revolut's cross-border payments and FX product."
+        }
+      ]
     },
     {
       "name": "Flip",
@@ -901,7 +1536,19 @@
         "employee_count": "201-500"
       },
       "relevant": true,
-      "rationale": "Both are digital financial platforms offering consumers and businesses low-cost domestic and international transfers, payments, and related money-management services."
+      "rationale": "Digital financial platform offering consumer and SME transfers, e-wallet funding, and international remittances, overlapping Revolut\u2019s payments and FX banking use cases.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Digital financial platform offering consumer and SME transfers, e-wallet funding, and international remittances, overlapping Revolut\u2019s payments and FX banking use cases."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Flip is a licensed digital fintech offering consumer/SME money transfers, e-wallet top-ups, and international remittance\u2014same product and market as Revolut's payments core, different region."
+        }
+      ]
     },
     {
       "name": "Montify",
@@ -918,7 +1565,19 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "Both provide app-based multi-currency accounts, international payments, FX, and money management for individuals and small businesses."
+      "rationale": "Multi-currency digital account offering payments, FX, and mobile banking to consumers and small businesses closely matches Revolut's core fintech model.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Multi-currency digital account offering payments, FX, and mobile banking to consumers and small businesses closely matches Revolut's core fintech model."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Multi-currency digital payment account with app, FX, and international payments \u2014 same product, market, and model as Revolut; a direct fintech competitor."
+        }
+      ]
     },
     {
       "name": "Raenest",
@@ -935,7 +1594,19 @@
         "employee_count": "51-200"
       },
       "relevant": true,
-      "rationale": "Both offer digital multi-currency accounts, cross-border payments, and cards to consumers and businesses managing global finances."
+      "rationale": "Multi-currency accounts, cross-border transfers, and cards make Raenest a digital-finance platform comparable to Revolut, despite its Africa-focused freelancer audience.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Multi-currency accounts, cross-border transfers, and cards make Raenest a digital-finance platform comparable to Revolut, despite its Africa-focused freelancer audience."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Multi-currency digital banking with cross-border transfers and cards \u2014 same product, model, and buyer job as Revolut, different region."
+        }
+      ]
     },
     {
       "name": "You Technologies Group",
@@ -952,7 +1623,19 @@
         "employee_count": "201-500"
       },
       "relevant": true,
-      "rationale": "Both offer consumer multi-currency wallets, payment cards, and in-app FX for low-cost international spending, serving overlapping travelers and professionals."
+      "rationale": "YouTrip offers a consumer multi-currency wallet, payment card, FX exchange, and rewards\u2014core Revolut consumer banking-super-app functions.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "YouTrip offers a consumer multi-currency wallet, payment card, FX exchange, and rewards\u2014core Revolut consumer banking-super-app functions."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Multi-currency digital wallet with cards, FX, and mobile payments for consumers\u2014direct fintech competitor to Revolut's core offering."
+        }
+      ]
     },
     {
       "name": "Spectrum",
@@ -969,7 +1652,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Both provide business multi-currency accounts, cross-border payments, and FX services for companies managing international transactions."
+      "rationale": "Spectrum offers business multi-currency accounts, cross-border payments, and FX services, directly overlapping Revolut Business's financial platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Spectrum offers business multi-currency accounts, cross-border payments, and FX services, directly overlapping Revolut Business's financial platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Fintech offering multi-currency accounts, FX, and cross-border payments for businesses\u2014overlaps Revolut's core payments/FX product and market."
+        }
+      ]
     },
     {
       "name": "Swapmoney",
@@ -986,7 +1681,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Both offer cross-border payments, foreign exchange, and multi-currency services to individuals and businesses seeking international money movement solutions."
+      "rationale": "Cross-border payments, FX, multi-currency wallets, and business payment services overlap directly with Revolut's financial-platform offering.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Cross-border payments, FX, multi-currency wallets, and business payment services overlap directly with Revolut's financial-platform offering."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Fintech offering cross-border payments, multi-currency wallets, and FX for consumers and businesses\u2014directly overlaps Revolut's core payments/FX product and market."
+        }
+      ]
     },
     {
       "name": "OFX",
@@ -1003,7 +1710,19 @@
         "employee_count": "501-1000"
       },
       "relevant": true,
-      "rationale": "OFX overlaps Revolut\u2019s core cross-border payments, currency exchange, and multi-currency business accounts for consumers and SMBs."
+      "rationale": "OFX offers international transfers, FX, and multi-currency business accounts, overlapping strongly with Revolut's cross-border payments and currency services.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "OFX offers international transfers, FX, and multi-currency business accounts, overlapping strongly with Revolut's cross-border payments and currency services."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Fintech competitor for international money transfers, FX, and multi-currency accounts\u2014core Revolut product lines; same consumers and SMBs, akin to Wise."
+        }
+      ]
     },
     {
       "name": "enfineo",
@@ -1020,7 +1739,19 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "Both offer consumers and small businesses unified digital finance apps spanning multi-currency accounts, transfers, cards, and related financial services."
+      "rationale": "Unified fintech app offers IBANs, payments cards, multicurrency transfers, savings, and crypto integration\u2014overlapping Revolut's consumer financial-super-app model.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Unified fintech app offers IBANs, payments cards, multicurrency transfers, savings, and crypto integration\u2014overlapping Revolut's consumer financial-super-app model."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Digital banking app offering fiat accounts, transfers, cards, and crypto for consumers and small businesses \u2014 same product, market, and model as Revolut."
+        }
+      ]
     },
     {
       "name": "e& money",
@@ -1037,7 +1768,19 @@
         "employee_count": "5001-10000"
       },
       "relevant": true,
-      "rationale": "Both are consumer financial super-apps offering digital payments, money transfers, and account-like services for overlapping mobile-finance users."
+      "rationale": "Digital financial super-app offering payments, remittances, bills, and IBANs to consumers; a direct comparable to Revolut\u2019s core banking/payment offering.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Digital financial super-app offering payments, remittances, bills, and IBANs to consumers; a direct comparable to Revolut\u2019s core banking/payment offering."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Financial super-app for digital payments, transfers, and remittances \u2014 same product, consumer market, and business model as Revolut, in a different region."
+        }
+      ]
     },
     {
       "name": "Fin.do",
@@ -1054,7 +1797,19 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "Both offer consumer and business cross-border payments, instant transfers, and FX, serving users seeking global money movement."
+      "rationale": "Global P2P payments and FX transfers overlap directly with Revolut\u2019s consumer cross-border payments and currency services.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Global P2P payments and FX transfers overlap directly with Revolut\u2019s consumer cross-border payments and currency services."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Digital cross-border payments and FX transfer platform, overlapping Revolut's core money-transfer/FX product and same consumer market; comparable to Wise-style fintech peers."
+        }
+      ]
     },
     {
       "name": "nsave",
@@ -1071,7 +1826,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Both provide consumer-focused digital financial accounts spanning multi-currency banking, payments, cards, FX, and investing for globally mobile users."
+      "rationale": "Multi-currency accounts, cards, FX, payments, and investing make nsave a digital-banking comparable, despite its narrower remote-worker focus.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Multi-currency accounts, cards, FX, payments, and investing make nsave a digital-banking comparable, despite its narrower remote-worker focus."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Digital multi-currency account with FX, cards, payments, and investing for consumers \u2014 directly overlaps Revolut's core digital-banking product and model."
+        }
+      ]
     },
     {
       "name": "sync",
@@ -1088,7 +1855,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Both offer consumer financial apps with multi-currency accounts, FX, international transfers, and consolidated money management for similar users."
+      "rationale": "Digital banking app offering multi-currency accounts, FX, transfers, and personal financial management, closely comparable to Revolut\u2019s consumer banking super-app.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Digital banking app offering multi-currency accounts, FX, transfers, and personal financial management, closely comparable to Revolut\u2019s consumer banking super-app."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Digital smart-bank offering multi-currency accounts, FX exchange, and all-in-one money management \u2014 a direct neobank competitor to Revolut."
+        }
+      ]
     },
     {
       "name": "eVostro",
@@ -1105,7 +1884,19 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "Both offer digital multicurrency accounts, IBANs, FX, and cross-border payment services to individuals and businesses."
+      "rationale": "E-money platform offering multicurrency accounts, IBANs, FX, and global payments to consumers and businesses\u2014directly comparable to Revolut's core banking services.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "E-money platform offering multicurrency accounts, IBANs, FX, and global payments to consumers and businesses\u2014directly comparable to Revolut's core banking services."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "E-money fintech offering multicurrency accounts, IBANs, FX and cross-border payments for consumers and businesses \u2014 same product and market as Revolut."
+        }
+      ]
     },
     {
       "name": "Victorum",
@@ -1122,7 +1913,19 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "Both offer consumers and small businesses multi-currency wallets, international payments, and crypto-fiat exchange for similar cross-border financial needs."
+      "rationale": "Digital financial platform offering multi-currency wallets, global transfers, payments, and crypto-fiat exchange, overlapping Revolut\u2019s core consumer and business fintech services.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Digital financial platform offering multi-currency wallets, global transfers, payments, and crypto-fiat exchange, overlapping Revolut\u2019s core consumer and business fintech services."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Digital fintech offering multi-currency wallets, global transfers, and fiat-crypto exchange \u2014 directly comparable to Revolut's payments/FX super-app model."
+        }
+      ]
     },
     {
       "name": "Reb8",
@@ -1139,7 +1942,19 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "Both offer cross-border payments and currency exchange for consumers and SMEs seeking transparent, lower-cost international transfers."
+      "rationale": "Cross-border payments and FX platform serving consumers and SMEs, overlapping Revolut\u2019s payments and foreign-exchange financial services.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Cross-border payments and FX platform serving consumers and SMEs, overlapping Revolut\u2019s payments and foreign-exchange financial services."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Cross-border payments and FX platform for consumers and SMEs, directly overlapping Revolut's core FX/money-transfer offering; a fintech competitor like Wise."
+        }
+      ]
     },
     {
       "name": "Equals Money",
@@ -1156,7 +1971,19 @@
         "employee_count": "201-500"
       },
       "relevant": true,
-      "rationale": "Both offer businesses multi-currency accounts, international payments, expense management, and corporate cards for managing global company finances."
+      "rationale": "Business fintech offering multi-currency accounts, cards, spending controls, and international payments, closely comparable to Revolut Business.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Business fintech offering multi-currency accounts, cards, spending controls, and international payments, closely comparable to Revolut Business."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Fintech offering multi-currency accounts, business cards, FX and international payments \u2014 directly competes with Revolut Business on product, market, and model."
+        }
+      ]
     },
     {
       "name": "Nomad",
@@ -1173,7 +2000,19 @@
         "employee_count": null
       },
       "relevant": true,
-      "rationale": "Nomad overlaps Revolut\u2019s consumer fintech offering through international accounts, debit cards, currency conversion, and investing for globally oriented users."
+      "rationale": "Nomad is a consumer fintech offering international accounts, debit cards, FX conversion, and investments, closely matching Revolut\u2019s digital banking model.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Nomad is a consumer fintech offering international accounts, debit cards, FX conversion, and investments, closely matching Revolut\u2019s digital banking model."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Fintech offering international digital accounts, global debit card, FX conversion, and investments \u2014 same product and model as Revolut, different region."
+        }
+      ]
     },
     {
       "name": "Moneybase",
@@ -1190,7 +2029,19 @@
         "employee_count": "51-200"
       },
       "relevant": true,
-      "rationale": "Moneybase closely overlaps Revolut\u2019s consumer and business financial super-app model across payments, cards, multicurrency accounts, and investing."
+      "rationale": "Digital finance platform offering payments, cards, multicurrency services, and investing to consumers and businesses, directly comparable to Revolut.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Digital finance platform offering payments, cards, multicurrency services, and investing to consumers and businesses, directly comparable to Revolut."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Digital finance super-app offering payments, cards, multicurrency wallet, and investing for consumers and businesses\u2014matches Revolut on product, market, and model."
+        }
+      ]
     },
     {
       "name": "Credits",
@@ -1207,7 +2058,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Both offer consumer and business digital financial accounts combining cards, payments, international transfers, multicurrency management, and related wallet services."
+      "rationale": "Digital wallet offering banking, debit cards, transfers, multi-currency accounts, crypto, and business accounts closely overlaps Revolut\u2019s financial-super-app model.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Digital wallet offering banking, debit cards, transfers, multi-currency accounts, crypto, and business accounts closely overlaps Revolut\u2019s financial-super-app model."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Digital wallet combining banking, debit cards, multi-currency, international transfers, and crypto \u2014 directly comparable to Revolut's consumer/business banking super-app."
+        }
+      ]
     },
     {
       "name": "Revuto",
@@ -1224,7 +2087,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Both offer consumer virtual debit cards and payment-management tools, including controls for recurring transactions, serving overlapping fintech users and payment needs."
+      "rationale": "Consumer fintech offering a virtual debit card and payment controls; overlaps Revolut's card/payments product despite narrower subscription-focused scope.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Consumer fintech offering a virtual debit card and payment controls; overlaps Revolut's card/payments product despite narrower subscription-focused scope."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Consumer fintech app offering virtual debit cards, crypto/fiat payments, and spending management \u2014 a smaller comparable to Revolut's consumer banking/card product."
+        }
+      ]
     },
     {
       "name": "Capitalist",
@@ -1241,7 +2116,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Capitalist overlaps Revolut\u2019s multicurrency accounts, international transfers, business payments, and virtual cards for individuals and SMEs."
+      "rationale": "Multicurrency wallet, global transfers, cards, and business mass payments closely overlap Revolut's digital banking and payments offering.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Multicurrency wallet, global transfers, cards, and business mass payments closely overlap Revolut's digital banking and payments offering."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Multicurrency digital wallet with cards, FX, and mass payments for consumers and SMEs \u2014 same product and market as Revolut's core fintech offering."
+        }
+      ]
     },
     {
       "name": "Centtrip Ltd",
@@ -1258,7 +2145,19 @@
         "employee_count": "51-200"
       },
       "relevant": true,
-      "rationale": "Both offer business multi-currency accounts, cards, international payments, FX, and expense management for organizations managing cross-border finances."
+      "rationale": "Multi-currency accounts, cards, FX, payments, and expense tools make Centtrip a focused business-finance comparable to Revolut.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Multi-currency accounts, cards, FX, payments, and expense tools make Centtrip a focused business-finance comparable to Revolut."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Fintech offering multi-currency accounts, FX, payments, and card programs for businesses \u2014 directly overlaps Revolut Business's core product on FX, cards, and cross-border payments."
+        }
+      ]
     },
     {
       "name": "Quppy",
@@ -1275,7 +2174,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Quppy overlaps Revolut\u2019s core digital wallet, multi-currency accounts, cards, and business payments offerings for similar consumer and business users."
+      "rationale": "Multi-currency fintech wallet with IBANs, prepaid cards, payments, and consumer/business financial management overlaps Revolut's core digital-banking product.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Multi-currency fintech wallet with IBANs, prepaid cards, payments, and consumer/business financial management overlaps Revolut's core digital-banking product."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Multi-currency digital wallet with prepaid cards, virtual IBANs, and crypto-fiat conversion overlaps Revolut's core digital banking and payments offering for consumers and businesses."
+        }
+      ]
     },
     {
       "name": "ARQ",
@@ -1292,7 +2203,19 @@
         "employee_count": "51-200"
       },
       "relevant": true,
-      "rationale": "ARQ overlaps Revolut\u2019s consumer fintech offering through multicurrency balances, cards, cross-border payments, currency conversion, and investing for globally active users."
+      "rationale": "Consumer financial super-app offering multicurrency balances, cross-border payments, cards, FX, and investing\u2014directly comparable to Revolut.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Consumer financial super-app offering multicurrency balances, cross-border payments, cards, FX, and investing\u2014directly comparable to Revolut."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Consumer fintech super-app offering multi-currency balances, cross-border payments, spending card, and investing \u2014 direct Revolut competitor in LatAm."
+        }
+      ]
     },
     {
       "name": "MyGuava Business",
@@ -1309,7 +2232,19 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "Both offer business-focused digital financial accounts with payments, international transfers, multi-currency capabilities, corporate cards, and spend-management tools."
+      "rationale": "Business-focused digital finance platform offering multi-currency accounts, transfers, corporate cards, and spend tools, directly comparable to Revolut Business.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Business-focused digital finance platform offering multi-currency accounts, transfers, corporate cards, and spend tools, directly comparable to Revolut Business."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Digital business payments platform with multi-currency accounts, corporate cards, and global FX transfers \u2014 directly comparable to Revolut's business offering."
+        }
+      ]
     },
     {
       "name": "Onboard",
@@ -1326,7 +2261,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Onboard overlaps Revolut\u2019s digital banking offering through accounts, virtual cards, cross-border transfers, currency conversion, and digital asset management for similar users."
+      "rationale": "Borderless digital banking with USD accounts, virtual cards, transfers, and multi-currency spending closely overlaps Revolut\u2019s consumer financial-super-app offering.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Borderless digital banking with USD accounts, virtual cards, transfers, and multi-currency spending closely overlaps Revolut\u2019s consumer financial-super-app offering."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Digital banking app offering USD accounts, virtual cards, multi-currency spending, and crypto management \u2014 directly comparable consumer fintech product to Revolut."
+        }
+      ]
     },
     {
       "name": "Monevium",
@@ -1343,7 +2290,19 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "Monevium offers app-based accounts, cards, international payments, and FX for consumers, directly overlapping Revolut\u2019s core digital banking offering and audience."
+      "rationale": "Monevium provides consumer digital current accounts, cards, international payments, and FX, directly overlapping Revolut\u2019s core digital-banking offering.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Monevium provides consumer digital current accounts, cards, international payments, and FX, directly overlapping Revolut\u2019s core digital-banking offering."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Digital EUR IBAN account with Mastercard, FX, and international payments \u2014 same consumer digital-banking product and market as Revolut, just smaller."
+        }
+      ]
     },
     {
       "name": "RBK Payments",
@@ -1360,7 +2319,19 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "Both offer businesses multi-currency accounts, international payments, and FX services for managing cross-border finances."
+      "rationale": "Digital banking platform offering multi-currency business accounts, international transfers, and FX services, overlapping Revolut Business's core financial-services model.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Digital banking platform offering multi-currency business accounts, international transfers, and FX services, overlapping Revolut Business's core financial-services model."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Digital banking fintech offering multi-currency accounts, international transfers, and FX savings \u2014 directly overlapping Revolut's core business-banking and FX products."
+        }
+      ]
     },
     {
       "name": "Revex",
@@ -1377,7 +2348,24 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "Both provide businesses with online FX, cross-border payments, and currency-management services, targeting companies seeking lower-cost international transactions and hedging."
+      "rationale": "Corporate FX and cross-border payments provider, overlapping Revolut Business\u2019s payments and foreign-exchange offering.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Corporate FX and cross-border payments provider, overlapping Revolut Business\u2019s payments and foreign-exchange offering."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "FX brokerage/aggregator intermediary for corporates, not a digital banking or payments platform; only weak FX-transaction overlap with Revolut's super-app model."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Both provide FX and cross-border payments services; Revex is a narrower B2B FX/payments peer, a plausible comparable.\u00bb, ok.\u00bb, ok.\u00bb, ok.\u00bb, ok.\u00bb, ok."
+        }
+      ]
     },
     {
       "name": "Littio",
@@ -1394,7 +2382,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Littio overlaps Revolut\u2019s core multicurrency account, international transfers, and card-spending offering for consumers managing money across borders."
+      "rationale": "Digital multi-currency account and Mastercard offering overlaps Revolut\u2019s payments, cards, FX, and cross-border consumer banking use cases.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Digital multi-currency account and Mastercard offering overlaps Revolut\u2019s payments, cards, FX, and cross-border consumer banking use cases."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Consumer fintech offering multi-currency accounts, debit card, cross-border payments and transfers\u2014directly comparable to Revolut's core banking product."
+        }
+      ]
     },
     {
       "name": "Ruvien Limited",
@@ -1411,7 +2411,19 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "Both provide FX and international payment services to individuals and businesses seeking transparent, cost-effective cross-border transactions."
+      "rationale": "Ruvien offers FX and international payment services to individuals and businesses, overlapping Revolut\u2019s core cross-border payments and currency-exchange offering.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Ruvien offers FX and international payment services to individuals and businesses, overlapping Revolut\u2019s core cross-border payments and currency-exchange offering."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "FX and international payments are core Revolut products; Ruvien sells cross-border currency exchange and payments to the same consumer/SME buyers, like a Wise-style comparable."
+        }
+      ]
     },
     {
       "name": "Transferra",
@@ -1428,7 +2440,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Transferra overlaps Revolut Business in multi-currency accounts, FX, cross-border payments, and team cards for globally operating businesses."
+      "rationale": "Business fintech offering multi-currency accounts, Visa cards, FX, and cross-border payments\u2014core Revolut Business capabilities.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Business fintech offering multi-currency accounts, Visa cards, FX, and cross-border payments\u2014core Revolut Business capabilities."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Digital multi-currency business accounts with instant FX and corporate cards\u2014directly comparable to Revolut's business banking offering."
+        }
+      ]
     },
     {
       "name": "Remitng",
@@ -1445,7 +2469,19 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "Both offer consumer fintech apps for sending, receiving, and managing money, including cross-border transfers and payments."
+      "rationale": "Consumer fintech app offering money transfers and payments, overlapping Revolut's core remittance and payment services despite narrower scope.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Consumer fintech app offering money transfers and payments, overlapping Revolut's core remittance and payment services despite narrower scope."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Consumer fintech app for money transfers and payments, overlapping Revolut's core payments/FX product and consumer market despite narrower scope."
+        }
+      ]
     },
     {
       "name": "Remitiva",
@@ -1462,7 +2498,19 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "Both provide consumer cross-border money transfers and FX, targeting users evaluating fast, low-fee international payments."
+      "rationale": "Remitiva is a regulated consumer cross-border payments and FX transfer platform, overlapping Revolut\u2019s international money-transfer use case.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Remitiva is a regulated consumer cross-border payments and FX transfer platform, overlapping Revolut\u2019s international money-transfer use case."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "FCA-regulated international money-transfer fintech overlapping Revolut's payments and FX axis; direct comparable like Wise/Remitly."
+        }
+      ]
     },
     {
       "name": "Merge",
@@ -1478,8 +2526,25 @@
         "industries": null,
         "employee_count": "11-50"
       },
-      "relevant": true,
-      "rationale": "Both provide businesses multi-currency accounts and global real-time payments, serving treasury teams managing cross-border transactions and funds."
+      "relevant": false,
+      "rationale": "B2B stablecoin/payment-infrastructure API for fintechs and marketplaces, not a digital banking super-app; supplier to the category rather than a Revolut peer.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Offers multi-currency business accounts and cross-border real-time payments, overlapping Revolut Business's payments and FX banking services."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "B2B stablecoin/payment-infrastructure API for fintechs and marketplaces, not a digital banking super-app; supplier to the category rather than a Revolut peer."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "Merge is a B2B payments/stablecoin API infrastructure provider, not a consumer/business neobank super-app like Revolut."
+        }
+      ]
     },
     {
       "name": "Sovereign International (UK)",
@@ -1496,7 +2561,24 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Both offer business and consumer foreign exchange and international payments, serving customers managing cross-border transactions and currency risk."
+      "rationale": "FCA-regulated FX and international-payments provider serving consumers and businesses, directly overlapping Revolut's cross-border payments and currency-exchange offering.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "FCA-regulated FX and international-payments provider serving consumers and businesses, directly overlapping Revolut's cross-border payments and currency-exchange offering."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "FX brokerage reselling partners' rails (Ebury, Currency Cloud) with dedicated traders; an intermediary in the category, not a digital-banking/fintech platform comparable to Revolut."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "FX and international payments provider for businesses/individuals, overlapping Revolut's FX and cross-border payments offering; a niche comparable/competitor.ature.You must respond with valid JSON.11"
+        }
+      ]
     },
     {
       "name": "Clearing",
@@ -1513,7 +2595,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Both offer businesses multi-currency accounts, cross-border payments, and FX capabilities for managing international financial operations."
+      "rationale": "Both offer multi-currency accounts, cross-border payments and FX-like financial services, with Clearing focused on international business users.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both offer multi-currency accounts, cross-border payments and FX-like financial services, with Clearing focused on international business users."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Multi-currency accounts, cross-border payments, and FX overlap strongly with Revolut's core banking/payments product; a direct comparable in digital finance."
+        }
+      ]
     },
     {
       "name": "Unity FX",
@@ -1530,7 +2624,19 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "Unity FX overlaps Revolut\u2019s core foreign-exchange, international payments, and multi-currency account offerings for both consumers and businesses."
+      "rationale": "FX provider offering multi-currency accounts and international payments to consumers and businesses, overlapping Revolut's core payments and foreign-exchange services.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "FX provider offering multi-currency accounts and international payments to consumers and businesses, overlapping Revolut's core payments and foreign-exchange services."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "FX and multi-currency account provider for individuals and businesses overlaps Revolut's cross-border payments/FX offering; a smaller competitor on the product axis."
+        }
+      ]
     },
     {
       "name": "FortySeven",
@@ -1547,7 +2653,19 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "Both offer digital financial accounts bridging fiat and crypto, serving users seeking integrated banking, payments, and digital-asset management."
+      "rationale": "Multi-asset digital banking platform offers fiat accounts, payments infrastructure, and cards/crypto-adjacent financial services comparable to Revolut.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Multi-asset digital banking platform offers fiat accounts, payments infrastructure, and cards/crypto-adjacent financial services comparable to Revolut."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Multi-asset digital banking platform bridging fiat and crypto, with consumer accounts and business services \u2014 directly comparable to Revolut's digital banking model."
+        }
+      ]
     },
     {
       "name": "Travel Wallet",
@@ -1564,7 +2682,19 @@
         "employee_count": "51-200"
       },
       "relevant": true,
-      "rationale": "Both offer app-based foreign exchange, payment cards, and international spending services to consumers seeking low-cost cross-border transactions."
+      "rationale": "Mobile FX and card-payment service for consumers, directly overlapping Revolut\u2019s core travel money, multicurrency payments, and card offering.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Mobile FX and card-payment service for consumers, directly overlapping Revolut\u2019s core travel money, multicurrency payments, and card offering."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Fintech offering multi-currency FX, payment cards, and app-based payments\u2014directly overlaps Revolut's core consumer FX/cards product, a comparable digital payments player."
+        }
+      ]
     },
     {
       "name": "Radiant Money",
@@ -1581,7 +2711,19 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "Both provide digital multi-currency accounts, international transfers, FX, and cards to individuals and businesses managing cross-border finances."
+      "rationale": "Multi-currency accounts, international transfers, FX conversion, and debit cards closely overlap Revolut's digital banking and cross-border financial services.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Multi-currency accounts, international transfers, FX conversion, and debit cards closely overlap Revolut's digital banking and cross-border financial services."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Multi-currency digital banking with FX conversion, international transfers, and debit cards \u2014 directly mirrors Revolut's core borderless banking product for consumers and businesses."
+        }
+      ]
     },
     {
       "name": "Revalcoin",
@@ -1598,7 +2740,19 @@
         "employee_count": "501-1000"
       },
       "relevant": false,
-      "rationale": "Revalcoin is primarily a cryptocurrency wallet and exchange, not a digital bank offering broad payments, banking, FX, and business financial services."
+      "rationale": "Crypto wallet and exchange for individual investors, not a broad digital banking super-app for consumer and business financial services.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Crypto wallet and exchange for individual investors, not a broad digital banking super-app for consumer and business financial services."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Crypto-only wallet/exchange; lacks Revolut's core banking, payments, and FX product breadth \u2014 narrow digital-asset tool, not a banking super-app comparable."
+        }
+      ]
     },
     {
       "name": "Currency Global",
@@ -1615,7 +2769,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Both provide digital international money transfers and foreign exchange services to individuals and businesses managing cross-border payments and currency exposure."
+      "rationale": "FX transfers, currency exchange, and business international payments overlap materially with Revolut\u2019s core financial-services offering.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "FX transfers, currency exchange, and business international payments overlap materially with Revolut\u2019s core financial-services offering."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Regulated fintech for international money transfers and FX, overlapping Revolut's core cross-border payments/FX offering for consumers and SMEs \u2014 a Wise-style competitor."
+        }
+      ]
     },
     {
       "name": "Swipe",
@@ -1632,7 +2798,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Swipe overlaps Revolut Business in multi-currency accounts, cross-border payments, FX, and cards, serving businesses managing international financial operations."
+      "rationale": "Multi-currency business accounts, cards, FX, and cross-border payment tools overlap directly with Revolut Business.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Multi-currency business accounts, cards, FX, and cross-border payment tools overlap directly with Revolut Business."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Fintech offering multi-currency accounts, FX, virtual/physical cards, and cross-border payments \u2014 direct product and market overlap with Revolut's business banking."
+        }
+      ]
     },
     {
       "name": "Routefusion",
@@ -1649,7 +2827,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "Routefusion sells embedded payments infrastructure APIs to fintech platforms, while Revolut provides end-user digital banking; their buyers and core job differ."
+      "rationale": "Routefusion is payments infrastructure for fintech platforms, not a consumer/business digital bank or financial super-app like Revolut.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Routefusion is payments infrastructure for fintech platforms, not a consumer/business digital bank or financial super-app like Revolut."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "B2B payments-infrastructure API selling to fintech platforms, a supplier-style vendor rather than a peer digital bank/super-app serving end users like Revolut."
+        }
+      ]
     },
     {
       "name": "ECOMMBX",
@@ -1666,7 +2856,19 @@
         "employee_count": "51-200"
       },
       "relevant": true,
-      "rationale": "Both provide digital banking platforms with business accounts, cards, cross-border payments, and multi-currency conversion for internationally operating businesses."
+      "rationale": "Digital banking platform offering multi-currency accounts, cross-border payments, cards, FX, and business financial services comparable to Revolut Business.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Digital banking platform offering multi-currency accounts, cross-border payments, cards, FX, and business financial services comparable to Revolut Business."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Digital e-money platform offering multi-currency accounts, cards, cross-border payments, and FX \u2014 same product and model as Revolut."
+        }
+      ]
     },
     {
       "name": "Curvo",
@@ -1683,7 +2885,24 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "Both offer app-based investing to European consumers, and users could evaluate either for accessible, managed investment and savings needs."
+      "rationale": "Consumer-facing European fintech app offering investing, overlapping Revolut\u2019s retail investing and digital-finance customer base.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Consumer-facing European fintech app offering investing, overlapping Revolut\u2019s retail investing and digital-finance customer base."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Narrow passive-investing-only app; lacks Revolut's core banking, payments, cards, and FX \u2014 a single feature of the super-app, not a comparable."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Consumer fintech app for young Europeans offering investing, overlapping Revolut's retail investing/neobank offering; a narrower peer comparable.', ''"
+        }
+      ]
     },
     {
       "name": "QuickFX\u2122",
@@ -1700,7 +2919,19 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "QuickFX overlaps Revolut\u2019s core international payments and foreign-exchange offering for individuals and businesses managing cross-border transfers."
+      "rationale": "International money-transfer and FX platform serving consumers and businesses, overlapping Revolut's cross-border payments and foreign-exchange offerings.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "International money-transfer and FX platform serving consumers and businesses, overlapping Revolut's cross-border payments and foreign-exchange offerings."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Cross-border payments and FX transfer platform competing directly with Revolut's core international payments/FX offering for consumers and businesses."
+        }
+      ]
     },
     {
       "name": "InvestEngine",
@@ -1716,11 +2947,26 @@
         "industries": null,
         "employee_count": "51-200"
       },
-      "relevant": true,
-      "rationale": "Both offer self-directed consumer investing, including ETFs, and target individuals seeking low-cost digital platforms to build and manage portfolios."
+      "relevant": false,
+      "rationale": "InvestEngine is a narrow ETF-only investing platform, not a digital banking/payments super-app; investing is just one Revolut feature, so resemblance is weak.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both offer consumer-facing digital investment products, with InvestEngine a specialized ETF investing alternative to Revolut's investing service."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "InvestEngine is a narrow ETF-only investing platform, not a digital banking/payments super-app; investing is just one Revolut feature, so resemblance is weak."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "InvestEngine is a narrow ETF investment platform only; lacks banking, cards, payments, FX breadth of Revolut's neobank super-app.', single overak overlap in investing.You must respond with valid JSON.You You must respond with valid JSON.You"
+        }
+      ]
     }
   ],
-  "error": null,
-  "relevant_count_at_25": 23,
-  "precision_at_25": 92.0
+  "error": null
 }

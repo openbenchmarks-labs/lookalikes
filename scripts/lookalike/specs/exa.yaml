@@ -9,7 +9,7 @@ request:
   method: POST
   path: /search
   body:
-    query: $query                     # "companies like <seed>" per Exa company vertical docs
+    query: $query                     # "Find companies similar to <seed> (<domain>), <identity>."
     category: company
     type: auto
     numResults: $num_results          # set by build_request hook (k * over_fetch, capped 100)
@@ -22,6 +22,4 @@ hooks:
   build_request: exa_company_query
   transform_candidates: exa_dedupe_by_domain   # page hits -> one company per domain, score sort
 configs:
-  - { name: full, prompt_variant: full, over_fetch: 1 }
-  - { name: no_return, prompt_variant: no_return, over_fetch: 1 }
-  - { name: no_similarity_clause, prompt_variant: no_similarity_clause, over_fetch: 1 }
+  - { name: seed_first, over_fetch: 1 }

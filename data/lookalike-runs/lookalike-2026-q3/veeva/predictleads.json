@@ -8,16 +8,20 @@
     "use_paging": true
   },
   "k": 100,
-  "relevant_count": 12,
-  "precision_at_k": 12.0,
-  "relevant_count_at_10": 6,
-  "relevant_count_at_100": 12,
-  "precision_at_10": 60.0,
-  "precision_at_100": 12.0,
+  "relevant_count": 16,
+  "precision_at_k": 16.0,
+  "relevant_count_at_10": 9,
+  "relevant_count_at_25": 16,
+  "relevant_count_at_100": 16,
+  "precision_at_10": 90.0,
+  "precision_at_25": 64.0,
+  "precision_at_100": 16.0,
   "latency_ms": 786,
   "cost_usd": null,
-  "judge_model": "gpt-5.6",
-  "judged_at": "2026-07-27T01:18:05Z",
+  "duplicates_removed": 0,
+  "max_results": 25,
+  "judge_model": "majority(n=3): claude-opus-5,gpt-5.6-terra,kimi-k3",
+  "judged_at": "2026-08-10T19:34:09Z",
   "candidates": [
     {
       "name": "IQVIA Inc",
@@ -31,7 +35,19 @@
         "predict_leads_id": "ccf6fc13-f056-5582-9946-5046fff8b6fe"
       },
       "relevant": true,
-      "rationale": "IQVIA offers clinical data and commercial technology for life sciences, overlapping Veeva\u2019s clinical and commercial operations products and buyer base."
+      "rationale": "IQVIA serves life-sciences companies with clinical and commercial technology, data, and execution solutions, overlapping Veeva\u2019s core buyers and operational workflows.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "IQVIA serves life-sciences companies with clinical and commercial technology, data, and execution solutions, overlapping Veeva\u2019s core buyers and operational workflows."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "IQVIA serves life sciences with clinical research tech, commercial software (OCE competes with Veeva CRM) and data analytics\u2014same buyers, genuine competitor/comparable."
+        }
+      ]
     },
     {
       "name": "ArisGlobal LLC",
@@ -45,7 +61,19 @@
         "predict_leads_id": "cb8d3cd9-26ae-5281-807e-b7f09206ed6f"
       },
       "relevant": true,
-      "rationale": "ArisGlobal offers life-sciences software for drug development, safety, and regulatory operations, overlapping Veeva\u2019s products and serving the same pharmaceutical buyers."
+      "rationale": "Life sciences SaaS platform for drug development, compliance, and regulatory functions directly overlaps Veeva\u2019s clinical and regulatory software market.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Life sciences SaaS platform for drug development, compliance, and regulatory functions directly overlaps Veeva\u2019s clinical and regulatory software market."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Life-sciences cloud software for drug development, safety, and regulatory compliance \u2014 same market and overlapping product lines as Veeva; direct competitor."
+        }
+      ]
     },
     {
       "name": "Medidata Solutions",
@@ -59,7 +87,19 @@
         "predict_leads_id": "e1d583c5-7a8b-54a4-8b90-640f99af3832"
       },
       "relevant": true,
-      "rationale": "Both provide cloud software for life sciences, with overlapping clinical trial management and operations capabilities serving the same pharmaceutical and biotech buyers."
+      "rationale": "Medidata provides clinical trial operations software to life sciences companies, directly overlapping Veeva\u2019s clinical solutions and buyer market.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Medidata provides clinical trial operations software to life sciences companies, directly overlapping Veeva\u2019s clinical solutions and buyer market."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Medidata provides clinical trial software for life sciences, directly overlapping Veeva's clinical operations products \u2014 a true competitor and comparable."
+        }
+      ]
     },
     {
       "name": "Clarivate Analytics",
@@ -72,8 +112,25 @@
         "refreshed_at": "2026-06-27T18:51:54Z",
         "predict_leads_id": "5ad18a99-8be0-516f-84ef-63f14f9eb22a"
       },
-      "relevant": false,
-      "rationale": "Clarivate provides life-sciences data and research intelligence, not CRM or clinical, regulatory, quality, and content operations software for the same workflows."
+      "relevant": true,
+      "rationale": "Both serve life-sciences companies; Clarivate's clinical/regulatory intelligence and analytics overlap Veeva's clinical and regulatory software market and buyer.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Clarivate primarily sells life-sciences intelligence and research data, not Veeva-like CRM, clinical operations, regulatory, quality, or content workflow software."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both serve life-sciences companies; Clarivate's clinical/regulatory intelligence and analytics overlap Veeva's clinical and regulatory software market and buyer."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Both sell software/data intelligence to life sciences R&D and commercial buyers; overlaps Veeva's data/regulatory offerings as comparable.\u00bb, ok"
+        }
+      ]
     },
     {
       "name": "Dotmatics Ltd",
@@ -86,8 +143,20 @@
         "refreshed_at": "2026-06-27T18:51:54Z",
         "predict_leads_id": "14453375-a737-5ed4-b2be-7068b68ea4c1"
       },
-      "relevant": false,
-      "rationale": "Dotmatics focuses discovery R&D and laboratory data management, while Veeva\u2019s core platforms serve commercial, clinical, regulatory, and quality operations."
+      "relevant": true,
+      "rationale": "Life-sciences software platform for scientific R&D data and digital operations, overlapping Veeva\u2019s life-sciences customer base and clinical/R&D workflow market.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Life-sciences software platform for scientific R&D data and digital operations, overlapping Veeva\u2019s life-sciences customer base and clinical/R&D workflow market."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both sell enterprise cloud software platforms to life sciences companies; Dotmatics' R&D data platform is a comparable in the same market."
+        }
+      ]
     },
     {
       "name": "PharmaLex GmbH",
@@ -101,7 +170,19 @@
         "predict_leads_id": "cd473101-c7d2-554c-8743-ef5c94061762"
       },
       "relevant": false,
-      "rationale": "PharmaLex is primarily a life-sciences regulatory and quality consultancy, not a competing cloud software platform for the same operational workflows."
+      "rationale": "Primarily a life-sciences regulatory and quality consultancy/service provider, not a competing cloud software platform like Veeva.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Primarily a life-sciences regulatory and quality consultancy/service provider, not a competing cloud software platform like Veeva."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Primarily a life-sciences consulting firm serving regulatory/quality functions, not a competing cloud software platform like Veeva."
+        }
+      ]
     },
     {
       "name": "Certara Inc.",
@@ -115,7 +196,19 @@
         "predict_leads_id": "93713887-6a80-54dd-a5ca-25c587a2e341"
       },
       "relevant": true,
-      "rationale": "Both provide specialized life-sciences software, with overlapping regulatory and drug-development workflows for pharmaceutical and biotech customers."
+      "rationale": "Both sell specialized software to life-sciences drug-development teams, including regulatory workflows, making Certara a relevant adjacent comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both sell specialized software to life-sciences drug-development teams, including regulatory workflows, making Certara a relevant adjacent comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Life-sciences software vendor: drug development technology, predictive modeling, and regulatory software \u2014 comparable to Veeva's life-sciences cloud offerings."
+        }
+      ]
     },
     {
       "name": "Clario Holdings Inc.",
@@ -128,8 +221,20 @@
         "refreshed_at": "2026-06-27T18:51:54Z",
         "predict_leads_id": "b8d7ee97-9aa7-56ba-888a-286c5c6377ee"
       },
-      "relevant": false,
-      "rationale": "Clario provides clinical endpoint data and evidence services, not Veeva-like clinical operations, regulatory, quality, content, or life-sciences CRM software."
+      "relevant": true,
+      "rationale": "Provides clinical-trial technology for drug development, directly overlapping Veeva's life-sciences clinical operations market.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Provides clinical-trial technology for drug development, directly overlapping Veeva's life-sciences clinical operations market."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Clinical-trial technology for pharma/biotech; overlaps Veeva's life-sciences clinical software market and buyer, a genuine comparable."
+        }
+      ]
     },
     {
       "name": "Signant Health, Inc.",
@@ -143,7 +248,19 @@
         "predict_leads_id": "01f0fbbb-b9f2-54b5-87c7-b82c2b803047"
       },
       "relevant": true,
-      "rationale": "Both provide life-sciences clinical-operations software, with overlapping buyers managing clinical trials and trial data workflows."
+      "rationale": "Clinical trial data, eConsent, and eCOA platforms serve the same life-sciences clinical-operations market as Veeva's clinical software.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Clinical trial data, eConsent, and eCOA platforms serve the same life-sciences clinical-operations market as Veeva's clinical software."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Life-sciences clinical trial software (eCOA, eConsent) serving same pharma buyers as Veeva's clinical operations suite \u2014 direct product and market overlap."
+        }
+      ]
     },
     {
       "name": "Ennov Group",
@@ -157,7 +274,19 @@
         "predict_leads_id": "6551a53e-a96d-5956-83e3-4bc41f0fa199"
       },
       "relevant": true,
-      "rationale": "Ennov provides life-sciences regulatory, quality, and content-management software, directly overlapping Veeva offerings and serving the same operational buyers."
+      "rationale": "Life-sciences software platform for regulatory, clinical, quality, and pharmacovigilance operations, directly overlapping Veeva's product suite and customers.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Life-sciences software platform for regulatory, clinical, quality, and pharmacovigilance operations, directly overlapping Veeva's product suite and customers."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Life-sciences regulatory, quality, and content management software \u2014 directly competes with Veeva's Vault RIM/Quality suite for the same buyers."
+        }
+      ]
     },
     {
       "name": "Benchling",
@@ -171,7 +300,19 @@
         "predict_leads_id": "39a1ed89-eeb3-502f-a691-148a064c10ba"
       },
       "relevant": true,
-      "rationale": "Both provide cloud platforms for life-sciences organizations, with overlapping laboratory, data, quality, and scientific workflow use cases."
+      "rationale": "Both provide cloud platforms for life-sciences R&D operations and scientific workflows, serving overlapping biotech and pharmaceutical customers.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both provide cloud platforms for life-sciences R&D operations and scientific workflows, serving overlapping biotech and pharmaceutical customers."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both sell cloud software to life sciences/biotech companies; Benchling's R&D data platform is a direct comparable to Veeva's life-sciences cloud suite."
+        }
+      ]
     },
     {
       "name": "Saama Technologies, Inc.",
@@ -185,7 +326,19 @@
         "predict_leads_id": "93e3d739-4527-54b4-97da-707e4d95b9d0"
       },
       "relevant": true,
-      "rationale": "Both provide life-sciences software for pharmaceutical clinical development teams, with overlapping clinical operations, data, and analytics use cases."
+      "rationale": "Both sell software to pharmaceutical clinical-development teams, with Saama providing clinical data analytics adjacent to Veeva's clinical operations suite.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both sell software to pharmaceutical clinical-development teams, with Saama providing clinical data analytics adjacent to Veeva's clinical operations suite."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Saama sells AI-driven clinical analytics software to pharma, matching Veeva's life-sciences clinical software market and buyer \u2014 a genuine comparable."
+        }
+      ]
     },
     {
       "name": "Castor EDC",
@@ -199,7 +352,19 @@
         "predict_leads_id": "d6a84aec-4bc8-544b-9291-027ecf160663"
       },
       "relevant": true,
-      "rationale": "Castor\u2019s clinical-trial data platform overlaps Veeva\u2019s clinical operations software and targets the same life-sciences research and clinical operations buyers."
+      "rationale": "Clinical-trial data platform serving life-sciences companies; overlaps Veeva\u2019s clinical operations software market and product area.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Clinical-trial data platform serving life-sciences companies; overlaps Veeva\u2019s clinical operations software market and product area."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Life-sciences clinical-trial software (EDC/ePRO), directly overlapping Veeva's clinical operations product line; same buyers, genuine comparable."
+        }
+      ]
     },
     {
       "name": "Axtria Inc.",
@@ -213,7 +378,19 @@
         "predict_leads_id": "00b63851-b025-5605-a9a2-aef8a3c13c27"
       },
       "relevant": true,
-      "rationale": "Both provide life-sciences-specific commercial software for pharmaceutical sales and marketing teams, with overlap in CRM-adjacent data, analytics, and commercial operations."
+      "rationale": "Pharma-focused commercial analytics platform serving sales and marketing teams overlaps Veeva's life-sciences commercial software market.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Pharma-focused commercial analytics platform serving sales and marketing teams overlaps Veeva's life-sciences commercial software market."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Life-sciences-specific commercial software for pharma sales/marketing, directly comparable to Veeva's life-sciences CRM and commercial cloud products."
+        }
+      ]
     },
     {
       "name": "ProPharma Group",
@@ -227,7 +404,19 @@
         "predict_leads_id": "a6ca36cf-9d36-5840-83c3-c3d23dc84788"
       },
       "relevant": false,
-      "rationale": "ProPharma primarily delivers outsourced safety, medical, and regulatory services, not a life-sciences cloud software platform evaluated for the same operational needs."
+      "rationale": "ProPharma is primarily a life-sciences regulatory and safety services/consulting provider, not a comparable cloud software platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "ProPharma is primarily a life-sciences regulatory and safety services/consulting provider, not a comparable cloud software platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Consulting/services firm for drug development, not a life-sciences software vendor; serves the category rather than competing with Veeva's cloud products."
+        }
+      ]
     },
     {
       "name": "APCER Life Sciences, Inc.",
@@ -241,7 +430,19 @@
         "predict_leads_id": "549d94e3-5756-576f-831c-796b30fd0f6a"
       },
       "relevant": false,
-      "rationale": "APCER primarily provides outsourced safety, medical, and regulatory services, not a cloud software platform for life-sciences operations like Veeva."
+      "rationale": "APCER is a life-sciences safety and regulatory services provider, not a cloud software platform competing with Veeva\u2019s clinical and commercial applications.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "APCER is a life-sciences safety and regulatory services provider, not a cloud software platform competing with Veeva\u2019s clinical and commercial applications."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Pharmacovigilance/regulatory services provider, not life-sciences cloud software; serves the category rather than competing with Veeva's product."
+        }
+      ]
     },
     {
       "name": "Pharmaace",
@@ -255,7 +456,19 @@
         "predict_leads_id": "49666ac4-afe8-5a45-862a-62110387484e"
       },
       "relevant": false,
-      "rationale": "Pharmaace provides life-sciences forecasting and commercial analytics services, not Veeva-like CRM, clinical, regulatory, quality, or content operations software."
+      "rationale": "Life-sciences-focused analytics and forecasting services, but not a cloud CRM, clinical, regulatory, quality, or content-operations software platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Life-sciences-focused analytics and forecasting services, but not a cloud CRM, clinical, regulatory, quality, or content-operations software platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Pharmaace is an analytics/consulting services firm for life sciences, not a cloud software product competitor to Veeva's platform."
+        }
+      ]
     },
     {
       "name": "ZoomRx",
@@ -269,7 +482,19 @@
         "predict_leads_id": "00bf1ae4-b6d3-513f-91d3-0afa4fbe3226"
       },
       "relevant": false,
-      "rationale": "ZoomRx provides biopharma market research and consulting, not life-sciences CRM, clinical, regulatory, quality, or content-operations software for the same job."
+      "rationale": "ZoomRx is a biopharma-focused insights and consulting provider, not a life-sciences CRM, clinical, regulatory, quality, or content-operations software peer.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "ZoomRx is a biopharma-focused insights and consulting provider, not a life-sciences CRM, clinical, regulatory, quality, or content-operations software peer."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Pharma market-research and consulting/analytics provider, not life-sciences cloud software; serves the category as a services firm rather than competing with Veeva."
+        }
+      ]
     },
     {
       "name": "Endpoint Clinical, inc.",
@@ -283,7 +508,19 @@
         "predict_leads_id": "f3e63e69-2704-567f-bffe-c49b67cb3b1a"
       },
       "relevant": true,
-      "rationale": "Both provide cloud technology for life-sciences clinical trial operations, serving clinical teams managing trial execution and related workflows."
+      "rationale": "Provides clinical-trial randomization and supply-chain technology, overlapping Veeva's life-sciences clinical-operations market.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Provides clinical-trial randomization and supply-chain technology, overlapping Veeva's life-sciences clinical-operations market."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Clinical-trial software (randomization, supply management) for life-sciences sponsors \u2014 matches Veeva's clinical operations axis and buyer."
+        }
+      ]
     },
     {
       "name": "MasterControl, Inc.",
@@ -297,7 +534,19 @@
         "predict_leads_id": "b1ffdf7d-70bb-5af4-a1a7-859f0ea84902"
       },
       "relevant": true,
-      "rationale": "MasterControl overlaps Veeva\u2019s life-sciences quality and manufacturing operations software, serving the same regulated-industry quality and operations buyers."
+      "rationale": "Life-sciences cloud platform overlapping Veeva's quality, compliance, document, and manufacturing operations; a direct comparable for regulated life-sciences customers.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Life-sciences cloud platform overlapping Veeva's quality, compliance, document, and manufacturing operations; a direct comparable for regulated life-sciences customers."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Quality/regulatory management software for life sciences directly overlaps Veeva's quality and regulatory cloud products; genuine competitor/comparable."
+        }
+      ]
     },
     {
       "name": "Agilisium Technologies LLC.",
@@ -311,7 +560,19 @@
         "predict_leads_id": "b5acf430-f6a5-52d9-97a3-e8d4dad15484"
       },
       "relevant": false,
-      "rationale": "Agilisium is a life-sciences digital-transformation consultancy, not a CRM, clinical, regulatory, quality, or content-operations software platform competing with Veeva."
+      "rationale": "Life-sciences-focused AI and data engineering services firm, not a CRM, clinical, regulatory, quality, or content software platform comparable to Veeva.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Life-sciences-focused AI and data engineering services firm, not a CRM, clinical, regulatory, quality, or content software platform comparable to Veeva."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Consultancy delivering AI/data-engineering services to life sciences clients, not a software product competitor to Veeva's CRM/clinical platform."
+        }
+      ]
     },
     {
       "name": "EVERSANA Life Sciences LLC",
@@ -325,7 +586,19 @@
         "predict_leads_id": "003dc4d1-4e90-5cbc-8555-47d4c4b04950"
       },
       "relevant": false,
-      "rationale": "EVERSANA primarily provides outsourced commercialization and consulting services, not life-sciences cloud software for CRM, clinical, regulatory, or quality operations."
+      "rationale": "EVERSANA provides outsourced commercialization and market-access services, not life-sciences CRM, clinical, regulatory, quality, or content software.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "EVERSANA provides outsourced commercialization and market-access services, not life-sciences CRM, clinical, regulatory, quality, or content software."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "EVERSANA is a commercialization services provider to pharma, not life-sciences cloud software; serves the category rather than competing with Veeva's product."
+        }
+      ]
     },
     {
       "name": "Indegene, Inc.",
@@ -339,7 +612,19 @@
         "predict_leads_id": "8e7ad1b3-df1e-5d6f-b546-edece7f30cb8"
       },
       "relevant": false,
-      "rationale": "Indegene primarily provides commercialization and digital-transformation services, rather than competing life-sciences CRM, clinical, regulatory, or quality operations software."
+      "rationale": "Indegene is a life-sciences commercialization and technology-services consultancy, not a life-sciences CRM, clinical, regulatory, or quality software platform competitor.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Indegene is a life-sciences commercialization and technology-services consultancy, not a life-sciences CRM, clinical, regulatory, or quality software platform competitor."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Indegene is a life sciences commercialization services/consulting firm serving pharma clients, not a cloud software product company competing with Veeva."
+        }
+      ]
     },
     {
       "name": "Model N, Inc.",
@@ -352,8 +637,20 @@
         "refreshed_at": "2026-06-27T18:51:54Z",
         "predict_leads_id": "9ab14dee-7882-53e6-ba2c-dc3ce35c3b67"
       },
-      "relevant": false,
-      "rationale": "Model N serves life sciences but focuses on pricing and revenue management, not Veeva\u2019s CRM, clinical, regulatory, quality, or content workflows."
+      "relevant": true,
+      "rationale": "Provides cloud revenue optimization, pricing, contracts, and compliance software to pharmaceutical and medtech companies, overlapping Veeva\u2019s life-sciences enterprise software market.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Provides cloud revenue optimization, pricing, contracts, and compliance software to pharmaceutical and medtech companies, overlapping Veeva\u2019s life-sciences enterprise software market."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Cloud software purpose-built for life sciences companies, same buyer persona and market as Veeva; genuine comparable in life-sciences enterprise software."
+        }
+      ]
     },
     {
       "name": "Clinigen Group",
@@ -367,11 +664,20 @@
         "predict_leads_id": "f4dc2ef3-18ce-5ee9-9e00-1e04d1ede062"
       },
       "relevant": false,
-      "rationale": "Clinigen provides pharmaceutical supply and access services, not life-sciences CRM, clinical-operations, regulatory, quality, or content software evaluated for the same job."
+      "rationale": "Clinigen provides pharmaceutical supply and access services, not life-sciences CRM, clinical, regulatory, quality, or content software.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Clinigen provides pharmaceutical supply and access services, not life-sciences CRM, clinical, regulatory, quality, or content software."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Clinigen sells pharma services and drug-supply access solutions, not life-sciences cloud software; a services supplier to pharma, not a Veeva software peer."
+        }
+      ]
     }
   ],
-  "error": null,
-  "max_results": 25,
-  "relevant_count_at_25": 12,
-  "precision_at_25": 48.0
+  "error": null
 }

@@ -7,17 +7,20 @@
     "name": "domain_similarity"
   },
   "k": 100,
-  "relevant_count": 69,
-  "precision_at_k": 69.0,
-  "relevant_count_at_10": 7,
-  "relevant_count_at_100": 69,
-  "precision_at_10": 70.0,
-  "precision_at_100": 69.0,
+  "relevant_count": 71,
+  "precision_at_k": 71.0,
+  "relevant_count_at_10": 8,
+  "relevant_count_at_25": 21,
+  "relevant_count_at_100": 71,
+  "precision_at_10": 80.0,
+  "precision_at_25": 84.0,
+  "precision_at_100": 71.0,
   "latency_ms": 1833,
   "cost_usd": null,
   "duplicates_removed": 10,
-  "judge_model": "gpt-5.6",
-  "judged_at": "2026-07-27T03:22:24Z",
+  "max_results": null,
+  "judge_model": "majority(n=3): claude-opus-5,gpt-5.6-terra,kimi-k3",
+  "judged_at": "2026-08-10T19:46:00Z",
   "candidates": [
     {
       "name": "Uber Technologies",
@@ -34,7 +37,19 @@
         "employee_count": "10001+"
       },
       "relevant": true,
-      "rationale": "Uber directly overlaps Grab in app-based ride-hailing and food delivery, serving the same passengers, drivers, restaurants, and delivery users."
+      "rationale": "Direct competitor super-app: ride-hailing marketplace plus food delivery, serving urban riders, drivers, and merchants.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Direct competitor super-app: ride-hailing marketplace plus food delivery, serving urban riders, drivers, and merchants."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Uber matches Grab on ride-hailing marketplace, food delivery, and logistics \u2014 same product, market, and business model; direct global competitor."
+        }
+      ]
     },
     {
       "name": "Shopee",
@@ -50,8 +65,25 @@
         "industries": null,
         "employee_count": "5001-10000"
       },
-      "relevant": false,
-      "rationale": "Shopee is primarily an e-commerce marketplace, not an on-demand ride-hailing and local delivery super-app; merchant overlap alone is insufficient."
+      "relevant": true,
+      "rationale": "Shopee is a Southeast Asian consumer marketplace with payments and logistics, comparable to Grab\u2019s delivery and merchant ecosystem despite lacking ride-hailing.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Shopee is a Southeast Asian consumer marketplace with payments and logistics, comparable to Grab\u2019s delivery and merchant ecosystem despite lacking ride-hailing."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Shopee is primarily an e-commerce marketplace; only peripheral overlap with Grab's ride-hailing/delivery super-app via payments, not a core competitor or comparable."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Both are SEA consumer super-app-style platforms with marketplaces, payments and logistics; direct regional competitors in delivery/payments.<json_schema>\u00b7</json_schema>"
+        }
+      ]
     },
     {
       "name": "foodpanda",
@@ -68,7 +100,19 @@
         "employee_count": "10001+"
       },
       "relevant": true,
-      "rationale": "foodpanda directly overlaps Grab\u2019s core food and grocery delivery marketplace, serving the same consumers, corporate meal buyers, merchants, and delivery partners."
+      "rationale": "Foodpanda operates an on-demand food and grocery delivery marketplace, a core service within Grab\u2019s super-app offering.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Foodpanda operates an on-demand food and grocery delivery marketplace, a core service within Grab\u2019s super-app offering."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Food/grocery delivery marketplace directly competing with GrabFood; shares Grab's delivery business model and urban consumer market."
+        }
+      ]
     },
     {
       "name": "Gojek",
@@ -85,7 +129,19 @@
         "employee_count": "1001-5000"
       },
       "relevant": true,
-      "rationale": "Gojek closely matches Grab\u2019s super-app model, offering ride-hailing, food delivery, logistics, and merchant services to overlapping consumers and businesses."
+      "rationale": "Gojek is a directly comparable Southeast Asian super-app offering ride-hailing, food and grocery delivery, logistics, and merchant services.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Gojek is a directly comparable Southeast Asian super-app offering ride-hailing, food and grocery delivery, logistics, and merchant services."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Gojek is a super-app offering ride-hailing, food delivery, logistics, and merchant services \u2014 Grab's direct competitor and closest comparable."
+        }
+      ]
     },
     {
       "name": "Lazada",
@@ -102,7 +158,19 @@
         "employee_count": "5001-10000"
       },
       "relevant": false,
-      "rationale": "Lazada is an e-commerce marketplace, not an on-demand ride-hailing and local-services super-app; payments and logistics overlap only incidentally."
+      "rationale": "Lazada is an e-commerce marketplace; despite regional logistics and payments overlap, it lacks Grab\u2019s ride-hailing and on-demand super-app model.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Lazada is an e-commerce marketplace; despite regional logistics and payments overlap, it lacks Grab\u2019s ride-hailing and on-demand super-app model."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Lazada is an e-commerce marketplace; Grab is a ride-hailing/delivery super-app. Different core products and buyer jobs \u2014 no strong axis resemblance."
+        }
+      ]
     },
     {
       "name": "Careem",
@@ -119,7 +187,19 @@
         "employee_count": "1001-5000"
       },
       "relevant": true,
-      "rationale": "Careem closely matches Grab\u2019s super-app model, offering ride-hailing, food and grocery delivery, payments, and other urban consumer services."
+      "rationale": "Careem is a Middle East super-app offering ride-hailing, delivery, and payments, directly comparable to Grab's integrated mobility and commerce platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Careem is a Middle East super-app offering ride-hailing, delivery, and payments, directly comparable to Grab's integrated mobility and commerce platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Careem is a super-app offering ride-hailing, food delivery, and payments in the Middle East \u2014 a direct competitor and comparable to Grab."
+        }
+      ]
     },
     {
       "name": "DoorDash",
@@ -136,7 +216,19 @@
         "employee_count": "10001+"
       },
       "relevant": true,
-      "rationale": "Both operate app-based, on-demand delivery marketplaces connecting consumers and local merchants for food, groceries, and essentials."
+      "rationale": "DoorDash is an on-demand local delivery marketplace, directly comparable to Grab\u2019s food, grocery, and merchant delivery services.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "DoorDash is an on-demand local delivery marketplace, directly comparable to Grab\u2019s food, grocery, and merchant delivery services."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "On-demand delivery marketplace matching Grab's core delivery arm; same business model and consumer market, genuine comparable/competitor."
+        }
+      ]
     },
     {
       "name": "Glovo",
@@ -153,7 +245,19 @@
         "employee_count": "1001-5000"
       },
       "relevant": true,
-      "rationale": "Glovo overlaps Grab\u2019s core on-demand delivery marketplace, serving consumers, local merchants, and couriers through an app-based platform."
+      "rationale": "Glovo operates an on-demand marketplace for food, grocery, and local delivery, directly comparable to Grab\u2019s delivery super-app services.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Glovo operates an on-demand marketplace for food, grocery, and local delivery, directly comparable to Grab\u2019s delivery super-app services."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "On-demand delivery marketplace for food, groceries, and shops \u2014 overlaps Grab's delivery super-app business; genuine competitor/comparable in on-demand delivery."
+        }
+      ]
     },
     {
       "name": "Grubhub",
@@ -170,7 +274,19 @@
         "employee_count": "1001-5000"
       },
       "relevant": true,
-      "rationale": "Both operate online food-ordering and delivery marketplaces connecting consumers with restaurants, with overlapping restaurant merchant tools and buyer personas."
+      "rationale": "Grubhub operates a two-sided food-delivery marketplace for consumers and restaurants, directly overlapping Grab\u2019s delivery and merchant-services business.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Grubhub operates a two-sided food-delivery marketplace for consumers and restaurants, directly overlapping Grab\u2019s delivery and merchant-services business."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both run on-demand delivery marketplaces connecting consumers, restaurants, and drivers; Grubhub matches Grab's core food-delivery pillar on product and business model."
+        }
+      ]
     },
     {
       "name": "Grab",
@@ -187,7 +303,19 @@
         "employee_count": "10001+"
       },
       "relevant": false,
-      "rationale": "This is a duplicate entry for Grab using its careers domain, not a distinct lookalike company."
+      "rationale": "Duplicate entry for the seed company (Grab), not a distinct competitor, comparable, or ICP-expansion prospect.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Duplicate entry for the seed company (Grab), not a distinct competitor, comparable, or ICP-expansion prospect."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Duplicate of the seed itself (Grab, same superapp, careers subdomain), not a distinct lookalike; duplicates are labeled false."
+        }
+      ]
     },
     {
       "name": "Uber Eats",
@@ -204,7 +332,19 @@
         "employee_count": "51-200"
       },
       "relevant": true,
-      "rationale": "Uber Eats directly overlaps Grab\u2019s food and grocery delivery marketplace, serving the same consumers, restaurants, and delivery partners."
+      "rationale": "Uber Eats is a two-sided on-demand delivery marketplace, directly comparable to Grab's food and grocery delivery vertical.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Uber Eats is a two-sided on-demand delivery marketplace, directly comparable to Grab's food and grocery delivery vertical."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "On-demand food/grocery delivery marketplace, directly competes with GrabFood on product, market, and marketplace business model."
+        }
+      ]
     },
     {
       "name": "Swiggy",
@@ -221,7 +361,19 @@
         "employee_count": "10001+"
       },
       "relevant": true,
-      "rationale": "Both operate app-based food delivery marketplaces, serving consumers ordering meals and restaurants seeking delivery demand."
+      "rationale": "Swiggy is an on-demand delivery platform serving urban consumers, directly comparable to Grab's food and grocery delivery marketplace.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Swiggy is an on-demand delivery platform serving urban consumers, directly comparable to Grab's food and grocery delivery marketplace."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "On-demand delivery marketplace directly matching Grab's food/grocery delivery arm; same product, consumer market, and platform business model."
+        }
+      ]
     },
     {
       "name": "iFood",
@@ -238,7 +390,19 @@
         "employee_count": "5001-10000"
       },
       "relevant": true,
-      "rationale": "iFood\u2019s food and grocery delivery marketplace directly overlaps Grab\u2019s delivery business, serving the same consumers, merchants, and delivery partners."
+      "rationale": "iFood is an on-demand delivery marketplace connecting consumers, merchants, and couriers, directly comparable to Grab\u2019s food and grocery delivery businesses.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "iFood is an on-demand delivery marketplace connecting consumers, merchants, and couriers, directly comparable to Grab\u2019s food and grocery delivery businesses."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "iFood is a delivery marketplace platform overlapping Grab's core food/grocery delivery and marketplace business \u2014 a direct comparable super-app-style platform in Brazil."
+        }
+      ]
     },
     {
       "name": "Snapp",
@@ -255,7 +419,19 @@
         "employee_count": "1001-5000"
       },
       "relevant": true,
-      "rationale": "Snapp is a consumer super-app offering ride-hailing, food delivery, shopping, and other on-demand services closely overlapping Grab\u2019s core platform."
+      "rationale": "Snapp is a multi-service super-app offering ride-hailing, food delivery, shopping, and related consumer services, directly comparable to Grab.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Snapp is a multi-service super-app offering ride-hailing, food delivery, shopping, and related consumer services, directly comparable to Grab."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Regional super-app combining ride-hailing, food delivery, and on-demand consumer services \u2014 a direct Grab comparable operating in the Iranian market."
+        }
+      ]
     },
     {
       "name": "Deliveroo",
@@ -272,7 +448,19 @@
         "employee_count": "1001-5000"
       },
       "relevant": true,
-      "rationale": "Deliveroo overlaps Grab\u2019s core food and grocery delivery marketplace, serving the same consumers, restaurants, merchants, and workplace meal buyers."
+      "rationale": "Deliveroo is an on-demand delivery marketplace, directly comparable to Grab's food and grocery delivery services, though it lacks Grab's broader mobility and fintech scope.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Deliveroo is an on-demand delivery marketplace, directly comparable to Grab's food and grocery delivery services, though it lacks Grab's broader mobility and fintech scope."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Deliveroo's food/grocery delivery marketplace matches Grab's core GrabFood delivery arm; same product, buyers, and two-sided model \u2014 a genuine competitor/comparable."
+        }
+      ]
     },
     {
       "name": "Just Eat Takeaway.com",
@@ -289,7 +477,19 @@
         "employee_count": "10001+"
       },
       "relevant": true,
-      "rationale": "Both operate on-demand food delivery marketplaces connecting consumers, restaurants, and couriers for the same ordering and merchant-acquisition jobs."
+      "rationale": "Operates an on-demand food and grocery delivery marketplace, directly comparable to Grab's delivery vertical and consumer-partner platform model.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Operates an on-demand food and grocery delivery marketplace, directly comparable to Grab's delivery vertical and consumer-partner platform model."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "On-demand food/grocery delivery marketplace matching Grab's delivery arm; same consumer-courier-restaurant model, a direct comparable in on-demand delivery."
+        }
+      ]
     },
     {
       "name": "Postmates",
@@ -306,7 +506,19 @@
         "employee_count": "1001-5000"
       },
       "relevant": true,
-      "rationale": "Both operate on-demand local delivery marketplaces connecting consumers with restaurants and retailers for food, grocery, and other goods delivery."
+      "rationale": "Postmates is an on-demand local food, grocery, and retail delivery marketplace, directly comparable to Grab's delivery super-app services.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Postmates is an on-demand local food, grocery, and retail delivery marketplace, directly comparable to Grab's delivery super-app services."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "On-demand delivery marketplace directly overlaps Grab's delivery business (GrabFood); same model and consumer market, a genuine comparable/competitor."
+        }
+      ]
     },
     {
       "name": "Zomato",
@@ -323,7 +535,19 @@
         "employee_count": "1001-5000"
       },
       "relevant": true,
-      "rationale": "Both operate consumer food-delivery marketplaces connecting restaurants with diners for online ordering and last-mile delivery."
+      "rationale": "Zomato operates a consumer food-delivery marketplace, directly comparable to Grab's delivery vertical and merchant network.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Zomato operates a consumer food-delivery marketplace, directly comparable to Grab's delivery vertical and merchant network."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Zomato runs a food-delivery marketplace matching Grab's core delivery business; same model, same urban consumer/restaurant market, direct comparable."
+        }
+      ]
     },
     {
       "name": "foodora",
@@ -340,7 +564,19 @@
         "employee_count": "1001-5000"
       },
       "relevant": true,
-      "rationale": "Foodora overlaps Grab\u2019s core food and grocery delivery marketplace, serving the same consumers, restaurants, merchants, and delivery riders."
+      "rationale": "Operates an on-demand marketplace for food and grocery delivery, directly overlapping a major Grab consumer and merchant service line.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Operates an on-demand marketplace for food and grocery delivery, directly overlapping a major Grab consumer and merchant service line."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Food/grocery delivery marketplace directly comparable to GrabFood; same on-demand delivery product, consumer market, and marketplace model, though lacking ride-hailing/payments breadth."
+        }
+      ]
     },
     {
       "name": "Bolt",
@@ -357,7 +593,19 @@
         "employee_count": "1001-5000"
       },
       "relevant": true,
-      "rationale": "Bolt directly overlaps Grab in super-app mobility, ride-hailing, food delivery, and business transportation services for the same users and buyers."
+      "rationale": "Bolt directly competes with Grab through ride-hailing, food and grocery delivery, mobility, and super-app services.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Bolt directly competes with Grab through ride-hailing, food and grocery delivery, mobility, and super-app services."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are mobility super-apps offering ride-hailing, food/grocery delivery, and related services to urban consumers \u2014 direct competitors on product, market, and model."
+        }
+      ]
     },
     {
       "name": "Getir",
@@ -374,7 +622,19 @@
         "employee_count": "10001+"
       },
       "relevant": true,
-      "rationale": "Getir\u2019s app-based, rapid local delivery of groceries and essentials directly overlaps GrabMart\u2019s on-demand delivery offering for urban consumers."
+      "rationale": "Getir's on-demand delivery marketplace closely matches Grab's delivery vertical, using local couriers and a consumer app for rapid fulfillment.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Getir's on-demand delivery marketplace closely matches Grab's delivery vertical, using local couriers and a consumer app for rapid fulfillment."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "On-demand delivery marketplace for groceries/essentials matches Grab's core GrabMart/GrabFood delivery vertical; same business model and consumer market."
+        }
+      ]
     },
     {
       "name": "Pathao",
@@ -391,7 +651,19 @@
         "employee_count": "1001-5000"
       },
       "relevant": true,
-      "rationale": "Pathao directly overlaps Grab in its core super-app model, offering ride-hailing, food and parcel delivery, payments, and logistics to similar users."
+      "rationale": "Bangladesh super-app offering ride-hailing, food delivery, logistics, and payments, directly comparable to Grab's multi-service platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Bangladesh super-app offering ride-hailing, food delivery, logistics, and payments, directly comparable to Grab's multi-service platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Regional super-app offering ride-hailing, food delivery, parcel logistics, and payments \u2014 direct competitor/comparable to Grab's core model."
+        }
+      ]
     },
     {
       "name": "SuperApp",
@@ -407,8 +679,25 @@
         "industries": null,
         "employee_count": "1001-5000"
       },
-      "relevant": false,
-      "rationale": "SuperApp is an agent-led rural grocery distributor, not a ride-hailing or multi-service on-demand marketplace like Grab."
+      "relevant": true,
+      "rationale": "App-based marketplace with delivery and seller/agent onboarding in Indonesia; matches Grab's delivery/marketplace super-app model and regional consumer market.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Rural grocery marketplace and agent delivery network, not an on-demand multimodal ride-hailing, payments, and super-app platform like Grab."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "App-based marketplace with delivery and seller/agent onboarding in Indonesia; matches Grab's delivery/marketplace super-app model and regional consumer market."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Southeast Asian consumer app marketplace with delivery and agent/merchant network, comparable to Grab's delivery/merchant model.aption fits ICP expansion."
+        }
+      ]
     },
     {
       "name": "Grain",
@@ -425,7 +714,19 @@
         "employee_count": "51-200"
       },
       "relevant": false,
-      "rationale": "Grain is an online restaurant and caterer delivering its own meals, not a multi-merchant delivery, ride-hailing, payments, or super-app platform."
+      "rationale": "Grain is an online restaurant and caterer, not a multi-sided ride-hailing, delivery, payments, and merchant-services marketplace like Grab.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Grain is an online restaurant and caterer, not a multi-sided ride-hailing, delivery, payments, and merchant-services marketplace like Grab."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Grain is an online restaurant/caterer selling its own meals, not an on-demand marketplace or super-app; more a GrabFood merchant-type than a comparable platform."
+        }
+      ]
     },
     {
       "name": "Glife Technologies",
@@ -442,7 +743,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "Glife is a B2B agricultural supply-chain marketplace, not a consumer super-app offering ride-hailing, delivery, payments, and financial services."
+      "rationale": "B2B agrifood supply-chain and farm SaaS platform, not a consumer ride-hailing, delivery, payments, or super-app marketplace.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "B2B agrifood supply-chain and farm SaaS platform, not a consumer ride-hailing, delivery, payments, or super-app marketplace."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "B2B agri supply-chain platform for farmers/HORECA; not a consumer super-app, ride-hailing, delivery marketplace, or payments peer of Grab."
+        }
+      ]
     },
     {
       "name": "Samokat",
@@ -459,7 +772,19 @@
         "employee_count": "10001+"
       },
       "relevant": true,
-      "rationale": "Samokat\u2019s app-based rapid grocery delivery overlaps Grab\u2019s delivery services and targets consumers seeking convenient, on-demand local commerce."
+      "rationale": "Samokat is an on-demand, app-based grocery delivery platform serving the same urban convenience-delivery market as Grab\u2019s delivery services.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Samokat is an on-demand, app-based grocery delivery platform serving the same urban convenience-delivery market as Grab\u2019s delivery services."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "On-demand rapid delivery platform for urban consumers, matching Grab's food/grocery delivery arm; same marketplace delivery business model."
+        }
+      ]
     },
     {
       "name": "Favor Delivery",
@@ -476,7 +801,19 @@
         "employee_count": "1001-5000"
       },
       "relevant": true,
-      "rationale": "Favor\u2019s on-demand food and grocery delivery marketplace overlaps a core Grab service and serves the same consumers and local merchants."
+      "rationale": "On-demand food, grocery, and local delivery marketplace directly overlaps Grab\u2019s delivery super-app services, serving similar consumers and merchants.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "On-demand food, grocery, and local delivery marketplace directly overlaps Grab\u2019s delivery super-app services, serving similar consumers and merchants."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "On-demand food/grocery delivery marketplace matches Grab's core delivery business; genuine comparable despite regional focus."
+        }
+      ]
     },
     {
       "name": "HappyFresh",
@@ -493,7 +830,19 @@
         "employee_count": "201-500"
       },
       "relevant": true,
-      "rationale": "Both operate app-based, on-demand grocery delivery services in Southeast Asia, serving consumers seeking convenient local-store shopping and home delivery."
+      "rationale": "Online grocery delivery marketplace serving urban consumers overlaps Grab\u2019s delivery vertical and on-demand platform model.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Online grocery delivery marketplace serving urban consumers overlaps Grab\u2019s delivery vertical and on-demand platform model."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "On-demand grocery delivery marketplace in Southeast Asia, overlapping Grab's delivery arm (GrabMart/GrabFood); same model, market, region."
+        }
+      ]
     },
     {
       "name": "Rappi",
@@ -510,7 +859,19 @@
         "employee_count": "5001-10000"
       },
       "relevant": true,
-      "rationale": "Both operate on-demand consumer delivery marketplaces connecting restaurants and retailers with urban users, overlapping Grab\u2019s core delivery offering and buyer/user base."
+      "rationale": "Rappi operates an on-demand multi-category delivery marketplace, directly comparable to Grab's delivery and merchant-services super-app offerings.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Rappi operates an on-demand multi-category delivery marketplace, directly comparable to Grab's delivery and merchant-services super-app offerings."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Rappi is an on-demand delivery super-app (food, groceries, essentials) \u2014 direct competitor/comparable to Grab's delivery marketplace in another region."
+        }
+      ]
     },
     {
       "name": "Gett",
@@ -527,7 +888,19 @@
         "employee_count": "501-1000"
       },
       "relevant": true,
-      "rationale": "Gett\u2019s app-based ride-hailing marketplace directly overlaps Grab\u2019s core mobility offering and serves the same riders and business transportation buyers."
+      "rationale": "Gett is an on-demand ride-hailing platform, directly comparable to Grab\u2019s core mobility marketplace.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Gett is an on-demand ride-hailing platform, directly comparable to Grab\u2019s core mobility marketplace."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Gett is a ride-hailing marketplace, matching Grab's core ride-hailing business \u2014 a direct competitor in on-demand transportation."
+        }
+      ]
     },
     {
       "name": "Seamless",
@@ -544,7 +917,19 @@
         "employee_count": "501-1000"
       },
       "relevant": true,
-      "rationale": "Seamless\u2019s restaurant food-ordering and delivery marketplace directly overlaps GrabFood, serving the same consumers and restaurant partners."
+      "rationale": "Online food ordering and restaurant delivery marketplace overlaps directly with GrabFood, a core component of Grab's super-app.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Online food ordering and restaurant delivery marketplace overlaps directly with GrabFood, a core component of Grab's super-app."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Food-delivery marketplace matching Grab's core delivery arm (GrabFood); same consumer-facing marketplace model and restaurant partners."
+        }
+      ]
     },
     {
       "name": "GoGoX",
@@ -561,7 +946,19 @@
         "employee_count": "201-500"
       },
       "relevant": true,
-      "rationale": "Both operate on-demand delivery and logistics platforms in Asia, serving individuals and businesses needing point-to-point or same-day delivery."
+      "rationale": "On-demand urban delivery marketplace overlaps Grab\u2019s delivery vertical, with similar platform model serving consumers and businesses in Asian cities.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "On-demand urban delivery marketplace overlaps Grab\u2019s delivery vertical, with similar platform model serving consumers and businesses in Asian cities."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "On-demand delivery/logistics marketplace in Asia, directly comparable to Grab's delivery arm; same marketplace model and regional market."
+        }
+      ]
     },
     {
       "name": "Eatsy Technologies",
@@ -578,7 +975,19 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "Both provide consumer food-ordering and payment platforms for Southeast Asian diners and restaurants, overlapping Grab\u2019s food and merchant-services offerings."
+      "rationale": "Restaurant order-ahead and payments overlaps Grab\u2019s food delivery and payments ecosystem, serving similar Southeast Asian diners and merchants.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Restaurant order-ahead and payments overlaps Grab\u2019s food delivery and payments ecosystem, serving similar Southeast Asian diners and merchants."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Food-ordering and payment app in Southeast Asia, directly overlapping Grab's GrabFood and payments businesses; same consumers, merchants, and marketplace model."
+        }
+      ]
     },
     {
       "name": "GCash",
@@ -595,7 +1004,19 @@
         "employee_count": "1001-5000"
       },
       "relevant": true,
-      "rationale": "Both offer consumer finance super-apps with digital payments, financial services, and merchant payment solutions for overlapping users and transaction needs."
+      "rationale": "Finance super-app with digital payments and merchant solutions, overlapping Grab\u2019s payments and financial-services ecosystem, though not its mobility focus.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Finance super-app with digital payments and merchant solutions, overlapping Grab\u2019s payments and financial-services ecosystem, though not its mobility focus."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both Southeast Asian consumer super-apps combining digital payments, financial services, and everyday services; strong overlap on business model and market axes."
+        }
+      ]
     },
     {
       "name": "Snoonu",
@@ -612,7 +1033,19 @@
         "employee_count": "1001-5000"
       },
       "relevant": true,
-      "rationale": "Both operate consumer super-app marketplaces centered on on-demand food, grocery, pharmacy, and errand delivery, serving overlapping users and merchants."
+      "rationale": "Both are consumer super-apps bundling on-demand delivery and local services; Snoonu is a regional comparable despite lacking Grab's full ride-hailing breadth.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both are consumer super-apps bundling on-demand delivery and local services; Snoonu is a regional comparable despite lacking Grab's full ride-hailing breadth."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Regional super app bundling food, grocery, and on-demand delivery services \u2014 same super-app business model and marketplace product as Grab."
+        }
+      ]
     },
     {
       "name": "Fave",
@@ -629,7 +1062,19 @@
         "employee_count": "501-1000"
       },
       "relevant": true,
-      "rationale": "Fave overlaps Grab\u2019s payments and merchant-services offerings, serving Southeast Asian consumers and local merchants with digital payments and commerce incentives."
+      "rationale": "Southeast Asian consumer payments and merchant-deals platform; overlaps Grab\u2019s payments and merchant-services ecosystem, though narrower than its super-app model.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Southeast Asian consumer payments and merchant-deals platform; overlaps Grab\u2019s payments and merchant-services ecosystem, though narrower than its super-app model."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "SEA consumer payment platform with merchant acceptance, directly comparable to GrabPay's payments and merchant-services business in the same region."
+        }
+      ]
     },
     {
       "name": "Deliveree",
@@ -646,7 +1091,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "Deliveree is a B2B freight and cargo logistics platform, not a consumer super-app offering ride-hailing, food delivery, payments, and financial services."
+      "rationale": "Deliveree is a B2B road-freight logistics platform, not a consumer ride-hailing, food-delivery, payments, and super-app competitor.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Deliveree is a B2B road-freight logistics platform, not a consumer ride-hailing, food-delivery, payments, and super-app competitor."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Deliveree is a B2B freight/trucking marketplace for logistics managers, not a consumer super-app; overlaps Grab only tangentially in last-mile courier, too weak."
+        }
+      ]
     },
     {
       "name": "gg",
@@ -663,7 +1120,19 @@
         "employee_count": "51-200"
       },
       "relevant": true,
-      "rationale": "Both operate app-based ride-hailing and delivery marketplaces serving commuters, delivery users, and driver partners."
+      "rationale": "Armenian on-demand ride-hailing and delivery platform directly comparable to Grab\u2019s mobility and delivery marketplace.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Armenian on-demand ride-hailing and delivery platform directly comparable to Grab\u2019s mobility and delivery marketplace."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Ride-hailing and delivery marketplace, same product and market as Grab's core mobility business, like a regional ride-hailing peer."
+        }
+      ]
     },
     {
       "name": "EASI Perth",
@@ -680,7 +1149,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "EASI operates an on-demand food and grocery delivery marketplace, directly overlapping Grab\u2019s delivery services for consumers, restaurants, and drivers."
+      "rationale": "EASI operates a multi-sided food and grocery delivery marketplace with merchant and driver platforms, directly comparable to Grab's delivery business.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "EASI operates a multi-sided food and grocery delivery marketplace with merchant and driver platforms, directly comparable to Grab's delivery business."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Food/grocery delivery marketplace directly comparable to Grab's delivery arm; same consumer-and-merchant marketplace model, just regional and food-focused."
+        }
+      ]
     },
     {
       "name": "Quick",
@@ -697,7 +1178,19 @@
         "employee_count": "5001-10000"
       },
       "relevant": false,
-      "rationale": "Quick is a B2B freight, warehousing, and logistics provider, not a consumer super-app or on-demand ride-hailing and delivery marketplace."
+      "rationale": "Quick is a B2B freight, warehousing, and logistics provider, not a consumer-facing ride-hailing and delivery super-app marketplace.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Quick is a B2B freight, warehousing, and logistics provider, not a consumer-facing ride-hailing and delivery super-app marketplace."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "B2B logistics/freight and warehousing operator, not an on-demand consumer ride-hailing or delivery marketplace like Grab's super-app."
+        }
+      ]
     },
     {
       "name": "Good Eggs",
@@ -713,8 +1206,20 @@
         "industries": null,
         "employee_count": "501-1000"
       },
-      "relevant": true,
-      "rationale": "Good Eggs\u2019 consumer grocery-delivery service overlaps GrabMart\u2019s on-demand grocery delivery and serves consumers seeking the same delivery job."
+      "relevant": false,
+      "rationale": "Good Eggs is a consumer grocery-delivery service, overlapping Grab's delivery vertical but not its core on-demand mobility super-app model.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Good Eggs is a consumer grocery-delivery service, overlapping Grab's delivery vertical but not its core on-demand mobility super-app model."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Good Eggs is a curated online grocer selling its own inventory, not an on-demand marketplace/super-app like Grab's ride-hailing and delivery platform."
+        }
+      ]
     },
     {
       "name": "Be Group",
@@ -731,7 +1236,19 @@
         "employee_count": "501-1000"
       },
       "relevant": true,
-      "rationale": "Be Group is a super-app offering ride-hailing, food and package delivery, closely matching Grab\u2019s core services and users."
+      "rationale": "Vietnamese multi-service app offering ride-hailing, delivery, food, and merchant services, directly comparable to Grab's super-app model.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Vietnamese multi-service app offering ride-hailing, delivery, food, and merchant services, directly comparable to Grab's super-app model."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Vietnamese super-app offering ride-hailing, delivery, and food services \u2014 direct regional competitor to Grab on product, market, and business model."
+        }
+      ]
     },
     {
       "name": "Star Festival",
@@ -748,7 +1265,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Both operate food-delivery platforms connecting restaurants with meal customers, overlapping in restaurant enablement and delivery ordering use cases."
+      "rationale": "Operates food-delivery platforms and logistics, overlapping Grab\u2019s delivery vertical, though it is more restaurant and corporate meal focused.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Operates food-delivery platforms and logistics, overlapping Grab\u2019s delivery vertical, though it is more restaurant and corporate meal focused."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Food delivery platform/marketplace directly overlaps Grab's core GrabFood delivery business line; comparable model serving restaurants and consumers."
+        }
+      ]
     },
     {
       "name": "Yassir",
@@ -765,7 +1294,19 @@
         "employee_count": "501-1000"
       },
       "relevant": true,
-      "rationale": "Yassir closely matches Grab\u2019s super-app model, combining ride-hailing, delivery, digital payments, and merchant or driver marketplaces for similar users."
+      "rationale": "MENA super-app combining ride-hailing, food and grocery delivery, payments, and merchant services\u2014the same core multi-sided marketplace model as Grab.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "MENA super-app combining ride-hailing, food and grocery delivery, payments, and merchant services\u2014the same core multi-sided marketplace model as Grab."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "MENA super app combining ride-hailing, food/grocery delivery, and digital payments \u2014 matches Grab on product, market, and business model."
+        }
+      ]
     },
     {
       "name": "hugo",
@@ -782,7 +1323,19 @@
         "employee_count": "501-1000"
       },
       "relevant": true,
-      "rationale": "Both are consumer super-app marketplaces offering ride-hailing, delivery, digital payments, and merchant e-commerce services to similar users and businesses."
+      "rationale": "Hugo is a regional super-app offering ride-hailing, delivery, payments, e-commerce, and merchant-facing services, directly comparable to Grab.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Hugo is a regional super-app offering ride-hailing, delivery, payments, e-commerce, and merchant-facing services, directly comparable to Grab."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Hugo is a super-app with ride-hailing, food/grocery delivery, and digital payments \u2014 matches Grab on product, market, and business model."
+        }
+      ]
     },
     {
       "name": "Grabull Inc",
@@ -799,7 +1352,19 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "Both operate consumer food-ordering and delivery marketplaces connecting restaurants with diners, with overlapping restaurant merchant buyers and end-user needs."
+      "rationale": "Food-ordering and delivery marketplace connecting consumers and restaurants, overlapping Grab's delivery platform and merchant marketplace model.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Food-ordering and delivery marketplace connecting consumers and restaurants, overlapping Grab's delivery platform and merchant marketplace model."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Food ordering and delivery marketplace connecting consumers with restaurants, matching Grab's core food-delivery business on product and model axes."
+        }
+      ]
     },
     {
       "name": "Farm To Fork Sdn Bhd",
@@ -816,7 +1381,19 @@
         "employee_count": "51-200"
       },
       "relevant": false,
-      "rationale": "Pop Meals is a restaurant/meal brand offering its own food, not a multi-merchant delivery, ride-hailing, payments, or services marketplace like Grab."
+      "rationale": "Meal delivery overlaps one Grab vertical, but Pop Meals is a restaurant/meal provider, not a multi-merchant on-demand marketplace or super-app peer.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Meal delivery overlaps one Grab vertical, but Pop Meals is a restaurant/meal provider, not a multi-merchant on-demand marketplace or super-app peer."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Pop Meals is a restaurant/food brand with own delivery; a merchant on platforms like GrabFood, not a delivery marketplace or super-app competitor."
+        }
+      ]
     },
     {
       "name": "AddSaltAddPepper",
@@ -833,7 +1410,19 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "Both operate consumer food-delivery marketplaces connecting diners with local restaurants for ordering and delivery or pickup."
+      "rationale": "Food-delivery marketplace connecting consumers and restaurants, directly overlapping Grab\u2019s delivery-service business in Singapore.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Food-delivery marketplace connecting consumers and restaurants, directly overlapping Grab\u2019s delivery-service business in Singapore."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Singapore food-delivery marketplace directly competing with GrabFood \u2014 same product, market, and model on a core Grab axis; size irrelevant."
+        }
+      ]
     },
     {
       "name": "EatStreet",
@@ -850,7 +1439,19 @@
         "employee_count": "51-200"
       },
       "relevant": true,
-      "rationale": "EatStreet overlaps Grab\u2019s core food-delivery marketplace, serving diners and restaurants for ordering, payment, delivery, and merchant order management."
+      "rationale": "EatStreet is a restaurant food-ordering and delivery marketplace, directly comparable to Grab's delivery super-app offering.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "EatStreet is a restaurant food-ordering and delivery marketplace, directly comparable to Grab's delivery super-app offering."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Food ordering and delivery marketplace connecting diners with restaurants, directly comparable to Grab's delivery/merchant marketplace arm."
+        }
+      ]
     },
     {
       "name": "GoGrab",
@@ -866,8 +1467,20 @@
         "industries": null,
         "employee_count": "1-10"
       },
-      "relevant": false,
-      "rationale": "GoGrab is merchant-facing white-label commerce and fulfillment software, not a consumer super-app operating ride-hailing, delivery, and financial marketplaces."
+      "relevant": true,
+      "rationale": "On-demand marketplace connecting shoppers, merchants, and drivers for delivery resembles Grab\u2019s delivery and merchant-services marketplace model.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "On-demand marketplace connecting shoppers, merchants, and drivers for delivery resembles Grab\u2019s delivery and merchant-services marketplace model."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "On-demand marketplace connecting shoppers, retailers, and drivers for delivery \u2014 mirrors Grab's delivery/merchant marketplace model; genuine comparable."
+        }
+      ]
     },
     {
       "name": "Grabr",
@@ -884,7 +1497,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "Grabr is a traveler-mediated cross-border shopping marketplace, not an on-demand ride-hailing, local delivery, payments, or merchant-services super-app."
+      "rationale": "Grabr is a peer-to-peer cross-border shopping marketplace, not an on-demand ride-hailing, local delivery, and super-app platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Grabr is a peer-to-peer cross-border shopping marketplace, not an on-demand ride-hailing, local delivery, and super-app platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Peer-to-peer cross-border shopping marketplace for travelers; not ride-hailing, on-demand delivery, payments, or super-app services\u2014different product and buyer market from Grab."
+        }
+      ]
     },
     {
       "name": "GimmeGrub",
@@ -901,7 +1526,19 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "Both operate consumer restaurant-ordering marketplaces connecting diners with local restaurants for delivery and pickup."
+      "rationale": "Restaurant discovery and food delivery marketplace overlaps directly with Grab\u2019s food-delivery super-app service.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Restaurant discovery and food delivery marketplace overlaps directly with Grab\u2019s food-delivery super-app service."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Food-delivery ordering marketplace matches Grab's core delivery business (GrabFood); same consumer-facing on-demand delivery model makes them genuine comparables."
+        }
+      ]
     },
     {
       "name": "Getz Group",
@@ -918,7 +1555,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "Getz is restaurant-management/POS software, not a consumer super-app or ride-hailing and delivery marketplace like Grab."
+      "rationale": "Restaurant operations and ordering software serves F&B operators; it is a supplier to merchants, not a consumer ride-hailing, delivery, payments, and super-app peer.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Restaurant operations and ordering software serves F&B operators; it is a supplier to merchants, not a consumer ride-hailing, delivery, payments, and super-app peer."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Getz is restaurant-management SaaS (QR ordering, POS, CRM) serving F&B merchants, not a consumer super-app or on-demand marketplace like Grab; it's a merchant tool, not a peer."
+        }
+      ]
     },
     {
       "name": "Hasa",
@@ -935,7 +1584,19 @@
         "employee_count": "501-1000"
       },
       "relevant": true,
-      "rationale": "Hasa is a multi-service on-demand super-app offering ride-hailing and delivery, closely overlapping Grab\u2019s core platform and consumer, driver, and merchant users."
+      "rationale": "Hasa is a regional super-app combining ride-hailing, food and grocery delivery, and other on-demand services, directly comparable to Grab.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Hasa is a regional super-app combining ride-hailing, food and grocery delivery, and other on-demand services, directly comparable to Grab."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Hasa is a multi-service super-app combining ride-hailing, food and grocery delivery, and courier services \u2014 same product and model as Grab, different region."
+        }
+      ]
     },
     {
       "name": "GoGMGo",
@@ -952,7 +1613,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "GoGMGo is restaurant operations software, not a consumer super-app or on-demand ride-hailing, delivery, payments, and financial-services marketplace like Grab."
+      "rationale": "Restaurant POS/ERP software serves F&B operators, not consumers needing Grab\u2019s ride-hailing, delivery, payments, or super-app services.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Restaurant POS/ERP software serves F&B operators, not consumers needing Grab\u2019s ride-hailing, delivery, payments, or super-app services."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "F&B POS/ERP back-office SaaS for restaurants; not a super-app, marketplace, ride-hailing, or payments peer \u2014 closer to a merchant-ecosystem supplier."
+        }
+      ]
     },
     {
       "name": "GO",
@@ -969,7 +1642,19 @@
         "employee_count": "501-1000"
       },
       "relevant": true,
-      "rationale": "GO\u2019s taxi-hailing marketplace overlaps Grab\u2019s core ride-hailing service and serves the same consumers and transportation operators."
+      "rationale": "GO operates a taxi-hailing mobility platform, directly comparable to Grab\u2019s ride-hailing service despite lacking its broader super-app offerings.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "GO operates a taxi-hailing mobility platform, directly comparable to Grab\u2019s ride-hailing service despite lacking its broader super-app offerings."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Japanese taxi-hailing app with nationwide ride-hailing marketplace \u2014 direct comparable to Grab's core ride-hailing product and market."
+        }
+      ]
     },
     {
       "name": "Grability",
@@ -986,7 +1671,19 @@
         "employee_count": "51-200"
       },
       "relevant": false,
-      "rationale": "Grability provides grocery-shopping technology, not Grab\u2019s on-demand ride-hailing, delivery marketplace, payments, or merchant-services model for the same buyer need."
+      "rationale": "Grocery-shopping technology serves a related consumer need but is not an on-demand ride-hailing, delivery, payments, or super-app marketplace comparable to Grab.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Grocery-shopping technology serves a related consumer need but is not an on-demand ride-hailing, delivery, payments, or super-app marketplace comparable to Grab."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Grability builds grocery-shopping technology for retailers, not a ride-hailing/delivery marketplace or consumer super-app; different product and business model."
+        }
+      ]
     },
     {
       "name": "menu",
@@ -1003,7 +1700,19 @@
         "employee_count": "51-200"
       },
       "relevant": true,
-      "rationale": "Both operate app-based food delivery marketplaces connecting consumers with restaurants; menu directly overlaps Grab\u2019s delivery offering and user job-to-be-done."
+      "rationale": "Marketplace app for restaurant delivery and pickup, directly comparable to Grab\u2019s food-delivery service.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Marketplace app for restaurant delivery and pickup, directly comparable to Grab\u2019s food-delivery service."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Food-delivery marketplace app directly overlaps Grab's core delivery business; a comparable/competitor in on-demand food delivery."
+        }
+      ]
     },
     {
       "name": "Maxim Order Service",
@@ -1020,7 +1729,19 @@
         "employee_count": "1001-5000"
       },
       "relevant": true,
-      "rationale": "Maxim operates an app-based ride-hailing and delivery marketplace, directly overlapping Grab\u2019s core mobility and delivery services for similar users."
+      "rationale": "Operates an app-based ride-hailing and delivery marketplace, directly overlapping Grab\u2019s core transport and delivery super-app services.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Operates an app-based ride-hailing and delivery marketplace, directly overlapping Grab\u2019s core transport and delivery super-app services."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Ride-hailing and delivery marketplace platform across 500+ cities \u2014 direct competitor to Grab's core transport/delivery business."
+        }
+      ]
     },
     {
       "name": "Gozem",
@@ -1037,7 +1758,19 @@
         "employee_count": "201-500"
       },
       "relevant": true,
-      "rationale": "Gozem is a consumer super-app offering ride-hailing, delivery, and payments, directly overlapping Grab\u2019s core services and user needs."
+      "rationale": "Gozem is a regional super-app offering on-demand ride-hailing, delivery, and cashless payments, directly comparable to Grab.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Gozem is a regional super-app offering on-demand ride-hailing, delivery, and cashless payments, directly comparable to Grab."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Super-app offering ride-hailing, delivery, and cashless payments in Africa \u2014 same product and business model as Grab, different region."
+        }
+      ]
     },
     {
       "name": "Geolah",
@@ -1054,7 +1787,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Geolah offers app-based ride-hailing and delivery services, directly overlapping Grab\u2019s core mobility marketplace and serving the same riders, drivers, and delivery users."
+      "rationale": "Geolah operates an on-demand ride-booking and parcel-delivery mobility platform, directly comparable to Grab\u2019s core transportation marketplace.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Geolah operates an on-demand ride-booking and parcel-delivery mobility platform, directly comparable to Grab\u2019s core transportation marketplace."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Ride-hailing and parcel-delivery mobility app in Singapore, directly competing with Grab's core ride-hailing marketplace."
+        }
+      ]
     },
     {
       "name": "GoGoGrandparent",
@@ -1070,8 +1815,25 @@
         "industries": null,
         "employee_count": "201-500"
       },
-      "relevant": false,
-      "rationale": "GoGoGrandparent is a senior-focused concierge coordinating third-party rides and deliveries, not a broad on-demand marketplace or super-app like Grab."
+      "relevant": true,
+      "rationale": "Provides an on-demand rides and delivery platform, directly overlapping Grab's core mobility and delivery services for a specialized user segment.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Provides an on-demand rides and delivery platform, directly overlapping Grab's core mobility and delivery services for a specialized user segment."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Phone-based concierge coordinating rides/deliveries through third-party platforms like Uber; no own on-demand marketplace, so a client-layer service, not a peer."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "On-demand rides plus grocery/meal/prescription delivery marketplace; same core services as Grab, though targeted at seniors via phone concierge.<json_schema>\u2026</json_schema>"
+        }
+      ]
     },
     {
       "name": "GoGetters",
@@ -1088,7 +1850,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Both operate app-based on-demand food delivery marketplaces connecting restaurants, customers, and drivers, with ordering, payments, and delivery tracking."
+      "rationale": "On-demand food delivery marketplace with restaurants, drivers, ordering, payments, and tracking\u2014directly comparable to GrabFood despite narrower scope.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "On-demand food delivery marketplace with restaurants, drivers, ordering, payments, and tracking\u2014directly comparable to GrabFood despite narrower scope."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "On-demand food-delivery marketplace matching Grab's GrabFood delivery business; same model and buyer/seller marketplace despite smaller regional scale."
+        }
+      ]
     },
     {
       "name": "Fast",
@@ -1105,7 +1879,19 @@
         "employee_count": "201-500"
       },
       "relevant": true,
-      "rationale": "Fast overlaps Grab\u2019s core on-demand meal and grocery delivery offering, serving consumers seeking local delivery through an app-based service."
+      "rationale": "Fast operates an on-demand meal and grocery delivery marketplace, a core consumer-service vertical within Grab's super-app model.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Fast operates an on-demand meal and grocery delivery marketplace, a core consumer-service vertical within Grab's super-app model."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "On-demand meal and grocery delivery marketplace directly matches GrabFood, a core Grab vertical; same product, consumers, and business model."
+        }
+      ]
     },
     {
       "name": "Okejek",
@@ -1122,7 +1908,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Okejek overlaps Grab\u2019s core ride-hailing and on-demand delivery marketplace, serving the same urban consumers, merchants, and drivers."
+      "rationale": "Indonesian on-demand mobility and delivery platform, directly comparable to Grab\u2019s core ride-hailing and delivery marketplace.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Indonesian on-demand mobility and delivery platform, directly comparable to Grab\u2019s core ride-hailing and delivery marketplace."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Indonesian on-demand ride-hailing, food/package delivery and payments marketplace; direct Grab-style competitor despite smaller size."
+        }
+      ]
     },
     {
       "name": "Bee Delivery",
@@ -1139,7 +1937,19 @@
         "employee_count": "201-500"
       },
       "relevant": true,
-      "rationale": "Both operate app-based delivery marketplaces connecting businesses with independent drivers for on-demand last-mile fulfillment."
+      "rationale": "On-demand platform matching businesses with independent drivers for delivery, directly comparable to Grab\u2019s delivery marketplace despite narrower scope.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "On-demand platform matching businesses with independent drivers for delivery, directly comparable to Grab\u2019s delivery marketplace despite narrower scope."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "On-demand delivery marketplace connecting businesses with independent drivers, matching Grab's delivery arm on product and business-model axes."
+        }
+      ]
     },
     {
       "name": "Skip",
@@ -1156,7 +1966,19 @@
         "employee_count": "1001-5000"
       },
       "relevant": true,
-      "rationale": "Skip\u2019s on-demand food and grocery delivery marketplace overlaps a core Grab offering and serves the same consumers, merchants, and delivery ecosystem."
+      "rationale": "Skip operates an on-demand marketplace for food, grocery, and essentials delivery, directly comparable to Grab's delivery super-app services.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Skip operates an on-demand marketplace for food, grocery, and essentials delivery, directly comparable to Grab's delivery super-app services."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "On-demand food/grocery delivery marketplace, matching Grab's delivery arm; same consumer marketplace model and buyer, per Grab\u2194ride-hailing-marketplace precedent."
+        }
+      ]
     },
     {
       "name": "Shgardi",
@@ -1173,7 +1995,19 @@
         "employee_count": "201-500"
       },
       "relevant": true,
-      "rationale": "Both operate consumer super-app marketplaces for on-demand food, grocery, and package delivery, serving merchants, couriers, and consumers."
+      "rationale": "On-demand super-app marketplace for food, grocery, and package delivery, directly comparable to Grab\u2019s delivery and merchant-services ecosystem.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "On-demand super-app marketplace for food, grocery, and package delivery, directly comparable to Grab\u2019s delivery and merchant-services ecosystem."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Regional super-app for on-demand food, grocery, and package delivery marketplace \u2014 same business model and consumer market as Grab's delivery arm."
+        }
+      ]
     },
     {
       "name": "Market & Delivery Super Easy S.A.",
@@ -1190,7 +2024,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Both operate consumer delivery marketplaces for restaurant meals and groceries, serving the same users and on-demand ordering job."
+      "rationale": "Operates an on-demand food, grocery, and restaurant delivery platform for urban consumers, directly comparable to Grab\u2019s delivery marketplace.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Operates an on-demand food, grocery, and restaurant delivery platform for urban consumers, directly comparable to Grab\u2019s delivery marketplace."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "On-demand food/grocery delivery marketplace, matching Grab's delivery arm; same consumer-facing delivery business model, a regional comparable."
+        }
+      ]
     },
     {
       "name": "ShaQ Express",
@@ -1207,7 +2053,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Both are consumer super-apps offering on-demand food, package, and merchant delivery services through a local marketplace platform."
+      "rationale": "Both are consumer super-apps combining on-demand delivery, commerce, and local services, making ShaQ Express a comparable platform despite narrower scope.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both are consumer super-apps combining on-demand delivery, commerce, and local services, making ShaQ Express a comparable platform despite narrower scope."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Regional super-app combining food delivery, e-commerce, pharmacy, home services, and eco-friendly package delivery \u2014 same multi-service super-app model as Grab."
+        }
+      ]
     },
     {
       "name": "Nomal Services",
@@ -1224,7 +2082,19 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "Nomal is a consumer super-app offering taxi booking and on-demand food, grocery, and courier delivery, directly overlapping Grab\u2019s core services."
+      "rationale": "Nomal is a consumer super-app combining taxi, food and grocery delivery, courier, payments-adjacent local services\u2014closely matching Grab\u2019s on-demand marketplace model.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Nomal is a consumer super-app combining taxi, food and grocery delivery, courier, payments-adjacent local services\u2014closely matching Grab\u2019s on-demand marketplace model."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "All-in-one super app offering ride-hailing, food, grocery, and courier delivery \u2014 same multi-service model and urban consumer market as Grab."
+        }
+      ]
     },
     {
       "name": "Rapidgo Driver",
@@ -1241,7 +2111,24 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "Both operate app-based last-mile delivery platforms connecting merchants or customers with drivers for on-demand fulfillment."
+      "rationale": "Provides app-based last-mile delivery and driver-matching infrastructure, overlapping Grab\u2019s delivery marketplace and merchant delivery-services business.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Provides app-based last-mile delivery and driver-matching infrastructure, overlapping Grab\u2019s delivery marketplace and merchant delivery-services business."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "B2B driver-sourcing/directory service for delivery businesses \u2014 a supplier to the category, not a consumer ride-hailing/delivery marketplace comparable to Grab."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "App-based delivery driver marketplace with food ordering and in-app payments \"of Grab's delivery marketplace model, though narrower."
+        }
+      ]
     },
     {
       "name": "GetBaqala",
@@ -1258,7 +2145,19 @@
         "employee_count": "51-200"
       },
       "relevant": true,
-      "rationale": "Both operate app-based, on-demand delivery services for urban consumers, with GetBaqala overlapping Grab\u2019s grocery and essentials delivery offering."
+      "rationale": "On-demand delivery app serving urban consumers overlaps Grab's delivery marketplace and super-app convenience model.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "On-demand delivery app serving urban consumers overlaps Grab's delivery marketplace and super-app convenience model."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "On-demand delivery marketplace mirrors Grab's delivery arm (GrabMart/GrabFood), sharing product, consumer market, and marketplace business model."
+        }
+      ]
     },
     {
       "name": "MOVE IT",
@@ -1275,7 +2174,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "MOVE IT is an on-demand ride-hailing and delivery marketplace serving consumers and service-provider partners, directly overlapping Grab\u2019s core super-app services."
+      "rationale": "On-demand ride-hailing, food and parcel delivery marketplace closely matches Grab's core super-app mobility and delivery services.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "On-demand ride-hailing, food and parcel delivery marketplace closely matches Grab's core super-app mobility and delivery services."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "On-demand app offering ride-hailing, food and parcel delivery \u2014 matches Grab's core super-app services and marketplace model."
+        }
+      ]
     },
     {
       "name": "Amo",
@@ -1292,7 +2203,19 @@
         "employee_count": "51-200"
       },
       "relevant": false,
-      "rationale": "Amo provides restaurant-branded delivery software and logistics, not a consumer super-app or on-demand delivery marketplace comparable to Grab."
+      "rationale": "Amo sells restaurant-facing delivery software and logistics support, whereas Grab operates a consumer super-app and delivery marketplace.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Amo sells restaurant-facing delivery software and logistics support, whereas Grab operates a consumer super-app and delivery marketplace."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Amo sells delivery software to restaurants\u2014Grab's merchant supply side, a supplier/enablement tool, not a competing marketplace or super-app peer."
+        }
+      ]
     },
     {
       "name": "Xpress",
@@ -1309,7 +2232,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Xpress closely matches Grab\u2019s super-app model, offering ride-hailing, food and grocery delivery, payments, and business services to overlapping users."
+      "rationale": "Urban mobility super-app offering ride-hailing, food and grocery delivery, payments, and business services closely mirrors Grab's core platform model.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Urban mobility super-app offering ride-hailing, food and grocery delivery, payments, and business services closely mirrors Grab's core platform model."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Regional super-app combining ride-hailing, food delivery, groceries, and payments \u2014 direct Grab competitor/comparable on product, market, and model."
+        }
+      ]
     },
     {
       "name": "SAAVI Mobile Ordering",
@@ -1326,7 +2261,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "SAAVI is B2B ordering and distribution software, not an on-demand ride-hailing, delivery, payments, or super-app marketplace like Grab."
+      "rationale": "B2B ordering and delivery workflow software for food distributors, not a consumer ride-hailing, delivery marketplace, payments, or super-app competitor.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "B2B ordering and delivery workflow software for food distributors, not a consumer ride-hailing, delivery marketplace, payments, or super-app competitor."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "SAAVI sells B2B ordering software to food wholesalers, not a consumer delivery marketplace or super-app; supplier to merchants, not comparable to Grab."
+        }
+      ]
     },
     {
       "name": "MilkRun",
@@ -1343,7 +2290,19 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "MilkRun overlaps Grab\u2019s on-demand delivery marketplace, connecting merchants with riders to fulfill food and parcel deliveries."
+      "rationale": "On-demand merchant-to-rider delivery marketplace overlaps Grab\u2019s delivery and logistics business model, serving similar merchants and consumers.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "On-demand merchant-to-rider delivery marketplace overlaps Grab\u2019s delivery and logistics business model, serving similar merchants and consumers."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "On-demand delivery marketplace matching merchants with riders mirrors Grab's GrabFood/GrabExpress model \u2014 same business model and market."
+        }
+      ]
     },
     {
       "name": "Gojek Clone App",
@@ -1360,7 +2319,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "Candidate sells white-label software for launching on-demand apps, while Grab operates the consumer-facing marketplace; buyers and core business models differ."
+      "rationale": "White-label software sold to entrepreneurs, not an on-demand consumer marketplace/operator comparable to Grab.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "White-label software sold to entrepreneurs, not an on-demand consumer marketplace/operator comparable to Grab."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Sells white-label clone software to entrepreneurs; a vendor enabling super-apps, not an on-demand marketplace operator competing with Grab."
+        }
+      ]
     },
     {
       "name": "Gride Technology",
@@ -1377,7 +2348,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Both operate multi-service super-app marketplaces centered on ride-hailing and food/grocery delivery for consumers and local merchant partners."
+      "rationale": "Super-app directly combines ride-hailing, food and grocery delivery, serving the same on-demand consumer and merchant marketplace model as Grab.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Super-app directly combines ride-hailing, food and grocery delivery, serving the same on-demand consumer and merchant marketplace model as Grab."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Super-app offering ride-hailing, food and grocery delivery \u2014 same product and market as Grab, a direct comparable."
+        }
+      ]
     },
     {
       "name": "Gokada",
@@ -1394,7 +2377,19 @@
         "employee_count": "51-200"
       },
       "relevant": true,
-      "rationale": "Gokada\u2019s app-based parcel and food delivery marketplace overlaps Grab\u2019s delivery services and serves consumers, restaurants, and logistics users with similar needs."
+      "rationale": "Gokada operates an app-based last-mile and food-delivery marketplace, overlapping Grab's delivery and driver-platform business model.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Gokada operates an app-based last-mile and food-delivery marketplace, overlapping Grab's delivery and driver-platform business model."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "On-demand app-based delivery and logistics super-app (parcels, food, business logistics), matching Grab's delivery marketplace model in a different region."
+        }
+      ]
     },
     {
       "name": "Nham24",
@@ -1411,7 +2406,19 @@
         "employee_count": "51-200"
       },
       "relevant": true,
-      "rationale": "Nham24 is an on-demand super app offering ride-hailing, food and grocery delivery, courier, and travel services, substantially overlapping Grab\u2019s core consumer use cases."
+      "rationale": "Cambodian on-demand super app offering ride-hailing, delivery, courier, groceries, and commerce services\u2014directly comparable to Grab.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Cambodian on-demand super app offering ride-hailing, delivery, courier, groceries, and commerce services\u2014directly comparable to Grab."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "On-demand super app with ride-hailing, food delivery, courier, and groceries\u2014directly mirrors Grab's super-app model in Southeast Asia."
+        }
+      ]
     },
     {
       "name": "GOCHEAP VIETNAM",
@@ -1428,7 +2435,19 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "Both operate app-based transportation booking services, including shared or hired rides, serving travelers seeking on-demand mobility."
+      "rationale": "Transportation booking app offering shared rides and driver services, overlapping Grab's mobility marketplace despite a narrower service scope.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Transportation booking app offering shared rides and driver services, overlapping Grab's mobility marketplace despite a narrower service scope."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "On-demand transportation app in Vietnam offering rides and transfers; same ride-hailing marketplace model and market as Grab, regional peer."
+        }
+      ]
     },
     {
       "name": "Kuokko",
@@ -1445,7 +2464,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "Kuokko is restaurant-owned ordering software, not a consumer delivery marketplace or super-app; restaurants may use it alongside Grab rather than as an alternative."
+      "rationale": "Restaurant white-label ordering software serves merchants, whereas Grab is a consumer multi-merchant ride-hailing, delivery, and payments marketplace.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Restaurant white-label ordering software serves merchants, whereas Grab is a consumer multi-merchant ride-hailing, delivery, and payments marketplace."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "B2B software supplier building ordering apps for restaurants, not a consumer ride-hailing/delivery marketplace; serves the category rather than competing with Grab."
+        }
+      ]
     },
     {
       "name": "gogo Delivery",
@@ -1462,7 +2493,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "gogo sells delivery-management SaaS to business operators, while Grab primarily runs consumer marketplaces for ride-hailing and on-demand delivery."
+      "rationale": "Delivery-operations SaaS for merchants and fleets, not a consumer-facing on-demand ride-hailing and super-app marketplace like Grab.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Delivery-operations SaaS for merchants and fleets, not a consumer-facing on-demand ride-hailing and super-app marketplace like Grab."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "B2B SaaS tool for managing delivery fleets, not a consumer delivery/ride-hailing marketplace; supplier to the category, not a Grab comparable."
+        }
+      ]
     },
     {
       "name": "AirGrub",
@@ -1479,7 +2522,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "AirGrub is an airport preorder-and-pickup app, not an on-demand delivery, ride-hailing, payments, or merchant-services platform like Grab."
+      "rationale": "AirGrub is a niche airport meal preorder and pickup app, not a ride-hailing, delivery, payments, or broad super-app marketplace comparable to Grab.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "AirGrub is a niche airport meal preorder and pickup app, not a ride-hailing, delivery, payments, or broad super-app marketplace comparable to Grab."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Niche airport food pre-order/pickup app; not a delivery marketplace, ride-hailing, or super-app\u2014resemblance to Grab on any axis is weak."
+        }
+      ]
     },
     {
       "name": "Fatafat India",
@@ -1496,7 +2551,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Fatafat overlaps Grab\u2019s core on-demand food, grocery, and essentials delivery marketplace, serving similar consumers and local merchants."
+      "rationale": "On-demand multi-category delivery marketplace overlaps Grab\u2019s food, grocery, and merchant-delivery businesses, serving similar urban consumers and local merchants.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "On-demand multi-category delivery marketplace overlaps Grab\u2019s food, grocery, and merchant-delivery businesses, serving similar urban consumers and local merchants."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "On-demand multi-category delivery marketplace matching Grab's delivery arm; same consumer job-to-be-done and marketplace model, different region."
+        }
+      ]
     },
     {
       "name": "Get Express Global Corporation",
@@ -1513,7 +2580,19 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "Both operate on-demand delivery marketplaces using rider networks for food, parcels, and personal shopping, serving overlapping consumers and merchants."
+      "rationale": "On-demand food, parcel, grocery, and personal-shopping delivery platform using rider networks, directly comparable to Grab\u2019s delivery marketplace.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "On-demand food, parcel, grocery, and personal-shopping delivery platform using rider networks, directly comparable to Grab\u2019s delivery marketplace."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "On-demand delivery platform with rider network for food, parcels, and groceries in Southeast Asia \u2014 directly matches Grab's delivery marketplace axis."
+        }
+      ]
     },
     {
       "name": "Wajeez",
@@ -1530,7 +2609,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Both are consumer super-apps offering on-demand food and grocery delivery plus other everyday services through a unified mobile platform."
+      "rationale": "On-demand super-app offering food, grocery, errands, and mobile top-ups to urban consumers, closely paralleling Grab\u2019s delivery and everyday-services model.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "On-demand super-app offering food, grocery, errands, and mobile top-ups to urban consumers, closely paralleling Grab\u2019s delivery and everyday-services model."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Multi-service on-demand super-app offering food/grocery delivery, errands, and mobile top-ups \u2014 same business model and market as Grab."
+        }
+      ]
     },
     {
       "name": "GrabbnGo",
@@ -1546,11 +2637,21 @@
         "industries": null,
         "employee_count": "1-10"
       },
-      "relevant": true,
-      "rationale": "Both operate consumer food-ordering marketplaces connecting users with multiple F&B outlets, with overlapping pickup use cases and merchant partners."
+      "relevant": false,
+      "rationale": "Airport food preordering is a narrow consumer convenience service, not a ride-hailing, delivery, payments, or broad super-app marketplace comparable to Grab.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Airport food preordering is a narrow consumer convenience service, not a ride-hailing, delivery, payments, or broad super-app marketplace comparable to Grab."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Niche airport food pre-order/pickup app; no ride-hailing, delivery logistics, or super-app breadth to be a genuine Grab comparable."
+        }
+      ]
     }
   ],
-  "error": null,
-  "relevant_count_at_25": 19,
-  "precision_at_25": 76.0
+  "error": null
 }

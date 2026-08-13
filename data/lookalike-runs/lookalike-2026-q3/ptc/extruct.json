@@ -7,20 +7,20 @@
     "name": "domain_similarity"
   },
   "k": 100,
-  "relevant_count": 22,
-  "precision_at_k": 22.0,
+  "relevant_count": 26,
+  "precision_at_k": 26.0,
   "relevant_count_at_10": 6,
   "relevant_count_at_25": 12,
-  "relevant_count_at_100": 22,
+  "relevant_count_at_100": 26,
   "precision_at_10": 60.0,
   "precision_at_25": 48.0,
-  "precision_at_100": 22.0,
+  "precision_at_100": 26.0,
   "latency_ms": 1752,
   "cost_usd": null,
   "duplicates_removed": 2,
   "max_results": null,
-  "judge_model": "gpt-5.6",
-  "judged_at": "2026-07-27T06:50:12Z",
+  "judge_model": "majority(n=3): claude-opus-5,gpt-5.6-terra,kimi-k3",
+  "judged_at": "2026-08-10T20:16:17Z",
   "candidates": [
     {
       "name": "Centric Software",
@@ -37,7 +37,19 @@
         "employee_count": "1001-5000"
       },
       "relevant": true,
-      "rationale": "Centric directly overlaps PTC\u2019s core PLM offering, serving manufacturers and product teams managing design, development, collaboration, and product lifecycles."
+      "rationale": "Centric provides PLM software for manufacturers and brands, directly overlapping PTC\u2019s product-lifecycle-management offering.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Centric provides PLM software for manufacturers and brands, directly overlapping PTC\u2019s product-lifecycle-management offering."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both sell PLM software; Centric competes directly with PTC's PLM offerings for manufacturers, matching on product and market."
+        }
+      ]
     },
     {
       "name": "CIMdata",
@@ -54,7 +66,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "CIMdata is a PLM consultancy and research authority, not an industrial software platform competing with PTC for the same solution purchase."
+      "rationale": "CIMdata is a PLM-focused consulting and research firm, not an industrial software platform competitor or comparable to PTC.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "CIMdata is a PLM-focused consulting and research firm, not an industrial software platform competitor or comparable to PTC."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "CIMdata is a PLM consulting and research firm serving the category, not a PLM software vendor competing with PTC."
+        }
+      ]
     },
     {
       "name": "TriStar Digital Thread Solutions",
@@ -71,7 +95,19 @@
         "employee_count": "201-500"
       },
       "relevant": false,
-      "rationale": "TriStar is a PTC-focused implementation, training, support, and reseller partner, not an independent industrial-software platform competing with PTC."
+      "rationale": "Tristar primarily implements, integrates, and supports PLM systems including PTC rather than selling a competing CAD/PLM software platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Tristar primarily implements, integrates, and supports PLM systems including PTC rather than selling a competing CAD/PLM software platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Tristar is a PTC implementation partner/consultancy reselling and supporting PTC PLM solutions, not a competitor making its own industrial software."
+        }
+      ]
     },
     {
       "name": "Trace One",
@@ -88,7 +124,19 @@
         "employee_count": "501-1000"
       },
       "relevant": true,
-      "rationale": "Trace One offers PLM software for product development and compliance, overlapping PTC\u2019s core PLM offering and targeting similar manufacturing product teams."
+      "rationale": "Trace One offers PLM software for product development, directly overlapping PTC's PLM product category despite its compliance-focused industry specialization.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Trace One offers PLM software for product development, directly overlapping PTC's PLM product category despite its compliance-focused industry specialization."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both sell PLM software; Trace One's product-lifecycle and compliance platform overlaps PTC's core PLM offering for manufacturers."
+        }
+      ]
     },
     {
       "name": "Revalize",
@@ -105,7 +153,19 @@
         "employee_count": "501-1000"
       },
       "relevant": true,
-      "rationale": "Revalize overlaps PTC in CAD and PLM software for manufacturers, serving the same engineering and product-lifecycle buyers and workflows."
+      "rationale": "Revalize sells CAD and PLM software to manufacturers, directly overlapping PTC\u2019s industrial design and product-lifecycle software portfolio.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Revalize sells CAD and PLM software to manufacturers, directly overlapping PTC\u2019s industrial design and product-lifecycle software portfolio."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Revalize sells CAD, PLM, and CPQ software for manufacturers, directly overlapping PTC's core CAD/PLM industrial-software product lines\u2014genuine competitor/comparable."
+        }
+      ]
     },
     {
       "name": "Arena by PTC",
@@ -122,7 +182,24 @@
         "employee_count": "201-500"
       },
       "relevant": false,
-      "rationale": "Arena is PTC\u2019s own PLM/QMS product brand, making it an internal/duplicate entity rather than a separate prospectable lookalike."
+      "rationale": "Arena is PTC's own product/subsidiary, not an independent competitor or comparable; a lookalike must be a distinct company.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Arena is PTC\u2019s own cloud PLM/QMS offering, directly overlapping PTC\u2019s industrial PLM and product-development software portfolio."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Arena is PTC's own product/subsidiary, not an independent competitor or comparable; a lookalike must be a distinct company."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "Arena is PTC's own subsidiary/product brand, not an independent lookalike\ncompany."
+        }
+      ]
     },
     {
       "name": "TranscenData",
@@ -139,7 +216,24 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Both provide engineering software for CAD/PLM workflows, targeting manufacturers and engineering teams managing product-model data and interoperability."
+      "rationale": "Provides engineering software for CAD/CAE/PLM data exchange, serving overlapping industrial design and PLM workflows with PTC.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Provides engineering software for CAD/CAE/PLM data exchange, serving overlapping industrial design and PLM workflows with PTC."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Niche CAD data-interoperability tool vendor that complements PTC's platforms rather than competing as a CAD/PLM software provider."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Engineering/CAD-PLM software vendor serving manufacturers; adjacent product in same industrial-software market as PTC.CANDIDATE plausibly a comparable/competitor.', ok"
+        }
+      ]
     },
     {
       "name": "TPM",
@@ -156,7 +250,19 @@
         "employee_count": "501-1000"
       },
       "relevant": false,
-      "rationale": "TPM is a reseller and digital-transformation consultancy implementing third-party CAD and hardware, not an industrial-software platform comparable to PTC."
+      "rationale": "TPM is a consulting and reseller partner implementing third-party CAD and transformation tools, not an industrial software platform comparable to PTC.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "TPM is a consulting and reseller partner implementing third-party CAD and transformation tools, not an industrial software platform comparable to PTC."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "TPM is a reseller/consultancy implementing others' CAD and 3D-printing products, not an industrial-software maker; serves the category rather than competing."
+        }
+      ]
     },
     {
       "name": "Propel Software",
@@ -173,7 +279,19 @@
         "employee_count": "51-200"
       },
       "relevant": true,
-      "rationale": "Propel\u2019s cloud PLM and product management platform overlaps PTC\u2019s core PLM offering and targets the same engineering, product, and quality teams."
+      "rationale": "Propel offers PLM for product lifecycle management, directly overlapping PTC\u2019s PLM portfolio and serving similar product, engineering, and manufacturing teams.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Propel offers PLM for product lifecycle management, directly overlapping PTC\u2019s PLM portfolio and serving similar product, engineering, and manufacturing teams."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Propel is a cloud PLM platform (plus PIM/QMS), directly competing with PTC's Windchill PLM for the same industrial product-lifecycle buyers."
+        }
+      ]
     },
     {
       "name": "PROSTEP",
@@ -190,7 +308,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Both provide PLM-focused software for complex manufacturers, targeting engineering and PLM leaders managing product data integration and lifecycle workflows."
+      "rationale": "Provides PLM data integration, migration, and collaboration software for discrete manufacturers, overlapping PTC's PLM and digital-thread market.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Provides PLM data integration, migration, and collaboration software for discrete manufacturers, overlapping PTC's PLM and digital-thread market."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "PLM software vendor (OpenPDM, OpenDXM) serving same manufacturing buyers as PTC's Windchill PLM; comparable product and market."
+        }
+      ]
     },
     {
       "name": "PTS Consulting",
@@ -207,7 +337,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "PTS is a digital-transformation consultancy and infrastructure implementer, not an industrial CAD, PLM, IoT, or lifecycle-management software vendor."
+      "rationale": "PTS Consulting is a digital-transformation and IT infrastructure consultancy, not an industrial software vendor for CAD, PLM, IoT, or lifecycle management.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "PTS Consulting is a digital-transformation and IT infrastructure consultancy, not an industrial software vendor for CAD, PLM, IoT, or lifecycle management."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "PTS is a digital-transformation/smart-building consultancy, not an industrial software vendor; it serves the category rather than competing with PTC's CAD/PLM products."
+        }
+      ]
     },
     {
       "name": "Wave PLM",
@@ -224,7 +366,19 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "Wave PLM overlaps PTC\u2019s core PLM offering, serving product development and lifecycle-management buyers, albeit with a specialized focus on fashion and apparel."
+      "rationale": "Wave PLM provides product lifecycle management software, a core PTC product category, albeit tailored to fashion manufacturers.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Wave PLM provides product lifecycle management software, a core PTC product category, albeit tailored to fashion manufacturers."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Sells PLM software, a core PTC product line; industry vertical (fashion) differs but product resemblance is strong."
+        }
+      ]
     },
     {
       "name": "Siemens",
@@ -241,7 +395,19 @@
         "employee_count": "10001+"
       },
       "relevant": true,
-      "rationale": "Siemens Xcelerator and digital-twin software overlap PTC\u2019s industrial CAD, PLM, IoT, and digital-transformation offerings for manufacturing enterprises."
+      "rationale": "Siemens Digital Industries offers industrial automation, digital-twin, PLM, and IoT software overlapping PTC\u2019s manufacturing digital-transformation portfolio.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Siemens Digital Industries offers industrial automation, digital-twin, PLM, and IoT software overlapping PTC\u2019s manufacturing digital-transformation portfolio."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Siemens' industrial software business (NX CAD, Teamcenter PLM, industrial IoT) directly competes with PTC's core product lines."
+        }
+      ]
     },
     {
       "name": "EAC Product Development Solutions",
@@ -258,7 +424,19 @@
         "employee_count": "51-200"
       },
       "relevant": false,
-      "rationale": "EAC is primarily a consultancy and implementation partner for PTC products, not a competing industrial-software platform serving the same evaluation need."
+      "rationale": "EAC is primarily a product-development software reseller, implementation partner, and consultancy, not an independent industrial-software platform comparable to PTC.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "EAC is primarily a product-development software reseller, implementation partner, and consultancy, not an independent industrial-software platform comparable to PTC."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "EAC is a PTC partner/reseller and consultancy implementing PTC's CAD/PLM/IoT products, a channel and service provider rather than a competitor or comparable."
+        }
+      ]
     },
     {
       "name": "Engineering Industries eXcellence",
@@ -275,7 +453,19 @@
         "employee_count": "201-500"
       },
       "relevant": false,
-      "rationale": "Engineering Industries eXcellence is primarily an implementation and digital-transformation services provider using Siemens/SAP tools, not an industrial-software vendor competing with PTC."
+      "rationale": "Digital-transformation consultancy and systems integrator implementing Siemens and SAP tools, rather than a CAD/PLM/IoT software platform competitor.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Digital-transformation consultancy and systems integrator implementing Siemens and SAP tools, rather than a CAD/PLM/IoT software platform competitor."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Consultancy implementing third-party (Siemens/SAP) industrial software for clients, not a software product company competing with PTC's CAD/PLM offerings."
+        }
+      ]
     },
     {
       "name": "Duro",
@@ -292,7 +482,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Duro\u2019s PLM/PDM platform directly overlaps PTC\u2019s PLM offering and targets the same engineering, manufacturing, and product lifecycle teams."
+      "rationale": "Duro directly competes in PLM/PDM for hardware engineering teams, overlapping PTC\u2019s product lifecycle management and industrial-software market.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Duro directly competes in PLM/PDM for hardware engineering teams, overlapping PTC\u2019s product lifecycle management and industrial-software market."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Duro is a cloud PLM/PDM platform with CAD integrations, directly competing with PTC's Windchill PLM for the same hardware engineering buyers."
+        }
+      ]
     },
     {
       "name": "Advanced Software Designs",
@@ -309,7 +511,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Both provide PLM software for managing product development lifecycles, targeting product, R&D, and manufacturing teams with overlapping lifecycle-management needs."
+      "rationale": "Provides PLM software managing product development lifecycles, directly overlapping PTC's PLM offering despite its process-manufacturing specialization.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Provides PLM software managing product development lifecycles, directly overlapping PTC's PLM offering despite its process-manufacturing specialization."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both sell PLM software for industrial/manufacturing product development; direct product and market overlap with PTC's PLM business."
+        }
+      ]
     },
     {
       "name": "PROLIM Solutions India",
@@ -326,7 +540,19 @@
         "employee_count": "51-200"
       },
       "relevant": false,
-      "rationale": "PROLIM is primarily a Siemens PLM/CAD implementation and digital-transformation services firm, not an industrial-software product platform like PTC."
+      "rationale": "PROLIM is a PLM implementation and engineering-services consultancy, not an industrial software platform vendor competing with PTC.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "PROLIM is a PLM implementation and engineering-services consultancy, not an industrial software platform vendor competing with PTC."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "PROLIM is a PLM implementation/services consultancy deploying Siemens software, not an industrial-software product company competing with PTC's CAD/PLM offerings."
+        }
+      ]
     },
     {
       "name": "L&T Technology Services",
@@ -343,7 +569,19 @@
         "employee_count": "10001+"
       },
       "relevant": false,
-      "rationale": "L&T Technology Services primarily provides engineering and consulting services, while PTC sells industrial software platforms; overlapping buyers and use cases are insufficient."
+      "rationale": "L&T Technology Services is an engineering and digital-transformation consultancy, not a vendor of CAD, PLM, IoT, or service-lifecycle software platforms.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "L&T Technology Services is an engineering and digital-transformation consultancy, not a vendor of CAD, PLM, IoT, or service-lifecycle software platforms."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Engineering-services and consulting firm serving manufacturers, not a CAD/PLM/IoT software product vendor \u2014 serves the category rather than competing in it."
+        }
+      ]
     },
     {
       "name": "Aras PLM",
@@ -360,7 +598,19 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "Aras directly overlaps PTC\u2019s core PLM and digital-thread offerings, targeting the same industrial engineering and product-lifecycle buyers."
+      "rationale": "Aras directly competes in PLM and digital-thread software for industrial engineering and manufacturing organizations, overlapping a core PTC product and customer market.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Aras directly competes in PLM and digital-thread software for industrial engineering and manufacturing organizations, overlapping a core PTC product and customer market."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Aras sells a PLM platform with digital thread for industrial manufacturers \u2014 directly competes with PTC's Windchill PLM on product, market, and model."
+        }
+      ]
     },
     {
       "name": "Advanced Solutions PLM",
@@ -377,7 +627,19 @@
         "employee_count": null
       },
       "relevant": false,
-      "rationale": "Advanced Solutions PLM is a PLM consultancy and systems integrator, not an industrial software platform vendor competing with PTC\u2019s core products."
+      "rationale": "PLM-focused consultancy and implementation firm, not a primary industrial software platform comparable to PTC.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "PLM-focused consultancy and implementation firm, not a primary industrial software platform comparable to PTC."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Consultancy implementing/integrating PLM systems, not a PLM software vendor; serves the category rather than competing with PTC."
+        }
+      ]
     },
     {
       "name": "3D-Solutions Department of Softprom",
@@ -394,7 +656,19 @@
         "employee_count": "201-500"
       },
       "relevant": false,
-      "rationale": "Softprom distributes and implements third-party CAD/PLM software rather than offering a competing industrial-software platform of its own."
+      "rationale": "Software distributor and implementer of PLM/CAD products, not an industrial-software vendor comparable to PTC.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Software distributor and implementer of PLM/CAD products, not an industrial-software vendor comparable to PTC."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Value-added distributor reselling others' PLM/CAD software; a channel partner serving the category, not a competing software maker like PTC."
+        }
+      ]
     },
     {
       "name": "CONTACT Software",
@@ -411,7 +685,19 @@
         "employee_count": "201-500"
       },
       "relevant": true,
-      "rationale": "Both provide PLM, industrial IoT/digital twins, and digital-transformation software to manufacturing and product-development organizations."
+      "rationale": "CONTACT Software provides PLM, IoT/digital-twin, and digital-transformation software for manufacturers, directly overlapping PTC's core products and buyers.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "CONTACT Software provides PLM, IoT/digital-twin, and digital-transformation software for manufacturers, directly overlapping PTC's core products and buyers."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "PLM, IoT/digital-twin, and project-management software for manufacturing and automotive\u2014direct competitor to PTC's PLM/IoT portfolio on product and market."
+        }
+      ]
     },
     {
       "name": "PointPLM",
@@ -428,7 +714,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "PointPLM is a PLM implementation consultancy deploying third-party systems, not a primary PLM/CAD software vendor like PTC."
+      "rationale": "PLM consultancy and implementation provider, not an industrial software platform competing with PTC's CAD, PLM, IoT, or SLM products.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "PLM consultancy and implementation provider, not an industrial software platform competing with PTC's CAD, PLM, IoT, or SLM products."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "PLM consultancy implementing Siemens/Oracle systems for clients, not a PLM software vendor competing with PTC; serves the category rather than resembling it."
+        }
+      ]
     },
     {
       "name": "Element Consulting",
@@ -445,7 +743,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "Element Consulting implements PTC\u2019s PLM products and transformation services; it is a services partner, not an overlapping industrial-software vendor."
+      "rationale": "Consultancy implementing PTC's own PLM products for clients, not an industrial-software competitor or comparable platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Consultancy implementing PTC's own PLM products for clients, not an industrial-software competitor or comparable platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Consultancy implementing PTC Windchill for clients; a services partner of the seed, not a competing software vendor."
+        }
+      ]
     },
     {
       "name": "3 HTi",
@@ -462,7 +772,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "3 HTi is a consultancy and implementation partner for PTC products, not an industrial-software vendor offering a competing platform."
+      "rationale": "3HTi appears to resell and implement PTC products as an engineering solutions provider, rather than offering competing CAD, PLM, or IoT software.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "3HTi appears to resell and implement PTC products as an engineering solutions provider, rather than offering competing CAD, PLM, or IoT software."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "3HTi is a PTC reseller/partner distributing Creo, Windchill, Codebeamer, Mathcad \u2014 a channel partner, not a competitor or comparable."
+        }
+      ]
     },
     {
       "name": "Essig PLM",
@@ -479,7 +801,24 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Essig offers PLM, product data management, and CAD integration for engineering and manufacturing teams, directly overlapping PTC\u2019s core products and buyers."
+      "rationale": "Essig PLM sells its own PLM/PDM software (ProductCenter) plus CAD integration to engineering and manufacturing firms \u2014 same product and market as PTC's Windchill/Creo business.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Essig PLM appears to implement and integrate PLM tools, including PTC Windchill and Creo, rather than offering a competing industrial-software platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Essig PLM sells its own PLM/PDM software (ProductCenter) plus CAD integration to engineering and manufacturing firms \u2014 same product and market as PTC's Windchill/Creo business."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Sells its own PLM software (ProductCenter) to engineering/manufacturing, same product and buyer as PTC's Windchill, despite also reselling PTC."
+        }
+      ]
     },
     {
       "name": "TECHNIA DACH",
@@ -496,7 +835,19 @@
         "employee_count": "501-1000"
       },
       "relevant": false,
-      "rationale": "TECHNIA primarily integrates and resells Dassault CAD/PLM products with services and training, rather than offering a competing core industrial-software platform."
+      "rationale": "TECHNIA primarily implements, supports, and trains on Dassault PLM/CAD products rather than offering a competing industrial-software platform to PTC.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "TECHNIA primarily implements, supports, and trains on Dassault PLM/CAD products rather than offering a competing industrial-software platform to PTC."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "TECHNIA is a Dassault Syst\u00e8mes reseller/implementation consultancy deploying CATIA/ENOVIA for clients, serving the PLM category rather than competing with its own industrial software."
+        }
+      ]
     },
     {
       "name": "Transition Technologies PSC",
@@ -513,7 +864,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "TTPSC is primarily an industrial digital-transformation integrator implementing PLM and IIoT solutions, not a competing industrial-software platform like PTC."
+      "rationale": "Industrial digital-transformation integrator providing PLM/IIoT services to manufacturers, rather than a comparable industrial software platform vendor.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Industrial digital-transformation integrator providing PLM/IIoT services to manufacturers, rather than a comparable industrial software platform vendor."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Systems integrator implementing PLM/IIoT software for manufacturers; an agency/consultancy serving the category, not a competing industrial-software product maker like PTC."
+        }
+      ]
     },
     {
       "name": "MAIT for business",
@@ -530,7 +893,19 @@
         "employee_count": "51-200"
       },
       "relevant": false,
-      "rationale": "MAIT is an industrial digitalization integrator and PTC technology partner, not a primary industrial-software vendor offering a directly comparable platform."
+      "rationale": "MAIT is an industrial digitalization and PTC implementation partner, not a primary CAD/PLM/IoT software platform competitor.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "MAIT is an industrial digitalization and PTC implementation partner, not a primary CAD/PLM/IoT software platform competitor."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Implementation/integration partner that deploys PTC's own technology, not a software vendor competing or comparable to PTC."
+        }
+      ]
     },
     {
       "name": "PROSTEP AG",
@@ -546,8 +921,25 @@
         "industries": null,
         "employee_count": "201-500"
       },
-      "relevant": false,
-      "rationale": "PROSTEP primarily consults and integrates PLM environments, complementing platforms like PTC rather than offering a directly comparable core PLM suite."
+      "relevant": true,
+      "rationale": "PROSTEP sells its own PLM integration, data-exchange, and digital-thread software to the same manufacturing PLM buyers, overlapping PTC's PLM/digital-thread business.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "PROSTEP primarily provides PLM consulting, integration, and data-exchange tools rather than a broad CAD/PLM software platform comparable to PTC."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "PROSTEP sells its own PLM integration, data-exchange, and digital-thread software to the same manufacturing PLM buyers, overlapping PTC's PLM/digital-thread business."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "PROSTEP sells PLM integration software (OpenPDM/OpenDXM) to the same engineering/manufacturing buyers, a comparable in PLM space despite consulting emphasis."
+        }
+      ]
     },
     {
       "name": "KETIV Technologies",
@@ -564,7 +956,19 @@
         "employee_count": "51-200"
       },
       "relevant": false,
-      "rationale": "KETIV is primarily a software reseller, integrator, training, and consulting provider for manufacturing tools, rather than a competing industrial-software platform."
+      "rationale": "KETIV is primarily a manufacturing technology consultancy/integrator, not a CAD/PLM/IoT software platform comparable to PTC.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "KETIV is primarily a manufacturing technology consultancy/integrator, not a CAD/PLM/IoT software platform comparable to PTC."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "KETIV is primarily an Autodesk reseller/consultancy offering training and implementation services to manufacturers, not a competing industrial software product company."
+        }
+      ]
     },
     {
       "name": "Profory",
@@ -581,7 +985,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "Profory is a Siemens Teamcenter implementation consultancy, not an industrial-software vendor offering its own CAD, PLM, IoT, or lifecycle platform."
+      "rationale": "PLM implementation consultancy and Siemens partner; serves PTC-like customers but does not sell competing industrial software.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "PLM implementation consultancy and Siemens partner; serves PTC-like customers but does not sell competing industrial software."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Consultancy implementing Siemens Teamcenter PLM for clients, not a PLM software vendor; serves the category rather than competing with PTC's products."
+        }
+      ]
     },
     {
       "name": "Intelliact",
@@ -598,7 +1014,24 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "Intelliact appears to be a PLM/data-integration consultancy and implementation specialist, not an industrial software platform competing with PTC\u2019s core products."
+      "rationale": "PLM integration and data-migration consultancy serving the category (likely implementing vendors' PLM systems), not a competing industrial software product company.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "PLM and industrial product-data integration/services align closely with PTC\u2019s PLM, IoT, and service-lifecycle software market."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "PLM integration and data-migration consultancy serving the category (likely implementing vendors' PLM systems), not a competing industrial software product company."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "Intelliact is a PLM consulting/integration specialist serving manufacturers, not a PLM/CAD software vendor competing with PTC."
+        }
+      ]
     },
     {
       "name": "GSC",
@@ -615,7 +1048,19 @@
         "employee_count": "51-200"
       },
       "relevant": false,
-      "rationale": "GSC is primarily a CAD/3D-printing reseller and engineering-services provider, not an industrial-software developer competing with PTC\u2019s core platforms."
+      "rationale": "GSC primarily resells and implements CAD, simulation, and manufacturing tools; it is an engineering-services partner, not an industrial-software platform comparable to PTC.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "GSC primarily resells and implements CAD, simulation, and manufacturing tools; it is an engineering-services partner, not an industrial-software platform comparable to PTC."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "GSC resells/implements others' CAD software and 3D printers with training services\u2014a channel partner serving the category, not a software competitor to PTC."
+        }
+      ]
     },
     {
       "name": "SpecPage",
@@ -632,7 +1077,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Both provide PLM and product-data management software for manufacturers, targeting lifecycle, product development, and compliance teams."
+      "rationale": "Food-and-beverage-focused PLM/PDM platform overlaps PTC's core PLM product category, serving manufacturers' product lifecycle and compliance needs.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Food-and-beverage-focused PLM/PDM platform overlaps PTC's core PLM product category, serving manufacturers' product lifecycle and compliance needs."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both sell PLM software; SpecPage is a vertical (food & beverage) PLM/PDM/PIM vendor, matching PTC's core PLM product line."
+        }
+      ]
     },
     {
       "name": "The Project Group",
@@ -649,7 +1106,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "The Project Group provides Microsoft-centric PPM consulting and add-ons, not core CAD, PLM, industrial IoT, or service-lifecycle software competing with PTC."
+      "rationale": "Microsoft-focused PPM consulting and add-ons, not industrial CAD, PLM, IoT, or service-lifecycle software comparable to PTC.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Microsoft-focused PPM consulting and add-ons, not industrial CAD, PLM, IoT, or service-lifecycle software comparable to PTC."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Microsoft PPM consulting and project-management add-ons, not CAD/PLM/IoT industrial software; consultancy implementing third-party tools, no overlapping product axis."
+        }
+      ]
     },
     {
       "name": "MAIT",
@@ -666,7 +1135,19 @@
         "employee_count": "501-1000"
       },
       "relevant": false,
-      "rationale": "MAIT is primarily a digitalization and managed-services partner implementing PLM/ERP solutions, not an industrial-software product vendor competing with PTC."
+      "rationale": "MAIT is a manufacturing digitalization and IT-services integrator, implementing PLM/ERP solutions rather than selling a comparable industrial-software platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "MAIT is a manufacturing digitalization and IT-services integrator, implementing PLM/ERP solutions rather than selling a comparable industrial-software platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "IT services/implementation partner delivering PLM/ERP and managed services to manufacturers; a consultancy serving the category, not a competing industrial-software vendor."
+        }
+      ]
     },
     {
       "name": "Strategic Tech Solutions",
@@ -683,7 +1164,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "Strategic Tech Solutions is a consultancy implementing PTC Windchill and related transformation services, not a competing industrial-software product platform."
+      "rationale": "Consulting and implementation firm using PLM and digital transformation services, not an industrial software product platform comparable to PTC.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Consulting and implementation firm using PLM and digital transformation services, not an industrial software product platform comparable to PTC."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Consulting/services firm implementing PLM and digital transformation, not an industrial software product company like PTC; serves the category rather than competing."
+        }
+      ]
     },
     {
       "name": "CIMPA",
@@ -700,7 +1193,19 @@
         "employee_count": "1001-5000"
       },
       "relevant": false,
-      "rationale": "CIMPA is a PLM consulting and integration provider, not an industrial software platform vendor competing with PTC\u2019s core products."
+      "rationale": "CIMPA is a PLM consulting, integration, and engineering-services provider, not a primary PLM software platform comparable to PTC.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "CIMPA is a PLM consulting, integration, and engineering-services provider, not a primary PLM software platform comparable to PTC."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "CIMPA is a PLM consulting/integration services firm implementing PLM for clients, not a competing PLM/CAD software product company."
+        }
+      ]
     },
     {
       "name": "Maintenance Reseller Corporation (MRC)",
@@ -717,7 +1222,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "MRC is a reseller and support provider for PTC products, not an independent industrial-software platform with its own overlapping core offering."
+      "rationale": "MRC resells and supports PTC products; it is a channel partner, not an independent competing or comparable industrial-software provider.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "MRC resells and supports PTC products; it is a channel partner, not an independent competing or comparable industrial-software provider."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Reseller of PTC's own products; a channel partner, not a competitor or comparable industrial-software maker."
+        }
+      ]
     },
     {
       "name": "Teqtron",
@@ -734,7 +1251,19 @@
         "employee_count": "51-200"
       },
       "relevant": false,
-      "rationale": "Teqtron implements and integrates third-party PLM platforms, including PTC Windchill, rather than offering a competing industrial-software platform."
+      "rationale": "Teqtron is a PLM implementation and integration consultancy, including for Windchill, rather than an industrial-software platform competitor.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Teqtron is a PLM implementation and integration consultancy, including for Windchill, rather than an industrial-software platform competitor."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Teqtron is a services consultancy implementing PLM tools (including PTC's Windchill), not a software vendor competing in PLM/IoT."
+        }
+      ]
     },
     {
       "name": "Percall Group",
@@ -751,7 +1280,19 @@
         "employee_count": "501-1000"
       },
       "relevant": false,
-      "rationale": "Percall primarily provides consulting, integration, and deployment services around PLM/CAD/IoT platforms rather than offering a competing industrial-software suite."
+      "rationale": "Percall Group primarily provides PLM/IoT consulting, integration, and deployment services, rather than competing with PTC's industrial software platforms.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Percall Group primarily provides PLM/IoT consulting, integration, and deployment services, rather than competing with PTC's industrial software platforms."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Primarily a consulting and integration firm implementing PLM/CAD/IoT systems; serves the category as a services partner rather than competing as an industrial-software vendor like PTC."
+        }
+      ]
     },
     {
       "name": "PDSVISION UK Ltd",
@@ -768,7 +1309,19 @@
         "employee_count": "51-200"
       },
       "relevant": false,
-      "rationale": "PDSVISION is primarily a reseller and implementation consultancy for PTC products such as Creo and Windchill, not an independent industrial-software peer."
+      "rationale": "PDSVISION primarily implements and consults on CAD, PLM, IoT, and digital-transformation solutions, acting as a services partner rather than an industrial-software platform peer.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "PDSVISION primarily implements and consults on CAD, PLM, IoT, and digital-transformation solutions, acting as a services partner rather than an industrial-software platform peer."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "PDSVISION is primarily a PTC partner/reseller and consulting firm implementing PTC's CAD/PLM tools, not an independent competitor or comparable product vendor."
+        }
+      ]
     },
     {
       "name": "Progress Technologies",
@@ -784,8 +1337,25 @@
         "industries": null,
         "employee_count": "1-10"
       },
-      "relevant": false,
-      "rationale": "Progress Technologies primarily provides engineering consulting and third-party simulation solutions, rather than a competing industrial-software platform like PTC."
+      "relevant": true,
+      "rationale": "Industrial engineering software (CAE, digital twin, model-based design) for manufacturing R&D \u2014 comparable product space and buyer persona to PTC.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Manufacturing engineering consultancy using CAE and digital twins, not a primary CAD/PLM/IoT software platform comparable to PTC."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Industrial engineering software (CAE, digital twin, model-based design) for manufacturing R&D \u2014 comparable product space and buyer persona to PTC."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Engineering software/services for manufacturing CAE, digital twin, MBD, PLM tooling \ronal buyers \\u2014 comparable industrial-software player, though partly reseller/consulting.  You must respond with valid JSON."
+        }
+      ]
     },
     {
       "name": "Integware",
@@ -802,7 +1372,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "Integware is a PLM consultancy and implementation partner, not an industrial software vendor offering a competing PLM platform."
+      "rationale": "Integware is a PLM implementation consultancy, serving users of PLM platforms rather than selling a comparable industrial software product.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Integware is a PLM implementation consultancy, serving users of PLM platforms rather than selling a comparable industrial software product."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "PLM consulting/services firm implementing PLM systems, not a PLM software vendor; serves the category rather than competing with PTC's software products."
+        }
+      ]
     },
     {
       "name": "INNEO Solutions",
@@ -819,7 +1401,19 @@
         "employee_count": "201-500"
       },
       "relevant": false,
-      "rationale": "INNEO primarily resells and implements PTC products rather than offering a competing CAD, PLM, or industrial IoT software platform."
+      "rationale": "PTC reseller and implementation provider, not an independent industrial-software competitor or comparable product platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "PTC reseller and implementation provider, not an independent industrial-software competitor or comparable product platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "INNEO is a PTC platinum reseller and implementation partner, distributing PTC's own products rather than competing with comparable industrial software."
+        }
+      ]
     },
     {
       "name": "CAM Logic",
@@ -836,7 +1430,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "CAM Logic is a Siemens software reseller and engineering solutions provider, not an industrial-software product company competing with PTC."
+      "rationale": "CAM Logic is a Siemens PLM reseller and engineering solutions partner, not an industrial-software platform comparable to PTC.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "CAM Logic is a Siemens PLM reseller and engineering solutions partner, not an industrial-software platform comparable to PTC."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Reseller/services partner for Siemens PLM and 3D printing, not a CAD/PLM software maker; serves the category rather than competing with PTC."
+        }
+      ]
     },
     {
       "name": "Solid System Team",
@@ -853,7 +1459,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "Solid System Team is primarily a CAD/PLM systems integrator and reseller, not an industrial-software platform vendor competing with PTC."
+      "rationale": "CAD/PLM integration consultancy and Siemens software reseller, not an industrial-software platform comparable to PTC.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "CAD/PLM integration consultancy and Siemens software reseller, not an industrial-software platform comparable to PTC."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Consultancy/reseller integrating Siemens and SAP CAD/PLM products for clients; serves the category rather than competing with PTC's own software."
+        }
+      ]
     },
     {
       "name": "3DSMAN",
@@ -870,7 +1488,24 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "3DSMAN is primarily a reseller/consultancy for Dassault tools and contract design services, not an industrial-software platform vendor like PTC."
+      "rationale": "Reseller/consultancy implementing Dassault Syst\u00e8mes PLM tools, not a software maker; serves the category rather than competing with PTC.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Resells and consults on CAD, PLM, simulation, and manufacturing tools for the same industrial product-development customers PTC serves."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Reseller/consultancy implementing Dassault Syst\u00e8mes PLM tools, not a software maker; serves the category rather than competing with PTC."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "Reseller/consultancy for Dassault Syst\ffemes software, not a competing industrial-software product vendor."
+        }
+      ]
     },
     {
       "name": "Domain Systems",
@@ -887,7 +1522,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "Domain Systems is a PLM consultancy and implementation partner, not an industrial-software vendor offering a competing PLM platform."
+      "rationale": "PLM and IIoT consultancy implementing other vendors\u2019 systems, not an industrial-software platform comparable to PTC.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "PLM and IIoT consultancy implementing other vendors\u2019 systems, not an industrial-software platform comparable to PTC."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "PLM implementation/consulting services firm, not a PLM software vendor; serves the category rather than competing with PTC's software products."
+        }
+      ]
     },
     {
       "name": "DSC Software",
@@ -904,7 +1551,19 @@
         "employee_count": "51-200"
       },
       "relevant": true,
-      "rationale": "Both provide industrial PLM software and engineering-data integration for manufacturing enterprises, targeting PLM managers and product-development teams."
+      "rationale": "Provides PLM integration and solutions for industrial manufacturers, directly overlapping PTC\u2019s PLM and digital-transformation product market.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Provides PLM integration and solutions for industrial manufacturers, directly overlapping PTC\u2019s PLM and digital-transformation product market."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Provides PLM software solutions for industrial/manufacturing enterprises, directly overlapping PTC's PLM product line and target market."
+        }
+      ]
     },
     {
       "name": "GEOMETRIC EUROPE GMBH",
@@ -921,7 +1580,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "Geometric Europe provides PLM implementation and digital-transformation services, rather than a competing industrial-software platform like PTC."
+      "rationale": "Provides PLM implementation and digital-transformation services, rather than a competing industrial software platform like PTC.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Provides PLM implementation and digital-transformation services, rather than a competing industrial software platform like PTC."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "PLM implementation/consulting services firm (HCL subsidiary), not a PLM software product company; serves the category rather than competing with PTC."
+        }
+      ]
     },
     {
       "name": "Intelizign",
@@ -938,7 +1609,19 @@
         "employee_count": "1001-5000"
       },
       "relevant": false,
-      "rationale": "Intelizign primarily implements and supports Siemens/Dassault PLM platforms, making it a services partner rather than an overlapping industrial-software vendor."
+      "rationale": "PLM services and implementation partner for Siemens/Dassault platforms, not a competing CAD/PLM software vendor like PTC.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "PLM services and implementation partner for Siemens/Dassault platforms, not a competing CAD/PLM software vendor like PTC."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "PLM services/consulting firm implementing Siemens and Dassault platforms; serves the category as a partner, not a competing software vendor like PTC."
+        }
+      ]
     },
     {
       "name": "Geometric Solutions",
@@ -955,7 +1638,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "Geometric Solutions implements and supports Siemens CAD/PLM products rather than offering its own competing industrial-software platform."
+      "rationale": "Siemens software implementation, training, and support partner; it serves PLM/CAD users rather than competing as an industrial-software platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Siemens software implementation, training, and support partner; it serves PLM/CAD users rather than competing as an industrial-software platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Reseller/implementer of Siemens PLM/CAD software; a services partner serving the category, not a software vendor competing with PTC."
+        }
+      ]
     },
     {
       "name": "Applied Product Lifecycle Strategies",
@@ -972,7 +1667,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "Candidate appears to provide PLM strategy and process consulting, not industrial PLM software that buyers would evaluate against PTC\u2019s platform."
+      "rationale": "PLM consulting and process-optimization services for manufacturers, not a PLM software platform comparable to PTC.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "PLM consulting and process-optimization services for manufacturers, not a PLM software platform comparable to PTC."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "PLM consulting/methodology services firm, not PLM software; serves the category rather than competing with PTC's software products."
+        }
+      ]
     },
     {
       "name": "Mawea Industries",
@@ -989,7 +1696,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "Mawea is primarily a reseller/integrator of third-party industrial software, not a developer of a competing CAD, PLM, IoT, or SLM platform."
+      "rationale": "Mawea is primarily a Dassault PLM/digital-manufacturing solutions integrator and reseller, not an independent industrial-software platform comparable to PTC.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Mawea is primarily a Dassault PLM/digital-manufacturing solutions integrator and reseller, not an independent industrial-software platform comparable to PTC."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Mawea is a Dassault Syst\u00e8mes reseller/integrator selling implementation services, not a software vendor with its own CAD/PLM products competing with PTC."
+        }
+      ]
     },
     {
       "name": "PLM Group",
@@ -1006,7 +1725,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "PLM Group is primarily a Dassault Syst\u00e8mes reseller and implementation partner, not an industrial-software platform vendor competing directly with PTC."
+      "rationale": "PLM Group is a Dassault platform partner and services reseller, not an independent industrial-software vendor comparable to PTC.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "PLM Group is a Dassault platform partner and services reseller, not an independent industrial-software vendor comparable to PTC."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Reseller/services partner for Dassault Syst\u00e8mes, not a software maker; serves the CAD/PLM category rather than competing with PTC's own products."
+        }
+      ]
     },
     {
       "name": "MCAE Consulting",
@@ -1023,7 +1754,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "MCAE is a consultancy implementing and training customers on PTC\u2019s Creo and Windchill products, not a competing industrial-software platform."
+      "rationale": "Consultancy and training provider implementing PTC products; it serves PTC customers rather than competing as an industrial-software platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Consultancy and training provider implementing PTC products; it serves PTC customers rather than competing as an industrial-software platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Consultancy implementing and training on PTC's own Creo/Windchill products; serves the category as a partner, not a competitor or comparable."
+        }
+      ]
     },
     {
       "name": "XD Innovation",
@@ -1040,7 +1783,19 @@
         "employee_count": "51-200"
       },
       "relevant": false,
-      "rationale": "XD Innovation is a Dassault implementation consultancy serving PLM/CAD buyers, not an industrial-software platform vendor competing with PTC."
+      "rationale": "Consultancy implementing Dassault CAD/PLM tools, rather than an industrial-software platform comparable to PTC.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Consultancy implementing Dassault CAD/PLM tools, rather than an industrial-software platform comparable to PTC."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Consultancy implementing Dassault's CAD/PLM software for clients, not a competing industrial-software vendor; serves the category rather than competing."
+        }
+      ]
     },
     {
       "name": "Savoir",
@@ -1057,7 +1812,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "Savoir is a consultancy implementing PTC products, not an industrial-software vendor offering competing CAD, PLM, IoT, or lifecycle platforms."
+      "rationale": "Consultancy implementing PTC products for clients, not a competing industrial-software platform or comparable vendor.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Consultancy implementing PTC products for clients, not a competing industrial-software platform or comparable vendor."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Consultancy implementing PTC's own Windchill/ThingWorx products; a services partner of the seed, not a competing industrial-software vendor."
+        }
+      ]
     },
     {
       "name": "CAD Schroer",
@@ -1074,7 +1841,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "CAD Schroer directly overlaps PTC\u2019s industrial CAD and AR offerings, targeting the same engineering, plant-design, and manufacturing users."
+      "rationale": "Provides industrial CAD and plant-design software, overlapping PTC\u2019s core CAD and digital industrial engineering offerings.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Provides industrial CAD and plant-design software, overlapping PTC\u2019s core CAD and digital industrial engineering offerings."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Develops industrial 3D CAD software for plant/facility design, directly overlapping PTC's CAD product line and industrial engineering market."
+        }
+      ]
     },
     {
       "name": "Accrevent",
@@ -1091,7 +1870,19 @@
         "employee_count": "51-200"
       },
       "relevant": false,
-      "rationale": "Accrevent is a consultancy implementing PTC and other PLM/IoT platforms, not a competing industrial-software product company."
+      "rationale": "PLM/IoT consulting and implementation partner using PTC platforms, not a competing industrial-software product vendor.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "PLM/IoT consulting and implementation partner using PTC platforms, not a competing industrial-software product vendor."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Consultancy implementing PTC Windchill/ARAS PLM for clients; serves the category as a partner, not a competing software vendor."
+        }
+      ]
     },
     {
       "name": "CAD2M",
@@ -1108,7 +1899,19 @@
         "employee_count": "51-200"
       },
       "relevant": false,
-      "rationale": "CAD2M is a SOLIDWORKS/3DEXPERIENCE reseller and services provider, not an industrial-software vendor offering its own competing CAD/PLM platform."
+      "rationale": "CAD2M resells and implements third-party CAD/PLM tools; it is a channel partner/consultancy, not an industrial-software platform comparable to PTC.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "CAD2M resells and implements third-party CAD/PLM tools; it is a channel partner/consultancy, not an industrial-software platform comparable to PTC."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Reseller/service partner distributing Dassault's SOLIDWORKS/3DEXPERIENCE, not a software maker competing with PTC's own CAD/PLM products."
+        }
+      ]
     },
     {
       "name": "ISAP GmbH",
@@ -1125,7 +1928,19 @@
         "employee_count": "51-200"
       },
       "relevant": false,
-      "rationale": "ISAP primarily consults on and implements Siemens PLM products, making it a services partner rather than an industrial-software platform competing with PTC."
+      "rationale": "ISAP is a Siemens PLM implementation consultancy and reseller, serving PTC-like customers rather than selling a competing industrial software platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "ISAP is a Siemens PLM implementation consultancy and reseller, serving PTC-like customers rather than selling a competing industrial software platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Siemens PLM implementation/consulting partner, not a CAD/PLM software maker; serves the category as a service provider rather than competing with PTC."
+        }
+      ]
     },
     {
       "name": "AV ENGINEERING, a.s.",
@@ -1142,7 +1957,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "AV ENGINEERING is an implementation partner and consultancy for PTC products, not an industrial-software vendor offering competing CAD, PLM, or IoT platforms."
+      "rationale": "PTC implementation consultancy and reseller/partner, serving PTC customers rather than offering competing industrial software products.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "PTC implementation consultancy and reseller/partner, serving PTC customers rather than offering competing industrial software products."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Implementation/consulting partner for PTC products, not a competing industrial-software vendor; serves the category rather than competing in it."
+        }
+      ]
     },
     {
       "name": "Soul of Design",
@@ -1159,7 +1986,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "Soul of Design is a consultancy implementing and optimizing CAD/PLM processes, not an industrial software platform competing with PTC\u2019s core products."
+      "rationale": "Consultancy implementing and optimizing PLM/PDM and CAD for manufacturers, rather than an industrial-software platform competing with PTC.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Consultancy implementing and optimizing PLM/PDM and CAD for manufacturers, rather than an industrial-software platform competing with PTC."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Consultancy implementing PDM/PLM and CAD best practices, not a software vendor; serves PTC's category rather than competing with its products."
+        }
+      ]
     },
     {
       "name": "TOPGRAF",
@@ -1176,7 +2015,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "TOPGRAF is a bespoke industrial software developer and integrator, not a product platform competing in PTC\u2019s CAD, PLM, IoT, or SLM categories."
+      "rationale": "Custom software and integration consultancy for manufacturers, not a product platform comparable to PTC\u2019s CAD, PLM, IoT, and lifecycle software.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Custom software and integration consultancy for manufacturers, not a product platform comparable to PTC\u2019s CAD, PLM, IoT, and lifecycle software."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Bespoke software services/integration firm for manufacturers \u2014 serves the category as a consultancy rather than competing with PTC's industrial software products."
+        }
+      ]
     },
     {
       "name": "Inceptra",
@@ -1193,7 +2044,19 @@
         "employee_count": "51-200"
       },
       "relevant": false,
-      "rationale": "Inceptra is a Dassault Syst\u00e8mes reseller and implementation partner, not an industrial-software developer competing with PTC\u2019s core CAD and PLM platforms."
+      "rationale": "Inceptra is a Dassault Syst\u00e8mes reseller and implementation/education partner, not an independent industrial-software platform comparable to PTC.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Inceptra is a Dassault Syst\u00e8mes reseller and implementation/education partner, not an independent industrial-software platform comparable to PTC."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Reseller/education partner implementing Dassault Syst\u00e8mes PLM (CATIA, ENOVIA), not a PLM software maker; serves the category rather than competing with PTC."
+        }
+      ]
     },
     {
       "name": "Part Solutions",
@@ -1210,7 +2073,19 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "Both provide industrial CAD-related software for manufacturing engineering teams, overlapping in 3D design workflows, component management, and part reuse."
+      "rationale": "Provides industrial 3D CAD models and parts-management software for manufacturers, overlapping PTC\u2019s CAD and product-data management market.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Provides industrial 3D CAD models and parts-management software for manufacturers, overlapping PTC\u2019s CAD and product-data management market."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Industrial software vendor selling 3D CAD catalog and parts-management software to engineering teams at manufacturers \u2014 same CAD/PLM product space and buyer as PTC."
+        }
+      ]
     },
     {
       "name": "BeProduct",
@@ -1227,7 +2102,19 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "BeProduct offers PLM and product-development software, overlapping PTC\u2019s core PLM offering and serving teams with the same lifecycle-management job."
+      "rationale": "BeProduct is a PLM platform, directly overlapping PTC's PLM product category, though specialized for fashion and lifestyle brands.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "BeProduct is a PLM platform, directly overlapping PTC's PLM product category, though specialized for fashion and lifestyle brands."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both sell PLM software; BeProduct's fashion-focused PLM matches PTC's Windchill PLM product line, making it a direct comparable."
+        }
+      ]
     },
     {
       "name": "Transition Technologies USA",
@@ -1244,7 +2131,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "Transition Technologies is an industrial digital-transformation consultancy and PTC/Windchill integrator, not a competing CAD, PLM, IoT, or lifecycle software platform."
+      "rationale": "Industrial digital-transformation consultancy and PTC implementation partner, not a primary CAD, PLM, IoT, or lifecycle-software platform competitor.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Industrial digital-transformation consultancy and PTC implementation partner, not a primary CAD, PLM, IoT, or lifecycle-software platform competitor."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Services/implementation partner (integrates PTC's Windchill), not an industrial-software product company competing with PTC."
+        }
+      ]
     },
     {
       "name": "Saratech",
@@ -1261,7 +2160,19 @@
         "employee_count": "51-200"
       },
       "relevant": false,
-      "rationale": "Saratech is primarily a Siemens software reseller and engineering/implementation services partner, not an industrial-software platform vendor comparable to PTC."
+      "rationale": "Saratech is a Siemens-focused engineering and PLM implementation/services partner, not an industrial software platform comparable to PTC.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Saratech is a Siemens-focused engineering and PLM implementation/services partner, not an industrial software platform comparable to PTC."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Saratech is a Siemens partner/reseller and engineering-services firm implementing PLM/CAD tools, not an industrial-software vendor competing with PTC."
+        }
+      ]
     },
     {
       "name": "Bestway Technology",
@@ -1278,7 +2189,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "Bestway is a Dassault Syst\u00e8mes reseller and implementation partner, not an industrial-software product company competing directly with PTC."
+      "rationale": "Dassault reseller and implementation agent, not an independent industrial-software platform comparable to PTC.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Dassault reseller and implementation agent, not an independent industrial-software platform comparable to PTC."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Reseller/implementer of Dassault products, not a software vendor itself; serves the category as a channel partner rather than competing with PTC."
+        }
+      ]
     },
     {
       "name": "SolidPartners",
@@ -1295,7 +2218,19 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "SolidPartners provides PLM/PDM software for manufacturing engineering teams, directly overlapping PTC\u2019s PLM offering and serving the same product-development buyers."
+      "rationale": "Offers PLM and PDM software for manufacturing engineering teams, directly overlapping PTC\u2019s product lifecycle management and CAD-data management market.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Offers PLM and PDM software for manufacturing engineering teams, directly overlapping PTC\u2019s product lifecycle management and CAD-data management market."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "SolidPartners sells PLM/PDM software for manufacturers, directly matching PTC's core PLM/CAD product line \u2014 a competitor/comparable despite smaller size."
+        }
+      ]
     },
     {
       "name": "Applied CAx",
@@ -1312,7 +2247,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "Applied CAx is a Siemens-focused PLM implementation, training, and engineering consultancy, not an industrial-software platform vendor comparable to PTC."
+      "rationale": "Engineering consultancy implementing and training Siemens PLM/CAD tools, rather than a CAD/PLM software platform comparable to PTC.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Engineering consultancy implementing and training Siemens PLM/CAD tools, rather than a CAD/PLM software platform comparable to PTC."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Consultancy/services firm implementing Siemens PLM software for clients, not a CAD/PLM software product company competing with PTC."
+        }
+      ]
     },
     {
       "name": "Top Systems",
@@ -1329,7 +2276,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Top Systems offers CAD and PDM software for mechanical product development, overlapping PTC\u2019s core CAD/PLM offerings and engineering buyer persona."
+      "rationale": "T-FLEX provides parametric mechanical CAD and PDM/engineering tools, directly overlapping PTC\u2019s CAD and PLM industrial-software offerings.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "T-FLEX provides parametric mechanical CAD and PDM/engineering tools, directly overlapping PTC\u2019s CAD and PLM industrial-software offerings."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Develops parametric CAD/CAM/CAE/PDM software for mechanical design, directly matching PTC's core CAD/PLM product and market."
+        }
+      ]
     },
     {
       "name": "CAD Services",
@@ -1346,7 +2305,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "CAD Services implements and resells PTC\u2019s software rather than offering a competing industrial-software platform, making it a partner/service provider, not a lookalike."
+      "rationale": "PTC software reseller and consultancy serving manufacturing customers, not an independent industrial-software competitor or comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "PTC software reseller and consultancy serving manufacturing customers, not an independent industrial-software competitor or comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "PTC reseller/consultancy distributing Creo, Windchill, Mathcad with training and support services; a channel partner of the seed, not a competitor or comparable."
+        }
+      ]
     },
     {
       "name": "DataPattern",
@@ -1363,7 +2334,19 @@
         "employee_count": "51-200"
       },
       "relevant": false,
-      "rationale": "DataPattern is a digital-transformation consultancy, not an industrial software vendor offering CAD, PLM, IoT, or service lifecycle platforms."
+      "rationale": "DataPattern is a digital-transformation consultancy, not an industrial software platform competing in CAD, PLM, IoT, or service lifecycle management.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "DataPattern is a digital-transformation consultancy, not an industrial software platform competing in CAD, PLM, IoT, or service lifecycle management."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Consultancy advising on digital transformation, not an industrial-software product vendor; serves the category rather than competing with PTC's CAD/PLM/IoT products."
+        }
+      ]
     },
     {
       "name": "Prodtex",
@@ -1380,7 +2363,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "Prodtex is an engineering consultancy and implementation provider using Dassault software, not a competing industrial-software platform offering CAD, PLM, or IoT products."
+      "rationale": "Prodtex is an engineering consultancy and Dassault-platform implementer, not an industrial-software vendor comparable to PTC.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Prodtex is an engineering consultancy and Dassault-platform implementer, not an industrial-software vendor comparable to PTC."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Consultancy implementing Dassault's 3DEXPERIENCE platform for clients, not a PLM/CAD software vendor competing with PTC; serves the category rather than resembling it."
+        }
+      ]
     },
     {
       "name": "Mountain Point",
@@ -1397,7 +2392,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "Mountain Point is a manufacturing digital-transformation consultancy and implementer, not an industrial software vendor offering CAD, PLM, IoT, or SLM platforms."
+      "rationale": "Mountain Point is a manufacturing digital-transformation consultancy, not an industrial software platform competing in CAD, PLM, IoT, or SLM.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Mountain Point is a manufacturing digital-transformation consultancy, not an industrial software platform competing in CAD, PLM, IoT, or SLM."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Consultancy implementing digital transformation for manufacturers, not an industrial-software product company; serves the category rather than competing with PTC."
+        }
+      ]
     },
     {
       "name": "Intrepid Software Solutions",
@@ -1414,7 +2421,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "Intrepid is a PLM/configuration-management services and integration consultancy, not an industrial software platform vendor competing with PTC."
+      "rationale": "Provides PLM and configuration-management integration services, rather than a competing industrial software platform like PTC.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Provides PLM and configuration-management integration services, rather than a competing industrial software platform like PTC."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "PLM/CM implementation and integration services firm (Aras partner), not a software vendor \u2014 serves PTC's category rather than competing with it."
+        }
+      ]
     },
     {
       "name": "Product & Process Innovation",
@@ -1431,7 +2450,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "Candidate is a digital-transformation consultancy and training provider, not an industrial software platform offering CAD, PLM, IoT, or service lifecycle products."
+      "rationale": "Consulting and training firm serving digital transformation initiatives, not an industrial software platform for CAD, PLM, IoT, or service lifecycle management.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Consulting and training firm serving digital transformation initiatives, not an industrial software platform for CAD, PLM, IoT, or service lifecycle management."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Digital-transformation consultancy serving the category, not a software product competitor to PTC's CAD/PLM/IoT platforms."
+        }
+      ]
     },
     {
       "name": "4CAD Group",
@@ -1448,7 +2479,19 @@
         "employee_count": "201-500"
       },
       "relevant": false,
-      "rationale": "4CAD is primarily an integrator and implementation partner for PTC and other industrial software, not a competing industrial-software platform."
+      "rationale": "4CAD Group is an industrial software implementation and integration consultancy, serving PTC ecosystems rather than competing with PTC's core software products.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "4CAD Group is an industrial software implementation and integration consultancy, serving PTC ecosystems rather than competing with PTC's core software products."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "4CAD is an integration/services firm implementing PTC and other vendors' software \u2014 a partner/reseller serving the category, not a competing industrial-software vendor."
+        }
+      ]
     },
     {
       "name": "TopS BI",
@@ -1465,7 +2508,19 @@
         "employee_count": "51-200"
       },
       "relevant": false,
-      "rationale": "TopS BI is a PLM implementation and systems-integration consultancy, not an industrial software product vendor comparable to PTC."
+      "rationale": "TopS BI is a PLM implementation and systems-integration consultancy, serving manufacturers rather than selling a competing industrial-software platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "TopS BI is a PLM implementation and systems-integration consultancy, serving manufacturers rather than selling a competing industrial-software platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "TopS BI is a PLM implementation/system-integration consultancy, not a PLM software vendor; it serves PTC's category rather than competing as a peer."
+        }
+      ]
     },
     {
       "name": "NET AG system integration",
@@ -1482,7 +2537,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "NET AG is a systems integrator implementing PTC tools, not an industrial-software vendor offering a competing CAD, PLM, or IoT platform."
+      "rationale": "System integrator and advisor implementing PTC products, not an industrial software platform competitor or comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "System integrator and advisor implementing PTC products, not an industrial software platform competitor or comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "System integrator/reseller implementing PTC's own products (Creo, Windchill, ThingWorx); a services partner, not a competitor or comparable software vendor."
+        }
+      ]
     },
     {
       "name": "Bluestar PLM",
@@ -1499,7 +2566,19 @@
         "employee_count": "51-200"
       },
       "relevant": true,
-      "rationale": "Bluestar offers industrial PLM, CAD integration, BOM, and engineering-change software evaluated by the same manufacturing engineering buyers as PTC\u2019s core PLM products."
+      "rationale": "Bluestar PLM provides CAD-connected product lifecycle management for manufacturers, directly overlapping PTC's PLM and industrial-software offerings.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Bluestar PLM provides CAD-connected product lifecycle management for manufacturers, directly overlapping PTC's PLM and industrial-software offerings."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "PLM software with CAD integration for manufacturers directly matches PTC's core PLM/CAD product line and industrial buyer market."
+        }
+      ]
     },
     {
       "name": "Flexur Systems",
@@ -1516,7 +2595,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "Flexur is a PLM implementation consultancy and integration partner, not a competing industrial-software platform offering core PLM products."
+      "rationale": "PLM implementation consultancy and reseller partner, not a primary industrial software platform competing with PTC.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "PLM implementation consultancy and reseller partner, not a primary industrial software platform competing with PTC."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Services consultancy implementing third-party PLM tools (Teamcenter, Aras), not a PLM/CAD software product vendor; serves the category rather than competing with PTC."
+        }
+      ]
     },
     {
       "name": "Pumacy Technologies AG",
@@ -1533,7 +2624,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "Pumacy focuses on industrial knowledge management and third-party solution implementation, not a core CAD, PLM, IoT, or service-lifecycle software platform."
+      "rationale": "Industrial knowledge-management consultancy and implementation partner using third-party PLM tools, rather than a comparable CAD/PLM/IoT software platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Industrial knowledge-management consultancy and implementation partner using third-party PLM tools, rather than a comparable CAD/PLM/IoT software platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Primarily implements/resells others' PLM (Autodesk, ENOVIA, EXALEAD) plus knowledge-management tools \u2014 a consultancy serving the category, not a competing industrial-software vendor."
+        }
+      ]
     },
     {
       "name": "productONE",
@@ -1550,7 +2653,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "productONE resells and implements PTC\u2019s software rather than offering its own competing industrial CAD, PLM, or IoT platform."
+      "rationale": "PTC reseller and implementation partner delivering PTC products, not an independent industrial-software competitor or comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "PTC reseller and implementation partner delivering PTC products, not an independent industrial-software competitor or comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Reseller/partner distributing PTC's own Creo, Windchill, ThingWorx products in Africa \u2014 a channel of the seed, not a competitor or comparable."
+        }
+      ]
     },
     {
       "name": "factor10",
@@ -1567,7 +2682,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "factor10 is a custom software consultancy serving manufacturers, not a product vendor offering CAD, PLM, IoT, or service-lifecycle platforms."
+      "rationale": "Custom software consultancy serving industrial manufacturers, not a CAD, PLM, IoT, or lifecycle-management software product competitor.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Custom software consultancy serving industrial manufacturers, not a CAD, PLM, IoT, or lifecycle-management software product competitor."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "factor10 is a custom-software consultancy serving industrial clients, not a product vendor competing with PTC's CAD/PLM/IoT software platforms."
+        }
+      ]
     },
     {
       "name": "Industrial Technology Systems",
@@ -1584,7 +2711,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "Industrial Technology Systems is primarily a Siemens software reseller and implementation partner, not an industrial-software platform vendor competing directly with PTC."
+      "rationale": "Siemens PLM/CAD reseller and implementation provider, not an industrial-software platform comparable to PTC.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Siemens PLM/CAD reseller and implementation provider, not an industrial-software platform comparable to PTC."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Reseller/implementer of Siemens PLM/CAD (Teamcenter, NX) \u2014 a consultancy serving the category, not a competing PLM/CAD software vendor like PTC. PTC even competes with Siemens."
+        }
+      ]
     },
     {
       "name": "Variantum",
@@ -1601,7 +2740,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Variantum\u2019s PLM and product-data platform overlaps PTC\u2019s PLM offering and targets the same engineering and manufacturing teams managing complex products."
+      "rationale": "Variantum offers PLM for complex configurable products, directly overlapping PTC's core lifecycle-management and industrial digital-thread software.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Variantum offers PLM for complex configurable products, directly overlapping PTC's core lifecycle-management and industrial digital-thread software."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Variantum sells PLM software for complex configurable products, directly overlapping PTC's core PLM offering and industrial buyer persona."
+        }
+      ]
     },
     {
       "name": "XPLM",
@@ -1617,8 +2768,25 @@
         "industries": null,
         "employee_count": null
       },
-      "relevant": false,
-      "rationale": "XPLM primarily provides PLM integration, migration, and consulting services, complementing platforms like PTC rather than offering a competing core PLM product."
+      "relevant": true,
+      "rationale": "B2B PLM/engineering-software vendor selling a PLM-CAD integration platform to the same industrial buyers; genuine comparable in PTC's PLM software space.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "XPLM provides integration services/platforms connecting PLM, CAD, and ERP systems; it complements rather than competes with PTC's core industrial software products."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "B2B PLM/engineering-software vendor selling a PLM-CAD integration platform to the same industrial buyers; genuine comparable in PTC's PLM software space."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "PLM/CAD engineering software vendor serving same manufacturing engineering buyers; adjacent integration player in PTC's space."
+        }
+      ]
     },
     {
       "name": "Parque Tecnol\u00f3gico Sanmiguelense",
@@ -1635,7 +2803,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "Candidate is primarily a digital-transformation consultancy/integration partner, not an industrial software platform offering CAD, PLM, IoT, or service-lifecycle products."
+      "rationale": "Digital-transformation consultancy and technology partner, not an industrial software platform comparable to PTC\u2019s CAD, PLM, IoT, and lifecycle products.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Digital-transformation consultancy and technology partner, not an industrial software platform comparable to PTC\u2019s CAD, PLM, IoT, and lifecycle products."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Technology park/digitalization consultancy serving SMEs, not an industrial-software product company competing in CAD/PLM/IoT."
+        }
+      ]
     },
     {
       "name": "Solution Hub",
@@ -1652,7 +2832,24 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "Solution Hub appears to be a manufacturing digital-transformation consultancy/integrator implementing PLM and related tools, rather than a competing industrial-software vendor."
+      "rationale": "Services-led consultancy implementing PLM/ALM (likely on vendors' stacks) for manufacturers; serves the category rather than selling competing software products like PTC.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Offers PLM solutions to manufacturing firms, directly overlapping PTC\u2019s lifecycle-management product category and industrial customer base."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Services-led consultancy implementing PLM/ALM (likely on vendors' stacks) for manufacturers; serves the category rather than selling competing software products like PTC."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "Appears to be a services/integration consultancy delivering PLM solutions (likely a PTC partner), not a software product vendor competing with PTC."
+        }
+      ]
     },
     {
       "name": "TECHNODAT Elektro",
@@ -1668,8 +2865,25 @@
         "industries": null,
         "employee_count": "11-50"
       },
-      "relevant": false,
-      "rationale": "TECHNODAT primarily resells and implements third-party engineering platforms rather than offering a competing proprietary CAD/PLM industrial-software suite."
+      "relevant": true,
+      "rationale": "Industrial engineering software provider offering PLM, CAD, product-development, and production-planning platforms to similar manufacturing and engineering teams.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Industrial engineering software provider offering PLM, CAD, product-development, and production-planning platforms to similar manufacturing and engineering teams."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Reseller/integrator delivering others' PLM tools (3DEXPERIENCE, CATIA, Aucotec's Engineering Base) plus services\u2014serves the category rather than competing with PTC products."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Sells CAD/PLM engineering software to industrial manufacturers, same product category and buyer as PTC, though partly a Dassault reseller."
+        }
+      ]
     },
     {
       "name": "CADTECH",
@@ -1686,7 +2900,20 @@
         "employee_count": "51-200"
       },
       "relevant": false,
-      "rationale": "CADTECH is a consultancy and implementation partner for Dassault software, not an industrial-software platform vendor comparable to PTC."
+      "rationale": "CADTECH is a Dassault platform consulting and implementation partner, not an industrial software vendor competing with PTC's CAD, PLM, and IoT products.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "CADTECH is a Dassault platform consulting and implementation partner, not an industrial software vendor competing with PTC's CAD, PLM, and IoT products."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Consulting/implementation partner for Dassault's 3DEXPERIENCE, not an industrial-software vendor; serves the category rather than competing with PTC."
+        }
+      ]
     }
-  ]
+  ],
+  "error": null
 }

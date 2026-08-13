@@ -2,23 +2,25 @@
   "dataset_slug": "lookalike-2026-q3",
   "seed_slug": "caterpillar",
   "provider_slug": "parallel",
-  "config_name": "no_similarity_clause",
+  "config_name": "seed_first",
   "config": {
-    "name": "no_similarity_clause",
-    "prompt_variant": "no_similarity_clause"
+    "name": "seed_first"
   },
   "k": 100,
-  "relevant_count": 3,
-  "precision_at_k": 3.0,
-  "relevant_count_at_10": 3,
-  "relevant_count_at_100": 3,
-  "precision_at_10": 30.0,
-  "precision_at_100": 3.0,
-  "latency_ms": 1186,
+  "relevant_count": 10,
+  "precision_at_k": 10.0,
+  "relevant_count_at_10": 5,
+  "relevant_count_at_25": 10,
+  "relevant_count_at_100": 10,
+  "precision_at_10": 50.0,
+  "precision_at_25": 40.0,
+  "precision_at_100": 10.0,
+  "latency_ms": 1610,
   "cost_usd": null,
   "duplicates_removed": 0,
-  "judge_model": "gpt-5.6",
-  "judged_at": "2026-07-27T02:19:00Z",
+  "max_results": null,
+  "judge_model": "majority(n=3): claude-opus-5,gpt-5.6-terra,kimi-k3",
+  "judged_at": "2026-08-12T18:15:16Z",
   "candidates": [
     {
       "name": "Machinery Equipment Dealers Inc",
@@ -31,14 +33,139 @@
         "source_urls": null,
         "confidence": null
       },
+      "relevant": true,
+      "rationale": "Anchor match: manufacturer of construction/mining equipment, engines, and turbines for same customers; overlaps four listed capabilities.",
+      "anchor_match": true,
+      "capabilities_matched": [
+        "construction equipment",
+        "mining equipment",
+        "engines",
+        "turbines",
+        "heavy machinery"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Anchor false: apparent duplicate/parody Caterpillar-style entry; description claims all listed equipment and engine capabilities."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Anchor match: manufacturer of construction/mining equipment, engines, and turbines for same customers; overlaps four listed capabilities."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Described as manufacturer of construction/mining equipment, diesel engines, turbines \u2014 same anchor and full capability overlap."
+        }
+      ]
+    },
+    {
+      "name": "Gmmco",
+      "domain": "gmmco.in",
+      "description": "Primary Sector: Real Estate and Construction | Primary Subsector: Construction Equipment and Machinery | Short Description: Manufacturer of construction, mining equipments, diesel and natural gas engines | Detailed Description: Manufacturer of construction, mining equipments, diesel and natural gas engines. It provides one-stop solution provider for road construction companies offering several cat machines in India. | All Locations: India Tamil Nadu Chennai | Name: Gmmco | Website Url: https://www.gmmco.in/ | Stage: Unfunded | Location Country: India | Location State: Tamil Nadu | Location City: Chennai | All Locations: [{\"country\":\"India\",\"city\":\"Chennai\",\"state\":\"Tamil Nadu\"}] | Countries Count: 1 | Geo Served: [\"India\"] | Board Member Count: 4 | Trademark Count: 9 | Loan Count: 48 | Special Flags: Enterprise YES | Achievements: Top Player among its competitors Size  | Cxo Team: Joseph Martin COO Sambhav Malhotra Chief Strategy Officer Durgadutta Ojha COO North K Kumar COO Manikandan",
+      "rank": 2,
+      "extra": {
+        "linkedin_url": "https://linkedin.com/company/gmmco-ltd",
+        "source_url": null,
+        "source_urls": null,
+        "confidence": null
+      },
       "relevant": false,
-      "rationale": "The description appears copied from Caterpillar\u2019s own business profile, making this a likely misattributed or duplicate entry rather than a genuine peer."
+      "rationale": "Gmmco is a Caterpillar dealer/reseller in India, not a competing equipment manufacturer; resellers serving the category fail the anchor gate.",
+      "anchor_match": false,
+      "capabilities_matched": [
+        "construction equipment",
+        "mining equipment",
+        "engines"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Anchor true: construction and mining equipment company; overlaps construction equipment, mining equipment, engines, and heavy machinery."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Gmmco is a Caterpillar dealer/reseller in India, not a competing equipment manufacturer; resellers serving the category fail the anchor gate."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "GMMCO is a Caterpillar dealer/distributor in India, not an equipment manufacturer; serves the category rather than competing."
+        }
+      ]
+    },
+    {
+      "name": "My Equipment",
+      "domain": "my-equipment.com",
+      "description": "Primary Sector: Real Estate and Construction | Primary Subsector: Construction Equipment and Machinery | Short Description: Retailer of used heavy machinery and construction equipment for sale | Detailed Description: Retailer of used heavy machinery and construction equipment for sale. They provide a range of equipment including excavators, dozers, loaders, and cranes. The company offers dismantling, transport, inspection, and shipping services. They stock brands such as Caterpillar, John Deere, Komatsu, Volvo, Tadano, and Dynapac. | Name: My Equipment | Website Url: https://www.my-equipment.com/ | Founded Year: 2015 | Stage: Public | Countries Count: 1 | All Locations: United States Texas Houston | Location Country: United States | Location State: Texas | Location City: Houston | All Locations: [{\"country\":\"United States\",\"city\":\"Houston\",\"state\":\"Texas\"}] | Geo Served: [\"United States\"] | Employee Count Official: 20 | Linkedin Url: https://linkedin.com/company/my-equipment",
+      "rank": 3,
+      "extra": {
+        "linkedin_url": "https://linkedin.com/company/my-equipment",
+        "source_url": null,
+        "source_urls": null,
+        "confidence": null
+      },
+      "relevant": false,
+      "rationale": "Anchor false: used-equipment retailer, not a construction and mining equipment manufacturer; overlaps construction equipment and heavy machinery.",
+      "anchor_match": false,
+      "capabilities_matched": [
+        "construction equipment",
+        "heavy machinery"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Anchor false: used-equipment retailer, not a construction and mining equipment manufacturer; overlaps construction equipment and heavy machinery."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Anchor false: used-equipment retailer/reseller, not a manufacturer; serves the category rather than competing in it. No capability overlap as a maker."
+        }
+      ]
+    },
+    {
+      "name": "Komatsu India",
+      "domain": "komatsuindia.in",
+      "description": "Primary Sector: Real Estate and Construction | Primary Subsector: Construction Equipment and Machinery | Short Description: Komatsu India \u2013 Manufacturer of Construction Equipment in India | Detailed Description: Komatsu India Pvt. Ltd. (KIPL) is manufacturing all kind of construction equipment machine & mining equipment machine in India. We are among leading brands for earthmovers & hydraulic excavator machines. | Name: Komatsu India | Website Url: https://www.komatsuindia.in/ | Founded Year: 1965 | Stage: Unfunded | Countries Count: 1 | Board Member Count: 8 | Loan Count: 1 | All Locations: India Tamil Nadu Chengalpattu | Location Country: India | Location State: Tamil Nadu | Location City: Chengalpattu | All Locations: [{\"country\":\"India\",\"city\":\"Chengalpattu\",\"state\":\"Tamil Nadu\"}] | Geo Served: [\"India\"] | Employee Count Official: 384 | Linkedin Url: https://linkedin.com/company/komatsu-india-pvt.-ltd | Legal Entity Count: 1 | Legal Entity Names: [\"KOMATSU INDIA PRIVATE LIMITED\"]",
+      "rank": 4,
+      "extra": {
+        "linkedin_url": "https://linkedin.com/company/komatsu-india-pvt.-ltd",
+        "source_url": null,
+        "source_urls": null,
+        "confidence": null
+      },
+      "relevant": true,
+      "rationale": "Anchor true: construction and mining equipment manufacturer; overlaps construction equipment, mining equipment, and heavy machinery.",
+      "anchor_match": true,
+      "capabilities_matched": [
+        "construction equipment",
+        "mining equipment",
+        "heavy machinery"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Anchor true: construction and mining equipment manufacturer; overlaps construction equipment, mining equipment, and heavy machinery."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Komatsu India manufactures construction and mining equipment (excavators, earthmovers) \u2014 same anchor; overlaps construction, mining equipment, heavy machinery."
+        }
+      ]
     },
     {
       "name": "Dowell Parts",
       "domain": "dowellspareparts.com",
       "description": "Primary Sector: Industrial Goods and Manufacturing | Primary Subsector: Manufacturing Services | Short Description: Wholesaler of aftermarket parts for diesel engines, generators, and construction equipment | Detailed Description: Wholesaler of aftermarket parts for diesel engines, generators, and construction equipment. It supplies parts for various brands including Cummins, Deutz, Kubota, Perkins, and Yanmar for diesel engines; Kubota, FG Wilson, and SDMO for generator sets; and Bobcat, Caterpillar, and JCB for construction equipment. The company offers OEM-quality parts at competitive prices, focusing on timely delivery to customers worldwide. Its product range also extends to agricultural and aerial work platform equipment parts. The wholesaler maintains strong relationships with numerous suppliers to ensure product availability and quality control. | Name: Dowell Parts | Website Url: https://www.dowellspareparts.com/ | Founded Year: 2021 | Stage: Unfunded",
-      "rank": 2,
+      "rank": 5,
       "extra": {
         "linkedin_url": null,
         "source_url": "https://platform.tracxn.com/a/d/company/6071c13c95de151f8a7936b0/dowell%20parts?utm_source=parallel&utm_medium=ai#a:about",
@@ -46,27 +173,186 @@
         "confidence": null
       },
       "relevant": false,
-      "rationale": "Dowell is an aftermarket parts wholesaler, not a manufacturer of heavy equipment, engines, and machinery; buyers would not evaluate both for the same purchase."
+      "rationale": "Anchor false: aftermarket-parts wholesaler, not a construction and mining equipment manufacturer; no evidenced matching equipment manufacturing capability.",
+      "anchor_match": false,
+      "capabilities_matched": [],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Anchor false: aftermarket-parts wholesaler, not a construction and mining equipment manufacturer; no evidenced matching equipment manufacturing capability."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Anchor false: aftermarket parts wholesaler, not an equipment manufacturer; serves the category rather than competing in it. No capability overlap."
+        }
+      ]
     },
     {
-      "name": "Procaneq",
-      "domain": "procaneq.com",
-      "description": "Primary Sector: Industrial Goods and Manufacturing | Primary Subsector: Manufacturing Services | Short Description: Provider of new and remanufactured mining equipment parts | Detailed Description: Provider of new and remanufactured mining equipment parts. It supplies components and replacement parts for major brands used in open-pit mining. The company offers a diverse inventory to meet the needs of its customers. This includes parts for various types of equipment such as haul trucks, draglines, and electric shovels, as well as motors and alternators from manufacturers like Cummins and Caterpillar. The focus is on providing reliable parts to keep mining operations running efficiently. | All Locations: Morocco Casablanca Casablanca | Name: Procaneq | Website Url: http://procaneq.com | Stage: Unfunded | Location Country: Morocco | Location State: Casablanca | Location City: Casablanca | All Locations: [{\"country\":\"Morocco\",\"city\":\"Casablanca\",\"state\":\"Casablanca\"}] | Countries Count: 1",
-      "rank": 3,
+      "name": "bossbuyer",
+      "domain": "bossbuyer.com",
+      "description": "Primary Sector: Real Estate and Construction | Primary Subsector: Construction Equipment and Machinery | Short Description: Supplier of industrial machinery and construction equipment | Detailed Description: Supplier of industrial machinery and construction equipment. This includes a wide variety of machine tools such as broaching machines, milling machines, and drilling machines. The company also offers a comprehensive selection of construction equipment, encompassing cranes (various types including tower, gantry, and crawler cranes), excavators, bulldozers, and other heavy machinery. Agricultural machinery and mining equipment, such as crushers and grinding mills, are also part of their offerings. The supplier provides equipment for various applications, including roads, bridges, tunnels, and building construction. | Name: bossbuyer | Website Url: http://bossbuyer.com | Stage: Unfunded",
+      "rank": 6,
       "extra": {
         "linkedin_url": null,
-        "source_url": "https://platform.tracxn.com/a/d/company/58bf1db1e4b068359c36ec01/procaneq?utm_source=parallel&utm_medium=ai#a:about",
+        "source_url": "https://platform.tracxn.com/a/d/company/5891b2bce4b09cd6cc5f5106/bossbuyer?utm_source=parallel&utm_medium=ai#a:about",
+        "source_urls": null,
+        "confidence": null
+      },
+      "relevant": false,
+      "rationale": "Anchor false: bossbuyer is an equipment supplier, not a construction and mining equipment manufacturer; overlaps construction, mining, and heavy machinery.",
+      "anchor_match": false,
+      "capabilities_matched": [
+        "construction equipment",
+        "mining equipment",
+        "heavy machinery"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Anchor false: bossbuyer is an equipment supplier, not a construction and mining equipment manufacturer; overlaps construction, mining, and heavy machinery."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Anchor false: bossbuyer is an equipment supplier/trading platform, not a manufacturer; overlaps construction/mining/heavy machinery but resellers fail the gate."
+        }
+      ]
+    },
+    {
+      "name": "Mammoth Equipment & Exhausts",
+      "domain": "mammothequipment.ca",
+      "description": "Primary Sector: Mining | Primary Subsector: Mining Equipment | Short Description: Aftermarket parts supplier for mining equipment exhaust systems | Detailed Description: Aftermarket parts supplier for mining equipment exhaust systems. This company provides exhaust systems, bellows, DPFs, precleaners, and thermal blankets. They offer parts for Caterpillar, Komatsu, Liebherr, and Hitachi machinery, including OEM models and replacements. Services include emissions testing, heat assessment, sound suppression, and DPF cleaning. The company also supplies universal components and air intake solutions. | All Locations: Canada Manitoba Winnipeg | Name: Mammoth Equipment & Exhausts | Website Url: https://www.mammothequipment.ca | Stage: Unfunded | Location Country: Canada | Location State: Manitoba | Location City: Winnipeg | All Locations: [{\"country\":\"Canada\",\"city\":\"Winnipeg\",\"state\":\"Manitoba\"}] | Countries Count: 1 | Geo Served: [\"Canada\"] | Employee Count Official: 259",
+      "rank": 7,
+      "extra": {
+        "linkedin_url": "https://linkedin.com/company/mammoth-equipment-and-exhaust-canada-",
+        "source_url": null,
+        "source_urls": null,
+        "confidence": null
+      },
+      "relevant": false,
+      "rationale": "Anchor false: aftermarket mining-equipment exhaust parts supplier, not a construction and mining equipment manufacturer; overlaps mining equipment and heavy machinery.",
+      "anchor_match": false,
+      "capabilities_matched": [
+        "mining equipment",
+        "heavy machinery"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Anchor false: aftermarket mining-equipment exhaust parts supplier, not a construction and mining equipment manufacturer; overlaps mining equipment and heavy machinery."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Anchor false: aftermarket exhaust parts supplier for mining equipment, not an equipment manufacturer. No capability overlap."
+        }
+      ]
+    },
+    {
+      "name": "Xuzhou Construction Machinery Group",
+      "domain": "xcmg.com",
+      "description": "Primary Sector: Real Estate and Construction | Primary Subsector: Construction Equipment and Machinery | Short Description: Heavy machinery manufacturing company offering a comprehensive product line of construction equipment for sale | Detailed Description: Heavy machinery manufacturing company offering a comprehensive product line of construction equipment for sale. It is a machinery manufacturer offering a comprehensive product line, including excavators, loaders, road machinery, and more. It ranks among the leading construction equipment manufacturers globally. | Other Taxonomy Tags: [\"Generic Company Lists\",\"Global 2000\"] | All Locations: China Jiangsu Xuzhou | Name: Xuzhou Construction Machinery Group | Website Url: https://www.xcmg.com | Stage: Public | Location Country: China | All Locations: [{\"country\":\"China\",\"city\":\"Xuzhou\",\"state\":\"Jiangsu\"}] | Countries Count: 1 | Subsidiary Count: 1 | Board Member Count: 4 | Patent Count: 1 | Loan Count: 5 | Special Flags: Enterprise YES",
+      "rank": 8,
+      "extra": {
+        "linkedin_url": "https://linkedin.com/company/2262388admin",
+        "source_url": null,
         "source_urls": null,
         "confidence": null
       },
       "relevant": true,
-      "rationale": "Both supply mining-equipment replacement components to mining operators, who may compare Caterpillar OEM parts with Procaneq\u2019s new or remanufactured alternatives."
+      "rationale": "Anchor true: construction equipment manufacturer; overlaps construction equipment and heavy machinery.",
+      "anchor_match": true,
+      "capabilities_matched": [
+        "construction equipment",
+        "heavy machinery"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Anchor true: construction equipment manufacturer; overlaps construction equipment and heavy machinery."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "XCMG is a construction equipment manufacturer like Caterpillar; matches construction equipment and heavy machinery."
+        }
+      ]
+    },
+    {
+      "name": "Chinacoalintl",
+      "domain": "chinacoalintl.com",
+      "description": "Primary Sector: Industrial Goods and Manufacturing | Primary Subsector: Manufacturing Services | Short Description: Manufacturer of mining and construction equipment, and related support services | Detailed Description: Manufacturer of mining and construction equipment, and related support services. This entity produces a wide variety of machinery, including mining equipment (support, lifting, safety, and transport), drilling equipment, railway equipment, and construction equipment. It also offers import and export services for these products, facilitating international trade. The company's operations encompass manufacturing, research and development, and e-commerce, creating a diversified industrial group. A global sales team supports international market expansion. The company holds various certifications, demonstrating commitment to quality and safety standards. | All Locations: China   | Name: Chinacoalintl | Website Url: https://www.chinacoalintl.com | Stage: Unfunded",
+      "rank": 9,
+      "extra": {
+        "linkedin_url": null,
+        "source_url": "https://platform.tracxn.com/a/d/company/531bacb9e4b0f7e1662c805f/chinacoalintl?utm_source=parallel&utm_medium=ai#a:about",
+        "source_urls": null,
+        "confidence": null
+      },
+      "relevant": true,
+      "rationale": "Anchor true: manufacturer of mining and construction equipment; overlaps construction equipment, mining equipment, and heavy machinery.",
+      "anchor_match": true,
+      "capabilities_matched": [
+        "construction equipment",
+        "mining equipment",
+        "heavy machinery"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Anchor true: manufacturer of mining and construction equipment; overlaps construction equipment, mining equipment, and heavy machinery."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Anchor match: manufactures mining and construction equipment like Caterpillar. Overlap: construction equipment, mining equipment, heavy machinery."
+        }
+      ]
+    },
+    {
+      "name": "SANY",
+      "domain": "sany.in",
+      "description": "Primary Sector: Real Estate and Construction | Primary Subsector: Construction Equipment and Machinery | Short Description: Manufacturer of heavy construction and renewable energy equipment | Detailed Description: Manufacturer of heavy construction and renewable energy equipment. This entity produces a wide variety of machinery for earthmoving, lifting, foundation work, mining, port operations, concrete production, road building, and renewable energy projects. Products include excavators, cranes of various types, piling machinery, road construction equipment, port equipment, mining equipment, and wind turbines. The company focuses on localized manufacturing and provides after-sales customer service. | Other Taxonomy Tags: [\"Generic Company Lists\",\"DPIIT Registered\"] | Name: SANY | Website Url: https://www.sany.in/ | Stage: Unfunded | Countries Count: 1 | Board Member Count: 7 | Patent Count: 1 | Loan Count: 20 | All Locations: India Maharashtra Pune | Recent News: Sany India unveils st",
+      "rank": 10,
+      "extra": {
+        "linkedin_url": "https://linkedin.com/company/sany-india",
+        "source_url": null,
+        "source_urls": null,
+        "confidence": null
+      },
+      "relevant": true,
+      "rationale": "Anchor true: SANY manufactures construction and mining machinery; overlaps construction equipment, mining equipment, turbines, and heavy machinery.",
+      "anchor_match": true,
+      "capabilities_matched": [
+        "construction equipment",
+        "mining equipment",
+        "turbines",
+        "heavy machinery"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Anchor true: SANY manufactures construction and mining machinery; overlaps construction equipment, mining equipment, turbines, and heavy machinery."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Anchor match: SANY manufactures heavy construction and mining equipment like Caterpillar; overlaps on construction, mining, turbines, heavy machinery."
+        }
+      ]
     },
     {
       "name": "Gpsenginespares",
       "domain": "gpsenginespares.com",
       "description": "Primary Sector: Industrial Goods and Manufacturing | Primary Subsector: Manufacturing Services | Short Description: Supplier of diesel engine spare parts and rebuilt engines | Detailed Description: Supplier of diesel engine spare parts and rebuilt engines. It offers genuine, OEM, and aftermarket components for various brands including Cummins, Kirloskar, Caterpillar, and others. The company provides new and reconditioned engines, along with individual parts such as crankshafts, cylinder heads, and fuel pumps. Its services cater to diverse applications, including generators, construction equipment, and marine engines. The focus is on delivering reliable, high-performance solutions. | All Locations: India   | Name: Gpsenginespares | Website Url: https://gpsenginespares.com | Stage: Unfunded | Location Country: India | All Locations: [{\"country\":\"India\"}] | Countries Count: 1 | Founded Year: 2020",
-      "rank": 4,
+      "rank": 11,
       "extra": {
         "linkedin_url": null,
         "source_url": "https://platform.tracxn.com/a/d/company/5ea31706c524b5738806fbb9/gpsenginespares?utm_source=parallel&utm_medium=ai#a:about",
@@ -74,27 +360,65 @@
         "confidence": null
       },
       "relevant": false,
-      "rationale": "Gpsenginespares is an aftermarket parts supplier and engine rebuilder, not a primary manufacturer of heavy equipment and industrial machinery like Caterpillar."
+      "rationale": "Anchor false: diesel engine parts supplier and rebuilder, not a construction and mining equipment manufacturer; overlaps engines.",
+      "anchor_match": false,
+      "capabilities_matched": [
+        "engines"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Anchor false: diesel engine parts supplier and rebuilder, not a construction and mining equipment manufacturer; overlaps engines."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Anchor false: aftermarket diesel-engine spare-parts supplier serving Caterpillar equipment, not a construction/mining equipment manufacturer; no matching capability."
+        }
+      ]
     },
     {
-      "name": "Zmgkmachinery",
-      "domain": "zmgkmachinery.com",
-      "description": "Primary Sector: Industrial Goods and Manufacturing | Primary Subsector: Manufacturing Services | Short Description: cement mixer,cement spreading machine,rubber paver machine,mortar spraying machine,diesel engine crane,chain hoist,scraper winch-China Mining&Construction Equipment Co., Ltd | Detailed Description: China Mining&Construction Equipment Co., Ltd is specializing in construction machine and lifting equipment, such as construction machinery,road construction machine,lifting machinery, steel produts,wi | Name: Zmgkmachinery | Website Url: http://zmgkmachinery.com | Stage: Unfunded",
-      "rank": 5,
+      "name": "Heavyindustryequipment",
+      "domain": "heavyindustryequipment.com",
+      "description": "Primary Sector: Mining | Primary Subsector: Mining Equipment | Short Description: Provider of mining equipment, parts, appliances, and industrial equipment supply | Detailed Description: Provider of mining equipment, parts, appliances, and industrial equipment supply. The company designs mine-lifting machines and their automation for ascending and descending loads and people. It integrates mechanical, electric, braking, hydraulic, control, automation, alarm, and communication systems. The company buys and sells various equipment, ranging from shafts and bearings to communication systems and software. | Name: Heavyindustryequipment | Website Url: https://heavyindustryequipment.com | Founded Year: 2019 | Stage: Unfunded",
+      "rank": 12,
       "extra": {
         "linkedin_url": null,
-        "source_url": "https://platform.tracxn.com/a/d/company/57fa6515e4b0edd2c3f52de4/zmgkmachinery?utm_source=parallel&utm_medium=ai#a:about",
+        "source_url": "https://platform.tracxn.com/a/d/company/5d025ed75e53333130a0388d/heavyindustryequipment?utm_source=parallel&utm_medium=ai#a:about",
         "source_urls": null,
         "confidence": null
       },
       "relevant": true,
-      "rationale": "Both manufacture construction and mining machinery for contractors and industrial operators, with overlapping equipment categories and procurement buyers."
+      "rationale": "Anchor true: designs and provides mining equipment (mine-lifting machines), same category and customer as Caterpillar. Overlap: mining equipment, heavy machinery.",
+      "anchor_match": true,
+      "capabilities_matched": [
+        "mining equipment",
+        "heavy machinery"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Anchor false: mining-equipment supplier and integrator, not a construction and mining equipment manufacturer; overlaps mining equipment and heavy machinery."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Anchor true: designs and provides mining equipment (mine-lifting machines), same category and customer as Caterpillar. Overlap: mining equipment, heavy machinery."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Anchor true: designs and supplies mining/heavy machinery, overlapping mining equipment and heavy machinery, though partly a supplier."
+        }
+      ]
     },
     {
       "name": "Volkin",
       "domain": "volkin.com.cn",
       "description": "Primary Sector: Industrial Goods and Manufacturing | Primary Subsector: Manufacturing Services | Short Description: Supplier of construction equipment, materials, and parts | Detailed Description: Supplier of construction equipment, materials, and parts. The company offers a wide selection of construction equipment, including concrete mixers, pumps, and cutting machines; construction materials such as asphalt, geotextiles, and geomembranes; and machinery parts for excavators, bulldozers, and pavers. Their product line also extends to hydraulic components and mining equipment. The company provides used machinery as well. | All Locations: China   | Name: Volkin | Website Url: https://volkin.com.cn | Stage: Unfunded | Location Country: China | All Locations: [{\"country\":\"China\"}] | Countries Count: 1",
-      "rank": 6,
+      "rank": 13,
       "extra": {
         "linkedin_url": null,
         "source_url": "https://platform.tracxn.com/a/d/company/5cfb593b007930610452bd8f/volkin?utm_source=parallel&utm_medium=ai#a:about",
@@ -102,80 +426,387 @@
         "confidence": null
       },
       "relevant": false,
-      "rationale": "Volkin is primarily an equipment, materials, and parts supplier, not a heavy-equipment OEM manufacturer comparable to Caterpillar."
+      "rationale": "Anchor false: Volkin is an equipment supplier/reseller, not a construction and mining equipment manufacturer; overlaps construction equipment, mining equipment, heavy machinery.",
+      "anchor_match": false,
+      "capabilities_matched": [
+        "construction equipment",
+        "mining equipment",
+        "heavy machinery"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Anchor false: Volkin is an equipment supplier/reseller, not a construction and mining equipment manufacturer; overlaps construction equipment, mining equipment, heavy machinery."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Volkin is a supplier/trader of equipment, parts, and used machinery, not a manufacturer; serving the category, not competing in it. Anchor fails."
+        }
+      ]
     },
     {
-      "name": "Powerequipco",
-      "domain": "powerequipco.com",
-      "description": "Primary Sector: Industrial Goods and Manufacturing | Primary Subsector: Manufacturing Services | Short Description: Provider of construction equipment sales, rentals, and service | Detailed Description: Provider of construction equipment sales, rentals, and service. It offers new and used heavy equipment, parts, and maintenance for various industries including construction, mining, and forestry. The company also provides leasing options and a certified rental division with a large inventory of equipment. Services include planned maintenance packages and full-scale parts support. The business partners with major manufacturers to offer a wide selection of equipment. | Name: Powerequipco | Website Url: https://powerequipco.com | Founded Year: 1998 | Stage: Unfunded | Countries Count: 1 | All Locations: United States Pennsylvania Knoxville | Recent News: Power Equipment Announces New General Manager, Credit and Finance https://www.rermag.com/news-analysis/article/21238598/power-equipment-c",
-      "rank": 7,
+      "name": "Utonmining",
+      "domain": null,
+      "description": "Primary Sector: Mining | Primary Subsector: Mining Equipment | Short Description: Mining and construction equipment solutions provider with after-sales service | Detailed Description: Mining and construction equipment solutions provider with after-sales service. The company provides comprehensive solutions, products, and services for the construction and mining industries. Their offerings include a range of new, second-hand, and remanufactured construction machinery, such as excavators, cranes, and drilling rigs. They also offer horizontal directional drilling rigs, drill pipes, drilling tools, and rock drilling rigs. The company provides after-sales service, construction guidance, and complete sets of drilling rig construction plans, coal mining solutions, and underground mine construction plans. They aim to help customers achieve optimal cost-efficiency and minimize risk in their operations. The company focuses on fostering innovation, strategic networking, and streamlined communicat",
+      "rank": 14,
       "extra": {
-        "linkedin_url": "https://linkedin.com/company/powerequipco",
-        "source_url": null,
+        "linkedin_url": null,
+        "source_url": "https://platform.tracxn.com/a/d/company/67c5780671976a5e6a9bf618/utonmining?utm_source=parallel&utm_medium=ai#a:about",
+        "source_urls": null,
+        "confidence": null
+      },
+      "relevant": true,
+      "rationale": "Anchor true: mining/construction equipment maker (including remanufactured rigs) for same customers. Overlaps construction, mining equipment, heavy machinery; no engines/turbines evidence.",
+      "anchor_match": true,
+      "capabilities_matched": [
+        "construction equipment",
+        "mining equipment",
+        "heavy machinery"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Anchor false: Utonmining is an equipment solutions provider/reseller with services, not a construction and mining equipment manufacturer; overlaps construction, mining, and heavy equipment."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Anchor true: mining/construction equipment maker (including remanufactured rigs) for same customers. Overlaps construction, mining equipment, heavy machinery; no engines/turbines evidence."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Anchor matches: supplier/manufacturer of construction and mining machinery; overlaps on construction, mining equipment, heavy machinery."
+        }
+      ]
+    },
+    {
+      "name": "Hitachi Isuzuparts",
+      "domain": "hitachi-isuzuparts.com",
+      "description": "Primary Sector: Industrial Goods and Manufacturing | Primary Subsector: Manufacturing Services | Short Description: Supplier of excavator and mining equipment parts, engines, and hydraulic systems | Detailed Description: Supplier of excavator and mining equipment parts, engines, and hydraulic systems. It offers a full range of machinery engines, hydraulic pumps, and final motor drives. The company also provides agricultural tractor engines. It utilizes resources and expertise from leading engine manufacturers, establishing maintenance workshops and developing assembly and regeneration platforms for engines and hydraulic systems. The business includes complete machine and parts renewal, and it develops cost-effective OEM or high-quality aftermarket products, providing aftermarket services. The company supplies markets globally. | Name: Hitachi Isuzuparts | Website Url: https://hitachi-isuzuparts.com | Stage: Unfunded",
+      "rank": 15,
+      "extra": {
+        "linkedin_url": null,
+        "source_url": "https://platform.tracxn.com/a/d/company/65e9e4797b89a02e170e9837/hitachi%20isuzuparts?utm_source=parallel&utm_medium=ai#a:about",
         "source_urls": null,
         "confidence": null
       },
       "relevant": false,
-      "rationale": "Powerequipco is an equipment dealer, rental, and service provider partnering with manufacturers, not a heavy-equipment manufacturer like Caterpillar."
+      "rationale": "Anchor false: aftermarket parts and maintenance supplier, not a construction and mining equipment manufacturer; overlaps mining equipment, engines, and heavy machinery.",
+      "anchor_match": false,
+      "capabilities_matched": [
+        "mining equipment",
+        "engines",
+        "heavy machinery"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Anchor false: aftermarket parts and maintenance supplier, not a construction and mining equipment manufacturer; overlaps mining equipment, engines, and heavy machinery."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Aftermarket parts/engine supplier for excavators and mining gear, not an equipment manufacturer; serves the category rather than competing in it. Overlap: engines only."
+        }
+      ]
     },
     {
-      "name": "Mmauber",
-      "domain": "mmauber.com",
-      "description": "Primary Sector: Industrial Goods and Manufacturing | Primary Subsector: Manufacturing Services | Short Description: Provider of construction, demolition, and mining equipment | Detailed Description: Provider of construction, demolition, and mining equipment. It offers sales and after-sales service for a variety of machinery, including hydraulic breakers, piling equipment, cranes, demolition tools, and prefabricated wall and floor systems. The company represents high-technology equipment from several international manufacturers, providing clients with support throughout the entire process, from needs identification to equipment installation. Its focus is on quality products and expert advice on their diverse applications within the construction, demolition, mining, and industrial sectors. | Name: Mmauber | Website Url: https://mmauber.com | Stage: Unfunded | Employee Count Official: 3 | Linkedin Url: https://linkedin.com/company/maquinaria-mauber-s-r-l-",
-      "rank": 8,
+      "name": "Global Mining Equipments",
+      "domain": "gmedrills.com",
+      "description": "Primary Sector: Mining | Primary Subsector: Mining Equipment | Short Description: Mining equipments is a worldwide leader in the mining and construction industry, offering comprehensive mining drill equipment tools | Detailed Description: Global Mining Equipments is a leading manufacturer of rock drilling tools and accessories for the mining and construction industry. They offer a wide range of pneumatic tools essential for various stages of mining and construction work. With extensive experience and a global presence, they are a reliable supplier of surface mining equipment and drill rigs. | Name: Global Mining Equipments | Website Url: https://www.gmedrills.com/ | Founded Year: 2003 | Stage: Unfunded | Countries Count: 1 | All Locations: India West Bengal Howrah | Location Country: India | Location State: West Bengal | Location City: Howrah | All Locations: [{\"country\":\"India\",\"city\":\"Howrah\",\"state\":\"West Bengal\"}] | Geo Served: [\"India\"] | Employee Count Official: 20",
+      "rank": 16,
       "extra": {
-        "linkedin_url": "https://linkedin.com/company/maquinaria-mauber-s-r-l-",
+        "linkedin_url": "https://linkedin.com/company/gmedrills",
         "source_url": null,
         "source_urls": null,
         "confidence": null
       },
       "relevant": true,
-      "rationale": "Mmauber sells and services construction, demolition, and mining machinery, overlapping Caterpillar\u2019s core equipment offerings and targeting the same industrial equipment buyers."
+      "rationale": "Anchor true: manufacturer of mining and construction drilling equipment; overlaps construction equipment, mining equipment, and heavy machinery.",
+      "anchor_match": true,
+      "capabilities_matched": [
+        "construction equipment",
+        "mining equipment",
+        "heavy machinery"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Anchor true: manufacturer of mining and construction drilling equipment; overlaps construction equipment, mining equipment, and heavy machinery."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Mining/construction equipment manufacturer (drilling tools, drill rigs) \u2014 same category and customer as seed anchor; matches construction and mining equipment."
+        }
+      ]
     },
     {
-      "name": "Seglobal",
-      "domain": "seglobal.com.sg",
-      "description": "Primary Sector: Industrial Goods and Manufacturing | Primary Subsector: Manufacturing Services | Short Description: Provider of construction equipment services, sales, rental, and repair | Detailed Description: Provider of construction equipment services, sales, rental, and repair. This includes servicing and maintenance of diesel generators, welding machines, air compressors, and tower lights. They also offer troubleshooting and repair of electronic components, hydraulic components, and Hino engines. Customization of existing excavators with magnet generators or vibro-hammers is another service provided. The company also offers diagnostic checks for construction machinery. | All Locations: Singapore   | Name: Seglobal | Website Url: http://www.seglobal.com.sg/ | Stage: Unfunded | Location Country: Singapore | All Locations: [{\"country\":\"Singapore\"}] | Countries Count: 1",
-      "rank": 9,
+      "name": "Southernminesupply",
+      "domain": "southernminesupply.com",
+      "description": "Primary Sector: Mining | Primary Subsector: Mining Equipment | Short Description: Aggregate mining equipment provider: pumps, log washers, and unmatched support | Detailed Description: Aggregate mining equipment provider: pumps, log washers, and unmatched support. A family-owned business with decades of experience, specializing in providing top-quality equipment and reliable solutions for the aggregate mining industry. The mission is to optimize mining operations through efficiency, durability, and innovation. They offer a vast inventory of products designed for performance and longevity. They are committed to being a trusted partner, providing unmatched support and ensuring customer success. They offer product updates via email subscription. They can be contacted via phone, email or in person. | Name: Southernminesupply | Website Url: https://southernminesupply.com | Stage: Unfunded",
+      "rank": 17,
       "extra": {
         "linkedin_url": null,
-        "source_url": "https://platform.tracxn.com/a/d/company/5904b202e4b02ce7b0fbaf46/seglobal?utm_source=parallel&utm_medium=ai#a:about",
+        "source_url": "https://platform.tracxn.com/a/d/company/678bea90e9d13b58b54d919b/southernminesupply?utm_source=parallel&utm_medium=ai#a:about",
         "source_urls": null,
         "confidence": null
       },
       "relevant": false,
-      "rationale": "Seglobal is primarily an equipment dealer, rental, and repair provider, not a manufacturer of heavy construction and mining machinery."
+      "rationale": "Anchor false: aggregate-mining equipment provider/distributor, not a construction and mining equipment manufacturer; overlaps mining equipment and heavy machinery.",
+      "anchor_match": false,
+      "capabilities_matched": [
+        "mining equipment",
+        "heavy machinery"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Anchor false: aggregate-mining equipment provider/distributor, not a construction and mining equipment manufacturer; overlaps mining equipment and heavy machinery."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Anchor false: appears a mining-equipment supplier/reseller ('provider', 'vast inventory'), not a manufacturer like Caterpillar; overlap on mining equipment only."
+        }
+      ]
     },
     {
-      "name": "Prime Source",
-      "domain": "primesourceco.com",
-      "description": "Primary Sector: Industrial Goods and Manufacturing | Primary Subsector: Manufacturing Services | Short Description: Provider of heavy construction equipment and machines | Detailed Description: Provider of heavy construction equipment and machines. It offers product support solutions and maintenance services for small engines and heavy equipment. It provides commercial and industrial roofing services. It also offers services for various types of heavy construction equipment, including loaders, articulated trucks, compactors, and more. | All Locations: United States North Carolina Statesville | Name: Prime Source | Website Url: https://primesourceco.com | Founded Year: 2013 | Stage: Unfunded | Location Country: United States | All Locations: [{\"country\":\"United States\",\"city\":\"Statesville\",\"state\":\"North Carolina\"}] | Countries Count: 1 | Location State: North Carolina | Location City: Statesville | Geo Served: [\"United States\"] | Phone Country Code: +1 | Phone Number: 7045970030",
-      "rank": 10,
+      "name": "Enrichequipment",
+      "domain": "enrichequipment.com",
+      "description": "Primary Sector: Real Estate and Construction | Primary Subsector: Construction Equipment and Machinery | Short Description: Provider of construction and mining equipment, and related services | Detailed Description: Provider of construction and mining equipment, and related services. This includes the supply and maintenance of a variety of machinery, encompassing concrete pumps, batching plants, and mining equipment such as hand drills and air compressors. The company also offers on-site machine setup services and after-sales support, including engine servicing and spare parts. They are authorized dealers for a major concrete machinery manufacturer, further expanding their product offerings to include transit mixers, welding machines, and compaction equipment. Their services extend to the importation and exportation of machinery. | Name: Enrichequipment | Website Url: https://enrichequipment.com | Stage: Unfunded",
+      "rank": 18,
       "extra": {
         "linkedin_url": null,
-        "source_url": "https://platform.tracxn.com/a/d/company/5894a06be4b0fd8339082772/prime%20source?utm_source=parallel&utm_medium=ai#a:about",
+        "source_url": "https://platform.tracxn.com/a/d/company/6356f71d73868d34eba79419/enrichequipment?utm_source=parallel&utm_medium=ai#a:about",
         "source_urls": null,
         "confidence": null
       },
       "relevant": false,
-      "rationale": "Prime Source appears to service and supply heavy equipment rather than manufacture it, making it a dealer/service provider, not a Caterpillar lookalike."
+      "rationale": "Anchor false: construction/mining equipment dealer and service provider, not a manufacturer; overlaps construction equipment, mining equipment, engines, and heavy machinery.",
+      "anchor_match": false,
+      "capabilities_matched": [
+        "construction equipment",
+        "mining equipment",
+        "engines",
+        "heavy machinery"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Anchor false: construction/mining equipment dealer and service provider, not a manufacturer; overlaps construction equipment, mining equipment, engines, and heavy machinery."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "judge error: Error code: 429 - {'error': {'object': 'error', 'type': 'invalid_request_error', 'code': 'invalid_request_error', 'message': 'rate limit exceeded, please try again later'}}"
+        }
+      ]
     },
     {
-      "name": "Amstate",
-      "domain": "amstate.com",
-      "description": "Primary Sector: Industrial Goods and Manufacturing | Primary Subsector: Manufacturing Services | Short Description: Provider of heavy construction equipment sales and rentals | Detailed Description: Provider of heavy construction equipment sales and rentals. It offers a wide selection of earthmoving, material handling, paving, milling, compaction, crushing, and screening equipment. The company represents several leading manufacturers in the industry and provides parts and service support. A subsidiary offers additional equipment inventory. The business model includes both sales and rental options to cater to diverse customer needs. | Name: Amstate | Website Url: https://amstate.com | Stage: Unfunded | Countries Count: 1 | Linkedin Url: https://linkedin.com/company/american-state-equipment | Founded Year: 1998 | Employee Count Official: 116 | All Locations: United States   | Location Country: United States | All Locations: [{\"country\":\"United States\"}] | Latest Estimated Revenue Usd: 15",
-      "rank": 11,
+      "name": "Lyle Machinery CO",
+      "domain": null,
+      "description": "Primary Sector: Industrial Goods and Manufacturing | Primary Subsector: Manufacturing Services | Short Description: Heavy construction equipment solutions: sales, rentals, parts, and service | Detailed Description: Heavy construction equipment solutions: sales, rentals, parts, and service. They are a leading dealer providing new and used heavy machinery for diverse industries. They offer equipment rentals and comprehensive parts and service support to minimize downtime. Their offerings include heavy equipment, attachments, and trailers. They cater to industries like asphalt, compact construction, energy, pipeline, forestry, and material handling. They provide technology solutions like Komatsu Smart Construction and Bobcat Machine IQ. They offer financing options and customer portal access. They are committed to providing exceptional service and support to meet customer needs. They are authorized dealers for brands like Komatsu, Bobcat, Hitachi, Wirtgen, Hamm, Vogele, JLG, Sennebogen, a",
+      "rank": 19,
       "extra": {
-        "linkedin_url": "https://linkedin.com/company/american-state-equipment",
+        "linkedin_url": "https://linkedin.com/company/lyle-machinery",
         "source_url": null,
         "source_urls": null,
         "confidence": null
       },
       "relevant": false,
-      "rationale": "Amstate is an equipment dealer and rental provider, not a heavy-machinery manufacturer; its business model differs and it may distribute OEM products."
+      "rationale": "Anchor false: Lyle Machinery is a heavy-equipment dealer and rental/service provider, not a construction and mining equipment manufacturer; overlaps construction equipment and heavy machinery.",
+      "anchor_match": false,
+      "capabilities_matched": [
+        "construction equipment",
+        "heavy machinery"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Anchor false: Lyle Machinery is a heavy-equipment dealer and rental/service provider, not a construction and mining equipment manufacturer; overlaps construction equipment and heavy machinery."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "judge error: Error code: 429 - {'error': {'object': 'error', 'type': 'invalid_request_error', 'code': 'invalid_request_error', 'message': 'rate limit exceeded, please try again later'}}"
+        }
+      ]
+    },
+    {
+      "name": "Enkec",
+      "domain": null,
+      "description": "Primary Sector: Mining | Primary Subsector: Mining Equipment | Short Description: Mining equipment solutions provider: underground loaders, trucks, jumbos, parts, and services | Detailed Description: Mining equipment solutions provider: underground loaders, trucks, jumbos, parts, and services. We are a professional enterprise integrating production and trade, providing high-quality mining machinery and technical solutions. Our offerings include a comprehensive range of underground mining equipment such as loaders, trucks, utility vehicles, and drill jumbos. We also provide explosion-proof machinery, earthmoving machinery, and articulated mining truck parts. Our solutions encompass mining turnkey projects, mineral processing, equipment overhaul, and aftermarket service. We offer spare parts supply, power system solutions, hydraulic system solutions, and drivetrain system solutions. We are committed to delivering dependable and cost-effective underground mining machinery, positioning us ",
+      "rank": 20,
+      "extra": {
+        "linkedin_url": null,
+        "source_url": "https://platform.tracxn.com/a/d/company/614fd950f63848152cf496e7/enkec?utm_source=parallel&utm_medium=ai#a:about",
+        "source_urls": null,
+        "confidence": null
+      },
+      "relevant": true,
+      "rationale": "Anchor true: mining equipment manufacturer/provider; overlaps mining equipment and heavy machinery.",
+      "anchor_match": true,
+      "capabilities_matched": [
+        "mining equipment",
+        "heavy machinery"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Anchor true: mining equipment manufacturer/provider; overlaps mining equipment and heavy machinery."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "judge error: Error code: 429 - {'error': {'object': 'error', 'type': 'invalid_request_error', 'code': 'invalid_request_error', 'message': 'rate limit exceeded, please try again later'}}"
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Anchor matches: mining equipment manufacturer; overlaps on mining equipment and heavy machinery."
+        }
+      ]
+    },
+    {
+      "name": "Ams-Ltd",
+      "domain": "ams-ltd.ca",
+      "description": "Primary Sector: Mining | Primary Subsector: Mining Equipment | Short Description: Provider of new and used mining equipment parts and components | Detailed Description: Provider of new and used mining equipment parts and components.  This includes drill bits, shanks, rods, pneumatic drills, and parts for jackleg, stoper, and winkie rock drills.  Additionally, they offer axles, engines, cylinders, transmissions, torques, updrives, rims, tires, buckets, and lights.  Component rebuild services are also available, along with aftermarket and OEM certified components, GET wear products, and water extraction pumps.  The company supplies parts for various mining equipment manufacturers. | All Locations: Canada Alberta Edmonton | Name: Ams-Ltd | Website Url: https://ams-ltd.ca | Stage: Unfunded | Location Country: Canada | Location State: Alberta | Location City: Edmonton | All Locations: [{\"country\":\"Canada\",\"city\":\"Edmonton\",\"state\":\"Alberta\"}] | Countries Count: 1 | Geo Served: [\"Canada\"]",
+      "rank": 21,
+      "extra": {
+        "linkedin_url": "https://linkedin.com/company/amalgamated-mining-services-ltd",
+        "source_url": null,
+        "source_urls": null,
+        "confidence": null
+      },
+      "relevant": false,
+      "rationale": "Anchor false: mining-equipment parts supplier, not a construction and mining equipment manufacturer; overlap: engines.",
+      "anchor_match": false,
+      "capabilities_matched": [
+        "engines"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Anchor false: mining-equipment parts supplier, not a construction and mining equipment manufacturer; overlap: engines."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "judge error: Error code: 429 - {'error': {'object': 'error', 'type': 'invalid_request_error', 'code': 'invalid_request_error', 'message': 'rate limit exceeded, please try again later'}}"
+        }
+      ]
+    },
+    {
+      "name": "Rkt Int",
+      "domain": "rkt-int.com",
+      "description": "Primary Sector: Industrial Goods and Manufacturing | Primary Subsector: Manufacturing Services | Short Description: Provider of mining equipment, components, and logistics services | Detailed Description: Provider of mining equipment, components, and logistics services. It sources and delivers heavy equipment, components, and parts to mining companies. Services include component supply, encompassing motors, transmissions, and hydraulic pumps; and equipment sales, featuring excavators and bulldozers. The company also handles the logistics of shipping mining trucks, heavy equipment, and spare parts, including post-sales technical support. It offers tire solutions for mining environments, from inspection to replacement. The business focuses on building long-term client relationships. | Name: Rkt Int | Website Url: https://www.rkt-int.com/ | Stage: Unfunded | Employee Count Official: 6 | Linkedin Url: http://linkedin.com/company/rkt-int/",
+      "rank": 22,
+      "extra": {
+        "linkedin_url": "http://linkedin.com/company/rkt-int/",
+        "source_url": null,
+        "source_urls": null,
+        "confidence": null
+      },
+      "relevant": false,
+      "rationale": "Anchor false: mining equipment supplier and logistics provider, not a construction and mining equipment manufacturer; overlaps mining equipment and heavy machinery.",
+      "anchor_match": false,
+      "capabilities_matched": [
+        "mining equipment",
+        "heavy machinery"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Anchor false: mining equipment supplier and logistics provider, not a construction and mining equipment manufacturer; overlaps mining equipment and heavy machinery."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "judge error: Error code: 429 - {'error': {'object': 'error', 'type': 'invalid_request_error', 'code': 'invalid_request_error', 'message': 'rate limit exceeded, please try again later'}}"
+        }
+      ]
+    },
+    {
+      "name": "Elitemotors",
+      "domain": "elitemotors.ge",
+      "description": "Primary Sector: Industrial Goods and Manufacturing | Primary Subsector: Manufacturing Services | Short Description: Official distributor of heavy and light construction equipment, industrial machinery, engines, and generators | Detailed Description: Official distributor of heavy and light construction equipment, industrial machinery, engines, and generators. It provides technical services, including mobile repair teams offering on-site maintenance and repairs across a wide area. The company also operates a training center utilizing advanced 3D simulation technology for equipment operators. Services encompass engine repair, hydraulic and electrical system maintenance, and transmission work. | Name: Elitemotors | Website Url: https://elitemotors.ge | Stage: Unfunded | Countries Count: 1 | All Locations: Georgia   | Location Country: Georgia | All Locations: [{\"country\":\"Georgia\"}] | Employee Count Official: 94 | Linkedin Url: https://linkedin.com/company/elitemotors",
+      "rank": 23,
+      "extra": {
+        "linkedin_url": "https://linkedin.com/company/elitemotors",
+        "source_url": null,
+        "source_urls": null,
+        "confidence": null
+      },
+      "relevant": false,
+      "rationale": "Anchor false: distributor and service provider, not a construction and mining equipment manufacturer; overlaps construction equipment, engines, and heavy machinery.",
+      "anchor_match": false,
+      "capabilities_matched": [
+        "construction equipment",
+        "engines",
+        "heavy machinery"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Anchor false: distributor and service provider, not a construction and mining equipment manufacturer; overlaps construction equipment, engines, and heavy machinery."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Anchor false: distributor/reseller of construction equipment, not a manufacturer. Overlap in construction equipment, engines, heavy machinery irrelevant."
+        }
+      ]
+    },
+    {
+      "name": "Simmons Equipment",
+      "domain": "simmonsequipment.com",
+      "description": "Primary Sector: Mining | Primary Subsector: Mining Equipment | Short Description: Manufacturer of underground mining equipment, parts, and related service solutions | Detailed Description: Manufacturer of underground mining equipment, parts, and related service solutions. The company provides continuous miners, battery haulers, continuous haulage systems, scoops, feeder breakers, and longwall shield haulers. It focuses on engineering and technology to deliver customized equipment. The company also offers parts and service support for its equipment. | Name: Simmons Equipment | Website Url: http://simmonsequipment.com | Founded Year: 2005 | Stage: Funding Raised | Countries Count: 1 | Employee Count Official: 49 | Linkedin Url: https://linkedin.com/company/simmons-equipment-company | All Locations: United States Virginia Tazewell | Location Country: United States | Location State: Virginia | Location City: Tazewell | All Locations: [{\"country\":\"United States\",\"city\":\"Tazewell\",\"state\":\"V",
+      "rank": 24,
+      "extra": {
+        "linkedin_url": "https://linkedin.com/company/simmons-equipment-company",
+        "source_url": null,
+        "source_urls": null,
+        "confidence": null
+      },
+      "relevant": true,
+      "rationale": "Anchor true: underground mining-equipment manufacturer; overlaps mining equipment and heavy machinery.",
+      "anchor_match": true,
+      "capabilities_matched": [
+        "mining equipment",
+        "heavy machinery"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Anchor true: underground mining-equipment manufacturer; overlaps mining equipment and heavy machinery."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "judge error: Error code: 429 - {'error': {'object': 'error', 'type': 'invalid_request_error', 'code': 'invalid_request_error', 'message': 'rate limit exceeded, please try again later'}}"
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Anchor matches: underground mining equipment manufacturer; overlaps mining equipment and heavy machinery."
+        }
+      ]
     }
   ],
-  "error": null,
-  "relevant_count_at_25": 3,
-  "precision_at_25": 12.0
+  "error": null
 }

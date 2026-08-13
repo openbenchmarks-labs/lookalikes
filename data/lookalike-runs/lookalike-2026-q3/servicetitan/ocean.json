@@ -8,17 +8,20 @@
     "filters": {}
   },
   "k": 100,
-  "relevant_count": 60,
-  "precision_at_k": 60.0,
-  "relevant_count_at_10": 7,
-  "relevant_count_at_100": 60,
-  "precision_at_10": 70.0,
-  "precision_at_100": 60.0,
+  "relevant_count": 83,
+  "precision_at_k": 83.0,
+  "relevant_count_at_10": 8,
+  "relevant_count_at_25": 20,
+  "relevant_count_at_100": 83,
+  "precision_at_10": 80.0,
+  "precision_at_25": 80.0,
+  "precision_at_100": 83.0,
   "latency_ms": 2114,
   "cost_usd": null,
   "duplicates_removed": 2,
-  "judge_model": "gpt-5.6",
-  "judged_at": "2026-07-27T01:46:04Z",
+  "max_results": null,
+  "judge_model": "majority(n=3): claude-opus-5,gpt-5.6-terra,kimi-k3",
+  "judged_at": "2026-08-10T19:34:23Z",
   "candidates": [
     {
       "name": "IndusTrack",
@@ -67,7 +70,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "IndusTrack provides field-service and business-management software for contractors, overlapping ServiceTitan\u2019s workflows and targeting the same office staff, technicians, and owners."
+      "rationale": "Contractor-focused field-service platform covering estimates, jobs, invoicing, payments, and office-to-field workflows; directly comparable to ServiceTitan.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Contractor-focused field-service platform covering estimates, jobs, invoicing, payments, and office-to-field workflows; directly comparable to ServiceTitan."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "All-in-one field service management platform for trades contractors (HVAC, plumbing, electrical) \u2014 direct competitor on product and market."
+        }
+      ]
     },
     {
       "name": "BuildOps",
@@ -120,7 +135,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide field-service operations software for trades contractors, including dispatch, quoting, billing, and job workflow management."
+      "rationale": "Commercial trades platform for HVAC, electrical, and plumbing contractors, offering scheduling, service, projects, invoicing, and operations management like ServiceTitan.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Commercial trades platform for HVAC, electrical, and plumbing contractors, offering scheduling, service, projects, invoicing, and operations management like ServiceTitan."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Cloud-based field-service management platform for contractors \u2014 same product, market, and business model as ServiceTitan; direct competitor."
+        }
+      ]
     },
     {
       "name": "Sitewise",
@@ -172,7 +199,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Sitewise offers overlapping field-service and business-management software for trades contractors, including scheduling, estimates, work orders, invoicing, and CRM-adjacent workflows."
+      "rationale": "Construction and trades contractor management platform with estimating, scheduling, invoicing, CRM-like operations, and field workflows; directly comparable to ServiceTitan.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Construction and trades contractor management platform with estimating, scheduling, invoicing, CRM-like operations, and field workflows; directly comparable to ServiceTitan."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "All-in-one SaaS for trades contractors (HVAC, plumbing, electrical): estimates, scheduling, work orders, invoicing, field management \u2014 direct competitor to ServiceTitan."
+        }
+      ]
     },
     {
       "name": "Knowify LLC",
@@ -240,7 +279,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Knowify provides contracting business management software with work orders, scheduling, invoicing, and job tracking, overlapping ServiceTitan\u2019s trades-focused field service platform."
+      "rationale": "Contractor-focused SaaS covering work orders, scheduling, invoicing, CRM-like operations, and job management; a direct field-service/trades software comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Contractor-focused SaaS covering work orders, scheduling, invoicing, CRM-like operations, and job management; a direct field-service/trades software comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Vertical SaaS for contractors: work orders, job costing, scheduling, invoicing \u2014 same product category and buyer as ServiceTitan."
+        }
+      ]
     },
     {
       "name": "Hcss",
@@ -302,7 +353,24 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide vertical operations and field-management SaaS for contractors, serving overlapping construction operations leaders managing crews, dispatch, productivity, and workflows."
+      "rationale": "HCSS is vertical SaaS for construction contractor operations (estimating, dispatch, fleet, field management)\u2014comparable field-service software for trades/construction contractors, same market and model.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "HCSS targets heavy construction operations and project workflows, not the dispatch, CRM, billing, and field-service management needs of trades service contractors."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "HCSS is vertical SaaS for construction contractor operations (estimating, dispatch, fleet, field management)\u2014comparable field-service software for trades/construction contractors, same market and model."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Vertical construction/contractor operations software \for for trades and heavy civil contractors \":"
+        }
+      ]
     },
     {
       "name": "ConSol - Contractor Solutions",
@@ -362,8 +430,20 @@
         ],
         "relevance_score": "A"
       },
-      "relevant": false,
-      "rationale": "ConSol manages external contractors for large enterprises, not customer-facing field-service operations, CRM, dispatch, and billing for trades businesses."
+      "relevant": true,
+      "rationale": "Contractor-management software for construction and service providers overlaps ServiceTitan\u2019s trades field-service operations market.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Contractor-management software for construction and service providers overlaps ServiceTitan\u2019s trades field-service operations market."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "SaaS for managing field contractors and service delivery for telcos/construction \u2014 comparable field-service operations software to ServiceTitan."
+        }
+      ]
     },
     {
       "name": "Ontraccr Technologies",
@@ -429,7 +509,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide operations software for contractors, overlapping in scheduling, workflow automation, invoicing, communications, and field-service management buyers."
+      "rationale": "Construction contractor operations platform covering scheduling, invoicing, customer communications, and workflows; directly overlaps ServiceTitan\u2019s field-service management market.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Construction contractor operations platform covering scheduling, invoicing, customer communications, and workflows; directly overlaps ServiceTitan\u2019s field-service management market."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Operations management SaaS for construction/service contractors: scheduling, time tracking, invoicing \u2014 same buyer persona and comparable product to ServiceTitan."
+        }
+      ]
     },
     {
       "name": "Jobcamp",
@@ -490,7 +582,19 @@
         "relevance_score": "A"
       },
       "relevant": false,
-      "rationale": "Jobcamp manages job applications for job seekers, not field-service operations for trades contractors; the products and buyers do not overlap."
+      "rationale": "Job-seeker application organization platform, not field-service operations software for trades contractors.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Job-seeker application organization platform, not field-service operations software for trades contractors."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Jobcamp is a job-application organization tool for job seekers, not field-service management software for trades contractors."
+        }
+      ]
     },
     {
       "name": "Sqyre",
@@ -533,7 +637,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide field-service operations software covering scheduling, quoting, routing, client communication, and office-field coordination for service businesses."
+      "rationale": "Fieldflw offers an integrated field-service operations platform with scheduling, quoting, routing, client communication, and team management for service businesses.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Fieldflw offers an integrated field-service operations platform with scheduling, quoting, routing, client communication, and team management for service businesses."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Fieldflw is field-service management software for service businesses: scheduling, quoting, routing, team management \u2014 same product category and market as ServiceTitan."
+        }
+      ]
     },
     {
       "name": "Sitepod",
@@ -580,7 +696,19 @@
         "relevance_score": "A"
       },
       "relevant": false,
-      "rationale": "Sitepod appears to provide generic IT/web development services, not field-service operations software for trades contractors."
+      "rationale": "Sitepod appears to offer generic web/IT solutions, not field-service management software for trades contractors.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Sitepod appears to offer generic web/IT solutions, not field-service management software for trades contractors."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Tiny IT services/web-development consultancy with no field-service or trades SaaS product; serves the category, doesn't compete with ServiceTitan."
+        }
+      ]
     },
     {
       "name": "Commusoft",
@@ -643,7 +771,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Commusoft provides end-to-end field service management software for service, maintenance, and installation contractors, overlapping ServiceTitan\u2019s offering and target buyers."
+      "rationale": "Commusoft provides end-to-end field-service operations, CRM, booking, invoicing, and customer management for service contractors, directly comparable to ServiceTitan.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Commusoft provides end-to-end field-service operations, CRM, booking, invoicing, and customer management for service contractors, directly comparable to ServiceTitan."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Field-service management software for service/maintenance/installation contractors \u2014 direct competitor on product, market, and model axes."
+        }
+      ]
     },
     {
       "name": "Business Genie",
@@ -695,7 +835,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide all-in-one field-service management software for home-service contractors, including scheduling, dispatch, invoicing, payments, and customer management."
+      "rationale": "Home-service management platform with scheduling, dispatch, invoicing, CRM, and payments directly overlaps ServiceTitan\u2019s trades-contractor operations software.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Home-service management platform with scheduling, dispatch, invoicing, CRM, and payments directly overlaps ServiceTitan\u2019s trades-contractor operations software."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "All-in-one field-service software for home service businesses: scheduling, dispatch, invoicing, CRM. Same product and market as ServiceTitan."
+        }
+      ]
     },
     {
       "name": "CmWerk",
@@ -729,8 +881,20 @@
         ],
         "relevance_score": "A"
       },
-      "relevant": false,
-      "rationale": "CmWerk targets construction project lifecycle management, not the dispatch, CRM, billing, and field-service operations central to ServiceTitan."
+      "relevant": true,
+      "rationale": "Construction management software for contractors overlaps ServiceTitan's trades-contractor operational software market, though with broader project-management focus.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Construction management software for contractors overlaps ServiceTitan's trades-contractor operational software market, though with broader project-management focus."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Vertical SaaS for contractors' operations (construction/field-service management); same buyer persona and business model as ServiceTitan, a comparable competitor."
+        }
+      ]
     },
     {
       "name": "Oversite",
@@ -788,8 +952,20 @@
         ],
         "relevance_score": "A"
       },
-      "relevant": false,
-      "rationale": "Oversite targets construction project estimating and enterprise operations, not dispatch-centric field service management for trades contractors, so buyers and core workflows differ."
+      "relevant": true,
+      "rationale": "Construction contractor software for estimating, operations, HR, financials, and reporting overlaps ServiceTitan\u2019s field-service operations platform for trades businesses.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Construction contractor software for estimating, operations, HR, financials, and reporting overlaps ServiceTitan\u2019s field-service operations platform for trades businesses."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Purpose-built SaaS for contractors: estimating, bid tracking, operations, HR, financials \u2014 same buyer and vertical-software model as ServiceTitan."
+        }
+      ]
     },
     {
       "name": "TruFields S.A.L",
@@ -836,7 +1012,19 @@
         "relevance_score": "A"
       },
       "relevant": false,
-      "rationale": "TruFields is a general IT services and consulting company, not field-service management SaaS for trades contractors."
+      "rationale": "Generic IT services and consulting firm; no evidence of field-service management software for trades contractors.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Generic IT services and consulting firm; no evidence of field-service management software for trades contractors."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Generic IT services/consulting firm serving various industries, not a field-service management software product for trades contractors."
+        }
+      ]
     },
     {
       "name": "Improveit! 360",
@@ -914,7 +1102,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide vertical business-management SaaS for home-services contractors, overlapping in CRM, scheduling, quoting, job management, marketing, and mobile operations."
+      "rationale": "Vertical SaaS for remodelers and specialty contractors, offering CRM, lead management, quoting, jobs, and operations tools comparable to ServiceTitan.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Vertical SaaS for remodelers and specialty contractors, offering CRM, lead management, quoting, jobs, and operations tools comparable to ServiceTitan."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Vertical SaaS CRM/business-management software built for contractors and home pros \u2014 same buyer, comparable product to ServiceTitan's trades platform."
+        }
+      ]
     },
     {
       "name": "Contractors Cloud",
@@ -973,7 +1173,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide all-in-one CRM, project, financial, and operations software for contractors, with Contractors Cloud specifically serving roofing and contracting businesses."
+      "rationale": "All-in-one operations, CRM, financial, project, and production software for roofing and contracting businesses directly overlaps ServiceTitan's trades-contractor SaaS.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "All-in-one operations, CRM, financial, project, and production software for roofing and contracting businesses directly overlaps ServiceTitan's trades-contractor SaaS."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "All-in-one SaaS for roofing/contracting businesses covering sales, financials, and production \u2014 same product, buyer, and model as ServiceTitan."
+        }
+      ]
     },
     {
       "name": "Nimbus Software Ltd.",
@@ -1033,7 +1245,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Nimbus provides vertical business-management ERP for contractors, overlapping ServiceTitan\u2019s operational, financial, and workforce workflows for the same contractor buyers."
+      "rationale": "ERP software for contracting and construction firms overlaps ServiceTitan\u2019s trades-contractor customer market and operational-management use case.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "ERP software for contracting and construction firms overlaps ServiceTitan\u2019s trades-contractor customer market and operational-management use case."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "ERP/business-management software built for contracting and construction firms \u2014 same buyer and job as ServiceTitan's trades-operations platform; a direct comparable."
+        }
+      ]
     },
     {
       "name": "EPROMIS Solutions",
@@ -1077,7 +1301,19 @@
         "relevance_score": "A"
       },
       "relevant": false,
-      "rationale": "ePROMIS is a broad multi-industry ERP/HCM/EAM suite, not field-service management software specifically for trades contractors and their operational workflows."
+      "rationale": "General multi-industry ERP platform, not a field-service management system tailored to trades contractors.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "General multi-industry ERP platform, not a field-service management system tailored to trades contractors."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Horizontal multi-industry ERP/HCM/EAM suite, not trades-focused field-service management software; only generic construction-industry mention, no strong product or market overlap."
+        }
+      ]
     },
     {
       "name": "ConeRQ",
@@ -1121,7 +1357,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "ConeRQ offers field-service workflow automation from job ticket through payment, overlapping ServiceTitan\u2019s operational software for field-service businesses."
+      "rationale": "Field automation from job ticket through payment closely overlaps ServiceTitan\u2019s field-service operations, dispatch, and billing workflow for contractors.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Field automation from job ticket through payment closely overlaps ServiceTitan\u2019s field-service operations, dispatch, and billing workflow for contractors."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Field-service automation software managing job tickets from purchase order to payment \u2014 same product and market as ServiceTitan's trades field-service platform."
+        }
+      ]
     },
     {
       "name": "Penta Software",
@@ -1182,7 +1430,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Penta provides field service, project management, payroll, and financial software for contractors, overlapping ServiceTitan\u2019s core workflows and trades-focused buyer persona."
+      "rationale": "Construction-focused enterprise software includes service management, mobile field operations, customer CRM/portal, payroll and billing\u2014directly comparable to ServiceTitan for trades contractors.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Construction-focused enterprise software includes service management, mobile field operations, customer CRM/portal, payroll and billing\u2014directly comparable to ServiceTitan for trades contractors."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Vertical software for contractors with service management, mobile field service, and dispatch-equivalent functionality \u2014 direct competitor/comparable to ServiceTitan's field-service platform."
+        }
+      ]
     },
     {
       "name": "Levesys",
@@ -1213,7 +1473,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide vertical operations software for contractors, including service management, finance, and project workflows, targeting overlapping contractor buyers."
+      "rationale": "Construction and service-contractor software with integrated service operations, finance, and projects, serving the same trades contractor market as ServiceTitan.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Construction and service-contractor software with integrated service operations, finance, and projects, serving the same trades contractor market as ServiceTitan."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Vertical SaaS for construction and service contractors integrating finance, service, and project operations; same contractor market and business-model comparable to ServiceTitan."
+        }
+      ]
     },
     {
       "name": "Loop Logics",
@@ -1281,8 +1553,20 @@
         ],
         "relevance_score": "A"
       },
-      "relevant": false,
-      "rationale": "Loop serves project-based builders with construction management software, while ServiceTitan targets recurring field-service operations for trades contractors; buyers and workflows differ."
+      "relevant": true,
+      "rationale": "Construction job-management SaaS with quoting, scheduling, financial tracking, and contractor workflows; a comparable vertical operations platform for trades businesses.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Construction job-management SaaS with quoting, scheduling, financial tracking, and contractor workflows; a comparable vertical operations platform for trades businesses."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Vertical SaaS job-management platform for builders/contractors: scheduling, quoting, compliance, financials \u2014 same contractor-operations software model and adjacent trades market as ServiceTitan."
+        }
+      ]
     },
     {
       "name": "Paych",
@@ -1352,7 +1636,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Paych provides contractor-focused business-management SaaS, overlapping ServiceTitan\u2019s operational software and targeting contractors managing business workflows."
+      "rationale": "Business-management software for contractors, overlapping ServiceTitan's trades operations, dispatch, CRM, billing, and project-management customer base.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Business-management software for contractors, overlapping ServiceTitan's trades operations, dispatch, CRM, billing, and project-management customer base."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Business-management software built for contractors, overlapping ServiceTitan's product and target market, though broad and vague."
+        }
+      ]
     },
     {
       "name": "Bold Construct",
@@ -1401,7 +1697,19 @@
         "relevance_score": "A"
       },
       "relevant": false,
-      "rationale": "Bold Construct appears to be a construction company, not field-service management software for trades contractors."
+      "rationale": "Construction project-management SaaS is adjacent but does not clearly provide field-service dispatch, CRM, billing, and operations for trades contractors.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Construction project-management SaaS is adjacent but does not clearly provide field-service dispatch, CRM, billing, and operations for trades contractors."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Appears to be a small construction contractor, not field-service/trades software; user of the category, not a competitor comparable to ServiceTitan."
+        }
+      ]
     },
     {
       "name": "Jobprogress",
@@ -1431,7 +1739,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "JobProgress provides contractor-focused business and workflow management software, overlapping ServiceTitan\u2019s field-service operations platform and targeting the same trades contractors."
+      "rationale": "Field-service business management platform for home-improvement contractors, overlapping ServiceTitan\u2019s trades CRM, workflow, dispatch, and operations market.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Field-service business management platform for home-improvement contractors, overlapping ServiceTitan\u2019s trades CRM, workflow, dispatch, and operations market."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Vertical SaaS business/workflow management platform for home improvement contractors \u2014 same product category and buyer persona as ServiceTitan."
+        }
+      ]
     },
     {
       "name": "ServiceTitan",
@@ -1488,7 +1808,19 @@
         "relevance_score": "A"
       },
       "relevant": false,
-      "rationale": "This is an unofficial ServiceTitan login guide using a deceptive duplicate name, not a field-service management software company."
+      "rationale": "Likely an unofficial ServiceTitan login guide/duplicate domain, not an independent field-service software company.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Likely an unofficial ServiceTitan login guide/duplicate domain, not an independent field-service software company."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Duplicate/copycat login-guide content site impersonating ServiceTitan, not a competing field-service software product."
+        }
+      ]
     },
     {
       "name": "I4T Business Australia",
@@ -1559,7 +1891,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide trades contractors software for quoting, scheduling, tracking, invoicing, payments, and broader field-service operations."
+      "rationale": "Tradie-focused platform offering quoting, scheduling, tracking, invoicing, payments, and websites closely matches ServiceTitan\u2019s field-service operations software.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Tradie-focused platform offering quoting, scheduling, tracking, invoicing, payments, and websites closely matches ServiceTitan\u2019s field-service operations software."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Field-service management software for trades businesses: quoting, scheduling, tracking, invoicing, payments \u2014 same product and buyer as ServiceTitan."
+        }
+      ]
     },
     {
       "name": "MX Build",
@@ -1629,7 +1973,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "MX Build directly overlaps ServiceTitan in field-service operations software for residential contractors, including scheduling, estimating, invoicing, CRM, and payments."
+      "rationale": "Field-service operations platform for residential contractors, with scheduling, invoicing, CRM, and payments\u2014directly comparable to ServiceTitan.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Field-service operations platform for residential contractors, with scheduling, invoicing, CRM, and payments\u2014directly comparable to ServiceTitan."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Field service management SaaS for residential contractors with estimating, scheduling, invoicing, payments \u2014 same product, market, and model as ServiceTitan."
+        }
+      ]
     },
     {
       "name": "Axsys",
@@ -1670,7 +2026,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Axsys offers contractor-focused ERP and lead-attribution software overlapping ServiceTitan\u2019s operations, CRM, and marketing functions for the same trades-business buyers."
+      "rationale": "Contractor-focused software suite including ERP and lead attribution overlaps ServiceTitan\u2019s trades-operations market and business model.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Contractor-focused software suite including ERP and lead attribution overlaps ServiceTitan\u2019s trades-operations market and business model."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Builds software for contractors (ERP, lead attribution, weather intelligence) \u2014 same market and product category as ServiceTitan's trades-focused SaaS."
+        }
+      ]
     },
     {
       "name": "CrewCost",
@@ -1746,8 +2114,20 @@
         ],
         "relevance_score": "A"
       },
-      "relevant": false,
-      "rationale": "CrewCost provides construction accounting, not field-service dispatch and operations; contractor buyers may use it alongside ServiceTitan rather than evaluate it for the same job."
+      "relevant": true,
+      "rationale": "Both are vertical SaaS platforms for contractors, with overlapping contractor buyers and operational/financial workflow needs.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both are vertical SaaS platforms for contractors, with overlapping contractor buyers and operational/financial workflow needs."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Vertical SaaS purpose-built for contractors (construction accounting); same buyer persona and business model as ServiceTitan, a comparable in trades software."
+        }
+      ]
     },
     {
       "name": "Workcase",
@@ -1820,7 +2200,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "WorkCase provides field-service operations software for HVAC, plumbing, and electrical contractors, overlapping ServiceTitan\u2019s core workflows and target buyers."
+      "rationale": "Field-service operations software for HVAC, plumbing, and electrical contractors overlaps ServiceTitan\u2019s core trades customer base and workflows.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Field-service operations software for HVAC, plumbing, and electrical contractors overlaps ServiceTitan\u2019s core trades customer base and workflows."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Field service and construction management SaaS for HVAC, plumbing, electrical trades \u2014 same product category and buyer as ServiceTitan."
+        }
+      ]
     },
     {
       "name": "Vertical Market Software",
@@ -1915,7 +2307,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Ventus provides enterprise operations software for electrical, mechanical, and HVAC contractors, overlapping ServiceTitan\u2019s field-service platform and contractor buyer base."
+      "rationale": "Provides enterprise field-service and operations software for HVAC, electrical, mechanical, and specialty contractors\u2014the same core trades-contractor market as ServiceTitan.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Provides enterprise field-service and operations software for HVAC, electrical, mechanical, and specialty contractors\u2014the same core trades-contractor market as ServiceTitan."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Vertical software (Ventus) for HVAC, electrical, mechanical, and specialty contractors\u2014same field-service/trades contractor software market as ServiceTitan."
+        }
+      ]
     },
     {
       "name": "Wello Solutions",
@@ -1973,7 +2377,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide field-service management SaaS for installation, maintenance, and repair businesses, supporting dispatch, work orders, planning, and technicians."
+      "rationale": "Field-service management SaaS for installation, maintenance, and repair contractors, directly comparable to ServiceTitan\u2019s operational platform for trades businesses.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Field-service management SaaS for installation, maintenance, and repair contractors, directly comparable to ServiceTitan\u2019s operational platform for trades businesses."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Field service management SaaS for installation, maintenance, and repair companies \u2014 same product category and buyer as ServiceTitan."
+        }
+      ]
     },
     {
       "name": "A.C.E. Construction Software",
@@ -2031,8 +2447,20 @@
         ],
         "relevance_score": "A"
       },
-      "relevant": false,
-      "rationale": "ACE focuses on residential construction cost and bid tracking, not field-service dispatch, CRM, billing, and operations for trades businesses."
+      "relevant": true,
+      "rationale": "Construction-management SaaS for subcontractors and home builders, supporting contractor business operations and costs; a credible adjacent comparable to ServiceTitan.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Construction-management SaaS for subcontractors and home builders, supporting contractor business operations and costs; a credible adjacent comparable to ServiceTitan."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Vertical SaaS for contractors' business operations (cost tracking, reporting, management) \u2014 same buyer persona and model as ServiceTitan's trades-contractor platform."
+        }
+      ]
     },
     {
       "name": "Tradetraks",
@@ -2081,7 +2509,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Tradetraks offers centralized business and operations management software for trades and construction contractors, overlapping ServiceTitan\u2019s field-service management use cases and buyers."
+      "rationale": "Trades-focused business-management software for construction contractors overlaps ServiceTitan\u2019s field-service operations and administrative workflow market.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Trades-focused business-management software for construction contractors overlaps ServiceTitan\u2019s field-service operations and administrative workflow market."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Vertical SaaS business-management platform built for trades/construction contractors, same buyer and job as ServiceTitan's field-service operations software."
+        }
+      ]
     },
     {
       "name": "Explorer Software",
@@ -2127,7 +2567,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Explorer\u2019s Evolution product provides field-service management software for trade contractors, directly overlapping ServiceTitan\u2019s core offering and buyer persona."
+      "rationale": "Evolution is field service management software for trade contractors, directly overlapping ServiceTitan\u2019s contractor operations, dispatch, CRM, and billing market.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Evolution is field service management software for trade contractors, directly overlapping ServiceTitan\u2019s contractor operations, dispatch, CRM, and billing market."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Purpose-built field service management and construction software for trades contractors \u2014 direct competitor on product and market axes."
+        }
+      ]
     },
     {
       "name": "FCP Insight",
@@ -2184,7 +2636,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both offer operations, scheduling, CRM, estimating, and service-management software for specialty-trade contractors, targeting the same business buyers and workflows."
+      "rationale": "Construction-management SaaS for specialty trade contractors, covering CRM, estimating, scheduling, job costing, and service operations\u2014directly comparable to ServiceTitan.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Construction-management SaaS for specialty trade contractors, covering CRM, estimating, scheduling, job costing, and service operations\u2014directly comparable to ServiceTitan."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Cloud SaaS for specialty trade contractors\u2014estimating, CRM, scheduling, job costing, service management\u2014directly parallels ServiceTitan's product, market, and model."
+        }
+      ]
     },
     {
       "name": "IVO Systems",
@@ -2235,7 +2699,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide vertical operations software for contractors, including dispatch, scheduling, field reporting, and field-to-office workflows for contractor operations teams."
+      "rationale": "Construction operations SaaS for contractors, including dispatch, scheduling, field reporting, and billing-adjacent workflows; a credible adjacent field-service management comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Construction operations SaaS for contractors, including dispatch, scheduling, field reporting, and billing-adjacent workflows; a credible adjacent field-service management comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Vertical SaaS for contractors with dispatch, scheduling, timecards, and field-office operations \u2014 same product category and buyer as ServiceTitan, adjacent construction vertical."
+        }
+      ]
     },
     {
       "name": "CMiC",
@@ -2305,8 +2781,25 @@
         ],
         "relevance_score": "A"
       },
-      "relevant": false,
-      "rationale": "CMiC is construction ERP/project-management software, not field-service management for trades contractors; its core workflows and purchasing use case differ from ServiceTitan."
+      "relevant": true,
+      "rationale": "Both are vertical SaaS platforms for contractors; CMiC's construction ERP is an equivalent business model in the contractor software space, a genuine comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "CMiC targets large general and civil contractors with construction ERP, not trades businesses needing field-service dispatch, CRM, and service operations."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are vertical SaaS platforms for contractors; CMiC's construction ERP is an equivalent business model in the contractor software space, a genuine comparable."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Vertical SaaS for construction/trades contractors covering operations and financials; adjacent competitor and comparable in contractor software.4ded1e2b-92ce-4e0d-a01f-fd0e6e6c1eb0"
+        }
+      ]
     },
     {
       "name": "MyBusinessPortal.Cloud",
@@ -2376,7 +2869,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide contractor-focused field-service management software for scheduling jobs, managing projects, tracking work, and improving trade-business operations."
+      "rationale": "Contractor and trades business-management platform with job scheduling, projects, time tracking, and workflow operations, directly comparable to ServiceTitan.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Contractor and trades business-management platform with job scheduling, projects, time tracking, and workflow operations, directly comparable to ServiceTitan."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Business management software for contractors/tradesmen: job scheduling, project management, time tracking \u2014 same product category and buyer as ServiceTitan."
+        }
+      ]
     },
     {
       "name": "AskLou",
@@ -2409,7 +2914,19 @@
         "relevance_score": "A"
       },
       "relevant": false,
-      "rationale": "AskLou\u2019s vague management-software description does not establish field-service operations for trades contractors or the same buyer and job-to-be-done."
+      "rationale": "Generic management software with no stated field-service, trades-contractor, dispatch, CRM, or billing focus.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Generic management software with no stated field-service, trades-contractor, dispatch, CRM, or billing focus."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Generic 'management software' with IT/consulting focus; no trades, field-service, or contractor-specific product matching ServiceTitan's vertical SaaS."
+        }
+      ]
     },
     {
       "name": "Close Ease",
@@ -2476,7 +2993,19 @@
         "relevance_score": "A"
       },
       "relevant": false,
-      "rationale": "Close Ease is an AI-assisted B2B outbound sales platform, not field-service operations software for trades contractors."
+      "rationale": "AI-assisted outbound sales platform for B2B SaaS teams, not field-service operations software for trades contractors.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "AI-assisted outbound sales platform for B2B SaaS teams, not field-service operations software for trades contractors."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "AI-assisted outbound sales tool for B2B SaaS teams, not field-service management software for trades contractors."
+        }
+      ]
     },
     {
       "name": "Bernardomagri",
@@ -2511,7 +3040,19 @@
         "relevance_score": "A"
       },
       "relevant": false,
-      "rationale": "Generic estimating and project-management software for broad entrepreneurs lacks ServiceTitan\u2019s trades-specific field-service, dispatch, CRM, and operational focus."
+      "rationale": "Generic estimating and project-management platform for freelancers and teams, not field-service operations software tailored to trades contractors.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Generic estimating and project-management platform for freelancers and teams, not field-service operations software tailored to trades contractors."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Generic estimating/project tool for freelancers and entrepreneurs, not field-service management for trades contractors; weak product overlap, different buyer persona."
+        }
+      ]
     },
     {
       "name": "RedTeam",
@@ -2595,8 +3136,20 @@
         ],
         "relevance_score": "A"
       },
-      "relevant": false,
-      "rationale": "RedTeam manages construction projects and jobsites, while ServiceTitan manages dispatch and field-service operations for trades; buyers and core workflows differ."
+      "relevant": true,
+      "rationale": "Construction-management SaaS for contractors overlaps ServiceTitan's trades-contractor market and field operations, though it emphasizes project management rather than service dispatch.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Construction-management SaaS for contractors overlaps ServiceTitan's trades-contractor market and field operations, though it emphasizes project management rather than service dispatch."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Vertical SaaS for contractors, like ServiceTitan: construction/field project management, collaboration, and jobsite tools for the same trades buyer."
+        }
+      ]
     },
     {
       "name": "Archdesk",
@@ -2655,7 +3208,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide operational management SaaS for contractors, overlapping in estimating, scheduling, project/job management, accounting, and customer administration."
+      "rationale": "Construction-focused management SaaS overlaps in estimating, scheduling, CRM, and operations for contractors, making it a credible ServiceTitan-adjacent comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Construction-focused management SaaS overlaps in estimating, scheduling, CRM, and operations for contractors, making it a credible ServiceTitan-adjacent comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Vertical SaaS operations platform for construction/trades contractors (estimation, scheduling, accounting, project management) \u2014 same buyer persona and job-to-be-done as ServiceTitan."
+        }
+      ]
     },
     {
       "name": "Onsite",
@@ -2708,8 +3273,25 @@
         ],
         "relevance_score": "A"
       },
-      "relevant": false,
-      "rationale": "Onsite manages construction-site projects and resources, while ServiceTitan manages dispatch, CRM, and field-service operations for trades contractors; buying use cases differ."
+      "relevant": true,
+      "rationale": "Vertical SaaS for contractors managing field/site operations, labor, and expenses \u2014 same buyer persona and operational-software model as ServiceTitan.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Construction-site resource and expense management differs from ServiceTitan\u2019s field-service dispatch, CRM, billing, and trades operations platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Vertical SaaS for contractors managing field/site operations, labor, and expenses \u2014 same buyer persona and operational-software model as ServiceTitan."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Vertical SaaS for contractors managing jobs, labor, and costs \\u2014 comparable field/site operations software for trades/construction businesses."
+        }
+      ]
     },
     {
       "name": "Element Industrial Solutions",
@@ -2746,8 +3328,20 @@
         ],
         "relevance_score": "A"
       },
-      "relevant": false,
-      "rationale": "Element targets heavy industrial construction project execution, not field-service management and business operations for residential and commercial trades contractors."
+      "relevant": true,
+      "rationale": "Industrial construction software improves field productivity and project administration, overlapping ServiceTitan's contractor operations market despite a narrower product focus.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Industrial construction software improves field productivity and project administration, overlapping ServiceTitan's contractor operations market despite a narrower product focus."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Vertical SaaS for contractors: field productivity, planning, tracking, reporting for construction teams \u2014 same product/market axis as ServiceTitan's trades operations platform."
+        }
+      ]
     },
     {
       "name": "Spectura",
@@ -2785,7 +3379,19 @@
         "relevance_score": "A"
       },
       "relevant": false,
-      "rationale": "Spectura develops content management and custom web/desktop applications, not field-service operations software for trades contractors."
+      "rationale": "Web, desktop, and content-management developer serving varied firms; no field-service or trades-operations platform resemblance.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Web, desktop, and content-management developer serving varied firms; no field-service or trades-operations platform resemblance."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Spectura is a Turkish web/CMS development agency, not field-service management software for trades contractors; no product, market, or model overlap."
+        }
+      ]
     },
     {
       "name": "Oke Trade Mate",
@@ -2861,7 +3467,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide operations and project-management software for contractors, targeting trade businesses seeking to streamline field work and business workflows."
+      "rationale": "Contractor-focused operations and project-management software overlaps ServiceTitan\u2019s field-service management market for trades businesses.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Contractor-focused operations and project-management software overlaps ServiceTitan\u2019s field-service management market for trades businesses."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Contractor management app for trades businesses; same buyer persona and product category as ServiceTitan's field-service operations software."
+        }
+      ]
     },
     {
       "name": "Buildzen",
@@ -2901,8 +3519,25 @@
         ],
         "relevance_score": "A"
       },
-      "relevant": false,
-      "rationale": "Buildzen serves general contractors with construction project management, while ServiceTitan targets trade-service contractors needing dispatch and field service operations."
+      "relevant": true,
+      "rationale": "Vertical SaaS for contractors: all-in-one platform (estimating, financials, project ops) for GCs, closely comparable to ServiceTitan's trades-contractor business-management software.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Buildzen targets general contractors with estimating, subcontract, and project tools, not field-service trades contractors needing dispatch, CRM, and service operations."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Vertical SaaS for contractors: all-in-one platform (estimating, financials, project ops) for GCs, closely comparable to ServiceTitan's trades-contractor business-management software."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Vertical SaaS for contractors (GCs) covering estimating, financials, operations \\and than than seseparate; comparable to ServiceTitan's trades software.You must respond with valid JSON.<br>"
+        }
+      ]
     },
     {
       "name": "SkillSite App",
@@ -2940,7 +3575,24 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide contractor-focused SaaS for managing field workforces, including team assignment, time tracking, payroll workflows, and operational compliance."
+      "rationale": "Vertical SaaS built for contractors covering workforce scheduling, time clocks, and payroll\u2014same buyer persona and adjacent field-service operations product as ServiceTitan.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Construction-focused workforce, skills, and payroll tool; it lacks ServiceTitan's field-service operations, dispatch, CRM, billing, and marketing product focus."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Vertical SaaS built for contractors covering workforce scheduling, time clocks, and payroll\u2014same buyer persona and adjacent field-service operations product as ServiceTitan."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Vertical SaaS for contractors handling workforce/time/payroll ops \\u2014 same buyer persona and adjacent operational software category.\u0443\u045b\u0438 Genuine ICP-expansion comparable.Everything considered relevant.: true axis market/product.6.9.0.0.0."
+        }
+      ]
     },
     {
       "name": "FieldGroove",
@@ -2999,7 +3651,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "FieldGroove offers overlapping field-service management, CRM, estimating, scheduling, job costing, and invoicing software for contractors."
+      "rationale": "FieldGroove provides CRM, estimating, dispatch-like scheduling, work orders, invoicing, and job costing for field-service operations, directly comparable to ServiceTitan.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "FieldGroove provides CRM, estimating, dispatch-like scheduling, work orders, invoicing, and job costing for field-service operations, directly comparable to ServiceTitan."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Field-service business management software with CRM, estimating, work orders, invoicing, and job costing \u2014 direct competitor to ServiceTitan's trades-operations platform."
+        }
+      ]
     },
     {
       "name": "Bcmi",
@@ -3065,8 +3729,25 @@
         ],
         "relevance_score": "A"
       },
-      "relevant": false,
-      "rationale": "BCMI serves construction-material producers with production, dispatch, and ticketing software, not trades contractors managing field-service operations."
+      "relevant": true,
+      "rationale": "Vertical SaaS for construction sector with core dispatch, quoting, and mobile operations software \u2014 comparable business model and product to ServiceTitan, adjacent vertical.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "BCMI serves construction-material producers with production and delivery-dispatch software, not trades contractors needing field-service management, CRM, billing, and technician operations."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Vertical SaaS for construction sector with core dispatch, quoting, and mobile operations software \u2014 comparable business model and product to ServiceTitan, adjacent vertical."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Both vertical SaaS with dispatch/mobile field operations software for construction-adjacent producers/contractors; comparable model and buyer type."
+        }
+      ]
     },
     {
       "name": "Job-Dox",
@@ -3128,7 +3809,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide vertical operations software for service contractors, helping the same buyers manage field jobs, workflows, and project execution."
+      "rationale": "Field-service and restoration project-management SaaS overlaps ServiceTitan\u2019s trades-contractor operational workflow, serving similar service businesses.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Field-service and restoration project-management SaaS overlaps ServiceTitan\u2019s trades-contractor operational workflow, serving similar service businesses."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Field-service project management software for restoration/service trades contractors \u2014 same product category, buyer, and model as ServiceTitan."
+        }
+      ]
     },
     {
       "name": "WorkMax",
@@ -3205,8 +3898,20 @@
         ],
         "relevance_score": "A"
       },
-      "relevant": false,
-      "rationale": "WorkMax focuses construction time, asset, and job-cost tracking, not end-to-end field-service management for trades including dispatch, CRM, and billing."
+      "relevant": true,
+      "rationale": "Construction-focused field operations SaaS with time tracking, job costing, asset management, and payroll integrations; a comparable platform for trades contractors.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Construction-focused field operations SaaS with time tracking, job costing, asset management, and payroll integrations; a comparable platform for trades contractors."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are vertical SaaS for contractors managing field workforces\u2014time tracking, job costing, field operations\u2014serving the same trades/construction buyer persona."
+        }
+      ]
     },
     {
       "name": "Jonas Construction Software",
@@ -3275,7 +3980,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide integrated field service and operations software for specialty trades contractors, including service management, dispatch-adjacent workflows, billing, and back-office functions."
+      "rationale": "Construction contractor ERP with dispatch, work orders, payroll, and job management directly overlaps ServiceTitan\u2019s field-service operations platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Construction contractor ERP with dispatch, work orders, payroll, and job management directly overlaps ServiceTitan\u2019s field-service operations platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Vertical SaaS for mechanical/specialty trade contractors with service management, dispatch-adjacent operations, and back-office tools \u2014 direct competitor to ServiceTitan."
+        }
+      ]
     },
     {
       "name": "Eque2-Estimating",
@@ -3342,8 +4059,25 @@
         ],
         "relevance_score": "A"
       },
-      "relevant": false,
-      "rationale": "Eque2 is construction estimating software, not a field-service operations platform; contractors would not evaluate both for the same primary job."
+      "relevant": true,
+      "rationale": "Vertical SaaS for construction/trades contractors (estimating), same buyer persona and software business model as ServiceTitan.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Construction estimating software is complementary to, not a field-service management platform for trades contractors; it addresses a distinct estimating workflow."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Vertical SaaS for construction/trades contractors (estimating), same buyer persona and software business model as ServiceTitan."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Vertical SaaS selling estimating software to construction contractors \\u2014 same contractor buyer persona, adjacent workflow to ServiceTitan's ops suite."
+        }
+      ]
     },
     {
       "name": "Sera Systems",
@@ -3388,7 +4122,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide field service management software for HVAC, plumbing, and electrical contractors, including scheduling, dispatch, payments, and operational tools."
+      "rationale": "Direct field-service management platform for the same HVAC, plumbing, and electrical contractor market, covering scheduling, dispatch, payments, and operations.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Direct field-service management platform for the same HVAC, plumbing, and electrical contractor market, covering scheduling, dispatch, payments, and operations."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Field service management SaaS for HVAC, plumbing, and electrical contractors \u2014 direct competitor to ServiceTitan on product, market, and model."
+        }
+      ]
     },
     {
       "name": "FieldPulse",
@@ -3482,7 +4228,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "FieldPulse directly overlaps ServiceTitan as field-service management SaaS for contractors, including scheduling, CRM, estimates, invoicing, payments, and job management."
+      "rationale": "FieldPulse is field-service management software for contractors, covering scheduling, dispatch, CRM, estimates, invoicing, payments, and operations\u2014directly comparable to ServiceTitan.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "FieldPulse is field-service management software for contractors, covering scheduling, dispatch, CRM, estimates, invoicing, payments, and operations\u2014directly comparable to ServiceTitan."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "FieldPulse is all-in-one field service management software for contractors\u2014scheduling, invoicing, CRM\u2014directly competing with ServiceTitan on product, market, and model."
+        }
+      ]
     },
     {
       "name": "C/F Data Systems",
@@ -3545,7 +4303,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide contractor-focused operations software spanning job management, costing/billing, and business workflows for commercial or specialty trades."
+      "rationale": "Construction contractor software for project management, job costing, and accounting overlaps ServiceTitan's trades field-service operations market.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Construction contractor software for project management, job costing, and accounting overlaps ServiceTitan's trades field-service operations market."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Vertical SaaS for contractors (project management, job costing, accounting) \u2014 same contractor buyer and comparable operations-software model as ServiceTitan."
+        }
+      ]
     },
     {
       "name": "jobexact.com",
@@ -3605,7 +4375,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "JobExact provides scheduling and job-management software for construction/trades businesses, overlapping ServiceTitan\u2019s field-service operations and contractor buyer persona."
+      "rationale": "JobExact provides job scheduling and business-management software for construction/trades contractors, overlapping ServiceTitan\u2019s field-service operations market.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "JobExact provides job scheduling and business-management software for construction/trades contractors, overlapping ServiceTitan\u2019s field-service operations market."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Job-scheduling/business-management SaaS for construction/trades businesses, matching ServiceTitan's field-service management product and market."
+        }
+      ]
     },
     {
       "name": "Rivety",
@@ -3662,8 +4444,25 @@
         ],
         "relevance_score": "A"
       },
-      "relevant": false,
-      "rationale": "Rivety\u2019s description only indicates generic AI tools for contractors, without clear overlap with ServiceTitan\u2019s field-service management, dispatch, CRM, or billing platform."
+      "relevant": true,
+      "rationale": "Rivety builds software tools for contractors, matching ServiceTitan's vertical-SaaS-for-trades market and product axis; size is irrelevant.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Rivety targets contractors with AI tools, but its description does not establish field-service operations, dispatch, CRM, billing, or equivalent contractor-management software."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Rivety builds software tools for contractors, matching ServiceTitan's vertical-SaaS-for-trades market and product axis; size is irrelevant."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "AI SaaS tools built for contractors, same trades buyer persona as ServiceTitan."
+        }
+      ]
     },
     {
       "name": "Projul",
@@ -3732,7 +4531,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Projul offers contractor-focused lead management, estimating, scheduling, and project operations software, overlapping ServiceTitan\u2019s field-service platform and buyer persona."
+      "rationale": "Construction contractor management SaaS with lead management, scheduling, invoicing, and mobile field operations closely overlaps ServiceTitan\u2019s trades platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Construction contractor management SaaS with lead management, scheduling, invoicing, and mobile field operations closely overlaps ServiceTitan\u2019s trades platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Vertical SaaS for contractors with CRM, scheduling, invoicing, and operations tools \u2014 same buyer and product category as ServiceTitan."
+        }
+      ]
     },
     {
       "name": "Baton",
@@ -3770,7 +4581,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide vertical operations software for trade contractors, centralizing workflows, accounting, and field execution for similar business operators."
+      "rationale": "Construction-trade vertical SaaS for subcontractor operations, replacing fragmented workflows with field, compliance, and accounting management\u2014comparable to ServiceTitan's contractor platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Construction-trade vertical SaaS for subcontractor operations, replacing fragmented workflows with field, compliance, and accounting management\u2014comparable to ServiceTitan's contractor platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Vertical SaaS operations platform for trades subcontractors (dispatch-style control, compliance, accounting) \u2014 same product category and buyer as ServiceTitan."
+        }
+      ]
     },
     {
       "name": "ContractorFlow App",
@@ -3824,7 +4647,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "ContractorFlow provides contractor-focused CRM, estimating, scheduling, and operational software, overlapping ServiceTitan\u2019s core workflows and targeting the same trades-business buyers."
+      "rationale": "Field-service operations software for contractors, including intake, scheduling, estimates, contracts, and employee management; directly comparable to ServiceTitan.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Field-service operations software for contractors, including intake, scheduling, estimates, contracts, and employee management; directly comparable to ServiceTitan."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Contractor-focused SaaS offering CRM, estimating, quoting, scheduling, and employee management \u2014 same product category and buyer persona as ServiceTitan."
+        }
+      ]
     },
     {
       "name": "DataScope Systems",
@@ -3899,8 +4734,25 @@
         ],
         "relevance_score": "A"
       },
-      "relevant": false,
-      "rationale": "DataScope manages construction-site projects, safety, and resources, not trade contractors\u2019 field-service dispatch, CRM, billing, and service operations."
+      "relevant": true,
+      "rationale": "Vertical SaaS for construction operations management\u2014comparable to ServiceTitan's trades-focused field-service platform on market and business-model axes.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Construction project/site coordination software, not a field-service platform for trades contractors with dispatch, CRM, billing, and marketing."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Vertical SaaS for construction operations management\u2014comparable to ServiceTitan's trades-focused field-service platform on market and business-model axes."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Vertical SaaS for construction field operations/workforce management; adjacent peer to trades contractor software, similar buyer and job.a"
+        }
+      ]
     },
     {
       "name": "Cinderblock",
@@ -3954,7 +4806,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide contractor-focused job and field-service management, including scheduling, estimates, invoicing, and office-field coordination for similar trade-business buyers."
+      "rationale": "Contractor-focused field-service management platform with scheduling, estimates, invoicing, and operations workflows closely overlaps ServiceTitan\u2019s core product and customer market.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Contractor-focused field-service management platform with scheduling, estimates, invoicing, and operations workflows closely overlaps ServiceTitan\u2019s core product and customer market."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Job management SaaS for contractors with scheduling, estimates, invoicing \u2014 same product category and trades buyer as ServiceTitan, just smaller scale."
+        }
+      ]
     },
     {
       "name": "BuildSuite",
@@ -4016,8 +4880,20 @@
         ],
         "relevance_score": "A"
       },
-      "relevant": false,
-      "rationale": "BuildSuite focuses on construction project management and estimating, not dispatch-centric field-service operations for trades contractors, so the core job differs."
+      "relevant": true,
+      "rationale": "Construction-management SaaS with estimating and takeoff tools serves contractor operational workflows, overlapping ServiceTitan\u2019s trades-contractor software market.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Construction-management SaaS with estimating and takeoff tools serves contractor operational workflows, overlapping ServiceTitan\u2019s trades-contractor software market."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Vertical SaaS for contractor businesses: construction project management, estimation, and takeoff tools \u2014 comparable model serving adjacent trades/contractor buyers."
+        }
+      ]
     },
     {
       "name": "Dataforma",
@@ -4076,7 +4952,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Dataforma provides integrated CRM, project, service, and operational software for roofing contractors, overlapping ServiceTitan\u2019s field-service platform and trades-business buyers."
+      "rationale": "Roofing-contractor operations platform covering customer, project, service, transactional, and workforce data; directly comparable vertical field-service SaaS.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Roofing-contractor operations platform covering customer, project, service, transactional, and workforce data; directly comparable vertical field-service SaaS."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Vertical SaaS for roofing/trades contractors managing operations, customers, and service \u2014 same product and market as ServiceTitan."
+        }
+      ]
     },
     {
       "name": "Estimating Edge",
@@ -4150,7 +5038,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide vertical SaaS to trade contractors, with overlapping estimating workflows for roofing and other specialty contractors."
+      "rationale": "Construction SaaS for specialty contractors, covering estimating and takeoff rather than ServiceTitan\u2019s broader field-service operations.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Construction SaaS for specialty contractors, covering estimating and takeoff rather than ServiceTitan\u2019s broader field-service operations."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Vertical SaaS sold to trade/specialty contractors, same buyer persona and business model as ServiceTitan; adjacent construction-operations product makes it a comparable."
+        }
+      ]
     },
     {
       "name": "WorkMarket",
@@ -4228,7 +5128,19 @@
         "relevance_score": "A"
       },
       "relevant": false,
-      "rationale": "WorkMarket manages enterprise contingent workforces, while ServiceTitan runs field-service operations for trades contractors; their core buyers and jobs differ."
+      "rationale": "WorkMarket manages enterprise extended and freelance workforces, not field-service operations software for trades contractors.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "WorkMarket manages enterprise extended and freelance workforces, not field-service operations software for trades contractors."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "WorkMarket is freelance/extended-workforce management software for enterprises, not field-service operations SaaS for trades contractors; different buyer and product. Parent ADP HR tech further off-axis."
+        }
+      ]
     },
     {
       "name": "TopBuilder/ContractorBITM",
@@ -4286,7 +5198,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide contractor-focused SaaS with CRM, lead management, and marketing workflows, targeting construction/trades businesses seeking to win and manage jobs."
+      "rationale": "Construction-focused CRM, bid/proposal, marketing, and profitability platform for the same contractor trades customers as ServiceTitan.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Construction-focused CRM, bid/proposal, marketing, and profitability platform for the same contractor trades customers as ServiceTitan."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Vertical software for trades contractors offering CRM, bid management, proposals, and marketing\u2014overlapping ServiceTitan's product and same contractor buyer market."
+        }
+      ]
     },
     {
       "name": "BookWrench",
@@ -4335,7 +5259,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "BookWrench offers scheduling, dispatch, and technician management for field-service businesses, directly overlapping ServiceTitan\u2019s core workflows and buyer persona."
+      "rationale": "Field-service management SaaS for scheduling, dispatch, and technician operations, directly comparable to ServiceTitan's core trades-contractor platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Field-service management SaaS for scheduling, dispatch, and technician operations, directly comparable to ServiceTitan's core trades-contractor platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Field service management software for scheduling, dispatch, and technicians \u2014 same product and market as ServiceTitan, a direct competitor for trades businesses."
+        }
+      ]
     },
     {
       "name": "SolvPro",
@@ -4392,7 +5328,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "SolvPro offers an integrated operations platform for field-service businesses, overlapping ServiceTitan\u2019s core workflow, visibility, and management use cases for contractors."
+      "rationale": "SolvPro offers an operations platform for construction and field-service businesses, overlapping ServiceTitan\u2019s core dispatch, visibility, and workflow-management market.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "SolvPro offers an operations platform for construction and field-service businesses, overlapping ServiceTitan\u2019s core dispatch, visibility, and workflow-management market."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Field-service management platform unifying field and office operations for field service businesses; same product and market as ServiceTitan."
+        }
+      ]
     },
     {
       "name": "Servo",
@@ -4424,7 +5372,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Servo offers an operations platform for field service businesses, overlapping ServiceTitan\u2019s core field-service management workflows and contractor buyer persona."
+      "rationale": "AI-native field-service platform for sales, operations, and back office; directly comparable to ServiceTitan's trades-management SaaS.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "AI-native field-service platform for sales, operations, and back office; directly comparable to ServiceTitan's trades-management SaaS."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Field service management software platform for trades businesses \u2014 same product and market as ServiceTitan, despite tiny size."
+        }
+      ]
     },
     {
       "name": "Pro Crew Schedule",
@@ -4482,7 +5442,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide operations and workforce scheduling software for trades and construction contractors managing field crews."
+      "rationale": "Field-employee scheduling and operations SaaS for construction contractors overlaps ServiceTitan's core field-service-management market, though with a narrower feature set.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Field-employee scheduling and operations SaaS for construction contractors overlaps ServiceTitan's core field-service-management market, though with a narrower feature set."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Sells crew-scheduling/field-operations software for construction and trades contractors, matching ServiceTitan's product and market."
+        }
+      ]
     },
     {
       "name": "SafetyHQ",
@@ -4553,7 +5525,19 @@
         "relevance_score": "A"
       },
       "relevant": false,
-      "rationale": "SafetyHQ manages construction safety programs, not dispatch, CRM, billing, or field-service operations for trades contractors; buyers evaluate it for a different job."
+      "rationale": "Construction-focused safety-program software, not field-service dispatch, CRM, billing, or operational management for trades contractors.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Construction-focused safety-program software, not field-service dispatch, CRM, billing, or operational management for trades contractors."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Construction safety-compliance software, not field-service operations (dispatch, CRM, billing); different job-to-be-done for contractors, market overlap only weak."
+        }
+      ]
     },
     {
       "name": "ContractorHUB",
@@ -4602,8 +5586,20 @@
         ],
         "relevance_score": "A"
       },
-      "relevant": false,
-      "rationale": "ContractorHUB targets home-service contractors but focuses on scaling systems and resource centralization, not ServiceTitan\u2019s core dispatch, billing, CRM, and field-service operations."
+      "relevant": true,
+      "rationale": "AI-native operations platform for home-service contractors, serving the same trades-business owners and scaling workflows as ServiceTitan.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "AI-native operations platform for home-service contractors, serving the same trades-business owners and scaling workflows as ServiceTitan."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Software platform for home service contractors to manage and scale operations \u2014 same market and product category as ServiceTitan."
+        }
+      ]
     },
     {
       "name": "Klipboard",
@@ -4671,7 +5667,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Klipboard directly overlaps ServiceTitan in field-service job management, scheduling, invoicing, communications, and operational software for service contractors."
+      "rationale": "Both offer field-service management platforms covering scheduling, dispatch/job management, invoicing, CRM-like workflows, and operations for service contractors.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both offer field-service management platforms covering scheduling, dispatch/job management, invoicing, CRM-like workflows, and operations for service contractors."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Field service management software (job scheduling, dispatch, invoicing) for service businesses \u2014 direct competitor to ServiceTitan on product and market; size irrelevant."
+        }
+      ]
     },
     {
       "name": "ProjectsForce",
@@ -4739,7 +5747,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide field-service operations software for trades contractors, including scheduling, technician management, quoting, invoicing, and customer communication."
+      "rationale": "Field-service management software for home-improvement contractors directly overlaps ServiceTitan\u2019s trades dispatch, scheduling, and operations platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Field-service management software for home-improvement contractors directly overlaps ServiceTitan\u2019s trades dispatch, scheduling, and operations platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both sell field-service management software for trades/home-improvement contractors: scheduling, dispatch, workforce tracking. Same product, market, and model."
+        }
+      ]
     },
     {
       "name": "Automated Integration",
@@ -4805,7 +5825,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Total Service is integrated field-service operations software for trades contractors, overlapping ServiceTitan\u2019s core offering and targeting the same business buyers."
+      "rationale": "Integrated field-service operations software for HVAC, plumbing, electrical, and other trades contractors, directly overlapping ServiceTitan\u2019s product and customer market.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Integrated field-service operations software for HVAC, plumbing, electrical, and other trades contractors, directly overlapping ServiceTitan\u2019s product and customer market."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "All-in-one field-service/enterprise software for trades contractors (HVAC, plumbing, electrical, fire safety) \u2014 direct competitor to ServiceTitan on product and market."
+        }
+      ]
     },
     {
       "name": "SAS Connect",
@@ -4848,8 +5880,20 @@
         ],
         "relevance_score": "A"
       },
-      "relevant": false,
-      "rationale": "SAS Connect centers on construction workforce and site operations, not ServiceTitan\u2019s customer-centric dispatch, CRM, billing, and field-service workflows."
+      "relevant": true,
+      "rationale": "Construction operations platform for contractors overlaps ServiceTitan's trades-focused field operations market, though with stronger project and workforce emphasis.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Construction operations platform for contractors overlaps ServiceTitan's trades-focused field operations market, though with stronger project and workforce emphasis."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Vertical SaaS for construction/trades contractors covering field operations, workforce, and project management \u2014 same buyer persona and job-to-be-done as ServiceTitan."
+        }
+      ]
     },
     {
       "name": "Chalkstring",
@@ -4900,7 +5944,24 @@
         "relevance_score": "A"
       },
       "relevant": false,
-      "rationale": "Chalkstring focuses on construction contract estimating and project financials, not field-service dispatch, CRM, and operations for trades contractors."
+      "rationale": "Construction-project estimating and commercial controls for specialist contractors, not field-service dispatch, CRM, and operational management for trades businesses.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Construction-project estimating and commercial controls for specialist contractors, not field-service dispatch, CRM, and operational management for trades businesses."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both sell vertical operational SaaS to specialist/trade contractors; Chalkstring covers estimating, procurement, and project financials for the same contractor buyer persona."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "judge error: Unterminated string starting at: line 1 column 33 (char 32)"
+        }
+      ]
     },
     {
       "name": "Bidware",
@@ -4946,7 +6007,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both offer contractor-focused SaaS for managing bids, jobs, and operational workflows, targeting overlapping trades-contractor buyers."
+      "rationale": "Contractor-focused SaaS covering bidding and job/project workflows overlaps ServiceTitan\u2019s trades field-service operations market.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Contractor-focused SaaS covering bidding and job/project workflows overlaps ServiceTitan\u2019s trades field-service operations market."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "All-in-one management software built for contractors\u2014bidding, job tracking, workflows\u2014same buyer and adjacent product scope as ServiceTitan's trades operations platform."
+        }
+      ]
     },
     {
       "name": "MEPsoft Software Solutions",
@@ -5006,7 +6079,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "MEPsoft provides construction management software for specialty contractors and tradespeople, overlapping ServiceTitan\u2019s contractor operations software and target buyer base."
+      "rationale": "Construction management software tailored to specialty contractors and trades, overlapping ServiceTitan's field-service operations market.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Construction management software tailored to specialty contractors and trades, overlapping ServiceTitan's field-service operations market."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Field-service/construction management software for specialty contractors and trades \u2014 same product category and buyer persona as ServiceTitan."
+        }
+      ]
     },
     {
       "name": "CMS Desk",
@@ -5070,7 +6155,19 @@
         "relevance_score": "A"
       },
       "relevant": false,
-      "rationale": "CMS Desk is generic operations, procurement, and workforce software, not field-service management for trades contractors with dispatch and service workflows."
+      "rationale": "Industry-agnostic operations platform focused on procurement, workforce, and project coordination, not field-service dispatch, CRM, and trades contractor management.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Industry-agnostic operations platform focused on procurement, workforce, and project coordination, not field-service dispatch, CRM, and trades contractor management."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Industry-agnostic HR/procurement/attendance platform; lacks field-service dispatch, CRM, and trades-contractor focus that define ServiceTitan's product and market."
+        }
+      ]
     },
     {
       "name": "Unco Data Systems",
@@ -5119,7 +6216,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Unco provides vertical field-service software with CRM, scheduling, dispatch, invoicing, and reporting for water-service contractors, overlapping ServiceTitan\u2019s core workflows and buyers."
+      "rationale": "Vertical operations software with dispatch, CRM, invoicing, and scheduling for water-treatment distributors; closely comparable field-service SaaS.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Vertical operations software with dispatch, CRM, invoicing, and scheduling for water-treatment distributors; closely comparable field-service SaaS."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Vertical field-service software for water-treatment/route businesses: dispatch, scheduling, invoicing, CRM \u2014 same product and model as ServiceTitan, different trade vertical."
+        }
+      ]
     },
     {
       "name": "Upartna Solutions",
@@ -5182,7 +6291,19 @@
         "relevance_score": "A"
       },
       "relevant": false,
-      "rationale": "Upartna is a property-owner marketplace for finding and comparing contractors, not field-service operations software purchased by trades contractors."
+      "rationale": "Contractor-hiring marketplace for property owners, not field-service operations software for trades contractors.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Contractor-hiring marketplace for property owners, not field-service operations software for trades contractors."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Marketplace connecting property owners to vetted contractors for quotes, not field-service management SaaS sold to trades contractors."
+        }
+      ]
     },
     {
       "name": "GA Technical Services",
@@ -5217,8 +6338,20 @@
         ],
         "relevance_score": "A"
       },
-      "relevant": false,
-      "rationale": "GA Technical Services is an electrical and cabling contractor, not a field-service management SaaS platform for trades businesses."
+      "relevant": true,
+      "rationale": "Construction-contractor job management, scheduling, estimating, and job costing closely overlap ServiceTitan's field-service operations platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Construction-contractor job management, scheduling, estimating, and job costing closely overlap ServiceTitan's field-service operations platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both sell vertical job-management SaaS to contractors (scheduling, estimating, tracking); same buyer and job-to-be-done, making them direct comparables."
+        }
+      ]
     },
     {
       "name": "STACK Construction Technologies",
@@ -5321,8 +6454,20 @@
         ],
         "relevance_score": "A"
       },
-      "relevant": false,
-      "rationale": "STACK focuses on construction takeoff, estimating, and project collaboration, not the dispatch, CRM, billing, and field-service operations central to ServiceTitan."
+      "relevant": true,
+      "rationale": "Both provide cloud software for contractors, with overlapping estimating and field/project operations workflows, making STACK a credible construction-technology comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both provide cloud software for contractors, with overlapping estimating and field/project operations workflows, making STACK a credible construction-technology comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are vertical SaaS platforms helping contractors run operations\u2014estimating, field, and project management; same buyer persona and business model."
+        }
+      ]
     },
     {
       "name": "Ascent OS",
@@ -5356,7 +6501,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide vertical operations software combining sales, office, and field workflows for contractor businesses, with overlapping construction-service buyers and jobs to be done."
+      "rationale": "Construction operations SaaS unifying sales, office, and field workflows; a vertical field-service platform comparable to ServiceTitan, though focused on clean energy contractors.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Construction operations SaaS unifying sales, office, and field workflows; a vertical field-service platform comparable to ServiceTitan, though focused on clean energy contractors."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Vertical SaaS unifying sales, office, and field operations for clean-energy contractors \u2014 same field-service management model as ServiceTitan for trades."
+        }
+      ]
     },
     {
       "name": "Nexvia",
@@ -5420,8 +6577,20 @@
         ],
         "relevance_score": "A"
       },
-      "relevant": false,
-      "rationale": "Nexvia primarily manages construction projects, tendering, and job costing, rather than ServiceTitan\u2019s dispatch-centric field service operations for trades."
+      "relevant": true,
+      "rationale": "Cloud operations software for specialty contractors and commercial trades overlaps ServiceTitan\u2019s trades-focused field-service management market.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Cloud operations software for specialty contractors and commercial trades overlaps ServiceTitan\u2019s trades-focused field-service management market."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Cloud-based management platform for construction and trade contractors, matching ServiceTitan's vertical SaaS for trades operations; same buyer persona and product category."
+        }
+      ]
     },
     {
       "name": "Assignar",
@@ -5490,7 +6659,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide vertical SaaS for construction/trades operators, overlapping in workforce scheduling, field operations, asset management, invoicing, and mobile data collection."
+      "rationale": "Construction field-operations SaaS with workforce scheduling, compliance, mobile data, and invoicing integrations; a strong comparable for trades contractor management.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Construction field-operations SaaS with workforce scheduling, compliance, mobile data, and invoicing integrations; a strong comparable for trades contractor management."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Vertical SaaS for construction/field contractors: workforce scheduling, dispatch, field mobility, timesheets, invoicing \u2014 direct comparable to ServiceTitan's field-service operations platform."
+        }
+      ]
     },
     {
       "name": "Foundation Software",
@@ -5564,7 +6745,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide vertical business-management software for trade contractors, with overlapping dispatch, scheduling, project, billing, and field-service workflows."
+      "rationale": "Construction-trade software with accounting, payroll, dispatch, mobile, and operational modules; a direct comparable for ServiceTitan\u2019s contractor-management platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Construction-trade software with accounting, payroll, dispatch, mobile, and operational modules; a direct comparable for ServiceTitan\u2019s contractor-management platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Vertical software for contractors/trades with service dispatch, project management, payroll \u2014 same buyer persona and overlapping product scope as ServiceTitan."
+        }
+      ]
     },
     {
       "name": "Service Toolz",
@@ -5605,7 +6798,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide workflow and operations software for specialty trades, including quoting, project execution, and customer communications."
+      "rationale": "Field-service management SaaS for electrical, HVAC, plumbing, and other trade contractors, overlapping ServiceTitan\u2019s core product and customer market.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Field-service management SaaS for electrical, HVAC, plumbing, and other trade contractors, overlapping ServiceTitan\u2019s core product and customer market."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Cloud field-service management platform for trade contractors (HVAC, plumbing, electrical) \u2014 same product, market, and model as ServiceTitan; direct competitor."
+        }
+      ]
     },
     {
       "name": "ContractorERP",
@@ -5650,7 +6855,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "ContractorERP offers integrated operations and project-management software for contractors, overlapping ServiceTitan\u2019s business-management platform and contractor buyer persona."
+      "rationale": "Construction-focused ERP and integrated business-management software is comparable to ServiceTitan\u2019s operational platform for trades contractors.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Construction-focused ERP and integrated business-management software is comparable to ServiceTitan\u2019s operational platform for trades contractors."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "ContractorERP is integrated business-management software for contractors \u2014 same vertical SaaS product and trades-contractor market as ServiceTitan."
+        }
+      ]
     },
     {
       "name": "Scm",
@@ -5695,11 +6912,26 @@
         ],
         "relevance_score": "A"
       },
-      "relevant": false,
-      "rationale": "SCM targets construction project management for builders, while ServiceTitan centers on dispatch and field-service operations for trades; buyer workflows differ."
+      "relevant": true,
+      "rationale": "Vertical SaaS operations platform for contractors (projects, finances, teams)\u2014same contractor buyer and business model as ServiceTitan, akin to Procore-level comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Construction project-management software for builders differs from ServiceTitan\u2019s field-service operations platform for trades contractors; no dispatch, CRM, or service workflow overlap stated."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Vertical SaaS operations platform for contractors (projects, finances, teams)\u2014same contractor buyer and business model as ServiceTitan, akin to Procore-level comparable."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Vertical SaaS for contractors/builders managing projects, finances, operations \\u2014 same buyer persona and software model as ServiceTitan.ed/adjacent trades vertical.o"
+        }
+      ]
     }
   ],
-  "error": null,
-  "relevant_count_at_25": 16,
-  "precision_at_25": 64.0
+  "error": null
 }

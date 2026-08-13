@@ -2,22 +2,26 @@
   "dataset_slug": "lookalike-2026-q3",
   "seed_slug": "toast",
   "provider_slug": "predictleads",
-  "config_name": "default",
+  "config_name": "paginated",
   "config": {
-    "name": "default",
-    "use_paging": false
+    "name": "paginated",
+    "use_paging": true
   },
   "k": 100,
-  "relevant_count": 12,
-  "precision_at_k": 12.0,
+  "relevant_count": 13,
+  "precision_at_k": 13.0,
   "relevant_count_at_10": 10,
-  "relevant_count_at_100": 12,
+  "relevant_count_at_25": 13,
+  "relevant_count_at_100": 13,
   "precision_at_10": 100.0,
-  "precision_at_100": 12.0,
-  "latency_ms": 754,
+  "precision_at_25": 52.0,
+  "precision_at_100": 13.0,
+  "latency_ms": 692,
   "cost_usd": null,
-  "judge_model": "gpt-5.6",
-  "judged_at": "2026-07-27T01:17:41Z",
+  "duplicates_removed": 0,
+  "max_results": 25,
+  "judge_model": "majority(n=3): claude-opus-5,gpt-5.6-terra,kimi-k3",
+  "judged_at": "2026-08-10T19:30:26Z",
   "candidates": [
     {
       "name": "Lightspeed Restaurant",
@@ -31,7 +35,19 @@
         "predict_leads_id": "1c2d0304-3a6f-599c-958c-21d09169cf2a"
       },
       "relevant": true,
-      "rationale": "Lightspeed Restaurant provides cloud POS and commerce tools for hospitality businesses, overlapping Toast\u2019s core restaurant operations platform and buyer persona."
+      "rationale": "Lightspeed provides POS, payments, ordering, inventory, and operations software for hospitality businesses, directly comparable to Toast's restaurant platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Lightspeed provides POS, payments, ordering, inventory, and operations software for hospitality businesses, directly comparable to Toast's restaurant platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Lightspeed is a POS and payments platform for hospitality including restaurants, directly competing with Toast on product, market, and business model."
+        }
+      ]
     },
     {
       "name": "TouchBistro",
@@ -45,7 +61,19 @@
         "predict_leads_id": "aec76dda-2299-5e80-a040-30ff1e969fd8"
       },
       "relevant": true,
-      "rationale": "TouchBistro offers restaurant POS and management software for the same food-service operators and operational needs as Toast."
+      "rationale": "Restaurant-focused POS and operations platform serving the same restaurant operators, directly comparable to Toast.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Restaurant-focused POS and operations platform serving the same restaurant operators, directly comparable to Toast."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "TouchBistro is an all-in-one restaurant POS and management platform (payments, inventory, labor), a direct competitor to Toast on product and market."
+        }
+      ]
     },
     {
       "name": "SpotOn",
@@ -59,7 +87,19 @@
         "predict_leads_id": "b2cda869-6f03-57a7-a25c-1b4bead9b3d7"
       },
       "relevant": true,
-      "rationale": "SpotOn offers restaurant POS, online ordering, and workforce management, directly overlapping Toast\u2019s platform and targeting the same restaurant operators."
+      "rationale": "Restaurant-focused POS, payments, online ordering, payroll, and operations platform directly competes with Toast.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Restaurant-focused POS, payments, online ordering, payroll, and operations platform directly competes with Toast."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "SpotOn is a restaurant point-of-sale and operations platform, a direct competitor to Toast on product, market, and business model."
+        }
+      ]
     },
     {
       "name": "ParTech, Inc.",
@@ -73,7 +113,19 @@
         "predict_leads_id": "7652fbc3-107c-53ed-8610-0122428a6343"
       },
       "relevant": true,
-      "rationale": "PAR offers restaurant POS and management software for the same restaurant operators and overlapping operational jobs as Toast."
+      "rationale": "Restaurant-focused POS, payments, loyalty, and operations platform directly comparable to Toast for restaurant operators.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Restaurant-focused POS, payments, loyalty, and operations platform directly comparable to Toast for restaurant operators."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Direct competitor: restaurant POS, payments, loyalty, and operations platform serving the same restaurant-operator market."
+        }
+      ]
     },
     {
       "name": "Tabit Technologies Inc.",
@@ -87,7 +139,19 @@
         "predict_leads_id": "2c4b46cf-996f-58ff-9a8e-25dec9d88035"
       },
       "relevant": true,
-      "rationale": "Tabit offers restaurant-focused point-of-sale software for front-of-house operations, overlapping Toast\u2019s core POS product and restaurant buyer persona."
+      "rationale": "Mobile-first restaurant POS for front-of-house operations directly overlaps Toast\u2019s core restaurant technology product and buyer market.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Mobile-first restaurant POS for front-of-house operations directly overlaps Toast\u2019s core restaurant technology product and buyer market."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both sell restaurant point-of-sale platforms; Tabit's mobile-first POS for front-of-house directly competes with Toast on product and market."
+        }
+      ]
     },
     {
       "name": "HungerRush, LLC",
@@ -101,7 +165,19 @@
         "predict_leads_id": "2b7d1428-9ce0-500e-8d30-1668d2cf3b98"
       },
       "relevant": true,
-      "rationale": "HungerRush directly overlaps Toast in restaurant point-of-sale, online ordering, and management software for restaurant operators."
+      "rationale": "Restaurant-focused POS and online ordering platform, directly comparable to Toast\u2019s core product and customer market.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Restaurant-focused POS and online ordering platform, directly comparable to Toast\u2019s core product and customer market."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Restaurant POS with integrated online ordering \u2014 direct competitor to Toast on product and market."
+        }
+      ]
     },
     {
       "name": "GoTab, Inc.",
@@ -115,7 +191,19 @@
         "predict_leads_id": "0d3f9e1e-10a3-5aea-a540-6e09e340e854"
       },
       "relevant": true,
-      "rationale": "GoTab offers ordering, payments, and commerce technology for hospitality venues, overlapping Toast\u2019s restaurant POS and guest transaction platform."
+      "rationale": "Restaurant-focused cloud POS, ordering, payments, loyalty, and operations platform; directly comparable to Toast despite entertainment venue emphasis.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Restaurant-focused cloud POS, ordering, payments, loyalty, and operations platform; directly comparable to Toast despite entertainment venue emphasis."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Cloud restaurant POS, mobile ordering, and payments platform for restaurants/breweries/food halls \u2014 direct Toast competitor on product, market, and model."
+        }
+      ]
     },
     {
       "name": "Focus POS, Inc.",
@@ -129,7 +217,19 @@
         "predict_leads_id": "f2658e6d-9142-5771-a15f-c0031cccfb95"
       },
       "relevant": true,
-      "rationale": "Both provide restaurant-focused point-of-sale and management platforms evaluated by food-service operators for the same operational needs."
+      "rationale": "Restaurant POS platform with online ordering, payments, loyalty, and operations tools directly comparable to Toast.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Restaurant POS platform with online ordering, payments, loyalty, and operations tools directly comparable to Toast."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Restaurant POS platform with online ordering, tableside payment, and loyalty \u2014 same product, market, and model as Toast; direct competitor."
+        }
+      ]
     },
     {
       "name": "Restaurant365, LLC.",
@@ -143,7 +243,19 @@
         "predict_leads_id": "6384b3b3-9fc6-5887-8f29-a3f1c3d4efdc"
       },
       "relevant": true,
-      "rationale": "Both provide restaurant operations and workforce-management software to restaurant owners and operators, creating overlapping buyer personas and jobs to be done."
+      "rationale": "Restaurant365 is a restaurant-operations platform with payroll and workforce tools, serving the same restaurant operators as Toast, though with deeper back-office focus.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Restaurant365 is a restaurant-operations platform with payroll and workforce tools, serving the same restaurant operators as Toast, though with deeper back-office focus."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are all-in-one restaurant management platforms serving restaurant operators, with overlapping payroll, workforce, and operations products; direct comparable/competitor."
+        }
+      ]
     },
     {
       "name": "Clover Network, Inc.",
@@ -157,7 +269,19 @@
         "predict_leads_id": "4cfd21ca-f510-52b8-a78f-600ab4181405"
       },
       "relevant": true,
-      "rationale": "Clover offers restaurant point-of-sale, payment, order, and staff-management tools, directly overlapping Toast\u2019s core platform and buyer persona."
+      "rationale": "Restaurant-focused POS, payment processing, online ordering, and operations tools directly compete with Toast.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Restaurant-focused POS, payment processing, online ordering, and operations tools directly compete with Toast."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Direct competitor: POS platform for restaurants handling orders, payments, and staff operations\u2014same product, market, and business model as Toast."
+        }
+      ]
     },
     {
       "name": "Shift4 Corporation",
@@ -171,7 +295,19 @@
         "predict_leads_id": "d792fe40-ab7f-527d-b282-7ebf5bc1726f"
       },
       "relevant": true,
-      "rationale": "Shift4 provides restaurant and hospitality payment-processing technology, overlapping Toast\u2019s payments offering and targeting the same restaurant operators and buyers."
+      "rationale": "Hospitality and restaurant-focused payments provider, overlapping Toast's core payments market and serving similar merchant customers.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Hospitality and restaurant-focused payments provider, overlapping Toast's core payments market and serving similar merchant customers."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Payment processing and POS platform for restaurants/hospitality \u2014 same buyer persona and overlapping payments product; a direct Toast competitor."
+        }
+      ]
     },
     {
       "name": "Ecisolutions",
@@ -185,7 +321,19 @@
         "predict_leads_id": "0f8f3c38-30c2-5d71-b52e-2f01e1cfd2a5"
       },
       "relevant": false,
-      "rationale": "ECI provides ERP software for manufacturing and distribution industries, not restaurant-focused POS, payments, ordering, and operations tools."
+      "rationale": "Eci provides vertical ERP and business-management software, but is not primarily a restaurant POS, payments, or restaurant-operations platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Eci provides vertical ERP and business-management software, but is not primarily a restaurant POS, payments, or restaurant-operations platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Generic industry-specific ERP for manufacturing/distribution/construction; no restaurant POS, payments, or ordering product matching Toast's market."
+        }
+      ]
     },
     {
       "name": "Aptos",
@@ -198,8 +346,20 @@
         "refreshed_at": "2026-07-02T02:07:53Z",
         "predict_leads_id": "ef263646-eaf5-5df4-bad2-489ccdf508a0"
       },
-      "relevant": false,
-      "rationale": "Aptos primarily serves general retailers with unified commerce software, not restaurant-specific POS and operations buyers who would evaluate Toast."
+      "relevant": true,
+      "rationale": "Aptos provides commerce and operational management software for hospitality businesses, overlapping Toast\u2019s restaurant operations and POS-adjacent market.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Aptos provides commerce and operational management software for hospitality businesses, overlapping Toast\u2019s restaurant operations and POS-adjacent market."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Aptos provides POS and unified commerce/operations platforms for hospitality and retail, overlapping Toast's restaurant POS and operations market as a comparable competitor."
+        }
+      ]
     },
     {
       "name": "Square Inc.",
@@ -213,7 +373,19 @@
         "predict_leads_id": "0fdf721b-3049-5c9a-8502-41cc6686c6c9"
       },
       "relevant": true,
-      "rationale": "Square offers restaurant-focused POS, payments, online ordering, and management tools, serving substantially the same merchants and operational needs as Toast."
+      "rationale": "Square offers merchant POS, payments, ordering, staff/payroll, and operations tools, directly overlapping Toast\u2019s restaurant commerce platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Square offers merchant POS, payments, ordering, staff/payroll, and operations tools, directly overlapping Toast\u2019s restaurant commerce platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Square is a direct competitor: merchant point-of-sale, payments, online ordering, payroll, and operations platform serving restaurants and other sellers."
+        }
+      ]
     },
     {
       "name": "Certinia Inc.",
@@ -227,7 +399,19 @@
         "predict_leads_id": "ce2bc545-1481-5635-a96e-99a3386db6c4"
       },
       "relevant": false,
-      "rationale": "Certinia provides enterprise financial and professional-services operations software, not restaurant POS, ordering, payments, or restaurant-focused operations tools."
+      "rationale": "Certinia provides financial and professional-services operations software, not restaurant POS, payments, ordering, or restaurant workforce management.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Certinia provides financial and professional-services operations software, not restaurant POS, payments, ordering, or restaurant workforce management."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Certinia sells services-focused financial management/PSA software, not restaurant POS, payments, or operations; different product and buyer market."
+        }
+      ]
     },
     {
       "name": "Focus Softnet Pvt Ltd",
@@ -241,7 +425,19 @@
         "predict_leads_id": "c18c0c3d-1e90-5762-b215-1247c3f1889a"
       },
       "relevant": false,
-      "rationale": "Focus Softnet primarily offers general enterprise ERP, not a restaurant-focused POS, payments, ordering, and operations platform."
+      "rationale": "Generic ERP and business-management software lacks Toast's restaurant-specific POS, payments, ordering, and hospitality operations focus.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Generic ERP and business-management software lacks Toast's restaurant-specific POS, payments, ordering, and hospitality operations focus."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Generic ERP for enterprises, not restaurant POS/payments/ordering; no shared product or restaurant market overlap."
+        }
+      ]
     },
     {
       "name": "CSG",
@@ -255,7 +451,19 @@
         "predict_leads_id": "a4247170-1ab7-58fa-ae96-9b4f99c52c36"
       },
       "relevant": false,
-      "rationale": "CSG provides enterprise billing and customer-engagement software, not restaurant-focused POS, ordering, payments, or operations tools evaluated by restaurant operators."
+      "rationale": "CSG provides enterprise billing and customer-engagement software, primarily for communications and service providers, not restaurant POS or operations.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "CSG provides enterprise billing and customer-engagement software, primarily for communications and service providers, not restaurant POS or operations."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "CSG sells enterprise billing and customer-engagement software for telecoms/enterprises, not restaurant POS or operations platforms; different product and buyer."
+        }
+      ]
     },
     {
       "name": "Ramp",
@@ -269,7 +477,19 @@
         "predict_leads_id": "f1ade27f-b47c-5435-a75f-1cca3d4a9950"
       },
       "relevant": false,
-      "rationale": "Ramp provides general corporate spend management, not restaurant POS, ordering, payments acceptance, or restaurant operations software; buyers and jobs differ."
+      "rationale": "Ramp provides general SMB spend management and expense tracking, not restaurant-specific POS, ordering, payments, payroll, or operations software.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Ramp provides general SMB spend management and expense tracking, not restaurant-specific POS, ordering, payments, payroll, or operations software."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Ramp is corporate-card spend management for general SMBs, not restaurant POS/ordering/payroll; no shared product, market, or model with Toast."
+        }
+      ]
     },
     {
       "name": "Freshworks Inc.",
@@ -283,7 +503,19 @@
         "predict_leads_id": "8f3419c1-0e64-58b4-b5df-0f43fee1a7eb"
       },
       "relevant": false,
-      "rationale": "Freshworks provides general customer service and IT support software, not restaurant POS, payments, ordering, payroll, or restaurant operations technology."
+      "rationale": "Freshworks provides general customer service and IT software, not restaurant-specific POS, payments, ordering, payroll, or operations products.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Freshworks provides general customer service and IT software, not restaurant-specific POS, payments, ordering, payroll, or operations products."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Freshworks sells customer-service/helpdesk software, not restaurant POS, payments, or operations; different product and buyer."
+        }
+      ]
     },
     {
       "name": "Biposervice",
@@ -297,11 +529,150 @@
         "predict_leads_id": "92014420-660c-5c1b-a4e4-04a36e73d151"
       },
       "relevant": false,
-      "rationale": "Biposervice is a general HR/payroll platform, not a restaurant POS, payments, ordering, and operations platform serving Toast\u2019s core use case."
+      "rationale": "Generic HR and payroll software lacks Toast's restaurant-focused POS, payments, ordering, and operations platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Generic HR and payroll software lacks Toast's restaurant-focused POS, payments, ordering, and operations platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Generic HR/payroll software; Toast's core is restaurant POS and operations. Payroll is only a peripheral feature, so no strong product or market overlap."
+        }
+      ]
+    },
+    {
+      "name": "Netlink Software Group",
+      "domain": "netlink.com",
+      "description": "Provides digital transformation services and software solutions designed to modernize business operations for various enterprises.",
+      "rank": 21,
+      "extra": {
+        "score": 0.73,
+        "ticker": null,
+        "refreshed_at": "2026-07-02T02:07:53Z",
+        "predict_leads_id": "0ef97cb5-4399-5b5e-ab23-3a7995e3b301"
+      },
+      "relevant": false,
+      "rationale": "Digital-transformation services for varied enterprises, not a restaurant POS, payments, ordering, payroll, or operations platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Digital-transformation services for varied enterprises, not a restaurant POS, payments, ordering, payroll, or operations platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Generic digital-transformation services firm, not a restaurant POS/operations platform; serves the category as consultancy rather than competing."
+        }
+      ]
+    },
+    {
+      "name": "Workday, Inc.",
+      "domain": "workday.com",
+      "description": "Offers enterprise-level software for managing human resources and financial operations across large organizations.",
+      "rank": 22,
+      "extra": {
+        "score": 0.7298,
+        "ticker": "NASDAQ:WDAY",
+        "refreshed_at": "2026-07-02T02:07:53Z",
+        "predict_leads_id": "88b7a318-6971-54a2-b27f-8efdb378802a"
+      },
+      "relevant": false,
+      "rationale": "Workday provides broad enterprise HR and finance software, not restaurant POS, payments, ordering, or restaurant operations tools.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Workday provides broad enterprise HR and finance software, not restaurant POS, payments, ordering, or restaurant operations tools."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Workday sells enterprise HR and finance software, not restaurant POS/payments/operations; different product, buyer, and market."
+        }
+      ]
+    },
+    {
+      "name": "Salesforce, Inc.",
+      "domain": "salesforce.com",
+      "description": "Provides a comprehensive CRM platform used by service and hospitality companies to manage customer relationships and digital workflows.",
+      "rank": 23,
+      "extra": {
+        "score": 0.7296,
+        "ticker": "NYSE:CRM",
+        "refreshed_at": "2026-07-02T02:07:53Z",
+        "predict_leads_id": "9b638313-3fe3-5f5e-a19d-42e122cf06f9"
+      },
+      "relevant": false,
+      "rationale": "Salesforce is a general CRM platform, not a restaurant-focused POS, payments, ordering, payroll, or operations platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Salesforce is a general CRM platform, not a restaurant-focused POS, payments, ordering, payroll, or operations platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Salesforce is a generic CRM platform; Toast is restaurant POS, payments, and operations software. Different products, markets, and buyers."
+        }
+      ]
+    },
+    {
+      "name": "Xoriant Corporation",
+      "domain": "xoriant.com",
+      "description": "Offers digital engineering and enterprise software services that help companies modernize their proprietary business tools.",
+      "rank": 24,
+      "extra": {
+        "score": 0.7294,
+        "ticker": null,
+        "refreshed_at": "2026-07-02T02:07:53Z",
+        "predict_leads_id": "a05d7311-e15c-5916-bf47-26c48c93d905"
+      },
+      "relevant": false,
+      "rationale": "Digital engineering consultancy modernizes enterprise tools; it does not provide restaurant POS, payments, ordering, payroll, or operations software.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Digital engineering consultancy modernizes enterprise tools; it does not provide restaurant POS, payments, ordering, payroll, or operations software."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Xoriant is an IT services/digital engineering consultancy, not a restaurant POS or operations platform; serves rather than competes with companies like Toast."
+        }
+      ]
+    },
+    {
+      "name": "Ntiva Inc.",
+      "domain": "ntiva.com",
+      "description": "Provides managed IT services and cloud solutions that support the operational technology needs of growing businesses.",
+      "rank": 25,
+      "extra": {
+        "score": 0.7292,
+        "ticker": null,
+        "refreshed_at": "2026-07-02T02:07:53Z",
+        "predict_leads_id": "a9871ffe-6911-537d-9d91-a9d197a667f6"
+      },
+      "relevant": false,
+      "rationale": "Managed IT and cloud-services provider, not a restaurant POS, payments, ordering, payroll, or operations software platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Managed IT and cloud-services provider, not a restaurant POS, payments, ordering, payroll, or operations software platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Ntiva is a generic managed IT services provider, not a restaurant POS or operations platform; no product or market overlap with Toast."
+        }
+      ]
     }
   ],
-  "error": null,
-  "max_results": 25,
-  "relevant_count_at_25": 12,
-  "precision_at_25": 48.0
+  "error": null
 }
