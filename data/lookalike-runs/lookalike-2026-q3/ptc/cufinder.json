@@ -7,20 +7,20 @@
     "name": "domain_lookalikes"
   },
   "k": 100,
-  "relevant_count": 4,
-  "precision_at_k": 4.0,
-  "relevant_count_at_10": 4,
-  "relevant_count_at_25": 4,
-  "relevant_count_at_100": 4,
-  "precision_at_10": 40.0,
-  "precision_at_25": 16.0,
-  "precision_at_100": 4.0,
+  "relevant_count": 3,
+  "precision_at_k": 3.0,
+  "relevant_count_at_10": 3,
+  "relevant_count_at_25": 3,
+  "relevant_count_at_100": 3,
+  "precision_at_10": 30.0,
+  "precision_at_25": 12.0,
+  "precision_at_100": 3.0,
   "latency_ms": 307,
   "cost_usd": null,
   "duplicates_removed": 0,
   "max_results": 10,
-  "judge_model": "gpt-5.6",
-  "judged_at": "2026-07-27T06:54:03Z",
+  "judge_model": "majority(n=3): claude-opus-5,gpt-5.6-terra,kimi-k3",
+  "judged_at": "2026-08-10T20:14:10Z",
   "candidates": [
     {
       "name": "accenture",
@@ -36,7 +36,19 @@
         "confidence_level": 94
       },
       "relevant": false,
-      "rationale": "Accenture is primarily a consulting and implementation services firm, not a vendor of CAD, PLM, IoT, or service-lifecycle software comparable to PTC."
+      "rationale": "Accenture is a broad consulting and systems-integration firm, not a primary vendor of CAD, PLM, IoT, or service-lifecycle software.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Accenture is a broad consulting and systems-integration firm, not a primary vendor of CAD, PLM, IoT, or service-lifecycle software."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Accenture is an IT consulting/services firm, not an industrial software vendor; it implements digital transformation rather than selling CAD/PLM/IoT products."
+        }
+      ]
     },
     {
       "name": "autodesk",
@@ -52,7 +64,19 @@
         "confidence_level": 94
       },
       "relevant": true,
-      "rationale": "Autodesk overlaps PTC in CAD, product design, manufacturing, and PLM-adjacent software, targeting the same engineering and industrial buyers."
+      "rationale": "Autodesk directly competes in CAD and product-design/manufacturing software, overlapping PTC\u2019s core industrial design and digital-transformation markets.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Autodesk directly competes in CAD and product-design/manufacturing software, overlapping PTC\u2019s core industrial design and digital-transformation markets."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both sell industrial design software: Autodesk's CAD (AutoCAD, Fusion 360) directly competes with PTC's Creo CAD and PLM offerings."
+        }
+      ]
     },
     {
       "name": "dassault syst\u00e8mes",
@@ -68,7 +92,19 @@
         "confidence_level": 94
       },
       "relevant": true,
-      "rationale": "Dassault Syst\u00e8mes directly overlaps PTC in CAD, PLM, and industrial product-development software, serving the same engineering and manufacturing buyers."
+      "rationale": "Dassault Syst\u00e8mes directly competes in industrial CAD, PLM, simulation, and digital-twin software through its 3DEXPERIENCE platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Dassault Syst\u00e8mes directly competes in industrial CAD, PLM, simulation, and digital-twin software through its 3DEXPERIENCE platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Direct competitor: sells CAD, PLM, and 3D industrial software (3DEXPERIENCE/CATIA/SOLIDWORKS) to the same manufacturing buyers as PTC."
+        }
+      ]
     },
     {
       "name": "deloitte",
@@ -84,7 +120,19 @@
         "confidence_level": 94
       },
       "relevant": false,
-      "rationale": "Deloitte is a consulting and professional-services network, not an industrial CAD, PLM, IoT, or lifecycle software platform."
+      "rationale": "Deloitte is a professional-services consultancy, not an industrial software vendor offering CAD, PLM, IoT, or service-lifecycle platforms.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Deloitte is a professional-services consultancy, not an industrial software vendor offering CAD, PLM, IoT, or service-lifecycle platforms."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Deloitte is a professional-services consultancy advising clients on digital transformation, not an industrial CAD/PLM/IoT software vendor like PTC."
+        }
+      ]
     },
     {
       "name": "ey",
@@ -100,7 +148,19 @@
         "confidence_level": 94
       },
       "relevant": false,
-      "rationale": "EY is a professional-services and consulting firm, not a provider of core industrial CAD, PLM, IoT, or service-lifecycle software."
+      "rationale": "EY is a professional-services and consulting firm, not an industrial software vendor offering CAD, PLM, IoT, or service-lifecycle products.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "EY is a professional-services and consulting firm, not an industrial software vendor offering CAD, PLM, IoT, or service-lifecycle products."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "EY is a professional-services/consulting firm, not an industrial software maker; it advises on digital transformation rather than selling CAD/PLM/IoT products."
+        }
+      ]
     },
     {
       "name": "ibm",
@@ -116,7 +176,19 @@
         "confidence_level": 94
       },
       "relevant": false,
-      "rationale": "IBM is a broad IT, infrastructure, and consulting provider; its industrial offerings do not make it primarily comparable to PTC\u2019s engineering software portfolio."
+      "rationale": "IBM is a broad technology, infrastructure, software, and consulting provider, not primarily a CAD, PLM, industrial IoT, or service-lifecycle software peer.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "IBM is a broad technology, infrastructure, software, and consulting provider, not primarily a CAD, PLM, industrial IoT, or service-lifecycle software peer."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "IBM is broad IT services/consulting and infrastructure; industrial CAD/PLM/IoT software overlap is peripheral, not its primary product."
+        }
+      ]
     },
     {
       "name": "onshape by ptc",
@@ -132,7 +204,19 @@
         "confidence_level": 94
       },
       "relevant": false,
-      "rationale": "Onshape is a PTC-owned product/business, not an independent lookalike prospect, despite directly overlapping PTC\u2019s CAD and PDM offerings."
+      "rationale": "Onshape is a PTC-owned CAD/PDM product line, not an independent competitor or comparable company.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Onshape is a PTC-owned CAD/PDM product line, not an independent competitor or comparable company."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Onshape is PTC's own subsidiary/product, not an independent competitor or comparable \u2014 duplicate entry, excluded."
+        }
+      ]
     },
     {
       "name": "oracle",
@@ -147,8 +231,20 @@
         "country": "united states",
         "confidence_level": 94
       },
-      "relevant": true,
-      "rationale": "Oracle offers enterprise PLM and IoT applications that overlap PTC\u2019s industrial software and target product-development and manufacturing-operations buyers."
+      "relevant": false,
+      "rationale": "Oracle\u2019s primary offerings are cloud infrastructure, databases, and enterprise applications, not industrial CAD, PLM, or product-lifecycle software.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Oracle\u2019s primary offerings are cloud infrastructure, databases, and enterprise applications, not industrial CAD, PLM, or product-lifecycle software."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Oracle sells enterprise cloud, databases, and ERP apps; PTC's core is industrial CAD/PLM/IoT software \u2014 different products and buyer jobs."
+        }
+      ]
     },
     {
       "name": "persistent systems",
@@ -164,7 +260,19 @@
         "confidence_level": 94
       },
       "relevant": false,
-      "rationale": "Persistent is primarily a digital engineering and IT consulting partner, not a vendor of CAD, PLM, industrial IoT, or service-lifecycle software."
+      "rationale": "Persistent is an IT consulting and digital-engineering services firm, not a vendor of industrial CAD, PLM, IoT, or service-lifecycle software.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Persistent is an IT consulting and digital-engineering services firm, not a vendor of industrial CAD, PLM, IoT, or service-lifecycle software."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Persistent is an IT services/consulting firm, not an industrial software product company; it serves rather than competes with PTC's CAD/PLM/IoT products."
+        }
+      ]
     },
     {
       "name": "siemens",
@@ -180,7 +288,20 @@
         "confidence_level": 94
       },
       "relevant": true,
-      "rationale": "Siemens offers CAD, PLM, industrial IoT, and digital-manufacturing software that overlaps PTC\u2019s core products and serves the same industrial buyers."
+      "rationale": "Siemens Digital Industries offers industrial automation, digital-twin, PLM, and IoT software overlapping PTC\u2019s manufacturing digital-transformation portfolio.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Siemens Digital Industries offers industrial automation, digital-twin, PLM, and IoT software overlapping PTC\u2019s manufacturing digital-transformation portfolio."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Siemens' industrial software business (NX CAD, Teamcenter PLM, industrial IoT) directly competes with PTC's core product lines."
+        }
+      ]
     }
-  ]
+  ],
+  "error": null
 }

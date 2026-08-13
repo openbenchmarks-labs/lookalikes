@@ -19,8 +19,8 @@
   "cost_usd": null,
   "duplicates_removed": 0,
   "max_results": 10,
-  "judge_model": "gpt-5.6",
-  "judged_at": "2026-07-27T06:53:53Z",
+  "judge_model": "majority(n=3): claude-opus-5,gpt-5.6-terra,kimi-k3",
+  "judged_at": "2026-08-10T20:03:38Z",
   "candidates": [
     {
       "name": "attentive",
@@ -36,7 +36,19 @@
         "confidence_level": 99
       },
       "relevant": false,
-      "rationale": "Attentive is a marketing messaging platform, not an ecommerce customer-support helpdesk; buyers use it for customer engagement rather than support operations."
+      "rationale": "Attentive is a marketing messaging platform for customer engagement, while Gorgias provides ecommerce customer-support helpdesk workflows.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Attentive is a marketing messaging platform for customer engagement, while Gorgias provides ecommerce customer-support helpdesk workflows."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Attentive is SMS/email marketing automation for ecommerce marketers, not a customer-support helpdesk; different product and job to be done."
+        }
+      ]
     },
     {
       "name": "recharge",
@@ -52,7 +64,19 @@
         "confidence_level": 99
       },
       "relevant": false,
-      "rationale": "Recharge serves ecommerce brands but provides subscription management and retention, not customer-support helpdesk software for the same job to be done."
+      "rationale": "Recharge provides ecommerce subscription and retention management, not customer-support/helpdesk workflows; it serves overlapping merchants but solves a distinct job.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Recharge provides ecommerce subscription and retention management, not customer-support/helpdesk workflows; it serves overlapping merchants but solves a distinct job."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Both sell SaaS to ecommerce merchants, but Recharge is subscription billing, not customer support/helpdesk \u2014 different job to be done, complementary not comparable."
+        }
+      ]
     },
     {
       "name": "klaviyo",
@@ -68,7 +92,24 @@
         "confidence_level": 99
       },
       "relevant": true,
-      "rationale": "Both offer customer-service software for ecommerce/B2C brands, with overlapping support workflows and buyers despite Klaviyo\u2019s broader marketing automation focus."
+      "rationale": "Klaviyo targets ecommerce brands and now includes customer service alongside CRM and marketing automation, making it a credible adjacent support-platform comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Klaviyo targets ecommerce brands and now includes customer service alongside CRM and marketing automation, making it a credible adjacent support-platform comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Klaviyo is primarily ecommerce marketing automation (email/SMS CRM); Gorgias is a support helpdesk. Same ecommerce buyers but different job-to-be-done and product category."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Both SaaS platforms for ecommerce/B2C brands; Klaviyo now includes customer service alongside marketing, overlapping Gorgias's merchant support market."
+        }
+      ]
     },
     {
       "name": "loop",
@@ -84,7 +125,19 @@
         "confidence_level": 99
       },
       "relevant": false,
-      "rationale": "Loop focuses on returns and commerce operations, while Gorgias is a customer-support helpdesk; merchants would not evaluate them for the same job."
+      "rationale": "Loop provides ecommerce returns, exchanges, and operations tools, not a customer-support/helpdesk platform; it serves merchants in an adjacent but distinct workflow.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Loop provides ecommerce returns, exchanges, and operations tools, not a customer-support/helpdesk platform; it serves merchants in an adjacent but distinct workflow."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Loop sells returns/exchange and commerce-operations software, not customer-support helpdesk; same ecommerce-merchant market but different job to be done."
+        }
+      ]
     },
     {
       "name": "ramp",
@@ -100,7 +153,19 @@
         "confidence_level": 99
       },
       "relevant": false,
-      "rationale": "Ramp provides financial operations and spend management, not ecommerce customer-support software; buyers and jobs to be done differ."
+      "rationale": "Ramp provides finance operations, corporate cards, and expense management, not ecommerce customer-support or helpdesk software.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Ramp provides finance operations, corporate cards, and expense management, not ecommerce customer-support or helpdesk software."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Ramp is a fintech spend-management/corporate-card platform; no overlap with Gorgias's ecommerce customer-support helpdesk product, market, or model."
+        }
+      ]
     },
     {
       "name": "shopify",
@@ -116,7 +181,19 @@
         "confidence_level": 99
       },
       "relevant": false,
-      "rationale": "Shopify provides ecommerce storefront and commerce infrastructure, not a customer-support helpdesk evaluated for the same support workflow as Gorgias."
+      "rationale": "Shopify is an ecommerce storefront and commerce platform, not a dedicated customer-support/helpdesk product; it serves adjacent merchant needs.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Shopify is an ecommerce storefront and commerce platform, not a dedicated customer-support/helpdesk product; it serves adjacent merchant needs."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Shopify is an ecommerce platform, not a helpdesk; its merchants are Gorgias's customers/partners, not competitors in customer support software."
+        }
+      ]
     },
     {
       "name": "stripe",
@@ -132,7 +209,19 @@
         "confidence_level": 99
       },
       "relevant": false,
-      "rationale": "Stripe provides payment infrastructure, while Gorgias provides ecommerce customer-support software; merchants use them for distinct jobs and buyers evaluate different categories."
+      "rationale": "Stripe provides payments and financial infrastructure, not ecommerce customer-support or helpdesk software.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Stripe provides payments and financial infrastructure, not ecommerce customer-support or helpdesk software."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Stripe is payments infrastructure; Gorgias is an ecommerce customer-support helpdesk. Different product and buyer \u2014 not a competitor or comparable."
+        }
+      ]
     },
     {
       "name": "triple whale",
@@ -148,7 +237,19 @@
         "confidence_level": 99
       },
       "relevant": false,
-      "rationale": "Both serve ecommerce brands, but Triple Whale provides marketing analytics and growth intelligence, not customer-support helpdesk software for the same job."
+      "rationale": "Triple Whale provides ecommerce marketing analytics and automation, not customer-support or helpdesk workflows; shared merchant audience alone is insufficient.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Triple Whale provides ecommerce marketing analytics and automation, not customer-support or helpdesk workflows; shared merchant audience alone is insufficient."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Both serve ecommerce brands, but Triple Whale is marketing analytics/attribution, not customer-support helpdesk \u2014 different product and buyer job."
+        }
+      ]
     },
     {
       "name": "yotpo",
@@ -164,7 +265,19 @@
         "confidence_level": 99
       },
       "relevant": false,
-      "rationale": "Yotpo serves ecommerce brands but focuses on reviews, loyalty, and retention marketing, not customer-support helpdesk workflows."
+      "rationale": "Yotpo provides ecommerce reviews, loyalty, and retention marketing, not customer-support/helpdesk workflows; it is complementary rather than a direct comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Yotpo provides ecommerce reviews, loyalty, and retention marketing, not customer-support/helpdesk workflows; it is complementary rather than a direct comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Yotpo is ecommerce retention marketing (reviews, loyalty, referrals); Gorgias is ecommerce customer support/helpdesk \u2014 different product and job to be done."
+        }
+      ]
     },
     {
       "name": "zendesk",
@@ -180,7 +293,20 @@
         "confidence_level": 99
       },
       "relevant": true,
-      "rationale": "Zendesk is a multichannel customer-support and helpdesk platform serving the same support teams and workflows as Gorgias."
+      "rationale": "Zendesk is a customer-support/helpdesk platform offering omnichannel service and AI agents, directly comparable to Gorgias for support teams.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Zendesk is a customer-support/helpdesk platform offering omnichannel service and AI agents, directly comparable to Gorgias for support teams."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Omnichannel customer-support helpdesk platform; direct competitor to Gorgias on product and market."
+        }
+      ]
     }
-  ]
+  ],
+  "error": null
 }

@@ -7,18 +7,20 @@
     "name": "domain_similarity"
   },
   "k": 100,
-  "relevant_count": 82,
-  "precision_at_k": 82.0,
-  "relevant_count_at_10": 6,
-  "relevant_count_at_100": 82,
-  "precision_at_10": 60.0,
-  "precision_at_100": 82.0,
+  "relevant_count": 86,
+  "precision_at_k": 86.0,
+  "relevant_count_at_10": 7,
+  "relevant_count_at_25": 21,
+  "relevant_count_at_100": 86,
+  "precision_at_10": 70.0,
+  "precision_at_25": 84.0,
+  "precision_at_100": 86.0,
   "latency_ms": 1135,
   "cost_usd": null,
   "duplicates_removed": 2,
   "max_results": null,
-  "judge_model": "gpt-5.6",
-  "judged_at": "2026-07-27T03:43:51Z",
+  "judge_model": "majority(n=3): claude-opus-5,gpt-5.6-terra,kimi-k3",
+  "judged_at": "2026-08-10T19:41:09Z",
   "candidates": [
     {
       "name": "Roto-Rooter",
@@ -46,7 +48,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "This is a regional Roto-Rooter franchise/brand operation, effectively a duplicate of the seed rather than an independent lookalike."
+      "rationale": "Appears to be a California Roto-Rooter branded franchise/location, not an independent plumbing-services competitor or comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Appears to be a California Roto-Rooter branded franchise/location, not an independent plumbing-services competitor or comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Duplicate of the seed itself \u2014 same Roto-Rooter brand/franchise, not a competitor or comparable company."
+        }
+      ]
     },
     {
       "name": "The Plumber's Overall Protection Plan",
@@ -70,7 +84,19 @@
         "social_urls": []
       },
       "relevant": true,
-      "rationale": "Both provide residential and commercial plumbing, emergency repairs, drain cleaning, and related services to overlapping local customer segments."
+      "rationale": "Residential plumbing and drain-cleaning provider offering emergency repairs, water heaters, inspections, and related services\u2014directly comparable to Roto-Rooter.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Residential plumbing and drain-cleaning provider offering emergency repairs, water heaters, inspections, and related services\u2014directly comparable to Roto-Rooter."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Same core services: residential plumbing, drain cleaning, emergency repairs, water heaters. Direct comparable/competitor to Roto-Rooter's plumbing business."
+        }
+      ]
     },
     {
       "name": "Roto Rooter TC",
@@ -97,7 +123,24 @@
         ]
       },
       "relevant": false,
-      "rationale": "Roto Rooter TC appears to be a local Roto-Rooter franchise/location, making it part of the seed brand rather than an independent lookalike."
+      "rationale": "A Roto-Rooter franchise location \u2014 part of the seed's own brand network, effectively a duplicate, not a competitor or comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Local plumbing and drain-cleaning provider offering the same core emergency repair services as Roto-Rooter."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "A Roto-Rooter franchise location \u2014 part of the seed's own brand network, effectively a duplicate, not a competitor or comparable."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "Local franchise of the same Roto-Rooter brand \rnot an independent competitor or comparable."
+        }
+      ]
     },
     {
       "name": "RooterMan",
@@ -128,7 +171,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both are multi-location plumbing and drain-cleaning service providers offering emergency repairs to residential and commercial customers."
+      "rationale": "Franchised plumbing and drain-cleaning provider offering the same residential and commercial repair, sewer, and emergency services.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Franchised plumbing and drain-cleaning provider offering the same residential and commercial repair, sewer, and emergency services."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Direct competitor: national plumbing and drain-cleaning franchise offering identical services across US locations."
+        }
+      ]
     },
     {
       "name": "Roto-Rooter Plumbing & Water Cleanup",
@@ -159,7 +214,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Candidate is a local Roto-Rooter franchise operation, effectively the same brand rather than an independent lookalike company."
+      "rationale": "Likely a local Roto-Rooter franchise/brand location, not an independent competitor or distinct lookalike.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Likely a local Roto-Rooter franchise/brand location, not an independent competitor or distinct lookalike."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "A Roto-Rooter franchise location \u2014 same brand, duplicate entry, not a competitor or comparable."
+        }
+      ]
     },
     {
       "name": "Call Ready Plumbing",
@@ -181,8 +248,25 @@
         "city": null,
         "social_urls": []
       },
-      "relevant": false,
-      "rationale": "Call Ready is a plumber-matching referral platform, while Roto-Rooter directly provides franchised plumbing and restoration services."
+      "relevant": true,
+      "rationale": "Connects homeowners to licensed plumbers for the same emergency repairs, drain issues, and installations Roto-Rooter provides.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Connects homeowners to licensed plumbers for the same emergency repairs, drain issues, and installations Roto-Rooter provides."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Lead-generation marketplace matching homeowners to plumbers, not a plumbing service provider; intermediary serving the category, not a competitor."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Both serve homeowners needing plumbing/drain repairs; comparable consumer plumbing services business, though candidate is a matching marketplace.', ok.', ok.'"
+        }
+      ]
     },
     {
       "name": "Dr. Pipe Drain and Plumbing Services",
@@ -212,7 +296,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide residential and commercial plumbing, drain cleaning, repairs, and emergency services to substantially overlapping customers."
+      "rationale": "Direct plumbing and drain-cleaning provider serving residential and commercial customers, offering the same core services as Roto-Rooter.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Direct plumbing and drain-cleaning provider serving residential and commercial customers, offering the same core services as Roto-Rooter."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Same product and market: plumbing and drain-cleaning services, making Dr. Pipe a direct competitor/comparable to Roto-Rooter despite smaller size."
+        }
+      ]
     },
     {
       "name": "PlumbingPro",
@@ -239,7 +335,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide residential and commercial plumbing, drain clearing, sewer repair, water-heater, and emergency services to substantially overlapping customers."
+      "rationale": "Provides residential and commercial plumbing and drain-clearing services, directly comparable to Roto-Rooter\u2019s core home-services offering.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Provides residential and commercial plumbing and drain-clearing services, directly comparable to Roto-Rooter\u2019s core home-services offering."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are plumbing and drain-service providers for residential/commercial customers; same product, market, and business model\u2014direct competitor/comparable."
+        }
+      ]
     },
     {
       "name": "Zoom Drain",
@@ -268,7 +376,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide emergency plumbing, drain cleaning, sewer repair, and maintenance services to residential and commercial property customers."
+      "rationale": "Drain cleaning and plumbing service provider with emergency repairs for residential and commercial customers; direct competitor/comparable to Roto-Rooter.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Drain cleaning and plumbing service provider with emergency repairs for residential and commercial customers; direct competitor/comparable to Roto-Rooter."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Drain cleaning and plumbing service franchise, directly matching Roto-Rooter's core drain cleaning and plumbing business; clear competitor."
+        }
+      ]
     },
     {
       "name": "Plumbing Services L.A.",
@@ -292,7 +412,19 @@
         "social_urls": []
       },
       "relevant": true,
-      "rationale": "Both provide residential and commercial plumbing, drain cleaning, water-heater, and emergency repair services to overlapping local customer segments."
+      "rationale": "Local plumbing and drain-cleaning provider offering the same core residential and commercial services as Roto-Rooter.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Local plumbing and drain-cleaning provider offering the same core residential and commercial services as Roto-Rooter."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Same plumbing and drain-cleaning services for homes and businesses; local operator versus national franchise, but a direct competitor/comparable by product and market."
+        }
+      ]
     },
     {
       "name": "Bluefrog Plumbing + Drain",
@@ -322,7 +454,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide residential and commercial plumbing, drain cleaning, sewer repair, water-heater, and emergency services to the same customer base."
+      "rationale": "Plumbing and drain-cleaning provider serving residential and commercial customers; directly comparable to Roto-Rooter\u2019s core home-services offering.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Plumbing and drain-cleaning provider serving residential and commercial customers; directly comparable to Roto-Rooter\u2019s core home-services offering."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "National plumbing and drain-cleaning franchise offering the same residential/commercial plumbing services as Roto-Rooter; direct competitor on product, market, and model."
+        }
+      ]
     },
     {
       "name": "Superior Drainage",
@@ -351,7 +495,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide residential and commercial plumbing, sewer and drain services, repairs, maintenance, and emergency service to overlapping customers."
+      "rationale": "Provides residential and commercial plumbing, sewer, and drain repair services\u2014the same core service category as Roto-Rooter.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Provides residential and commercial plumbing, sewer, and drain repair services\u2014the same core service category as Roto-Rooter."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are plumbing and drain-cleaning service providers; same product and market, a direct comparable despite smaller size."
+        }
+      ]
     },
     {
       "name": "Roto-Rooter Sewer & Drain Service",
@@ -374,7 +530,24 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "This is a local Roto-Rooter franchise/location within the seed\u2019s branded network, making it a duplicate affiliate rather than an independent lookalike."
+      "rationale": "A Roto-Rooter franchise location in Saskatoon \u2014 same brand as the seed, effectively a duplicate entry, not a competitor or comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Local plumbing and drain-cleaning provider offering the same core sewer, emergency, and maintenance services as Roto-Rooter."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "A Roto-Rooter franchise location in Saskatoon \u2014 same brand as the seed, effectively a duplicate entry, not a competitor or comparable."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "Same brand franchise location, effectively a duplicate of the seed rather than a distinct comparable company."
+        }
+      ]
     },
     {
       "name": "The Drain Whisperer",
@@ -402,7 +575,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide residential and commercial plumbing and drain services, targeting customers with the same plumbing and drainage needs."
+      "rationale": "Residential and commercial plumbing and drain-service provider, directly comparable to Roto-Rooter\u2019s core plumbing and drain-cleaning business.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Residential and commercial plumbing and drain-service provider, directly comparable to Roto-Rooter\u2019s core plumbing and drain-cleaning business."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Plumbing and drain services for residential/commercial customers, same product and market as Roto-Rooter; small size is irrelevant per rules."
+        }
+      ]
     },
     {
       "name": "Speedi Rooter",
@@ -431,7 +616,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide residential and commercial plumbing, drain cleaning, sewer inspection, and emergency repair services to the same customer types."
+      "rationale": "Residential and commercial plumbing, drain cleaning, sewer inspection, and emergency repair provider directly comparable to Roto-Rooter\u2019s core services.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Residential and commercial plumbing, drain cleaning, sewer inspection, and emergency repair provider directly comparable to Roto-Rooter\u2019s core services."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are plumbing and drain-cleaning service providers serving residential/commercial customers; direct competitor on product and market."
+        }
+      ]
     },
     {
       "name": "Drain Stream Inc.",
@@ -463,7 +660,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide emergency plumbing and drain-cleaning services to residential and commercial customers, with overlapping pipe repair and related plumbing needs."
+      "rationale": "Provides comparable plumbing, drain-cleaning, and emergency home services; a direct local-service competitor despite smaller scale and different geography.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Provides comparable plumbing, drain-cleaning, and emergency home services; a direct local-service competitor despite smaller scale and different geography."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are plumbing and drain-cleaning service providers for residential/commercial customers; direct service competitors, size irrelevant."
+        }
+      ]
     },
     {
       "name": "The Plumber Guy",
@@ -492,7 +701,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide residential and commercial plumbing services, including sewer, leak, and water-heater work, to overlapping local-service customers."
+      "rationale": "Local plumbing provider offering overlapping residential and commercial plumbing, sewer, leak, and water-heater services; a direct service-market comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Local plumbing provider offering overlapping residential and commercial plumbing, sewer, leak, and water-heater services; a direct service-market comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are plumbing service companies offering residential/commercial plumbing repair and installation; direct competitors on product, market, and business model despite size difference."
+        }
+      ]
     },
     {
       "name": "The Plumbing Club",
@@ -515,7 +736,19 @@
         "social_urls": []
       },
       "relevant": true,
-      "rationale": "Both provide residential plumbing, drain cleaning, emergency repairs, and related home services to the same customer base."
+      "rationale": "Local plumbing provider offering drain cleaning, repairs, emergency service, and memberships\u2014directly comparable to Roto-Rooter\u2019s core home-services business.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Local plumbing provider offering drain cleaning, repairs, emergency service, and memberships\u2014directly comparable to Roto-Rooter\u2019s core home-services business."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are plumbing/drain-cleaning service providers; direct competitor and comparable in the same market and business model."
+        }
+      ]
     },
     {
       "name": "One Hour Rooter",
@@ -542,7 +775,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide emergency plumbing, drain cleaning, sewer repair, and related home services to overlapping residential and commercial customers."
+      "rationale": "Local plumbing and drain-cleaning provider offering the same core emergency, sewer, and drain services as Roto-Rooter.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Local plumbing and drain-cleaning provider offering the same core emergency, sewer, and drain services as Roto-Rooter."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Same core services: plumbing, drain cleaning, sewer repair, emergency response; direct competitor/comparable to Roto-Rooter despite smaller local scale."
+        }
+      ]
     },
     {
       "name": "Most Valuable Plumber",
@@ -574,7 +819,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide residential and commercial plumbing, emergency repair, installation, and related home services to substantially overlapping customers."
+      "rationale": "Provides residential and commercial plumbing, repair, and emergency services, directly comparable to Roto-Rooter despite also offering HVAC and electrical work.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Provides residential and commercial plumbing, repair, and emergency services, directly comparable to Roto-Rooter despite also offering HVAC and electrical work."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are plumbing and home-services providers; candidate is a direct competitor offering the same plumbing/HVAC services to the same customers."
+        }
+      ]
     },
     {
       "name": "1-Tom-Plumber",
@@ -605,7 +862,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide residential and commercial plumbing, drain cleaning, emergency repairs, and water-damage services through branded service networks."
+      "rationale": "Direct plumbing, drain cleaning, water-damage restoration, and home-services provider serving residential and commercial customers; a clear Roto-Rooter competitor.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Direct plumbing, drain cleaning, water-damage restoration, and home-services provider serving residential and commercial customers; a clear Roto-Rooter competitor."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Plumbing and drain-cleaning franchise with water damage restoration; direct competitor matching Roto-Rooter on product, market, and franchise business model."
+        }
+      ]
     },
     {
       "name": "Pros Plumbing & Rooter",
@@ -631,7 +900,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide residential and commercial plumbing, drain cleaning, sewer, and related repair services to overlapping customers."
+      "rationale": "Direct plumbing and drain-cleaning service provider serving residential and commercial customers, closely matching Roto-Rooter\u2019s core home-services offering.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Direct plumbing and drain-cleaning service provider serving residential and commercial customers, closely matching Roto-Rooter\u2019s core home-services offering."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Same core services\u2014plumbing, drain cleaning, sewer, water heater\u2014for same residential/commercial customers; a direct competitor and ICP-comparable, just regional."
+        }
+      ]
     },
     {
       "name": "1-800-Plumber +Air",
@@ -661,7 +942,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both are multi-location home-services brands offering emergency plumbing, drain cleaning, repairs, and related services to overlapping residential and commercial customers."
+      "rationale": "Provides plumbing, drain cleaning, repair, and emergency home services, directly comparable to Roto-Rooter\u2019s core service business.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Provides plumbing, drain cleaning, repair, and emergency home services, directly comparable to Roto-Rooter\u2019s core service business."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Same core service: multi-state plumbing, drain cleaning, water heater and home services provider \u2014 direct competitor to Roto-Rooter on product and market."
+        }
+      ]
     },
     {
       "name": "Done Right Plumbing",
@@ -688,7 +981,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide residential and commercial plumbing, emergency repair, drain cleaning, water-heater, and maintenance services to the same customer types."
+      "rationale": "Provides plumbing, drain cleaning, emergency repair, and water-heater services\u2014the same core home-services market as Roto-Rooter.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Provides plumbing, drain cleaning, emergency repair, and water-heater services\u2014the same core home-services market as Roto-Rooter."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are plumbing and drain-cleaning service providers; same product and market, just regional versus national. Direct comparable/competitor."
+        }
+      ]
     },
     {
       "name": "Spotless Plumbers",
@@ -713,7 +1018,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide residential and commercial plumbing and drain-cleaning services, serving substantially overlapping customers and plumbing needs."
+      "rationale": "Residential and commercial plumbing provider offering drain cleaning, water-heater, and maintenance services directly comparable to Roto-Rooter\u2019s core home-services business.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Residential and commercial plumbing provider offering drain cleaning, water-heater, and maintenance services directly comparable to Roto-Rooter\u2019s core home-services business."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are plumbing service providers offering drain cleaning, water heater, and related services to residential/commercial customers; direct peer in same market."
+        }
+      ]
     },
     {
       "name": "Roto-Rooter Plumbing & Drain Service of Southwest Michigan",
@@ -737,7 +1054,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "This is a local Roto-Rooter franchise operation under the seed\u2019s brand, not a distinct lookalike company."
+      "rationale": "Local Roto-Rooter franchise/location, not an independent competitor or comparable lookalike.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Local Roto-Rooter franchise/location, not an independent competitor or comparable lookalike."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "A Roto-Rooter franchise location itself \u2014 duplicate/branch of the seed brand, not a distinct competitor or comparable."
+        }
+      ]
     },
     {
       "name": "OC Rooter",
@@ -763,7 +1092,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide residential and commercial plumbing, emergency repairs, and drain-cleaning services to the same customer base."
+      "rationale": "Residential and commercial plumbing, emergency repair, and drain cleaning directly overlap Roto-Rooter\u2019s core service offering.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Residential and commercial plumbing, emergency repair, and drain cleaning directly overlap Roto-Rooter\u2019s core service offering."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are plumbing and drain-cleaning service providers serving residential/commercial customers; direct competitor on product and market."
+        }
+      ]
     },
     {
       "name": "Green Plumbers USA",
@@ -787,7 +1128,19 @@
         "social_urls": []
       },
       "relevant": true,
-      "rationale": "Both help homeowners and businesses obtain emergency plumbing, leak, sewer, and water-heater services for the same repair needs."
+      "rationale": "Connects homeowners to local plumbers for the same emergency plumbing, sewer, leak, and water-heater jobs Roto-Rooter serves.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Connects homeowners to local plumbers for the same emergency plumbing, sewer, leak, and water-heater jobs Roto-Rooter serves."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Plumbing service connecting homeowners with local plumbers for repairs, emergencies, water heaters\u2014same market and service category as Roto-Rooter."
+        }
+      ]
     },
     {
       "name": "Roto-Rooter of Delmarva",
@@ -819,7 +1172,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "This is a local Roto-Rooter franchise operation, not an independent lookalike company for separate account prospecting."
+      "rationale": "Likely a regional Roto-Rooter franchise/duplicate brand entry, not an independent competitor or ICP-expansion lookalike.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Likely a regional Roto-Rooter franchise/duplicate brand entry, not an independent competitor or ICP-expansion lookalike."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Franchise location of the seed brand itself \u2014 a duplicate/branch entry, not an independent competitor or comparable."
+        }
+      ]
     },
     {
       "name": "American Residential Services LLC.",
@@ -842,7 +1207,19 @@
         "social_urls": []
       },
       "relevant": true,
-      "rationale": "Both provide residential plumbing, emergency drain/sewer cleaning, and related home services to homeowners for the same repair needs."
+      "rationale": "Provides residential emergency plumbing, sewer and drain cleaning, and repair services\u2014the same core home-services market as Roto-Rooter.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Provides residential emergency plumbing, sewer and drain cleaning, and repair services\u2014the same core home-services market as Roto-Rooter."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are plumbing, drain/sewer cleaning, and home-services businesses serving homeowners \u2014 direct product, market, and model peers."
+        }
+      ]
     },
     {
       "name": "Plumbing and Drain Services",
@@ -865,7 +1242,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Candidate description is for a hair-smoothing product, not a plumbing, drain-cleaning, or water-cleanup service provider."
+      "rationale": "Despite its plumbing-related name, the description is for hair-smoothing treatments, not plumbing, drain cleaning, or home services.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Despite its plumbing-related name, the description is for hair-smoothing treatments, not plumbing, drain cleaning, or home services."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Despite plumbing name, candidate actually sells hair smoothing treatments\u2014beauty product unrelated to plumbing/drain services."
+        }
+      ]
     },
     {
       "name": "Ideal Plumbing",
@@ -889,7 +1278,19 @@
         "social_urls": []
       },
       "relevant": true,
-      "rationale": "Both provide residential and commercial plumbing, emergency repairs, maintenance, and related sewer services to overlapping customer segments."
+      "rationale": "Residential and commercial plumbing provider with emergency and maintenance services, directly comparable to Roto-Rooter\u2019s core plumbing business.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Residential and commercial plumbing provider with emergency and maintenance services, directly comparable to Roto-Rooter\u2019s core plumbing business."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are plumbing service providers offering residential/commercial plumbing and emergency services; direct competitor in the same trade-services market."
+        }
+      ]
     },
     {
       "name": "Pipe Doctor 24/7",
@@ -916,7 +1317,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide residential and commercial plumbing, drain, emergency, and water-damage services to overlapping customers with the same service needs."
+      "rationale": "Residential and commercial plumbing, drain and water-damage emergency services directly overlap Roto-Rooter\u2019s core home-services offering.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Residential and commercial plumbing, drain and water-damage emergency services directly overlap Roto-Rooter\u2019s core home-services offering."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Same core plumbing, drain, and water-damage services for residential/commercial customers; direct competitor/comparable. Size is irrelevant per rules."
+        }
+      ]
     },
     {
       "name": "JKC Plumbing",
@@ -942,7 +1355,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide residential and commercial plumbing, emergency repairs, drain cleaning, and water-heater services to the same customers."
+      "rationale": "Local plumbing provider offering drain cleaning, repairs, and water-heater services; directly comparable to Roto-Rooter\u2019s core plumbing and drain-service business.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Local plumbing provider offering drain cleaning, repairs, and water-heater services; directly comparable to Roto-Rooter\u2019s core plumbing and drain-service business."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Plumbing service provider offering drain cleaning, water heater, and emergency repairs\u2014same product and market as Roto-Rooter, a direct comparable."
+        }
+      ]
     },
     {
       "name": "One Call Plumbers",
@@ -968,7 +1393,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide residential and commercial plumbing, emergency repairs, and drain-cleaning services to overlapping customer segments."
+      "rationale": "Residential and commercial plumbing, emergency service, and drain cleaning directly overlap Roto-Rooter\u2019s core home-services offerings.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Residential and commercial plumbing, emergency service, and drain cleaning directly overlap Roto-Rooter\u2019s core home-services offerings."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are plumbing and drain-cleaning service providers for residential/commercial customers; direct competitor/comparable despite smaller size and different geography."
+        }
+      ]
     },
     {
       "name": "Plumbifi",
@@ -994,7 +1431,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide residential and commercial plumbing, drain cleaning, leak detection, and related repair services to the same customer base."
+      "rationale": "Residential and commercial plumbing provider offering drain cleaning, repairs, and water-heater services\u2014directly comparable to Roto-Rooter\u2019s core service business.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Residential and commercial plumbing provider offering drain cleaning, repairs, and water-heater services\u2014directly comparable to Roto-Rooter\u2019s core service business."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Same plumbing/drain-cleaning services for residential and commercial customers; direct competitor and comparable, just smaller regional scale."
+        }
+      ]
     },
     {
       "name": "Plumber Easy",
@@ -1016,8 +1465,25 @@
         "city": "Washington",
         "social_urls": []
       },
-      "relevant": false,
-      "rationale": "Plumber Easy is a plumber-matching and dispatch platform, while Roto-Rooter directly delivers franchised plumbing, drain, and water-cleanup services."
+      "relevant": true,
+      "rationale": "Connects homeowners to plumbers for emergency repairs, maintenance, and drain cleaning\u2014directly overlapping Roto-Rooter\u2019s core home-service market.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Connects homeowners to plumbers for emergency repairs, maintenance, and drain cleaning\u2014directly overlapping Roto-Rooter\u2019s core home-service market."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Marketplace routing homeowners to plumbers; a lead-gen channel for plumbing companies rather than a plumbing/drain service provider competing with Roto-Rooter."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Both provide residential plumbing/drain services to homeowners, including 24/7 emergency repair \", 3"
+        }
+      ]
     },
     {
       "name": "Need A Service",
@@ -1043,7 +1509,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Need A Service is a broad jobs/services marketplace, not a provider or franchise of plumbing, drain cleaning, or water cleanup services."
+      "rationale": "Job marketplace connecting workers and employers, not a plumbing, drain cleaning, water cleanup, or home-services provider/franchise.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Job marketplace connecting workers and employers, not a plumbing, drain cleaning, water cleanup, or home-services provider/franchise."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Job-listing platform connecting workers with employers, not a plumbing/home-services provider; different product, market, and business model from Roto-Rooter."
+        }
+      ]
     },
     {
       "name": "Essig",
@@ -1073,7 +1551,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide plumbing repair and related home services to homeowners, including emergency service and water-heater work."
+      "rationale": "Essig provides residential plumbing, emergency repairs, water-heater work, and related home services, directly comparable to Roto-Rooter\u2019s core service business.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Essig provides residential plumbing, emergency repairs, water-heater work, and related home services, directly comparable to Roto-Rooter\u2019s core service business."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both provide plumbing and home services to consumers; Essig is a direct peer/competitor in the same market and business model."
+        }
+      ]
     },
     {
       "name": "Plumbers 911",
@@ -1100,7 +1590,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide homeowners with access to emergency plumbing, drain cleaning, and maintenance services through networks of local professionals."
+      "rationale": "Connects homeowners to local plumbers for emergency repair and drain services, overlapping Roto-Rooter\u2019s residential plumbing market and job-to-be-done.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Connects homeowners to local plumbers for emergency repair and drain services, overlapping Roto-Rooter\u2019s residential plumbing market and job-to-be-done."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Residential plumbing and drain-cleaning services marketplace serving same homeowners and jobs as Roto-Rooter; direct competitor/comparable in plumbing services space."
+        }
+      ]
     },
     {
       "name": "Reliable Rooter Service",
@@ -1125,7 +1627,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide residential plumbing, drain cleaning, and sewer repair services to homeowners for the same maintenance and emergency needs."
+      "rationale": "Residential plumbing, drain cleaning, sewer repair, and water-heater services directly overlap Roto-Rooter\u2019s core home-service offering.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Residential plumbing, drain cleaning, sewer repair, and water-heater services directly overlap Roto-Rooter\u2019s core home-service offering."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Same plumbing, drain cleaning, and sewer repair services for homeowners; direct comparable to Roto-Rooter despite smaller size."
+        }
+      ]
     },
     {
       "name": "Plumbers Near Me",
@@ -1152,7 +1666,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide nationwide emergency and maintenance plumbing services to residential and commercial customers, with overlapping repair and drain-related needs."
+      "rationale": "Nationwide plumbing provider offering emergency repairs, maintenance, and related home services, directly comparable to Roto-Rooter.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Nationwide plumbing provider offering emergency repairs, maintenance, and related home services, directly comparable to Roto-Rooter."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Nationwide plumbing and emergency repair service; same product, market, and service model as Roto-Rooter \u2014 direct competitor."
+        }
+      ]
     },
     {
       "name": "Plumbing Emergency",
@@ -1181,7 +1707,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide on-demand emergency plumbing, sewer, leak, and water-heater services to customers needing urgent local repairs."
+      "rationale": "Provides emergency plumbing, sewer, and water-heater repair services to homeowners, directly comparable to Roto-Rooter\u2019s core plumbing and drain-service business.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Provides emergency plumbing, sewer, and water-heater repair services to homeowners, directly comparable to Roto-Rooter\u2019s core plumbing and drain-service business."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Same product and market: 24/7 plumbing, drain, leak, and water-heater services for homeowners\u2014direct peer/competitor to Roto-Rooter."
+        }
+      ]
     },
     {
       "name": "Plumbing & Drain Professionals",
@@ -1208,7 +1746,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide plumbing, drain and sewer services, water-heater work, and emergency response to residential and commercial customers."
+      "rationale": "Local plumbing and drain-service provider offering the same core repair, cleaning, emergency, and water-heater services as Roto-Rooter.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Local plumbing and drain-service provider offering the same core repair, cleaning, emergency, and water-heater services as Roto-Rooter."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are plumbing and drain cleaning service providers; same product, market, and business model \u2014 a direct regional competitor."
+        }
+      ]
     },
     {
       "name": "Sewer Squad",
@@ -1238,7 +1788,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide emergency plumbing, drain cleaning, sewer services, leak repair, and related home/commercial plumbing solutions to overlapping customers."
+      "rationale": "Local plumbing and drain-cleaning provider offering closely overlapping emergency, sewer, and repair services.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Local plumbing and drain-cleaning provider offering closely overlapping emergency, sewer, and repair services."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are plumbing and drain-cleaning service providers; same product, same customers, genuine comparable despite smaller regional footprint."
+        }
+      ]
     },
     {
       "name": "Executive Plumbing and Construction",
@@ -1268,7 +1830,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide residential and commercial plumbing, drain cleaning, emergency leak repair, and water-damage restoration services to the same customer base."
+      "rationale": "Provides plumbing, drain cleaning, water cleanup/restoration, and residential-commercial emergency services\u2014directly comparable to Roto-Rooter despite added remodeling offerings.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Provides plumbing, drain cleaning, water cleanup/restoration, and residential-commercial emergency services\u2014directly comparable to Roto-Rooter despite added remodeling offerings."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Same plumbing, drain cleaning, and water restoration services for residential/commercial clients \u2014 direct competitor and comparable to Roto-Rooter."
+        }
+      ]
     },
     {
       "name": "Pride Plumbing of Rochester",
@@ -1300,7 +1874,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide residential plumbing, emergency repair, and related home services to the same homeowners seeking local plumbing solutions."
+      "rationale": "Local residential plumbing provider offering overlapping repair and emergency services; a smaller direct comparable to Roto-Rooter\u2019s plumbing and home-services business.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Local residential plumbing provider offering overlapping repair and emergency services; a smaller direct comparable to Roto-Rooter\u2019s plumbing and home-services business."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Local plumbing service company offering same core services as Roto-Rooter; direct comparable/competitor in residential plumbing market."
+        }
+      ]
     },
     {
       "name": "Anywhere Rooter",
@@ -1328,7 +1914,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide residential and commercial plumbing, drain cleaning, sewer repair, and emergency services to the same customer base."
+      "rationale": "Local plumbing and drain-cleaning provider offering the same core repair, sewer, and emergency services as Roto-Rooter.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Local plumbing and drain-cleaning provider offering the same core repair, sewer, and emergency services as Roto-Rooter."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Plumbing and drain-cleaning service provider, same product and market as Roto-Rooter; size/geography not disqualifying."
+        }
+      ]
     },
     {
       "name": "Diversified Plumbing & Heating",
@@ -1354,7 +1952,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide residential and commercial plumbing, drain/sewer repair, and emergency services to overlapping customers with the same service needs."
+      "rationale": "Provides residential and commercial plumbing, drain, sewer, and emergency repair services\u2014the same core home-services market as Roto-Rooter.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Provides residential and commercial plumbing, drain, sewer, and emergency repair services\u2014the same core home-services market as Roto-Rooter."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are plumbing and drain service providers serving residential/commercial customers; direct competitors on product, market, and business model."
+        }
+      ]
     },
     {
       "name": "Plumbing Kingdom",
@@ -1378,7 +1988,19 @@
         "social_urls": []
       },
       "relevant": true,
-      "rationale": "Both provide residential and commercial plumbing, drain cleaning, sewer, water-heater, and emergency services to substantially overlapping customers."
+      "rationale": "Residential and commercial plumbing provider offering drain cleaning, sewer, water-heater, and emergency services\u2014the same core service market as Roto-Rooter.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Residential and commercial plumbing provider offering drain cleaning, sewer, water-heater, and emergency services\u2014the same core service market as Roto-Rooter."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are plumbing and drain-cleaning service providers serving the same home/business customers; direct competitor in the same trade-services market."
+        }
+      ]
     },
     {
       "name": "Smith Plumbing LLC",
@@ -1405,7 +2027,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide residential and commercial plumbing, sewer, maintenance, and emergency repair services to the same customer base."
+      "rationale": "Provides comparable residential and commercial plumbing, sewer, and emergency repair services, directly overlapping Roto-Rooter\u2019s core service market.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Provides comparable residential and commercial plumbing, sewer, and emergency repair services, directly overlapping Roto-Rooter\u2019s core service market."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both provide plumbing repair, installation, and emergency services to residential/commercial customers; same product and market, size irrelevant."
+        }
+      ]
     },
     {
       "name": "Plumbing Pros",
@@ -1432,7 +2066,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide emergency plumbing, drain, sewer, and repair services to residential or commercial customers with the same service needs."
+      "rationale": "Provides emergency plumbing, drain, sewer, and water-heater repair services\u2014the same core home-services market as Roto-Rooter.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Provides emergency plumbing, drain, sewer, and water-heater repair services\u2014the same core home-services market as Roto-Rooter."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Same core business: 24/7 plumbing, drain repair, water heater, and sewer services \u2014 a direct competitor/comparable to Roto-Rooter's plumbing services."
+        }
+      ]
     },
     {
       "name": "Detroit Furnace",
@@ -1460,7 +2106,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide residential plumbing and emergency home services to homeowners, with Detroit Furnace additionally offering HVAC services."
+      "rationale": "Local plumbing and HVAC contractor offering repairs and emergency service; comparable home-services provider, though narrower than Roto-Rooter\u2019s national franchise.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Local plumbing and HVAC contractor offering repairs and emergency service; comparable home-services provider, though narrower than Roto-Rooter\u2019s national franchise."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are plumbing/home-services providers; Detroit Furnace offers plumbing plus HVAC, directly comparable services and market to Roto-Rooter."
+        }
+      ]
     },
     {
       "name": "ACX",
@@ -1484,7 +2142,19 @@
         "social_urls": []
       },
       "relevant": true,
-      "rationale": "ACX provides plumbing, drain, leak, and water-heater services to homeowners and businesses, directly overlapping Roto-Rooter\u2019s core services and customers."
+      "rationale": "Plumbing, drain repair, water-heater, and emergency home-service provider serving similar residential and commercial customers.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Plumbing, drain repair, water-heater, and emergency home-service provider serving similar residential and commercial customers."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are plumbing and home-services providers offering drain repair, leak detection, water heater service \u2014 same product, market, and business model; direct comparable."
+        }
+      ]
     },
     {
       "name": "Right Now Help",
@@ -1512,7 +2182,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Right Now Help is a broad local-services marketplace, not a plumbing, drain-cleaning, and water-remediation service operator or franchise."
+      "rationale": "Broad marketplace for independent local helpers includes plumbing but lacks Roto-Rooter\u2019s dedicated plumbing, drain-cleaning, and restoration service model.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Broad marketplace for independent local helpers includes plumbing but lacks Roto-Rooter\u2019s dedicated plumbing, drain-cleaning, and restoration service model."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Multi-category gig marketplace connecting users to freelancers, not a plumbing/home-services provider; neither competitor nor comparable on product or business model."
+        }
+      ]
     },
     {
       "name": "Dallas Plumbing 24/7",
@@ -1536,7 +2218,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Dallas Plumbing 24/7 is a plumber-matching lead-generation service, not a direct plumbing, drain cleaning, and water cleanup provider like Roto-Rooter."
+      "rationale": "Marketplace connecting homeowners to plumbers, rather than a plumbing and drain-cleaning service franchise itself.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Marketplace connecting homeowners to plumbers, rather than a plumbing and drain-cleaning service franchise itself."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Lead-generation marketplace matching homeowners to plumbers, not a plumbing service provider itself; serves the category rather than competing with Roto-Rooter."
+        }
+      ]
     },
     {
       "name": "Emergency Rooter",
@@ -1560,7 +2254,19 @@
         "social_urls": []
       },
       "relevant": true,
-      "rationale": "Both provide emergency residential and commercial plumbing, drain-related repairs, and installation services to substantially overlapping customers."
+      "rationale": "Provides comparable plumbing, emergency repair, and residential/commercial service offerings; a local competitor to Roto-Rooter despite smaller scale.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Provides comparable plumbing, emergency repair, and residential/commercial service offerings; a local competitor to Roto-Rooter despite smaller scale."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Same core product: residential/commercial plumbing and drain/rooter services with 24-hour emergency repairs; direct competitor/comparable despite smaller regional scale."
+        }
+      ]
     },
     {
       "name": "John The Plumber",
@@ -1590,7 +2296,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide residential plumbing, drain cleaning, repairs, and emergency services to the same homeowner customer base."
+      "rationale": "Residential plumbing and drain-cleaning provider with emergency repair services, directly comparable to Roto-Rooter despite smaller local scope.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Residential plumbing and drain-cleaning provider with emergency repair services, directly comparable to Roto-Rooter despite smaller local scope."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are plumbing and drain-cleaning service providers serving homeowners; direct competitor/comparable, just regional rather than national franchise."
+        }
+      ]
     },
     {
       "name": "Mr. Rooter Plumbing",
@@ -1637,7 +2355,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both are national plumbing service franchises offering residential and commercial drain cleaning, emergency repairs, and related plumbing services to the same customers."
+      "rationale": "National franchised plumbing and drain-cleaning provider serving residential and commercial customers, directly comparable to Roto-Rooter.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "National franchised plumbing and drain-cleaning provider serving residential and commercial customers, directly comparable to Roto-Rooter."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Direct competitor: national full-service plumbing and drain cleaning franchise serving residential and commercial customers, matching Roto-Rooter on product, market, and franchise model."
+        }
+      ]
     },
     {
       "name": "Hy-Pro Plumbing & Drain",
@@ -1666,7 +2396,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide residential and commercial plumbing, emergency repairs, and drain-cleaning services to the same customer types."
+      "rationale": "Provides residential and commercial plumbing, drain cleaning, and emergency repair services\u2014the same core home-services category as Roto-Rooter.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Provides residential and commercial plumbing, drain cleaning, and emergency repair services\u2014the same core home-services category as Roto-Rooter."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are plumbing and drain-cleaning service providers for residential/commercial customers; same product and market, a direct comparable."
+        }
+      ]
     },
     {
       "name": "Adeedo",
@@ -1698,7 +2440,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide consumer plumbing and drain services, including sewer, water-heater, and related home-system repairs, targeting the same homeowners."
+      "rationale": "Provides comparable residential plumbing, drain cleaning, and water-heater services; also adds HVAC services.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Provides comparable residential plumbing, drain cleaning, and water-heater services; also adds HVAC services."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Adeedo provides the same core services as Roto-Rooter: plumbing, drain clearing, water heater and sewer work, serving homeowners directly as a competitor."
+        }
+      ]
     },
     {
       "name": "Bradford Plumbing",
@@ -1722,7 +2476,19 @@
         "social_urls": []
       },
       "relevant": true,
-      "rationale": "Both provide residential and commercial plumbing, emergency repairs, drain cleaning, and water-damage services to substantially overlapping customer needs."
+      "rationale": "Provides residential and commercial plumbing, drain cleaning, emergency repairs, and water-damage services, directly comparable to Roto-Rooter\u2019s core home-services offering.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Provides residential and commercial plumbing, drain cleaning, emergency repairs, and water-damage services, directly comparable to Roto-Rooter\u2019s core home-services offering."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are plumbing service businesses offering drain cleaning, water heater repair, and emergency plumbing to residential/commercial customers \u2014 direct competitors, same product and market."
+        }
+      ]
     },
     {
       "name": "Oakridge Plumbing Ltd.",
@@ -1748,7 +2514,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide residential and commercial plumbing, drain repair, maintenance, and emergency services to substantially overlapping customers."
+      "rationale": "Residential and commercial plumbing provider with emergency repair services, directly comparable to Roto-Rooter\u2019s core plumbing and home-services offering.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Residential and commercial plumbing provider with emergency repair services, directly comparable to Roto-Rooter\u2019s core plumbing and home-services offering."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both provide residential/commercial plumbing services including repairs, clogs, and emergency work; direct competitors in the same service market despite size difference."
+        }
+      ]
     },
     {
       "name": "Pipe It Right Plumbing",
@@ -1772,7 +2550,19 @@
         "social_urls": []
       },
       "relevant": true,
-      "rationale": "Both provide emergency and routine plumbing services, including leak and clog repair, to residential and commercial customers."
+      "rationale": "Residential and commercial plumbing provider with emergency repairs and maintenance, directly comparable to Roto-Rooter\u2019s core plumbing and drain-service business.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Residential and commercial plumbing provider with emergency repairs and maintenance, directly comparable to Roto-Rooter\u2019s core plumbing and drain-service business."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are plumbing service companies offering residential/commercial repairs and drain work; direct competitor in the same market, size irrelevant."
+        }
+      ]
     },
     {
       "name": "Plumbers Near You",
@@ -1797,7 +2587,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide homeowners with on-demand plumbing repairs and maintenance through contractor networks, competing for the same service jobs."
+      "rationale": "24/7 plumbing and drain-related home services for homeowners, directly comparable to Roto-Rooter despite operating as a local contractor-connect platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "24/7 plumbing and drain-related home services for homeowners, directly comparable to Roto-Rooter despite operating as a local contractor-connect platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both provide plumbing services to homeowners; same product, market, and service business model \u2014 a direct competitor/comparable to Roto-Rooter."
+        }
+      ]
     },
     {
       "name": "Rooter",
@@ -1822,7 +2624,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Rooter is a lead-generation directory connecting customers to plumbers, while Roto-Rooter directly provides franchised plumbing and drain services."
+      "rationale": "Lead-generation directory connecting users to independent plumbers, not a plumbing and drain-service operator or franchise comparable to Roto-Rooter.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Lead-generation directory connecting users to independent plumbers, not a plumbing and drain-service operator or franchise comparable to Roto-Rooter."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Candidate is a lead-generation marketplace connecting users to plumbers, not a plumbing/drain service provider itself; different business model, not a competitor."
+        }
+      ]
     },
     {
       "name": "AquaRescue",
@@ -1849,7 +2663,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide emergency and general plumbing, drain, and water-related services to residential and commercial customers."
+      "rationale": "Both provide plumbing and drain services, including emergency repairs, to residential and commercial customers; AquaRescue is a direct local-service comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both provide plumbing and drain services, including emergency repairs, to residential and commercial customers; AquaRescue is a direct local-service comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are plumbing and drain-cleaning service providers for residential and commercial customers; same product, market, and service model."
+        }
+      ]
     },
     {
       "name": "Rooter Service Pros",
@@ -1872,8 +2698,20 @@
         "city": null,
         "social_urls": []
       },
-      "relevant": false,
-      "rationale": "Candidate is a referral marketplace connecting users to local drain contractors, while Roto-Rooter directly delivers franchised plumbing and cleanup services."
+      "relevant": true,
+      "rationale": "Matches Roto-Rooter\u2019s core drain cleaning, sewer repair, and emergency rooter service market, though as a provider-directory platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Matches Roto-Rooter\u2019s core drain cleaning, sewer repair, and emergency rooter service market, though as a provider-directory platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Same drain cleaning, rooter, and sewer repair services for residential/commercial customers \u2014 direct competitor/comparable to Roto-Rooter's core plumbing business."
+        }
+      ]
     },
     {
       "name": "Plumbing Problem Solvers",
@@ -1901,7 +2739,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide plumbing and drain-cleaning services to homeowners and businesses for the same repair and maintenance needs."
+      "rationale": "Provides plumbing and drain-cleaning services to homeowners and businesses, directly comparable to Roto-Rooter despite its local scale.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Provides plumbing and drain-cleaning services to homeowners and businesses, directly comparable to Roto-Rooter despite its local scale."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Same plumbing and drain-cleaning services for homeowners and small businesses; direct service comparable to Roto-Rooter despite smaller size."
+        }
+      ]
     },
     {
       "name": "Elite Plumbing Team",
@@ -1925,7 +2775,19 @@
         "social_urls": []
       },
       "relevant": true,
-      "rationale": "Both provide residential and commercial plumbing, emergency repair, maintenance, and drain-cleaning services to overlapping customers."
+      "rationale": "Residential and commercial plumbing and drain-cleaning provider, directly comparable to Roto-Rooter\u2019s core home-services offerings.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Residential and commercial plumbing and drain-cleaning provider, directly comparable to Roto-Rooter\u2019s core home-services offerings."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Same core services: plumbing, drain cleaning, emergency repairs; direct competitor/comparable in plumbing services market."
+        }
+      ]
     },
     {
       "name": "FT Plumbing",
@@ -1951,7 +2813,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide residential and commercial plumbing services, including emergency repairs, water heaters, leak detection, and drain cleaning."
+      "rationale": "Residential and commercial plumbing provider offering repairs, drain cleaning, and emergency services\u2014the same core home-service market as Roto-Rooter.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Residential and commercial plumbing provider offering repairs, drain cleaning, and emergency services\u2014the same core home-service market as Roto-Rooter."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are plumbing service companies offering drain cleaning, repairs, and emergency plumbing to residential/commercial customers; same product and market, size ignored."
+        }
+      ]
     },
     {
       "name": "Right Now Plumbers",
@@ -1973,8 +2847,20 @@
         "city": "Maine",
         "social_urls": []
       },
-      "relevant": false,
-      "rationale": "Right Now Plumbers is a contractor-matching lead marketplace, not a plumbing and drain-service operator or franchise like Roto-Rooter."
+      "relevant": true,
+      "rationale": "Homeowner plumbing service platform offering drain, sewer, water-heater, leak, and emergency repairs; directly comparable despite contractor-network model.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Homeowner plumbing service platform offering drain, sewer, water-heater, leak, and emergency repairs; directly comparable despite contractor-network model."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "B2C plumbing-services platform connecting homeowners to plumbers nationwide; competes with Roto-Rooter for the same home plumbing/drain repair customers."
+        }
+      ]
     },
     {
       "name": "Columbus Plumbing & Drain",
@@ -2003,7 +2889,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide residential and commercial plumbing, drain cleaning, sewer repair, water-heater, and emergency services to the same customer base."
+      "rationale": "Direct plumbing and drain-cleaning provider serving residential and commercial customers; a local competitor/comparable to Roto-Rooter.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Direct plumbing and drain-cleaning provider serving residential and commercial customers; a local competitor/comparable to Roto-Rooter."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Same core services\u2014plumbing, drain cleaning, sewer repair, emergency plumbing\u2014for residential and commercial customers; direct local competitor/comparable to Roto-Rooter."
+        }
+      ]
     },
     {
       "name": "247 Plumbing HVAC",
@@ -2027,7 +2925,19 @@
         "social_urls": []
       },
       "relevant": true,
-      "rationale": "Both provide residential and commercial plumbing services, including emergency repairs and maintenance, targeting the same property owners and service buyers."
+      "rationale": "Provides plumbing services including emergency repairs and maintenance, directly comparable to Roto-Rooter\u2019s plumbing and home-services offering.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Provides plumbing services including emergency repairs and maintenance, directly comparable to Roto-Rooter\u2019s plumbing and home-services offering."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Plumbing and HVAC service provider for residential/commercial customers; same product, market, and service business model as Roto-Rooter."
+        }
+      ]
     },
     {
       "name": "Dr. Pipe Drain and Plumbing",
@@ -2054,7 +2964,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide residential and commercial plumbing, drain cleaning, and emergency repair services to the same customer base."
+      "rationale": "Provides comparable plumbing and drain-cleaning services to residential and commercial customers, directly overlapping Roto-Rooter\u2019s core offering.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Provides comparable plumbing and drain-cleaning services to residential and commercial customers, directly overlapping Roto-Rooter\u2019s core offering."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are plumbing and drain-cleaning service providers for residential/commercial clients; same product, market, and business model as Roto-Rooter."
+        }
+      ]
     },
     {
       "name": "Drains R Us Plumbing Inc.",
@@ -2080,7 +3002,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide homeowners with plumbing, drain cleaning, water-heater, sump-pump, and emergency repair services for the same household maintenance needs."
+      "rationale": "Residential plumbing and drain-cleaning provider offering the same core home services as Roto-Rooter.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Residential plumbing and drain-cleaning provider offering the same core home services as Roto-Rooter."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Same core services: residential plumbing, drain cleaning, water heater and emergency repairs; direct comparable to Roto-Rooter despite smaller size."
+        }
+      ]
     },
     {
       "name": "Plumbing Patrol, Inc.",
@@ -2109,7 +3043,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide emergency plumbing, drain cleaning, and related repair services to residential and commercial customers."
+      "rationale": "Local residential and commercial plumbing, drain cleaning, and emergency repair provider directly comparable to Roto-Rooter\u2019s core service offering.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Local residential and commercial plumbing, drain cleaning, and emergency repair provider directly comparable to Roto-Rooter\u2019s core service offering."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both provide plumbing and drain-cleaning services to residential/commercial customers; same product, market, and service business model \u2014 a direct comparable."
+        }
+      ]
     },
     {
       "name": "In A Snap Plumbing",
@@ -2137,7 +3083,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide emergency and routine plumbing, drain cleaning, leak detection, and sewer services to residential and commercial property owners."
+      "rationale": "Provides residential and commercial plumbing, drain cleaning, and sewer repair services\u2014the core service categories of Roto-Rooter.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Provides residential and commercial plumbing, drain cleaning, and sewer repair services\u2014the core service categories of Roto-Rooter."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are plumbing service companies offering drain cleaning, leak repair, and sewer work; direct competitor/comparable despite smaller local scale."
+        }
+      ]
     },
     {
       "name": "United Drain & Plumbing",
@@ -2161,7 +3119,19 @@
         "social_urls": []
       },
       "relevant": true,
-      "rationale": "Both provide residential and commercial plumbing, emergency repairs, drain and sewer cleaning, serving the same customers for the same service needs."
+      "rationale": "Provides plumbing, drain and sewer cleaning, emergency repair, and commercial services directly comparable to Roto-Rooter\u2019s core home-service offerings.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Provides plumbing, drain and sewer cleaning, emergency repair, and commercial services directly comparable to Roto-Rooter\u2019s core home-service offerings."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are plumbing and drain-cleaning service providers serving the same customers; Roto-Rooter is itself a plumbing service company, so this is a direct competitor/comparable."
+        }
+      ]
     },
     {
       "name": "Local Plumbing And Sewer",
@@ -2188,7 +3158,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide residential and commercial plumbing, sewer/drain, emergency, inspection, repair, and maintenance services to substantially overlapping customers."
+      "rationale": "Provides residential and commercial plumbing, emergency repair, and sewer-related services, directly comparable to Roto-Rooter despite lacking national franchise scale.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Provides residential and commercial plumbing, emergency repair, and sewer-related services, directly comparable to Roto-Rooter despite lacking national franchise scale."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are plumbing and drain service providers serving residential/commercial customers; same product and market as Roto-Rooter."
+        }
+      ]
     },
     {
       "name": "TC Home",
@@ -2217,7 +3199,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide residential plumbing, emergency repair, maintenance, and related home services to homeowners seeking the same job to be done."
+      "rationale": "Residential plumbing and emergency repair provider, directly comparable to Roto-Rooter\u2019s core plumbing and home-service offering.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Residential plumbing and emergency repair provider, directly comparable to Roto-Rooter\u2019s core plumbing and home-service offering."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Residential plumbing services provider; same product, market, and B2C service model as Roto-Rooter, a direct comparable."
+        }
+      ]
     },
     {
       "name": "24/7 Rooter & Plumbing",
@@ -2247,7 +3241,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide plumbing, drain/sewer, emergency repair, and water restoration services to residential customers for the same home-service needs."
+      "rationale": "Provides the same residential plumbing, drain/sewer, emergency repair, and water-restoration services; a direct local competitor/comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Provides the same residential plumbing, drain/sewer, emergency repair, and water-restoration services; a direct local competitor/comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both provide plumbing, drain clearing, and rooter services to homeowners; same product and market, direct local comparable to Roto-Rooter."
+        }
+      ]
     },
     {
       "name": "Blessed Solutions Plumbing",
@@ -2275,7 +3281,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide emergency plumbing, drain cleaning, water-heater, and related home services to residential customers."
+      "rationale": "Provides plumbing and drain-cleaning services directly to residential customers, closely matching Roto-Rooter\u2019s core home-services offering.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Provides plumbing and drain-cleaning services directly to residential customers, closely matching Roto-Rooter\u2019s core home-services offering."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Plumbing service provider offering identical services\u2014drain cleaning, water heaters, emergency plumbing\u2014to the same residential market; direct competitor despite smaller size."
+        }
+      ]
     },
     {
       "name": "Renowned Plumbing & Rooter",
@@ -2304,7 +3322,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide residential and commercial plumbing, emergency repairs, drain cleaning, and rooter services to the same customer base."
+      "rationale": "Residential and commercial plumbing, drain cleaning, and emergency repair provider directly comparable to Roto-Rooter\u2019s core home-services offering.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Residential and commercial plumbing, drain cleaning, and emergency repair provider directly comparable to Roto-Rooter\u2019s core home-services offering."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are plumbing and drain-cleaning service providers for residential/commercial customers; direct comparable competitor, size ignored."
+        }
+      ]
     },
     {
       "name": "Preferred Plumbing & Rooter Service",
@@ -2328,7 +3358,19 @@
         "social_urls": []
       },
       "relevant": true,
-      "rationale": "Both provide residential and commercial plumbing, drain cleaning, sewer repair, and emergency rooter services to the same customer base."
+      "rationale": "Residential and commercial plumbing, drain cleaning, sewer repair, and emergency services closely match Roto-Rooter\u2019s core home-services offering.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Residential and commercial plumbing, drain cleaning, sewer repair, and emergency services closely match Roto-Rooter\u2019s core home-services offering."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Same core services: plumbing, drain cleaning, sewer repair, water cleanup; direct competitor in identical market and business model."
+        }
+      ]
     },
     {
       "name": "Hack's Plumbing & Drain",
@@ -2356,7 +3398,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide residential and commercial plumbing, emergency repairs, drain cleaning, and sewer-related services to the same customer base."
+      "rationale": "Provides plumbing and drain-cleaning services to residential and commercial customers, directly comparable to Roto-Rooter despite its local scale.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Provides plumbing and drain-cleaning services to residential and commercial customers, directly comparable to Roto-Rooter despite its local scale."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are plumbing and drain-cleaning service companies serving residential/commercial customers; same product, market, and business model as Roto-Rooter."
+        }
+      ]
     },
     {
       "name": "AirCo",
@@ -2387,7 +3441,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "AirCo directly overlaps Roto-Rooter in plumbing, drain cleaning, and related home services for residential and commercial customers."
+      "rationale": "Provides competing residential and commercial plumbing, drain cleaning, and home-services work; AirCo additionally offers HVAC services.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Provides competing residential and commercial plumbing, drain cleaning, and home-services work; AirCo additionally offers HVAC services."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both provide residential plumbing and drain-cleaning services to homeowners; AirCo competes with Roto-Rooter for the same plumbing jobs despite its HVAC focus."
+        }
+      ]
     },
     {
       "name": "Traditional Plumbing",
@@ -2414,7 +3480,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide residential plumbing, drain cleaning, sewer, water-heater, and emergency repair services to homeowners with the same needs."
+      "rationale": "Residential plumbing and drain-cleaning provider offering the same core home-service work as Roto-Rooter, though at local rather than national scale.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Residential plumbing and drain-cleaning provider offering the same core home-service work as Roto-Rooter, though at local rather than national scale."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are B2C plumbing service companies offering drain cleaning, repairs, and water heater work \u2014 same product, market, and business model."
+        }
+      ]
     },
     {
       "name": "DNA Plumbing Heating and Air",
@@ -2440,7 +3518,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide residential plumbing, emergency repairs, and related home services to homeowners with the same core service needs."
+      "rationale": "Provides comparable residential plumbing and emergency repair services, directly overlapping Roto-Rooter\u2019s core home-services market.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Provides comparable residential plumbing and emergency repair services, directly overlapping Roto-Rooter\u2019s core home-services market."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are plumbing and home-services providers; DNA Plumbing offers the same core plumbing/repair services, making it a direct competitor and comparable."
+        }
+      ]
     },
     {
       "name": "HRI Plumbing",
@@ -2471,7 +3561,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide residential and commercial plumbing, sewer, drain, installation, and emergency repair services to overlapping customer segments."
+      "rationale": "Residential and commercial plumbing provider offering repairs, sewer, and septic services; directly comparable to Roto-Rooter\u2019s core plumbing and drain-service business.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Residential and commercial plumbing provider offering repairs, sewer, and septic services; directly comparable to Roto-Rooter\u2019s core plumbing and drain-service business."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are plumbing service providers offering repairs, installations, sewer/septic work to residential and commercial customers; same product and market."
+        }
+      ]
     },
     {
       "name": "Plumbing Solutions 2U",
@@ -2497,7 +3599,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide residential and commercial plumbing, drain clearing, pipe repair, and emergency maintenance services to overlapping customers."
+      "rationale": "Provides plumbing, drain repair, and maintenance services to residential and commercial customers, directly comparable to Roto-Rooter's core service offering.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Provides plumbing, drain repair, and maintenance services to residential and commercial customers, directly comparable to Roto-Rooter's core service offering."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are plumbing and drain-repair service providers serving residential/commercial customers; direct competitor in the same trade, like Roto-Rooter."
+        }
+      ]
     },
     {
       "name": "Catholic Plumbers",
@@ -2521,7 +3635,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Catholic Plumbers is a referral directory, not a direct plumbing, drain-cleaning, and water-cleanup service operator like Roto-Rooter."
+      "rationale": "Directory connecting customers to independent faith-based plumbers, not a plumbing, drain-cleaning, or restoration service franchise.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Directory connecting customers to independent faith-based plumbers, not a plumbing, drain-cleaning, or restoration service franchise."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Directory/marketplace listing plumbers, not a plumbing service provider; serves the category as intermediary rather than competing as a peer."
+        }
+      ]
     },
     {
       "name": "Pro Plumbing",
@@ -2545,7 +3671,19 @@
         "social_urls": []
       },
       "relevant": true,
-      "rationale": "Both provide emergency plumbing, drain/sewer repair, leak detection, and related home services to residential customers."
+      "rationale": "Emergency plumbing, sewer repair, and water-heater services directly overlap with Roto-Rooter\u2019s core residential plumbing and drain-service business.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Emergency plumbing, sewer repair, and water-heater services directly overlap with Roto-Rooter\u2019s core residential plumbing and drain-service business."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are plumbing service companies offering emergency plumbing, sewer/drain repairs, and water heater work \u2014 same product, market, and business model; direct comparable."
+        }
+      ]
     },
     {
       "name": "Rocket Plumbing",
@@ -2579,7 +3717,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide residential and commercial plumbing, drain cleaning, sewer repair, and emergency services to overlapping customers."
+      "rationale": "Local plumbing, drain cleaning, emergency response, and sewer services directly overlap Roto-Rooter\u2019s core home-services offering.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Local plumbing, drain cleaning, emergency response, and sewer services directly overlap Roto-Rooter\u2019s core home-services offering."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are plumbing and drain-cleaning service providers with emergency response; same product, market, and business model as Roto-Rooter."
+        }
+      ]
     },
     {
       "name": "Rooter-Man GTA",
@@ -2617,7 +3767,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide residential and commercial plumbing, drain/sewer cleaning and repair, and emergency water-related services through multi-location service networks."
+      "rationale": "Provides plumbing, drain/sewer cleaning and repair, emergency service, and water-related home services\u2014directly comparable to Roto-Rooter.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Provides plumbing, drain/sewer cleaning and repair, emergency service, and water-related home services\u2014directly comparable to Roto-Rooter."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Same plumbing, drain cleaning, and sewer repair services for residential/commercial customers \u2014 direct competitor in the same trade."
+        }
+      ]
     },
     {
       "name": "A Plus Plumbing Service LLC",
@@ -2644,7 +3806,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide residential and commercial plumbing, maintenance, and emergency repair services to overlapping customer segments for the same jobs."
+      "rationale": "Provides plumbing repair, maintenance, and emergency services, directly comparable to Roto-Rooter\u2019s core home and commercial plumbing business.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Provides plumbing repair, maintenance, and emergency services, directly comparable to Roto-Rooter\u2019s core home and commercial plumbing business."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are plumbing service providers offering repairs, maintenance, and emergency services to residential and commercial customers; direct comparable."
+        }
+      ]
     },
     {
       "name": "Parks' Plumbing & Sewer, Inc.",
@@ -2674,7 +3848,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide residential and commercial plumbing, sewer/drain cleaning, flood control, and emergency services to substantially overlapping customers."
+      "rationale": "Residential and commercial plumbing, sewer cleaning, drainage, and emergency services closely match Roto-Rooter\u2019s core home-services offering.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Residential and commercial plumbing, sewer cleaning, drainage, and emergency services closely match Roto-Rooter\u2019s core home-services offering."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are plumbing, drain/sewer cleaning, and water-cleanup service providers for residential/commercial customers; same product and market, a direct comparable."
+        }
+      ]
     },
     {
       "name": "Chosen Rooter & Plumbing",
@@ -2704,10 +3890,20 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide residential and commercial plumbing, drain cleaning, sewer, water-heater, and emergency services to overlapping property-owner and property-manager customers."
+      "rationale": "Residential and commercial plumbing, drain cleaning, and sewer services directly overlap Roto-Rooter\u2019s core home-services offering.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Residential and commercial plumbing, drain cleaning, and sewer services directly overlap Roto-Rooter\u2019s core home-services offering."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are plumbing and drain-cleaning service providers serving residential/commercial customers; direct competitor and comparable on product and market."
+        }
+      ]
     }
   ],
-  "error": null,
-  "relevant_count_at_25": 20,
-  "precision_at_25": 80.0
+  "error": null
 }

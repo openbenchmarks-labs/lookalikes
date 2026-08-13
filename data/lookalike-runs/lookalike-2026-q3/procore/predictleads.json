@@ -2,22 +2,26 @@
   "dataset_slug": "lookalike-2026-q3",
   "seed_slug": "procore",
   "provider_slug": "predictleads",
-  "config_name": "default",
+  "config_name": "paginated",
   "config": {
-    "name": "default",
-    "use_paging": false
+    "name": "paginated",
+    "use_paging": true
   },
   "k": 100,
-  "relevant_count": 15,
-  "precision_at_k": 15.0,
+  "relevant_count": 16,
+  "precision_at_k": 16.0,
   "relevant_count_at_10": 10,
-  "relevant_count_at_100": 15,
+  "relevant_count_at_25": 16,
+  "relevant_count_at_100": 16,
   "precision_at_10": 100.0,
-  "precision_at_100": 15.0,
-  "latency_ms": 695,
+  "precision_at_25": 64.0,
+  "precision_at_100": 16.0,
+  "latency_ms": 756,
   "cost_usd": null,
-  "judge_model": "gpt-5.6",
-  "judged_at": "2026-07-27T01:17:53Z",
+  "duplicates_removed": 0,
+  "max_results": 25,
+  "judge_model": "majority(n=3): claude-opus-5,gpt-5.6-terra,kimi-k3",
+  "judged_at": "2026-08-10T19:31:35Z",
   "candidates": [
     {
       "name": "Autodesk, Inc",
@@ -31,7 +35,19 @@
         "predict_leads_id": "3988ff40-6542-51e9-ac6f-44a098a366ae"
       },
       "relevant": true,
-      "rationale": "Autodesk Construction Cloud overlaps Procore in construction project management, document workflows, and lifecycle coordination for contractors and project teams."
+      "rationale": "Autodesk offers construction collaboration and management software, including Autodesk Construction Cloud, serving overlapping construction-project workflows and buyers.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Autodesk offers construction collaboration and management software, including Autodesk Construction Cloud, serving overlapping construction-project workflows and buyers."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Autodesk Construction Cloud directly competes with Procore in construction project management software, serving same buyers and jobs."
+        }
+      ]
     },
     {
       "name": "Trimble",
@@ -45,7 +61,19 @@
         "predict_leads_id": "f40d926f-ffac-56cd-ae70-7e9659965643"
       },
       "relevant": true,
-      "rationale": "Trimble provides construction management platforms for project coordination, financials, field operations, and contractors, serving substantially the same buyers and workflows as Procore."
+      "rationale": "Trimble offers construction technology, including design, modeling, and project workflows, making it a credible construction-software comparable to Procore.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Trimble offers construction technology, including design, modeling, and project workflows, making it a credible construction-software comparable to Procore."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Trimble sells construction management software (Viewpoint, ProjectSight) competing directly with Procore's construction project-management platform."
+        }
+      ]
     },
     {
       "name": "Bentley Systems, Incorporated",
@@ -59,7 +87,19 @@
         "predict_leads_id": "37028098-8764-59b5-b66c-19ea8d34cc8d"
       },
       "relevant": true,
-      "rationale": "Bentley offers BIM, construction planning, and project-delivery collaboration software evaluated by many of the same contractors and infrastructure project teams as Procore."
+      "rationale": "Bentley provides infrastructure/construction project-delivery, BIM, and collaboration software, making it a credible comparable to Procore\u2019s construction management platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Bentley provides infrastructure/construction project-delivery, BIM, and collaboration software, making it a credible comparable to Procore\u2019s construction management platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both sell construction/infrastructure project delivery and collaboration software to the same AEC buyer; genuine comparables in construction software."
+        }
+      ]
     },
     {
       "name": "Buildertrend Solutions, Inc.",
@@ -73,7 +113,19 @@
         "predict_leads_id": "a6e4c555-fb48-5ad0-bc23-b3bb78d2cce5"
       },
       "relevant": true,
-      "rationale": "Buildertrend offers construction project management software with scheduling, communication, and financial tools, serving overlapping contractor and construction management buyers."
+      "rationale": "Construction management platform with project management, estimating, scheduling, change orders, and document tools for construction professionals.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Construction management platform with project management, estimating, scheduling, change orders, and document tools for construction professionals."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Cloud-based construction project management software (estimating, scheduling, change orders, client communication) \u2014 direct competitor to Procore on product and market."
+        }
+      ]
     },
     {
       "name": "Fieldwire",
@@ -87,7 +139,19 @@
         "predict_leads_id": "97ee1ea2-c582-5357-a22a-f15c80774309"
       },
       "relevant": true,
-      "rationale": "Fieldwire provides construction jobsite and project-management software used by contractors for overlapping field coordination, plans, tasks, and communication workflows."
+      "rationale": "Construction jobsite management platform for contractors, overlapping Procore\u2019s project collaboration, quality, scheduling, and field-operations workflows.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Construction jobsite management platform for contractors, overlapping Procore\u2019s project collaboration, quality, scheduling, and field-operations workflows."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Construction management software for jobsite coordination, task tracking, and quality \u2014 direct competitor to Procore serving same contractors."
+        }
+      ]
     },
     {
       "name": "Bluebeam",
@@ -101,7 +165,19 @@
         "predict_leads_id": "2622e2f0-75d7-5255-a77d-c08a44e31786"
       },
       "relevant": true,
-      "rationale": "Bluebeam provides construction document management, markup, and collaboration software used by the same design and construction teams Procore serves."
+      "rationale": "Bluebeam provides construction project collaboration and workflow software for the same design-and-construction professionals, making it a credible Procore comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Bluebeam provides construction project collaboration and workflow software for the same design-and-construction professionals, making it a credible Procore comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Construction software serving design/construction professionals with project collaboration tools; same market and adjacent product, genuine comparable to Procore."
+        }
+      ]
     },
     {
       "name": "InEight, Inc.",
@@ -115,7 +191,19 @@
         "predict_leads_id": "f094fd2d-40bd-59c9-84c1-a5855d58b10d"
       },
       "relevant": true,
-      "rationale": "InEight provides construction project management and controls software for the same contractors and project teams evaluating Procore."
+      "rationale": "InEight is enterprise construction project-management and project-controls software, directly comparable to Procore for contractors and construction projects.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "InEight is enterprise construction project-management and project-controls software, directly comparable to Procore for contractors and construction projects."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "InEight sells enterprise construction project management and project controls software, directly competing with Procore's construction management platform for the same buyers."
+        }
+      ]
     },
     {
       "name": "Raken, Inc.",
@@ -129,7 +217,19 @@
         "predict_leads_id": "fae54689-72df-5421-91f2-8c7401fa4d00"
       },
       "relevant": true,
-      "rationale": "Raken provides construction field-management software for reporting and time tracking, overlapping Procore\u2019s contractor project-management workflows and buyer persona."
+      "rationale": "Raken provides construction field-management software for daily reports and time tracking, overlapping Procore's contractor project-management and field-operations market.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Raken provides construction field-management software for daily reports and time tracking, overlapping Procore's contractor project-management and field-operations market."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both sell construction management software for field teams; Raken's daily reporting and time tracking overlap Procore's project/field management market directly."
+        }
+      ]
     },
     {
       "name": "STACK Construction Technologies, Inc.",
@@ -143,7 +243,19 @@
         "predict_leads_id": "9af03444-1e10-5b6b-9c30-e53685c073c1"
       },
       "relevant": true,
-      "rationale": "STACK provides cloud construction takeoff, estimating, and project collaboration software, overlapping Procore\u2019s contractor-focused construction management workflows and buyer persona."
+      "rationale": "Cloud construction platform for contractors covering estimating, documents, field collaboration, and project management\u2014directly comparable to Procore.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Cloud construction platform for contractors covering estimating, documents, field collaboration, and project management\u2014directly comparable to Procore."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Cloud-based construction software for contractors (takeoff/estimating/collaboration); same market and product category as Procore's construction management platform."
+        }
+      ]
     },
     {
       "name": "RedTeam Software",
@@ -157,7 +269,19 @@
         "predict_leads_id": "b85f2e8c-a904-5e78-a0b1-14a3111a77f8"
       },
       "relevant": true,
-      "rationale": "RedTeam offers construction project and field management software for general contractors, overlapping Procore\u2019s core product and buyer persona."
+      "rationale": "Construction management platform for contractors, covering project management, financials, field collaboration, and workflows\u2014directly comparable to Procore.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Construction management platform for contractors, covering project management, financials, field collaboration, and workflows\u2014directly comparable to Procore."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "RedTeam is an end-to-end construction management software for contractors covering project management, field, and financials \u2014 a direct Procore competitor."
+        }
+      ]
     },
     {
       "name": "Foundation Software Inc.",
@@ -171,7 +295,19 @@
         "predict_leads_id": "cf5283a7-9db2-5beb-a814-062a5670111e"
       },
       "relevant": true,
-      "rationale": "Foundation offers construction-specific accounting and project management software evaluated by contractors, directly overlapping Procore\u2019s core platform and buyer persona."
+      "rationale": "Construction-specific project management and accounting software directly overlaps Procore\u2019s construction management and financials platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Construction-specific project management and accounting software directly overlaps Procore\u2019s construction management and financials platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Foundation sells construction project management and accounting software \u2014 same product category and buyer as Procore; a direct competitor."
+        }
+      ]
     },
     {
       "name": "CoConstruct, LLC",
@@ -185,7 +321,19 @@
         "predict_leads_id": "f24d93f2-9f95-5517-a75e-3e57c60c1386"
       },
       "relevant": true,
-      "rationale": "CoConstruct offers construction project management software for builders, overlapping Procore\u2019s core workflows and targeting similar construction professionals."
+      "rationale": "Construction management platform for builders and contractors, overlapping Procore\u2019s project, financial, and contractor-management use cases.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Construction management platform for builders and contractors, overlapping Procore\u2019s project, financial, and contractor-management use cases."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Construction management software for builders and contractors, matching Procore on product, market, and business model; direct competitor."
+        }
+      ]
     },
     {
       "name": "Bridgit",
@@ -199,7 +347,19 @@
         "predict_leads_id": "b5eb2d0c-0dce-59e2-8e96-8fe47b00ccbc"
       },
       "relevant": true,
-      "rationale": "Bridgit provides construction workforce planning and resource management software to contractors, overlapping Procore\u2019s construction management platform and buyer persona."
+      "rationale": "Bridgit provides construction workforce and resource-management software for contractors, overlapping Procore's construction-management market and serving the same project teams.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Bridgit provides construction workforce and resource-management software for contractors, overlapping Procore's construction-management market and serving the same project teams."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both sell construction management software to contractors; Bridgit's workforce/resource planning is a peer product in Procore's space, matching product and market axes."
+        }
+      ]
     },
     {
       "name": "Knowify LLC",
@@ -213,7 +373,19 @@
         "predict_leads_id": "73187a45-3cb9-5abe-9555-ef2dceeb7fec"
       },
       "relevant": true,
-      "rationale": "Knowify offers construction management software for trade contractors, overlapping Procore\u2019s project, financial, bidding, and contractor-management workflows for the same buyers."
+      "rationale": "Construction management platform for trade contractors, overlapping Procore\u2019s project, financial, and contractor workflow use cases.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Construction management platform for trade contractors, overlapping Procore\u2019s project, financial, and contractor workflow use cases."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Construction job-management software for trade contractors, combining project management, financials, and service tools \u2014 same product, market, and model as Procore."
+        }
+      ]
     },
     {
       "name": "Oracle Corporation",
@@ -227,7 +399,19 @@
         "predict_leads_id": "26ec5a01-c0a0-52d4-9504-bb30f92546c7"
       },
       "relevant": true,
-      "rationale": "Oracle\u2019s Construction and Engineering suite, including Aconex and Primavera, overlaps Procore\u2019s construction project management offerings and targets the same enterprise construction buyers."
+      "rationale": "Oracle Construction and Engineering offers Primavera and Aconex construction project-management platforms, directly comparable to Procore.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Oracle Construction and Engineering offers Primavera and Aconex construction project-management platforms, directly comparable to Procore."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Oracle's Construction and Engineering suite (Primavera, Aconex) directly competes with Procore in construction project management software."
+        }
+      ]
     },
     {
       "name": "NetSuite Inc.",
@@ -241,7 +425,19 @@
         "predict_leads_id": "9d29cfeb-e2c3-5344-afc2-b753d184f0c9"
       },
       "relevant": false,
-      "rationale": "NetSuite is a broad ERP for business operations, not construction-specific project management software evaluated for Procore\u2019s core job to be done."
+      "rationale": "NetSuite is general ERP/business management software, not construction-specific project management, financials, quality, safety, and contractor operations.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "NetSuite is general ERP/business management software, not construction-specific project management, financials, quality, safety, and contractor operations."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "NetSuite is a generic ERP/business suite, not construction-specific project management; shared cloud-software label insufficient."
+        }
+      ]
     },
     {
       "name": "Clio",
@@ -255,7 +451,19 @@
         "predict_leads_id": "aa4ca06c-8742-53b7-8daf-03f834e508fc"
       },
       "relevant": false,
-      "rationale": "Clio is legal practice-management software; it serves different buyers and jobs than Procore\u2019s construction project-management platform."
+      "rationale": "Clio is legal-practice management software, not construction project-management software; shared vertical-SaaS workflow features do not make it a comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Clio is legal-practice management software, not construction project-management software; shared vertical-SaaS workflow features do not make it a comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Clio is legal practice-management software; different vertical and buyer than Procore's construction management \u2014 generic workflow-SaaS similarity isn't enough."
+        }
+      ]
     },
     {
       "name": "Aderant Holdings, Inc.",
@@ -269,7 +477,19 @@
         "predict_leads_id": "ac9c95e4-a985-5612-9697-4124dd89311c"
       },
       "relevant": false,
-      "rationale": "Aderant provides practice-management and billing software for legal firms, not construction project management; its buyers and core job differ from Procore\u2019s."
+      "rationale": "Aderant provides legal practice management and billing software, serving law firms rather than construction contractors and project teams.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Aderant provides legal practice management and billing software, serving law firms rather than construction contractors and project teams."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Aderant builds legal practice-management software for law firms, not construction management; shared generic features like time tracking don't establish product/market resemblance."
+        }
+      ]
     },
     {
       "name": "Kingdee International",
@@ -283,7 +503,19 @@
         "predict_leads_id": "1548b273-11be-5ebf-9112-21b24ef00992"
       },
       "relevant": false,
-      "rationale": "Kingdee is a general enterprise ERP and financial management vendor, not a construction-focused project management platform serving Procore\u2019s core users."
+      "rationale": "Kingdee is general enterprise ERP and cloud management software, not construction-specific project-management software for contractors and construction workflows.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Kingdee is general enterprise ERP and cloud management software, not construction-specific project-management software for contractors and construction workflows."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Kingdee is a generic ERP/enterprise management vendor with no construction-specific project management product, unlike Procore's construction focus."
+        }
+      ]
     },
     {
       "name": "MODUS Consult AG",
@@ -297,11 +529,155 @@
         "predict_leads_id": "2f88c04d-1a59-5dee-a785-757cf1d6a90f"
       },
       "relevant": false,
-      "rationale": "MODUS Consult is primarily an ERP/IT solutions provider and consultancy, not a construction project-management platform evaluated for Procore\u2019s core use case."
+      "rationale": "Generic process-management and ERP solutions lack a stated construction project-management focus or comparable contractor-facing product.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Generic process-management and ERP solutions lack a stated construction project-management focus or comparable contractor-facing product."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Generic ERP/process-software consultancy and reseller, not construction project-management software; no shared product or market with Procore."
+        }
+      ]
+    },
+    {
+      "name": "Elite Mindz Pvt. Ltd.",
+      "domain": "elitemindz.co",
+      "description": "Both offer AI-powered ERP and management software solutions designed to automate complex enterprise and operational workflows.",
+      "rank": 21,
+      "extra": {
+        "score": 0.8317,
+        "ticker": null,
+        "refreshed_at": "2026-06-30T02:39:03Z",
+        "predict_leads_id": "95c3d0db-cbde-5e79-97b9-4b6353acbd0b"
+      },
+      "relevant": false,
+      "rationale": "Generic AI ERP and workflow software lacks a construction-management focus; it is not a direct construction software competitor or comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Generic AI ERP and workflow software lacks a construction-management focus; it is not a direct construction software competitor or comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Generic AI ERP/custom-software provider with no construction-specific project management, financials, or contractor focus; taxonomy overlap only."
+        }
+      ]
+    },
+    {
+      "name": "Gaea Global Technologies, Inc.",
+      "domain": "gaeaglobal.com",
+      "description": "Both provide specialized technology consulting and software solutions that manage project controls and enterprise planning for construction.",
+      "rank": 22,
+      "extra": {
+        "score": 0.8315,
+        "ticker": null,
+        "refreshed_at": "2026-06-30T02:39:03Z",
+        "predict_leads_id": "79b19439-080c-56ff-9f85-00990f9cab04"
+      },
+      "relevant": false,
+      "rationale": "Gaea Global is primarily a technology consulting and implementation firm, not a construction-management software platform comparable to Procore.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Gaea Global is primarily a technology consulting and implementation firm, not a construction-management software platform comparable to Procore."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Primarily a consulting firm implementing project-controls tools (e.g., Oracle Primavera) for construction, not a competing construction-management software product."
+        }
+      ]
+    },
+    {
+      "name": "Mum Europe",
+      "domain": "mum.de",
+      "description": "Both serve the construction and engineering sector by providing software solutions that facilitate CAD, BIM, and project-based workflows.",
+      "rank": 23,
+      "extra": {
+        "score": 0.8313,
+        "ticker": null,
+        "refreshed_at": "2026-06-30T02:39:03Z",
+        "predict_leads_id": "2f403768-9964-592f-8397-bb7acfd92972"
+      },
+      "relevant": true,
+      "rationale": "Construction/engineering software provider with CAD, BIM, and project workflow tools \u2014 same sector and product category as Procore's construction management platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "MUM Europe is primarily a CAD/BIM software provider and Autodesk partner, not a construction-management platform comparable to Procore."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Construction/engineering software provider with CAD, BIM, and project workflow tools \u2014 same sector and product category as Procore's construction management platform."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Sells CAD/BIM software for construction and engineering projects, a comparable AEC software vendor to Procore."
+        }
+      ]
+    },
+    {
+      "name": "Isystems Group",
+      "domain": "isystems-group.com",
+      "description": "Both provide enterprise-level digital solutions that help companies manage their projects, finance, and operational processes.",
+      "rank": 24,
+      "extra": {
+        "score": 0.8312,
+        "ticker": null,
+        "refreshed_at": "2026-06-30T02:39:03Z",
+        "predict_leads_id": "bc673dab-69cd-5b7b-bb18-403d8e35d36d"
+      },
+      "relevant": false,
+      "rationale": "Generic enterprise digital-solutions provider; no evidence of construction-specific project-management software or a comparable construction-operations platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Generic enterprise digital-solutions provider; no evidence of construction-specific project-management software or a comparable construction-operations platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Generic enterprise ERP/business-solutions provider with no construction-specific project management product; resemblance is only a vague keyword overlap, not a peer to Procore."
+        }
+      ]
+    },
+    {
+      "name": "Cloud Odyssey",
+      "domain": "cloudodyssey.com",
+      "description": "Both offer technology-focused service solutions that assist global businesses in digital transformation through cloud platforms.",
+      "rank": 25,
+      "extra": {
+        "score": 0.831,
+        "ticker": null,
+        "refreshed_at": "2026-06-30T02:39:03Z",
+        "predict_leads_id": "b3061fe1-771e-481a-9e72-e15d569ffa14"
+      },
+      "relevant": false,
+      "rationale": "Cloud Odyssey provides cloud/digital-transformation consulting, not construction-specific project, financial, quality, or safety management software.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Cloud Odyssey provides cloud/digital-transformation consulting, not construction-specific project, financial, quality, or safety management software."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Cloud Odyssey is a cloud/Salesforce digital-transformation consultancy, not construction management software; serves the category as services, not a competitor."
+        }
+      ]
     }
   ],
-  "error": null,
-  "max_results": 25,
-  "relevant_count_at_25": 15,
-  "precision_at_25": 60.0
+  "error": null
 }

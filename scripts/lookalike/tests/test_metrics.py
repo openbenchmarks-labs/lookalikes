@@ -16,9 +16,10 @@ import sys
 from lookalike.common import Candidate, JudgedCandidate
 from lookalike import metrics
 
-REPO_ROOT = os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__)))))
-with open(os.path.join(REPO_ROOT, "data", "latest-lookalike.json"), encoding="utf-8") as _snapshot_file:
-    DATASET_DIR = os.path.join(REPO_ROOT, "data", "lookalike-runs", json.load(_snapshot_file)["dataset_slug"])
+DATASET_DIR = os.path.join(
+    os.path.dirname(os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))),
+    "data", "lookalike-runs", "lookalike-2026-q2",
+)
 
 
 def _judged_from_slim(cands: list[dict]) -> list[JudgedCandidate]:

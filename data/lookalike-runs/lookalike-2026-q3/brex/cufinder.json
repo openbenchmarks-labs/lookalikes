@@ -7,18 +7,20 @@
     "name": "domain_lookalikes"
   },
   "k": 100,
-  "relevant_count": 4,
-  "precision_at_k": 4.0,
-  "relevant_count_at_10": 4,
-  "relevant_count_at_100": 4,
-  "precision_at_10": 40.0,
-  "precision_at_100": 4.0,
+  "relevant_count": 2,
+  "precision_at_k": 2.0,
+  "relevant_count_at_10": 2,
+  "relevant_count_at_25": 2,
+  "relevant_count_at_100": 2,
+  "precision_at_10": 20.0,
+  "precision_at_25": 8.0,
+  "precision_at_100": 2.0,
   "latency_ms": 323,
   "cost_usd": null,
   "duplicates_removed": 0,
   "max_results": 10,
-  "judge_model": "gpt-5.6",
-  "judged_at": "2026-07-27T03:31:21Z",
+  "judge_model": "majority(n=3): claude-opus-5,gpt-5.6-terra,kimi-k3",
+  "judged_at": "2026-08-10T19:26:53Z",
   "candidates": [
     {
       "name": "anthropic",
@@ -34,7 +36,19 @@
         "confidence_level": 99
       },
       "relevant": false,
-      "rationale": "Anthropic provides AI models and assistants, not corporate cards, expense management, or financial operations tools evaluated by Brex buyers."
+      "rationale": "Anthropic builds AI models and assistants, not corporate cards, spend management, travel, bill pay, or financial operations software.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Anthropic builds AI models and assistants, not corporate cards, spend management, travel, bill pay, or financial operations software."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "AI research company building an AI assistant; no corporate cards, expense management, or fintech product overlap with Brex."
+        }
+      ]
     },
     {
       "name": "capital one",
@@ -49,8 +63,20 @@
         "country": "united states",
         "confidence_level": 99
       },
-      "relevant": true,
-      "rationale": "Capital One offers business credit cards that company finance teams may evaluate alongside Brex for corporate spending, despite its broader banking model."
+      "relevant": false,
+      "rationale": "Capital One is primarily a consumer and commercial bank; its broad banking offering is not a dedicated corporate spend-management platform like Brex.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Capital One is primarily a consumer and commercial bank; its broad banking offering is not a dedicated corporate spend-management platform like Brex."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Capital One is a general consumer/commercial bank; corporate card/expense-management platform is not its primary product, unlike Brex's fintech spend-management model."
+        }
+      ]
     },
     {
       "name": "coinbase",
@@ -66,7 +92,19 @@
         "confidence_level": 99
       },
       "relevant": false,
-      "rationale": "Coinbase is primarily a crypto exchange and digital-asset infrastructure platform, not a corporate card, expense, travel, or spend-management solution."
+      "rationale": "Coinbase is a cryptocurrency exchange and custody platform, not a corporate-card, expense-management, travel, or business-spend platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Coinbase is a cryptocurrency exchange and custody platform, not a corporate-card, expense-management, travel, or business-spend platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Coinbase is a crypto exchange/custody platform; Brex is corporate cards and spend management. Different products, markets, and buyers \u2014 no meaningful overlap."
+        }
+      ]
     },
     {
       "name": "deel",
@@ -82,7 +120,19 @@
         "confidence_level": 99
       },
       "relevant": false,
-      "rationale": "Deel primarily provides global HR, payroll, and workforce management, not corporate cards, expense management, or financial operations for the same purchasing need."
+      "rationale": "Deel is a global HR, payroll, and workforce-management platform, not a corporate-card, spend-management, travel, or financial-operations competitor.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Deel is a global HR, payroll, and workforce-management platform, not a corporate-card, spend-management, travel, or financial-operations competitor."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Deel is a global HR/payroll platform; Brex is corporate cards and spend management. Different product and buyer (HR vs finance), no strong axis overlap."
+        }
+      ]
     },
     {
       "name": "mercury",
@@ -98,7 +148,19 @@
         "confidence_level": 99
       },
       "relevant": true,
-      "rationale": "Mercury offers business banking, corporate cards, bill pay, and financial workflows to startups, overlapping Brex\u2019s financial operations platform and buyers."
+      "rationale": "Mercury is a fintech financial-operations platform for startups, offering business banking and spend controls comparable to Brex\u2019s corporate finance suite.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Mercury is a fintech financial-operations platform for startups, offering business banking and spend controls comparable to Brex\u2019s corporate finance suite."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Mercury offers business banking and financial workflow platform for companies, directly competing with Brex's corporate cards and financial operations platform."
+        }
+      ]
     },
     {
       "name": "plaid",
@@ -114,7 +176,19 @@
         "confidence_level": 99
       },
       "relevant": false,
-      "rationale": "Plaid provides financial-data connectivity infrastructure, not corporate cards or spend-management software; buyers and jobs to be done differ."
+      "rationale": "Plaid provides financial-account connectivity infrastructure to fintech apps; it is not a corporate card, spend-management, or financial-operations platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Plaid provides financial-account connectivity infrastructure to fintech apps; it is not a corporate card, spend-management, or financial-operations platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Plaid is fintech data infrastructure connecting bank accounts to apps, not a corporate card or spend-management platform; different product and buyer."
+        }
+      ]
     },
     {
       "name": "posthog",
@@ -130,7 +204,19 @@
         "confidence_level": 99
       },
       "relevant": false,
-      "rationale": "PostHog provides product analytics and experimentation software, not corporate cards, spend management, or financial operations tools."
+      "rationale": "PostHog is a product analytics and experimentation platform, not a corporate-card, spend-management, or financial-operations product.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "PostHog is a product analytics and experimentation platform, not a corporate-card, spend-management, or financial-operations product."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "PostHog is a product analytics platform for developers; Brex is a corporate card and spend-management fintech. No overlap on product, market, or model."
+        }
+      ]
     },
     {
       "name": "ramp",
@@ -146,7 +232,19 @@
         "confidence_level": 99
       },
       "relevant": true,
-      "rationale": "Ramp directly overlaps Brex in corporate cards, expense management, bill pay, travel, and financial operations for business finance teams."
+      "rationale": "Ramp directly competes with Brex in corporate cards, expense management, bill pay, travel, and finance-operations software.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Ramp directly competes with Brex in corporate cards, expense management, bill pay, travel, and finance-operations software."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Direct competitor: corporate cards, expense management, bill pay, and financial operations platform \u2014 identical product, market, and business model."
+        }
+      ]
     },
     {
       "name": "rippling",
@@ -161,8 +259,25 @@
         "country": "united states",
         "confidence_level": 99
       },
-      "relevant": true,
-      "rationale": "Rippling\u2019s business software suite includes expense management, overlapping Brex\u2019s spend platform and serving the same finance and operations buyers."
+      "relevant": false,
+      "rationale": "Rippling's primary product is HR/payroll/workforce management; expense features are secondary, so it is not a genuine Brex comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Rippling offers business expense management alongside payroll and workforce tools, overlapping Brex\u2019s spend-management and financial-operations use case."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Rippling's primary product is HR/payroll/workforce management; expense features are secondary, so it is not a genuine Brex comparable."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "judge error: Unterminated string starting at: line 1 column 33 (char 32)"
+        }
+      ]
     },
     {
       "name": "stripe",
@@ -178,10 +293,20 @@
         "confidence_level": 99
       },
       "relevant": false,
-      "rationale": "Stripe primarily provides merchant payment infrastructure, while Brex focuses on corporate cards and spend management; buyers would not evaluate them for the same job."
+      "rationale": "Stripe primarily provides payment-processing infrastructure, not corporate cards and spend-management financial operations for businesses.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Stripe primarily provides payment-processing infrastructure, not corporate cards and spend-management financial operations for businesses."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Stripe is primarily a payments-acceptance processor, not a corporate-card/expense-management platform; analogous to the Shopify\u2194payment-processor example."
+        }
+      ]
     }
   ],
-  "error": null,
-  "relevant_count_at_25": 4,
-  "precision_at_25": 16.0
+  "error": null
 }

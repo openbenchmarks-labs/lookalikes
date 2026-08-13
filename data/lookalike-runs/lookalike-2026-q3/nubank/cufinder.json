@@ -10,15 +10,17 @@
   "relevant_count": 7,
   "precision_at_k": 7.0,
   "relevant_count_at_10": 7,
+  "relevant_count_at_25": 7,
   "relevant_count_at_100": 7,
   "precision_at_10": 70.0,
+  "precision_at_25": 28.0,
   "precision_at_100": 7.0,
   "latency_ms": 329,
   "cost_usd": null,
   "duplicates_removed": 0,
   "max_results": 10,
-  "judge_model": "gpt-5.6",
-  "judged_at": "2026-07-27T03:31:40Z",
+  "judge_model": "majority(n=3): claude-opus-5,gpt-5.6-terra,kimi-k3",
+  "judged_at": "2026-08-10T19:46:09Z",
   "candidates": [
     {
       "name": "ambev",
@@ -34,7 +36,19 @@
         "confidence_level": 94
       },
       "relevant": false,
-      "rationale": "Ambev is a beverage producer, not a digital bank or fintech offering comparable consumer financial services."
+      "rationale": "Ambev is a beverage manufacturer and distributor, not a digital bank or fintech financial-services platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Ambev is a beverage manufacturer and distributor, not a digital bank or fintech financial-services platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Ambev is a beverage/brewery company; Nubank is a digital bank. No product, market, or business-model overlap."
+        }
+      ]
     },
     {
       "name": "banco bradesco",
@@ -50,7 +64,19 @@
         "confidence_level": 94
       },
       "relevant": true,
-      "rationale": "Both are Brazilian retail banks offering accounts, cards, lending, payments, and related financial services to overlapping customers."
+      "rationale": "Bradesco is a retail bank offering comparable accounts, cards, lending, payments, and financial services in Brazil.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Bradesco is a retail bank offering comparable accounts, cards, lending, payments, and financial services in Brazil."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Major Brazilian retail bank offering same products (accounts, cards, lending) to same customers as Nubank; direct competitor in Brazilian banking."
+        }
+      ]
     },
     {
       "name": "c6 bank",
@@ -66,7 +92,19 @@
         "confidence_level": 94
       },
       "relevant": true,
-      "rationale": "C6 Bank is a Brazilian digital bank offering accounts, cards, payments, and other financial services to the same consumer banking market."
+      "rationale": "C6 Bank is a Brazilian digital bank offering comparable consumer banking and fintech services, directly resembling Nubank's product and business model.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "C6 Bank is a Brazilian digital bank offering comparable consumer banking and fintech services, directly resembling Nubank's product and business model."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "C6 Bank is a Brazilian digital bank offering accounts, cards, and lending \u2014 direct competitor to Nubank on product, market, and model."
+        }
+      ]
     },
     {
       "name": "grupo botic\u00e1rio",
@@ -82,7 +120,19 @@
         "confidence_level": 94
       },
       "relevant": false,
-      "rationale": "Grupo Botic\u00e1rio is a cosmetics manufacturer and beauty retailer, not a digital bank or fintech offering comparable financial services."
+      "rationale": "Grupo Botic\u00e1rio is a cosmetics and beauty-products manufacturer/retailer, not a digital bank or fintech financial-services platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Grupo Botic\u00e1rio is a cosmetics and beauty-products manufacturer/retailer, not a digital bank or fintech financial-services platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Cosmetics and beauty products group; no overlap with Nubank's digital banking and fintech services."
+        }
+      ]
     },
     {
       "name": "santander brasil",
@@ -98,7 +148,19 @@
         "confidence_level": 94
       },
       "relevant": true,
-      "rationale": "Both provide Brazilian consumers and businesses with bank accounts, cards, lending, payments, and related financial services for the same banking needs."
+      "rationale": "Santander Brasil is a bank offering comparable consumer financial services, including accounts, cards, lending, and payments.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Santander Brasil is a bank offering comparable consumer financial services, including accounts, cards, lending, and payments."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Full-service Brazilian retail bank offering accounts, cards, lending, payments \u2014 direct competitor to Nubank in the same market with the same products."
+        }
+      ]
     },
     {
       "name": "ifood",
@@ -114,7 +176,19 @@
         "confidence_level": 94
       },
       "relevant": false,
-      "rationale": "iFood is primarily a food-delivery and convenience marketplace, not a digital banking platform offering comparable financial products to the same users."
+      "rationale": "iFood is a food-delivery and convenience marketplace, not a digital banking or broad fintech platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "iFood is a food-delivery and convenience marketplace, not a digital banking or broad fintech platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "iFood is a food-delivery marketplace, not a digital bank or fintech; no product, market, or model overlap with Nubank."
+        }
+      ]
     },
     {
       "name": "inter",
@@ -130,7 +204,19 @@
         "confidence_level": 94
       },
       "relevant": true,
-      "rationale": "Inter is a Brazilian digital bank offering accounts, cards, payments, and lending, directly overlapping Nubank\u2019s products and customer use cases."
+      "rationale": "Banco Inter is a Brazilian digital bank offering accounts, cards, payments, lending, and related fintech services, directly comparable to Nubank.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Banco Inter is a Brazilian digital bank offering accounts, cards, payments, lending, and related fintech services, directly comparable to Nubank."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Banco Inter: Brazilian digital bank offering accounts, cards, lending, investments \u2014 direct Nubank competitor on product, market, and model."
+        }
+      ]
     },
     {
       "name": "ita\u00fa unibanco",
@@ -146,7 +232,19 @@
         "confidence_level": 94
       },
       "relevant": true,
-      "rationale": "Both are Latin American banks offering overlapping accounts, cards, lending, payments, and financial services to similar customers."
+      "rationale": "Ita\u00fa Unibanco is a Brazilian bank offering overlapping consumer banking, cards, lending, payments, and financial services.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Ita\u00fa Unibanco is a Brazilian bank offering overlapping consumer banking, cards, lending, payments, and financial services."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Brazilian full-service bank offering cards, accounts, lending, and payments to the same Latin American consumers; direct competitor to Nubank."
+        }
+      ]
     },
     {
       "name": "mercado livre brasil",
@@ -162,7 +260,19 @@
         "confidence_level": 94
       },
       "relevant": true,
-      "rationale": "Mercado Livre\u2019s Mercado Pago fintech offers digital accounts, cards, payments, and credit, overlapping Nubank\u2019s core financial services for Latin American users."
+      "rationale": "Mercado Libre's Mercado Pago ecosystem provides payments, credit, and financial services in Latin America, making it a meaningful fintech comparable to Nubank.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Mercado Libre's Mercado Pago ecosystem provides payments, credit, and financial services in Latin America, making it a meaningful fintech comparable to Nubank."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Mercado Libre's fintech arm (Mercado Pago/cr\u00e9dito) offers digital accounts, payments, and lending across Latin America, directly competing with Nubank."
+        }
+      ]
     },
     {
       "name": "picpay",
@@ -178,10 +288,20 @@
         "confidence_level": 94
       },
       "relevant": true,
-      "rationale": "PicPay is a Brazilian digital bank offering overlapping payments, credit, investments, and app-based financial services to similar consumers and entrepreneurs."
+      "rationale": "PicPay is a Brazilian digital bank offering payments, credit, investments, insurance, and consumer financial services, directly comparable to Nubank.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "PicPay is a Brazilian digital bank offering payments, credit, investments, insurance, and consumer financial services, directly comparable to Nubank."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Brazilian digital bank offering payments, credit, accounts, and investments in one app \u2014 direct competitor to Nubank on product, market, and model."
+        }
+      ]
     }
   ],
-  "error": null,
-  "relevant_count_at_25": 7,
-  "precision_at_25": 28.0
+  "error": null
 }

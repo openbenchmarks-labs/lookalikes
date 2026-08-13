@@ -42,8 +42,17 @@ The minimum needed to render a row in the matrix. Only the winning config's norm
       "description": "Customer-feedback platform...",
       "rank": 1,
       "extra": { "linkedin_url": "...", "employee_count": 12 },
-      "relevant": true,                    // judge verdict
-      "rationale": "Same B2B feedback/support category..."   // judge reasoning
+      "relevant": true,                    // panel verdict, by strict majority
+      "anchor_match": true,                // cleared the hard anchor gate
+      "capabilities_matched": [            // any-of overlap with the seed's capabilities
+        "payments", "online ordering"
+      ],
+      "rationale": "Anchor true: restaurant POS platform; overlaps payments and online ordering.",
+      "votes": [                           // per-judge breakdown behind the majority
+        { "judge_model": "claude-opus-5",  "relevant": true,  "rationale": "..." },
+        { "judge_model": "gpt-5.6-terra",  "relevant": true,  "rationale": "..." },
+        { "judge_model": "kimi-k3",        "relevant": false, "rationale": "..." }
+      ]
     },
     ... 9 more
   ],
@@ -103,23 +112,35 @@ The full audit trail. Captures **every config the orchestrator swept** (not just
         ... K candidates
       ],
 
-      // Every LLM round-trip. One per candidate. `messages` is the
-      // literal prompt; `raw_response` is the JSON the model emitted
-      // before pydantic parsing.
+      // Every LLM round-trip. One per judge per candidate, so a gated
+      // three-model panel emits two calls for an agreed candidate and three
+      // when the first two disagree. `messages` is the literal prompt;
+      // `raw_response` is the JSON the model emitted before pydantic parsing.
+      //
+      // The `relevant` flag published in the slim file is NOT taken from the
+      // model: it is recomputed in code from `anchor_match` and
+      // `capabilities_matched`, so a judge cannot mark a candidate relevant
+      // while failing the anchor.
       "judge_calls": [
         {
-          "model": "gpt-5.4-mini",
+          "model": "gpt-5.6-terra",
           "messages": [
-            { "role": "system", "content": "You are an evaluator..." },
-            { "role": "user", "content": "SEED:\n  name: Pylon\n  ...\n\nCANDIDATE:\n  name: ...\n  ..." }
+            { "role": "system", "content": "You are an evaluator...\n\nSEED:\n  ANCHOR (hard requirement): ...\n  CAPABILITIES (match any subset): ..." },
+            { "role": "user", "content": "CANDIDATE:\n  name: ...\n  ..." }
           ],
-          "raw_response": "{\"relevant\":true,\"rationale\":\"...\"}",
-          "parsed_response": { "relevant": true, "rationale": "..." },
-          "elapsed_ms": 1283,
-          "for_candidate_rank": 1,
-          "error": null
+          "raw_response": "{\"anchor_match\":true,\"capabilities_matched\":[...],\"relevant\":true,\"rationale\":\"...\"}",
+          "parsed_response": {
+            "anchor_match": true,
+            "capabilities_matched": ["payments", "online ordering"],
+            "relevant": true,
+            "rationale": "Anchor true: restaurant POS platform; overlaps payments and online ordering."
+          },
+          "elapsed_ms": 1744,
+          "for_candidate_rank": 4,
+          "error": null,
+          "cached": false                  // true when reused from the in-run verdict cache
         },
-        ... 9 more (one per candidate)
+        ... one per judge × candidate
       ],
 
       "result": {

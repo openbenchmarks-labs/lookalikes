@@ -8,20 +8,20 @@
     "use_paging": true
   },
   "k": 100,
-  "relevant_count": 12,
-  "precision_at_k": 12.0,
+  "relevant_count": 14,
+  "precision_at_k": 14.0,
   "relevant_count_at_10": 9,
-  "relevant_count_at_25": 12,
-  "relevant_count_at_100": 12,
+  "relevant_count_at_25": 14,
+  "relevant_count_at_100": 14,
   "precision_at_10": 90.0,
-  "precision_at_25": 48.0,
-  "precision_at_100": 12.0,
+  "precision_at_25": 56.0,
+  "precision_at_100": 14.0,
   "latency_ms": 772,
   "cost_usd": null,
   "duplicates_removed": 0,
   "max_results": 25,
-  "judge_model": "gpt-5.6",
-  "judged_at": "2026-07-27T06:52:59Z",
+  "judge_model": "majority(n=3): claude-opus-5,gpt-5.6-terra,kimi-k3",
+  "judged_at": "2026-08-10T20:15:36Z",
   "candidates": [
     {
       "name": "Dassault Syst\u00e8mes",
@@ -35,7 +35,19 @@
         "predict_leads_id": "efb2f9b0-476b-5d12-b6a2-964fc08df8ba"
       },
       "relevant": true,
-      "rationale": "Dassault Syst\u00e8mes directly overlaps PTC in CAD, 3D modeling, PLM, and industrial digital-transformation software for engineering and manufacturing buyers."
+      "rationale": "Dassault Syst\u00e8mes directly competes in industrial CAD, PLM, simulation, and digital-twin software through its 3DEXPERIENCE platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Dassault Syst\u00e8mes directly competes in industrial CAD, PLM, simulation, and digital-twin software through its 3DEXPERIENCE platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Direct competitor: sells CAD, PLM, and 3D industrial software (3DEXPERIENCE/CATIA/SOLIDWORKS) to the same manufacturing buyers as PTC."
+        }
+      ]
     },
     {
       "name": "Autodesk, Inc",
@@ -49,7 +61,19 @@
         "predict_leads_id": "3988ff40-6542-51e9-ac6f-44a098a366ae"
       },
       "relevant": true,
-      "rationale": "Autodesk and PTC both sell CAD and 3D engineering software to product-development and manufacturing teams for overlapping design workflows."
+      "rationale": "Autodesk directly competes in CAD and product-design/manufacturing software, overlapping PTC\u2019s core industrial design and digital-transformation markets.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Autodesk directly competes in CAD and product-design/manufacturing software, overlapping PTC\u2019s core industrial design and digital-transformation markets."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both sell industrial design software: Autodesk's CAD (AutoCAD, Fusion 360) directly competes with PTC's Creo CAD and PLM offerings."
+        }
+      ]
     },
     {
       "name": "ANSYS, Inc.",
@@ -63,7 +87,19 @@
         "predict_leads_id": "493b3040-b909-5199-83a9-172a3442d541"
       },
       "relevant": true,
-      "rationale": "ANSYS provides engineering simulation software used by product-development teams alongside PTC\u2019s CAD and PLM offerings for overlapping lifecycle engineering workflows."
+      "rationale": "ANSYS engineering simulation software is a close industrial-software comparable supporting product design and lifecycle workflows alongside PTC CAD and PLM.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "ANSYS engineering simulation software is a close industrial-software comparable supporting product design and lifecycle workflows alongside PTC CAD and PLM."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both sell engineering/industrial software (CAD/PLM vs simulation/CAE) to the same manufacturing product-development buyers \u2014 direct peers and comparables."
+        }
+      ]
     },
     {
       "name": "AVEVA Group",
@@ -77,7 +113,19 @@
         "predict_leads_id": "1c7f4903-5905-568f-be39-df5b48c990d2"
       },
       "relevant": true,
-      "rationale": "AVEVA offers industrial engineering and operations software for manufacturers, overlapping PTC\u2019s digital-transformation offerings and targeting similar engineering and operations buyers."
+      "rationale": "AVEVA and PTC both provide industrial software for engineering, asset lifecycle, connected operations, and digital transformation to enterprise manufacturers.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "AVEVA and PTC both provide industrial software for engineering, asset lifecycle, connected operations, and digital transformation to enterprise manufacturers."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are industrial software vendors serving manufacturing/engineering digital transformation \u2014 direct competitors in CAD-adjacent, PLM, and operations software."
+        }
+      ]
     },
     {
       "name": "Honeywell International, Inc.",
@@ -91,7 +139,24 @@
         "predict_leads_id": "40767561-119f-5b73-b91a-d169c3f6c6ec"
       },
       "relevant": true,
-      "rationale": "Honeywell\u2019s industrial IoT and manufacturing-operations software overlaps PTC\u2019s ThingWorx offerings and targets similar industrial digital-transformation buyers."
+      "rationale": "Honeywell offers industrial automation and connected-enterprise software overlapping PTC's IoT and digital-transformation solutions for manufacturing operations.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Honeywell offers industrial automation and connected-enterprise software overlapping PTC's IoT and digital-transformation solutions for manufacturing operations."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Diversified industrial/aerospace hardware conglomerate; industrial software is a side offering, not primary product \u2014 no CAD/PLM, so resemblance is weak."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Honeywell sells industrial automation/digital software plus hardware to manufacturers; overlapping industrial software market makes it a rough comparable."
+        }
+      ]
     },
     {
       "name": "Siemens AG",
@@ -105,7 +170,19 @@
         "predict_leads_id": "cfd3aa27-bbfb-5848-b2ad-89bc4f032b7b"
       },
       "relevant": true,
-      "rationale": "Siemens offers competing CAD, PLM, industrial IoT, and digital-manufacturing software evaluated by the same engineering and manufacturing buyers as PTC."
+      "rationale": "Siemens Digital Industries offers industrial automation, digital-twin, PLM, and IoT software overlapping PTC\u2019s manufacturing digital-transformation portfolio.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Siemens Digital Industries offers industrial automation, digital-twin, PLM, and IoT software overlapping PTC\u2019s manufacturing digital-transformation portfolio."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Siemens' industrial software business (NX CAD, Teamcenter PLM, industrial IoT) directly competes with PTC's core product lines."
+        }
+      ]
     },
     {
       "name": "Rockwell Automation, Inc.",
@@ -119,7 +196,19 @@
         "predict_leads_id": "e3e60996-6f83-5305-a8b6-bab4f513c138"
       },
       "relevant": true,
-      "rationale": "Both sell industrial IoT and digital-manufacturing platforms to manufacturers seeking connected operations and OT/IT integration."
+      "rationale": "Rockwell Automation offers industrial automation and digital manufacturing software, overlapping PTC's IIoT and digital-transformation markets for industrial customers.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Rockwell Automation offers industrial automation and digital manufacturing software, overlapping PTC's IIoT and digital-transformation markets for industrial customers."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both provide industrial digital-transformation software (IoT, connected manufacturing) to the same manufacturing buyers; direct comparables in industrial tech."
+        }
+      ]
     },
     {
       "name": "Bentley Systems, Incorporated",
@@ -133,7 +222,19 @@
         "predict_leads_id": "37028098-8764-59b5-b66c-19ea8d34cc8d"
       },
       "relevant": true,
-      "rationale": "Bentley offers engineering modeling, digital twin, and lifecycle software that overlaps PTC\u2019s CAD/PLM portfolio and serves similar industrial engineering buyers."
+      "rationale": "Bentley and PTC both provide engineering design, lifecycle-management, and digital-twin software for industrial/infrastructure customers.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Bentley and PTC both provide engineering design, lifecycle-management, and digital-twin software for industrial/infrastructure customers."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are industrial-software companies selling CAD/modeling, lifecycle, and digital-twin platforms; genuine competitors/comparables on product and market."
+        }
+      ]
     },
     {
       "name": "Aspentech",
@@ -147,7 +248,19 @@
         "predict_leads_id": "93ace49a-181b-5175-b370-d3a1d8560f1a"
       },
       "relevant": true,
-      "rationale": "Both sell industrial engineering and asset-performance software to manufacturers and process industries, overlapping in operational optimization and digital transformation use cases."
+      "rationale": "AspenTech is industrial software for engineering, asset performance, and digital operations, overlapping PTC's industrial IoT and lifecycle-management markets.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "AspenTech is industrial software for engineering, asset performance, and digital operations, overlapping PTC's industrial IoT and lifecycle-management markets."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "AspenTech sells industrial software (asset performance, process engineering) to the same industrial-enterprise buyers as PTC; genuine competitor/comparable on market and product axes."
+        }
+      ]
     },
     {
       "name": "Tata Technologies",
@@ -161,7 +274,19 @@
         "predict_leads_id": "cf252d8c-2fae-567d-9b60-b2897e3f63f0"
       },
       "relevant": false,
-      "rationale": "Tata Technologies primarily provides engineering and digital-transformation services, rather than offering a competing industrial-software platform for CAD, PLM, IoT, or SLM."
+      "rationale": "Tata Technologies is primarily an engineering-services provider to manufacturers, not an industrial software platform comparable to PTC\u2019s CAD, PLM, IoT, and SLM products.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Tata Technologies is primarily an engineering-services provider to manufacturers, not an industrial software platform comparable to PTC\u2019s CAD, PLM, IoT, and SLM products."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Engineering-services/product-development outsourcing firm for manufacturers, not industrial software (CAD/PLM/IoT) vendor; serves the category rather than competing with PTC."
+        }
+      ]
     },
     {
       "name": "L&T Technology Services Limited",
@@ -175,7 +300,19 @@
         "predict_leads_id": "3a4d6577-3b91-5923-a3c9-8a769fda0618"
       },
       "relevant": false,
-      "rationale": "LTTS primarily provides engineering R&D services, while PTC sells industrial software platforms; buyers would not evaluate them for the same job."
+      "rationale": "L&T Technology Services is an engineering and digital-transformation consultancy, not a vendor of CAD, PLM, IoT, or service-lifecycle software platforms.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "L&T Technology Services is an engineering and digital-transformation consultancy, not a vendor of CAD, PLM, IoT, or service-lifecycle software platforms."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Engineering-services and consulting firm serving manufacturers, not a CAD/PLM/IoT software product vendor \u2014 serves the category rather than competing in it."
+        }
+      ]
     },
     {
       "name": "Cenit Ag",
@@ -189,7 +326,19 @@
         "predict_leads_id": "6aefc2f6-880b-52f9-a966-3ade476377e2"
       },
       "relevant": false,
-      "rationale": "CENIT primarily implements and consults on third-party PLM systems rather than offering a competing core PLM platform evaluated for the same purchase."
+      "rationale": "CENIT primarily provides PLM consulting and implementation services, making it a service partner rather than a competing industrial-software platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "CENIT primarily provides PLM consulting and implementation services, making it a service partner rather than a competing industrial-software platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "CENIT is a PLM consulting/implementation firm (often reselling others' software), not a PLM software vendor competing with PTC."
+        }
+      ]
     },
     {
       "name": "Sarlatech",
@@ -203,7 +352,19 @@
         "predict_leads_id": "383a1597-6570-554d-bfd7-1df02b6968b3"
       },
       "relevant": false,
-      "rationale": "Sarlatech provides engineering and automation services, not a CAD/PLM/IoT industrial software platform evaluated for the same job."
+      "rationale": "Sarlatech provides engineering and automation services, whereas PTC sells industrial software platforms; it is a services provider, not a direct comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Sarlatech provides engineering and automation services, whereas PTC sells industrial software platforms; it is a services provider, not a direct comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Engineering/automation services firm, not industrial-software products; serves manufacturers as a consultancy rather than competing with PTC's CAD/PLM software."
+        }
+      ]
     },
     {
       "name": "ARKANCE Company",
@@ -217,7 +378,19 @@
         "predict_leads_id": "e5444524-9c45-593c-a3d1-51dbc33cc8ca"
       },
       "relevant": false,
-      "rationale": "ARKANCE primarily resells and implements third-party AEC/manufacturing software, whereas PTC develops core industrial software platforms; buyers would not evaluate them equivalently."
+      "rationale": "ARKANCE is a technology reseller and implementation partner, not an industrial software platform vendor competing with PTC\u2019s CAD, PLM, IoT, or SLM products.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "ARKANCE is a technology reseller and implementation partner, not an industrial software platform vendor competing with PTC\u2019s CAD, PLM, IoT, or SLM products."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Arkance is an Autodesk reseller/integration partner serving AEC and manufacturing\u2014a channel/services partner, not a software vendor competing with PTC's CAD/PLM products."
+        }
+      ]
     },
     {
       "name": "Flex",
@@ -231,7 +404,19 @@
         "predict_leads_id": "4f077ffc-26d8-5fbb-a0d7-77ff5cc24a90"
       },
       "relevant": false,
-      "rationale": "Flex is primarily an electronics manufacturing and supply-chain services provider, not a CAD, PLM, or industrial-software platform evaluated for the same job."
+      "rationale": "Flex is a contract manufacturer and supply-chain services provider, whereas PTC sells industrial software platforms; it is a customer/partner-type company, not a peer.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Flex is a contract manufacturer and supply-chain services provider, whereas PTC sells industrial software platforms; it is a customer/partner-type company, not a peer."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Flex is an electronics contract manufacturer (EMS), not industrial software; it's a potential PTC customer, not a competitor or comparable."
+        }
+      ]
     },
     {
       "name": "Emerson",
@@ -244,8 +429,20 @@
         "refreshed_at": "2026-06-29T00:06:13Z",
         "predict_leads_id": "2545cc80-0140-5878-8e91-2b85070e0363"
       },
-      "relevant": false,
-      "rationale": "Emerson primarily sells industrial automation and control systems, not CAD/PLM or engineering lifecycle software evaluated for the same core jobs."
+      "relevant": true,
+      "rationale": "Emerson\u2019s industrial automation and software offerings overlap with PTC in serving manufacturers\u2019 digital-transformation and operational-efficiency needs.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Emerson\u2019s industrial automation and software offerings overlap with PTC in serving manufacturers\u2019 digital-transformation and operational-efficiency needs."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Emerson sells industrial automation and software for manufacturing environments, overlapping PTC's industrial-software/IoT market and buyer persona as a comparable peer."
+        }
+      ]
     },
     {
       "name": "Schneider Electric",
@@ -259,7 +456,24 @@
         "predict_leads_id": "b030381a-d9e5-5d6e-a30c-ed5df3ecf6c3"
       },
       "relevant": false,
-      "rationale": "Schneider primarily sells energy-management and industrial-automation systems, while PTC centers on CAD, PLM, IoT, and lifecycle software; direct evaluation overlap is limited."
+      "rationale": "Schneider Electric is primarily electrical equipment and energy-management hardware; lacks PTC's core CAD/PLM industrial-software products, overlap only peripheral.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both provide industrial digital-transformation software to manufacturers and infrastructure operators, overlapping in IoT, automation, engineering, and operational software markets."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Schneider Electric is primarily electrical equipment and energy-management hardware; lacks PTC's core CAD/PLM industrial-software products, overlap only peripheral."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "Schneider Electric is primarily an electrical equipment/energy management hardware maker, not a CAD/PLM industrial software vendor like PTC."
+        }
+      ]
     },
     {
       "name": "QAD Inc.",
@@ -272,8 +486,25 @@
         "refreshed_at": "2026-06-29T00:06:13Z",
         "predict_leads_id": "b74c8cfd-9d1f-5b44-87fd-25f09621b501"
       },
-      "relevant": false,
-      "rationale": "QAD primarily provides manufacturing ERP and supply-chain software, while PTC centers on CAD, PLM, industrial IoT, and service lifecycle management."
+      "relevant": true,
+      "rationale": "Both sell enterprise software platforms to manufacturing/industrial enterprises for operations and digital transformation; genuine comparables in industrial software market.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "QAD is manufacturing ERP and supply-chain software; PTC primarily sells CAD, PLM, IoT, and service-lifecycle platforms, making them adjacent rather than direct peers."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both sell enterprise software platforms to manufacturing/industrial enterprises for operations and digital transformation; genuine comparables in industrial software market."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "QAD sells enterprise manufacturing/ERP-supply chain software to industrial manufacturers, a comparable industrial-software vendor to PTC's buyer base.<json_schema>Respond only with JSON</json_schema>"
+        }
+      ]
     },
     {
       "name": "Infor",
@@ -287,7 +518,19 @@
         "predict_leads_id": "a678efd6-da20-5767-8ae4-ce3293fdf5c3"
       },
       "relevant": true,
-      "rationale": "Infor offers manufacturing-focused ERP, PLM, and asset-management software overlapping PTC\u2019s industrial software portfolio and enterprise buyer base."
+      "rationale": "Infor provides enterprise software for manufacturers, overlapping PTC's industrial customers and digital-transformation workflows, though with broader ERP emphasis.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Infor provides enterprise software for manufacturers, overlapping PTC's industrial customers and digital-transformation workflows, though with broader ERP emphasis."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are enterprise software vendors for manufacturing/industrial digital transformation; Infor's manufacturing ERP/industry cloud targets the same buyers and budgets as PTC's PLM/IoT."
+        }
+      ]
     },
     {
       "name": "Zuken Inc.",
@@ -301,7 +544,19 @@
         "predict_leads_id": "5e2bd7fb-5e80-536e-8ce1-d4bb458a1840"
       },
       "relevant": true,
-      "rationale": "Zuken\u2019s electrical and PCB design and lifecycle software overlaps PTC\u2019s CAD/PLM offerings and targets the same engineering and product-development buyers."
+      "rationale": "Zuken's electrical and PCB engineering design software overlaps PTC's industrial CAD/PLM design lifecycle market, making it a credible engineering-software comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Zuken's electrical and PCB engineering design software overlaps PTC's industrial CAD/PLM design lifecycle market, making it a credible engineering-software comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Zuken sells engineering design software (electrical/PCB CAD) within the product lifecycle, making it a direct competitor and comparable to PTC's CAD/PLM business."
+        }
+      ]
     },
     {
       "name": "Altium Limited",
@@ -315,7 +570,19 @@
         "predict_leads_id": "320a91f2-aaba-58e7-a373-c4078d1702dd"
       },
       "relevant": true,
-      "rationale": "Altium\u2019s PCB CAD and product-development collaboration software overlaps PTC\u2019s CAD/PLM offerings for engineering teams designing and manufacturing physical products."
+      "rationale": "Altium's PCB design and electronics-development platform is comparable engineering software for physical product development, overlapping PTC's CAD and product-lifecycle market.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Altium's PCB design and electronics-development platform is comparable engineering software for physical product development, overlapping PTC's CAD and product-lifecycle market."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both sell engineering design software (CAD/PLM vs PCB/EDA) serving product-development engineers; same buyer persona and job, genuine comparables."
+        }
+      ]
     },
     {
       "name": "Xoriant Corporation",
@@ -329,7 +596,19 @@
         "predict_leads_id": "a05d7311-e15c-5916-bf47-26c48c93d905"
       },
       "relevant": false,
-      "rationale": "Xoriant is a digital engineering consultancy, not a product vendor offering CAD, PLM, industrial IoT, or service-lifecycle software like PTC."
+      "rationale": "Xoriant is a digital engineering services firm, whereas PTC primarily sells industrial software platforms; it is a service provider, not a direct comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Xoriant is a digital engineering services firm, whereas PTC primarily sells industrial software platforms; it is a service provider, not a direct comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Xoriant is an IT/engineering services consultancy, not an industrial-software product company like PTC's CAD/PLM; serves the category rather than competing."
+        }
+      ]
     },
     {
       "name": "Eficode",
@@ -343,7 +622,19 @@
         "predict_leads_id": "43bf299c-400d-5379-a174-64fac154c040"
       },
       "relevant": false,
-      "rationale": "Eficode focuses on DevOps consulting and software development tooling, not PTC\u2019s core CAD, PLM, industrial IoT, or service lifecycle platforms."
+      "rationale": "Eficode is primarily a DevOps consultancy and software-delivery tooling provider, not an industrial CAD, PLM, IoT, or service-lifecycle software competitor.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Eficode is primarily a DevOps consultancy and software-delivery tooling provider, not an industrial CAD, PLM, IoT, or service-lifecycle software competitor."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Eficode is primarily a DevOps consultancy/services firm, not an industrial CAD/PLM/IoT software product vendor; it serves rather than competes with the category."
+        }
+      ]
     },
     {
       "name": "Technosofteng",
@@ -357,7 +648,20 @@
         "predict_leads_id": "d86bd743-5784-5ef7-8027-33a50b68aa46"
       },
       "relevant": false,
-      "rationale": "Technosofteng is an engineering-services provider, while PTC primarily sells industrial software platforms; buyers would not evaluate them for the same job."
+      "rationale": "Technosofteng provides engineering design and simulation services, whereas PTC sells industrial software platforms; it is a service provider, not a comparable software vendor.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Technosofteng provides engineering design and simulation services, whereas PTC sells industrial software platforms; it is a service provider, not a comparable software vendor."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Engineering services/consultancy firm, not industrial software (CAD/PLM/IoT) products; serves the category rather than competing with PTC."
+        }
+      ]
     }
-  ]
+  ],
+  "error": null
 }

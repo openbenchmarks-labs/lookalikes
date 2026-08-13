@@ -7,17 +7,20 @@
     "name": "domain_similarity"
   },
   "k": 100,
-  "relevant_count": 34,
-  "precision_at_k": 34.0,
+  "relevant_count": 33,
+  "precision_at_k": 33.0,
   "relevant_count_at_10": 6,
-  "relevant_count_at_100": 34,
+  "relevant_count_at_25": 12,
+  "relevant_count_at_100": 33,
   "precision_at_10": 60.0,
-  "precision_at_100": 34.0,
+  "precision_at_25": 48.0,
+  "precision_at_100": 33.0,
   "latency_ms": 1721,
   "cost_usd": null,
   "duplicates_removed": 5,
-  "judge_model": "gpt-5.6",
-  "judged_at": "2026-07-27T03:21:56Z",
+  "max_results": null,
+  "judge_model": "majority(n=3): claude-opus-5,gpt-5.6-terra,kimi-k3",
+  "judged_at": "2026-08-10T19:36:12Z",
   "candidates": [
     {
       "name": "Caterpillar",
@@ -34,7 +37,19 @@
         "employee_count": "10001+"
       },
       "relevant": false,
-      "rationale": "This is the same Caterpillar company under its CAT brand and alternate domain, making it a duplicate rather than a distinct lookalike."
+      "rationale": "Duplicate entry for the seed company (Caterpillar/cat.com), not a distinct competitor or comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Duplicate entry for the seed company (Caterpillar/cat.com), not a distinct competitor or comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Duplicate entry: candidate is Caterpillar itself (cat.com is Caterpillar's own domain), not a distinct lookalike company."
+        }
+      ]
     },
     {
       "name": "Komatsu",
@@ -51,7 +66,19 @@
         "employee_count": "10001+"
       },
       "relevant": true,
-      "rationale": "Komatsu directly overlaps Caterpillar in construction, mining, forestry, and industrial heavy equipment for the same commercial buyers and applications."
+      "rationale": "Komatsu directly competes with Caterpillar in construction, mining, forestry, and industrial heavy equipment, serving the same buyers with comparable machinery.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Komatsu directly competes with Caterpillar in construction, mining, forestry, and industrial heavy equipment, serving the same buyers with comparable machinery."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Direct competitor: both manufacture construction and mining heavy equipment and machinery for the same buyers."
+        }
+      ]
     },
     {
       "name": "CASE Construction Equipment North America",
@@ -68,7 +95,19 @@
         "employee_count": "10001+"
       },
       "relevant": true,
-      "rationale": "CASE manufactures overlapping construction equipment for the same contractors, municipalities, and mining operators that evaluate Caterpillar machinery."
+      "rationale": "Manufactures competing construction machinery, including loaders, excavators, dozers, graders, and equipment for construction and mining buyers.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Manufactures competing construction machinery, including loaders, excavators, dozers, graders, and equipment for construction and mining buyers."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Direct competitor: manufactures construction and mining equipment (backhoes, excavators, dozers) for the same buyers as Caterpillar."
+        }
+      ]
     },
     {
       "name": "Volvo Construction Equipment",
@@ -85,7 +124,19 @@
         "employee_count": "10001+"
       },
       "relevant": true,
-      "rationale": "Both manufacture heavy construction machinery for contractors, construction companies, and infrastructure agencies, with overlapping excavator, loader, and earthmoving equipment offerings."
+      "rationale": "Direct global competitor manufacturing heavy construction equipment for the same construction, infrastructure, and mining-adjacent customers.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Direct global competitor manufacturing heavy construction equipment for the same construction, infrastructure, and mining-adjacent customers."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Direct competitor: global manufacturer of construction equipment (excavators, loaders, haulers), matching Caterpillar's core product line and market."
+        }
+      ]
     },
     {
       "name": "Astec Industries",
@@ -102,7 +153,19 @@
         "employee_count": "1001-5000"
       },
       "relevant": true,
-      "rationale": "Both manufacture heavy equipment for construction, infrastructure, aggregates, and mining, targeting the same contractors, engineering firms, and mining operators."
+      "rationale": "Manufactures infrastructure, mining, aggregate, and road-construction equipment for the same industrial construction and mining markets as Caterpillar.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Manufactures infrastructure, mining, aggregate, and road-construction equipment for the same industrial construction and mining markets as Caterpillar."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both manufacture heavy construction, road-building, and mining equipment for the same contractor and mining customers\u2014direct competitor on product and market."
+        }
+      ]
     },
     {
       "name": "JCB",
@@ -119,7 +182,19 @@
         "employee_count": "10001+"
       },
       "relevant": true,
-      "rationale": "Both manufacture heavy construction equipment for the same construction and industrial buyers and overlapping machinery use cases."
+      "rationale": "JCB directly competes with Caterpillar as a global manufacturer of heavy construction equipment, serving the same construction and industrial buyers.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "JCB directly competes with Caterpillar as a global manufacturer of heavy construction equipment, serving the same construction and industrial buyers."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "JCB manufactures construction and heavy machinery (backhoes, loaders), a direct competitor to Caterpillar on product, market, and business model."
+        }
+      ]
     },
     {
       "name": "AGA Parts",
@@ -136,7 +211,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "AGA Parts is a multi-brand parts supplier/reseller, not a heavy-equipment OEM manufacturing machinery like Caterpillar."
+      "rationale": "AGA Parts distributes replacement and OEM machinery parts, including Caterpillar parts; it is an aftermarket supplier, not a heavy-equipment manufacturer or peer.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "AGA Parts distributes replacement and OEM machinery parts, including Caterpillar parts; it is an aftermarket supplier, not a heavy-equipment manufacturer or peer."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Aftermarket parts supplier (including Caterpillar parts), not an equipment manufacturer; serves as supplier to the category, not competitor or comparable."
+        }
+      ]
     },
     {
       "name": "Peterson Cat",
@@ -153,7 +240,19 @@
         "employee_count": "501-1000"
       },
       "relevant": false,
-      "rationale": "Peterson Cat is a regional dealer and service provider for Caterpillar products, not an independent heavy-equipment manufacturer with an overlapping business model."
+      "rationale": "Peterson Cat is a Caterpillar equipment dealer and rental provider, not a heavy-equipment manufacturer or independent peer competitor.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Peterson Cat is a Caterpillar equipment dealer and rental provider, not a heavy-equipment manufacturer or independent peer competitor."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Peterson Cat is a Caterpillar equipment dealer, not a manufacturer; it is a channel partner/customer of the seed, not a competitor or comparable."
+        }
+      ]
     },
     {
       "name": "Hitachi Construction Machinery",
@@ -170,7 +269,19 @@
         "employee_count": "10001+"
       },
       "relevant": true,
-      "rationale": "Both manufacture heavy construction and mining machinery for the same contractors, mining operators, rental companies, and infrastructure buyers."
+      "rationale": "Direct competitor manufacturing heavy construction and mining equipment, including excavators, loaders, dump trucks, and related services.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Direct competitor manufacturing heavy construction and mining equipment, including excavators, loaders, dump trucks, and related services."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Direct competitor: both manufacture construction and mining heavy machinery (excavators, loaders, dump trucks) for the same buyers."
+        }
+      ]
     },
     {
       "name": "Fabick Cat",
@@ -187,7 +298,19 @@
         "employee_count": "501-1000"
       },
       "relevant": false,
-      "rationale": "Fabick Cat is Caterpillar\u2019s downstream dealer and service partner, not a competing heavy-equipment manufacturer evaluated for the same procurement need."
+      "rationale": "Fabick Cat is an authorized Caterpillar equipment dealer and service provider, distributing and maintaining the seed's products rather than competing with its manufacturing business.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Fabick Cat is an authorized Caterpillar equipment dealer and service provider, distributing and maintaining the seed's products rather than competing with its manufacturing business."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Fabick Cat is a Caterpillar dealership reselling and servicing Cat equipment\u2014a distribution channel/client of the seed, not a competing manufacturer."
+        }
+      ]
     },
     {
       "name": "Finning",
@@ -204,7 +327,19 @@
         "employee_count": "10001+"
       },
       "relevant": false,
-      "rationale": "Finning is Caterpillar\u2019s dealer and service channel, not an independent heavy-equipment manufacturer offering a competing core product."
+      "rationale": "Finning is an authorized Caterpillar dealer selling and servicing Cat products, not an independent competing manufacturer or comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Finning is an authorized Caterpillar dealer selling and servicing Cat products, not an independent competing manufacturer or comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Finning is a Caterpillar dealer/reseller, a channel partner of the seed, not a competing heavy-equipment manufacturer or comparable."
+        }
+      ]
     },
     {
       "name": "Liebherr",
@@ -221,7 +356,19 @@
         "employee_count": "10001+"
       },
       "relevant": true,
-      "rationale": "Both manufacture construction and mining heavy machinery for the same industrial buyers and equipment use cases."
+      "rationale": "Liebherr directly competes in construction, earthmoving, mining, and material-handling heavy equipment markets.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Liebherr directly competes in construction, earthmoving, mining, and material-handling heavy equipment markets."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Direct competitor: both manufacture construction and mining equipment, earthmoving machinery, and heavy industrial machines for the same buyers."
+        }
+      ]
     },
     {
       "name": "SANY Group",
@@ -238,7 +385,19 @@
         "employee_count": "10001+"
       },
       "relevant": true,
-      "rationale": "SANY directly overlaps Caterpillar in construction and mining machinery, serving the same contractors, infrastructure operators, and mining buyers."
+      "rationale": "SANY directly manufactures construction and mining machinery, including excavators, cranes, and road equipment, making it a direct Caterpillar competitor.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "SANY directly manufactures construction and mining machinery, including excavators, cranes, and road equipment, making it a direct Caterpillar competitor."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "SANY is a leading global construction and mining machinery manufacturer, a direct competitor to Caterpillar on product, market, and business model."
+        }
+      ]
     },
     {
       "name": "Carter Machinery",
@@ -255,7 +414,19 @@
         "employee_count": "1001-5000"
       },
       "relevant": false,
-      "rationale": "Carter Machinery is Caterpillar\u2019s authorized dealer and distribution partner, not a competing heavy-equipment manufacturer with its own overlapping product line."
+      "rationale": "Carter Machinery is a Caterpillar equipment dealer and service provider, distributing the seed's products rather than competing as a heavy-equipment manufacturer.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Carter Machinery is a Caterpillar equipment dealer and service provider, distributing the seed's products rather than competing as a heavy-equipment manufacturer."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Caterpillar dealership selling/renting Cat equipment\u2014a distribution channel partner, not a competing equipment manufacturer."
+        }
+      ]
     },
     {
       "name": "Wagner Equipment Co.",
@@ -272,7 +443,19 @@
         "employee_count": "1001-5000"
       },
       "relevant": false,
-      "rationale": "Wagner is a Caterpillar equipment dealer and rental/service provider, not a competing heavy-equipment manufacturer with an overlapping core offering."
+      "rationale": "Wagner is a Caterpillar equipment dealer and service/rental provider, not an independent heavy-machinery manufacturer or comparable competitor.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Wagner is a Caterpillar equipment dealer and service/rental provider, not an independent heavy-machinery manufacturer or comparable competitor."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Caterpillar dealer selling, renting, and servicing Cat equipment \u2014 a distribution channel partner/customer, not a competing heavy-equipment manufacturer."
+        }
+      ]
     },
     {
       "name": "XCMG Group",
@@ -289,7 +472,19 @@
         "employee_count": "10001+"
       },
       "relevant": true,
-      "rationale": "Both manufacture heavy construction and mining machinery for construction firms, infrastructure agencies, and mining operators with substantially overlapping equipment needs."
+      "rationale": "XCMG directly manufactures construction and mining machinery for the same infrastructure, construction, and mining customers as Caterpillar.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "XCMG directly manufactures construction and mining machinery for the same infrastructure, construction, and mining customers as Caterpillar."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Direct competitor: both manufacture construction and mining machinery (excavators, cranes), same products, markets, and business model."
+        }
+      ]
     },
     {
       "name": "Foley Equipment",
@@ -306,7 +501,19 @@
         "employee_count": "501-1000"
       },
       "relevant": false,
-      "rationale": "Foley is a Caterpillar dealer and service provider, not an independent heavy-equipment manufacturer offering competing machinery."
+      "rationale": "Foley Equipment is a Caterpillar dealer and service provider, distributing the seed's products rather than manufacturing competing heavy equipment.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Foley Equipment is a Caterpillar dealer and service provider, distributing the seed's products rather than manufacturing competing heavy equipment."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Foley is a Caterpillar equipment dealer/distributor, i.e., a sales channel of the seed, not a competing heavy-machinery manufacturer."
+        }
+      ]
     },
     {
       "name": "Wheeler Cat Rental Store",
@@ -323,7 +530,19 @@
         "employee_count": "51-200"
       },
       "relevant": false,
-      "rationale": "Wheeler is a Cat equipment dealer and rental operator, not a heavy-equipment manufacturer offering competing machinery to the same buyers."
+      "rationale": "Authorized Caterpillar equipment dealer and rental outlet, not an independent manufacturer or peer competitor.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Authorized Caterpillar equipment dealer and rental outlet, not an independent manufacturer or peer competitor."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Caterpillar dealer/rental store distributing Cat equipment; a customer/channel partner of the seed, not a competing manufacturer."
+        }
+      ]
     },
     {
       "name": "Ziegler Companies",
@@ -340,7 +559,19 @@
         "employee_count": "1001-5000"
       },
       "relevant": false,
-      "rationale": "Ziegler is primarily a Caterpillar equipment dealer, rental, and service provider, not a competing heavy-equipment manufacturer."
+      "rationale": "Ziegler is a Caterpillar equipment dealer and service channel, not an independent heavy-equipment manufacturer or peer competitor.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Ziegler is a Caterpillar equipment dealer and service channel, not an independent heavy-equipment manufacturer or peer competitor."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Ziegler is a Caterpillar equipment dealer (channel partner/customer), not a competing manufacturer of heavy machinery."
+        }
+      ]
     },
     {
       "name": "Epiroc",
@@ -357,7 +588,19 @@
         "employee_count": "10001+"
       },
       "relevant": true,
-      "rationale": "Epiroc manufactures mining, excavation, and construction equipment for the same industrial buyers and use cases served by Caterpillar\u2019s heavy-machinery business."
+      "rationale": "Epiroc directly manufactures mining, excavation, drilling, and construction equipment for the same industrial buyers as Caterpillar.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Epiroc directly manufactures mining, excavation, drilling, and construction equipment for the same industrial buyers as Caterpillar."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Epiroc manufactures mining and construction equipment (drill rigs, excavation machinery), directly overlapping Caterpillar's product lines and markets as a competitor."
+        }
+      ]
     },
     {
       "name": "Zeppelin",
@@ -373,8 +616,25 @@
         "industries": null,
         "employee_count": "10001+"
       },
-      "relevant": false,
-      "rationale": "Zeppelin is primarily an equipment dealer, rental, and engineering provider, not a heavy-equipment manufacturer comparable to Caterpillar."
+      "relevant": true,
+      "rationale": "Zeppelin supplies construction and mining machinery, power systems, and related services, directly overlapping Caterpillar\u2019s industrial equipment markets.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Zeppelin supplies construction and mining machinery, power systems, and related services, directly overlapping Caterpillar\u2019s industrial equipment markets."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Zeppelin is primarily a Caterpillar dealer/distributor and rental partner, a channel client of the seed rather than a peer heavy-machinery manufacturer."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Sells construction/mining machinery, power systems and rentals to same industrial buyers; close comparable in heavy equipment space despite distributor model."
+        }
+      ]
     },
     {
       "name": "Yanmar",
@@ -391,7 +651,19 @@
         "employee_count": "51-200"
       },
       "relevant": true,
-      "rationale": "Yanmar manufactures compact construction machinery and engines serving the same construction, rental, and infrastructure equipment buyers as Caterpillar."
+      "rationale": "Manufactures construction machinery for the same construction-equipment buyers; compact equipment complements Caterpillar\u2019s heavy-equipment portfolio.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Manufactures construction machinery for the same construction-equipment buyers; compact equipment complements Caterpillar\u2019s heavy-equipment portfolio."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Manufactures compact construction equipment and engines; same product category and buyer market as Caterpillar, a direct competitor/comparable."
+        }
+      ]
     },
     {
       "name": "Milton CAT",
@@ -408,7 +680,19 @@
         "employee_count": "501-1000"
       },
       "relevant": false,
-      "rationale": "Milton CAT is an authorized Caterpillar dealer and service provider, not a competing heavy-equipment manufacturer with its own overlapping product line."
+      "rationale": "Milton CAT is an authorized Caterpillar equipment dealer and rental/service provider, not an independent heavy-equipment manufacturer or comparable competitor.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Milton CAT is an authorized Caterpillar equipment dealer and rental/service provider, not an independent heavy-equipment manufacturer or comparable competitor."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Milton CAT is an authorized Caterpillar dealer selling/renting CAT equipment \u2014 a channel partner/customer of the seed, not a competing manufacturer."
+        }
+      ]
     },
     {
       "name": "Cate Equipment Solutions",
@@ -425,7 +709,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "Cate is a heavy-equipment dealer and rental/service provider, while Caterpillar primarily manufactures machinery; their business models and core offerings differ."
+      "rationale": "Heavy-equipment dealer and rental/service provider, not an industrial manufacturer of machinery, engines, and turbines like Caterpillar.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Heavy-equipment dealer and rental/service provider, not an industrial manufacturer of machinery, engines, and turbines like Caterpillar."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Equipment dealer/distributor, not a manufacturer; channel partner of brands like Caterpillar rather than a competitor or comparable."
+        }
+      ]
     },
     {
       "name": "UTE CAT",
@@ -442,7 +738,19 @@
         "employee_count": "201-500"
       },
       "relevant": false,
-      "rationale": "UTE CAT is Caterpillar\u2019s authorized reseller and support channel, not an independent heavy-equipment manufacturer offering a competing product portfolio."
+      "rationale": "Authorized Caterpillar dealer and distributor, not an independent heavy-equipment manufacturer or comparable competitor.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Authorized Caterpillar dealer and distributor, not an independent heavy-equipment manufacturer or comparable competitor."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Authorized Caterpillar dealer/distributor, not a competing equipment manufacturer; channel partner of the seed rather than a lookalike."
+        }
+      ]
     },
     {
       "name": "Sandvik Group",
@@ -459,7 +767,19 @@
         "employee_count": "10001+"
       },
       "relevant": true,
-      "rationale": "Sandvik and Caterpillar both supply heavy mining and excavation equipment to mining operators for overlapping operational jobs."
+      "rationale": "Sandvik directly competes in mining and rock-excavation equipment, serving the same industrial customers with comparable heavy machinery solutions.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Sandvik directly competes in mining and rock-excavation equipment, serving the same industrial customers with comparable heavy machinery solutions."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Sandvik manufactures mining and rock excavation equipment, directly competing with Caterpillar's mining machinery business across product and market."
+        }
+      ]
     },
     {
       "name": "Costex Tractor Parts",
@@ -475,8 +795,20 @@
         "industries": null,
         "employee_count": "51-200"
       },
-      "relevant": true,
-      "rationale": "Both sell heavy-equipment replacement parts to construction, mining, and equipment-maintenance buyers for the same machinery repair and upkeep needs."
+      "relevant": false,
+      "rationale": "Aftermarket replacement-parts supplier for Caterpillar equipment, not a manufacturer of heavy machinery, engines, or industrial equipment platforms.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Aftermarket replacement-parts supplier for Caterpillar equipment, not a manufacturer of heavy machinery, engines, or industrial equipment platforms."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Aftermarket parts supplier for Caterpillar equipment, not a heavy-machinery manufacturer or competitor; serves the seed's ecosystem rather than resembling it."
+        }
+      ]
     },
     {
       "name": "Ferreyros S.A.",
@@ -493,7 +825,19 @@
         "employee_count": "5001-10000"
       },
       "relevant": false,
-      "rationale": "Ferreyros is Caterpillar\u2019s distributor and channel partner, not a competing heavy-equipment manufacturer offering its own overlapping machinery line."
+      "rationale": "Distributor and exclusive Caterpillar representative, making it a channel partner/customer-facing dealer rather than an independent comparable manufacturer.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Distributor and exclusive Caterpillar representative, making it a channel partner/customer-facing dealer rather than an independent comparable manufacturer."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Caterpillar's exclusive distributor in Peru\u2014a channel partner/client of the seed, not a competing heavy-machinery manufacturer."
+        }
+      ]
     },
     {
       "name": "Toromont Cat",
@@ -510,7 +854,19 @@
         "employee_count": "1001-5000"
       },
       "relevant": false,
-      "rationale": "Toromont Cat is Caterpillar\u2019s authorized dealer and distributor, not an independent manufacturer offering competing heavy machinery to the same buyers."
+      "rationale": "Authorized Caterpillar dealer selling and servicing Caterpillar equipment, not an independent competing or comparable heavy-machinery manufacturer.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Authorized Caterpillar dealer selling and servicing Caterpillar equipment, not an independent competing or comparable heavy-machinery manufacturer."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Authorized Caterpillar dealer/distributor \u2014 a channel partner of the seed, not a competing equipment manufacturer."
+        }
+      ]
     },
     {
       "name": "Gecolsa",
@@ -527,7 +883,19 @@
         "employee_count": "1001-5000"
       },
       "relevant": false,
-      "rationale": "Gecolsa is Caterpillar\u2019s authorized distributor and service partner, not an independent heavy-equipment manufacturer offering a comparable core product."
+      "rationale": "Authorized Caterpillar distributor selling, renting, and servicing Caterpillar products; it is a channel partner, not an independent equipment manufacturer or comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Authorized Caterpillar distributor selling, renting, and servicing Caterpillar products; it is a channel partner, not an independent equipment manufacturer or comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Gecolsa is Caterpillar's authorized dealer in Colombia - a channel partner selling Cat products, not a competing heavy-equipment manufacturer."
+        }
+      ]
     },
     {
       "name": "MacAllister Machinery",
@@ -544,7 +912,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "MacAllister is a regional Caterpillar dealer and service provider, not a manufacturer of heavy equipment, engines, or industrial machinery."
+      "rationale": "Authorized Caterpillar dealer and service provider, not an independent heavy-equipment manufacturer or comparable competitor.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Authorized Caterpillar dealer and service provider, not an independent heavy-equipment manufacturer or comparable competitor."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Caterpillar dealership/channel partner selling Cat equipment, not a competing heavy-machinery manufacturer; a customer of the seed rather than a peer."
+        }
+      ]
     },
     {
       "name": "Power Motive Corporation",
@@ -561,7 +941,19 @@
         "employee_count": "51-200"
       },
       "relevant": false,
-      "rationale": "Power Motive is a regional distributor and rental dealer for third-party OEMs, not a heavy-equipment manufacturer like Caterpillar."
+      "rationale": "Distributor of other OEMs' equipment, not a heavy-equipment manufacturer or peer platform comparable to Caterpillar.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Distributor of other OEMs' equipment, not a heavy-equipment manufacturer or peer platform comparable to Caterpillar."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Equipment distributor/dealer for OEMs like Komatsu, not a manufacturer; a channel partner in Caterpillar's space, not a competitor or comparable."
+        }
+      ]
     },
     {
       "name": "American Crane & Tractor Parts",
@@ -577,8 +969,20 @@
         "industries": null,
         "employee_count": "11-50"
       },
-      "relevant": true,
-      "rationale": "Both sell heavy-equipment replacement parts to construction and mining fleet operators, who may compare Caterpillar OEM parts with aftermarket alternatives."
+      "relevant": false,
+      "rationale": "Aftermarket parts supplier for Caterpillar equipment, not a manufacturer of heavy machinery or engines; it serves Caterpillar's customers.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Aftermarket parts supplier for Caterpillar equipment, not a manufacturer of heavy machinery or engines; it serves Caterpillar's customers."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Aftermarket parts distributor serving Caterpillar equipment owners; downstream supplier in the ecosystem, not a peer heavy-equipment manufacturer or comparable."
+        }
+      ]
     },
     {
       "name": "Xuzhou Construction Machinery Group",
@@ -595,7 +999,19 @@
         "employee_count": "10001+"
       },
       "relevant": true,
-      "rationale": "Both manufacture construction and mining equipment, including excavators and loaders, for construction firms, mining operators, and infrastructure buyers."
+      "rationale": "Manufactures excavators, loaders, road and mining machinery for the same construction and mining equipment markets as Caterpillar.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Manufactures excavators, loaders, road and mining machinery for the same construction and mining equipment markets as Caterpillar."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "XCMG manufactures construction and mining heavy machinery (excavators, loaders, road equipment), making it a direct global competitor to Caterpillar."
+        }
+      ]
     },
     {
       "name": "KATO Compact Excavator Sales",
@@ -611,8 +1027,25 @@
         "industries": null,
         "employee_count": "1-10"
       },
-      "relevant": false,
-      "rationale": "KATO CES distributes construction machinery rather than manufacturing heavy equipment like Caterpillar, despite selling overlapping excavators and loaders to similar buyers."
+      "relevant": true,
+      "rationale": "Sells construction equipment (excavators, loaders, crawler carriers) to contractors and rental companies \u2014 same product category and buyer market as Caterpillar.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "KATO Compact Excavator Sales is a dealer/distributor of KATO machinery, not an industrial equipment manufacturer comparable to Caterpillar."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Sells construction equipment (excavators, loaders, crawler carriers) to contractors and rental companies \u2014 same product category and buyer market as Caterpillar."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Both supply construction equipment (excavators, loaders) to contractors and dealers; KATO is a smaller peer/competitor in heavy machinery.', ''"
+        }
+      ]
     },
     {
       "name": "Komatsu Africa",
@@ -629,7 +1062,19 @@
         "employee_count": "10001+"
       },
       "relevant": true,
-      "rationale": "Komatsu Africa manufactures directly competing construction and mining machinery for the same mining, quarrying, forestry, and road-construction buyers."
+      "rationale": "Komatsu Africa manufactures and supplies directly comparable construction and mining machinery for the same industrial buyers.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Komatsu Africa manufactures and supplies directly comparable construction and mining machinery for the same industrial buyers."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Komatsu is Caterpillar's direct global competitor manufacturing the same construction and mining heavy equipment for identical customers."
+        }
+      ]
     },
     {
       "name": "Mustang Cat",
@@ -646,7 +1091,19 @@
         "employee_count": "501-1000"
       },
       "relevant": false,
-      "rationale": "Mustang Cat is an authorized dealer and service provider for Caterpillar products, not a competing heavy-equipment manufacturer with its own overlapping product line."
+      "rationale": "Mustang Cat is an authorized Caterpillar equipment dealer and service provider, distributing the seed's products rather than competing as an independent manufacturer.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Mustang Cat is an authorized Caterpillar equipment dealer and service provider, distributing the seed's products rather than competing as an independent manufacturer."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Authorized Caterpillar dealer \u2014 a distribution channel partner/customer of the seed, not a competing equipment manufacturer or comparable."
+        }
+      ]
     },
     {
       "name": "Manitou Group",
@@ -663,7 +1120,19 @@
         "employee_count": "1001-5000"
       },
       "relevant": true,
-      "rationale": "Both manufacture heavy construction, mining, and earthmoving equipment purchased by overlapping industrial operators and site managers."
+      "rationale": "Manufactures earthmoving, handling, and aerial work equipment for construction, mining, and infrastructure\u2014directly comparable heavy-machinery markets.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Manufactures earthmoving, handling, and aerial work equipment for construction, mining, and infrastructure\u2014directly comparable heavy-machinery markets."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Manitou manufactures material-handling and earthmoving equipment (telehandlers, forklifts, aerial platforms) for construction and industrial sectors\u2014direct competitor to Caterpillar."
+        }
+      ]
     },
     {
       "name": "CGT S.p.A.",
@@ -680,7 +1149,19 @@
         "employee_count": "1001-5000"
       },
       "relevant": false,
-      "rationale": "CGT is a Caterpillar dealer and rental/service provider, not a manufacturer of heavy equipment, engines, and industrial machinery."
+      "rationale": "CGT is a Caterpillar-integrated dealer, rental provider, and service channel, not a competing heavy-equipment manufacturer or independent comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "CGT is a Caterpillar-integrated dealer, rental provider, and service channel, not a competing heavy-equipment manufacturer or independent comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Caterpillar dealer/reseller, not a competing equipment manufacturer; channel partner of the seed rather than a peer."
+        }
+      ]
     },
     {
       "name": "Capital Machinery Ltd.",
@@ -697,7 +1178,19 @@
         "employee_count": "51-200"
       },
       "relevant": false,
-      "rationale": "Capital Machinery is Caterpillar\u2019s authorized reseller and service dealer, not an independent heavy-equipment manufacturer offering a competing product line."
+      "rationale": "Authorized Caterpillar dealer and service provider, not an independent heavy-equipment manufacturer or comparable competitor.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Authorized Caterpillar dealer and service provider, not an independent heavy-equipment manufacturer or comparable competitor."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Caterpillar's exclusive Taiwan dealer \u2014 a distribution channel partner selling CAT products, not a competing heavy-machinery manufacturer."
+        }
+      ]
     },
     {
       "name": "XCMG Australia",
@@ -714,7 +1207,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "XCMG manufactures and distributes heavy construction and mining machinery, directly overlapping Caterpillar\u2019s core equipment offerings and buyers."
+      "rationale": "Manufactures and distributes heavy construction and mining machinery, directly comparable to Caterpillar's core equipment business.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Manufactures and distributes heavy construction and mining machinery, directly comparable to Caterpillar's core equipment business."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "XCMG is a top-3 global construction/mining machinery manufacturer; same heavy equipment product lines and buyer market as Caterpillar \u2014 direct competitor."
+        }
+      ]
     },
     {
       "name": "Borusan Cat",
@@ -731,7 +1236,19 @@
         "employee_count": "1001-5000"
       },
       "relevant": false,
-      "rationale": "Borusan Cat is a regional distributor and lessor of Caterpillar products, not a competing heavy-equipment manufacturer with the same business model."
+      "rationale": "Distributor of Caterpillar equipment and parts, not an independent competing or comparable heavy-machinery manufacturer.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Distributor of Caterpillar equipment and parts, not an independent competing or comparable heavy-machinery manufacturer."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Borusan Cat is a Caterpillar dealer/distributor, a channel partner selling the seed's own products, not a competitor or comparable manufacturer."
+        }
+      ]
     },
     {
       "name": "Kobelco",
@@ -748,7 +1265,19 @@
         "employee_count": "10001+"
       },
       "relevant": true,
-      "rationale": "Kobelco manufactures excavators, cranes, and other construction machinery purchased by the same construction and industrial buyers as Caterpillar equipment."
+      "rationale": "Kobelco manufactures excavators, cranes, and other heavy construction machinery for the same industrial and construction markets as Caterpillar.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Kobelco manufactures excavators, cranes, and other heavy construction machinery for the same industrial and construction markets as Caterpillar."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Kobelco manufactures construction machinery (excavators, cranes), directly competing with Caterpillar in heavy equipment for the same construction market."
+        }
+      ]
     },
     {
       "name": "Wacker Neuson",
@@ -765,7 +1294,19 @@
         "employee_count": "1001-5000"
       },
       "relevant": true,
-      "rationale": "Both manufacture construction machinery, including excavators and loaders, for construction companies, equipment rental firms, and related industrial buyers."
+      "rationale": "Manufactures construction machinery for the same construction-industry buyers, making it a direct heavy-equipment comparable despite a more compact-equipment focus.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Manufactures construction machinery for the same construction-industry buyers, making it a direct heavy-equipment comparable despite a more compact-equipment focus."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both manufacture and sell construction equipment globally; Wacker Neuson is a direct competitor and comparable on product and market axes."
+        }
+      ]
     },
     {
       "name": "XCMG America",
@@ -782,7 +1323,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "XCMG manufactures construction and mining machinery overlapping Caterpillar\u2019s core equipment lines for the same contractors, mining operators, and rental companies."
+      "rationale": "Manufactures heavy construction and mining equipment\u2014including excavators, loaders, cranes, and haul trucks\u2014directly comparable to Caterpillar.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Manufactures heavy construction and mining equipment\u2014including excavators, loaders, cranes, and haul trucks\u2014directly comparable to Caterpillar."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "XCMG manufactures construction and mining heavy machinery (excavators, loaders, cranes, haul trucks) \u2014 a direct competitor to Caterpillar on product and market."
+        }
+      ]
     },
     {
       "name": "Tata Hitachi Construction Machinery",
@@ -799,7 +1352,19 @@
         "employee_count": "1001-5000"
       },
       "relevant": true,
-      "rationale": "Both manufacture heavy construction and mining machinery, including excavators and loaders, for the same infrastructure, quarry, and mining buyers."
+      "rationale": "Manufactures earthmoving, construction, and mining equipment for the same industrial buyers, directly comparable to Caterpillar's heavy-machinery business.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Manufactures earthmoving, construction, and mining equipment for the same industrial buyers, directly comparable to Caterpillar's heavy-machinery business."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Tata Hitachi manufactures heavy construction equipment (excavators, dump trucks), a direct competitor to Caterpillar on product and market."
+        }
+      ]
     },
     {
       "name": "Terra Cat",
@@ -816,7 +1381,19 @@
         "employee_count": "201-500"
       },
       "relevant": false,
-      "rationale": "Terra Cat is an authorized Caterpillar dealer and service provider, not a competing heavy-equipment manufacturer with its own overlapping product line."
+      "rationale": "Terra Cat is an authorized Caterpillar dealer and service provider, not an independent heavy-equipment manufacturer, competitor, or comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Terra Cat is an authorized Caterpillar dealer and service provider, not an independent heavy-equipment manufacturer, competitor, or comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Terra Cat is a Caterpillar equipment dealer/distributor in New Zealand \u2014 a customer of the seed, not a competing manufacturer or comparable."
+        }
+      ]
     },
     {
       "name": "MCI Mining Construction International",
@@ -833,7 +1410,19 @@
         "employee_count": "51-200"
       },
       "relevant": true,
-      "rationale": "Both provide mining and construction equipment solutions, including machinery, material handling, parts, and technical support for mining operators and infrastructure firms."
+      "rationale": "Provides mining equipment, material-handling systems, crushers, and related technical services to the same mining and construction sectors.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Provides mining equipment, material-handling systems, crushers, and related technical services to the same mining and construction sectors."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Supplies mining equipment and bulk-material handling systems, overlapping Caterpillar's mining equipment product and market axes as a comparable."
+        }
+      ]
     },
     {
       "name": "Michigan CAT",
@@ -850,7 +1439,19 @@
         "employee_count": "201-500"
       },
       "relevant": false,
-      "rationale": "Michigan CAT is Caterpillar\u2019s downstream dealer and service partner, not an independent heavy-equipment manufacturer competing for the same purchase decision."
+      "rationale": "Authorized Caterpillar dealer selling, renting, and servicing the seed's products; it is a distributor/customer-channel partner, not an independent comparable manufacturer.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Authorized Caterpillar dealer selling, renting, and servicing the seed's products; it is a distributor/customer-channel partner, not an independent comparable manufacturer."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Authorized Caterpillar dealer (sales, rental, service) - a distribution channel/client of the seed, not a competing heavy-equipment manufacturer."
+        }
+      ]
     },
     {
       "name": "GMMCO Ltd",
@@ -867,7 +1468,19 @@
         "employee_count": "1001-5000"
       },
       "relevant": false,
-      "rationale": "GMMCO is Caterpillar\u2019s equipment distributor and service partner, not an independent heavy-equipment manufacturer competing for the same purchasing decision."
+      "rationale": "Gmmco is a Caterpillar dealership and service partner, distributing Caterpillar equipment rather than competing as an independent heavy-equipment manufacturer.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Gmmco is a Caterpillar dealership and service partner, distributing Caterpillar equipment rather than competing as an independent heavy-equipment manufacturer."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Gmmco is a Caterpillar dealership/channel partner in India selling Cat equipment, not a competing manufacturer or comparable."
+        }
+      ]
     },
     {
       "name": "Core Machinery",
@@ -883,8 +1496,20 @@
         "industries": null,
         "employee_count": "51-200"
       },
-      "relevant": true,
-      "rationale": "Both provide heavy-equipment parts, engine rebuilding, remanufacturing, and support to mining operators, serving the same equipment maintenance and procurement buyers."
+      "relevant": false,
+      "rationale": "Heavy-equipment repair and remanufacturing service provider supporting Caterpillar and other OEM equipment, not a manufacturer or comparable equipment platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Heavy-equipment repair and remanufacturing service provider supporting Caterpillar and other OEM equipment, not a manufacturer or comparable equipment platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Aftermarket repair/remanufacturing service provider for Caterpillar and other OEM equipment; serves the category rather than competing as a heavy-machinery manufacturer."
+        }
+      ]
     },
     {
       "name": "American State Equipment",
@@ -901,7 +1526,19 @@
         "employee_count": "51-200"
       },
       "relevant": true,
-      "rationale": "Both supply construction and infrastructure buyers with overlapping heavy machinery, including loaders, excavators, cranes, and paving equipment."
+      "rationale": "Manufactures heavy construction machinery for the same construction and infrastructure markets, making it a direct equipment competitor/comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Manufactures heavy construction machinery for the same construction and infrastructure markets, making it a direct equipment competitor/comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Manufactures heavy construction equipment (loaders, cranes, excavators) for the same construction/infrastructure market\u2014direct product and market overlap with Caterpillar."
+        }
+      ]
     },
     {
       "name": "Hastings Deering",
@@ -918,7 +1555,19 @@
         "employee_count": "1001-5000"
       },
       "relevant": false,
-      "rationale": "Hastings Deering is Caterpillar\u2019s exclusive dealer and service distributor, not an independent heavy-equipment manufacturer offering a competing product line."
+      "rationale": "Exclusive Caterpillar dealer and distributor, selling and servicing the seed's products rather than competing as an independent manufacturer.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Exclusive Caterpillar dealer and distributor, selling and servicing the seed's products rather than competing as an independent manufacturer."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Exclusive Caterpillar dealer/distributor, a channel partner of the seed rather than a competing equipment manufacturer or comparable."
+        }
+      ]
     },
     {
       "name": "UZTM-KARTEX",
@@ -935,7 +1584,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Both manufacture heavy mining and construction equipment for the same industrial buyers and operational use cases."
+      "rationale": "Manufactures mining and construction equipment for the same industrial buyers, making it a direct heavy-machinery competitor/comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Manufactures mining and construction equipment for the same industrial buyers, making it a direct heavy-machinery competitor/comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Manufactures mining and construction heavy equipment, same product and market as Caterpillar \u2014 a direct competitor/comparable."
+        }
+      ]
     },
     {
       "name": "KOBELCO Construction Machinery U.S.A",
@@ -952,7 +1613,19 @@
         "employee_count": "201-500"
       },
       "relevant": true,
-      "rationale": "KOBELCO manufactures excavators and related support for construction buyers, directly overlapping Caterpillar\u2019s core heavy construction equipment offering."
+      "rationale": "Manufactures excavators and related heavy construction machinery for the same construction-sector buyers, directly comparable to Caterpillar's equipment business.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Manufactures excavators and related heavy construction machinery for the same construction-sector buyers, directly comparable to Caterpillar's equipment business."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "KOBELCO manufactures construction excavators and heavy machinery, directly competing with Caterpillar's construction equipment business on product, market, and model."
+        }
+      ]
     },
     {
       "name": "Portland Tractor Inc",
@@ -969,7 +1642,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "Portland Tractor is an aftermarket supplier of Caterpillar-specific parts, not a manufacturer of heavy equipment, engines, turbines, or comparable machinery."
+      "rationale": "Aftermarket supplier of rebuilt Caterpillar parts, serving Caterpillar equipment owners rather than manufacturing competing heavy machinery.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Aftermarket supplier of rebuilt Caterpillar parts, serving Caterpillar equipment owners rather than manufacturing competing heavy machinery."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Aftermarket supplier of rebuilt CAT parts, not a heavy-machinery manufacturer; operates as parts reseller in Caterpillar's ecosystem, not a competitor or comparable."
+        }
+      ]
     },
     {
       "name": "Canrod",
@@ -986,7 +1671,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "Canrod is a resale marketplace for used equipment, not a manufacturer of heavy machinery, engines, or turbines like Caterpillar."
+      "rationale": "Canrod is a used-equipment marketplace and resale channel, not a manufacturer of construction, mining, or power machinery like Caterpillar.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Canrod is a used-equipment marketplace and resale channel, not a manufacturer of construction, mining, or power machinery like Caterpillar."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Used-equipment marketplace, not a machinery manufacturer; a resale channel in Caterpillar's ecosystem rather than a competitor or comparable."
+        }
+      ]
     },
     {
       "name": "American Equipment",
@@ -1003,7 +1700,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "American Equipment is a rental, dealership, and service provider specializing in Caterpillar products, not a competing heavy-equipment manufacturer."
+      "rationale": "Equipment rental and service dealer specializing in Caterpillar products; it is a customer/channel partner, not a competing heavy-equipment manufacturer.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Equipment rental and service dealer specializing in Caterpillar products; it is a customer/channel partner, not a competing heavy-equipment manufacturer."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Rental/service dealer specializing in CAT equipment \u2014 a customer/channel partner of Caterpillar, not a manufacturer or competitor in heavy machinery."
+        }
+      ]
     },
     {
       "name": "XCMG Canada",
@@ -1020,7 +1729,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Both manufacture heavy construction equipment for the same construction, mining, infrastructure, and industrial buyers."
+      "rationale": "Manufactures heavy construction machinery for the same construction, infrastructure, mining, and industrial buyers as Caterpillar.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Manufactures heavy construction machinery for the same construction, infrastructure, mining, and industrial buyers as Caterpillar."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "XCMG is a global construction machinery manufacturer (excavators, loaders, cranes) \u2014 direct product and market competitor to Caterpillar."
+        }
+      ]
     },
     {
       "name": "Monark Equipment Corporation",
@@ -1037,7 +1758,19 @@
         "employee_count": "501-1000"
       },
       "relevant": false,
-      "rationale": "Monark is Caterpillar\u2019s authorized Philippine dealer and distributor, not a competing heavy-equipment manufacturer with its own overlapping product offering."
+      "rationale": "Authorized Caterpillar dealer distributing and servicing the seed's products, not an independent heavy-equipment manufacturer or comparable competitor.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Authorized Caterpillar dealer distributing and servicing the seed's products, not an independent heavy-equipment manufacturer or comparable competitor."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Authorized Caterpillar dealer/distributor \u2014 a channel partner selling CAT products, not a competitor or comparable manufacturer."
+        }
+      ]
     },
     {
       "name": "SMS Equipment",
@@ -1054,7 +1787,24 @@
         "employee_count": "1001-5000"
       },
       "relevant": false,
-      "rationale": "SMS Equipment is primarily a heavy-equipment dealer and service provider, while Caterpillar is an OEM manufacturer; their business models differ."
+      "rationale": "Heavy-equipment dealer/distributor (Komatsu et al.), not a manufacturer; channel for competitors rather than a comparable OEM like Caterpillar.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Heavy-equipment provider serving the same mining and construction customers, with machinery, parts, and technology solutions comparable to Caterpillar's offerings."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Heavy-equipment dealer/distributor (Komatsu et al.), not a manufacturer; channel for competitors rather than a comparable OEM like Caterpillar."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "SMS Equipment is a dealer/distributor of Komatsu machinery, not a heavy-equipment manufacturer like Caterpillar; closer to Cat dealers than Cat itself."
+        }
+      ]
     },
     {
       "name": "MSP CAT",
@@ -1071,7 +1821,19 @@
         "employee_count": "51-200"
       },
       "relevant": false,
-      "rationale": "MSP CAT is a regional Caterpillar dealer and rental/service provider, not an independent heavy-equipment manufacturer with an overlapping core offering."
+      "rationale": "Caterpillar dealer and distributor, selling and servicing the seed\u2019s products rather than manufacturing competing heavy equipment.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Caterpillar dealer and distributor, selling and servicing the seed\u2019s products rather than manufacturing competing heavy equipment."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "MSP CAT is a Caterpillar dealer/distributor, not an equipment manufacturer \u2014 a channel partner of the seed, not a competitor or comparable."
+        }
+      ]
     },
     {
       "name": "Tractafric Equipment",
@@ -1088,7 +1850,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "Tractafric is a Caterpillar distributor, rental provider, and service partner, not an independent heavy-equipment manufacturer with a competing core offering."
+      "rationale": "Distributor, rental provider, and service partner for Caterpillar machinery; it does not manufacture competing heavy equipment.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Distributor, rental provider, and service partner for Caterpillar machinery; it does not manufacture competing heavy equipment."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Caterpillar distributor/dealer in Africa, not a competing manufacturer \u2014 it's a client of the seed, not a comparable."
+        }
+      ]
     },
     {
       "name": "WesTrac",
@@ -1105,7 +1879,19 @@
         "employee_count": "1001-5000"
       },
       "relevant": false,
-      "rationale": "WesTrac is a Caterpillar equipment dealer, rental, parts, and service provider, not a competing heavy-equipment manufacturer."
+      "rationale": "WesTrac is a Caterpillar equipment dealer and service provider, not a competing heavy-equipment manufacturer or equivalent platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "WesTrac is a Caterpillar equipment dealer and service provider, not a competing heavy-equipment manufacturer or equivalent platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "WesTrac is a Caterpillar dealer/distributor (customer/channel partner), not a competing heavy-equipment manufacturer; dealers of the seed are excluded."
+        }
+      ]
     },
     {
       "name": "Tracsa Cat",
@@ -1122,7 +1908,19 @@
         "employee_count": "1001-5000"
       },
       "relevant": false,
-      "rationale": "Tracsa is an authorized Caterpillar dealer and distributor, not a competing heavy-equipment manufacturer with its own overlapping product line."
+      "rationale": "Authorized Caterpillar distributor selling and servicing Caterpillar equipment, not an independent competing manufacturer or comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Authorized Caterpillar distributor selling and servicing Caterpillar equipment, not an independent competing manufacturer or comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Authorized Caterpillar dealer/distributor, not a competing heavy-machinery manufacturer; it is a channel partner of the seed, not a peer."
+        }
+      ]
     },
     {
       "name": "Multi International Supply",
@@ -1139,7 +1937,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "Multi International Supply is a multi-brand equipment dealer, rental, and logistics provider\u2014not a heavy-machinery manufacturer comparable to Caterpillar."
+      "rationale": "Heavy-equipment dealer and rental provider carrying Caterpillar and competitor brands; it supplies equipment rather than manufacturing it.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Heavy-equipment dealer and rental provider carrying Caterpillar and competitor brands; it supplies equipment rather than manufacturing it."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Dealer/reseller distributing Caterpillar and other brands' equipment, not a manufacturer peer; effectively a channel customer of the seed."
+        }
+      ]
     },
     {
       "name": "Macfarlan Machinery",
@@ -1156,7 +1966,24 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "Macfarlan is an independent used-equipment dealer/partner, not a heavy-machinery manufacturer; its business model differs despite serving the same industries."
+      "rationale": "Used heavy-equipment dealer/broker in the ecosystem (serving OEM dealers), not a manufacturer or genuine competitor/comparable to Caterpillar.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Supplies and trades heavy mining and construction machinery, serving the same equipment market as Caterpillar, though primarily as an independent equipment partner."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Used heavy-equipment dealer/broker in the ecosystem (serving OEM dealers), not a manufacturer or genuine competitor/comparable to Caterpillar."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "Used-equipment dealer/broker, not a heavy machinery manufacturer; distribution business model differs from Caterpillar's OEM manufacturing.\u00bb, ok"
+        }
+      ]
     },
     {
       "name": "Carolina Cat",
@@ -1173,7 +2000,19 @@
         "employee_count": "201-500"
       },
       "relevant": false,
-      "rationale": "Carolina Cat is a regional Caterpillar dealer and service network, not a heavy-equipment manufacturer competing with Caterpillar."
+      "rationale": "Carolina Cat is a regional Caterpillar equipment dealer and service provider, not an independent heavy-equipment manufacturer or comparable competitor.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Carolina Cat is a regional Caterpillar equipment dealer and service provider, not an independent heavy-equipment manufacturer or comparable competitor."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Carolina Cat is a Caterpillar dealer (distribution channel/customer), not a competing equipment manufacturer; suppliers/clients of seed are excluded."
+        }
+      ]
     },
     {
       "name": "Tierra Equipment",
@@ -1190,7 +2029,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "Tierra resells and rents used machinery from Caterpillar and other manufacturers; it is a dealer, not a competing heavy-equipment manufacturer."
+      "rationale": "Used-equipment reseller and rental provider, not an original heavy-machinery manufacturer or comparable industrial equipment platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Used-equipment reseller and rental provider, not an original heavy-machinery manufacturer or comparable industrial equipment platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Used-equipment reseller of Caterpillar machinery, not a manufacturer; a downstream dealer/customer of the seed rather than a competitor."
+        }
+      ]
     },
     {
       "name": "Barloworld Finanzauto",
@@ -1207,7 +2058,19 @@
         "employee_count": "51-200"
       },
       "relevant": false,
-      "rationale": "Barloworld Finanzauto is Caterpillar\u2019s distributor and service dealer, not a competing heavy-equipment manufacturer offering its own overlapping machinery portfolio."
+      "rationale": "Official Caterpillar distributor and service provider, not an independent heavy-equipment manufacturer or peer competitor.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Official Caterpillar distributor and service provider, not an independent heavy-equipment manufacturer or peer competitor."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Official Caterpillar distributor, not a manufacturer; it's a channel partner/customer of the seed rather than a competitor or comparable."
+        }
+      ]
     },
     {
       "name": "Construction Machinery Industrial",
@@ -1224,7 +2087,19 @@
         "employee_count": "51-200"
       },
       "relevant": false,
-      "rationale": "Candidate is a regional equipment dealer and service provider, not a heavy-machinery manufacturer; despite shared buyers, its core business model differs."
+      "rationale": "Heavy-equipment dealer and service provider, not an industrial machinery manufacturer or OEM comparable to Caterpillar.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Heavy-equipment dealer and service provider, not an industrial machinery manufacturer or OEM comparable to Caterpillar."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Heavy equipment dealer/distributor reselling other brands, not a manufacturer; channel intermediary rather than competitor or comparable to Caterpillar."
+        }
+      ]
     },
     {
       "name": "L&T Construction & Mining Machinery",
@@ -1241,7 +2116,19 @@
         "employee_count": "201-500"
       },
       "relevant": true,
-      "rationale": "Both provide heavy construction and mining machinery, including excavators, dozers, loaders, and trucks, to the same industrial equipment buyers."
+      "rationale": "Sells comparable construction and mining heavy equipment to the same industrial buyers, including excavators, dump trucks, dozers, and loaders.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Sells comparable construction and mining heavy equipment to the same industrial buyers, including excavators, dump trucks, dozers, and loaders."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Sells construction and mining equipment (excavators, dozers, dump trucks) to the same buyers; direct competitor/comparable to Caterpillar's core business."
+        }
+      ]
     },
     {
       "name": "Key Parts Company",
@@ -1258,7 +2145,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "Key Parts is an aftermarket replacement-parts supplier, not an OEM manufacturer of heavy equipment, engines, turbines, and machinery like Caterpillar."
+      "rationale": "Aftermarket replacement-parts supplier for Caterpillar equipment, not a manufacturer of heavy machinery, engines, or industrial equipment.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Aftermarket replacement-parts supplier for Caterpillar equipment, not a manufacturer of heavy machinery, engines, or industrial equipment."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Aftermarket parts supplier for Caterpillar equipment, not an equipment manufacturer; serves seed's customers rather than competing as a comparable."
+        }
+      ]
     },
     {
       "name": "BTM Machinery",
@@ -1275,7 +2174,24 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "BTM is a used-equipment dealer and rental/service provider, not a heavy-machinery OEM; it may resell Caterpillar equipment rather than compete directly."
+      "rationale": "BTM resells used heavy equipment (including Caterpillar's brands); it's a dealer/reseller in the channel, not a manufacturer competitor or comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Supplies and rents the same heavy construction equipment to construction and mining buyers, serving as a used-equipment alternative to Caterpillar."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "BTM resells used heavy equipment (including Caterpillar's brands); it's a dealer/reseller in the channel, not a manufacturer competitor or comparable."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "Used-equipment dealer/rental reseller, not a heavy machinery manufacturer; more channel partner than peer competitor to Caterpillar."
+        }
+      ]
     },
     {
       "name": "XCMG Chile",
@@ -1292,7 +2208,19 @@
         "employee_count": "51-200"
       },
       "relevant": true,
-      "rationale": "Both manufacture and sell overlapping construction and mining machinery to the same industrial buyers and equipment operators."
+      "rationale": "Manufactures construction, mining, lifting, and heavy equipment for the same industrial customers, directly comparable to Caterpillar.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Manufactures construction, mining, lifting, and heavy equipment for the same industrial customers, directly comparable to Caterpillar."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "XCMG is a direct global competitor manufacturing construction and mining equipment, excavators, loaders, and cranes \u2014 same product and market as Caterpillar."
+        }
+      ]
     },
     {
       "name": "Zeppelin Danmark A/S",
@@ -1309,7 +2237,19 @@
         "employee_count": "51-200"
       },
       "relevant": false,
-      "rationale": "Zeppelin Danmark is Caterpillar\u2019s authorized distributor and service dealer, not a manufacturer of competing heavy equipment."
+      "rationale": "Authorized Caterpillar distributor selling and servicing Cat equipment, not an independent heavy-equipment manufacturer or competitor.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Authorized Caterpillar distributor selling and servicing Cat equipment, not an independent heavy-equipment manufacturer or competitor."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Authorized Caterpillar dealer/distributor, not a competing equipment manufacturer; it's a channel partner of the seed."
+        }
+      ]
     },
     {
       "name": "Congo Equipment",
@@ -1326,7 +2266,19 @@
         "employee_count": "501-1000"
       },
       "relevant": false,
-      "rationale": "Congo Equipment is Caterpillar\u2019s regional dealer and service provider, not an independent heavy-equipment manufacturer offering a comparable core product."
+      "rationale": "Authorized Caterpillar dealer selling, renting, and servicing Caterpillar equipment; it is a distributor/service partner, not a competing manufacturer.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Authorized Caterpillar dealer selling, renting, and servicing Caterpillar equipment; it is a distributor/service partner, not a competing manufacturer."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Congo Equipment is an official Caterpillar dealer\u2014a distribution channel partner/client of the seed, not a competing equipment manufacturer."
+        }
+      ]
     },
     {
       "name": "Garton.Co",
@@ -1343,7 +2295,24 @@
         "employee_count": "201-500"
       },
       "relevant": false,
-      "rationale": "Garton is a regional Hitachi equipment dealer, not a heavy-equipment manufacturer; its reseller business model differs fundamentally from Caterpillar\u2019s."
+      "rationale": "Heavy-equipment dealer/distributor (Hitachi reseller), part of the channel Caterpillar sells through, not a competing manufacturer or comparable OEM.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Hitachi dealer selling construction and mining equipment directly competing with Caterpillar machinery to the same contractors and mining operators."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Heavy-equipment dealer/distributor (Hitachi reseller), part of the channel Caterpillar sells through, not a competing manufacturer or comparable OEM."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "Garton is a regional equipment dealer/distributor, not a manufacturer of heavy machinery like Caterpillar; it's a channel partner, not a peer."
+        }
+      ]
     },
     {
       "name": "Independent Rebuild Specialist",
@@ -1359,8 +2328,25 @@
         "industries": null,
         "employee_count": "11-50"
       },
-      "relevant": true,
-      "rationale": "Both supply heavy-equipment diesel engines, including remanufactured Caterpillar engines, to mining, construction, and industrial fleet buyers for engine replacement."
+      "relevant": false,
+      "rationale": "Aftermarket rebuilder of Caterpillar engines\u2014services the seed's products rather than competing as a heavy-equipment manufacturer; not a peer comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Remanufactures diesel engines for the same mining, construction, and industrial heavy-equipment buyers, competing in the engine replacement aftermarket."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Aftermarket rebuilder of Caterpillar engines\u2014services the seed's products rather than competing as a heavy-equipment manufacturer; not a peer comparable."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "Aftermarket rebuild/service shop for CAT engines, not an OEM heavy equipment manufacturer; effectively a downstream service provider."
+        }
+      ]
     },
     {
       "name": "Dog Face Equipment",
@@ -1377,7 +2363,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "Dog Face is a used-equipment dealer and Caterpillar reseller, not a heavy-machinery manufacturer with overlapping core production offerings."
+      "rationale": "Used heavy-equipment dealer selling Caterpillar and competitor brands, not an industrial manufacturer or comparable equipment producer.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Used heavy-equipment dealer selling Caterpillar and competitor brands, not an industrial manufacturer or comparable equipment producer."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Used-equipment dealer reselling Caterpillar and other brands; a downstream reseller/customer of the seed, not a manufacturer competitor or comparable."
+        }
+      ]
     },
     {
       "name": "Zeppelin CZ s.r.o.",
@@ -1394,7 +2392,19 @@
         "employee_count": "51-200"
       },
       "relevant": false,
-      "rationale": "Zeppelin CZ is Caterpillar\u2019s authorized dealer and rental channel, not an independent heavy-equipment manufacturer offering a comparable core product."
+      "rationale": "Authorized Caterpillar dealer and rental provider; it distributes and services the seed\u2019s products rather than competing as a manufacturer.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Authorized Caterpillar dealer and rental provider; it distributes and services the seed\u2019s products rather than competing as a manufacturer."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Authorized Caterpillar dealer/distributor and rental provider \u2014 a channel partner of the seed, not a competing equipment manufacturer or comparable."
+        }
+      ]
     },
     {
       "name": "Groundwork Experts",
@@ -1410,8 +2420,20 @@
         "industries": null,
         "employee_count": "11-50"
       },
-      "relevant": true,
-      "rationale": "Both provide heavy construction and mining equipment to contractors, infrastructure teams, and mining operators for overlapping machinery procurement needs."
+      "relevant": false,
+      "rationale": "Equipment distributor serving construction and mining buyers, not an industrial manufacturer of heavy machinery, engines, and turbines comparable to Caterpillar.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Equipment distributor serving construction and mining buyers, not an industrial manufacturer of heavy machinery, engines, and turbines comparable to Caterpillar."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Distributor/dealer of heavy equipment, not a manufacturer; a channel participant rather than a competitor or comparable OEM like Caterpillar."
+        }
+      ]
     },
     {
       "name": "Tracto Parts Corp",
@@ -1428,7 +2450,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "Tracto is an aftermarket parts supplier, not a manufacturer of heavy equipment, engines, and machinery like Caterpillar."
+      "rationale": "Aftermarket parts supplier for Caterpillar equipment, not a manufacturer of heavy machinery, engines, or industrial equipment.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Aftermarket parts supplier for Caterpillar equipment, not a manufacturer of heavy machinery, engines, or industrial equipment."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Aftermarket parts supplier for Caterpillar equipment, not an equipment manufacturer; a supplier to the seed's ecosystem, not a competitor or comparable."
+        }
+      ]
     },
     {
       "name": "Hall Equipment Company",
@@ -1445,7 +2479,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "Hall Equipment is a used Caterpillar dealer, not a manufacturer of heavy machinery; it is a reseller within Caterpillar\u2019s distribution ecosystem."
+      "rationale": "Used-equipment dealer reselling Caterpillar products, not a competing heavy-machinery manufacturer or equivalent industrial equipment platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Used-equipment dealer reselling Caterpillar products, not a competing heavy-machinery manufacturer or equivalent industrial equipment platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Used-equipment dealer reselling Caterpillar machinery, not a manufacturer; downstream channel participant, not a competitor or comparable."
+        }
+      ]
     },
     {
       "name": "Tractors Malaysia (1982) Sdn Bhd",
@@ -1462,7 +2508,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "Tractors Malaysia is Caterpillar\u2019s authorized distributor and service provider, not an independent heavy-equipment manufacturer with its own competing machinery."
+      "rationale": "Official Caterpillar equipment supplier and service provider, not an independent machinery manufacturer or comparable competitor.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Official Caterpillar equipment supplier and service provider, not an independent machinery manufacturer or comparable competitor."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Official Cat dealer/distributor, not a competing equipment manufacturer; a channel partner of the seed, not a lookalike."
+        }
+      ]
     },
     {
       "name": "Construction Equipment Station",
@@ -1479,7 +2537,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "Construction Equipment Station is a multi-brand equipment dealer/reseller, not a heavy-machinery manufacturer competing with Caterpillar."
+      "rationale": "Equipment dealer selling major brands, including Caterpillar, rather than an industrial manufacturer or comparable heavy-machinery platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Equipment dealer selling major brands, including Caterpillar, rather than an industrial manufacturer or comparable heavy-machinery platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Used-equipment dealer reselling Cat and other brands; a channel/customer of Caterpillar, not a competing heavy-machinery manufacturer."
+        }
+      ]
     },
     {
       "name": "Energy Kinetics LLC",
@@ -1495,8 +2565,25 @@
         "industries": null,
         "employee_count": "1-10"
       },
-      "relevant": false,
-      "rationale": "Both target construction and mining buyers with heavy machinery, but Energy Kinetics is a supplier, not an equipment manufacturer like Caterpillar."
+      "relevant": true,
+      "rationale": "Provides earthmoving machinery and heavy equipment to construction and mining sectors \u2014 same product category and buyer market as Caterpillar.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Appears to be a heavy-equipment supplier/dealer, not an industrial machinery manufacturer or direct equipment-platform competitor comparable to Caterpillar."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Provides earthmoving machinery and heavy equipment to construction and mining sectors \u2014 same product category and buyer market as Caterpillar."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Supplies heavy construction/mining earthmoving equipment to same buyers; comparable in product and market despite distributor-scale operation.Ranking Caterpillar's space.Ranking Caterpillar's space.Ranking Caterpillar's space.Ranking Caterp"
+        }
+      ]
     },
     {
       "name": "GHT - Grupo Hidrau Torque",
@@ -1513,7 +2600,19 @@
         "employee_count": "501-1000"
       },
       "relevant": false,
-      "rationale": "GHT is an aftermarket parts distributor for Caterpillar and other brands, not a manufacturer of heavy equipment, engines, or machinery."
+      "rationale": "GHT distributes replacement parts for Caterpillar and other equipment brands; it is a supplier to machinery operators, not a heavy-equipment manufacturer or comparable platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "GHT distributes replacement parts for Caterpillar and other equipment brands; it is a supplier to machinery operators, not a heavy-equipment manufacturer or comparable platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Aftermarket parts distributor for Caterpillar equipment, not a machinery manufacturer; supply-chain player rather than competitor or comparable."
+        }
+      ]
     },
     {
       "name": "Barloworld Equipment",
@@ -1530,7 +2629,19 @@
         "employee_count": "51-200"
       },
       "relevant": false,
-      "rationale": "Barloworld is Caterpillar\u2019s authorized dealer and rental distributor, not a competing heavy-equipment manufacturer with its own overlapping product line."
+      "rationale": "Official Caterpillar dealer selling, renting, and servicing CAT equipment; it is a distributor/customer-channel partner, not a competing manufacturer or peer.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Official Caterpillar dealer selling, renting, and servicing CAT equipment; it is a distributor/customer-channel partner, not a competing manufacturer or peer."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Barloworld is Caterpillar's own dealer/distributor in Southern Africa\u2014a channel partner reselling CAT products, not a competing manufacturer or comparable."
+        }
+      ]
     },
     {
       "name": "Mantra ENT",
@@ -1547,7 +2658,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "Mantra is an aftermarket parts supplier, not a manufacturer of heavy machinery, engines, and equipment like Caterpillar."
+      "rationale": "Aftermarket heavy-equipment parts supplier, not a manufacturer of construction/mining machinery, engines, or turbines comparable to Caterpillar.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Aftermarket heavy-equipment parts supplier, not a manufacturer of construction/mining machinery, engines, or turbines comparable to Caterpillar."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Aftermarket parts supplier/distributor, not an equipment manufacturer; adjacent supplier in the value chain, not a competitor or comparable to Caterpillar."
+        }
+      ]
     },
     {
       "name": "Komatsu Nepal",
@@ -1564,7 +2687,19 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "Komatsu provides directly competing construction and mining machinery to the same contractors, miners, and infrastructure buyers as Caterpillar."
+      "rationale": "Sells construction and mining heavy equipment, including excavators, bulldozers, and dump trucks, directly comparable to Caterpillar's core machinery business.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Sells construction and mining heavy equipment, including excavators, bulldozers, and dump trucks, directly comparable to Caterpillar's core machinery business."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Komatsu's regional operation selling the same heavy construction/mining equipment (excavators, bulldozers, dump trucks) to the same buyers \u2014 direct competitor comparable."
+        }
+      ]
     },
     {
       "name": "Rhino Equipment",
@@ -1581,7 +2716,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Both manufacture overlapping heavy construction and mining machinery for contractors and industrial equipment buyers."
+      "rationale": "Manufactures overlapping heavy construction and mining machinery, including excavators, bulldozers, and pavers, making it a direct industry comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Manufactures overlapping heavy construction and mining machinery, including excavators, bulldozers, and pavers, making it a direct industry comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Manufactures construction and mining machinery (excavators, bulldozers, pavers) \u2014 same product and market as Caterpillar; direct competitor."
+        }
+      ]
     },
     {
       "name": "Toromont Industries",
@@ -1598,7 +2745,19 @@
         "employee_count": "51-200"
       },
       "relevant": false,
-      "rationale": "Toromont is primarily a Caterpillar dealer, rental operator, and refrigeration provider, not a competing heavy-equipment manufacturer."
+      "rationale": "Toromont is primarily a Caterpillar equipment dealer and rental partner, not an independent heavy-machinery manufacturer or competitor.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Toromont is primarily a Caterpillar equipment dealer and rental partner, not an independent heavy-machinery manufacturer or competitor."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Toromont is a Caterpillar dealership and rental channel partner, not a competing equipment manufacturer; dealers/customers of the seed are excluded."
+        }
+      ]
     },
     {
       "name": "Caterpillar Energy Solutions",
@@ -1615,7 +2774,19 @@
         "employee_count": "51-200"
       },
       "relevant": false,
-      "rationale": "Caterpillar Energy Solutions is a Caterpillar corporate subsidiary/business offering Cat-branded engine systems, not an independent lookalike competitor."
+      "rationale": "Caterpillar Energy Solutions is a Caterpillar-owned energy subsidiary/brand, not an independent competitor or ICP-expansion lookalike.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Caterpillar Energy Solutions is a Caterpillar-owned energy subsidiary/brand, not an independent competitor or ICP-expansion lookalike."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Caterpillar Energy Solutions is a Caterpillar subsidiary (MWM/Cat engines) \u2014 part of the seed itself, not a peer or competitor."
+        }
+      ]
     },
     {
       "name": "Ferrostaal Chile S.A.C.",
@@ -1631,11 +2802,26 @@
         "industries": null,
         "employee_count": "501-1000"
       },
-      "relevant": false,
-      "rationale": "Ferrostaal is an industrial solutions and equipment-services provider, not a primary heavy-equipment manufacturer comparable to Caterpillar."
+      "relevant": true,
+      "rationale": "Supplies industrial and equipment solutions to mining and construction buyers, overlapping Caterpillar\u2019s core heavy-equipment market.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Supplies industrial and equipment solutions to mining and construction buyers, overlapping Caterpillar\u2019s core heavy-equipment market."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Industrial services/distribution provider for mining and construction sectors, not a heavy-equipment manufacturer; serves the category as supplier rather than competing as a peer manufacturer."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Supplies mining/construction equipment and industrial machinery to same buyers; comparable heavy-equipment player, though more distributor/services oriented.', ok.replace()"
+        }
+      ]
     }
   ],
-  "error": null,
-  "relevant_count_at_25": 11,
-  "precision_at_25": 44.0
+  "error": null
 }

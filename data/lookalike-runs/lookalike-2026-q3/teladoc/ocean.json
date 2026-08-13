@@ -8,17 +8,20 @@
     "filters": {}
   },
   "k": 100,
-  "relevant_count": 70,
-  "precision_at_k": 70.0,
+  "relevant_count": 74,
+  "precision_at_k": 74.0,
   "relevant_count_at_10": 7,
-  "relevant_count_at_100": 70,
+  "relevant_count_at_25": 20,
+  "relevant_count_at_100": 74,
   "precision_at_10": 70.0,
-  "precision_at_100": 70.0,
+  "precision_at_25": 80.0,
+  "precision_at_100": 74.0,
   "latency_ms": 2181,
   "cost_usd": null,
   "duplicates_removed": 0,
-  "judge_model": "gpt-5.6",
-  "judged_at": "2026-07-27T01:48:25Z",
+  "max_results": null,
+  "judge_model": "majority(n=3): claude-opus-5,gpt-5.6-terra,kimi-k3",
+  "judged_at": "2026-08-10T19:43:52Z",
   "candidates": [
     {
       "name": "UCM Digital Health",
@@ -80,7 +83,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "UCM offers a virtual-care platform with 24/7 telehealth, clinician access, and care navigation for employers and insurers, closely overlapping Teladoc."
+      "rationale": "UCM provides integrated virtual care, telehealth triage, provider access, and care navigation, directly comparable to Teladoc\u2019s telehealth platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "UCM provides integrated virtual care, telehealth triage, provider access, and care navigation, directly comparable to Teladoc\u2019s telehealth platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "UCM provides 24/7 telehealth triage, treatment, and virtual care services\u2014directly comparable telehealth platform to Teladoc across product, market, and model."
+        }
+      ]
     },
     {
       "name": "Mdzuri",
@@ -118,7 +133,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "MDzuri offers a telemedicine platform connecting patients with clinicians for virtual consultations, directly overlapping Teladoc\u2019s virtual-care model and user needs."
+      "rationale": "Virtual healthcare platform connecting patients with clinicians for primary, urgent, mental, and preventive care via online/video visits.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Virtual healthcare platform connecting patients with clinicians for primary, urgent, mental, and preventive care via online/video visits."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Virtual care platform connecting patients with board-certified doctors 24/7 for urgent, primary, and mental care \u2014 same product and market as Teladoc."
+        }
+      ]
     },
     {
       "name": "UniHealth",
@@ -175,7 +202,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "UniHealth offers virtual doctor consultations for patients, directly overlapping Teladoc\u2019s telehealth platform and serving the same care-access use case."
+      "rationale": "Telemedicine platform connecting patients with licensed clinicians for virtual consultations, directly comparable to Teladoc\u2019s virtual-care offering.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Telemedicine platform connecting patients with licensed clinicians for virtual consultations, directly comparable to Teladoc\u2019s virtual-care offering."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Telemedicine platform connecting patients with licensed doctors via virtual consultations \u2014 same product, market, and model as Teladoc."
+        }
+      ]
     },
     {
       "name": "EverydayMed365",
@@ -227,7 +266,24 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "EverydayMed365 offers online medical care connecting patients with clinicians, overlapping Teladoc\u2019s virtual-care service and remote healthcare user need."
+      "rationale": "US consumer telehealth/virtual-care service offering round-the-clock remote medical access; same product and market as Teladoc, size ignored.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Insufficient evidence that it offers a virtual-care or telehealth platform comparable to Teladoc; generic healthcare and mHealth labels alone are inadequate."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "US consumer telehealth/virtual-care service offering round-the-clock remote medical access; same product and market as Teladoc, size ignored."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Appears to be a small online/mHealth virtual medical care provider, plausible telehealth peer to Teladoc."
+        }
+      ]
     },
     {
       "name": "Teladoc Health Canada",
@@ -270,7 +326,24 @@
         "relevance_score": "A"
       },
       "relevant": false,
-      "rationale": "Teladoc Health Canada is a regional division of the seed company, not an independent lookalike prospect."
+      "rationale": "Regional subsidiary of the seed company itself, not an independent competitor or comparable; duplicate entry.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Canadian Teladoc operation offering the same virtual-care, telemedicine, mental-health, and expert-medical services."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Regional subsidiary of the seed company itself, not an independent competitor or comparable; duplicate entry."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "Regional subsidiary of the seed itself, effectively a duplicate entry rather than a distinct lookalike."
+        }
+      ]
     },
     {
       "name": "Teladoc Health Australia AND New Zealand",
@@ -325,7 +398,19 @@
         "relevance_score": "A"
       },
       "relevant": false,
-      "rationale": "This is Teladoc Health\u2019s Australia and New Zealand regional operation, not an independent lookalike company."
+      "rationale": "Regional Teladoc Health division using the same brand and platform, not an independent competitor or comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Regional Teladoc Health division using the same brand and platform, not an independent competitor or comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Regional subsidiary of Teladoc itself \u2014 duplicate entry, not a competitor or comparable lookalike."
+        }
+      ]
     },
     {
       "name": "TellyHealthMD",
@@ -370,7 +455,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide virtual clinician-led care and chronic-condition management for health plans and providers seeking better outcomes and reduced avoidable utilization."
+      "rationale": "Physician-led virtual and in-home care provider for chronic, high-risk populations; directly comparable to Teladoc's telehealth and chronic-care services.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Physician-led virtual and in-home care provider for chronic, high-risk populations; directly comparable to Teladoc's telehealth and chronic-care services."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Physician-led virtual care organization delivering telehealth evaluations and chronic disease management\u2014overlaps Teladoc's virtual care and chronic-care model."
+        }
+      ]
     },
     {
       "name": "Endorize",
@@ -460,7 +557,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Endorize offers technology-enabled virtual primary care, remote consultations, and continuous monitoring, overlapping Teladoc\u2019s telehealth platform and patient care use case."
+      "rationale": "Offers technology-enabled consultations, continuous monitoring, and wellness care, making it a virtual-care/telehealth comparable despite its smaller scope.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Offers technology-enabled consultations, continuous monitoring, and wellness care, making it a virtual-care/telehealth comparable despite its smaller scope."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Offers virtual primary-care consultations via app with subscription access to clinicians, matching Teladoc's telehealth product, market, and model."
+        }
+      ]
     },
     {
       "name": "VPG Medical",
@@ -526,7 +635,19 @@
         "relevance_score": "A"
       },
       "relevant": false,
-      "rationale": "VPG Medical provides camera-based cardiac monitoring technology, not a virtual-care platform connecting patients with clinicians for consultations and chronic care."
+      "rationale": "VPG Medical sells camera-based cardiac monitoring technology, not a broad virtual-care platform connecting patients with clinicians and chronic-care services.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "VPG Medical sells camera-based cardiac monitoring technology, not a broad virtual-care platform connecting patients with clinicians and chronic-care services."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "VPG sells camera-based cardiac monitoring technology, not a telehealth platform connecting patients with clinicians; different product and market."
+        }
+      ]
     },
     {
       "name": "Ravcare",
@@ -605,7 +726,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Ravcare\u2019s digital chronic-condition management overlaps Teladoc\u2019s chronic-care offering and targets patients and healthcare buyers seeking remote cardiometabolic care."
+      "rationale": "Digital therapeutics for chronic cardiometabolic conditions overlaps Teladoc's virtual chronic-care services and patient-focused remote care model.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Digital therapeutics for chronic cardiometabolic conditions overlaps Teladoc's virtual chronic-care services and patient-focused remote care model."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Digital chronic-condition management/therapeutics platform, directly comparable to Teladoc's chronic-care services (Livongo-style); same patients and digital-health model."
+        }
+      ]
     },
     {
       "name": "Viona Health",
@@ -659,8 +792,20 @@
         ],
         "relevance_score": "A"
       },
-      "relevant": false,
-      "rationale": "Viona offers healthcare delivery and chronic-care services, but no clear virtual-care or telehealth platform competing for Teladoc\u2019s core use case."
+      "relevant": true,
+      "rationale": "Offers technology-enabled mobile care and chronic disease management, overlapping Teladoc's virtual-care and chronic-care services.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Offers technology-enabled mobile care and chronic disease management, overlapping Teladoc's virtual-care and chronic-care services."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Digital-first care provider offering chronic disease management and platform-based care delivery, overlapping Teladoc's virtual/chronic-care model in an emerging market."
+        }
+      ]
     },
     {
       "name": "ByMySide365",
@@ -710,7 +855,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "ByMySide365 delivers telemedicine and remote chronic-care management, directly overlapping Teladoc\u2019s virtual care and chronic-condition services."
+      "rationale": "Hybrid endocrinology care provider uses telemedicine and remote monitoring, comparable to Teladoc's virtual chronic-care services.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Hybrid endocrinology care provider uses telemedicine and remote monitoring, comparable to Teladoc's virtual chronic-care services."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Telemedicine plus remote monitoring for chronic (endocrinology) care\u2014mirrors Teladoc's virtual-care and chronic-care delivery model for the same patient market."
+        }
+      ]
     },
     {
       "name": "GMC Healthcare",
@@ -756,8 +913,20 @@
         ],
         "relevance_score": "A"
       },
-      "relevant": false,
-      "rationale": "GMC is primarily a local care provider offering telehealth, not a virtual-care platform sold to employers, health plans, or health systems."
+      "relevant": true,
+      "rationale": "GMC provides telehealth visits and chronic-care management, directly overlapping Teladoc's virtual-care and chronic-condition service offerings.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "GMC provides telehealth visits and chronic-care management, directly overlapping Teladoc's virtual-care and chronic-condition service offerings."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Provides telehealth visits and chronic care management services, matching Teladoc's virtual-care and chronic-care offering; size ignored per rules."
+        }
+      ]
     },
     {
       "name": "First Stop Health",
@@ -827,7 +996,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide virtual care connecting patients to clinicians for urgent, mental, chronic, and preventive healthcare, with overlapping employer buyers and patient use cases."
+      "rationale": "Employer-focused virtual-care platform offering on-demand clinicians, mental health, and chronic care; directly comparable to Teladoc.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Employer-focused virtual-care platform offering on-demand clinicians, mental health, and chronic care; directly comparable to Teladoc."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Virtual-care/telehealth platform offering 24/7 urgent, mental, and chronic care \u2014 same product and market as Teladoc."
+        }
+      ]
     },
     {
       "name": "DirectCare AI",
@@ -872,7 +1053,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide virtual clinical care, including patient triage, clinician access, and ongoing remote monitoring, to consumers, employers, and healthcare organizations."
+      "rationale": "Provides virtual clinical care, triage, e-prescribing, and remote monitoring\u2014directly comparable to Teladoc\u2019s telehealth and chronic-care platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Provides virtual clinical care, triage, e-prescribing, and remote monitoring\u2014directly comparable to Teladoc\u2019s telehealth and chronic-care platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Virtual-care platform connecting patients to licensed clinicians, e-prescribing, and remote monitoring \u2014 same product and market as Teladoc's telehealth and chronic-care services."
+        }
+      ]
     },
     {
       "name": "Akos MD",
@@ -930,7 +1123,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Akos offers on-demand virtual clinician consultations and telehealth services, directly overlapping Teladoc\u2019s core virtual-care platform and serving similar patients and employers."
+      "rationale": "Telehealth platform connecting patients to clinicians on demand, including virtual consultations and chronic-adjacent care workflows.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Telehealth platform connecting patients to clinicians on demand, including virtual consultations and chronic-adjacent care workflows."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Telehealth platform offering 24/7 virtual consultations connecting patients with clinicians \u2014 directly matches Teladoc's core product and market."
+        }
+      ]
     },
     {
       "name": "Preventel Health",
@@ -972,7 +1177,24 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both deliver technology-enabled virtual chronic-care and remote patient management services that healthcare organizations use to extend care beyond in-person visits."
+      "rationale": "Provides technology-enabled chronic care management and remote patient monitoring, overlapping Teladoc\u2019s virtual-care and chronic-care service model.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Provides technology-enabled chronic care management and remote patient monitoring, overlapping Teladoc\u2019s virtual-care and chronic-care service model."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Care-management staffing/services partner for providers (CCM/RPM coordination), not a telehealth platform connecting patients to clinicians; resembles vendor, not competitor."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Remote chronic-care management and RPM services between visits, comparable to Teladoc's virtual chronic-care offerings.', ' ' '', ''}]}]}]}]}]}]}]}]}"
+        }
+      ]
     },
     {
       "name": "E-Telmed",
@@ -1027,7 +1249,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "E-Telmed offers an integrated telehealth platform for care delivery, overlapping Teladoc\u2019s virtual-care offering and serving healthcare organizations implementing telehealth."
+      "rationale": "Provides a telehealth platform and implementation solution connecting healthcare infrastructure, directly comparable to Teladoc's virtual-care platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Provides a telehealth platform and implementation solution connecting healthcare infrastructure, directly comparable to Teladoc's virtual-care platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Telehealth platform provider offering software/hardware for virtual care delivery; same product category and market as Teladoc, a genuine comparable."
+        }
+      ]
     },
     {
       "name": "Kerna Health",
@@ -1070,8 +1304,25 @@
         ],
         "relevance_score": "A"
       },
-      "relevant": false,
-      "rationale": "Kerna primarily offers AI-driven healthcare operations solutions and points to subsidiaries for care delivery, rather than operating a direct telehealth platform."
+      "relevant": true,
+      "rationale": "Digital health company providing remote/virtual care solutions to remove distance barriers, matching Teladoc's telehealth product and market.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Kerna Health appears to provide AI healthcare-operations solutions, not a virtual-care or telehealth platform connecting patients with clinicians."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Digital health company providing remote/virtual care solutions to remove distance barriers, matching Teladoc's telehealth product and market."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Digital health platform enabling remote access to care, comparable to telehealth/virtual-care model.\u00bb, plausible peer.\u00bb,"
+        }
+      ]
     },
     {
       "name": "PlushCare",
@@ -1139,7 +1390,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "PlushCare is a virtual-care platform offering online clinician visits and mental health services, directly overlapping Teladoc\u2019s telehealth offering and users."
+      "rationale": "PlushCare is a virtual-care platform offering online primary care and mental-health visits, directly comparable to Teladoc\u2019s telehealth services.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "PlushCare is a virtual-care platform offering online primary care and mental-health visits, directly comparable to Teladoc\u2019s telehealth services."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Direct telehealth competitor: virtual doctor visits for primary care and mental health, same product, market, and model as Teladoc."
+        }
+      ]
     },
     {
       "name": "Primestin Care",
@@ -1183,7 +1446,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Primestin offers virtual primary and mental healthcare, including chronic disease management, overlapping Teladoc\u2019s virtual-care services and patient use cases."
+      "rationale": "Virtual primary care, mental-health, and chronic-disease management provider directly overlaps Teladoc\u2019s telehealth and virtual-care services.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Virtual primary care, mental-health, and chronic-disease management provider directly overlaps Teladoc\u2019s telehealth and virtual-care services."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Virtual primary care and telehealth provider offering chronic disease management and mental health services \u2014 direct product and market match to Teladoc."
+        }
+      ]
     },
     {
       "name": "Galileo",
@@ -1233,7 +1508,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Galileo provides virtual, longitudinal clinical care to health plans and employers, overlapping Teladoc\u2019s telehealth model, buyers, and care-delivery use cases."
+      "rationale": "Galileo provides virtual urgent, primary, and chronic care via telehealth, directly comparable to Teladoc\u2019s virtual-care platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Galileo provides virtual urgent, primary, and chronic care via telehealth, directly comparable to Teladoc\u2019s virtual-care platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Galileo is a 24/7 virtual-care/telehealth platform for urgent and primary care, matching Teladoc on product, market, and business model \u2014 direct competitor."
+        }
+      ]
     },
     {
       "name": "AdvancedCare",
@@ -1273,7 +1560,19 @@
         "relevance_score": "A"
       },
       "relevant": false,
-      "rationale": "AdvancedCare provides clinical and operational mobile software, not a virtual-care platform connecting patients with remote clinicians for telehealth services."
+      "rationale": "Mobile solutions for provider operations and patient follow-up are not clearly a virtual-care, telehealth, or clinician-network platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Mobile solutions for provider operations and patient follow-up are not clearly a virtual-care, telehealth, or clinician-network platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Provider-facing mobile/EHR workflow solutions, not a virtual-care/telehealth platform connecting patients with clinicians; no telehealth product axis."
+        }
+      ]
     },
     {
       "name": "Unified Health Group",
@@ -1315,7 +1614,19 @@
         "relevance_score": "A"
       },
       "relevant": false,
-      "rationale": "Candidate description provides no evidence of a virtual-care or telehealth platform serving the same patients and clinical buyers."
+      "rationale": "Insufficient evidence that it offers a virtual-care or telehealth platform; generic healthcare and hospital labels do not establish a comparable product.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Insufficient evidence that it offers a virtual-care or telehealth platform; generic healthcare and hospital labels do not establish a comparable product."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Vague description with no evidence of a telehealth or virtual-care platform; generic health-care tags alone do not establish resemblance to Teladoc."
+        }
+      ]
     },
     {
       "name": "CareTech Health",
@@ -1374,7 +1685,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide telemedicine platforms connecting patients with healthcare services, serving overlapping virtual-care users and healthcare buyers."
+      "rationale": "Telemedicine platform delivering virtual healthcare and referral services, directly comparable to Teladoc's virtual-care model.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Telemedicine platform delivering virtual healthcare and referral services, directly comparable to Teladoc's virtual-care model."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Telemedicine/virtual-care platform like Teladoc; same product and market, different geography which is not a constraint."
+        }
+      ]
     },
     {
       "name": "Recuro Health",
@@ -1407,7 +1730,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Recuro offers integrated virtual care and digital health services to employers and health organizations, overlapping Teladoc\u2019s telehealth platform and buyers."
+      "rationale": "Recuro provides integrated digital health and virtual-care solutions to employers, providers, and payers, making it a telehealth and population-health platform comparable to Teladoc.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Recuro provides integrated digital health and virtual-care solutions to employers, providers, and payers, making it a telehealth and population-health platform comparable to Teladoc."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Virtual-first telehealth/digital-health platform serving employers and payers \u2014 direct competitor to Teladoc on product, market, and model."
+        }
+      ]
     },
     {
       "name": "Xcllnt Care foundation",
@@ -1447,7 +1782,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide virtual-care platforms connecting patients with clinicians, including telemedicine and remote chronic-care or patient-monitoring services."
+      "rationale": "Provides telemedicine consultations and remote monitoring, directly resembling Teladoc's virtual-care platform despite broader eHealth services.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Provides telemedicine consultations and remote monitoring, directly resembling Teladoc's virtual-care platform despite broader eHealth services."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Telehealth/eHealth provider offering virtual consultations and remote monitoring, same product and market as Teladoc; size and geography irrelevant."
+        }
+      ]
     },
     {
       "name": "Diverse Health",
@@ -1517,7 +1864,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide technology-enabled virtual primary and behavioral healthcare to patients seeking remote clinical care."
+      "rationale": "Virtual telehealth provider offering primary, psychiatric, and behavioral care, directly comparable to Teladoc\u2019s virtual-care platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Virtual telehealth provider offering primary, psychiatric, and behavioral care, directly comparable to Teladoc\u2019s virtual-care platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Virtual telehealth practice offering remote primary care, psychiatry, and behavioral therapy \u2014 same virtual-care product and model as Teladoc."
+        }
+      ]
     },
     {
       "name": "Care-Connect",
@@ -1551,7 +1910,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide digitally enabled remote clinical care and chronic-condition management, serving patients and healthcare organizations seeking virtual-care delivery."
+      "rationale": "Nurse-led digitally integrated remote chronic-care service, connecting patients with clinicians and supporting proactive virtual care.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Nurse-led digitally integrated remote chronic-care service, connecting patients with clinicians and supporting proactive virtual care."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Nurse-led remote chronic-care and digital health service matches Teladoc's virtual care and chronic-care model; direct comparable in telehealth delivery."
+        }
+      ]
     },
     {
       "name": "Legacy Healthcare Solutions",
@@ -1603,8 +1974,25 @@
         ],
         "relevance_score": "A"
       },
-      "relevant": false,
-      "rationale": "Legacy primarily packages employer health benefits and access services, rather than operating a clinician-connected virtual-care platform comparable to Teladoc."
+      "relevant": true,
+      "rationale": "Employer health-benefits provider bundling virtual care, behavioral health, prescriptions, and wellness services; a comparable virtual-care platform despite broader benefits focus.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Employer health-benefits provider bundling virtual care, behavioral health, prescriptions, and wellness services; a comparable virtual-care platform despite broader benefits focus."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Employee health-benefits reseller packaging third-party virtual care for uninsured SMBs, not a telehealth platform comparable to Teladoc."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Offers virtual healthcare, behavioral health and wellness benefits platform to employers, overlapping Teladoc's telehealth employer-benefit model.# Ready for judgment.# ...# ..."
+        }
+      ]
     },
     {
       "name": "Advanced Health Strategies",
@@ -1645,7 +2033,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Offers real-time clinician access and affordable healthcare solutions, directly overlapping Teladoc\u2019s virtual-care service for patients and healthcare-benefit buyers."
+      "rationale": "Provides real-time doctor access and affordable healthcare services, resembling Teladoc's virtual-care model despite less specific product detail.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Provides real-time doctor access and affordable healthcare services, resembling Teladoc's virtual-care model despite less specific product detail."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Provides members real-time access to doctors through innovative healthcare solutions \u2014 a telehealth/virtual-care service comparable to Teladoc."
+        }
+      ]
     },
     {
       "name": "Plux health",
@@ -1681,7 +2081,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide virtual-care platforms spanning remote clinical access and in-home care, targeting organizations seeking telehealth delivery solutions."
+      "rationale": "Offers virtual care solutions spanning hospital-to-home delivery, directly comparable to Teladoc's telehealth and virtual-care platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Offers virtual care solutions spanning hospital-to-home delivery, directly comparable to Teladoc's telehealth and virtual-care platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Offers virtual care/telehealth solutions spanning in-hospital to in-home care, directly matching Teladoc's product and market."
+        }
+      ]
     },
     {
       "name": "Ayudaahora",
@@ -1754,7 +2166,19 @@
         "relevance_score": "A"
       },
       "relevant": false,
-      "rationale": "Ayudaahora appears to be a community health nonprofit, not a virtual-care platform connecting patients and clinicians."
+      "rationale": "Community health nonprofit initiative; no evidence it operates a virtual-care or telehealth platform comparable to Teladoc.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Community health nonprofit initiative; no evidence it operates a virtual-care or telehealth platform comparable to Teladoc."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Maryland community-health nonprofit, not a telehealth/virtual-care platform; no product or model resemblance to Teladoc."
+        }
+      ]
     },
     {
       "name": "Lamothe Primary Care",
@@ -1798,7 +2222,19 @@
         "relevance_score": "A"
       },
       "relevant": false,
-      "rationale": "Lamothe is a primary care provider, not a virtual-care technology platform connecting patients with a broader clinician network."
+      "rationale": "Primary care practice, not evidenced as a virtual-care or telehealth platform connecting patients with clinicians.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Primary care practice, not evidenced as a virtual-care or telehealth platform connecting patients with clinicians."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "A small local primary care clinic, not a telehealth/virtual-care platform; a service provider, not a comparable to Teladoc."
+        }
+      ]
     },
     {
       "name": "Vis-\u00c0-Vis Health",
@@ -1851,7 +2287,19 @@
         "relevance_score": "A"
       },
       "relevant": false,
-      "rationale": "Vis-\u00c0-Vis primarily provides in-home preventive healthcare, not a virtual-care or telehealth platform evaluated for the same care-delivery need."
+      "rationale": "Provides in-home preventive healthcare rather than a virtual-care technology platform connecting patients with clinicians.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Provides in-home preventive healthcare rather than a virtual-care technology platform connecting patients with clinicians."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "In-home/facility-based preventive care provider, not a virtual-care or telehealth platform; no product or business-model resemblance to Teladoc."
+        }
+      ]
     },
     {
       "name": "Dawaa24",
@@ -1905,7 +2353,19 @@
         "relevance_score": "A"
       },
       "relevant": false,
-      "rationale": "Dawaa24 is an online pharmacy and medication-delivery network, not a virtual clinician-care and chronic-care telehealth platform."
+      "rationale": "Dawaa24 is an e-pharmacy and prescription-delivery marketplace, not a virtual-care platform connecting patients with clinicians for care delivery.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Dawaa24 is an e-pharmacy and prescription-delivery marketplace, not a virtual-care platform connecting patients with clinicians for care delivery."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "E-pharmacy selling and delivering prescription drugs, not a telehealth platform connecting patients with clinicians; different product and job to be done."
+        }
+      ]
     },
     {
       "name": "GoTo Telemed",
@@ -1974,7 +2434,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "GoTo Telemed offers nationwide virtual urgent and primary care, directly overlapping Teladoc\u2019s telehealth platform and serving the same patients and healthcare buyers."
+      "rationale": "Virtual telehealth provider connecting patients with clinicians for urgent and primary care, directly comparable to Teladoc's virtual-care platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Virtual telehealth provider connecting patients with clinicians for urgent and primary care, directly comparable to Teladoc's virtual-care platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Telehealth platform connecting patients with board-certified doctors for virtual urgent and primary care\u2014same product and market as Teladoc."
+        }
+      ]
     },
     {
       "name": "AfriHealth",
@@ -2031,7 +2503,24 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "AfriHealth offers mobile and web-based healthcare access through provider partnerships, overlapping Teladoc\u2019s virtual-care platform and patient access use case."
+      "rationale": "Digital-health platform whose apps deliver real-time virtual care and connect patients with providers; same telehealth product/model as Teladoc, different region.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Healthcare access app partnering with providers, but virtual clinician consultations or chronic-care services are not clearly its primary product."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Digital-health platform whose apps deliver real-time virtual care and connect patients with providers; same telehealth product/model as Teladoc, different region."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Digital health platform providing app-based access to clinicians and healthcare services; regional telehealth-style comparable to Teladoc."
+        }
+      ]
     },
     {
       "name": "ISON Health",
@@ -2091,7 +2580,19 @@
         "relevance_score": "A"
       },
       "relevant": false,
-      "rationale": "ISON Health appears to operate a provider network, not a virtual-care or telehealth platform evaluated for the same care-delivery job."
+      "rationale": "ISON Health appears to operate a healthcare-provider network, not a virtual-care or telehealth platform connecting patients with clinicians remotely.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "ISON Health appears to operate a healthcare-provider network, not a virtual-care or telehealth platform connecting patients with clinicians remotely."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "ISON Health is a hospital/provider network delivering in-person care, not a virtual-care or telehealth platform; no product or model resemblance."
+        }
+      ]
     },
     {
       "name": "SDKare",
@@ -2144,7 +2645,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "SDKare delivers clinician-guided virtual treatment, overlapping Teladoc\u2019s telehealth model and serving patients seeking remote medical and behavioral care."
+      "rationale": "Clinician-guided mental health and weight-loss care resembles Teladoc's virtual-care delivery model and patient-facing clinical services.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Clinician-guided mental health and weight-loss care resembles Teladoc's virtual-care delivery model and patient-facing clinical services."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "SDKare delivers virtual clinician-guided care (mental health, weight loss), a telehealth provider comparable to Teladoc's virtual-care model."
+        }
+      ]
     },
     {
       "name": "CareMonitor",
@@ -2198,7 +2711,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "CareMonitor overlaps Teladoc in virtual care, remote patient monitoring, and chronic-condition management for healthcare providers and patients."
+      "rationale": "Virtual-care, hospital-at-home, remote-monitoring, and chronic-condition platform directly overlaps Teladoc\u2019s telehealth and chronic-care services.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Virtual-care, hospital-at-home, remote-monitoring, and chronic-condition platform directly overlaps Teladoc\u2019s telehealth and chronic-care services."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Cloud-based virtual care and remote patient monitoring platform for chronic conditions, matching Teladoc's telehealth product and market."
+        }
+      ]
     },
     {
       "name": "CareClix",
@@ -2279,7 +2804,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "CareClix offers a telehealth platform for virtual patient-clinician consultations and remote care, directly overlapping Teladoc\u2019s core offering and users."
+      "rationale": "CareClix provides a HIPAA-compliant telehealth platform for remote clinician-patient consultations and monitoring, directly comparable to Teladoc's virtual-care offering.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "CareClix provides a HIPAA-compliant telehealth platform for remote clinician-patient consultations and monitoring, directly comparable to Teladoc's virtual-care offering."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Telehealth platform enabling virtual patient-doctor consultations; same product and market as Teladoc's virtual-care service."
+        }
+      ]
     },
     {
       "name": "Radish Health",
@@ -2346,7 +2883,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Radish provides employer-focused virtual medical care, overlapping Teladoc\u2019s telehealth offering and serving buyers seeking accessible remote clinician services."
+      "rationale": "Radish provides accessible medical care for employees, making it a virtual-care/healthcare delivery comparable to Teladoc despite an employer-focused model.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Radish provides accessible medical care for employees, making it a virtual-care/healthcare delivery comparable to Teladoc despite an employer-focused model."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Radish Health provides virtual medical care/telehealth services to employees, directly comparable to Teladoc's virtual care platform on product and market axes."
+        }
+      ]
     },
     {
       "name": "Honeysuckle Health",
@@ -2395,7 +2944,19 @@
         "relevance_score": "A"
       },
       "relevant": false,
-      "rationale": "Honeysuckle Health focuses on healthcare analytics, risk prediction, and health-management programs, not a virtual clinician-access and telehealth platform."
+      "rationale": "Health-management and data-science provider for payers and healthcare systems, not a virtual-care or telehealth platform connecting patients with clinicians.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Health-management and data-science provider for payers and healthcare systems, not a virtual-care or telehealth platform connecting patients with clinicians."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Honeysuckle is a health data-science/population-health analytics and care-management firm, not a telehealth platform connecting patients with clinicians; different product and model."
+        }
+      ]
     },
     {
       "name": "Medistat Ny",
@@ -2445,7 +3006,24 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Medistat connects seniors with doctors from home, directly overlapping Teladoc\u2019s remote-access virtual-care use case and patient audience."
+      "rationale": "Connects seniors to doctors at home, resembling virtual-care delivery for an overlapping patient population.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Connects seniors to doctors at home, resembling virtual-care delivery for an overlapping patient population."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Appears to be a senior care-navigation/home-visit service tackling bureaucracy, not a telehealth platform; no clear virtual-care product, so not a Teladoc comparable."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Connects seniors to doctors remotely/at home \\u2014 remote care delivery service, a small-scale comparable in the virtual care space.Continue?  Yes.', 'ok'.', ''.', ''.', ''.'"
+        }
+      ]
     },
     {
       "name": "Lyric Health",
@@ -2513,7 +3091,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Lyric offers 24/7 virtual care connecting patients with physicians, directly overlapping Teladoc\u2019s telehealth platform and serving the same healthcare buyers and users."
+      "rationale": "Virtual-first primary, mental-health, and specialty care platform directly comparable to Teladoc's telehealth and chronic-care services.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Virtual-first primary, mental-health, and specialty care platform directly comparable to Teladoc's telehealth and chronic-care services."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Virtual-first telehealth platform offering 24/7 physician and mental-health access, directly comparable to Teladoc's virtual care model."
+        }
+      ]
     },
     {
       "name": "Origo Health",
@@ -2546,7 +3136,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Origo offers a telehealth exchange connecting patients with healthcare providers via telepresence, overlapping Teladoc\u2019s virtual-care access model and user need."
+      "rationale": "Healthcare access platform connecting patients with providers through telepresence and information, resembling Teladoc's virtual-care marketplace model.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Healthcare access platform connecting patients with providers through telepresence and information, resembling Teladoc's virtual-care marketplace model."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Telehealth exchange connecting patients with healthcare providers via telepresence \u2014 same virtual-care product and marketplace model as Teladoc."
+        }
+      ]
     },
     {
       "name": "Dr Telx",
@@ -2602,7 +3204,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Dr Telx directly overlaps Teladoc by connecting patients with licensed doctors for remote consultations and prescriptions through an online telehealth platform."
+      "rationale": "Both provide telehealth platforms connecting patients to licensed clinicians; Dr Telx is a specialized virtual-care comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both provide telehealth platforms connecting patients to licensed clinicians; Dr Telx is a specialized virtual-care comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are telehealth platforms connecting patients with licensed clinicians virtually; same product, market, and model as Teladoc."
+        }
+      ]
     },
     {
       "name": "CAAFiSOM",
@@ -2653,7 +3267,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "CAAFiSOM digitally connects patients with clinicians for remote health guidance and care access, overlapping Teladoc\u2019s virtual-care platform and users."
+      "rationale": "Healthcare app connects patients with clinicians and supports appointment booking and records access, making it a virtual-care/telehealth comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Healthcare app connects patients with clinicians and supports appointment booking and records access, making it a virtual-care/telehealth comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Digital health platform connecting patients with clinicians via app\u2014same telehealth/virtual-care product and market as Teladoc, just smaller and regional."
+        }
+      ]
     },
     {
       "name": "Sumato Health",
@@ -2684,7 +3310,24 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide technology-enabled remote patient monitoring and care management to healthcare organizations seeking better outcomes and fewer readmissions."
+      "rationale": "Tech-enabled remote patient monitoring and care management for post-acute patients\u2014comparable virtual-care/chronic-care delivery model to Teladoc's telehealth and chronic-care services.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Post-acute facility monitoring and care-management service, not a virtual-care or telehealth platform connecting patients with clinicians."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Tech-enabled remote patient monitoring and care management for post-acute patients\u2014comparable virtual-care/chronic-care delivery model to Teladoc's telehealth and chronic-care services."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Remote patient monitoring with care managers resembles Teladoc's virtual chronic-care/remote monitoring services; plausible comparable."
+        }
+      ]
     },
     {
       "name": "Enspire Beauty and Wellness",
@@ -2741,7 +3384,19 @@
         "relevance_score": "A"
       },
       "relevant": false,
-      "rationale": "Enspire is a beauty and wellness care provider, not a virtual-care platform connecting patients with remote clinicians and chronic-care services."
+      "rationale": "Beauty and wellness practice, not a virtual-care platform connecting patients with clinicians or providing scalable telehealth and chronic-care services.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Beauty and wellness practice, not a virtual-care platform connecting patients with clinicians or providing scalable telehealth and chronic-care services."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Small wellness/beauty practice, not a virtual-care telehealth platform; no shared product or business model resemblance to Teladoc."
+        }
+      ]
     },
     {
       "name": "Medical Advice Today",
@@ -2794,7 +3449,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide virtual healthcare services connecting patients with medical professionals for remote care, serving the same core telehealth use case."
+      "rationale": "Provides virtual healthcare connecting patients with medical professionals, directly comparable to Teladoc's telehealth and virtual-care platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Provides virtual healthcare connecting patients with medical professionals, directly comparable to Teladoc's telehealth and virtual-care platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Virtual healthcare provider connecting patients with clinicians remotely; same telehealth product and market as Teladoc despite small size."
+        }
+      ]
     },
     {
       "name": "CirrusMD",
@@ -2874,7 +3541,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "CirrusMD provides virtual clinician access and care guidance, overlapping Teladoc\u2019s telehealth platform and serving the same healthcare buyers and patients."
+      "rationale": "CirrusMD provides virtual care connecting patients with clinicians, directly comparable to Teladoc\u2019s telehealth and care-delivery platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "CirrusMD provides virtual care connecting patients with clinicians, directly comparable to Teladoc\u2019s telehealth and care-delivery platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Virtual care/telehealth platform connecting patients to physicians on demand; direct competitor to Teladoc on product, market, and model."
+        }
+      ]
     },
     {
       "name": "VirtuMedex",
@@ -2934,7 +3613,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "VirtuMedex provides telehealth-enabled chronic care, remote monitoring, and care coordination to healthcare organizations, directly overlapping Teladoc\u2019s virtual-care offerings and buyers."
+      "rationale": "Telehealth-enabled chronic care, remote monitoring, and care coordination make it a direct virtual-care comparable to Teladoc.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Telehealth-enabled chronic care, remote monitoring, and care coordination make it a direct virtual-care comparable to Teladoc."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Telehealth-enabled virtual care company delivering chronic care management and remote patient monitoring, directly overlapping Teladoc's virtual-care and chronic-care services."
+        }
+      ]
     },
     {
       "name": "Ethnomet",
@@ -2992,7 +3683,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Ethnomet offers a virtual-care platform connecting patients with healthcare providers, directly overlapping Teladoc\u2019s telehealth offering and patient care use case."
+      "rationale": "Virtual healthcare platform connecting patients to clinicians, directly comparable to Teladoc\u2019s telehealth and virtual-care model.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Virtual healthcare platform connecting patients to clinicians, directly comparable to Teladoc\u2019s telehealth and virtual-care model."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Virtual-care platform connecting patients with clinicians, same telehealth product and market as Teladoc; size irrelevant."
+        }
+      ]
     },
     {
       "name": "Allied Wellness",
@@ -3061,7 +3764,19 @@
         "relevance_score": "A"
       },
       "relevant": false,
-      "rationale": "Allied Wellness appears to provide broad wellness services, with no clear virtual-care platform connecting patients and clinicians for telehealth."
+      "rationale": "Wellness services description does not establish a virtual-care, telehealth, or clinician-connection platform comparable to Teladoc.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Wellness services description does not establish a virtual-care, telehealth, or clinician-connection platform comparable to Teladoc."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Wellness/fitness services aggregator, no virtual-care or telehealth platform connecting patients with clinicians; not a Teladoc comparable."
+        }
+      ]
     },
     {
       "name": "Complete Health Collective",
@@ -3107,7 +3822,19 @@
         "relevance_score": "A"
       },
       "relevant": false,
-      "rationale": "Complete Health Collective appears to provide wellness expertise, not a virtual-care platform connecting patients with clinicians for telehealth and chronic care."
+      "rationale": "Health-and-wellness expert collective, not a virtual-care platform connecting patients with clinicians for telehealth or chronic-care delivery.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Health-and-wellness expert collective, not a virtual-care platform connecting patients with clinicians for telehealth or chronic-care delivery."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Wellness coaching collective of health experts, not a telehealth/virtual-care platform; no comparable product or technology-driven care delivery model."
+        }
+      ]
     },
     {
       "name": "DevotedDOc Health",
@@ -3187,7 +3914,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide physician-led virtual care and telehealth services, including urgent and general medical treatment, to patients and organizational partners."
+      "rationale": "Virtual care platform delivering clinician-led urgent, general, and specialty telemedicine services, directly comparable to Teladoc's core offering.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Virtual care platform delivering clinician-led urgent, general, and specialty telemedicine services, directly comparable to Teladoc's core offering."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Physician-led virtual care/telemedicine platform offering urgent care and specialty services \u2014 same product and market as Teladoc."
+        }
+      ]
     },
     {
       "name": "Telahealth",
@@ -3243,7 +3982,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide virtual consultations connecting patients with licensed clinicians across general and specialty care, serving the same telehealth job to be done."
+      "rationale": "Telehealth platform providing virtual clinician consultations across general and specialty care, directly comparable to Teladoc\u2019s virtual-care offering.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Telehealth platform providing virtual clinician consultations across general and specialty care, directly comparable to Teladoc\u2019s virtual-care offering."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Virtual-consultation telehealth platform connecting patients with licensed doctors across multiple clinical areas \u2014 same product and model as Teladoc, different region."
+        }
+      ]
     },
     {
       "name": "Icarevirtual",
@@ -3281,7 +4032,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Icarevirtual delivers technology-enabled virtual and hybrid primary care, overlapping Teladoc\u2019s telehealth offering for patients seeking remote clinician access."
+      "rationale": "Hybrid virtual primary care and mental-health services resemble Teladoc's telehealth platform and patient-care delivery model.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Hybrid virtual primary care and mental-health services resemble Teladoc's telehealth platform and patient-care delivery model."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Virtual-first primary and mental-health care provider using technology-enabled hybrid care model \u2014 same telehealth/virtual-care market as Teladoc."
+        }
+      ]
     },
     {
       "name": "Mediverse\u00ae",
@@ -3336,7 +4099,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Mediverse provides telemedicine access connecting patients and physicians, directly overlapping Teladoc\u2019s virtual-care platform and healthcare user needs."
+      "rationale": "Physician-led telemedicine provider offering virtual specialty care, overlapping Teladoc\u2019s virtual-care delivery model and patient access mission.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Physician-led telemedicine provider offering virtual specialty care, overlapping Teladoc\u2019s virtual-care delivery model and patient access mission."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Physician-led telemedicine provider delivering virtual care and specialist access \u2014 same telehealth product and market as Teladoc; size ignored."
+        }
+      ]
     },
     {
       "name": "My Virtual Physician",
@@ -3408,7 +4183,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide multi-specialty virtual care, including primary and chronic-care telehealth services, to patients seeking remote clinical care."
+      "rationale": "Multi-specialty virtual-care provider delivering telehealth, primary and chronic care, directly comparable to Teladoc\u2019s virtual-care platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Multi-specialty virtual-care provider delivering telehealth, primary and chronic care, directly comparable to Teladoc\u2019s virtual-care platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Multi-specialty telehealth provider offering virtual primary, chronic, and specialty care \u2014 same product, market, and model as Teladoc."
+        }
+      ]
     },
     {
       "name": "Renew Wellness AND Recovery",
@@ -3463,7 +4250,19 @@
         "relevance_score": "A"
       },
       "relevant": false,
-      "rationale": "Renew Wellness appears to be a direct wellness/recovery care provider, not a virtual-care platform connecting patients and clinicians."
+      "rationale": "Renew Wellness and Recovery appears to provide wellness/recovery services, not a virtual-care platform connecting patients with clinicians across telehealth and chronic-care programs.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Renew Wellness and Recovery appears to provide wellness/recovery services, not a virtual-care platform connecting patients with clinicians across telehealth and chronic-care programs."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Small wellness/recovery clinic delivering in-person care services, not a virtual-care/telehealth platform; no product or model resemblance to Teladoc."
+        }
+      ]
     },
     {
       "name": "CallCare24",
@@ -3515,7 +4314,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "CallCare24 offers telehealth appointments, remote patient monitoring, and virtual-care technology, overlapping Teladoc\u2019s core services and healthcare buyers."
+      "rationale": "Cloud telehealth platform with remote monitoring and patient-care tools, directly comparable to Teladoc's virtual-care and chronic-care services.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Cloud telehealth platform with remote monitoring and patient-care tools, directly comparable to Teladoc's virtual-care and chronic-care services."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Telehealth platform offering virtual care and remote patient monitoring \u2014 directly comparable product and market to Teladoc."
+        }
+      ]
     },
     {
       "name": "DDM Health",
@@ -3563,7 +4374,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "DDM\u2019s digital chronic-disease management platform overlaps Teladoc\u2019s chronic-care offering and targets healthcare organizations seeking remote population-health solutions."
+      "rationale": "Digital health platform delivers patient-facing chronic-condition education, monitoring, and outcomes programs, comparable to Teladoc's virtual chronic-care services.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Digital health platform delivers patient-facing chronic-condition education, monitoring, and outcomes programs, comparable to Teladoc's virtual chronic-care services."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Digital chronic-care platform (diabetes/metabolic health programs) comparable to Teladoc's chronic-condition management arm; same buyers and patients, overlapping product."
+        }
+      ]
     },
     {
       "name": "Imortol",
@@ -3599,7 +4422,19 @@
         "relevance_score": "A"
       },
       "relevant": false,
-      "rationale": "Imortol\u2019s listed health and wellness focus does not establish a virtual-care platform connecting patients with clinicians for comparable care delivery."
+      "rationale": "No evidence Imortol provides a virtual-care or telehealth platform connecting patients with clinicians; broad health-related labels are insufficient.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "No evidence Imortol provides a virtual-care or telehealth platform connecting patients with clinicians; broad health-related labels are insufficient."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "No evidence Imortol operates a telehealth/virtual-care platform; generic mHealth/wellness tags without a clear matching product. When in doubt, false."
+        }
+      ]
     },
     {
       "name": "Sapius Health",
@@ -3633,7 +4468,19 @@
         "relevance_score": "A"
       },
       "relevant": false,
-      "rationale": "Sapius Health\u2019s listed categories do not establish a clinician-connected telehealth or virtual-care platform overlapping Teladoc\u2019s core offering."
+      "rationale": "Available information only indicates a small health/mHealth company, with no evidence of a virtual-care or clinician-connectivity platform comparable to Teladoc.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Available information only indicates a small health/mHealth company, with no evidence of a virtual-care or clinician-connectivity platform comparable to Teladoc."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "mHealth/AI-health tags alone don't establish a telehealth/virtual-care platform; no evidence it delivers remote clinical care like Teladoc."
+        }
+      ]
     },
     {
       "name": "Fabric",
@@ -3682,7 +4529,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Fabric offers virtual care and care enablement to health systems, employers, and health plans, overlapping Teladoc\u2019s telehealth services and institutional buyers."
+      "rationale": "Fabric offers virtual care services and care-navigation infrastructure to health plans and employers, directly comparable to Teladoc\u2019s virtual-care platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Fabric offers virtual care services and care-navigation infrastructure to health plans and employers, directly comparable to Teladoc\u2019s virtual-care platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Fabric is a virtual care/telehealth platform serving health systems and employers\u2014same product and market as Teladoc, a direct competitor."
+        }
+      ]
     },
     {
       "name": "WellClix",
@@ -3738,7 +4597,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide healthcare organizations virtual-care platforms connecting clinical workflows with telehealth delivery, monitoring, and care management."
+      "rationale": "Health-system workflow platform includes telehealth capabilities, serving providers delivering virtual care; a plausible adjacent telehealth-platform comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Health-system workflow platform includes telehealth capabilities, serving providers delivering virtual care; a plausible adjacent telehealth-platform comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Care-delivery platform with built-in telehealth for health systems; comparable virtual-care software peer to Teladoc."
+        }
+      ]
     },
     {
       "name": "Southside Diabetes AND Integrated Care",
@@ -3809,7 +4680,19 @@
         "relevance_score": "A"
       },
       "relevant": false,
-      "rationale": "Southside Diabetes is a specialized healthcare provider, not a virtual-care platform offering telehealth infrastructure and services comparable to Teladoc."
+      "rationale": "Diabetes-focused healthcare provider, not a virtual-care or telehealth platform connecting patients to clinicians across care services.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Diabetes-focused healthcare provider, not a virtual-care or telehealth platform connecting patients to clinicians across care services."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Local diabetes care clinic delivering medical services, not a telehealth/virtual-care platform; a provider, not a peer or comparable to Teladoc."
+        }
+      ]
     },
     {
       "name": "CareValue Health",
@@ -3856,7 +4739,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "CareValue offers AI-powered virtual access to physicians and chronic-care services, overlapping Teladoc\u2019s telehealth platform and patient-care use cases."
+      "rationale": "AI-powered platform connects patients with physicians for virtual care and chronic disease management, directly comparable to Teladoc\u2019s telehealth model.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "AI-powered platform connects patients with physicians for virtual care and chronic disease management, directly comparable to Teladoc\u2019s telehealth model."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Virtual-care platform connecting patients with physicians remotely, including chronic disease management \u2014 same product and model as Teladoc, different region."
+        }
+      ]
     },
     {
       "name": "Onewellness",
@@ -3899,7 +4794,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide digital chronic-care management and healthcare access for patients managing conditions such as diabetes and hypertension."
+      "rationale": "Chronic disease management app connects users to care, overlapping Teladoc\u2019s virtual-care and chronic-care services.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Chronic disease management app connects users to care, overlapping Teladoc\u2019s virtual-care and chronic-care services."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Digital chronic-care platform (diabetes/hypertension) with access to clinicians and health services\u2014mirrors Teladoc's virtual-care/chronic-care model, akin to Livongo."
+        }
+      ]
     },
     {
       "name": "Wellacy Health",
@@ -3938,7 +4845,19 @@
         "relevance_score": "A"
       },
       "relevant": false,
-      "rationale": "Wellacy\u2019s description does not establish a virtual-care platform connecting patients with clinicians; generic digital health or EHR overlap is insufficient."
+      "rationale": "Broad digital-health description lacks evidence of a virtual-care, telehealth, or clinician-patient platform comparable to Teladoc.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Broad digital-health description lacks evidence of a virtual-care, telehealth, or clinician-patient platform comparable to Teladoc."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Vague digital-health description with no clear telehealth/virtual-care product; EHR and government-administration signals suggest different category. In doubt, false."
+        }
+      ]
     },
     {
       "name": "Doko Medical",
@@ -3996,7 +4915,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Doko offers a telemedicine platform and provider network for virtual clinician-patient care, directly overlapping Teladoc\u2019s core offering and care-delivery use case."
+      "rationale": "Telemedicine platform enabling clinicians to deliver remote care, directly comparable to Teladoc\u2019s virtual-care offering.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Telemedicine platform enabling clinicians to deliver remote care, directly comparable to Teladoc\u2019s virtual-care offering."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Doko Medical is a telemedicine platform connecting clinicians and patients, plus provider network\u2014same product and market as Teladoc."
+        }
+      ]
     },
     {
       "name": "Ovation Telehealth",
@@ -4029,7 +4960,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide virtual medical and mental healthcare platforms connecting patients or employees with clinicians, targeting employers, health plans, providers, and consumers."
+      "rationale": "Telehealth platform offering employer, consumer, health-plan, and provider access to medical and behavioral-health clinicians, directly comparable to Teladoc.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Telehealth platform offering employer, consumer, health-plan, and provider access to medical and behavioral-health clinicians, directly comparable to Teladoc."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Telehealth platform offering 24/7 physician and mental-health video/phone consultations for employers and health plans \u2014 same product and market as Teladoc."
+        }
+      ]
     },
     {
       "name": "DoctorCare247",
@@ -4060,7 +5003,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "DoctorCare247 is a virtual-care platform connecting patients with clinicians via video, text, and phone, directly overlapping Teladoc\u2019s core telehealth offering."
+      "rationale": "Telehealth platform delivering virtual clinician consultations and care services, directly comparable to Teladoc despite regional focus.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Telehealth platform delivering virtual clinician consultations and care services, directly comparable to Teladoc despite regional focus."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Telehealth platform offering virtual doctor consultations via video/text, same product and market as Teladoc; size/geography irrelevant."
+        }
+      ]
     },
     {
       "name": "Telescope Health",
@@ -4132,7 +5087,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Telescope Health delivers technology-enabled virtual care, overlapping Teladoc\u2019s telehealth offering for patients and organizations seeking remote clinical access."
+      "rationale": "Provides virtual physician care and telehealth services to employers and health systems, directly comparable to Teladoc\u2019s virtual-care platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Provides virtual physician care and telehealth services to employers and health systems, directly comparable to Teladoc\u2019s virtual-care platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Telehealth platform delivering 24/7 physician virtual care to employers and health systems; matches Teladoc on product, market, and business model."
+        }
+      ]
     },
     {
       "name": "Evolve Health",
@@ -4192,7 +5159,19 @@
         "relevance_score": "A"
       },
       "relevant": false,
-      "rationale": "Evolve Health appears to be a healthcare provider, not a virtual-care platform offering telehealth technology and services comparable to Teladoc."
+      "rationale": "Evolve Health appears to be a direct primary and mental-health care provider, not a virtual-care or telehealth platform connecting patients with clinicians.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Evolve Health appears to be a direct primary and mental-health care provider, not a virtual-care or telehealth platform connecting patients with clinicians."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Appears to be a small direct-care clinic (primary care/mental health provider), not a telehealth platform; no virtual-care product evidence."
+        }
+      ]
     },
     {
       "name": "Stop any disease",
@@ -4248,7 +5227,19 @@
         "relevance_score": "A"
       },
       "relevant": false,
-      "rationale": "The domain and description are dominated by lottery spam; the telehealth claim appears unreliable, not a credible virtual-care platform."
+      "rationale": "The domain content is gambling-results spam; the appended telehealth claim is not credible evidence of a genuine virtual-care platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "The domain content is gambling-results spam; the appended telehealth claim is not credible evidence of a genuine virtual-care platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Domain is lottery-result spam (Chinese lottery text) with a pasted telehealth tagline; not a genuine telehealth provider \u2014 likely spam/duplicate entry."
+        }
+      ]
     },
     {
       "name": "Online Health Company Ohealth",
@@ -4285,7 +5276,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Ohealth offers a digital healthcare platform enabling remote access to care, overlapping Teladoc\u2019s virtual-care offering and patient use case."
+      "rationale": "Online platform delivers remote, accessible healthcare services, resembling Teladoc's virtual-care model despite limited detail on clinician network or chronic care.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Online platform delivers remote, accessible healthcare services, resembling Teladoc's virtual-care model despite limited detail on clinician network or chronic care."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Ohealth operates a telehealth/mHealth platform delivering remote healthcare services regardless of location, matching Teladoc's virtual-care product and model; geography is irrelevant."
+        }
+      ]
     },
     {
       "name": "Top Notch Telehealth",
@@ -4321,7 +5324,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide patient-facing telehealth services connecting users to remote healthcare, addressing the same virtual-care need."
+      "rationale": "Telehealth provider offering virtual healthcare, directly comparable to Teladoc's core virtual-care service.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Telehealth provider offering virtual healthcare, directly comparable to Teladoc's core virtual-care service."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Telehealth/telemedicine provider offering virtual care services, directly matching Teladoc's product and market; size ignored per rules."
+        }
+      ]
     },
     {
       "name": "Healthcare Services for Your Well-being",
@@ -4396,7 +5411,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide virtual urgent and primary care through telehealth, serving patients seeking remote clinician access for the same care needs."
+      "rationale": "Provides telehealth-based urgent and primary care, directly resembling Teladoc's virtual-care service model for patients.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Provides telehealth-based urgent and primary care, directly resembling Teladoc's virtual-care service model for patients."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Telehealth provider delivering virtual urgent and primary care; same product and market as Teladoc's virtual-care platform. Size is irrelevant per benchmark rules."
+        }
+      ]
     },
     {
       "name": "Citrus Telemedicine",
@@ -4454,7 +5481,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide virtual healthcare connecting patients with clinicians for remote consultations, prescriptions, and ongoing condition management."
+      "rationale": "Virtual healthcare and telemedicine provider connecting patients to clinical services, directly comparable to Teladoc's core virtual-care offering.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Virtual healthcare and telemedicine provider connecting patients to clinical services, directly comparable to Teladoc's core virtual-care offering."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Telemedicine provider offering virtual consultations, prescriptions, and labs \u2014 same product, market, and model as Teladoc; size is irrelevant."
+        }
+      ]
     },
     {
       "name": "MedVip",
@@ -4505,7 +5544,19 @@
         "relevance_score": "A"
       },
       "relevant": false,
-      "rationale": "MedVip appears to provide outpatient medical services, not a virtual-care platform competing for the same telehealth buyers and use case."
+      "rationale": "MedVip is a concierge primary-care membership network, not primarily a virtual-care or telehealth platform comparable to Teladoc.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "MedVip is a concierge primary-care membership network, not primarily a virtual-care or telehealth platform comparable to Teladoc."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Small outpatient/concierge clinic (Wix site, 2-10 staff) delivering care, not a telehealth platform; no virtual-care product evidence."
+        }
+      ]
     },
     {
       "name": "DrDoGood",
@@ -4551,7 +5602,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide digital healthcare platforms connecting patients with clinicians to improve access and care delivery."
+      "rationale": "Primary-care access platform connecting patients and providers resembles Teladoc's virtual-care delivery model.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Primary-care access platform connecting patients and providers resembles Teladoc's virtual-care delivery model."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Web/mobile platform connecting patients with healthcare providers for virtual primary care\u2014same telehealth product and market as Teladoc; small size irrelevant."
+        }
+      ]
     },
     {
       "name": "Fitwell HUB PK",
@@ -4626,7 +5689,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide telehealth platforms connecting patients with remote healthcare services and clinicians, serving overlapping virtual-care needs."
+      "rationale": "Telehealth platform delivering virtual care and digital clinics, directly comparable to Teladoc's virtual-care model.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Telehealth platform delivering virtual care and digital clinics, directly comparable to Teladoc's virtual-care model."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Telemedicine/telehealth platform delivering virtual care via digital clinics \u2014 same product and market as Teladoc, different region."
+        }
+      ]
     },
     {
       "name": "WELL Health Technologies Corp.",
@@ -4698,7 +5773,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "WELL operates virtual-care and telehealth offerings connecting patients and clinicians, directly overlapping Teladoc\u2019s core platform and healthcare buyer needs."
+      "rationale": "WELL operates multi-disciplinary telehealth and virtual-care services, directly comparable to Teladoc's virtual-care platform despite broader provider-enablement offerings.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "WELL operates multi-disciplinary telehealth and virtual-care services, directly comparable to Teladoc's virtual-care platform despite broader provider-enablement offerings."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "WELL Health is a leading telehealth and virtual-care provider, directly competing with Teladoc on product and market despite added EMR/clinic operations."
+        }
+      ]
     },
     {
       "name": "Avel eCare",
@@ -4774,7 +5861,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Avel eCare provides telemedicine and virtual-care services connecting healthcare organizations and patients with remote clinicians, directly overlapping Teladoc\u2019s core offering."
+      "rationale": "Provides telemedicine and virtual clinical care services, making it a direct comparable in the telehealth market despite its clinician-to-clinician focus.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Provides telemedicine and virtual clinical care services, making it a direct comparable in the telehealth market despite its clinician-to-clinician focus."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Telemedicine provider like Teladoc; clinician-to-clinician focus rather than direct-to-patient, but same telehealth product and market category."
+        }
+      ]
     },
     {
       "name": "MedSys Health",
@@ -4818,7 +5917,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "MedSys offers telemedicine, remote patient monitoring, and patient engagement for healthcare organizations, overlapping Teladoc\u2019s virtual-care platform and buyers."
+      "rationale": "Virtual care platform offering telemedicine, remote patient monitoring, and patient engagement\u2014directly comparable to Teladoc\u2019s telehealth and chronic-care services.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Virtual care platform offering telemedicine, remote patient monitoring, and patient engagement\u2014directly comparable to Teladoc\u2019s telehealth and chronic-care services."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "MedSys offers a virtual care platform with telemedicine, remote patient monitoring, and patient engagement \u2014 same product and market as Teladoc."
+        }
+      ]
     },
     {
       "name": "Virtual Wellbeing MD - Dr Z",
@@ -4858,7 +5969,19 @@
         "relevance_score": "A"
       },
       "relevant": false,
-      "rationale": "This is an individual physician/wellness education practice, not a virtual-care platform connecting patients with a clinician network or chronic-care services."
+      "rationale": "Individual physician wellness practice and education brand, not a scalable virtual-care platform connecting patients with clinicians and chronic-care services.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Individual physician wellness practice and education brand, not a scalable virtual-care platform connecting patients with clinicians and chronic-care services."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Solo physician's personal virtual practice, not a telehealth platform; a care provider, not a Teladoc comparable or competitor."
+        }
+      ]
     },
     {
       "name": "Abi",
@@ -4921,7 +6044,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Abi offers an on-demand virtual-care platform connecting users to healthcare professionals, overlapping Teladoc\u2019s telehealth offering and serving similar healthcare buyers."
+      "rationale": "AI-enabled virtual-care platform connecting users to healthcare professionals, comparable to Teladoc's telehealth offering despite its partnership-focused delivery model.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "AI-enabled virtual-care platform connecting users to healthcare professionals, comparable to Teladoc's telehealth offering despite its partnership-focused delivery model."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Abi runs a virtual-care platform giving on-demand access to clinicians, same product category as Teladoc's telehealth offering \u2014 a genuine comparable/competitor."
+        }
+      ]
     },
     {
       "name": "My Health Membership",
@@ -4959,7 +6094,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide digitally delivered healthcare access through a subscription platform, serving patients seeking convenient care without traditional billing friction."
+      "rationale": "Digital healthcare subscription providing patient care is a comparable virtual-care model, though narrower than Teladoc's broader telehealth platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Digital healthcare subscription providing patient care is a comparable virtual-care model, though narrower than Teladoc's broader telehealth platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Digital healthcare subscription delivering care directly to patients\u2014comparable virtual-care model in telehealth/mHealth space, ignoring small size."
+        }
+      ]
     },
     {
       "name": "Wheel",
@@ -5007,7 +6154,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Wheel provides virtual-care infrastructure, clinician networks, and digital patient care programs, overlapping Teladoc\u2019s telehealth platform and serving similar healthcare buyers."
+      "rationale": "Wheel provides a nationwide virtual-care platform with clinicians and care programs, directly comparable to Teladoc's telehealth and chronic-care services.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Wheel provides a nationwide virtual-care platform with clinicians and care programs, directly comparable to Teladoc's telehealth and chronic-care services."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Virtual-care platform delivering clinician visits at scale; same telehealth product and market as Teladoc, a direct comparable."
+        }
+      ]
     },
     {
       "name": "Pod Health",
@@ -5074,7 +6233,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Pod Health provides on-demand virtual clinical care and remote patient monitoring, overlapping Teladoc\u2019s telehealth services and serving similar patients and healthcare buyers."
+      "rationale": "Provides on-demand virtual monitoring and clinician-led personalized care, directly overlapping Teladoc's telehealth and chronic-care model.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Provides on-demand virtual monitoring and clinician-led personalized care, directly overlapping Teladoc's telehealth and chronic-care model."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Virtual-care provider offering on-demand clinicians and remote patient monitoring \u2014 same telehealth product and patient market as Teladoc."
+        }
+      ]
     },
     {
       "name": "Five Faces",
@@ -5137,7 +6308,19 @@
         "relevance_score": "A"
       },
       "relevant": false,
-      "rationale": "Five Faces provides patient-experience and facility journey tools, not virtual clinician access or telehealth and chronic-care delivery."
+      "rationale": "Digital-experience vendor for hospitals, focused on patient intake, queues, and portals rather than virtual clinician care or telehealth delivery.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Digital-experience vendor for hospitals, focused on patient intake, queues, and portals rather than virtual clinician care or telehealth delivery."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Hospital patient-experience software (queues, signage, forms), not virtual care or telehealth; serves providers as vendor, no telehealth product."
+        }
+      ]
     },
     {
       "name": "ResQ247",
@@ -5186,7 +6369,19 @@
         "relevance_score": "A"
       },
       "relevant": false,
-      "rationale": "ResQ247 describes a broad blockchain/AI healthcare ecosystem, not a clearly defined virtual-care platform connecting patients with clinicians."
+      "rationale": "Describes a broad blockchain/AI healthcare ecosystem, not a virtual-care or telehealth platform connecting patients with clinicians.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Describes a broad blockchain/AI healthcare ecosystem, not a virtual-care or telehealth platform connecting patients with clinicians."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Vague blockchain/AI health-ecosystem concept with no clear virtual-care or teleconsultation product matching Teladoc's telehealth platform; resemblance weak."
+        }
+      ]
     },
     {
       "name": "Teladoc Health for Global Wellbeing AND Virtual Care Solutions",
@@ -5237,7 +6432,19 @@
         "relevance_score": "A"
       },
       "relevant": false,
-      "rationale": "This appears to be a Teladoc Health-branded international microsite, making it the seed company itself rather than an independent lookalike."
+      "rationale": "This appears to be a Teladoc Health-branded regional/marketing entry, not a distinct company or independent lookalike.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "This appears to be a Teladoc Health-branded regional/marketing entry, not a distinct company or independent lookalike."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Duplicate/regional entry of Teladoc Health itself, not a distinct lookalike or competitor."
+        }
+      ]
     },
     {
       "name": "MyTelemedicine",
@@ -5291,7 +6498,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide full-stack virtual care platforms connecting patients with clinicians for remote primary, mental, and other healthcare services."
+      "rationale": "White-label telehealth platform delivering virtual primary, behavioral, and specialty care; directly comparable despite serving healthcare brands as customers.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "White-label telehealth platform delivering virtual primary, behavioral, and specialty care; directly comparable despite serving healthcare brands as customers."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both sell telehealth/virtual-care platforms; MyTelemedicine's white-label model is a direct comparable in Teladoc's telehealth product space."
+        }
+      ]
     },
     {
       "name": "Nectarine Medical",
@@ -5330,7 +6549,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Nectarine offers a white-label virtual-care platform, clinician consultations, prescriptions, and chronic-care support, overlapping Teladoc\u2019s telehealth offering and healthcare buyers."
+      "rationale": "White-label telehealth platform provides virtual consultations, prescriptions, chronic-care support, and patient access\u2014directly comparable to Teladoc's virtual-care offering.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "White-label telehealth platform provides virtual consultations, prescriptions, chronic-care support, and patient access\u2014directly comparable to Teladoc's virtual-care offering."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "White-label telehealth platform offering on-demand virtual consultations, prescriptions, and chronic-care support\u2014same product and model as Teladoc's virtual-care business."
+        }
+      ]
     },
     {
       "name": "holadr.com.co",
@@ -5397,10 +6628,25 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "HolaDr offers click-based digital healthcare access, overlapping Teladoc\u2019s virtual-care model and serving patients seeking remote clinical services."
+      "rationale": "Colombian telehealth platform ('health one click away'), same virtual-care product and patient market as Teladoc, regional peer.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "The vague health-access slogan and generic mHealth/EHR labels do not establish a virtual-care or clinician-telehealth platform comparable to Teladoc."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Colombian telehealth platform ('health one click away'), same virtual-care product and patient market as Teladoc, regional peer."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Colombian telehealth service offering online doctor access, a regional peer of Teladoc's virtual care model."
+        }
+      ]
     }
   ],
-  "error": null,
-  "relevant_count_at_25": 17,
-  "precision_at_25": 68.0
+  "error": null
 }

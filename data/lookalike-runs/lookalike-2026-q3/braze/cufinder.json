@@ -7,20 +7,20 @@
     "name": "domain_lookalikes"
   },
   "k": 100,
-  "relevant_count": 6,
-  "precision_at_k": 6.0,
-  "relevant_count_at_10": 6,
-  "relevant_count_at_25": 6,
-  "relevant_count_at_100": 6,
-  "precision_at_10": 60.0,
-  "precision_at_25": 24.0,
-  "precision_at_100": 6.0,
+  "relevant_count": 7,
+  "precision_at_k": 7.0,
+  "relevant_count_at_10": 7,
+  "relevant_count_at_25": 7,
+  "relevant_count_at_100": 7,
+  "precision_at_10": 70.0,
+  "precision_at_25": 28.0,
+  "precision_at_100": 7.0,
   "latency_ms": 376,
   "cost_usd": null,
   "duplicates_removed": 0,
   "max_results": 10,
-  "judge_model": "gpt-5.6",
-  "judged_at": "2026-07-27T06:54:10Z",
+  "judge_model": "majority(n=3): claude-opus-5,gpt-5.6-terra,kimi-k3",
+  "judged_at": "2026-08-10T20:23:14Z",
   "candidates": [
     {
       "name": "amplitude",
@@ -35,8 +35,25 @@
         "country": "united states",
         "confidence_level": 93
       },
-      "relevant": false,
-      "rationale": "Amplitude primarily provides product analytics and experimentation, not cross-channel customer messaging; adjacent buyers do not use both for the same core job."
+      "relevant": true,
+      "rationale": "Amplitude is product-analytics/customer-data SaaS serving the same growth, product, and marketing buyer persona; a natural comparable in digital customer-experience tooling.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Amplitude primarily provides product analytics and experimentation, not cross-channel customer messaging and engagement automation like Braze."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Amplitude is product-analytics/customer-data SaaS serving the same growth, product, and marketing buyer persona; a natural comparable in digital customer-experience tooling."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Both are product/growth-team martech platforms; Amplitude's analytics plus CDP/engagement features overlap and compete with Braze's customer-engagement use cases."
+        }
+      ]
     },
     {
       "name": "attentive",
@@ -52,7 +69,19 @@
         "confidence_level": 93
       },
       "relevant": true,
-      "rationale": "Attentive is a cross-channel customer engagement platform for marketers, overlapping Braze in personalized SMS, email, push, and real-time messaging."
+      "rationale": "Attentive is a customer-engagement platform enabling personalized cross-channel messaging for marketers, directly overlapping Braze's SMS, email, push, and customer-profile use cases.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Attentive is a customer-engagement platform enabling personalized cross-channel messaging for marketers, directly overlapping Braze's SMS, email, push, and customer-profile use cases."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Attentive is a customer-engagement platform for personalized SMS, email, RCS, and push messaging \u2014 direct competitor to Braze on product and market."
+        }
+      ]
     },
     {
       "name": "bloomreach",
@@ -68,7 +97,19 @@
         "confidence_level": 93
       },
       "relevant": true,
-      "rationale": "Bloomreach offers AI-driven ecommerce personalization and cross-channel customer engagement, overlapping Braze\u2019s personalized messaging platform and targeting the same marketing teams."
+      "rationale": "Bloomreach offers ecommerce customer-data personalization and omnichannel engagement, overlapping Braze's marketing messaging and customer-engagement platform market.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Bloomreach offers ecommerce customer-data personalization and omnichannel engagement, overlapping Braze's marketing messaging and customer-engagement platform market."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Bloomreach's engagement/personalization platform unifies customer data for omnichannel messaging, directly comparable to Braze's cross-channel customer-engagement product."
+        }
+      ]
     },
     {
       "name": "google",
@@ -84,7 +125,19 @@
         "confidence_level": 93
       },
       "relevant": false,
-      "rationale": "Google\u2019s broad consumer, advertising, and cloud portfolio is not primarily a cross-channel customer-engagement messaging platform evaluated for Braze\u2019s core use case."
+      "rationale": "Google is a broad technology company; its primary offering is not a dedicated cross-channel customer-engagement platform comparable to Braze.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Google is a broad technology company; its primary offering is not a dedicated cross-channel customer-engagement platform comparable to Braze."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Google is a diversified tech giant; its primary products aren't customer-engagement/messaging platforms comparable to Braze."
+        }
+      ]
     },
     {
       "name": "hubspot",
@@ -100,7 +153,19 @@
         "confidence_level": 93
       },
       "relevant": true,
-      "rationale": "HubSpot\u2019s marketing automation and omnichannel customer-engagement tools overlap Braze\u2019s messaging platform and target many of the same marketing teams."
+      "rationale": "HubSpot\u2019s marketing automation and omnichannel customer engagement tools overlap strongly with Braze\u2019s messaging and lifecycle-engagement platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "HubSpot\u2019s marketing automation and omnichannel customer engagement tools overlap strongly with Braze\u2019s messaging and lifecycle-engagement platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "HubSpot's marketing/customer platform overlaps Braze's customer-engagement and messaging space; genuine comparables serving the same buyer."
+        }
+      ]
     },
     {
       "name": "iterable",
@@ -116,7 +181,19 @@
         "confidence_level": 93
       },
       "relevant": true,
-      "rationale": "Iterable directly overlaps Braze as an enterprise customer-engagement platform for personalized, cross-channel lifecycle messaging, targeting the same marketing teams and use cases."
+      "rationale": "Iterable directly competes in cross-channel personalized customer engagement and lifecycle messaging across email, mobile, web, and in-app channels.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Iterable directly competes in cross-channel personalized customer engagement and lifecycle messaging across email, mobile, web, and in-app channels."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Iterable is a direct competitor: AI customer-engagement platform for personalized cross-channel messaging (email, mobile, web), same product, market, and model as Braze."
+        }
+      ]
     },
     {
       "name": "klaviyo",
@@ -132,7 +209,19 @@
         "confidence_level": 93
       },
       "relevant": true,
-      "rationale": "Both provide B2C customer-engagement and marketing-automation platforms for personalized, cross-channel messaging, targeting the same marketing and CRM buyers."
+      "rationale": "Klaviyo is a B2C CRM and marketing automation platform delivering personalized multichannel customer messaging, directly comparable to Braze.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Klaviyo is a B2C CRM and marketing automation platform delivering personalized multichannel customer messaging, directly comparable to Braze."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "B2C marketing-automation/CRM platform for personalized email, SMS, and cross-channel messaging \u2014 direct competitor to Braze's customer-engagement platform on product, market, and model."
+        }
+      ]
     },
     {
       "name": "offerfit by braze",
@@ -148,7 +237,19 @@
         "confidence_level": 93
       },
       "relevant": false,
-      "rationale": "OfferFit is a Braze-owned product/business unit, not an independent lookalike account, despite overlapping customer-engagement decisioning capabilities."
+      "rationale": "OfferFit is a Braze-owned offering, not an independent competitor, comparable, or ICP-expansion company.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "OfferFit is a Braze-owned offering, not an independent competitor, comparable, or ICP-expansion company."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "OfferFit was acquired by Braze and is now part of the seed company itself, not an independent competitor or comparable."
+        }
+      ]
     },
     {
       "name": "salesforce",
@@ -164,7 +265,19 @@
         "confidence_level": 93
       },
       "relevant": true,
-      "rationale": "Salesforce Marketing Cloud provides cross-channel personalized customer engagement, directly overlapping Braze and serving the same marketing and customer-experience buyers."
+      "rationale": "Salesforce's CRM platform includes marketing and cross-channel customer engagement products, making it a broad but genuine comparable to Braze.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Salesforce's CRM platform includes marketing and cross-channel customer engagement products, making it a broad but genuine comparable to Braze."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Salesforce's Marketing Cloud/Customer 360 offers cross-channel customer engagement and personalized messaging, directly competing with Braze."
+        }
+      ]
     },
     {
       "name": "stripe",
@@ -180,7 +293,20 @@
         "confidence_level": 93
       },
       "relevant": false,
-      "rationale": "Stripe provides payments infrastructure, while Braze provides cross-channel customer engagement; their core products and primary buyer jobs do not overlap."
+      "rationale": "Stripe provides payments and financial infrastructure, not cross-channel customer engagement and personalized messaging software.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Stripe provides payments and financial infrastructure, not cross-channel customer engagement and personalized messaging software."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Stripe is payments/financial infrastructure, not customer-engagement messaging; no product, market, or model overlap with Braze."
+        }
+      ]
     }
-  ]
+  ],
+  "error": null
 }

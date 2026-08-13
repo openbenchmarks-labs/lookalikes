@@ -7,20 +7,20 @@
     "name": "domain_lookalikes"
   },
   "k": 100,
-  "relevant_count": 4,
-  "precision_at_k": 4.0,
-  "relevant_count_at_10": 4,
-  "relevant_count_at_25": 4,
-  "relevant_count_at_100": 4,
-  "precision_at_10": 40.0,
-  "precision_at_25": 16.0,
-  "precision_at_100": 4.0,
+  "relevant_count": 5,
+  "precision_at_k": 5.0,
+  "relevant_count_at_10": 5,
+  "relevant_count_at_25": 5,
+  "relevant_count_at_100": 5,
+  "precision_at_10": 50.0,
+  "precision_at_25": 20.0,
+  "precision_at_100": 5.0,
   "latency_ms": 390,
   "cost_usd": null,
   "duplicates_removed": 0,
   "max_results": 10,
-  "judge_model": "gpt-5.6",
-  "judged_at": "2026-07-27T06:53:43Z",
+  "judge_model": "majority(n=3): claude-opus-5,gpt-5.6-terra,kimi-k3",
+  "judged_at": "2026-08-10T19:53:52Z",
   "candidates": [
     {
       "name": "adyen",
@@ -36,7 +36,19 @@
         "confidence_level": 95
       },
       "relevant": false,
-      "rationale": "Adyen provides payment processing and financial technology, not visual collaboration or digital whiteboarding for product teams."
+      "rationale": "Adyen is a payments and financial-services platform, not a visual collaboration or whiteboarding product for distributed product teams.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Adyen is a payments and financial-services platform, not a visual collaboration or whiteboarding product for distributed product teams."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Adyen is a payments/fintech platform; Miro is visual collaboration software. No overlap on product, market, or business model."
+        }
+      ]
     },
     {
       "name": "asana",
@@ -51,8 +63,20 @@
         "country": "united states",
         "confidence_level": 95
       },
-      "relevant": false,
-      "rationale": "Asana focuses on task and work management, while Miro\u2019s core job is visual whiteboarding and workshop collaboration; they are adjacent, not substitutes."
+      "relevant": true,
+      "rationale": "Asana is a collaborative work-management and planning platform for distributed teams, overlapping Miro's product-team workflow and collaboration use cases.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Asana is a collaborative work-management and planning platform for distributed teams, overlapping Miro's product-team workflow and collaboration use cases."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are team-collaboration SaaS platforms serving distributed product teams for planning and coordinating work; direct competitors in the collaboration software market."
+        }
+      ]
     },
     {
       "name": "atlassian",
@@ -68,7 +92,19 @@
         "confidence_level": 95
       },
       "relevant": true,
-      "rationale": "Atlassian offers collaborative planning and productivity tools for product teams, overlapping Miro\u2019s distributed teamwork use cases and buyer personas."
+      "rationale": "Atlassian offers team collaboration and planning tools, including Trello and Confluence, overlapping Miro\u2019s distributed product-team collaboration use cases.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Atlassian offers team collaboration and planning tools, including Trello and Confluence, overlapping Miro\u2019s distributed product-team collaboration use cases."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both sell team collaboration/planning software to product teams; Confluence whiteboards and Jira planning overlap Miro's market, making them direct comparables/competitors."
+        }
+      ]
     },
     {
       "name": "booking.com",
@@ -84,7 +120,19 @@
         "confidence_level": 95
       },
       "relevant": false,
-      "rationale": "Booking.com is an online travel marketplace, not a visual collaboration and whiteboarding platform for product teams."
+      "rationale": "Booking.com is an online travel marketplace, not a visual collaboration or digital whiteboarding platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Booking.com is an online travel marketplace, not a visual collaboration or digital whiteboarding platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Booking.com is a travel-accommodation marketplace; no overlap with Miro's visual collaboration/whiteboarding product, market, or business model."
+        }
+      ]
     },
     {
       "name": "canva",
@@ -100,7 +148,24 @@
         "confidence_level": 95
       },
       "relevant": true,
-      "rationale": "Canva offers collaborative online whiteboards and visual planning tools that teams may evaluate alongside Miro for ideation, workshops, and distributed collaboration."
+      "rationale": "Canva overlaps in visual collaboration through whiteboards and presentations, serving team ideation and planning needs, though it is broader design software.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Canva overlaps in visual collaboration through whiteboards and presentations, serving team ideation and planning needs, though it is broader design software."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Canva is primarily a graphic-design/content-creation tool for individuals; Miro is team whiteboard collaboration. Different primary product and buyer job-to-be-done, only weak adjacency."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Both are SaaS visual/collaborative design platforms with freemium team adoption; overlapping whiteboard/docs features and buyers.n"
+        }
+      ]
     },
     {
       "name": "figma",
@@ -116,7 +181,19 @@
         "confidence_level": 95
       },
       "relevant": true,
-      "rationale": "Figma\u2019s FigJam offers collaborative whiteboarding, workshops, and planning for product and design teams, directly overlapping Miro\u2019s core use cases and buyers."
+      "rationale": "Figma is a collaborative visual design and whiteboarding platform, overlapping Miro\u2019s product-team collaboration, ideation, and planning use cases.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Figma is a collaborative visual design and whiteboarding platform, overlapping Miro\u2019s product-team collaboration, ideation, and planning use cases."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Figma is a visual collaboration/design platform whose FigJam whiteboarding directly competes with Miro for distributed product-team work."
+        }
+      ]
     },
     {
       "name": "google",
@@ -132,7 +209,19 @@
         "confidence_level": 95
       },
       "relevant": false,
-      "rationale": "Google is a broad technology company; visual whiteboarding is not its primary product, nor would buyers evaluate it against Miro for that job."
+      "rationale": "Google is a broad technology conglomerate; its primary offering is not a dedicated visual collaboration and whiteboarding platform comparable to Miro.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Google is a broad technology conglomerate; its primary offering is not a dedicated visual collaboration and whiteboarding platform comparable to Miro."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Google is a general tech conglomerate; its primary products don't resemble Miro's visual-collaboration whiteboard platform (Jamboard discontinued)."
+        }
+      ]
     },
     {
       "name": "lovable",
@@ -148,7 +237,19 @@
         "confidence_level": 95
       },
       "relevant": false,
-      "rationale": "Lovable is an AI app-building platform, not a visual whiteboarding and team-collaboration workspace; buyers use them for different jobs."
+      "rationale": "Lovable is an AI app and website builder, not a visual collaboration, whiteboarding, or workshop-planning platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Lovable is an AI app and website builder, not a visual collaboration, whiteboarding, or workshop-planning platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "AI app/website builder, not visual collaboration or whiteboarding; different product and buyer, no shared axis with Miro."
+        }
+      ]
     },
     {
       "name": "notion",
@@ -164,7 +265,19 @@
         "confidence_level": 95
       },
       "relevant": true,
-      "rationale": "Both are collaborative workspaces used by product teams for planning, roadmaps, documentation, and distributed teamwork, despite differing visual-canvas emphasis."
+      "rationale": "Notion is a collaborative workspace for team documentation, planning, and roadmaps, overlapping Miro's distributed product-team collaboration use cases.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Notion is a collaborative workspace for team documentation, planning, and roadmaps, overlapping Miro's distributed product-team collaboration use cases."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are team collaboration SaaS serving distributed product teams; Notion's workspace (docs, planning, wikis) is a direct comparable/competitor to Miro's collaboration platform."
+        }
+      ]
     },
     {
       "name": "stripe",
@@ -180,7 +293,20 @@
         "confidence_level": 95
       },
       "relevant": false,
-      "rationale": "Stripe provides payment infrastructure, not visual collaboration or whiteboarding; buyers use it for a fundamentally different job."
+      "rationale": "Stripe provides payment and financial infrastructure, not visual collaboration or whiteboarding software for distributed product teams.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Stripe provides payment and financial infrastructure, not visual collaboration or whiteboarding software for distributed product teams."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Stripe is payments/financial infrastructure; Miro is visual collaboration/whiteboarding. Different product, buyer, and job to be done\u2014no resemblance."
+        }
+      ]
     }
-  ]
+  ],
+  "error": null
 }

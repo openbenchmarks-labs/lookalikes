@@ -448,6 +448,11 @@ def main() -> int:
             f"config={judged.run.config_name}  lat={judged.run.latency_ms}ms"
         )
         total_cells += 1
+        # Checkpoint after every completed cell so an interrupted run is
+        # resumable with --retry-failed (which keys on snapshot cells).
+        # handle() always runs on the main thread, so this write is safe.
+        if not args.dry_run:
+            write_snapshot(snapshot)
 
     # Run cells. Workers stay pure (no shared-state writes); each enters its own
     # capture_http_calls()/capture_judge_calls() in its thread, and the nested

@@ -10,14 +10,18 @@
   "k": 100,
   "relevant_count": 21,
   "precision_at_k": 21.0,
-  "relevant_count_at_10": 8,
+  "relevant_count_at_10": 9,
+  "relevant_count_at_25": 21,
   "relevant_count_at_100": 21,
-  "precision_at_10": 80.0,
+  "precision_at_10": 90.0,
+  "precision_at_25": 84.0,
   "precision_at_100": 21.0,
   "latency_ms": 810,
   "cost_usd": null,
-  "judge_model": "gpt-5.6",
-  "judged_at": "2026-07-27T01:19:16Z",
+  "duplicates_removed": 0,
+  "max_results": 25,
+  "judge_model": "majority(n=3): claude-opus-5,gpt-5.6-terra,kimi-k3",
+  "judged_at": "2026-08-10T19:51:50Z",
   "candidates": [
     {
       "name": "Shopee",
@@ -31,7 +35,19 @@
         "predict_leads_id": "2fde59c4-b9c2-5d0a-b8b3-1b9938400a37"
       },
       "relevant": false,
-      "rationale": "Shopee is Sea\u2019s own core e-commerce subsidiary, not a distinct lookalike company for prospecting."
+      "rationale": "Shopee is Sea\u2019s own e-commerce subsidiary, not an independent competitor or comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Shopee is Sea\u2019s own e-commerce subsidiary, not an independent competitor or comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Shopee is Sea's own subsidiary brand \u2014 a duplicate of the seed, not a competitor or comparable."
+        }
+      ]
     },
     {
       "name": "GCash Group",
@@ -45,7 +61,19 @@
         "predict_leads_id": "6677df4a-9ec7-5e6b-8499-a3e1b9d3c4d2"
       },
       "relevant": true,
-      "rationale": "GCash overlaps SeaMoney\u2019s core mobile-wallet, payments, and consumer financial-services offering for Southeast Asian users."
+      "rationale": "GCash is a Southeast Asian consumer digital wallet and financial-services platform, directly comparable to SeaMoney despite Sea's broader e-commerce and entertainment portfolio.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "GCash is a Southeast Asian consumer digital wallet and financial-services platform, directly comparable to SeaMoney despite Sea's broader e-commerce and entertainment portfolio."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "GCash's mobile-wallet/digital financial services directly overlaps Sea's SeaMoney fintech arm, serving the same Southeast Asian consumer market as a competitor."
+        }
+      ]
     },
     {
       "name": "GoTo Group",
@@ -59,7 +87,19 @@
         "predict_leads_id": "c834f4e6-adcf-5d14-a7b9-cecc19bbc389"
       },
       "relevant": true,
-      "rationale": "Both operate Southeast Asian consumer ecosystems combining e-commerce marketplaces and digital financial services for overlapping merchants and consumers."
+      "rationale": "GoTo is a Southeast Asian consumer internet ecosystem combining commerce, on-demand services, and digital financial products, making it a close regional platform comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "GoTo is a Southeast Asian consumer internet ecosystem combining commerce, on-demand services, and digital financial products, making it a close regional platform comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Southeast Asian consumer internet group combining e-commerce (Tokopedia), on-demand services, and fintech \u2014 direct Sea/Shopee competitor and comparable."
+        }
+      ]
     },
     {
       "name": "Grab",
@@ -72,8 +112,20 @@
         "refreshed_at": "2026-06-27T12:51:05Z",
         "predict_leads_id": "d8e6ed93-de8b-5370-ab05-3cf47aec8840"
       },
-      "relevant": false,
-      "rationale": "Grab\u2019s core ride-hailing and delivery marketplace does not overlap Shopee\u2019s primary e-commerce marketplace job, despite both offering digital payments."
+      "relevant": true,
+      "rationale": "Southeast Asian consumer super-app with digital financial services; comparable regional platform model despite differing core commerce and mobility products.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Southeast Asian consumer super-app with digital financial services; comparable regional platform model despite differing core commerce and mobility products."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are Southeast Asian consumer-internet super-apps combining commerce/delivery marketplaces with digital financial services; direct competitors and comparables."
+        }
+      ]
     },
     {
       "name": "MercadoLibre, Inc.",
@@ -87,7 +139,19 @@
         "predict_leads_id": "d9313662-a8e1-53e4-90a4-26d065ddaef6"
       },
       "relevant": true,
-      "rationale": "Both operate consumer e-commerce marketplaces and integrated digital financial services ecosystems, serving overlapping merchant and consumer needs in different regions."
+      "rationale": "MercadoLibre operates a comparable regional e-commerce marketplace and fintech ecosystem, directly paralleling Shopee and Sea\u2019s digital financial-services model.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "MercadoLibre operates a comparable regional e-commerce marketplace and fintech ecosystem, directly paralleling Shopee and Sea\u2019s digital financial-services model."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Regional e-commerce marketplace plus fintech ecosystem (Mercado Pago), mirroring Sea's Shopee/SeaMoney model in a different geography \u2014 direct comparable."
+        }
+      ]
     },
     {
       "name": "Lazada",
@@ -101,7 +165,19 @@
         "predict_leads_id": "3c56a2ab-046c-5345-a655-966b18c5f083"
       },
       "relevant": true,
-      "rationale": "Lazada directly overlaps Shopee as a Southeast Asian e-commerce marketplace serving the same merchants and consumers."
+      "rationale": "Lazada directly competes with Shopee as a Southeast Asian e-commerce marketplace, with comparable logistics and payments ecosystem services.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Lazada directly competes with Shopee as a Southeast Asian e-commerce marketplace, with comparable logistics and payments ecosystem services."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Lazada is Southeast Asia's leading e-commerce marketplace, Shopee's direct competitor\u2014same product, market, and business model."
+        }
+      ]
     },
     {
       "name": "Tencent",
@@ -115,7 +191,19 @@
         "predict_leads_id": "85ef08ca-347e-521c-8f41-f0d2d3c3428a"
       },
       "relevant": true,
-      "rationale": "Both operate consumer internet ecosystems with core digital gaming and financial-services products competing for overlapping users and use cases."
+      "rationale": "Tencent is a comparable Asian consumer-internet ecosystem spanning digital entertainment and financial services, though its commerce model differs.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Tencent is a comparable Asian consumer-internet ecosystem spanning digital entertainment and financial services, though its commerce model differs."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Tencent matches Sea on digital entertainment and digital financial services with an equivalent consumer-internet conglomerate model, despite lacking Shopee-scale e-commerce."
+        }
+      ]
     },
     {
       "name": "Kakao",
@@ -129,7 +217,19 @@
         "predict_leads_id": "61009c3a-32f7-5d70-a05e-6d6ad730b039"
       },
       "relevant": true,
-      "rationale": "Both operate Asian consumer technology ecosystems with overlapping e-commerce and fintech platforms serving similar users and commercial partners."
+      "rationale": "Kakao operates comparable consumer internet platforms spanning e-commerce and fintech, though centered on Korea rather than Southeast Asia.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Kakao operates comparable consumer internet platforms spanning e-commerce and fintech, though centered on Korea rather than Southeast Asia."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are diversified Asian consumer-internet conglomerates spanning e-commerce, fintech, and digital services \u2014 strong business-model and market comparables."
+        }
+      ]
     },
     {
       "name": "Paytm",
@@ -143,7 +243,19 @@
         "predict_leads_id": "26c53998-eca5-5815-b845-bbb79be55976"
       },
       "relevant": true,
-      "rationale": "Paytm\u2019s consumer and merchant payments ecosystem overlaps SeaMoney, serving similar users for digital payments and financial services."
+      "rationale": "Paytm is a consumer digital payments and financial-services platform, directly comparable to SeaMoney despite lacking Sea\u2019s e-commerce and gaming businesses.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Paytm is a consumer digital payments and financial-services platform, directly comparable to SeaMoney despite lacking Sea\u2019s e-commerce and gaming businesses."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Consumer-internet digital payments and financial-services ecosystem strongly matching SeaMoney; comparable emerging-Asia internet platform business model."
+        }
+      ]
     },
     {
       "name": "Kaspi",
@@ -157,7 +269,19 @@
         "predict_leads_id": "46be9e48-28e0-5892-9479-9d0965d13dab"
       },
       "relevant": true,
-      "rationale": "Kaspi closely parallels Sea with an integrated consumer super-app spanning e-commerce, payments, and digital financial services for consumers and merchants."
+      "rationale": "Kaspi is a consumer super-app combining e-commerce, payments, and fintech, directly comparable to Sea's Shopee and digital-financial-services model.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Kaspi is a consumer super-app combining e-commerce, payments, and fintech, directly comparable to Sea's Shopee and digital-financial-services model."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Super-app combining e-commerce marketplace and fintech/payments, mirroring Sea's Shopee-plus-financial-services model; regional difference is immaterial."
+        }
+      ]
     },
     {
       "name": "JD.com",
@@ -171,7 +295,19 @@
         "predict_leads_id": "8fa85b90-5474-5479-b9aa-76074e96ceab"
       },
       "relevant": true,
-      "rationale": "JD.com and Shopee both operate large e-commerce marketplaces with seller services, fulfillment, logistics, and consumer shopping platforms."
+      "rationale": "JD.com operates a major consumer e-commerce marketplace with integrated logistics, directly comparable to Shopee's core commerce platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "JD.com operates a major consumer e-commerce marketplace with integrated logistics, directly comparable to Shopee's core commerce platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are large-scale Asian consumer e-commerce platforms with integrated logistics; direct competitors/comparables on product, market, and business model."
+        }
+      ]
     },
     {
       "name": "Naver Corp",
@@ -185,7 +321,19 @@
         "predict_leads_id": "8831f16c-d915-54b2-81f5-f7e217db59ab"
       },
       "relevant": true,
-      "rationale": "Both operate consumer internet ecosystems centered on e-commerce marketplaces, digital payments, and content, serving overlapping shoppers and online merchants."
+      "rationale": "Naver operates e-commerce, digital payments, and content platforms, closely paralleling Sea\u2019s consumer internet ecosystem and diversified platform business model.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Naver operates e-commerce, digital payments, and content platforms, closely paralleling Sea\u2019s consumer internet ecosystem and diversified platform business model."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Consumer internet conglomerate spanning e-commerce marketplace, digital payments, and content platforms\u2014same multi-vertical business model as Sea; regional difference irrelevant."
+        }
+      ]
     },
     {
       "name": "Flipkart Group",
@@ -199,7 +347,19 @@
         "predict_leads_id": "0b12f3cd-183a-5931-b824-7574f1775d80"
       },
       "relevant": true,
-      "rationale": "Flipkart and Shopee both operate major consumer e-commerce marketplaces with adjacent digital payments and services in Asian markets."
+      "rationale": "Flipkart operates a major Asian e-commerce marketplace and payments ecosystem, closely comparable to Shopee\u2019s core commerce and financial-services business.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Flipkart operates a major Asian e-commerce marketplace and payments ecosystem, closely comparable to Shopee\u2019s core commerce and financial-services business."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are Asian consumer-internet companies anchored by e-commerce marketplaces with adjacent payments and consumer services; direct comparables/competitors."
+        }
+      ]
     },
     {
       "name": "Coupang",
@@ -213,7 +373,19 @@
         "predict_leads_id": "b19d80f7-88ed-5c6b-a8c3-528f376c634e"
       },
       "relevant": true,
-      "rationale": "Both operate major consumer e-commerce marketplaces with technology-enabled shopping and logistics, serving overlapping merchants and consumers."
+      "rationale": "Coupang is a consumer e-commerce marketplace with integrated logistics, directly comparable to Shopee despite Sea's additional entertainment and financial-services businesses.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Coupang is a consumer e-commerce marketplace with integrated logistics, directly comparable to Shopee despite Sea's additional entertainment and financial-services businesses."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Coupang is a major consumer e-commerce marketplace with integrated logistics, directly comparable to Shopee in product, market, and business model."
+        }
+      ]
     },
     {
       "name": "Daraz Group",
@@ -227,7 +399,19 @@
         "predict_leads_id": "35765c8b-5a4d-53cc-b760-acd886c34787"
       },
       "relevant": true,
-      "rationale": "Daraz and Shopee both operate regional consumer e-commerce marketplaces with integrated logistics, serving similar merchants and online shoppers."
+      "rationale": "Regional e-commerce marketplace with integrated logistics, directly comparable to Shopee despite operating in South Asia rather than Southeast Asia.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Regional e-commerce marketplace with integrated logistics, directly comparable to Shopee despite operating in South Asia rather than Southeast Asia."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Regional e-commerce marketplace with logistics, same product and business model as Shopee in adjacent emerging markets; direct comparable."
+        }
+      ]
     },
     {
       "name": "Rakuten",
@@ -241,7 +425,19 @@
         "predict_leads_id": "9c8f6e8f-1a72-5721-a554-e8838cd1aab5"
       },
       "relevant": true,
-      "rationale": "Rakuten and Sea both operate consumer e-commerce marketplaces alongside digital payments and fintech services, serving overlapping merchants and consumers."
+      "rationale": "Rakuten operates a comparable consumer internet ecosystem combining e-commerce marketplace, digital payments, and fintech services.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Rakuten operates a comparable consumer internet ecosystem combining e-commerce marketplace, digital payments, and fintech services."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Consumer internet ecosystem spanning e-commerce marketplace and fintech/payments, mirroring Sea's Shopee plus SeaMoney model; direct comparable in another region."
+        }
+      ]
     },
     {
       "name": "Maya",
@@ -255,7 +451,19 @@
         "predict_leads_id": "c72c06ff-f3dc-5832-9dfc-7bfe20cbe3f2"
       },
       "relevant": true,
-      "rationale": "Maya\u2019s digital wallet and banking platform overlaps Sea\u2019s core digital financial services, serving Southeast Asian consumers with similar payment and banking needs."
+      "rationale": "Maya is a Southeast Asian digital wallet and banking platform, directly comparable to SeaMoney's digital financial-services business.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Maya is a Southeast Asian digital wallet and banking platform, directly comparable to SeaMoney's digital financial-services business."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Maya's digital wallet/banking directly competes with Sea's SeaMoney fintech arm in Southeast Asia \u2014 same product, market, and model on a core axis."
+        }
+      ]
     },
     {
       "name": "Akulaku",
@@ -269,7 +477,19 @@
         "predict_leads_id": "482cea32-73ac-53c5-9262-17a87e7927e6"
       },
       "relevant": true,
-      "rationale": "Both operate Southeast Asian consumer platforms combining e-commerce with digital financial services and credit for overlapping users."
+      "rationale": "Akulaku provides consumer credit and financial services integrated with e-commerce in Southeast Asia, overlapping Sea\u2019s digital financial-services business and regional consumer market.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Akulaku provides consumer credit and financial services integrated with e-commerce in Southeast Asia, overlapping Sea\u2019s digital financial-services business and regional consumer market."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "SEA consumer fintech offering e-commerce-linked credit, overlapping Sea's digital financial services arm (SeaMoney) and e-commerce market \u2014 comparable business model and region."
+        }
+      ]
     },
     {
       "name": "Blibli",
@@ -283,7 +503,19 @@
         "predict_leads_id": "1e132416-9838-5785-a76b-d1978b5afdf2"
       },
       "relevant": true,
-      "rationale": "Blibli directly overlaps Shopee as a Southeast Asian e-commerce marketplace serving online shoppers and merchants, with integrated payments and logistics."
+      "rationale": "Indonesian e-commerce marketplace comparable to Shopee, with integrated payments and logistics serving the same online retail market.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Indonesian e-commerce marketplace comparable to Shopee, with integrated payments and logistics serving the same online retail market."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Indonesian e-commerce marketplace with integrated payments and logistics, directly comparable to Shopee's Southeast Asian e-commerce business; same product, market, and model."
+        }
+      ]
     },
     {
       "name": "Block, Inc.",
@@ -297,7 +529,24 @@
         "predict_leads_id": "08ffe441-7a43-5626-9aee-3b8b71289bf3"
       },
       "relevant": false,
-      "rationale": "Block primarily provides payments and merchant financial tools, not a consumer e-commerce marketplace like Shopee; buyers would not evaluate them for the same job."
+      "rationale": "Fintech/payments overlap exists, but Block lacks e-commerce marketplace and gaming; seed's core is Shopee e-commerce, making them poor comparables overall.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both operate consumer and merchant digital-financial ecosystems, including payments; Block is a credible fintech comparable despite lacking Sea\u2019s e-commerce and entertainment businesses."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Fintech/payments overlap exists, but Block lacks e-commerce marketplace and gaming; seed's core is Shopee e-commerce, making them poor comparables overall."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "Block is a payments/fintech conglomerate; no e-commerce marketplace or gaming, unlike Sea's consumer internet platform model."
+        }
+      ]
     },
     {
       "name": "Nubank",
@@ -310,8 +559,25 @@
         "refreshed_at": "2026-06-27T12:51:05Z",
         "predict_leads_id": "f6c16c7c-30fd-539e-82e0-4a7de4988e2b"
       },
-      "relevant": true,
-      "rationale": "Nubank\u2019s digital banking services overlap SeaMoney\u2019s core consumer financial-services offering and address similar users and financial jobs to be done."
+      "relevant": false,
+      "rationale": "Sea is a diversified consumer internet group (e-commerce, gaming, fintech); Nubank is purely a digital bank, overlapping only on one segment, not the core business.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Nubank is a digital financial-services platform comparable to SeaMoney, Sea\u2019s fintech arm, despite lacking Shopee\u2019s e-commerce and entertainment businesses."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Sea is a diversified consumer internet group (e-commerce, gaming, fintech); Nubank is purely a digital bank, overlapping only on one segment, not the core business."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "Nubank is a pure digital bank; Sea is an e-commerce/gaming consumer internet conglomerate \\u2014 only partial overlap via SeaMoney."
+        }
+      ]
     },
     {
       "name": "VNG Corporation",
@@ -325,7 +591,19 @@
         "predict_leads_id": "403b938b-cce0-535b-8666-b4127cfc8029"
       },
       "relevant": true,
-      "rationale": "Both are Southeast Asian consumer internet companies with overlapping digital entertainment and payment services, targeting similar consumers and commercial partners."
+      "rationale": "Vietnamese consumer internet portfolio with digital entertainment and payments closely parallels Sea\u2019s multi-service regional platform model.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Vietnamese consumer internet portfolio with digital entertainment and payments closely parallels Sea\u2019s multi-service regional platform model."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Vietnamese consumer internet company with digital payments and entertainment portfolio, mirroring Sea's multi-vertical SEA internet model."
+        }
+      ]
     },
     {
       "name": "BigPay group",
@@ -339,7 +617,19 @@
         "predict_leads_id": "fa0900c5-a5ad-542f-896b-a1f293a15d17"
       },
       "relevant": true,
-      "rationale": "BigPay\u2019s consumer digital payments and financial-management products overlap SeaMoney, serving similar Southeast Asian users and payment needs."
+      "rationale": "BigPay provides consumer digital payments and financial-management services in Southeast Asia, overlapping SeaMoney\u2019s fintech offering.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "BigPay provides consumer digital payments and financial-management services in Southeast Asia, overlapping SeaMoney\u2019s fintech offering."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Digital payments fintech in Southeast Asia, directly overlapping Sea's SeaMoney financial-services arm; same product, market, and region as a peer competitor."
+        }
+      ]
     },
     {
       "name": "Ascend Money Group",
@@ -353,11 +643,20 @@
         "predict_leads_id": "bf5d48e0-50f4-5dcf-ab6a-90ce4ad455c8"
       },
       "relevant": true,
-      "rationale": "Ascend Money\u2019s digital wallets and payment network overlap SeaMoney\u2019s Southeast Asian digital financial services, serving similar consumers and merchants."
+      "rationale": "Both operate Southeast Asian digital financial-services and payment platforms, making Ascend Money a direct comparable to SeaMoney.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both operate Southeast Asian digital financial-services and payment platforms, making Ascend Money a direct comparable to SeaMoney."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Southeast Asian digital payments/fintech platform directly comparable to Sea's SeaMoney financial-services arm, serving the same regional consumer market."
+        }
+      ]
     }
   ],
-  "error": null,
-  "max_results": 25,
-  "relevant_count_at_25": 21,
-  "precision_at_25": 84.0
+  "error": null
 }

@@ -7,20 +7,20 @@
     "name": "domain_lookalikes"
   },
   "k": 100,
-  "relevant_count": 3,
-  "precision_at_k": 3.0,
-  "relevant_count_at_10": 3,
-  "relevant_count_at_25": 3,
-  "relevant_count_at_100": 3,
-  "precision_at_10": 30.0,
-  "precision_at_25": 12.0,
-  "precision_at_100": 3.0,
+  "relevant_count": 5,
+  "precision_at_k": 5.0,
+  "relevant_count_at_10": 5,
+  "relevant_count_at_25": 5,
+  "relevant_count_at_100": 5,
+  "precision_at_10": 50.0,
+  "precision_at_25": 20.0,
+  "precision_at_100": 5.0,
   "latency_ms": 407,
   "cost_usd": null,
   "duplicates_removed": 0,
   "max_results": 10,
-  "judge_model": "gpt-5.6",
-  "judged_at": "2026-07-27T06:53:42Z",
+  "judge_model": "majority(n=3): claude-opus-5,gpt-5.6-terra,kimi-k3",
+  "judged_at": "2026-08-10T19:56:40Z",
   "candidates": [
     {
       "name": "anthropic",
@@ -36,7 +36,19 @@
         "confidence_level": 96
       },
       "relevant": false,
-      "rationale": "Anthropic provides foundation AI models and assistants, not product analytics, experimentation, or digital behavior analysis for product teams."
+      "rationale": "Anthropic develops foundation AI models and assistants, not product analytics, experimentation, or digital-product growth analytics.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Anthropic develops foundation AI models and assistants, not product analytics, experimentation, or digital-product growth analytics."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Anthropic builds AI foundation models/assistants; Amplitude is product analytics software. Different products, buyers, and markets \u2014 no resemblance."
+        }
+      ]
     },
     {
       "name": "braze",
@@ -51,8 +63,25 @@
         "country": "united states",
         "confidence_level": 96
       },
-      "relevant": false,
-      "rationale": "Braze focuses on cross-channel customer messaging and journey orchestration, while Amplitude\u2019s core job is product behavior analytics; they are complementary, not substitutes."
+      "relevant": true,
+      "rationale": "B2B SaaS for digital-product growth: overlapping buyer (growth/product/marketing teams), shared experimentation and customer-data analytics; commonly evaluated as comparables.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Braze is a cross-channel customer engagement and marketing automation platform, not a product analytics platform for analyzing digital-product behavior."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "B2B SaaS for digital-product growth: overlapping buyer (growth/product/marketing teams), shared experimentation and customer-data analytics; commonly evaluated as comparables."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Adjacent SaaS in customer/product data space; both serve growth/product marketing teams with behavioral data, experimentation \n}, comparable martech peer."
+        }
+      ]
     },
     {
       "name": "klaviyo",
@@ -68,7 +97,19 @@
         "confidence_level": 96
       },
       "relevant": false,
-      "rationale": "Klaviyo is a B2C CRM and marketing automation platform, while Amplitude focuses on product analytics, experimentation, and digital user behavior."
+      "rationale": "Klaviyo is a B2C CRM and marketing-automation platform; its analytics support campaigns, not digital product analytics and experimentation for product teams.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Klaviyo is a B2C CRM and marketing-automation platform; its analytics support campaigns, not digital product analytics and experimentation for product teams."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Klaviyo is a B2C marketing-automation/CRM platform; Amplitude is product analytics for digital-product teams. Different products and buyer personas."
+        }
+      ]
     },
     {
       "name": "kraftful",
@@ -83,8 +124,25 @@
         "country": "united states",
         "confidence_level": 96
       },
-      "relevant": false,
-      "rationale": "Kraftful is an AI copilot for product-management workflows, not a behavioral product analytics and experimentation platform like Amplitude."
+      "relevant": true,
+      "rationale": "AI copilot analyzing user feedback for product teams \u2014 same buyer persona and product-insight job as Amplitude's behavioral analytics; a comparable in product analytics space.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Kraftful is an AI copilot for product teams, not a digital-product analytics and experimentation platform like Amplitude."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "AI copilot analyzing user feedback for product teams \u2014 same buyer persona and product-insight job as Amplitude's behavioral analytics; a comparable in product analytics space."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Both sell product-insight software to product managers; kraftful analyzes user feedback vs Amplitude's behavioral analytics \ta."
+        }
+      ]
     },
     {
       "name": "mixpanel",
@@ -100,7 +158,19 @@
         "confidence_level": 96
       },
       "relevant": true,
-      "rationale": "Mixpanel directly overlaps Amplitude in product analytics, experimentation, and user-behavior insights for digital product and growth teams."
+      "rationale": "Mixpanel directly competes in digital product analytics, user behavior analysis, experimentation, and product-growth optimization.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Mixpanel directly competes in digital product analytics, user behavior analysis, experimentation, and product-growth optimization."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Direct competitor: product analytics platform with experimentation and user-behavior analysis, same buyers and business model as Amplitude."
+        }
+      ]
     },
     {
       "name": "pendo.io",
@@ -116,7 +186,19 @@
         "confidence_level": 96
       },
       "relevant": true,
-      "rationale": "Pendo and Amplitude both provide product analytics and user-behavior insights for product teams improving digital experiences and growth."
+      "rationale": "Pendo is a product experience and product analytics platform for understanding user behavior and improving digital products, directly comparable to Amplitude.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Pendo is a product experience and product analytics platform for understanding user behavior and improving digital products, directly comparable to Amplitude."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Pendo is a product experience/analytics platform for understanding user behavior and driving product growth \u2014 a direct competitor to Amplitude on product and market."
+        }
+      ]
     },
     {
       "name": "posthog",
@@ -132,7 +214,19 @@
         "confidence_level": 96
       },
       "relevant": true,
-      "rationale": "PostHog directly overlaps Amplitude in product analytics, experimentation, session replay, and digital-product optimization for product and growth teams."
+      "rationale": "PostHog directly competes in product analytics, experimentation, feature flags, session replay, and digital-product growth tooling.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "PostHog directly competes in product analytics, experimentation, feature flags, session replay, and digital-product growth tooling."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "PostHog is a product analytics platform with experimentation, A/B testing, and session recording \u2014 a direct competitor to Amplitude on product and market."
+        }
+      ]
     },
     {
       "name": "stripe",
@@ -148,7 +242,19 @@
         "confidence_level": 96
       },
       "relevant": false,
-      "rationale": "Stripe is a payments and financial-services platform, not a product analytics and experimentation platform; buyers use them for different jobs."
+      "rationale": "Stripe provides payments and financial infrastructure, not product analytics, experimentation, or digital-product behavior analysis.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Stripe provides payments and financial infrastructure, not product analytics, experimentation, or digital-product behavior analysis."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Stripe is payments/financial infrastructure, not product analytics; different product, buyer, and job-to-be-done than Amplitude."
+        }
+      ]
     },
     {
       "name": "webflow",
@@ -164,7 +270,19 @@
         "confidence_level": 96
       },
       "relevant": false,
-      "rationale": "Webflow is a website building and marketing platform, not a product analytics and experimentation platform evaluated for the same core job."
+      "rationale": "Webflow is primarily a website-building and web-marketing platform, not a product analytics platform for behavioral analysis and digital-product experimentation.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Webflow is primarily a website-building and web-marketing platform, not a product analytics platform for behavioral analysis and digital-product experimentation."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Webflow is a website-builder/CMS marketing platform, not product analytics or experimentation; different product and job to be done."
+        }
+      ]
     },
     {
       "name": "zapier",
@@ -180,7 +298,20 @@
         "confidence_level": 96
       },
       "relevant": false,
-      "rationale": "Zapier is a workflow automation and app-integration platform, not a product analytics and experimentation platform serving the same job to be done."
+      "rationale": "Zapier is an automation and integration platform, not a product analytics, experimentation, or digital-growth analytics provider.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Zapier is an automation and integration platform, not a product analytics, experimentation, or digital-growth analytics provider."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Zapier is a workflow-automation/integration platform, not product analytics; different product, buyer job-to-be-done, and market."
+        }
+      ]
     }
-  ]
+  ],
+  "error": null
 }

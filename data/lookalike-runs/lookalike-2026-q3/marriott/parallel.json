@@ -2,516 +2,818 @@
   "dataset_slug": "lookalike-2026-q3",
   "seed_slug": "marriott",
   "provider_slug": "parallel",
-  "config_name": "no_similarity_clause",
+  "config_name": "seed_first",
   "config": {
-    "name": "no_similarity_clause",
-    "prompt_variant": "no_similarity_clause"
+    "name": "seed_first"
   },
   "k": 100,
-  "relevant_count": 30,
-  "precision_at_k": 30.0,
-  "relevant_count_at_10": 6,
-  "relevant_count_at_100": 30,
-  "precision_at_10": 60.0,
-  "precision_at_100": 30.0,
-  "latency_ms": 1366,
+  "relevant_count": 2,
+  "precision_at_k": 2.0,
+  "relevant_count_at_10": 2,
+  "relevant_count_at_25": 2,
+  "relevant_count_at_100": 2,
+  "precision_at_10": 20.0,
+  "precision_at_25": 8.0,
+  "precision_at_100": 2.0,
+  "latency_ms": 1630,
   "cost_usd": null,
-  "duplicates_removed": 0,
-  "judge_model": "gpt-5.6",
-  "judged_at": "2026-07-27T02:19:49Z",
+  "duplicates_removed": 6,
+  "max_results": null,
+  "judge_model": "majority(n=3): claude-opus-5,gpt-5.6-terra,kimi-k3",
+  "judged_at": "2026-08-12T18:17:07Z",
   "candidates": [
     {
-      "name": "IHG",
-      "domain": "ihgplc.com",
-      "description": "Primary Sector: Travel and Hospitality | Primary Subsector: Hotels | Short Description: Chain of hotels and resorts | Detailed Description: Intercontinental Hotels Group is a hospitality company that owns, operates and manages over 5,000 hotels and 744,000 rooms in nearly 100 countries. Its portfolio of brands include InterContinental Hotels & Resorts, Kimpton Hotels & Restaurants, Holiday Inn, Holiday Inn Express, Crowne Plaza Hotels & Resorts, Hotel Indigo, Staybridge Suites\u00ae, Candlewood Suites, EVEN Hotels and HUALUXE Hotels and Resorts. | Other Taxonomy Tags: [\"Generic Company Lists\",\"Global 2000\"] | Special Flags: Consumer YES | All Locations: United Kingdom England Windsor | Board Members:   Director Normal    Director Normal    Director Normal    Director Normal    Director Normal    Additional Director Normal    Director Normal    Director Normal    Director Normal    Director Normal    Director Normal Yes | Name: IHG | Website Url: https://www.ihgplc.com/ | Founded Year: 1997",
+      "name": "Marriott International",
+      "domain": null,
+      "description": "Name: Marriott International | Short Description: Chains providing lodging accommodations, travel experiences, and related hospitality services | Detailed Description: Chains providing lodging accommodations, travel experiences, and related hospitality services. They offer a range of hotel and resort brands with various amenities. The company facilitates booking accommodations, events, and travel-related activities. Additionally, it manages a loyalty program and provides options for vacation ownership. | Primary Sector: Travel and Hospitality | Primary Subsector: Hotels | Other Taxonomy Tags: [\"Generic Company Lists\",\"Fortune 500\",\"US Tech\",\"Consumer Digital - US\",\"Consumer\",\"Marketplaces\",\"Enterprise Tech - US\",\"Global 2000\"] | Special Flags: Tech YES Consumer YES Enterprise YES Marketplace YES | All Locations: United States   | All Funding Rounds: Grant (prize money) 2022-07-05 Hessen Grant (prize money) 2022-02-21 Hessen Grant (prize money) 2021-11-04 Land Conventional Debt 2019-02-",
       "rank": 1,
       "extra": {
-        "linkedin_url": "https://linkedin.com/company/intercontinental-hotels-group",
+        "linkedin_url": "https://linkedin.com/company/marriott-international",
         "source_url": null,
         "source_urls": null,
         "confidence": null
       },
-      "relevant": true,
-      "rationale": "IHG is a global hotel operator with a multi-brand lodging and loyalty portfolio directly comparable to Marriott."
+      "relevant": false,
+      "rationale": "Anchor false: candidate is the seed company itself; overlaps hotel, lodging, travel, and guest loyalty.",
+      "anchor_match": false,
+      "capabilities_matched": [
+        "hotel",
+        "lodging",
+        "travel",
+        "guest loyalty"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Anchor false: candidate is the seed company itself; overlaps hotel, lodging, travel, and guest loyalty."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Candidate is the seed itself (Marriott International), which fails the anchor gate per duplicate/self rule."
+        }
+      ]
     },
     {
-      "name": "Wyndham Worldwide",
-      "domain": "wyndhamworldwide.com",
-      "description": "Primary Sector: Travel and Hospitality | Primary Subsector: Hotels | Short Description: Hospitality group that offers hotels, timeshare resorts, vacation Rentals | Detailed Description: Wyndham is a travel and hospitality group that operates Wyndham Hotels & Resorts and other accommodation brands. It owns and/or manages over 5000 hotels, resorts and rental homes in several popular destinations in more than 100 countries worldwide.. | Other Taxonomy Tags: [\"Generic Company Lists\",\"Global 2000\"] | Special Flags: Consumer YES Tech YES | All Locations: United States New Jersey Parsippany Troy Hills | Name: Wyndham Worldwide | Website Url: http://wyndhamworldwide.com | Founded Year: 2006 | Stage: Public | Location Country: United States | Location State: New Jersey | Location City: Parsippany Troy Hills | All Locations: [{\"country\":\"United States\",\"city\":\"Parsippany Troy Hills\",\"state\":\"New Jersey\"}] | Countries Count: 1 | Geo Served: [\"Testing Country 1\",\"Mexico\",\"Nagorno-Karabakh Republic",
+      "name": "Marriott",
+      "domain": "marriott.com.cn",
+      "description": "Name: Marriott | Short Description: Provider of hotel booking and loyalty program services | Detailed Description: Provider of hotel booking and loyalty program services. It offers a platform for booking stays at various hotels globally. The program provides members with benefits such as points accumulation for stays and other purchases, redeemable for future stays or other rewards. The company also facilitates meetings and events planning through its network of hotels. Additional services include a mobile application for streamlined booking and management of travel plans. | Primary Sector: Travel and Hospitality | Primary Subsector: Hotels | All Locations: China   | Website Url: https://www.marriott.com.cn/default.mi | Stage: Unfunded | Location Country: China | All Locations: [{\"country\":\"China\"}] | Countries Count: 1 | Employee Count Official: 27 | Linkedin Url: https://linkedin.com/company/renaissance-beijing-capital-hotel",
       "rank": 2,
       "extra": {
-        "linkedin_url": "https://linkedin.com/company/wyndham-worldwide",
+        "linkedin_url": "https://linkedin.com/company/renaissance-beijing-capital-hotel",
         "source_url": null,
         "source_urls": null,
         "confidence": null
       },
-      "relevant": true,
-      "rationale": "Both operate global hotel and lodging brand portfolios serving travelers and competing for similar guests, franchisees, property owners, and hospitality partners."
+      "relevant": false,
+      "rationale": "Anchor false: this is Marriott\u2019s China presence, a duplicate of the seed; overlaps hotel, lodging, travel, and guest loyalty.",
+      "anchor_match": false,
+      "capabilities_matched": [
+        "hotel",
+        "lodging",
+        "travel",
+        "guest loyalty"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Anchor false: this is Marriott\u2019s China presence, a duplicate of the seed; overlaps hotel, lodging, travel, and guest loyalty."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Duplicate entry: marriott.com.cn is Marriott's own regional site, not a distinct lookalike; anchor fails per duplicate rule."
+        }
+      ]
     },
     {
-      "name": "Loews Hotels",
-      "domain": "loewshotels.com",
-      "description": "Primary Sector: Travel and Hospitality | Primary Subsector: Hotels | Short Description: Operator of luxury hotels and resorts | Detailed Description: Operator of luxury hotels and resorts. It provides luxury hospitality and lodging. It offers personal and business services, including event planning, accommodations for guests with pets, and rewards programs. | Special Flags: Consumer YES | All Locations: United States New York New York City | Name: Loews Hotels | Website Url: https://www.loewshotels.com/ | Stage: Acquired | Location Country: United States | Location State: New York | Location City: New York City | All Locations: [{\"country\":\"United States\",\"city\":\"New York City\",\"state\":\"New York\"}] | Countries Count: 1 | Geo Served: [\"United States\"] | Acquisitions As Target Count: 3 | Acquisitions As Acquirer Count: 1 | Board Member Count: 1 | Acquisition Details: 5aaa934ce4b06f4c9e577363 Business Acquisition  5319ca7ae4b0f7e16600b850 Business Acquisition  52ce73b2e4b09eabc1dd7979 Bus",
+      "name": "HotelBrain",
+      "domain": "hotelbrain.com",
+      "description": "Name: HotelBrain | Short Description: Operator of hotels providing accommodation, meetings, events, and loyalty programs | Detailed Description: Operator of hotels providing accommodation, meetings, events, and loyalty programs. The company offers various types of lodging, from resorts to boutique hotels. It focuses on providing experiences for different travel styles. The company also provides venues for meetings and events. | Primary Sector: Travel and Hospitality | Primary Subsector: Hotels | Special Flags: Consumer YES Enterprise YES | All Locations: Greece Attica Argyroupoli | Website Url: https://www.hotelbrain.com/ | Founded Year: 2000 | Stage: Series A | Location Country: Greece | All Locations: [{\"country\":\"Greece\",\"city\":\"Argyroupoli\",\"state\":\"Attica\"}] | Countries Count: 1 | Special Flags: [{\"flag_name\":\"Consumer\",\"flag_value\":\"YES\"},{\"flag_name\":\"Enterprise\",\"flag_value\":\"YES\"}] | Location State: Attica | Location City: Argyroupoli | Geo Served: [\"Greece\"]",
       "rank": 3,
       "extra": {
-        "linkedin_url": "https://linkedin.com/company/loews-hotels",
-        "source_url": null,
+        "linkedin_url": null,
+        "source_url": "https://platform.tracxn.com/a/d/company/531c3df4e4b0f7e166433dfc/hotelbrain?utm_source=parallel&utm_medium=ai#a:about",
         "source_urls": null,
         "confidence": null
       },
       "relevant": true,
-      "rationale": "Both operate hotel and resort brands offering lodging, events, and loyalty programs to overlapping leisure and business travelers."
+      "rationale": "Anchor true: HotelBrain operates hotels and lodging, with travel services and loyalty programs.",
+      "anchor_match": true,
+      "capabilities_matched": [
+        "hotel",
+        "lodging",
+        "travel",
+        "guest loyalty"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Anchor true: HotelBrain operates hotels and lodging, with travel services and loyalty programs."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "judge error: Error code: 429 - {'error': {'object': 'error', 'type': 'invalid_request_error', 'code': 'invalid_request_error', 'message': 'rate limit exceeded, please try again later'}}"
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Anchor true: hotel operator/hospitality company; shares lodging, hotels, travel, loyalty programs."
+        }
+      ]
     },
     {
-      "name": "Bonvoy",
+      "name": "SpringHill Suites - Marriott",
       "domain": null,
-      "description": "Primary Sector: Consumer | Primary Subsector: Online Travel | Short Description: Global hospitality leader offering hotels, resorts, vacation rentals, and rewards | Detailed Description: Global hospitality leader offering hotels, resorts, vacation rentals, and rewards. It provides a wide array of lodging options, from luxury hotels to extended-stay apartments, catering to diverse travel needs. The company operates a comprehensive rewards program, allowing members to earn and redeem points for stays, experiences, and more. Services include hotel booking, event planning, vacation packages, and access to exclusive member benefits. The website facilitates account login, reservation lookup, and exploration of destinations. It offers travel tips, ideas, and inspiration for planning getaways. The platform supports meetings and events, providing innovative spaces and personalized services. The company emphasizes customer experience, offering mobile check-in, free Wi-Fi, and various amenities. ",
+      "description": "Name: SpringHill Suites - Marriott | Short Description: Operator of suites | Primary Sector: Travel and Hospitality | Primary Subsector: Hotels | All Locations: United States Maryland Bethesda | Recent News: HREC Investment Advisors closes sale of 151-room Springhill Suites in Council Bluffs https://rejournals.com/hrec-investment-advisors-closes-sale-of-151-room-springhill-suites-in-council-bluffs/ 2024-10  Sam Chang Scores $35M for Times Square Marriott Hotel Project https://commercialobserver.com/2023/02/sam-chang-times-square-marriott-hotel-debt/ 2023-02  Commonwealth Hotels Appoints Max Schultz as Dual General Manager of the Hyatt House and the Hyatt Place Chicago/Naperville/Warrenville https://www.prnewswire.com/news-releases/commonwealth-hotels-appoints-max-schultz-as-dual-general-manager-of-the-hyatt-house-and-the-hyatt-place-chicagonapervillewarrenville-301502230.html 2022-03  SpringHill Suites by Marriott Opens in Cottonwood, Arizona https://www.hotelnewsresource.com/article11",
       "rank": 4,
       "extra": {
-        "linkedin_url": "https://www.linkedin.com/company/bonvoy",
+        "linkedin_url": "https://linkedin.com/company/springhill_suites_by_marriott/about",
         "source_url": null,
         "source_urls": null,
         "confidence": null
       },
       "relevant": false,
-      "rationale": "Bonvoy is Marriott\u2019s own loyalty and booking brand, not an independent hospitality company or plausible separate prospect."
+      "rationale": "Anchor false: SpringHill Suites is a Marriott brand/duplicate entry; it overlaps on hotel, lodging, travel, and guest loyalty.",
+      "anchor_match": false,
+      "capabilities_matched": [
+        "hotel",
+        "lodging",
+        "travel",
+        "guest loyalty"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Anchor false: SpringHill Suites is a Marriott brand/duplicate entry; it overlaps on hotel, lodging, travel, and guest loyalty."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Anchor false: SpringHill Suites is a Marriott-owned brand, effectively the seed itself, not an independent lookalike."
+        }
+      ]
     },
     {
-      "name": "Naples Hotel Group",
+      "name": "DirectWithHotels",
       "domain": null,
-      "description": "Primary Sector: Travel and Hospitality | Primary Subsector: Hotel Management Services | Short Description: Hotel development and management company focusing on providing hospitality services from a family-owned perspective | Detailed Description: Naples Hotel Group is a family-owned Hotel Management and Development company that serves top hospitality companies like Marriott. They focus on increasing revenue and guest satisfaction through experienced staff and innovative systems. | All Locations: United States Florida Naples | Recent News: Naples Hotel Group opens Orlando Fairfield https://www.hotelmanagement.net/openings/naples-hotel-group-opens-orlando-fairfield 2024-10  TownePlace Suites by Marriott in Plant City, FL Opens https://www.hotelnewsresource.com/article115323.html 2021-04  Hotel group builds confidence with clients during pandemic https://www.businessobserverfl.com/article/hotel-group-builds-confidence-with-clients-during-pandemic 2021-01  Naples Hotel Group opens TownePla",
+      "description": "Name: DirectWithHotels | Short Description: Channel manager for hotels, hostels and resorts | Detailed Description: Direct with Hotels develops hotel web sites as direct distribution channels. Its service suit enables accommodation providers to achieve balance between direct selling to guests and selling indirectly through online third party distribution channels, traditional travel agents and tour operators, and online travel web sites. The company\u2019s guest acquisition and retention service suite allows clients to manage room rates, room blockings, and policies through an online interface. Its client base includes hostels, beach resorts, casino hotels, independent properties, small- to medium-chain hotels, and hotel groups managed by professional hotel management companies. The company was formerly known as ZimpliHotels. | Primary Sector: Travel and Hospitality Tech | Primary Subsector: Hotel IT | Other Taxonomy Tags: [\"SEA Tech\",\"Enterprise Tech - SEA\",\"SaaS - SEA\",\"Enterprise Applica",
       "rank": 5,
       "extra": {
-        "linkedin_url": "https://linkedin.com/company/naples-hotel-group",
+        "linkedin_url": "https://linkedin.com/company/directwithhotels",
         "source_url": null,
         "source_urls": null,
         "confidence": null
       },
       "relevant": false,
-      "rationale": "Naples manages and develops branded hotels, including Marriott properties, making it an operator/partner rather than a competing hotel brand platform."
+      "rationale": "Anchor false: it is hotel IT for accommodation providers, not a global hospitality operator; no listed capability overlap evidenced.",
+      "anchor_match": false,
+      "capabilities_matched": [],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Anchor false: it is hotel IT for accommodation providers, not a global hospitality operator; no listed capability overlap evidenced."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Anchor false: hotel channel-manager SaaS serving hotels, not a hospitality company operating hotels. Serves the category rather than competing in it; no capability overlap."
+        }
+      ]
     },
     {
-      "name": "Visions Hotels",
-      "domain": "visions-hotels.com",
-      "description": "Primary Sector: Travel and Hospitality | Primary Subsector: Hotel Management Services | Short Description: Hotel management company providing superior hospitality services | Detailed Description: Hotel management company providing superior hospitality services. This company manages hotels, focusing on guest satisfaction through high-quality service and maintaining strong relationships with partner brands. The company operates with integrity and transparency in its dealings with peers, guests, and investors. It also prioritizes responsible community and environmental stewardship. | All Locations: United States   | Name: Visions Hotels | Website Url: https://visions-hotels.com | Stage: Unfunded | Location Country: United States | All Locations: [{\"country\":\"United States\"}] | Countries Count: 1 | Linkedin Url: https://linkedin.com/company/visions-hotels | Employee Count Official: 328 | Recent News: Visions Hotels to buy Buffalo Niagara Marriott for $14.5 million https://www.bizjournals.c",
+      "name": "Marriott Vacations Worldwide",
+      "domain": null,
+      "description": "Name: Marriott Vacations Worldwide | Short Description: Provider of hospitality services | Primary Sector: Travel and Hospitality | Primary Subsector: Tour Operators | All Locations: United States Florida Orlando | All Funding Rounds: Conventional Debt 2019-09-17  Post IPO   | Acquisitions Made: Business Acquisition 2018-08 Business Acquisition 2018-09 Business Acquisition 2013-12 Business Acquisition  | Cxo Team: Stephen Weisz President & CEO | Recent News: Marriott Vacations Worldwide Appoints Tony Walker as Chief Sales and Marketing Officer https://www.intelligence360.news/executive-change-marriott-vacations-worldwide-nyse-vac-appoints-tony-walker-as-chief-sales-and-marketing-officer 2026-04 Marriott Vacations Worldwide (NYSE: VAC) Appoints Matthew Avril as Chief Executive Officer https://www.intelligence360.news/executive-change-marriott-vacations-worldwide-nyse-vac-appoints-matthew-avril-as-chief-executive-officer 2026-03 Pomerantz Law Firm Investigates Claims on Behalf of Investo",
       "rank": 6,
       "extra": {
-        "linkedin_url": "https://linkedin.com/company/visions-hotels",
+        "linkedin_url": "https://linkedin.com/company/marriott-vacation-club-international",
         "source_url": null,
         "source_urls": null,
         "confidence": null
       },
       "relevant": true,
-      "rationale": "Both operate and manage hotels, offering hospitality management and lodging services to hotel owners and guests."
+      "rationale": "Anchor true: vacation-ownership hospitality provider for travelers; overlap includes hotel, lodging, travel, and guest loyalty.",
+      "anchor_match": true,
+      "capabilities_matched": [
+        "hotel",
+        "lodging",
+        "travel",
+        "guest loyalty"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Anchor true: vacation-ownership hospitality provider for travelers; overlap includes hotel, lodging, travel, and guest loyalty."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Independent hospitality company (vacation ownership resorts, NYSE: VAC) \u2014 same category/customer as global hospitality; overlaps lodging, travel, loyalty."
+        }
+      ]
     },
     {
-      "name": "SdotJ Hospitality",
-      "domain": null,
-      "description": "Primary Sector: Travel and Hospitality | Primary Subsector: Hotel Management Services | Short Description: Provider of hotel management services | Detailed Description: Connecting hotels and affluent guests globally through marketing and management consultancy. The organization specializes in growing revenue for partnering hotels and resorts. They offer a wide range of promotion services to guarantee brand visibility and review value. The organization is dedicated to providing tools and insights to expand deals and upgrade revenue, following international standards, strategies, and methodologies to achieve maximum results. Services include hotel marketing consultancy, hotel management consultancy, retention marketing, and hotel operations management. They focus on world-class hospitality and profitably manages loyalty programs. The business model is B2B, offering multiple services in the hospitality industry. | Other Taxonomy Tags: [\"Generic Company Lists\",\"DPIIT Registered\"]",
+      "name": "HotelRewards",
+      "domain": "hotelrewards.com",
+      "description": "Name: HotelRewards | Short Description: Online hotel booking platform for travel agents | Detailed Description: HotelRewards.com is an online hotel booking platform for travel agents and travelers. Claims to have a network of over 150,000 hotels and resorts. Platform is owned and operated by travAlliancemedia. Platform also offers loyalty program for leisure travelers and business travelers.  Platform offers a commission of 10% on each hotel stay to travel agents and 5% of booking price as reward points to travelers. | Primary Sector: Consumer | Primary Subsector: Online Travel | Other Taxonomy Tags: [\"US Tech\",\"Enterprise Tech - US\",\"Consumer Digital - US\",\"Trending Themes in Online Travel\",\"Global Distribution Systems\",\"B2B Hotel Distribution Network\"] | Special Flags: Tech YES Consumer YES Enterprise YES | All Locations: United States Pennsylvania Philadelphia | Founders: Mark Murphy Founder | Website Url: https://hotelrewards.com | Founded Year: 2005 | Stage: Deadpooled",
       "rank": 7,
       "extra": {
-        "linkedin_url": null,
-        "source_url": "https://platform.tracxn.com/a/d/company/5b1819ebe4b08d49c33bd149/sdotj%20hospitality?utm_source=parallel&utm_medium=ai#a:about",
+        "linkedin_url": "https://linkedin.com/company/hotelrewards",
+        "source_url": null,
         "source_urls": null,
         "confidence": null
       },
       "relevant": false,
-      "rationale": "SdotJ primarily consults and manages hotels for partners, rather than operating a consumer-facing lodging and hotel-brand portfolio like Marriott."
+      "rationale": "Anchor false: it is a hotel-booking platform, not a hospitality company; overlaps hotel, travel, and guest loyalty.",
+      "anchor_match": false,
+      "capabilities_matched": [
+        "hotel",
+        "travel",
+        "guest loyalty"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Anchor false: it is a hotel-booking platform, not a hospitality company; overlaps hotel, travel, and guest loyalty."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Anchor false: online booking platform for travel agents, not a hospitality/hotel operator like Marriott. Overlap in travel booking and loyalty rewards only."
+        }
+      ]
     },
     {
-      "name": "Desert Hospitality Management",
-      "domain": "deserthospitality.com",
-      "description": "Primary Sector: Travel and Hospitality | Primary Subsector: Hotel Management Services | Short Description: Hospitality management company successfully managing a diversified portfolio | Detailed Description: Desert Hospitality Management is a company managing a diversified portfolio of properties across the Southwest and Midwest. They offer boutique hotel accommodations, luxury resorts, and other hospitality services in partnership with well-known brands like Embassy Suites by Hilton and Marriott. | All Locations: United States Arizona Tucson | Name: Desert Hospitality Management | Website Url: https://deserthospitality.com | Founded Year: 2022 | Stage: Unfunded | Location Country: United States | Location State: Arizona | Location City: Tucson | All Locations: [{\"country\":\"United States\",\"city\":\"Tucson\",\"state\":\"Arizona\"}] | Countries Count: 1 | Geo Served: [\"United States\"] | Recent News: Desert Hospitality Management Announces Strategic Partnership with Embassy Suites by Hilton Okla",
+      "name": "Marriott Indyplace",
+      "domain": "marriottindyplace.com",
+      "description": "Name: Marriott Indyplace | Short Description: Chains providing event venues, dining, and lodging for various occasions | Detailed Description: Chains providing event venues, dining, and lodging for various occasions. The complex offers spaces for meetings, conferences, private dining, and weddings. Multiple restaurants and bars provide diverse dining experiences. Lodging is available across several hotels within the connected complex. | Primary Sector: Travel and Hospitality | Primary Subsector: Hotels | All Locations: United States Indiana Indianapolis | Website Url: https://www.marriottindyplace.com | Founded Year: 2017 | Stage: Unfunded | Location Country: United States | Location State: Indiana | Location City: Indianapolis | All Locations: [{\"country\":\"United States\",\"city\":\"Indianapolis\",\"state\":\"Indiana\"}] | Countries Count: 1 | Geo Served: [\"United States\"] | Employee Count Official: 27 | Linkedin Url: https://linkedin.com/company/marriott-indyplace",
       "rank": 8,
       "extra": {
-        "linkedin_url": "https://linkedin.com/company/deserthospitalitymgmt",
-        "source_url": null,
-        "source_urls": null,
-        "confidence": null
-      },
-      "relevant": true,
-      "rationale": "Both operate and manage hotel and resort accommodations, serving property owners and travelers with overlapping hospitality offerings."
-    },
-    {
-      "name": "Insigniamgmt",
-      "domain": null,
-      "description": "Primary Sector: Travel and Hospitality | Primary Subsector: Hotel Management Services | Short Description: Hospitality group managing and developing hotel portfolios | Detailed Description: Hospitality group managing and developing hotel portfolios. It partners with established brands to build and maintain hotels, maximizing returns for investors while prioritizing guest and employee satisfaction. The group fosters a strong company culture to cultivate memorable hotel experiences and develop community-minded leaders. Its operational focus is on efficient processes that ensure financial success without compromising a welcoming atmosphere. A commitment to employee empowerment and development is central to its approach. | All Locations: United States Texas Houston | Recent News: HVS Brokerage & Advisory Closes Sale of Hampton Inn & Suites By Hilton Hobbs https://www.hotelnewsresource.com/article137096.html 2025-07 Construction starting soon for 130-room Marriott hotel in Folsom's Palladio",
-      "rank": 9,
-      "extra": {
-        "linkedin_url": "https://linkedin.com/company/insignia-hospitality-group",
-        "source_url": null,
-        "source_urls": null,
-        "confidence": null
-      },
-      "relevant": true,
-      "rationale": "Both operate and manage hotel portfolios, serving hotel owners and investors seeking hospitality development and management services."
-    },
-    {
-      "name": "360GHS",
-      "domain": "360ghs.com",
-      "description": "Primary Sector: Enterprise Applications | Primary Subsector: Enterprise Resource Planning | Short Description: Software suite for hotels | Detailed Description: Global Hospitality Solutions (GHS) is a cloud-based software solutions provider for hotels. Product offerings include channel manager, property management system, online booking engine, revenue manager, virtual tours and digital marketing etc. Clients include Hilton, Hyatt, Ibis, Radisson, Best Western etc. | Other Taxonomy Tags: [\"Enterprise Applications\",\"SaaS\",\"US Tech\",\"SaaS - US\",\"Enterprise Tech - US\",\"Vertical SaaS\",\"Travel and Hospitality SaaS\",\"Enterprise Software\",\"Trending Themes in Online Travel\",\"Hotel Management Software\",\"Shopify for X\",\"Shopify for Hotels\"] | Special Flags: Tech YES Enterprise YES SaaS YES Software YES | All Locations: United States Florida Maitland | Achievements: Trending Theme Market {themes=[{id=5d2dc40a8787077a9b2de792}]} | Name: 360GHS | Website Url: http://360ghs.com | Founded Year: 2013",
-      "rank": 10,
-      "extra": {
-        "linkedin_url": "https://linkedin.com/company/global-hospitality-solutions",
+        "linkedin_url": "https://linkedin.com/company/marriott-indyplace",
         "source_url": null,
         "source_urls": null,
         "confidence": null
       },
       "relevant": false,
-      "rationale": "360GHS sells hotel-management software to hotel operators; Marriott operates hotels and would be a customer, not a competing hospitality operator."
+      "rationale": "Anchor fails: a single Marriott-branded hotel complex in Indianapolis \u2014 a property of the seed's own brand, not an independent hospitality company. Overlaps hotel/lodging regardless.",
+      "anchor_match": false,
+      "capabilities_matched": [
+        "hotel",
+        "lodging"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Anchor true: hospitality lodging complex; overlaps hotel and lodging."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Anchor fails: a single Marriott-branded hotel complex in Indianapolis \u2014 a property of the seed's own brand, not an independent hospitality company. Overlaps hotel/lodging regardless."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "Marriott-branded local property complex, effectively a subsidiary/duplicate of the seed, not a peer hospitality company."
+        }
+      ]
     },
     {
-      "name": "Sunset Hotel Group",
-      "domain": "sunsethotelgroup.com",
-      "description": "Primary Sector: Travel and Hospitality | Primary Subsector: Hotels | Short Description: Hospitality company that owns and manages a portfolio of hotels and resorts, with a focus on providing upscale accommodations and services to its guests | Detailed Description: Sunset Hotel Group is a privately-owned hospitality company that operates a portfolio of hotels, resorts, and mixed-use developments worldwide. With a focus on delivering high-quality accommodations and services, the company has established itself as a reputable player in the global hospitality industry. | All Locations: United States Maryland Harford | Name: Sunset Hotel Group | Website Url: https://sunsethotelgroup.com | Stage: Unfunded | Location Country: United States | Location State: Maryland | Location City: Harford | All Locations: [{\"country\":\"United States\",\"city\":\"Harford\",\"state\":\"Maryland\"}] | Countries Count: 1 | Geo Served: [\"United States\"] | Founders: King Patel Founder & CEO | Founded Year: 1996",
+      "name": "Pelican Hotel Solutions",
+      "domain": null,
+      "description": "Name: Pelican Hotel Solutions | Short Description: Hotel solutions provider: booking engine, channel manager, website design, and more | Detailed Description: Hotel solutions provider: booking engine, channel manager, website design, and more. They offer comprehensive solutions to attract, convert, and retain guests to book direct. Their core offerings include a hotel booking engine (central reservation system) designed to turn website visitors into hotel bookers, advanced website design services to enhance hotel branding, and a hotel loyalty management system to increase guest loyalty through membership programs. They also provide a hotel online promotion system to distribute promotions across various channels and a hotel channel manager to connect with numerous OTAs. Additionally, they offer hotel GDS connectivity to distribute rates and inventory to travel agents worldwide. This is a SaaS based platform. | Primary Sector: Consumer | Primary Subsector: Online Travel",
+      "rank": 9,
+      "extra": {
+        "linkedin_url": "https://linkedin.com/company/pelican-hotel-solutions",
+        "source_url": null,
+        "source_urls": null,
+        "confidence": null
+      },
+      "relevant": false,
+      "rationale": "Anchor false: it is hotel-management SaaS for hotels, not a global hospitality operator; overlap: guest loyalty.",
+      "anchor_match": false,
+      "capabilities_matched": [
+        "guest loyalty"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Anchor false: it is hotel-management SaaS for hotels, not a global hospitality operator; overlap: guest loyalty."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Anchor false: Pelican sells SaaS tools (booking engine, channel manager) to hotels; it serves the hospitality category rather than operating as a hospitality company."
+        }
+      ]
+    },
+    {
+      "name": "Marriott Grand Vacationsm",
+      "domain": "mgvpl.com",
+      "description": "Name: Marriott Grand Vacationsm | Short Description: Provider of bespoke vacation membership experiences to enchanting destinations, redefining leisure | Detailed Description: MGVPL (Marriott Grand Vacations Pvt Ltd) offers bespoke journeys to enchanting destinations, redefining leisure with amazing vacation membership experiences in India & Abroad. Create lasting memories with extraordinary family holidays through MGVPL. | Primary Sector: Travel and Hospitality | Primary Subsector: Tour Operators | All Locations: India Delhi Delhi | Website Url: http://mgvpl.com | Founded Year: 2023 | Stage: Deadpooled | Location Country: India | Location State: Delhi | Location City: Delhi | All Locations: [{\"country\":\"India\",\"city\":\"Delhi\",\"state\":\"Delhi\"}] | Countries Count: 1 | Geo Served: [\"India\"] | Deadpooled: Yes | Deadpooled Date: 2024-01-01 | Email: info@mgvpl.com | Phone Country Code: +91 | Phone Number: 18002025088",
+      "rank": 10,
+      "extra": {
+        "linkedin_url": null,
+        "source_url": "https://platform.tracxn.com/a/d/company/646a72718bf5630cc60c4a6a/marriott%20grand%20vacationsm?utm_source=parallel&utm_medium=ai#a:about",
+        "source_urls": null,
+        "confidence": null
+      },
+      "relevant": false,
+      "rationale": "Anchor false: vacation-membership tour operator, not a global hospitality company; overlaps on travel.",
+      "anchor_match": false,
+      "capabilities_matched": [
+        "travel"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Anchor false: vacation-membership tour operator, not a global hospitality company; overlaps on travel."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Anchor false: Indian vacation-membership tour operator (likely Marriott name imitation), not a global hotel/hospitality company; only travel overlaps."
+        }
+      ]
+    },
+    {
+      "name": "ForNova\nHoteldirectorylistings.com",
+      "domain": null,
+      "description": "Name: ForNova | Short Description: Market intelligence & visibility solutions for hotels | Detailed Description: ForNova is the provider of market intelligence and market visibility solutions for hotels. Its technology called SuperNova is a patented image-based scanning technology which scans, extracts and analyzes online hospitality data. Its offering is a two-tiered solution, a market intelligence product that allows hotels to collect and analyze all the available information from the market to check their hotels' pricing, ranking & distribution and a channeling and market visibility product that offers smart connectivity to the marketing channels so as to boost hotel bookings. Based in Israel with offices in London, Amsterdam, New York and Ukraine, the company claims to serve more than 13k hotels including brands such as Marriott, Hilton, NH Hotels, and Premier Inn. It has also developed Goldenfeeds for use to the online retailers. | Primary Sector: Consumer | Primary Subsector: Onl\nName: Hoteldirectorylistings.com | Short Description: Provider of a web-based listing platform for hotels | Detailed Description: Provider of a web-based listing platform for hotels. The platform allows hoteliers to create their hotel profile and list details through online marketing channels. It helps to manage hotel revenue by getting search credibility. | Primary Sector: Consumer | Primary Subsector: Online Travel | Other Taxonomy Tags: [\"UK & Ireland Tech\",\"SaaS - UK & Ireland\",\"Europe Tech\",\"Enterprise Tech - Europe\",\"Enterprise Tech - UK & Ireland\",\"Enterprise Applications\",\"SaaS\",\"Vertical SaaS\",\"Travel and Hospitality SaaS\",\"SaaS - Europe\",\"Enterprise Software\",\"UK Tech\",\"SaaS - UK\",\"Enterprise Tech - UK\",\"Trending Themes in Online Travel\",\"Hotel Channel Management Software\"] | Special Flags: Tech YES Enterprise YES SaaS YES Software YES | All Locations: United Kingdom England London | Achievements: Trending Theme Market {themes=[{id=5d2dadf3977ce82628c168ec}]}",
       "rank": 11,
       "extra": {
-        "linkedin_url": null,
-        "source_url": "https://platform.tracxn.com/a/d/company/5883ab14e4b02749aa24bfe9/sunset%20hotel%20group?utm_source=parallel&utm_medium=ai#a:about",
+        "linkedin_url": "https://linkedin.com/company/fornova",
+        "source_url": null,
         "source_urls": null,
         "confidence": null
       },
-      "relevant": true,
-      "rationale": "Both own and manage hotel portfolios offering accommodations and hospitality services to travelers, making Sunset Hotel Group a direct business-model lookalike."
+      "relevant": false,
+      "rationale": "Anchor false: hotel-market intelligence and listing software serves hotels, rather than operating a global hospitality company; no listed capability overlap.",
+      "anchor_match": false,
+      "capabilities_matched": [],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Anchor false: hotel-market intelligence and listing software serves hotels, rather than operating a global hospitality company; no listed capability overlap."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Anchor false: ForNova is hotel market-intelligence/channel software vendor, not a hospitality company operating hotels; serves hotels rather than competing with Marriott."
+        }
+      ]
     },
     {
-      "name": "Landmark Hotel Group",
-      "domain": "landmarkhotelgroup.com",
-      "description": "Primary Sector: Travel and Hospitality | Primary Subsector: Hotel Management Services | Short Description: Hospitality company operating hotels and providing job opportunities in the hospitality industry | Detailed Description: Landmark Hotel Group is a hospitality company operating a portfolio of hotels and resorts across the United States. The company offers a range of job opportunities in hospitality management, including full-time and part-time positions. With a focus on providing exceptional customer service, Landmark Hotel Group aims to deliver a unique guest experience across its properties. The company also develops and manages hotels, with a strategic focus on key locations. | All Locations: United States Virginia Virginia Beach | Name: Landmark Hotel Group | Website Url: https://www.landmarkhotelgroup.com/ | Founded Year: 1983 | Stage: Unfunded | Location Country: United States | Location State: Virginia | Location City: Virginia Beach | All Locations: [{\"country\":\"United Sta",
+      "name": "JPERATION",
+      "domain": "jperation.com",
+      "description": "Name: JPERATION | Short Description: Provider of hotel management solutions | Detailed Description: JPERATION is a provider of hotel management solutions. Its features include marketing solutions, booking & sales management, pre-sale management, distribution, analytics, and more. Clients include Hilton Hotels & Resorts, Sofitel Hotels & Resorts, Grand Hyatt, and others. | Primary Sector: Enterprise Applications | Primary Subsector: Enterprise Resource Planning | Other Taxonomy Tags: [\"China Tech\",\"Enterprise Tech - China\",\"Enterprise Applications\",\"Global SaaS\",\"SaaS\",\"Vertical SaaS\",\"Travel and Hospitality SaaS\",\"SaaS - China\",\"Enterprise Software\",\"Trending Themes in Online Travel\",\"Hotel Management Software\",\"Shopify for X\",\"Shopify for Hotels\"] | Special Flags: Tech YES Enterprise YES SaaS YES Software YES | All Locations: China Guangdong Guangzhou | Website Url: http://jperation.com | Founded Year: 2017 | Stage: Acqui-Hired | Location Country: China | Location State: Guangdong",
       "rank": 12,
       "extra": {
-        "linkedin_url": "https://linkedin.com/company/landmark-hotel-group",
-        "source_url": null,
+        "linkedin_url": null,
+        "source_url": "https://platform.tracxn.com/a/d/company/590691f5e4b0bcc83f29b48e/jperation?utm_source=parallel&utm_medium=ai#a:about",
         "source_urls": null,
         "confidence": null
       },
-      "relevant": true,
-      "rationale": "Both operate and manage hotel portfolios, serving travelers with lodging and hospitality experiences."
+      "relevant": false,
+      "rationale": "Anchor false: JPERATION sells hotel-management software to hotels, not hospitality services; no listed Marriott capability is evidenced.",
+      "anchor_match": false,
+      "capabilities_matched": [],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Anchor false: JPERATION sells hotel-management software to hotels, not hospitality services; no listed Marriott capability is evidenced."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Anchor false: B2B hotel-management SaaS serving hotels, not a hospitality operator; no listed hotel/lodging/travel/loyalty capability overlap."
+        }
+      ]
     },
     {
-      "name": "Landmarkhotelsinc",
-      "domain": null,
-      "description": "Primary Sector: Travel and Hospitality | Primary Subsector: Hotel Management Services | Short Description: Hotel and resort development and management in California & Hawaii | Detailed Description: Hotel and resort development and management in California & Hawaii. They create experiential and inviting hotel and resort environments, focusing on cohesive design, technology, and service. They offer services in development, bringing hotels and resorts to life by delivering products suited to the market and destination. Their management team ensures guest, ownership, and community expectations are met. They focus on guest satisfaction and well-trained, motivated team members. They design with a feeling for the location, incorporating local culture. They provide operations management, information systems, technical services, revenue management, distribution, reservations, sales, marketing, risk management, quality control, human resource management, training, purchasing, and financial manag",
+      "name": "Montreal Marriott Chateau Champlain",
+      "domain": "montrealchateauchamplain.com",
+      "description": "Name: Montreal Marriott Chateau Champlain | Short Description: Operator of hotels | Primary Sector: Travel and Hospitality | Primary Subsector: Hotels | All Locations: Canada Quebec Montreal | Website Url: http://montrealchateauchamplain.com | Founded Year: 2004 | Stage: Acquired | Location Country: Canada | Location State: Quebec | Location City: Montreal | All Locations: [{\"country\":\"Canada\",\"city\":\"Montreal\",\"state\":\"Quebec\"}] | Countries Count: 1 | Geo Served: [\"Canada\"] | Employee Count Official: 1 | Acquisitions As Target Count: 1 | Linkedin Url: https://linkedin.com/company/marriott-montreal-chateau-champlain | Acquisition Details: Business Acquisition  | Recent News: Marriott Ch\u00e2teau Champlain Acquired by Tidan Hospitality and Real Estate Group http://www.hoteliermagazine.com/marriott-chateau-champlain-acquired-by-tidan-hospitality-and-real-estate-group/ 2018-04  | Acquisition Details: [{\"acquisition_type\":\"Business Acquisition\"}] | Recent News: [{\"title\":\"Marriott Ch\u00e2teau Cham",
       "rank": 13,
       "extra": {
-        "linkedin_url": null,
-        "source_url": "https://platform.tracxn.com/a/d/company/5ca6129a252ec22a1c2270a1/landmarkhotelsinc?utm_source=parallel&utm_medium=ai#a:about",
+        "linkedin_url": "https://linkedin.com/company/marriott-montreal-chateau-champlain",
+        "source_url": null,
         "source_urls": null,
         "confidence": null
       },
-      "relevant": true,
-      "rationale": "Both operate and manage hotels and resorts, serving travelers and property owners through hospitality management, reservations, marketing, and guest services."
+      "relevant": false,
+      "rationale": "Anchor false: this is a specific hotel property, not a global hospitality company; overlaps hotel, lodging, and travel.",
+      "anchor_match": false,
+      "capabilities_matched": [
+        "hotel",
+        "lodging",
+        "travel"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Anchor false: this is a specific hotel property, not a global hospitality company; overlaps hotel, lodging, and travel."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Single Marriott-branded property \u2014 effectively the seed's own system/duplicate, not an independent global hospitality company. Overlap (hotel, lodging) moot; anchor fails."
+        }
+      ]
     },
     {
-      "name": "Larco Hospitality",
-      "domain": "larcohospitality.com",
-      "description": "Primary Sector: Travel and Hospitality | Primary Subsector: Hotel Management Services | Short Description: Hotel management company providing full-service management for well-recognized hospitality brands | Detailed Description: Hotel management company providing full-service management for well-recognized hospitality brands. The company offers hotel management services for established brands in the hospitality sector. It focuses on creating loyalty with guests and associates through service-driven operations. The company manages a portfolio of hotels. | All Locations: Canada   | Name: Larco Hospitality | Website Url: https://larcohospitality.com | Founded Year: 2000 | Stage: Unfunded | Location Country: Canada | All Locations: [{\"country\":\"Canada\"}] | Countries Count: 1 | Employee Count Official: 46 | Linkedin Url: https://linkedin.com/company/larcohospitality",
+      "name": "Club Marriott",
+      "domain": "myclubmarriott.com",
+      "description": "Name: Club Marriott | Short Description: Provider of a white label customer loyalty app | Primary Sector: Travel and Hospitality Tech | Primary Subsector: Hotel IT | Other Taxonomy Tags: [\"China Tech\",\"Consumer Digital - China\",\"Enterprise Tech - China\"] | Special Flags: Tech YES Enterprise YES Consumer YES | All Locations: China Jilin Changchun | Website Url: https://www.myclubmarriott.com/ | Founded Year: 2011 | Stage: Unfunded | Location Country: China | Location State: Jilin | Location City: Changchun | All Locations: [{\"country\":\"China\",\"city\":\"Changchun\",\"state\":\"Jilin\"}] | Countries Count: 1 | Geo Served: [\"China\"] | Linkedin Url: https://linkedin.com/company/gms-corporation-fze-uae | Special Flags: [{\"flag_name\":\"Tech\",\"flag_value\":\"YES\"},{\"flag_name\":\"Enterprise\",\"flag_value\":\"YES\"},{\"flag_name\":\"Consumer\",\"flag_value\":\"YES\"}] | Employee Count Official: 1",
       "rank": 14,
       "extra": {
-        "linkedin_url": "https://linkedin.com/company/larcohospitality",
+        "linkedin_url": "https://linkedin.com/company/gms-corporation-fze-uae",
         "source_url": null,
         "source_urls": null,
         "confidence": null
       },
-      "relevant": true,
-      "rationale": "Both operate and manage full-service hotels, offering hospitality management to hotel owners and serving lodging guests."
+      "relevant": false,
+      "rationale": "Anchor false: loyalty-app provider, not a global hospitality company; overlap: guest loyalty.",
+      "anchor_match": false,
+      "capabilities_matched": [
+        "guest loyalty"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Anchor false: loyalty-app provider, not a global hospitality company; overlap: guest loyalty."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Anchor false: white-label loyalty app provider (Hotel IT vendor) serving hospitality, not a global hospitality/hotel company; overlaps only on guest loyalty."
+        }
+      ]
     },
     {
-      "name": "Millennium & Copthorne Hotels",
-      "domain": "millenniumhotels.com",
-      "description": "Primary Sector: Travel and Hospitality | Primary Subsector: Hotels | Short Description: Hospitality management services provider | Detailed Description: Millennium Hotels and Resorts provides hospitality management services. The company operates Millennium, Copthorne and Kingsgate hotel chains. Owns and manages hundreds on hotel worldwide. The company is listed on the London Stock Exchange and the majority of its shares are owned by City Developments Limited. | Special Flags: Consumer YES Enterprise YES | All Locations: United Kingdom England London | Acquisition Details: 53191fd6e4b0f7e165f168da Business Acquisition  | Key People Education: Jonathon Grech J.D.  Emory University | Name: Millennium & Copthorne Hotels | Website Url: https://www.millenniumhotels.com/ | Founded Year: 1989 | Stage: Acquired | Funded: Yes | Location Country: United Kingdom | Location State: England | Location City: London | All Locations: [{\"country\":\"United Kingdom\",\"city\":\"London\",\"state\":\"England\"}]",
+      "name": "Marriott Vacation Club",
+      "domain": null,
+      "description": "Name: Marriott Vacation Club | Short Description: Operator of standalone resorts | Primary Sector: Travel and Hospitality | Primary Subsector: Hotels | All Locations: United States Florida Orlando | Acquisitions Made: Business Acquisition  | Recent News: Marriott Vacation Clubs Expands in Asia-Pacific with New Resort in Khao Lak Thailand http://www.businesswire.com/news/home/20250827472037/en/The-Marriott-Vacation-Clubs%E2%84%A2-Expands-in-Asia-Pacific-with-New-Resort-in-Khao-Lak-Thailand-and-Growth-in-Bali-and-Shanghai/?feedref=JjAwJuNHiystnCoBq_hl-fLcmYSZsqlD_XPbplM8Ta6D8R-QU5o2AvY8bhI9uvWSD8DYIYv4TIC1g1u0AKcacnnViVjtb72bOP4-4nHK5iej_DoWrIhfD31cAxcB60aE 2025-08  Joe Tenczar Joins Sky Zone as Cio https://hospitalitytech.com/joe-tenczar-joins-sky-zone-cio 2023-05  Marriott Vacation Club Opens Newest Resort, Marriott's Bali Nusa Dua Terrace https://www.hotelnewsresource.com/article123523.html 2022-11  Blumenthal Nordrehaug and Bhowmik File A Class Action Lawsuit Against Marriott Ownersh",
       "rank": 15,
       "extra": {
-        "linkedin_url": "https://linkedin.com/company/millennium-hotels-&-resorts/about",
+        "linkedin_url": "https://linkedin.com/company/marriott-ownership-resorts-inc.",
         "source_url": null,
         "source_urls": null,
         "confidence": null
       },
-      "relevant": true,
-      "rationale": "Both operate global hotel chains and hospitality management businesses serving travelers and corporate lodging buyers."
+      "relevant": false,
+      "rationale": "Anchor false: Marriott Vacation Club is a Marriott-affiliated vacation-ownership resort brand, not an independent global hospitality company lookalike; overlaps hotel, lodging, travel.",
+      "anchor_match": false,
+      "capabilities_matched": [
+        "hotel",
+        "lodging",
+        "travel"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Anchor false: Marriott Vacation Club is a Marriott-affiliated vacation-ownership resort brand, not an independent global hospitality company lookalike; overlaps hotel, lodging, travel."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Candidate is a Marriott-owned timeshare brand, effectively the seed's own subsidiary/corporate family, so it fails the anchor as a duplicate entry."
+        }
+      ]
     },
     {
-      "name": "Brandmarkcollective",
-      "domain": null,
-      "description": "Primary Sector: Travel and Hospitality | Primary Subsector: Hotel Management Services | Short Description: Provider of hospitality brand extension services for iconic brands | Detailed Description: Provider of hospitality brand extension services for iconic brands. It assists brand partners in extending their brands into hotels, resorts, residences, private clubs, food and beverage outlets, and spas. The company offers a diversified platform covering five integrated verticals, creating unique hospitality products tailored to each brand's identity. It leverages existing brand affiliations to deliver an inbuilt customer base and revenue opportunities. Operations include in-house management, ensuring consistent customer experiences. The business model focuses on long-term brand and hotel management agreements, prioritizing an owner-friendly approach and strategic market selection. A central team delivers services across multiple brands and locations, while local execution ensures adaptabi",
+      "name": "JW Marriott Grand Rapids",
+      "domain": "ilovethejw.com",
+      "description": "Name: JW Marriott Grand Rapids | Short Description: Operator of standalone hotel | Primary Sector: Travel and Hospitality | Primary Subsector: Hotels | All Locations: United States Michigan Grand Rapids | Recent News: Six.One.Six Debuts As New French Bistro At JW Marriott Grand Rapids http://www.travelandtourworld.com/news/article/six-one-six-debuts-as-new-french-bistro-at-jw-marriott-grand-rapids/ 2018-04  | Website Url: http://ilovethejw.com | Founded Year: 2007 | Stage: Unfunded | Location Country: United States | Location State: Michigan | Location City: Grand Rapids | All Locations: [{\"country\":\"United States\",\"city\":\"Grand Rapids\",\"state\":\"Michigan\"}] | Countries Count: 1 | Geo Served: [\"United States\"] | Employee Count Official: 95 | Latest Estimated Revenue Usd: 22857120.0 | Linkedin Url: https://linkedin.com/company/jw-marriott-grand-rapids | Recent News: [{\"title\":\"Six.One.Six Debuts As New French Bistro At JW Marriott Grand Rapids\",\"url\":\"http://www.travelandtourworld.com/ne",
       "rank": 16,
       "extra": {
-        "linkedin_url": "https://linkedin.com/company/brandmark-collective",
+        "linkedin_url": "https://linkedin.com/company/jw-marriott-grand-rapids",
         "source_url": null,
         "source_urls": null,
         "confidence": null
       },
-      "relevant": true,
-      "rationale": "Both provide branded hotel and hospitality management platforms to property owners and developers through long-term brand and management agreements."
+      "relevant": false,
+      "rationale": "Anchor false: this is a standalone Marriott-branded hotel property, not a global hospitality company; overlaps hotel, lodging, and travel.",
+      "anchor_match": false,
+      "capabilities_matched": [
+        "hotel",
+        "lodging",
+        "travel"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Anchor false: this is a standalone Marriott-branded hotel property, not a global hospitality company; overlaps hotel, lodging, and travel."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Anchor false: a single Marriott-branded property is the seed's own outlet (duplicate), not a peer hospitality company. Overlaps hotel/lodging."
+        }
+      ]
     },
     {
-      "name": "Stay Cal Hospitality",
-      "domain": "staycal.com",
-      "description": "Primary Sector: Travel and Hospitality | Primary Subsector: Hotel Management Services | Short Description: Hospitality company that operates a portfolio of hotels and real estate development projects, offering luxury and comfort to its guests | Detailed Description: Stay Cal Hospitality is a luxury hotel company that offers sophisticated design, superior accommodations, and high-tech service excellence in prime destinations. The company operates a portfolio of hotels, including the Holiday Inn Express Benicia, and is known for its commitment to providing a high-touch, high-tech experience to its guests. With a focus on redefining hospitality, Stay Cal Hospitality aims to create a seamless and enjoyable experience for its guests. | All Locations: United States California San Mateo | Name: Stay Cal Hospitality | Website Url: https://staycal.com | Founded Year: 1976 | Stage: Unfunded | Location Country: United States | Location State: California | Location City: San Mateo",
+      "name": "Tourico Vacations Marriott",
+      "domain": "touricovacationsmarriott.com",
+      "description": "Name: Tourico Vacations Marriott | Short Description: Provider of a members-only travel booking platform | Detailed Description: Provider of a members-only travel booking platform. This platform connects travelers with discounted travel deals and packages. It offers access to various travel options, including hotels, condos, cruises, flights, and vacation packages. The platform utilizes advanced pricing technology to ensure members receive exclusive savings. It provides support for trip planning, adjustments, cancellations, and relocation. The service aims to simplify the travel booking process and make vacations more affordable. | Primary Sector: Travel and Hospitality | Primary Subsector: Tour Operators | All Locations: Canada   | Website Url: https://touricovacationsmarriott.com | Stage: Unfunded | Location Country: Canada | All Locations: [{\"country\":\"Canada\"}] | Countries Count: 1 | Founded Year: 2019",
       "rank": 17,
       "extra": {
-        "linkedin_url": "https://linkedin.com/company/stay-cal-hotels",
-        "source_url": null,
+        "linkedin_url": null,
+        "source_url": "https://platform.tracxn.com/a/d/company/5d5599c9dfad2e733c4f2b81/tourico%20vacations%20marriott?utm_source=parallel&utm_medium=ai#a:about",
         "source_urls": null,
         "confidence": null
       },
-      "relevant": true,
-      "rationale": "Both operate hotel portfolios and provide lodging and hospitality experiences to travelers, with overlapping hotel operations and guest-service models."
+      "relevant": false,
+      "rationale": "Anchor false: members-only travel booking platform, not a global hospitality company; overlaps on travel.",
+      "anchor_match": false,
+      "capabilities_matched": [
+        "travel"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Anchor false: members-only travel booking platform, not a global hospitality company; overlaps on travel."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Anchor false: members-only travel booking platform/tour operator, not a hospitality/lodging company; overlaps only on travel booking."
+        }
+      ]
     },
     {
-      "name": "Signaturehotelsgroup",
-      "domain": "signaturehotelsgroup",
-      "description": "Primary Sector: Travel and Hospitality | Primary Subsector: Hotel Management Services | Short Description: Hotel management company specializing in independent hotel partnerships and development | Detailed Description: Hotel management company specializing in independent hotel partnerships and development. It partners with, manages, and operates independent hotels of all types, providing services such as revenue management, guest and reputation management, and demand generation. The company offers flexible contracts and focuses on sustainable profitability, empowering hotels to compete effectively with larger brands while maintaining their unique character. It also develops hotels and brands across various market segments, from luxury to upper economy, emphasizing a human-centered approach to hospitality. Development services include concept design, strategy, and operational support for bars, restaurants, and spas. | Name: Signaturehotelsgroup | Website Url: http://signaturehotelsgroup",
+      "name": "Ottawa Marriott",
+      "domain": "ottawamarriott.ca",
+      "description": "Name: Ottawa Marriott | Short Description: Provider of hotel accommodations and related services | Detailed Description: Provider of hotel accommodations and related services. It offers a variety of guest rooms and suites, catering to both leisure and business travelers. Services typically include on-site dining options, meeting and event spaces, and other amenities designed to enhance the guest experience. The focus is on providing comfortable and convenient lodging with supporting services. | Primary Sector: Travel and Hospitality | Primary Subsector: Hotels | All Locations: Canada Ontario Ottawa | Website Url: http://ottawamarriott.ca | Founded Year: 2006 | Stage: Unfunded | Location Country: Canada | Location State: Ontario | Location City: Ottawa | All Locations: [{\"country\":\"Canada\",\"city\":\"Ottawa\",\"state\":\"Ontario\"}] | Countries Count: 1 | Geo Served: [\"Canada\"] | Employee Count Official: 65 | Linkedin Url: https://linkedin.com/company/ottawa-marriott-hotel",
       "rank": 18,
       "extra": {
-        "linkedin_url": null,
-        "source_url": "https://platform.tracxn.com/a/d/company/58bed83ce4b0dc135c8e5460/signaturehotelsgroup?utm_source=parallel&utm_medium=ai#a:about",
+        "linkedin_url": "https://linkedin.com/company/ottawa-marriott-hotel",
+        "source_url": null,
         "source_urls": null,
         "confidence": null
       },
-      "relevant": true,
-      "rationale": "Both operate and manage hotels, offering property owners hospitality management, development, revenue, and brand support services."
+      "relevant": false,
+      "rationale": "Anchor false: Ottawa Marriott is a single Marriott-branded hotel property, not a distinct global hospitality company; overlaps hotel, lodging, travel.",
+      "anchor_match": false,
+      "capabilities_matched": [
+        "hotel",
+        "lodging",
+        "travel"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Anchor false: Ottawa Marriott is a single Marriott-branded hotel property, not a distinct global hospitality company; overlaps hotel, lodging, travel."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Single Marriott-branded hotel in Ottawa; same hospitality/hotel category. Matches hotel, lodging, travel; no evidence of own loyalty program."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "Single Marriott-branded property, effectively the seed's own hotel, not a comparable global hospitality company."
+        }
+      ]
     },
     {
-      "name": "Pacific Hospitality Group",
-      "domain": "pacifichospitality.com",
-      "description": "Primary Sector: Travel and Hospitality | Primary Subsector: Hotel Management Services | Short Description: Hotel management and investment company with a portfolio of branded and resort properties | Detailed Description: Pacific Hospitality Group is a management company that operates both branded and independent resort properties. They have a strategic vision and strong core values, allowing them to take advantage of legacy brands and innovate in the industry. | All Locations: United States California Irvine | Name: Pacific Hospitality Group | Website Url: https://www.pacifichospitality.com/ | Founded Year: 1987 | Stage: Unfunded | Location Country: United States | Location State: California | Location City: Irvine | All Locations: [{\"country\":\"United States\",\"city\":\"Irvine\",\"state\":\"California\"}] | Countries Count: 1 | Geo Served: [\"United States\"] | Acquisitions As Acquirer Count: 1 | Linkedin Url: https://linkedin.com/company/pacific-hospitality-group | Employee Count Official: 131",
+      "name": "JW Marriott Venice",
+      "domain": "jwvenice.com",
+      "description": "Name: JW Marriott Venice | Short Description: Operator of standalone resort | Primary Sector: Travel and Hospitality | Primary Subsector: Hotels | All Locations: Italy Veneto Venezia | Recent News: Markos Tzamalis Named General Manager for JW Marriott Venice Resort & Spa https://www.hotelnewsresource.com/article100911.html 2018-07 | Website Url: http://jwvenice.com | Founded Year: 2015 | Stage: Unfunded | Location Country: Italy | Location State: Veneto | Location City: Venezia | All Locations: [{\"country\":\"Italy\",\"city\":\"Venezia\",\"state\":\"Veneto\"}] | Countries Count: 1 | Geo Served: [\"Italy\"] | Recent News: [{\"title\":\"Markos Tzamalis Named General Manager for JW Marriott Venice Resort & Spa\",\"url\":\"https://www.hotelnewsresource.com/article100911.html\",\"news_date\":\"2018-07\"}]",
       "rank": 19,
       "extra": {
-        "linkedin_url": "https://linkedin.com/company/pacific-hospitality-group",
-        "source_url": null,
+        "linkedin_url": null,
+        "source_url": "https://platform.tracxn.com/a/d/company/55c23943e4b017019bfe2d69/jw%20marriott%20venice?utm_source=parallel&utm_medium=ai#a:about",
         "source_urls": null,
         "confidence": null
       },
-      "relevant": true,
-      "rationale": "Both operate and manage hotel and resort portfolios, serving travelers through branded hospitality properties and lodging experiences."
+      "relevant": false,
+      "rationale": "Candidate is a Marriott-branded property (JW Marriott Venice) \u2014 effectively the seed itself, not a distinct competitor; fails duplicate/self rule.",
+      "anchor_match": false,
+      "capabilities_matched": [
+        "hotel",
+        "lodging",
+        "guest loyalty"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Anchor true: it operates a hotel resort for travelers; overlap includes hotel, lodging, and travel."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Candidate is a Marriott-branded property (JW Marriott Venice) \u2014 effectively the seed itself, not a distinct competitor; fails duplicate/self rule."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "Single standalone resort property under Marriott brand, not a global hospitality company; shares hotel/lodging only."
+        }
+      ]
     },
     {
-      "name": "Davidson Hospitality",
-      "domain": null,
-      "description": "Primary Sector: Travel and Hospitality | Primary Subsector: Hotel Management Services | Short Description: Hospitality management company driving performance and elevating guest experiences | Detailed Description: Hospitality management company driving performance and elevating guest experiences. They deliver industry-leading expertise to celebrated hospitality brands. They offer best-in-class hospitality management services, from acquisitions and business development to marketing and strategic operations. With an owner\u2019s mindset, they craft bespoke, personalized management experiences for ownership partners. Services include accounting and finance, design and construction, global sales, human resources, integrated marketing, and information technology. They focus on selecting the right projects and collaborations to leverage specialized expertise, creating lasting value for ownership partners. They foster a welcoming and supportive environment for team members from all walks of life, ",
+      "name": "Marriotts",
+      "domain": "marriotts.co.uk",
+      "description": "Name: Marriotts | Short Description: Provider of property sales, lettings, management, and valuation services | Detailed Description: Provider of property sales, lettings, management, and valuation services. The firm offers advice on commercial, development, rural, and residential property matters. Services include sales and lettings, property management, rent reviews, and valuation for market and taxation purposes. They also provide appraisals for development land and advice on planning and development matters. | Primary Sector: Real Estate and Construction | Primary Subsector: Property Management Services | All Locations: United Kingdom   | Website Url: https://marriotts.co.uk | Stage: Unfunded | Location Country: United Kingdom | All Locations: [{\"country\":\"United Kingdom\"}] | Countries Count: 1 | Employee Count Official: 3 | Legal Entity Count: 1 | Legal Entity Names: [\"MARRIOTTS PROPERTY LLP\"] | Earliest Incorporation Date: 2013-04-04 | Employee Count History: [{\"employee_count\":3",
       "rank": 20,
       "extra": {
-        "linkedin_url": "https://linkedin.com/company/davidsonhospitality",
-        "source_url": null,
+        "linkedin_url": null,
+        "source_url": "https://platform.tracxn.com/a/d/company/55d41bc2e4b095d968d83bc8/marriotts?utm_source=parallel&utm_medium=ai#a:about",
         "source_urls": null,
         "confidence": null
       },
-      "relevant": true,
-      "rationale": "Both operate and manage hotels for property owners, offering overlapping hospitality management and operational services to the same ownership buyer persona."
+      "relevant": false,
+      "rationale": "Anchor false: property sales and management firm, not a global hospitality company; no evidenced hotel, lodging, travel, or guest loyalty overlap.",
+      "anchor_match": false,
+      "capabilities_matched": [],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Anchor false: property sales and management firm, not a global hospitality company; no evidenced hotel, lodging, travel, or guest loyalty overlap."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Anchor false: UK property sales/lettings agency, not a hospitality company; name similarity coincidental. No capability overlap."
+        }
+      ]
     },
     {
-      "name": "Fattal",
-      "domain": "fattalhotelgroup.com",
-      "description": "Primary Sector: Travel and Hospitality | Primary Subsector: Hotel Management Services | Short Description: Provider of hospitality organization operating under various brands, including Leonardo hotels offering a range of accommodation options for guests seeking authentic local experiences | Detailed Description: Fattal Hotel Group is a leading hospitality organization with a significant presence in Europe, the UK, and Israel, operating over 200 hotels across various brands. The group is known for its diverse portfolio of hotels, including luxury, boutique, and economy properties, catering to a wide range of customers. With a strong focus on sustainability, Fattal Hotel Group has implemented various initiatives to reduce its environmental footprint and promote eco-friendly practices. | All Locations: Germany Berlin Berlin | Name: Fattal | Website Url: https://fattalhotelgroup.com | Stage: Unfunded | Location Country: Germany | Location State: Berlin | Location City: Berlin",
+      "name": "Marriott properties",
+      "domain": "marriottproperties.co.uk",
+      "description": "Name: Marriott properties | Short Description: Provider of property sales and rental services for property owners | Detailed Description: Provider of property sales and rental services for property owners. The business facilitates property transactions between sellers and prospective buyers. It also offers rental services, assisting landlords in finding tenants and managing properties. The business aims to provide solutions for individuals seeking to buy, sell, or rent properties. | Primary Sector: Real Estate and Construction | Primary Subsector: Real Estate Brokers | All Locations: United Kingdom   | Website Url: https://www.marriottproperties.co.uk/ | Stage: Unfunded | Location Country: United Kingdom | All Locations: [{\"country\":\"United Kingdom\"}] | Countries Count: 1",
       "rank": 21,
       "extra": {
         "linkedin_url": null,
-        "source_url": "https://platform.tracxn.com/a/d/company/5b7ee5fce4b0d83a9db30a86/fattal?utm_source=parallel&utm_medium=ai#a:about",
+        "source_url": "https://platform.tracxn.com/a/d/company/66df28e11708f365bffaa97f/marriott%20properties?utm_source=parallel&utm_medium=ai#a:about",
         "source_urls": null,
         "confidence": null
       },
-      "relevant": true,
-      "rationale": "Both operate multi-brand hotel portfolios offering lodging and hospitality services to travelers, making Fattal a direct industry and customer-segment lookalike."
+      "relevant": false,
+      "rationale": "Anchor false: real estate brokerage, not a global hospitality company; no evidenced overlap.",
+      "anchor_match": false,
+      "capabilities_matched": [],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Anchor false: real estate brokerage, not a global hospitality company; no evidenced overlap."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Anchor false: UK real estate sales/rental broker, not a hospitality/hotel company; no hotel, lodging, travel, or loyalty capabilities."
+        }
+      ]
     },
     {
-      "name": "AHR Hospitality",
-      "domain": "ahrresorts.com",
-      "description": "Primary Sector: Travel and Hospitality | Primary Subsector: Hotel Management Services | Short Description: Luxurious resorts and hotels offering accommodations | Detailed Description: AHR Resorts is a renowned brand in the hospitality industry, offering luxurious accommodations in various locations such as Manali, Mussoorie, Shimla, and Mcleod Ganj. Experience unparalleled luxury and exquisite services at AHR Grace Resort & Spa, AHR Notting Hill, AHR Windsor Hotel, and many more locations across India. | Other Taxonomy Tags: [\"Generic Company Lists\",\"DPIIT Registered\"] | All Locations: India Punjab Zirakpur | Name: AHR Hospitality | Website Url: http://ahrresorts.com | Stage: Deadpooled | Location Country: India | Location State: Punjab | Location City: Zirakpur | All Locations: [{\"country\":\"India\",\"city\":\"Zirakpur\",\"state\":\"Punjab\"}] | Countries Count: 1 | Geo Served: [\"India\"] | Board Member Count: 2 | Loan Count: 2 | Founded Year: 2018 | Board Members:   Director Normal    Director ",
+      "name": "Marriott Dorval",
+      "domain": "marriott-dorval.com",
+      "description": "Name: Marriott Dorval | Short Description: Provider of hotel accommodations and related services | Detailed Description: Provider of hotel accommodations and related services. It offers a variety of guest rooms and suites, catering to both business and leisure travelers. Services may include amenities such as restaurants, meeting facilities, and recreational options. The focus is on providing comfortable and convenient lodging experiences for its guests. Operational aspects center around guest satisfaction and efficient management of hotel resources to ensure a positive stay. | Primary Sector: Travel and Hospitality | Primary Subsector: Hotels | All Locations: Canada Quebec Dorval | Website Url: http://marriott-dorval.com | Founded Year: 2008 | Stage: Public | Has Been Public: Yes | Location Country: Canada | Location State: Quebec | Location City: Dorval | All Locations: [{\"country\":\"Canada\",\"city\":\"Dorval\",\"state\":\"Quebec\"}] | Countries Count: 1 | Geo Served: [\"Canada\"]",
       "rank": 22,
       "extra": {
-        "linkedin_url": null,
-        "source_url": "https://platform.tracxn.com/a/d/company/5c98df3bd1cbc8243944ed0e/ahr%20hospitality?utm_source=parallel&utm_medium=ai#a:about",
-        "source_urls": null,
-        "confidence": null
-      },
-      "relevant": true,
-      "rationale": "AHR operates branded hotels and resorts offering accommodations, directly overlapping Marriott\u2019s core hospitality and lodging business for travelers."
-    },
-    {
-      "name": "Muthuhotelsmgm",
-      "domain": null,
-      "description": "Primary Sector: Travel and Hospitality | Primary Subsector: Hotels | Short Description: Global hotels and resorts offering unique experiences in divine locations | Detailed Description: Global hotels and resorts offering unique experiences in divine locations. This hospitality chain provides diverse accommodations, from hotels and resorts to suites and villas, across various countries. They focus on delivering memorable experiences through all-inclusive holidays, special offers, and unique destinations. The business model includes direct booking advantages, spa services, and curated experiences. They offer a range of options, including family holidays, long stays, and day pass deals. The company operates in the travel and tourism industry, providing lodging and related services to leisure and business travelers. The website facilitates online booking, showcasing properties, and promoting special deals. Key features include a booking system, gallery, contact information, and member acce",
-      "rank": 23,
-      "extra": {
-        "linkedin_url": "https://linkedin.com/company/mgm-muthu-hotels",
-        "source_url": null,
-        "source_urls": null,
-        "confidence": null
-      },
-      "relevant": true,
-      "rationale": "Both operate branded hotel and resort portfolios, providing lodging, direct booking, and hospitality services to leisure and business travelers."
-    },
-    {
-      "name": "Kiwi Hospitality",
-      "domain": "kiwihospitality.com",
-      "description": "Primary Sector: Travel and Hospitality | Primary Subsector: Hotel Management Services | Short Description: Hospitality group with hotels and assisted living facilities, offering comfortable accommodation near airports | Detailed Description: Kiwi Hospitality is a hospitality group that owns majority shareholding interest in VR Group and Dress Circle Apartments. They have hosted nearly 1 million guests in 2017 and operate hotels and assisted living facilities. | Name: Kiwi Hospitality | Website Url: https://kiwihospitality.com | Founded Year: 2017 | Stage: Unfunded | Countries Count: 1 | All Locations: United States Michigan Southfield | Location Country: United States | All Locations: [{\"country\":\"United States\",\"city\":\"Southfield\",\"state\":\"Michigan\"}] | Recent News: BWH Hotels to launch upscale brand Best Western Premier\u00ae in India http://bwhotelier.businessworld.in/article/BWH-Hotels-to-launch-upscale-brand-Best-Western-Premier-in-India/26-07-2023-485544 2023-07 ",
-      "rank": 24,
-      "extra": {
-        "linkedin_url": null,
-        "source_url": "https://platform.tracxn.com/a/d/company/58bef83fe4b09d6907887f1e/kiwi%20hospitality?utm_source=parallel&utm_medium=ai#a:about",
-        "source_urls": null,
-        "confidence": null
-      },
-      "relevant": true,
-      "rationale": "Both own or operate hotels and provide branded lodging accommodations to travelers, despite Kiwi\u2019s additional assisted-living business."
-    },
-    {
-      "name": "Desai Hotel Group",
-      "domain": null,
-      "description": "Primary Sector: Travel and Hospitality | Primary Subsector: Hotel Management Services | Short Description: Hotel management and development company specializing in exceptional guest experiences | Detailed Description: Hotel management and development company specializing in exceptional guest experiences. They focus on developing and managing high-quality, select-service hotels throughout the Southeastern United States. They are dedicated to delivering exceptional hospitality by creating memorable experiences for guests, cultivating a culture of excellence and respect among Associates, and driving sustainable growth for owners and partners. Their services include hotel investment, development, management, and construction. They prioritize revenue optimization, reputation management, and sustainable practices. They aim to provide an unforgettable experience that keeps guests returning. They are approved operators, innovative thinkers, strategists, and investors. They focus on community e",
-      "rank": 25,
-      "extra": {
-        "linkedin_url": "https://linkedin.com/company/desai-hotel-group",
-        "source_url": null,
-        "source_urls": null,
-        "confidence": null
-      },
-      "relevant": true,
-      "rationale": "Both operate and manage hotel properties, delivering guest lodging experiences and serving hotel owners through hospitality management and development."
-    },
-    {
-      "name": "ROOHI",
-      "domain": "roohihospitalitygroup.com",
-      "description": "Primary Sector: Travel and Hospitality | Primary Subsector: Hotel Management Services | Short Description: Hospitality management company focusing on hotels, homes, and foods | Detailed Description: ROOHI Hospitality Group is an innovative hospitality management company that focuses on hotels, homes, and foods. They offer a loyalty program, MICE & Wedding Planner services, and operate under the ROOTEL brand. | Other Taxonomy Tags: [\"Generic Company Lists\",\"DPIIT Registered\"] | All Locations: India Maharashtra Mumbai | Name: ROOHI | Website Url: http://roohihospitalitygroup.com | Founded Year: 2016 | Stage: Deadpooled | Location Country: India | Location State: Maharashtra | Location City: Mumbai | All Locations: [{\"country\":\"India\",\"city\":\"Mumbai\",\"state\":\"Maharashtra\"}] | Countries Count: 1 | Geo Served: [\"India\"] | Board Member Count: 2 | Employee Count Official: 1 | Linkedin Url: https://linkedin.com/company/roohihotelsmarketing | Deadpooled: Yes | Board Members:   Director Normal  ",
-      "rank": 26,
-      "extra": {
-        "linkedin_url": "https://linkedin.com/company/roohihotelsmarketing",
-        "source_url": null,
-        "source_urls": null,
-        "confidence": null
-      },
-      "relevant": true,
-      "rationale": "Both operate and manage hotel and lodging brands, serving travelers and hospitality property owners with accommodations and loyalty offerings."
-    },
-    {
-      "name": "The Chancery Hotel",
-      "domain": null,
-      "description": "Primary Sector: Travel and Hospitality | Primary Subsector: Hotels | Short Description: Hospitality group operating a chain of luxury hotels | Detailed Description: Hospitality group operating a chain of luxury hotels. It offers accommodation services to business and leisure travelers. It focuses on providing a premium experience. Their mission is to provide comfort to guests, serving them with care. | Special Flags: Consumer YES | All Locations: India Karnataka Bengaluru | Recent News: The Chancery Hotel Achieves LEED Gold Certification https://businessplus.ie/media-plus/the-chancery-leed-gold/ 2025-04 Zayo Shareholders' $27M Settlement Gets Chancery's OK https://www.law360.com/transportation/articles/1784135?utm_source=rss&utm_medium=rss&utm_campaign=section 2024-01 Raj Kumar Nandy appointed as new Executive Chef at Hotel Royal Orchid Bangalore http://bwhotelier.businessworld.in/article/Raj-Kumar-Nandy-appointed-as-new-Executive-Chef-at-Hotel-Royal-Orchid-Bangalore/04-07-2023-482873 ",
-      "rank": 27,
-      "extra": {
-        "linkedin_url": "https://linkedin.com/company/the-chancery-group/about",
-        "source_url": null,
-        "source_urls": null,
-        "confidence": null
-      },
-      "relevant": true,
-      "rationale": "Both operate hotel and lodging businesses serving business and leisure travelers, with overlapping hospitality offerings and guest segments."
-    },
-    {
-      "name": "Macdonald Resorts Spain",
-      "domain": "macdonaldresorts.es",
-      "description": "Primary Sector: Travel and Hospitality | Primary Subsector: Hotels | Short Description: Operator of hotels & resorts | Detailed Description: Macdonald Hotels & Resorts is a luxury hospitality brand operating in the UK and Spain, offering a range of accommodations, including hotels and self-catering resorts. The company provides leisure facilities, including spas and golf courses, and offers package deals for short breaks and holidays. Macdonald Resorts also offers timeshare opportunities and has a loyalty program for repeat customers. The company has a long history, dating back to the 1970s, and has expanded its operations through acquisitions and new developments. | All Locations: United Kingdom West Lothian Bathgate | Name: Macdonald Resorts Spain | Website Url: https://www.macdonaldresorts.es/ | Founded Year: 1990 | Stage: Unfunded | Location Country: United Kingdom | Location State: West Lothian | Location City: Bathgate | All Locations: [{\"country\":\"United Kingdom\",\"city\":\"Bathgat",
-      "rank": 28,
-      "extra": {
-        "linkedin_url": null,
-        "source_url": "https://platform.tracxn.com/a/d/company/679ec6089189993a5a4c7c33/macdonald%20resorts%20spain?utm_source=parallel&utm_medium=ai#a:about",
-        "source_urls": null,
-        "confidence": null
-      },
-      "relevant": true,
-      "rationale": "Both operate hotel and resort accommodation businesses serving travelers, with leisure amenities, packages, and guest loyalty offerings."
-    },
-    {
-      "name": "The4dz",
-      "domain": null,
-      "description": "Primary Sector: Travel and Hospitality | Primary Subsector: Hotel Management Services | Short Description: Hospitality and tourism group offering consulting, adventures, hotels, and eateries | Detailed Description: Hospitality and tourism group offering consulting, adventures, hotels, and eateries. The organization redefines hospitality and tourism through competence and satisfaction. It builds, elevates, and empowers businesses with expertise in consulting, hospitality, and strategic business growth. The company integrates solutions with industry insights to build successful businesses. It offers industry-specific solutions to maximize business potential in hospitality, tourism management, operations, strategic business consulting, market expansion, growth strategies, capacity building, and training. Through specialized subsidiaries, it offers a suite of services that drive excellence in hotel operations, strategic planning, and investment facilitation across the entire hospitality an",
-      "rank": 29,
-      "extra": {
-        "linkedin_url": null,
-        "source_url": "https://platform.tracxn.com/a/d/company/5c77eb1a78d8a078fdfe7727/the4dz?utm_source=parallel&utm_medium=ai#a:about",
-        "source_urls": null,
-        "confidence": null
-      },
-      "relevant": true,
-      "rationale": "Both operate/manage hospitality properties and offer hotel-management capabilities to hospitality owners, creating overlapping services and buyer personas."
-    },
-    {
-      "name": "ONLY Hotels And Resorts",
-      "domain": null,
-      "description": "Primary Sector: Travel and Hospitality | Primary Subsector: Hotels | Short Description: Luxury hotels and resorts offering memorable stays and comprehensive hospitality services | Detailed Description: Luxury hotels and resorts offering memorable stays and comprehensive hospitality services. They provide a haven for corporate and leisure travelers with a focus on modern decor, full-service amenities, and cutting-edge technology. The brand offers a range of facilities including dining, parking, and recreational activities like hiking and cycling. They cater to various needs with business facilities, family services, and accessibility features. The company emphasizes customer satisfaction through personalized service, exclusive deals, and a commitment to creating memorable experiences. They offer online booking, express check-in/check-out, and digital marketing to reach a global audience. Their services include pre-opening management, operation management, revenue management, and hotel b",
-      "rank": 30,
-      "extra": {
-        "linkedin_url": null,
-        "source_url": "https://platform.tracxn.com/a/d/company/631d257c3cd91b11355f2fe4/only%20hotels%20and%20resorts?utm_source=parallel&utm_medium=ai#a:about",
-        "source_urls": null,
-        "confidence": null
-      },
-      "relevant": true,
-      "rationale": "Both operate hotel and resort brands offering lodging, amenities, booking, and hospitality services to leisure and corporate travelers."
-    },
-    {
-      "name": "Precise Hospitality",
-      "domain": "precisehospitality.com",
-      "description": "Primary Sector: Travel and Hospitality | Primary Subsector: Hotel Management Services | Short Description: Provider of all-round professional hotel and hospitality services with a full range of solutions | Detailed Description: Precise Hospitality Management is a company that offers a range of professional hotel and hospitality services. They specialize in various facets of the luxury hospitality industry and have a team of recognized industry professionals involved in successful hotel and resort management endeavors. | All Locations: United States Florida West Palm Beach | Name: Precise Hospitality | Website Url: https://precisehospitality.com | Founded Year: 2009 | Stage: Unfunded | Location Country: United States | Location State: Florida | Location City: West Palm Beach | All Locations: [{\"country\":\"United States\",\"city\":\"West Palm Beach\",\"state\":\"Florida\"}] | Countries Count: 1 | Geo Served: [\"United States\"] | Employee Count Official: 3 | Linkedin Url: https://linkedin.com/compan",
-      "rank": 31,
-      "extra": {
-        "linkedin_url": "https://linkedin.com/company/precise-hospitality-management",
-        "source_url": null,
-        "source_urls": null,
-        "confidence": null
-      },
-      "relevant": true,
-      "rationale": "Both operate and manage hotels and resorts, offering hospitality management solutions that property owners could evaluate for the same need."
-    },
-    {
-      "name": "Aldar Hospitality",
-      "domain": "aldarhospitality.com",
-      "description": "Primary Sector: Travel and Hospitality | Primary Subsector: Hotel Management Services | Short Description: Hotel management company offering accomodation services | Detailed Description: Hotel management company offering accomodation services. It is a hospitality and hotel management company providing luxury leisure places including hotels, golf courses, marina, meeting spaces, and more. | All Locations: United Arab Emirates Abu Dhabi Abu Dhabi | Name: Aldar Hospitality | Website Url: https://aldarhospitality.com | Stage: Unfunded | Location Country: United Arab Emirates | Location State: Abu Dhabi | Location City: Abu Dhabi | All Locations: [{\"country\":\"United Arab Emirates\",\"city\":\"Abu Dhabi\",\"state\":\"Abu Dhabi\"}] | Countries Count: 1 | Geo Served: [\"United Arab Emirates\"] | Founded Year: 2019 | Work Experience People Count: 1 | Linkedin Url: https://linkedin.com/company/aldar-hospitality | Cxo Team: Klaus Assmann CEO | Email: aldarhospitality@aldar.com | Cxo Team: [{\"linkedin\":{\"lis",
-      "rank": 32,
-      "extra": {
-        "linkedin_url": "https://linkedin.com/company/aldar-hospitality",
-        "source_url": null,
-        "source_urls": null,
-        "confidence": null
-      },
-      "relevant": true,
-      "rationale": "Both operate and manage hotels and leisure hospitality properties, serving travelers and event guests with accommodation and related amenities."
-    },
-    {
-      "name": "ProMiller",
-      "domain": null,
-      "description": "Primary Sector: Travel and Hospitality | Primary Subsector: Hotel Management Services | Short Description: Hotel management consultancy providing extensive services at every stage of property | Detailed Description: Hospitality management company offering asset management and consulting services. We are a hospitality management company providing comprehensive solutions for hotels and resorts. Our services include hotel asset management, third-party hotel management, revenue management, digital marketing, website development, and SEO. We combine global hotel asset management practices with traditional hotel management consulting. We focus on maximizing property potential, increasing revenue, and decreasing expenses for stakeholders. Our expertise covers operational, financial, and strategic aspects of hotel management. We offer customized solutions, talent acquisition, and innovative approaches to hotel and hospitality management consulting. We work with hotels of various scales, offeri",
-      "rank": 33,
-      "extra": {
-        "linkedin_url": "https://linkedin.com/company/promiller-businessadvisor",
-        "source_url": null,
-        "source_urls": null,
-        "confidence": null
-      },
-      "relevant": true,
-      "rationale": "Both provide third-party hotel management services to property owners seeking operational, revenue, and asset-management support."
-    },
-    {
-      "name": "Inventree Hotels",
-      "domain": "inventreehotels.com",
-      "description": "Primary Sector: Travel and Hospitality | Primary Subsector: Hotels | Short Description: Hospitality company offering a range of hotels and resorts across various locations | Detailed Description: Inventree Hotels and Resorts is a hospitality company that operates hotels and resorts in India, offering a range of amenities and services to its guests. With a focus on providing a unique and personalized experience, the company has established a presence in several cities across the country. | Other Taxonomy Tags: [\"Generic Company Lists\",\"DPIIT Registered\"] | All Locations: India Karnataka Bengaluru | Name: Inventree Hotels | Website Url: https://inventreehotels.com | Stage: Unfunded | Location Country: India | Location State: Karnataka | Location City: Bengaluru | All Locations: [{\"country\":\"India\",\"city\":\"Bengaluru\",\"state\":\"Karnataka\"}] | Countries Count: 1 | Geo Served: [\"India\"] | Board Member Count: 3 | Loan Count: 1 | Founders: Sudipta Deb Founder & Managing Director",
-      "rank": 34,
-      "extra": {
-        "linkedin_url": "https://linkedin.com/company/inventree-hotels-resorts",
-        "source_url": null,
-        "source_urls": null,
-        "confidence": null
-      },
-      "relevant": true,
-      "rationale": "Both operate hotel and resort portfolios serving travelers with lodging and hospitality services, making Inventree a direct category lookalike."
-    },
-    {
-      "name": "JARAS HOSPITALITY",
-      "domain": null,
-      "description": "Primary Sector: Travel and Hospitality | Primary Subsector: Hotel Management Services | Short Description: Hospitality consultancy providing management, development, and solutions for global businesses | Detailed Description: Hospitality consultancy providing management, development, and solutions for global businesses. The company offers expert advisory services, innovative solutions, and personalized advice in hotel management, operations, marketing, brand development, and technology. Focused on maximizing customer satisfaction, improving guest experience, and optimizing operational efficiency, they build long-term relationships based on transparency and integrity. Their services include restructuring, financial analysis, and business strategy, with expertise in aviation, hotel rebranding, and travel. They provide solutions for new operations setups in hotels, resorts, food and beverage, and engineering. The company is committed to sustainability, innovation, and delivering tangible ",
-      "rank": 35,
-      "extra": {
-        "linkedin_url": "https://linkedin.com/company/jaras-hospitality-consultancy",
+        "linkedin_url": "https://linkedin.com/company/marriott-fairfield-inn-suites-a%C3%A9roport-de-montr%C3%A9al-airport",
         "source_url": null,
         "source_urls": null,
         "confidence": null
       },
       "relevant": false,
-      "rationale": "JARAS is a hospitality consultancy serving hotel operators, not a hotel and lodging brand competing for travelers and loyalty members."
+      "rationale": "Anchor false: Marriott Dorval is an individual hotel property, not a global hospitality company; overlaps hotel, lodging, and travel.",
+      "anchor_match": false,
+      "capabilities_matched": [
+        "hotel",
+        "lodging",
+        "travel"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Anchor false: Marriott Dorval is an individual hotel property, not a global hospitality company; overlaps hotel, lodging, and travel."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Anchor false: a single Marriott-branded hotel property is part of the seed itself, not an independent global hospitality company; no independent overlap."
+        }
+      ]
+    },
+    {
+      "name": "Marriott Bonvoy Events",
+      "domain": null,
+      "description": "Name: Marriott Bonvoy Events | Short Description: Provider of meeting and event planning services for hotels | Detailed Description: Provider of meeting and event planning services for hotels. It offers various services to support the planning and execution of meetings and events within its network of hotels. These services include booking accommodations, coordinating logistics, managing catering, and providing access to additional amenities. The company also offers rewards programs for planners and attendees, encouraging repeat business and loyalty. It facilitates connections between event planners and suitable hotel venues, streamlining the process of finding appropriate spaces for various event types. The company aims to create meaningful and engaging experiences for all participants. | Primary Sector: Business Services | Primary Subsector: Event Management Services | All Locations: United States   | Recent News: Marriott International Launches Marriott Bonvoy Events https://www.hot",
+      "rank": 23,
+      "extra": {
+        "linkedin_url": null,
+        "source_url": "https://platform.tracxn.com/a/d/company/5d4447044dff782b178b3372/marriott%20bonvoy%20events?utm_source=parallel&utm_medium=ai#a:about",
+        "source_urls": null,
+        "confidence": null
+      },
+      "relevant": false,
+      "rationale": "Anchor false: Marriott-branded event service, not an independent global hospitality company; overlaps hotel, lodging, and guest loyalty.",
+      "anchor_match": false,
+      "capabilities_matched": [
+        "hotel",
+        "lodging",
+        "guest loyalty"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Anchor false: Marriott-branded event service, not an independent global hospitality company; overlaps hotel, lodging, and guest loyalty."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Anchor false: candidate is a Marriott sub-brand (Marriott Bonvoy Events), i.e., the seed itself/duplicate entry, not a lookalike."
+        }
+      ]
+    },
+    {
+      "name": "JW Marriott",
+      "domain": "jw-mariott-rak.ae",
+      "description": "Name: JW Marriott | Short Description: Luxury hotel and residential properties development brand | Detailed Description: WOW Resorts has partnered with Marriott International to develop a $1.3 billion project in Ras Al Khaimah that will include luxury accommodations and branded residences under the JW Marriott brand. The JW Marriott Al Marjan Island Resort is expected to be completed by the end of 2026. | Primary Sector: Real Estate and Construction | Primary Subsector: Real Estate & Infrastructure Developers | All Locations: United Arab Emirates Dubai Dubai | Website Url: https://jw-mariott-rak.ae | Stage: Unfunded | Location Country: United Arab Emirates | Location State: Dubai | Location City: Dubai | All Locations: [{\"country\":\"United Arab Emirates\",\"city\":\"Dubai\",\"state\":\"Dubai\"}] | Countries Count: 1 | Geo Served: [\"United Arab Emirates\"]",
+      "rank": 24,
+      "extra": {
+        "linkedin_url": null,
+        "source_url": "https://platform.tracxn.com/a/d/company/661598e25b571500e28173ee/jw%20marriott?utm_source=parallel&utm_medium=ai#a:about",
+        "source_urls": null,
+        "confidence": null
+      },
+      "relevant": false,
+      "rationale": "Anchor false: JW Marriott is a Marriott brand/project entry, not an independent global hospitality-company lookalike; overlap includes hotel, lodging, and travel.",
+      "anchor_match": false,
+      "capabilities_matched": [
+        "hotel",
+        "lodging",
+        "travel"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Anchor false: JW Marriott is a Marriott brand/project entry, not an independent global hospitality-company lookalike; overlap includes hotel, lodging, and travel."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Seed's own brand via developer partner\u2014duplicate/developer entry, not an independent hospitality peer; hotel overlap moot, anchor fails."
+        }
+      ]
+    },
+    {
+      "name": "SpringHill Suites by Marriott Wenatchee",
+      "domain": "impressguest.com",
+      "description": "Name: SpringHill Suites by Marriott Wenatchee | Short Description: Provider of a platform facilitating guest list management and event invitations | Detailed Description: Provider of a platform facilitating guest list management and event invitations. The platform offers tools for creating, sending, and managing event invitations. It allows organizers to track RSVPs, manage guest information, and communicate event details. The platform aims to streamline the event planning process for various event types. | Primary Sector: Travel and Hospitality | Primary Subsector: Hotel Management Services | All Locations: United States   | Website Url: http://impressguest.com | Stage: Unfunded | Location Country: United States | All Locations: [{\"country\":\"United States\"}] | Countries Count: 1 | Employee Count Official: 257 | Linkedin Url: https://linkedin.com/company/springhill-suites-by-marriott-wenatchee | Founded Year: 1992",
+      "rank": 25,
+      "extra": {
+        "linkedin_url": "https://linkedin.com/company/springhill-suites-by-marriott-wenatchee",
+        "source_url": null,
+        "source_urls": null,
+        "confidence": null
+      },
+      "relevant": false,
+      "rationale": "Anchor false: described as an event-invitation platform, not a global hospitality company; no supported capability overlap.",
+      "anchor_match": false,
+      "capabilities_matched": [],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Anchor false: described as an event-invitation platform, not a global hospitality company; no supported capability overlap."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Individual Marriott property (duplicate of seed itself); description also reads as event-invitation software, not hospitality. No anchor match."
+        }
+      ]
     }
   ],
-  "error": null,
-  "relevant_count_at_25": 21,
-  "precision_at_25": 84.0
+  "error": null
 }

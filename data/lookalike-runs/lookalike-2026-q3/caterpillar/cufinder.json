@@ -7,18 +7,20 @@
     "name": "domain_lookalikes"
   },
   "k": 100,
-  "relevant_count": 5,
-  "precision_at_k": 5.0,
-  "relevant_count_at_10": 5,
-  "relevant_count_at_100": 5,
-  "precision_at_10": 50.0,
-  "precision_at_100": 5.0,
+  "relevant_count": 7,
+  "precision_at_k": 7.0,
+  "relevant_count_at_10": 7,
+  "relevant_count_at_25": 7,
+  "relevant_count_at_100": 7,
+  "precision_at_10": 70.0,
+  "precision_at_25": 28.0,
+  "precision_at_100": 7.0,
   "latency_ms": 378,
   "cost_usd": null,
   "duplicates_removed": 0,
   "max_results": 10,
-  "judge_model": "gpt-5.6",
-  "judged_at": "2026-07-27T03:31:29Z",
+  "judge_model": "majority(n=3): claude-opus-5,gpt-5.6-terra,kimi-k3",
+  "judged_at": "2026-08-10T19:34:29Z",
   "candidates": [
     {
       "name": "abb",
@@ -34,7 +36,19 @@
         "confidence_level": 93
       },
       "relevant": false,
-      "rationale": "ABB supplies industrial electrification and automation, not construction/mining heavy equipment; overlapping industrial customers do not evaluate them for the same core job."
+      "rationale": "ABB sells industrial electrification and automation systems, not construction/mining equipment, engines, or heavy machinery; it is not a close competitor or peer.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "ABB sells industrial electrification and automation systems, not construction/mining equipment, engines, or heavy machinery; it is not a close competitor or peer."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "ABB sells electrification and industrial automation, not construction/mining equipment, engines, or heavy machinery; different product and buyer than Caterpillar."
+        }
+      ]
     },
     {
       "name": "cnh",
@@ -50,7 +64,19 @@
         "confidence_level": 93
       },
       "relevant": true,
-      "rationale": "CNH manufactures construction and heavy equipment through Case and New Holland, overlapping Caterpillar\u2019s core machinery offerings and serving the same equipment buyers."
+      "rationale": "CNH manufactures construction and agricultural heavy equipment, directly comparable to Caterpillar\u2019s industrial machinery business.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "CNH manufactures construction and agricultural heavy equipment, directly comparable to Caterpillar\u2019s industrial machinery business."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "CNH manufactures construction and heavy machinery (Case, New Holland), a direct competitor to Caterpillar on product and market."
+        }
+      ]
     },
     {
       "name": "cummins inc.",
@@ -66,7 +92,19 @@
         "confidence_level": 93
       },
       "relevant": true,
-      "rationale": "Cummins manufactures engines and power systems overlapping Caterpillar\u2019s core offerings for construction, mining, and industrial equipment buyers."
+      "rationale": "Cummins manufactures diesel and alternative-fuel engines, power systems, and industrial equipment, directly overlapping Caterpillar\u2019s engine and heavy-equipment markets.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Cummins manufactures diesel and alternative-fuel engines, power systems, and industrial equipment, directly overlapping Caterpillar\u2019s engine and heavy-equipment markets."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Cummins manufactures diesel/gas engines and power systems for construction, mining, and heavy equipment \u2014 direct competitor and comparable to Caterpillar's engine/machinery business."
+        }
+      ]
     },
     {
       "name": "ford motor company",
@@ -82,7 +120,19 @@
         "confidence_level": 93
       },
       "relevant": false,
-      "rationale": "Ford primarily makes consumer and commercial road vehicles, not construction, mining, or heavy industrial machinery; buyers and core jobs differ."
+      "rationale": "Ford primarily manufactures consumer and commercial road vehicles, not construction, mining, or industrial heavy equipment and engines.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Ford primarily manufactures consumer and commercial road vehicles, not construction, mining, or industrial heavy equipment and engines."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Ford makes consumer/passenger vehicles; Caterpillar makes heavy construction and mining machinery. Different products, buyers, and markets."
+        }
+      ]
     },
     {
       "name": "honeywell technologies",
@@ -97,8 +147,20 @@
         "country": "united states",
         "confidence_level": 93
       },
-      "relevant": false,
-      "rationale": "Honeywell primarily sells industrial automation and controls, not construction/mining machinery or heavy equipment for the same purchasing need."
+      "relevant": true,
+      "rationale": "Honeywell is a broad industrial automation manufacturer, overlapping Caterpillar in industrial equipment, engines, and serving construction, mining, and process-sector customers.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Honeywell is a broad industrial automation manufacturer, overlapping Caterpillar in industrial equipment, engines, and serving construction, mining, and process-sector customers."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are large diversified industrial manufacturers producing machinery, engines, and equipment for industrial sectors; comparable heavy-industrial OEM business model."
+        }
+      ]
     },
     {
       "name": "jcb",
@@ -114,7 +176,19 @@
         "confidence_level": 93
       },
       "relevant": true,
-      "rationale": "JCB is a construction and heavy-machinery manufacturer whose equipment serves many of the same industrial buyers and use cases as Caterpillar."
+      "rationale": "JCB directly manufactures construction machinery and heavy equipment for overlapping construction, agriculture, and industrial markets, making it a close Caterpillar competitor.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "JCB directly manufactures construction machinery and heavy equipment for overlapping construction, agriculture, and industrial markets, making it a close Caterpillar competitor."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "JCB manufactures construction and heavy machinery, a direct global competitor to Caterpillar on product, market, and business model."
+        }
+      ]
     },
     {
       "name": "john deere",
@@ -130,7 +204,19 @@
         "confidence_level": 93
       },
       "relevant": true,
-      "rationale": "Both manufacture heavy construction machinery and power systems for overlapping industrial buyers and infrastructure jobs."
+      "rationale": "John Deere is a heavy-equipment manufacturer competing in construction machinery and power systems, with closely overlapping industrial markets.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "John Deere is a heavy-equipment manufacturer competing in construction machinery and power systems, with closely overlapping industrial markets."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are heavy-machinery manufacturers; John Deere's construction, forestry, and power-systems equipment lines overlap Caterpillar's core construction and mining machinery market."
+        }
+      ]
     },
     {
       "name": "schneider electric",
@@ -146,7 +232,19 @@
         "confidence_level": 93
       },
       "relevant": false,
-      "rationale": "Schneider Electric sells energy-management and industrial-automation systems, not construction/mining heavy equipment; buyers would not evaluate them for the same job."
+      "rationale": "Schneider Electric sells energy-management and automation systems, not construction/mining heavy equipment, engines, or machinery; industrial customer overlap alone is insufficient.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Schneider Electric sells energy-management and automation systems, not construction/mining heavy equipment, engines, or machinery; industrial customer overlap alone is insufficient."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Schneider Electric makes energy-management and automation/electrical equipment, not construction/mining machinery or heavy engines\u2014different products and buyers."
+        }
+      ]
     },
     {
       "name": "siemens",
@@ -161,8 +259,25 @@
         "country": "germany",
         "confidence_level": 93
       },
-      "relevant": false,
-      "rationale": "Siemens primarily sells industrial automation and infrastructure technology, not construction/mining machinery or heavy equipment for the same purchasing job."
+      "relevant": true,
+      "rationale": "Both are global industrial-equipment manufacturers serving infrastructure and industrial customers, with overlapping heavy machinery, power, and large capital-project business models.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both are global industrial-equipment manufacturers serving infrastructure and industrial customers, with overlapping heavy machinery, power, and large capital-project business models."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Siemens focuses on industrial automation, digital infrastructure, and healthcare tech, not construction/mining equipment or heavy machinery manufacturing."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Both are large diversified industrial equipment/machinery manufacturers serving infrastructure and industry; broad but genuine industrial-manufacturing peer.: You should return JSON in your reply, with the field 'relevant' set to true, and"
+        }
+      ]
     },
     {
       "name": "volvo group",
@@ -178,10 +293,20 @@
         "confidence_level": 93
       },
       "relevant": true,
-      "rationale": "Both manufacture construction equipment and industrial engines for heavy-industry buyers, with overlapping machinery, financing, and service offerings."
+      "rationale": "Volvo Group directly competes in construction equipment and industrial engines, serving overlapping heavy-equipment, infrastructure, mining, and industrial customers.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Volvo Group directly competes in construction equipment and industrial engines, serving overlapping heavy-equipment, infrastructure, mining, and industrial customers."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Direct competitor: manufactures construction equipment and industrial engines, same heavy-machinery product lines and markets as Caterpillar."
+        }
+      ]
     }
   ],
-  "error": null,
-  "relevant_count_at_25": 5,
-  "precision_at_25": 20.0
+  "error": null
 }

@@ -18,18 +18,23 @@ from . import (  # noqa: F401
     ocean,
     parallel,
     predictleads,
+    zoominfo,
 )
 
-# Two vendors intentionally absent from REGISTRY:
-#   - ZoomInfo: company-lookalike API is not on self-serve (sales-gated).
+# One vendor intentionally absent from REGISTRY:
 #   - Lusha:    POST /v3/companies/lookalike requires 5-100 seeds per
 #               request. Our benchmark scores one seed per cell so the
 #               input contracts don't line up — Lusha would either need
 #               its own multi-seed cell design (different units) or we'd
 #               have to inject 4 padding seeds per call, which would
 #               leak signal across cells.
-# Both are surfaced under NOT_SURVEYED_PROVIDERS on the page so the
-# omission stays visible to readers.
+# It is surfaced under NOT_SURVEYED_PROVIDERS on the page so the omission
+# stays visible to readers.
+#
+# ZoomInfo runs through the `gtm` CLI rather than an HTTP API, so it needs the
+# binary on PATH (self-serve sign-up at gtm.ai, free tier available) rather than
+# an API key; the runner fails the cell cleanly when `gtm` is missing rather
+# than skipping it silently.
 REGISTRY = {
     ocean.VENDOR_SLUG: ocean,
     exa.VENDOR_SLUG: exa,
@@ -38,4 +43,5 @@ REGISTRY = {
     discolike.VENDOR_SLUG: discolike,
     parallel.VENDOR_SLUG: parallel,
     predictleads.VENDOR_SLUG: predictleads,
+    zoominfo.VENDOR_SLUG: zoominfo,
 }

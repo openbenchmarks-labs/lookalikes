@@ -10,15 +10,17 @@
   "relevant_count": 9,
   "precision_at_k": 9.0,
   "relevant_count_at_10": 9,
+  "relevant_count_at_25": 9,
   "relevant_count_at_100": 9,
   "precision_at_10": 90.0,
+  "precision_at_25": 36.0,
   "precision_at_100": 9.0,
   "latency_ms": 608,
   "cost_usd": null,
   "duplicates_removed": 0,
   "max_results": 10,
-  "judge_model": "gpt-5.6",
-  "judged_at": "2026-07-27T03:31:30Z",
+  "judge_model": "majority(n=3): claude-opus-5,gpt-5.6-terra,kimi-k3",
+  "judged_at": "2026-08-10T19:35:40Z",
   "candidates": [
     {
       "name": "amazon",
@@ -34,7 +36,24 @@
         "confidence_level": 95
       },
       "relevant": false,
-      "rationale": "Amazon primarily operates e-commerce and cloud businesses; its logistics network does not make it the same kind of third-party shipping provider as FedEx."
+      "rationale": "Amazon is primarily an e-commerce and cloud company; its internal delivery network is not a comparable global shipping-services business.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Amazon is primarily an e-commerce and cloud company; its internal delivery network is not a comparable global shipping-services business."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Amazon operates a massive parcel delivery and logistics network (Amazon Logistics) that directly competes with FedEx's core shipping business."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "Amazon is primarily e-commerce/cloud, not a parcel/freight logistics carrier selling shipping services to shippers."
+        }
+      ]
     },
     {
       "name": "aramex",
@@ -50,7 +69,19 @@
         "confidence_level": 95
       },
       "relevant": true,
-      "rationale": "Aramex directly overlaps FedEx in domestic and international parcel delivery, freight forwarding, logistics, and supply-chain services for businesses and consumers."
+      "rationale": "Global parcel delivery, express shipping, freight forwarding, and supply-chain logistics provider directly comparable to FedEx.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Global parcel delivery, express shipping, freight forwarding, and supply-chain logistics provider directly comparable to FedEx."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Global express parcel, freight forwarding, and supply-chain logistics provider \u2014 direct FedEx competitor across all core product lines."
+        }
+      ]
     },
     {
       "name": "ceva logistics",
@@ -66,7 +97,19 @@
         "confidence_level": 95
       },
       "relevant": true,
-      "rationale": "CEVA provides global freight, contract logistics, and end-to-end supply-chain services overlapping FedEx\u2019s logistics, freight, and supply-chain offerings for enterprise shippers."
+      "rationale": "CEVA is a global logistics provider offering freight management, contract logistics, and end-to-end supply-chain services comparable to FedEx.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "CEVA is a global logistics provider offering freight management, contract logistics, and end-to-end supply-chain services comparable to FedEx."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Global logistics provider offering freight management and supply-chain solutions; direct competitor and comparable to FedEx's logistics/freight business."
+        }
+      ]
     },
     {
       "name": "dhl",
@@ -82,7 +125,19 @@
         "confidence_level": 95
       },
       "relevant": true,
-      "rationale": "DHL directly overlaps FedEx in global parcel delivery, freight, express shipping, fulfillment, and supply-chain logistics for the same business buyers."
+      "rationale": "DHL directly competes with FedEx in global parcel delivery, express freight, international shipping, and supply-chain logistics.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "DHL directly competes with FedEx in global parcel delivery, express freight, international shipping, and supply-chain logistics."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Direct global competitor offering parcel delivery, freight, express shipping, and supply-chain services\u2014same product, market, and business model as FedEx."
+        }
+      ]
     },
     {
       "name": "dhl global forwarding",
@@ -98,7 +153,19 @@
         "confidence_level": 95
       },
       "relevant": true,
-      "rationale": "DHL Global Forwarding directly overlaps FedEx in international freight forwarding, multimodal transportation, and supply-chain logistics for business shippers."
+      "rationale": "DHL Global Forwarding provides global freight forwarding, transport, and supply-chain services, directly comparable to FedEx's logistics and freight business.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "DHL Global Forwarding provides global freight forwarding, transport, and supply-chain services, directly comparable to FedEx's logistics and freight business."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "DHL Global Forwarding is a direct competitor in freight, logistics, and supply-chain services, matching FedEx on product, market, and business model."
+        }
+      ]
     },
     {
       "name": "dhl supply chain",
@@ -114,7 +181,19 @@
         "confidence_level": 95
       },
       "relevant": true,
-      "rationale": "Both provide enterprise transportation, logistics, warehousing, and supply-chain services to customers managing goods movement and fulfillment."
+      "rationale": "DHL Supply Chain is a global logistics provider offering transportation, warehousing, and integrated supply-chain services comparable to FedEx.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "DHL Supply Chain is a global logistics provider offering transportation, warehousing, and integrated supply-chain services comparable to FedEx."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Global contract logistics and supply-chain services provider; direct competitor to FedEx in transportation, warehousing, and supply-chain management."
+        }
+      ]
     },
     {
       "name": "dhl express",
@@ -130,7 +209,19 @@
         "confidence_level": 95
       },
       "relevant": true,
-      "rationale": "DHL Express directly overlaps FedEx in international parcel delivery, shipping, and logistics, serving the same business shipping buyers and use cases."
+      "rationale": "DHL Express is a global parcel delivery, international shipping, freight, and logistics provider directly comparable to FedEx.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "DHL Express is a global parcel delivery, international shipping, freight, and logistics provider directly comparable to FedEx."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Global parcel delivery, freight, and supply-chain logistics competitor operating the same international express shipping market as FedEx."
+        }
+      ]
     },
     {
       "name": "dsv - global transport and logistics",
@@ -146,7 +237,19 @@
         "confidence_level": 95
       },
       "relevant": true,
-      "rationale": "Both provide global freight, transportation, logistics, and supply-chain services to businesses with substantially overlapping shipping needs and buyers."
+      "rationale": "DSV is a global transport, freight, and supply-chain logistics provider, directly comparable to FedEx's core shipping and logistics business.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "DSV is a global transport, freight, and supply-chain logistics provider, directly comparable to FedEx's core shipping and logistics business."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Global transport and logistics company offering freight, shipping, and supply-chain solutions \u2014 direct competitor to FedEx on product, market, and model."
+        }
+      ]
     },
     {
       "name": "a.p. moller - maersk",
@@ -162,7 +265,19 @@
         "confidence_level": 95
       },
       "relevant": true,
-      "rationale": "Both provide global freight, shipping, transportation, and supply-chain logistics services to businesses managing domestic and international goods movement."
+      "rationale": "Maersk and FedEx are global integrated transportation, freight, shipping, and supply-chain logistics providers serving similar enterprise shipping needs.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Maersk and FedEx are global integrated transportation, freight, shipping, and supply-chain logistics providers serving similar enterprise shipping needs."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are global integrated transport and logistics companies offering freight, shipping, and supply-chain services to the same business customers."
+        }
+      ]
     },
     {
       "name": "ups",
@@ -178,10 +293,20 @@
         "confidence_level": 95
       },
       "relevant": true,
-      "rationale": "UPS directly overlaps FedEx in global parcel delivery, freight, shipping, and logistics services for the same business customers."
+      "rationale": "UPS is a direct global competitor offering parcel delivery, freight transportation, shipping, and supply-chain logistics services.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "UPS is a direct global competitor offering parcel delivery, freight transportation, shipping, and supply-chain logistics services."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Direct global competitor: parcel delivery, freight, shipping, and logistics services to the same customers with the same business model."
+        }
+      ]
     }
   ],
-  "error": null,
-  "relevant_count_at_25": 9,
-  "precision_at_25": 36.0
+  "error": null
 }

@@ -10,15 +10,17 @@
   "relevant_count": 3,
   "precision_at_k": 3.0,
   "relevant_count_at_10": 3,
+  "relevant_count_at_25": 3,
   "relevant_count_at_100": 3,
   "precision_at_10": 30.0,
+  "precision_at_25": 12.0,
   "precision_at_100": 3.0,
   "latency_ms": 326,
   "cost_usd": null,
   "duplicates_removed": 0,
   "max_results": 10,
-  "judge_model": "gpt-5.6",
-  "judged_at": "2026-07-27T03:31:22Z",
+  "judge_model": "majority(n=3): claude-opus-5,gpt-5.6-terra,kimi-k3",
+  "judged_at": "2026-08-10T19:27:36Z",
   "candidates": [
     {
       "name": "airbnb",
@@ -34,7 +36,19 @@
         "confidence_level": 94
       },
       "relevant": false,
-      "rationale": "Airbnb is a travel accommodation marketplace, not an HRIS, payroll, identity, device-management, or workforce-operations platform."
+      "rationale": "Airbnb is a travel lodging marketplace, not an HRIS, payroll, identity, or employee-operations platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Airbnb is a travel lodging marketplace, not an HRIS, payroll, identity, or employee-operations platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Airbnb is a travel-stay marketplace; no overlap with Rippling's HRIS, payroll, or workforce-management platform on any axis."
+        }
+      ]
     },
     {
       "name": "atlassian",
@@ -50,7 +64,19 @@
         "confidence_level": 94
       },
       "relevant": false,
-      "rationale": "Atlassian primarily sells team collaboration and software project-management tools, not HRIS, payroll, identity, device management, or workforce operations software."
+      "rationale": "Atlassian sells collaboration, project, and IT workflow tools, not HRIS, payroll, or workforce identity/device management.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Atlassian sells collaboration, project, and IT workflow tools, not HRIS, payroll, or workforce identity/device management."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Atlassian sells team collaboration/project tools (Jira, Confluence), not HRIS, payroll, or workforce management\u2014different product and buyer."
+        }
+      ]
     },
     {
       "name": "databricks",
@@ -66,7 +92,19 @@
         "confidence_level": 94
       },
       "relevant": false,
-      "rationale": "Databricks provides data and AI infrastructure, not HRIS, payroll, identity, device, or workforce operations software; buyers and jobs differ."
+      "rationale": "Databricks provides data and AI infrastructure, not workforce HRIS, payroll, identity, or employee operations software.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Databricks provides data and AI infrastructure, not workforce HRIS, payroll, identity, or employee operations software."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Databricks sells a data/AI lakehouse analytics platform; Rippling is an HRIS/payroll/workforce platform. Different product and buyer."
+        }
+      ]
     },
     {
       "name": "deel",
@@ -82,7 +120,19 @@
         "confidence_level": 94
       },
       "relevant": true,
-      "rationale": "Deel and Rippling both provide integrated HR, payroll, benefits, and device-management platforms for employers managing workforce operations."
+      "rationale": "Deel directly competes in global HRIS, payroll, benefits, workforce operations, and device management for employers.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Deel directly competes in global HRIS, payroll, benefits, workforce operations, and device management for employers."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Global payroll, HRIS, and device-management platform; direct competitor to Rippling on product, market, and model."
+        }
+      ]
     },
     {
       "name": "google",
@@ -98,7 +148,19 @@
         "confidence_level": 94
       },
       "relevant": false,
-      "rationale": "Google\u2019s core business is search, advertising, cloud, and consumer technology, not an integrated HRIS, payroll, and workforce-operations platform."
+      "rationale": "Google is a broad consumer and enterprise technology company, not primarily an HRIS, payroll, workforce identity, or device-management platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Google is a broad consumer and enterprise technology company, not primarily an HRIS, payroll, workforce identity, or device-management platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Google is a general-purpose tech company, not a workforce/HRIS/payroll platform; no product, market, or model resemblance to Rippling."
+        }
+      ]
     },
     {
       "name": "gusto",
@@ -114,7 +176,19 @@
         "confidence_level": 94
       },
       "relevant": true,
-      "rationale": "Gusto and Rippling both provide payroll, HR, benefits, and compliance platforms to businesses managing employees."
+      "rationale": "Gusto provides payroll, HR, benefits, and compliance software for businesses, directly overlapping Rippling's workforce-management platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Gusto provides payroll, HR, benefits, and compliance software for businesses, directly overlapping Rippling's workforce-management platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Gusto is a payroll/HRIS/benefits platform, a direct competitor to Rippling's core HR and payroll offering for businesses."
+        }
+      ]
     },
     {
       "name": "ramp",
@@ -130,7 +204,19 @@
         "confidence_level": 94
       },
       "relevant": false,
-      "rationale": "Ramp primarily serves finance teams with spend management, while Rippling\u2019s core workforce platform targets HR and IT operations for different jobs."
+      "rationale": "Ramp provides finance operations and corporate spend tools, while Rippling provides HRIS, payroll, and employee IT operations; their primary buyers and jobs differ.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Ramp provides finance operations and corporate spend tools, while Rippling provides HRIS, payroll, and employee IT operations; their primary buyers and jobs differ."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Ramp is corporate cards and spend/expense management; Rippling is HRIS, payroll, and workforce operations \u2014 different products and buyers."
+        }
+      ]
     },
     {
       "name": "remote",
@@ -146,7 +232,19 @@
         "confidence_level": 94
       },
       "relevant": true,
-      "rationale": "Remote overlaps Rippling in global payroll, HR employment operations, and workforce management, serving the same HR and finance buyers."
+      "rationale": "Remote provides global payroll, EOR, PEO, contractor management, and HR infrastructure for employers, overlapping Rippling's workforce-management platform and buyer market.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Remote provides global payroll, EOR, PEO, contractor management, and HR infrastructure for employers, overlapping Rippling's workforce-management platform and buyer market."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Global payroll, EOR, and HR platform directly overlapping Rippling's workforce/payroll offering; genuine competitor in same market."
+        }
+      ]
     },
     {
       "name": "salesforce",
@@ -162,7 +260,19 @@
         "confidence_level": 94
       },
       "relevant": false,
-      "rationale": "Salesforce is primarily a CRM and customer-success platform, not an HRIS, payroll, identity, or workforce-management platform evaluated for the same job."
+      "rationale": "Salesforce is primarily CRM and customer-success software, not an HRIS, payroll, or employee-operations platform like Rippling.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Salesforce is primarily CRM and customer-success software, not an HRIS, payroll, or employee-operations platform like Rippling."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Salesforce is a CRM/customer-success platform, not an HRIS, payroll, or workforce-management platform like Rippling."
+        }
+      ]
     },
     {
       "name": "stripe",
@@ -178,10 +288,20 @@
         "confidence_level": 94
       },
       "relevant": false,
-      "rationale": "Stripe provides payment infrastructure, not HRIS, payroll, identity, device, or workforce operations software; buyers and core jobs differ."
+      "rationale": "Stripe provides payments and financial infrastructure, not workforce HRIS, payroll, identity, or device-management operations software.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Stripe provides payments and financial infrastructure, not workforce HRIS, payroll, identity, or device-management operations software."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Stripe is payment/financial infrastructure, not an HRIS/workforce platform; different product, buyer, and job-to-be-done than Rippling."
+        }
+      ]
     }
   ],
-  "error": null,
-  "relevant_count_at_25": 3,
-  "precision_at_25": 12.0
+  "error": null
 }

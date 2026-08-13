@@ -8,17 +8,20 @@
     "filters": {}
   },
   "k": 100,
-  "relevant_count": 7,
-  "precision_at_k": 7.0,
-  "relevant_count_at_10": 3,
-  "relevant_count_at_100": 7,
-  "precision_at_10": 30.0,
-  "precision_at_100": 7.0,
+  "relevant_count": 5,
+  "precision_at_k": 5.0,
+  "relevant_count_at_10": 2,
+  "relevant_count_at_25": 3,
+  "relevant_count_at_100": 5,
+  "precision_at_10": 20.0,
+  "precision_at_25": 12.0,
+  "precision_at_100": 5.0,
   "latency_ms": 3889,
   "cost_usd": null,
   "duplicates_removed": 0,
-  "judge_model": "gpt-5.6",
-  "judged_at": "2026-07-27T01:51:45Z",
+  "max_results": null,
+  "judge_model": "majority(n=3): claude-opus-5,gpt-5.6-terra,kimi-k3",
+  "judged_at": "2026-08-10T19:51:32Z",
   "candidates": [
     {
       "name": "Payoneer",
@@ -107,7 +110,19 @@
         "relevance_score": "A"
       },
       "relevant": false,
-      "rationale": "Payoneer provides cross-border SMB payments, not Sea\u2019s core consumer e-commerce marketplace; their primary offerings and purchase use cases differ."
+      "rationale": "Payoneer provides cross-border financial services for SMBs, not Sea\u2019s consumer e-commerce marketplace, entertainment, or Southeast Asian digital-finance ecosystem.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Payoneer provides cross-border financial services for SMBs, not Sea\u2019s consumer e-commerce marketplace, entertainment, or Southeast Asian digital-finance ecosystem."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Payoneer is a cross-border payments provider for SMBs \u2014 a supplier to e-commerce sellers, not a consumer internet/e-commerce marketplace peer like Shopee."
+        }
+      ]
     },
     {
       "name": "Lazada Group",
@@ -158,7 +173,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Lazada directly overlaps Shopee as a Southeast Asian e-commerce marketplace serving the same consumers, merchants, and commerce use cases."
+      "rationale": "Lazada directly competes with Shopee as a Southeast Asian e-commerce marketplace, with comparable logistics and payments ecosystem services.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Lazada directly competes with Shopee as a Southeast Asian e-commerce marketplace, with comparable logistics and payments ecosystem services."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Lazada is Southeast Asia's leading e-commerce marketplace, Shopee's direct competitor\u2014same product, market, and business model."
+        }
+      ]
     },
     {
       "name": "Airtel",
@@ -231,7 +258,19 @@
         "relevance_score": "A"
       },
       "relevant": false,
-      "rationale": "Airtel is primarily a telecommunications and connectivity provider, not an e-commerce, digital entertainment, or consumer digital-finance platform like Sea."
+      "rationale": "Airtel is primarily a telecommunications carrier, not an e-commerce, digital entertainment, and fintech platform comparable to Sea/Shopee.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Airtel is primarily a telecommunications carrier, not an e-commerce, digital entertainment, and fintech platform comparable to Sea/Shopee."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Airtel is a telecom carrier (connectivity, 5G); Sea is consumer internet (e-commerce, gaming, fintech) \u2014 different products and markets."
+        }
+      ]
     },
     {
       "name": "Adyen",
@@ -322,7 +361,19 @@
         "relevance_score": "A"
       },
       "relevant": false,
-      "rationale": "Adyen provides merchant payment infrastructure, while Sea primarily operates consumer marketplaces, gaming, and wallet-based financial services; buyers and business models differ."
+      "rationale": "Adyen is a merchant payments platform, while Sea's core comparable business is the Shopee consumer e-commerce marketplace; payments overlap is insufficient.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Adyen is a merchant payments platform, while Sea's core comparable business is the Shopee consumer e-commerce marketplace; payments overlap is insufficient."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Adyen is a B2B payments processor, not a consumer e-commerce/internet marketplace; only a thin fintech-services overlap, not a peer to Shopee."
+        }
+      ]
     },
     {
       "name": "PayPal",
@@ -411,7 +462,24 @@
         "relevance_score": "A"
       },
       "relevant": false,
-      "rationale": "PayPal is primarily a payments platform, not an e-commerce marketplace and diversified consumer-internet operator like Sea/Shopee."
+      "rationale": "PayPal is payments-only; Sea's core is e-commerce marketplaces plus gaming, so the fintech overlap is weak\u2014mirrors Shopify\u2194payment-processor false example.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "PayPal is a digital payments and financial-services platform, comparable to Sea\u2019s SeaMoney business despite lacking Shopee\u2019s marketplace and gaming segments."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "PayPal is payments-only; Sea's core is e-commerce marketplaces plus gaming, so the fintech overlap is weak\u2014mirrors Shopify\u2194payment-processor false example."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "PayPal is a payments processor; Sea is a consumer internet/e-commerce conglomerate. Only partial overlap via SeaMoney, not core resemblance."
+        }
+      ]
     },
     {
       "name": "PhonePe",
@@ -467,7 +535,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "PhonePe overlaps SeaMoney in consumer and merchant digital payments and broader financial services, serving similar users and financial jobs to be done."
+      "rationale": "PhonePe is a large consumer fintech platform offering payments, lending, insurance, and wealth services, comparable to Sea\u2019s digital financial-services arm.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "PhonePe is a large consumer fintech platform offering payments, lending, insurance, and wealth services, comparable to Sea\u2019s digital financial-services arm."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "PhonePe's consumer payments and financial-services platform strongly matches Sea's digital financial services arm (SeaMoney) on product and business model."
+        }
+      ]
     },
     {
       "name": "Dwolla",
@@ -518,7 +598,19 @@
         "relevance_score": "A"
       },
       "relevant": false,
-      "rationale": "Dwolla provides B2B payment infrastructure, while Sea primarily operates consumer e-commerce, entertainment, and financial-service platforms; buyers and core use cases differ."
+      "rationale": "Dwolla is a B2B payments infrastructure provider, not a consumer e-commerce marketplace, entertainment platform, or broad digital-financial-services ecosystem like Sea.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Dwolla is a B2B payments infrastructure provider, not a consumer e-commerce marketplace, entertainment platform, or broad digital-financial-services ecosystem like Sea."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Dwolla is US B2B payment-infrastructure APIs; Sea is a Southeast Asian consumer internet company (e-commerce, gaming, consumer fintech). Only a weak payments-keyword overlap, no shared product or market."
+        }
+      ]
     },
     {
       "name": "Sezzle",
@@ -582,8 +674,20 @@
         ],
         "relevance_score": "A"
       },
-      "relevant": true,
-      "rationale": "Sezzle\u2019s merchant-integrated digital payments and point-of-sale financing overlap SeaMoney/ShopeePay offerings for merchants and consumers seeking checkout payment options."
+      "relevant": false,
+      "rationale": "Sezzle is a standalone BNPL payment provider, not an e-commerce marketplace or diversified digital-services platform comparable to Sea.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Sezzle is a standalone BNPL payment provider, not an e-commerce marketplace or diversified digital-services platform comparable to Sea."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Sezzle is a pure BNPL/point-of-sale financing fintech; only weakly overlaps Sea's payments arm, with no e-commerce marketplace or consumer internet platform resemblance."
+        }
+      ]
     },
     {
       "name": "Intech Global Resources",
@@ -629,7 +733,19 @@
         "relevance_score": "A"
       },
       "relevant": false,
-      "rationale": "Intech is a generic IT services and consulting firm, not an e-commerce marketplace, digital entertainment, or financial services platform."
+      "rationale": "IT services consultancy; no consumer e-commerce marketplace, digital entertainment, or financial-services platform comparable to Sea/Shopee.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "IT services consultancy; no consumer e-commerce marketplace, digital entertainment, or financial-services platform comparable to Sea/Shopee."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "IT services/consulting firm, not a consumer internet, e-commerce, or digital services platform; no product/market overlap with Sea."
+        }
+      ]
     },
     {
       "name": "MyanTel Holdings Ltd.",
@@ -685,7 +801,19 @@
         "relevance_score": "A"
       },
       "relevant": false,
-      "rationale": "MyanTel is primarily a telecommunications holding group; its ancillary mobile payments and content do not make it a direct e-commerce or consumer-platform peer."
+      "rationale": "Primarily a telecommunications holding group; its adjacent mobile content and payments do not make it a comparable e-commerce and consumer-internet platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Primarily a telecommunications holding group; its adjacent mobile content and payments do not make it a comparable e-commerce and consumer-internet platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Primarily a telecom operator/holdings company; mobile content and payments overlap is tangential to Sea's e-commerce/gaming/fintech consumer internet platform."
+        }
+      ]
     },
     {
       "name": "Bk 8 official",
@@ -718,7 +846,19 @@
         "relevance_score": "A"
       },
       "relevant": false,
-      "rationale": "BK8 is primarily an online betting and casino platform, not an e-commerce, gaming, or digital financial-services ecosystem comparable to Sea."
+      "rationale": "BK8 appears to be an online betting/entertainment brand, not a marketplace operator with e-commerce and fintech platforms like Sea.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "BK8 appears to be an online betting/entertainment brand, not a marketplace operator with e-commerce and fintech platforms like Sea."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "BK8 is an online gambling/betting site; vague 'digital entertainment' marketing doesn't match Sea's e-commerce, gaming, and fintech consumer-internet model."
+        }
+      ]
     },
     {
       "name": "GoLogiq",
@@ -783,8 +923,20 @@
         ],
         "relevance_score": "A"
       },
-      "relevant": false,
-      "rationale": "GoLogiq\u2019s generic mobile-fintech offering does not clearly overlap Shopee\u2019s core e-commerce marketplace or serve the same shopping-platform job."
+      "relevant": true,
+      "rationale": "GoLogiq is a mobile fintech focused on Southeast Asia, overlapping SeaMoney's regional digital-financial-services market and business model.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "GoLogiq is a mobile fintech focused on Southeast Asia, overlapping SeaMoney's regional digital-financial-services market and business model."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Mobile fintech serving Southeast Asia matches Sea's SeaMoney digital financial services pillar on product, market, and model."
+        }
+      ]
     },
     {
       "name": "Gp aunz",
@@ -840,7 +992,19 @@
         "relevance_score": "A"
       },
       "relevant": false,
-      "rationale": "Global Payments AUNZ is a merchant payment processor, not a consumer e-commerce marketplace or comparable integrated consumer internet platform."
+      "rationale": "Global Payments AUNZ is a payment processor, not a consumer e-commerce marketplace or integrated consumer internet ecosystem like Sea/Shopee.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Global Payments AUNZ is a payment processor, not a consumer e-commerce marketplace or integrated consumer internet ecosystem like Sea/Shopee."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "B2B merchant payment processor's regional recruiting site; not a consumer internet/e-commerce comparable to Sea, akin to payment-processor vs storefront."
+        }
+      ]
     },
     {
       "name": "FOMO Pay",
@@ -888,7 +1052,19 @@
         "relevance_score": "A"
       },
       "relevant": false,
-      "rationale": "FOMO Pay is a B2B payments and banking provider, not a consumer e-commerce platform; limited fintech overlap does not create the same core buyer need."
+      "rationale": "FOMO Pay is a B2B payments and banking provider, not a consumer e-commerce, entertainment, or integrated consumer-fintech platform like Sea.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "FOMO Pay is a B2B payments and banking provider, not a consumer e-commerce, entertainment, or integrated consumer-fintech platform like Sea."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "B2B payment/banking infrastructure for institutions; only weakly overlaps Sea's consumer fintech arm, missing its core e-commerce and entertainment products."
+        }
+      ]
     },
     {
       "name": "Kjc",
@@ -927,7 +1103,19 @@
         "relevance_score": "A"
       },
       "relevant": false,
-      "rationale": "KJC is an online gambling community/platform, not an e-commerce marketplace, digital entertainment publisher, or financial-services platform comparable to Sea."
+      "rationale": "KJC is an online betting/entertainment site, not an e-commerce, digital-financial-services, or gaming platform comparable to Sea/Shopee.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "KJC is an online betting/entertainment site, not an e-commerce, digital-financial-services, or gaming platform comparable to Sea/Shopee."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Vietnamese online betting site, not an e-commerce, digital entertainment, or fintech platform comparable to Sea/Shopee."
+        }
+      ]
     },
     {
       "name": "Seven7 Perfection",
@@ -985,7 +1173,19 @@
         "relevance_score": "A"
       },
       "relevant": false,
-      "rationale": "Seven7 Perfection provides merchant POS and payment infrastructure, not a consumer e-commerce marketplace or comparable integrated consumer internet platform."
+      "rationale": "POS hardware and payment-solution provider, not a consumer e-commerce marketplace, digital-entertainment, and financial-services platform like Sea.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "POS hardware and payment-solution provider, not a consumer e-commerce marketplace, digital-entertainment, and financial-services platform like Sea."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "B2B payment hardware/mPOS vendor, not a consumer internet platform; no e-commerce marketplace, entertainment, or consumer fintech overlap with Sea."
+        }
+      ]
     },
     {
       "name": "Green Packet",
@@ -1032,7 +1232,19 @@
         "relevance_score": "A"
       },
       "relevant": false,
-      "rationale": "Green Packet primarily provides telecom devices and enterprise/urban technology, not an e-commerce marketplace, digital entertainment platform, or comparable consumer fintech ecosystem."
+      "rationale": "Green Packet primarily supplies telecom devices and enterprise digital solutions, not a consumer e-commerce marketplace, gaming platform, or fintech ecosystem.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Green Packet primarily supplies telecom devices and enterprise digital solutions, not a consumer e-commerce marketplace, gaming platform, or fintech ecosystem."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Green Packet is primarily a telecom hardware/CPE supplier and smart-city tech firm, not a consumer internet e-commerce/entertainment/fintech company like Sea."
+        }
+      ]
     },
     {
       "name": "T\u1eadp \u0110o\u00e0n TMS Holdings",
@@ -1069,7 +1281,19 @@
         "relevance_score": "A"
       },
       "relevant": false,
-      "rationale": "TMS Holdings is a diversified Vietnamese group focused on logistics and other traditional sectors, not consumer e-commerce, gaming, or digital financial platforms."
+      "rationale": "TMS Holdings is described as a logistics-focused conglomerate, not a consumer internet platform operating e-commerce, digital entertainment, or financial services.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "TMS Holdings is described as a logistics-focused conglomerate, not a consumer internet platform operating e-commerce, digital entertainment, or financial services."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Vietnamese diversified logistics/real-estate conglomerate; no e-commerce marketplace, gaming, or fintech products matching Sea's consumer-internet business."
+        }
+      ]
     },
     {
       "name": "Fiserv",
@@ -1138,7 +1362,19 @@
         "relevance_score": "A"
       },
       "relevant": false,
-      "rationale": "Fiserv provides enterprise payments and banking infrastructure, unlike Sea\u2019s consumer e-commerce, entertainment, and ecosystem-based digital financial services."
+      "rationale": "Fiserv provides payments and financial technology, but lacks Sea's core e-commerce marketplace and consumer internet platform model.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Fiserv provides payments and financial technology, but lacks Sea's core e-commerce marketplace and consumer internet platform model."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Fiserv is B2B payments/fintech infrastructure for banks and merchants, not a consumer internet/e-commerce ecosystem like Sea; only weak overlap in payments."
+        }
+      ]
     },
     {
       "name": "\u6cb3\u5357\u5fae\u94fa\u7535\u5b50\u5546\u52a1\u80a1\u4efd\u6709\u9650\u516c\u53f8",
@@ -1170,7 +1406,19 @@
         "relevance_score": "A"
       },
       "relevant": false,
-      "rationale": "Candidate is only described as a generic internet company; no evidence it operates a consumer e-commerce marketplace or overlapping platform."
+      "rationale": "Description only identifies a generic internet company; it provides no evidence of e-commerce marketplace, digital entertainment, or financial-services products.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Description only identifies a generic internet company; it provides no evidence of e-commerce marketplace, digital entertainment, or financial-services products."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Tiny Chinese IT/consulting-labeled firm with no evident consumer e-commerce marketplace product; generic 'e-commerce' name alone doesn't establish resemblance to Shopee."
+        }
+      ]
     },
     {
       "name": "Traderoot",
@@ -1226,7 +1474,19 @@
         "relevance_score": "A"
       },
       "relevant": false,
-      "rationale": "Traderoot provides B2B payment and banking infrastructure, not a consumer e-commerce marketplace or integrated consumer internet ecosystem like Sea."
+      "rationale": "Financial-software vendor providing payments and core-banking infrastructure, not a consumer e-commerce marketplace or integrated consumer internet platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Financial-software vendor providing payments and core-banking infrastructure, not a consumer e-commerce marketplace or integrated consumer internet platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Traderoot is a B2B payments-software vendor serving financial institutions, not a consumer internet/e-commerce platform; supplier to the category, not a peer."
+        }
+      ]
     },
     {
       "name": "8Hexa Financial Pte",
@@ -1289,7 +1549,19 @@
         "relevance_score": "A"
       },
       "relevant": false,
-      "rationale": "8Hexa is a B2B cross-border payments provider, not a consumer internet and e-commerce platform comparable to Sea/Shopee."
+      "rationale": "8Hexa provides B2B cross-border payment infrastructure, not a consumer e-commerce marketplace or integrated consumer internet platform like Shopee.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "8Hexa provides B2B cross-border payment infrastructure, not a consumer e-commerce marketplace or integrated consumer internet platform like Shopee."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Sea is a consumer internet company (e-commerce, gaming, consumer fintech); 8Hexa sells B2B cross-border enterprise payments \u2014 only a weak, partial overlap with SeaMoney, not a comparable."
+        }
+      ]
     },
     {
       "name": "UP DevLabs",
@@ -1345,7 +1617,19 @@
         "relevance_score": "A"
       },
       "relevant": false,
-      "rationale": "UP DevLabs is a software development consultancy, not a consumer e-commerce, digital entertainment, or financial-services platform like Sea."
+      "rationale": "UP DevLabs is a software-development consultancy serving businesses, not a consumer e-commerce, digital entertainment, or financial-services platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "UP DevLabs is a software-development consultancy serving businesses, not a consumer e-commerce, digital entertainment, or financial-services platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "IT services/software development consultancy, not a consumer internet company operating e-commerce, gaming, or fintech like Sea."
+        }
+      ]
     },
     {
       "name": "Capricorn Digital",
@@ -1395,7 +1679,19 @@
         "relevance_score": "A"
       },
       "relevant": false,
-      "rationale": "Capricorn Digital focuses on Nigerian payment and digital-service distribution, not a consumer e-commerce marketplace comparable to Shopee."
+      "rationale": "No evidence that Capricorn Digital operates an e-commerce marketplace, digital-entertainment platform, or digital financial-services business comparable to Sea.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "No evidence that Capricorn Digital operates an e-commerce marketplace, digital-entertainment platform, or digital financial-services business comparable to Sea."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Nigerian software/digital firm with WordPress agency-style site; no e-commerce marketplace, digital entertainment, or fintech products resembling Sea's consumer internet businesses."
+        }
+      ]
     },
     {
       "name": "Mayura Consultancy Services",
@@ -1458,7 +1754,19 @@
         "relevance_score": "A"
       },
       "relevant": false,
-      "rationale": "Mayura is an IT consultancy serving clients, not a consumer e-commerce marketplace, digital entertainment, or financial-services platform like Sea."
+      "rationale": "IT software consultancy serving e-commerce clients, not a consumer e-commerce marketplace, digital entertainment, or financial-services platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "IT software consultancy serving e-commerce clients, not a consumer e-commerce marketplace, digital entertainment, or financial-services platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "IT consultancy/agency serving clients, not a consumer internet or e-commerce platform like Sea/Shopee; agencies serving the category are excluded."
+        }
+      ]
     },
     {
       "name": "SkyPay",
@@ -1489,7 +1797,19 @@
         "relevance_score": "A"
       },
       "relevant": false,
-      "rationale": "SkyPay\u2019s vague blockchain and crypto-finance offering does not clearly overlap Shopee\u2019s e-commerce marketplace or Sea\u2019s consumer payments ecosystem."
+      "rationale": "Crypto/Web3 fintech provider does not resemble Shopee's consumer e-commerce marketplace, gaming, and regional digital-financial-services ecosystem.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Crypto/Web3 fintech provider does not resemble Shopee's consumer e-commerce marketplace, gaming, and regional digital-financial-services ecosystem."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "SkyPay is a crypto/Web3 bridging fintech, not a consumer internet, e-commerce, or digital financial services platform comparable to Sea's ecosystem."
+        }
+      ]
     },
     {
       "name": "Infi Commerce Ltd",
@@ -1540,7 +1860,19 @@
         "relevance_score": "B"
       },
       "relevant": false,
-      "rationale": "Infi Commerce appears to provide technology, consulting, and payment infrastructure, not a consumer e-commerce marketplace or digital entertainment platform like Shopee."
+      "rationale": "Infi Commerce appears to provide technology, infrastructure, and payments services, not a consumer e-commerce marketplace, digital-entertainment platform, or integrated fintech ecosystem.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Infi Commerce appears to provide technology, infrastructure, and payments services, not a consumer e-commerce marketplace, digital-entertainment platform, or integrated fintech ecosystem."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Vague investment/infrastructure/consulting firm with investor backing; no consumer e-commerce marketplace, gaming, or fintech products resembling Sea's Shopee/Garena/SeaMoney operations."
+        }
+      ]
     },
     {
       "name": "Websight",
@@ -1596,7 +1928,19 @@
         "relevance_score": "B"
       },
       "relevant": false,
-      "rationale": "Websight is a custom software development and ERP implementation firm, not a consumer e-commerce, digital entertainment, or financial-services platform."
+      "rationale": "Custom software and ERP development consultancy, not a consumer e-commerce, digital entertainment, or financial-services platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Custom software and ERP development consultancy, not a consumer e-commerce, digital entertainment, or financial-services platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Websight is a custom software/app development agency, not a consumer internet company operating e-commerce, entertainment, or fintech platforms like Sea."
+        }
+      ]
     },
     {
       "name": "Fourdotzero",
@@ -1663,8 +2007,25 @@
         ],
         "relevance_score": "B"
       },
-      "relevant": true,
-      "rationale": "Fourdotzero\u2019s merchant micropayments network overlaps Sea\u2019s digital payments services, serving sellers seeking low-cost transaction acceptance."
+      "relevant": false,
+      "rationale": "Micropayments network startup, not a consumer internet/e-commerce platform; payments-only overlap with Sea's fintech arm is too weak, like Shopify vs payment processor.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Provides merchant payment infrastructure, overlapping SeaMoney's digital financial-services and payments business."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Micropayments network startup, not a consumer internet/e-commerce platform; payments-only overlap with Sea's fintech arm is too weak, like Shopify vs payment processor."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "Micropayments network infrastructure, not an e-commerce/consumer internet platform; closer to a payments supplier than a Sea peer."
+        }
+      ]
     },
     {
       "name": "Set and Forget",
@@ -1705,7 +2066,19 @@
         "relevance_score": "B"
       },
       "relevant": false,
-      "rationale": "Set and Forget is an IT consulting/services firm, not a consumer e-commerce marketplace or digital entertainment and financial services platform."
+      "rationale": "No evidence it operates e-commerce marketplaces, digital entertainment, or financial services comparable to Sea's consumer internet platforms.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "No evidence it operates e-commerce marketplaces, digital entertainment, or financial services comparable to Sea's consumer internet platforms."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Small IT services/consulting firm with no e-commerce, digital entertainment, or fintech products; no resemblance to Sea's consumer internet platforms."
+        }
+      ]
     },
     {
       "name": "Redith Group",
@@ -1744,7 +2117,19 @@
         "relevance_score": "B"
       },
       "relevant": false,
-      "rationale": "Redith Group is a marketing and creative agency, not an e-commerce marketplace, digital entertainment provider, or financial-services platform."
+      "rationale": "Marketing and advertising agency serving clients, not an e-commerce, digital entertainment, or fintech platform comparable to Sea.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Marketing and advertising agency serving clients, not an e-commerce, digital entertainment, or fintech platform comparable to Sea."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Marketing/advertising agency, not a consumer internet, e-commerce, or fintech platform; serves the category rather than competing with Sea."
+        }
+      ]
     },
     {
       "name": "AbleGroup Solutions",
@@ -1784,7 +2169,19 @@
         "relevance_score": "B"
       },
       "relevant": false,
-      "rationale": "AbleGroup provides corporate filing and tax compliance services, not e-commerce, digital entertainment, or consumer financial platforms like Sea."
+      "rationale": "Corporate filing and tax-compliance provider, not an e-commerce marketplace, digital entertainment platform, or consumer financial-services competitor.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Corporate filing and tax-compliance provider, not an e-commerce marketplace, digital entertainment platform, or consumer financial-services competitor."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Corporate compliance/filing services firm, not a consumer internet, e-commerce, or digital finance company; no product or market resemblance."
+        }
+      ]
     },
     {
       "name": "TechAdwiser",
@@ -1858,7 +2255,19 @@
         "relevance_score": "B"
       },
       "relevant": false,
-      "rationale": "TechAdwiser is an IT consulting and custom development provider, not a consumer e-commerce marketplace, gaming operator, or digital financial-services platform."
+      "rationale": "IT consultancy offering development, support, and banking solutions; it does not operate a consumer e-commerce marketplace, entertainment, or fintech platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "IT consultancy offering development, support, and banking solutions; it does not operate a consumer e-commerce marketplace, entertainment, or fintech platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "IT services/agency doing app development and marketing; not a consumer internet or e-commerce marketplace comparable to Sea/Shopee."
+        }
+      ]
     },
     {
       "name": "DGG Technology Indonesia",
@@ -1892,7 +2301,19 @@
         "relevance_score": "B"
       },
       "relevant": false,
-      "rationale": "DGG is an AWS cloud consultancy, not a consumer e-commerce, digital entertainment, or financial-services platform serving the same users."
+      "rationale": "AWS cloud consulting and digital-transformation services do not operate e-commerce marketplaces, digital entertainment, or consumer financial services.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "AWS cloud consulting and digital-transformation services do not operate e-commerce marketplaces, digital entertainment, or consumer financial services."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "AWS cloud consulting/services firm, not a consumer internet, e-commerce, or fintech company; agency serving the category, not a peer."
+        }
+      ]
     },
     {
       "name": "Zension",
@@ -1939,7 +2360,19 @@
         "relevance_score": "B"
       },
       "relevant": false,
-      "rationale": "Zension is a custom software and systems-integration consultancy, not a consumer e-commerce, digital entertainment, or financial-services platform like Sea."
+      "rationale": "Zension is a custom software and systems-integration consultancy, not a consumer e-commerce, digital-entertainment, or financial-services platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Zension is a custom software and systems-integration consultancy, not a consumer e-commerce, digital-entertainment, or financial-services platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "IT services/consulting agency building apps for clients, not a consumer internet, e-commerce, or fintech platform; serves the category rather than competing."
+        }
+      ]
     },
     {
       "name": "01Fintech",
@@ -1984,7 +2417,19 @@
         "relevance_score": "B"
       },
       "relevant": false,
-      "rationale": "01Fintech is a private equity investor, not an e-commerce, digital entertainment, or consumer financial-services platform like Sea."
+      "rationale": "01Fintech is a private equity investor in fintech, not an e-commerce, digital entertainment, or consumer financial-services operating platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "01Fintech is a private equity investor in fintech, not an e-commerce, digital entertainment, or consumer financial-services operating platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "01Fintech is a fintech private equity/VC investor, not an operating consumer internet or e-commerce company; investor, not competitor or comparable."
+        }
+      ]
     },
     {
       "name": "Pienexa",
@@ -2020,7 +2465,19 @@
         "relevance_score": "B"
       },
       "relevant": false,
-      "rationale": "Pienexa builds broad fintech, automation, and commerce solutions, not a consumer e-commerce marketplace and digital-services ecosystem comparable to Shopee."
+      "rationale": "Pienexa is a digital-solutions developer across fintech and commerce, not an operator of a consumer e-commerce marketplace, entertainment, or financial-services ecosystem.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Pienexa is a digital-solutions developer across fintech and commerce, not an operator of a consumer e-commerce marketplace, entertainment, or financial-services ecosystem."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Vague software-solutions/dev shop in Nigeria; not a consumer internet platform operating e-commerce, gaming, or fintech services like Sea."
+        }
+      ]
     },
     {
       "name": "Genex Digital",
@@ -2046,7 +2503,19 @@
         "relevance_score": "B"
       },
       "relevant": false,
-      "rationale": "Genex is a generic IT services and product developer, not a consumer e-commerce marketplace, digital entertainment, or fintech platform like Sea."
+      "rationale": "IT company developing unspecified e-market products; no evidence it operates a consumer e-commerce marketplace, digital entertainment, or financial-services platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "IT company developing unspecified e-market products; no evidence it operates a consumer e-commerce marketplace, digital entertainment, or financial-services platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Genex Digital is an IT services/consulting firm, not a consumer e-commerce, gaming, or fintech platform; serves the category rather than competing with Shopee."
+        }
+      ]
     },
     {
       "name": "Exes Tech Ltd (EXTL)",
@@ -2087,7 +2556,19 @@
         "relevance_score": "B"
       },
       "relevant": false,
-      "rationale": "Exes Tech is a web/software development firm, not a consumer e-commerce, digital entertainment, or financial-services platform comparable to Sea."
+      "rationale": "Web development and software services firm, not a consumer e-commerce marketplace, digital entertainment platform, or digital-financial-services operator.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Web development and software services firm, not a consumer e-commerce marketplace, digital entertainment platform, or digital-financial-services operator."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Small Bangladeshi web-development/services shop; no e-commerce marketplace, digital entertainment, or fintech platform comparable to Sea/Shopee."
+        }
+      ]
     },
     {
       "name": "Project K Group",
@@ -2134,7 +2615,19 @@
         "relevance_score": "B"
       },
       "relevant": false,
-      "rationale": "Project K builds and markets consumer brands; it does not operate a Shopee-like e-commerce marketplace, gaming platform, or digital financial service."
+      "rationale": "Consumer-brand management and e-commerce operations are not a multi-category consumer internet marketplace, digital entertainment, or financial-services platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Consumer-brand management and e-commerce operations are not a multi-category consumer internet marketplace, digital entertainment, or financial-services platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Brand-building/management company for consumer brands, not an e-commerce marketplace or consumer internet platform; no strong product/market/model overlap with Sea."
+        }
+      ]
     },
     {
       "name": "Global Reports",
@@ -2192,7 +2685,19 @@
         "relevance_score": "B"
       },
       "relevant": false,
-      "rationale": "Global Reports is a broad news/content publisher, not an e-commerce marketplace, digital entertainment operator, or financial-services platform like Sea."
+      "rationale": "Global Reports is a broad news and reports publisher, not an e-commerce marketplace, digital entertainment platform, or digital financial-services operator.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Global Reports is a broad news and reports publisher, not an e-commerce marketplace, digital entertainment platform, or digital financial-services operator."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "News/content media site, not an e-commerce or consumer internet platform; merely uses Shopify tech, no product or market resemblance."
+        }
+      ]
     },
     {
       "name": "JMC Technologies",
@@ -2253,7 +2758,19 @@
         "relevance_score": "B"
       },
       "relevant": false,
-      "rationale": "JMC is an enterprise IT consulting and infrastructure services provider, not a consumer e-commerce, gaming, or digital financial services platform."
+      "rationale": "IT consulting and SAP infrastructure services do not operate e-commerce marketplaces, consumer entertainment, or digital financial platforms like Sea.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "IT consulting and SAP infrastructure services do not operate e-commerce marketplaces, consumer entertainment, or digital financial platforms like Sea."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "IT services/SAP consulting firm, not a consumer internet, e-commerce, or fintech company; serves enterprises rather than competing with Shopee."
+        }
+      ]
     },
     {
       "name": "Multistreams Operations",
@@ -2307,7 +2824,19 @@
         "relevance_score": "B"
       },
       "relevant": false,
-      "rationale": "Multistreams is primarily a fintech and business consultancy, not a consumer e-commerce marketplace comparable to Shopee."
+      "rationale": "Business consulting and unspecified fintech services do not resemble Sea's consumer e-commerce marketplace, gaming, and digital-financial-services platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Business consulting and unspecified fintech services do not resemble Sea's consumer e-commerce marketplace, gaming, and digital-financial-services platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Nigerian business consulting/fintech advisory firm, not a consumer internet, e-commerce, or digital financial services platform comparable to Sea/Shopee."
+        }
+      ]
     },
     {
       "name": "Jxflszc",
@@ -2331,7 +2860,19 @@
         "relevance_score": "B"
       },
       "relevant": false,
-      "rationale": "No clear evidence Jxflszc operates an e-commerce marketplace, digital entertainment, or financial-services platform serving Sea\u2019s users and buyers."
+      "rationale": "Insufficient evidence of an e-commerce marketplace, digital entertainment, or fintech business comparable to Sea/Shopee.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Insufficient evidence of an e-commerce marketplace, digital entertainment, or fintech business comparable to Sea/Shopee."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Obscure tiny software/IP firm with no e-commerce, digital entertainment, or fintech product resembling Sea's consumer internet businesses."
+        }
+      ]
     },
     {
       "name": "Synagistics Limited",
@@ -2376,7 +2917,19 @@
         "relevance_score": "B"
       },
       "relevant": false,
-      "rationale": "Synagistics provides e-commerce enablement solutions for brands, whereas Shopee operates a consumer marketplace; they are not evaluated for the same job."
+      "rationale": "Synagistics provides e-commerce operations and technology services to brands, rather than operating a consumer marketplace, digital entertainment, or financial-services platform like Sea.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Synagistics provides e-commerce operations and technology services to brands, rather than operating a consumer marketplace, digital entertainment, or financial-services platform like Sea."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "E-commerce enablement/services provider for brands selling on marketplaces like Shopee, not a consumer marketplace competitor; serves the category rather than competing."
+        }
+      ]
     },
     {
       "name": "Zoompass",
@@ -2421,7 +2974,19 @@
         "relevance_score": "B"
       },
       "relevant": false,
-      "rationale": "Zoompass sells white-label mobile money infrastructure to brands, unlike Shopee\u2019s consumer e-commerce marketplace and integrated consumer financial services."
+      "rationale": "Mobile money and white-label prepaid cards overlap only Sea\u2019s financial-services arm, not its core e-commerce marketplace or consumer internet model.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Mobile money and white-label prepaid cards overlap only Sea\u2019s financial-services arm, not its core e-commerce marketplace or consumer internet model."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "B2B white-label mobile-money/prepaid platform for brands; not a consumer internet, e-commerce, or consumer fintech peer of Sea."
+        }
+      ]
     },
     {
       "name": "Uyii",
@@ -2455,7 +3020,19 @@
         "relevance_score": "B"
       },
       "relevant": false,
-      "rationale": "UYII appears to be a retail operator, not an e-commerce marketplace or consumer internet platform serving the same users and job."
+      "rationale": "UYII appears to be a retail company, not an e-commerce marketplace, digital-entertainment platform, or digital-financial-services operator comparable to Sea.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "UYII appears to be a retail company, not an e-commerce marketplace, digital-entertainment platform, or digital-financial-services operator comparable to Sea."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Small Singapore retail company, not a consumer internet platform operating e-commerce marketplaces like Shopee; no product or model resemblance."
+        }
+      ]
     },
     {
       "name": "Netease",
@@ -2508,7 +3085,19 @@
         "relevance_score": "B"
       },
       "relevant": true,
-      "rationale": "NetEase\u2019s primary online gaming business overlaps Sea\u2019s Garena digital-entertainment offering, targeting the same consumer gaming audience and use case."
+      "rationale": "NetEase is a major consumer internet company with a large online gaming business, comparable to Sea's Garena digital-entertainment segment.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "NetEase is a major consumer internet company with a large online gaming business, comparable to Sea's Garena digital-entertainment segment."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are Asian consumer-internet conglomerates anchored in online gaming/digital entertainment with adjacent e-commerce and consumer services\u2014strong product and model overlap."
+        }
+      ]
     },
     {
       "name": "Radiiant Technologies",
@@ -2544,7 +3133,19 @@
         "relevance_score": "B"
       },
       "relevant": false,
-      "rationale": "Radiiant is a web development and digital marketing services agency, not a consumer e-commerce marketplace or digital entertainment/financial services platform."
+      "rationale": "Web-development and digital-marketing agency serving businesses, not a consumer e-commerce marketplace, entertainment, or fintech platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Web-development and digital-marketing agency serving businesses, not a consumer e-commerce marketplace, entertainment, or fintech platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Web design/development and digital marketing agency serving clients, not a consumer internet platform or e-commerce marketplace like Sea/Shopee."
+        }
+      ]
     },
     {
       "name": "NetX Holdings Berhad",
@@ -2603,7 +3204,19 @@
         "relevance_score": "B"
       },
       "relevant": false,
-      "rationale": "NetX is an IT consulting and solutions provider, not a consumer e-commerce, digital entertainment, or financial-services platform like Sea."
+      "rationale": "IT consulting, security, and software solutions provider, not a consumer e-commerce marketplace, digital entertainment, or fintech platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "IT consulting, security, and software solutions provider, not a consumer e-commerce marketplace, digital entertainment, or fintech platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "IT services and consulting firm, not a consumer internet platform with e-commerce, entertainment, or fintech products like Sea/Shopee."
+        }
+      ]
     },
     {
       "name": "PT Kreatif Media Karya",
@@ -2648,7 +3261,19 @@
         "relevance_score": "B"
       },
       "relevant": false,
-      "rationale": "KMK primarily operates digital media and video-streaming properties; its e-commerce exposure is through investments, not a Shopee-like marketplace offering."
+      "rationale": "Primarily a digital media and streaming subsidiary; its investments in e-commerce do not make it a direct Shopee-like marketplace or fintech comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Primarily a digital media and streaming subsidiary; its investments in e-commerce do not make it a direct Shopee-like marketplace or fintech comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "KMK is EMTEK's digital-media arm (news portals, Vidio streaming), not an e-commerce/fintech consumer-internet operator like Sea; content media is a different core business."
+        }
+      ]
     },
     {
       "name": "Ahmed Fahad",
@@ -2683,7 +3308,19 @@
         "relevance_score": "B"
       },
       "relevant": false,
-      "rationale": "Candidate is an individual\u2019s personal website, not a consumer internet platform offering e-commerce, entertainment, or digital financial services."
+      "rationale": "Personal website for a Pathao executive, not a consumer internet platform comparable to Sea\u2019s e-commerce, entertainment, or financial-services businesses.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Personal website for a Pathao executive, not a consumer internet platform comparable to Sea\u2019s e-commerce, entertainment, or financial-services businesses."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Personal blog of an individual executive, not a consumer internet/e-commerce company; no product, market, or model resemblance to Sea/Shopee."
+        }
+      ]
     },
     {
       "name": "Smartcomm World Pte",
@@ -2722,7 +3359,19 @@
         "relevance_score": "B"
       },
       "relevant": false,
-      "rationale": "SmartComm\u2019s local-government community platform does not overlap Shopee\u2019s consumer e-commerce marketplace, gaming, or digital financial services offerings and buyers."
+      "rationale": "Community platform for local governments, not a consumer e-commerce marketplace, digital entertainment, or financial-services operator.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Community platform for local governments, not a consumer e-commerce marketplace, digital entertainment, or financial-services operator."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Smartcomm builds a government/community information platform, not consumer e-commerce, gaming, or fintech; no shared product or market with Sea."
+        }
+      ]
     },
     {
       "name": "MVI Ventures",
@@ -2771,7 +3420,19 @@
         "relevance_score": "B"
       },
       "relevant": false,
-      "rationale": "MVI is a vaguely described holding company; no core e-commerce marketplace, gaming platform, or digital-finance product clearly overlaps Sea\u2019s offerings."
+      "rationale": "Holding company offers digital services to overlapping users, but lacks evidence of a Shopee-like e-commerce marketplace or comparable consumer internet platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Holding company offers digital services to overlapping users, but lacks evidence of a Shopee-like e-commerce marketplace or comparable consumer internet platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Small holding company with vague fintech/freelancer products; no actual e-commerce marketplace, gaming, or consumer-internet platform comparable to Sea's businesses."
+        }
+      ]
     },
     {
       "name": "Giga Byte Dash",
@@ -2803,7 +3464,19 @@
         "relevance_score": "B"
       },
       "relevant": false,
-      "rationale": "Giga Byte Dash is an IT development and integration services provider, not a consumer e-commerce marketplace, gaming operator, or digital-finance platform."
+      "rationale": "IT consultancy and software developer serving clients; it does not operate a consumer e-commerce marketplace, digital entertainment, or financial-services platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "IT consultancy and software developer serving clients; it does not operate a consumer e-commerce marketplace, digital entertainment, or financial-services platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "B2B IT services/consultancy building platforms for clients, not a consumer internet company operating its own e-commerce, gaming, or fintech products."
+        }
+      ]
     },
     {
       "name": "C\u00f4ng ty C\u1ed5 ph\u1ea7n Garena Vi\u1ec7t Nam",
@@ -2867,7 +3540,19 @@
         "relevance_score": "B"
       },
       "relevant": false,
-      "rationale": "Garena Vietnam is Sea\u2019s own gaming subsidiary/business unit, not an independent lookalike competing for the same e-commerce buyer or job."
+      "rationale": "Garena is Sea\u2019s digital-entertainment gaming business in Vietnam, making it an affiliated operating entity rather than an independent lookalike.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Garena is Sea\u2019s digital-entertainment gaming business in Vietnam, making it an affiliated operating entity rather than an independent lookalike."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Garena Vietnam is Sea's own digital-entertainment subsidiary (Garena is part of Sea Group); a seed's own regional arm is a duplicate, not a lookalike."
+        }
+      ]
     },
     {
       "name": "Syntiga",
@@ -2927,7 +3612,19 @@
         "relevance_score": "B"
       },
       "relevant": false,
-      "rationale": "Syntiga manufactures and sells consumer-device accessories; it does not operate an e-commerce marketplace, digital entertainment platform, or financial-services platform."
+      "rationale": "Syntiga manufactures and distributes consumer-tech accessories, not an e-commerce marketplace, digital entertainment platform, or financial-services provider.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Syntiga manufactures and distributes consumer-tech accessories, not an e-commerce marketplace, digital entertainment platform, or financial-services provider."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Syntiga is a smartphone-accessories manufacturer/brand, not an e-commerce marketplace or consumer-internet platform like Sea/Shopee."
+        }
+      ]
     },
     {
       "name": "Adecore Global",
@@ -2969,7 +3666,19 @@
         "relevance_score": "B"
       },
       "relevant": false,
-      "rationale": "Adecore provides transit payment and mobility infrastructure, not a consumer e-commerce marketplace, gaming platform, or broadly comparable digital financial ecosystem."
+      "rationale": "Transit mobility payment and managed-services provider, not a consumer e-commerce, entertainment, and financial-services platform comparable to Sea.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Transit mobility payment and managed-services provider, not a consumer e-commerce, entertainment, and financial-services platform comparable to Sea."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "B2B transit fare-collection and mobility infrastructure fintech, not consumer e-commerce, entertainment, or consumer financial services like Sea."
+        }
+      ]
     },
     {
       "name": "Banking Circle Group",
@@ -3024,7 +3733,19 @@
         "relevance_score": "B"
       },
       "relevant": false,
-      "rationale": "Banking Circle provides B2B payments infrastructure, while Sea primarily operates consumer e-commerce, gaming, and financial-service platforms; buyers and core offerings differ."
+      "rationale": "Banking Circle is B2B payments infrastructure serving marketplaces and merchants, whereas Sea primarily operates consumer e-commerce, entertainment, and financial-service platforms.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Banking Circle is B2B payments infrastructure serving marketplaces and merchants, whereas Sea primarily operates consumer e-commerce, entertainment, and financial-service platforms."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "B2B cross-border payments infrastructure serving banks and marketplaces; a supplier to commerce platforms, not a consumer internet/e-commerce peer like Sea."
+        }
+      ]
     },
     {
       "name": "Open2study",
@@ -3084,7 +3805,19 @@
         "relevance_score": "B"
       },
       "relevant": false,
-      "rationale": "Open2study is an online education provider, not an e-commerce marketplace, digital entertainment platform, or digital financial services company."
+      "rationale": "Online education provider; it does not operate e-commerce marketplaces, digital entertainment, or consumer financial services like Sea.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Online education provider; it does not operate e-commerce marketplaces, digital entertainment, or consumer financial services like Sea."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Online education provider in Papua New Guinea; no resemblance to Sea's e-commerce, gaming, or fintech consumer internet businesses."
+        }
+      ]
     },
     {
       "name": "Yachii",
@@ -3120,7 +3853,19 @@
         "relevance_score": "B"
       },
       "relevant": false,
-      "rationale": "Yachii\u2019s primary offering is a broad social and gig-worker platform, not a clearly comparable e-commerce marketplace or digital-services ecosystem."
+      "rationale": "Yachii\u2019s social media and gig-worker hub are not a broad e-commerce marketplace, digital entertainment, or fintech platform comparable to Sea/Shopee.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Yachii\u2019s social media and gig-worker hub are not a broad e-commerce marketplace, digital entertainment, or fintech platform comparable to Sea/Shopee."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Vague sector-agnostic social media/gig-worker startup, not an e-commerce, gaming, or fintech peer of Sea; weak 'virtual shopping' claim insufficient."
+        }
+      ]
     },
     {
       "name": "Crave Asia",
@@ -3155,7 +3900,19 @@
         "relevance_score": "B"
       },
       "relevant": false,
-      "rationale": "Crave Asia appears to be a digital marketing and web-development agency, not an e-commerce marketplace, digital entertainment, or fintech platform."
+      "rationale": "Digital marketing and web-development agency, not a consumer e-commerce marketplace, digital entertainment, or financial-services platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Digital marketing and web-development agency, not a consumer e-commerce marketplace, digital entertainment, or financial-services platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Digital agency/web development firm serving brands, not a consumer internet or e-commerce platform; agency rather than competitor to Sea/Shopee."
+        }
+      ]
     },
     {
       "name": "Fitech jsc",
@@ -3202,7 +3959,19 @@
         "relevance_score": "B"
       },
       "relevant": false,
-      "rationale": "Fitech provides banking technology implementation and consulting, not a consumer e-commerce, entertainment, or digital financial-services platform like Sea."
+      "rationale": "Banking technology consultancy and implementation partner, not a consumer e-commerce marketplace, digital entertainment platform, or consumer financial-services operator.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Banking technology consultancy and implementation partner, not a consumer e-commerce marketplace, digital entertainment platform, or consumer financial-services operator."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Fitech is a B2B IT services/consulting firm selling banking technology solutions, not a consumer internet/e-commerce company like Sea."
+        }
+      ]
     },
     {
       "name": "Hymedia",
@@ -3241,7 +4010,19 @@
         "relevance_score": "B"
       },
       "relevant": false,
-      "rationale": "Hymedia is a web design and digital marketing agency, not an e-commerce marketplace, gaming platform, or digital financial services operator."
+      "rationale": "Web design and digital marketing agency serving businesses, not an e-commerce marketplace, digital entertainment, or financial-services platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Web design and digital marketing agency serving businesses, not an e-commerce marketplace, digital entertainment, or financial-services platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Hymedia is a web design/SEO agency, not a consumer internet, e-commerce, or fintech platform; no product or market resemblance to Sea."
+        }
+      ]
     },
     {
       "name": "Hashmeta",
@@ -3318,7 +4099,19 @@
         "relevance_score": "B"
       },
       "relevant": false,
-      "rationale": "Hashmeta is primarily a digital marketing agency, not a consumer e-commerce, gaming, or digital financial-services platform comparable to Sea."
+      "rationale": "Hashmeta is primarily a digital marketing agency, serving brands rather than operating a large consumer e-commerce, entertainment, and fintech platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Hashmeta is primarily a digital marketing agency, serving brands rather than operating a large consumer e-commerce, entertainment, and fintech platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Hashmeta is a digital marketing agency serving brands; it doesn't operate e-commerce, gaming, or fintech platforms like Sea\u2014it's a service provider, not a comparable."
+        }
+      ]
     },
     {
       "name": "DigiAI",
@@ -3358,7 +4151,19 @@
         "relevance_score": "B"
       },
       "relevant": false,
-      "rationale": "DigiAI appears to provide IT consulting or digital marketing services, not a consumer e-commerce marketplace, gaming platform, or digital financial service."
+      "rationale": "DigiAI appears to be an IT/digital marketing services firm, not a consumer e-commerce marketplace, digital entertainment, or financial-services platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "DigiAI appears to be an IT/digital marketing services firm, not a consumer e-commerce marketplace, digital entertainment, or financial-services platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "DigiAI is a digital marketing/IT services agency, not an e-commerce or consumer internet platform; serves the category rather than competing with Shopee."
+        }
+      ]
     },
     {
       "name": "DeltaConsult",
@@ -3392,7 +4197,19 @@
         "relevance_score": "B"
       },
       "relevant": false,
-      "rationale": "DeltaConsult is a fintech consulting and advisory firm, not a consumer e-commerce, digital entertainment, or financial-services platform like Sea."
+      "rationale": "Fintech consultancy serving clients, not a consumer e-commerce, entertainment, or digital-financial-services platform comparable to Sea.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Fintech consultancy serving clients, not a consumer e-commerce, entertainment, or digital-financial-services platform comparable to Sea."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "FinTech consultancy advising clients, not a consumer internet/e-commerce/fintech platform operator; serves the category rather than competing."
+        }
+      ]
     },
     {
       "name": "Orange Founders",
@@ -3427,7 +4244,19 @@
         "relevance_score": "B"
       },
       "relevant": false,
-      "rationale": "Orange Founders is a B2B startup studio offering business software, not a consumer e-commerce, entertainment, or digital-financial-services platform like Sea."
+      "rationale": "Startup builder offering B2B timesheet, integrations, OKR, and onboarding tools; not a consumer e-commerce, entertainment, or fintech platform comparable to Sea.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Startup builder offering B2B timesheet, integrations, OKR, and onboarding tools; not a consumer e-commerce, entertainment, or fintech platform comparable to Sea."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Brazilian B2B startup studio building SaaS tools (timesheet, integrations, OKR); no consumer e-commerce, gaming, or fintech marketplace resemblance to Sea."
+        }
+      ]
     },
     {
       "name": "Incoding",
@@ -3474,7 +4303,19 @@
         "relevance_score": "B"
       },
       "relevant": false,
-      "rationale": "Incoding is a client-services software agency, not a consumer e-commerce, digital entertainment, or financial-services platform like Sea."
+      "rationale": "Incoding is a custom software/web development agency serving clients, not an e-commerce, digital entertainment, or fintech platform operator.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Incoding is a custom software/web development agency serving clients, not an e-commerce, digital entertainment, or fintech platform operator."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Software development agency, not a consumer internet/e-commerce platform; services firm, not a competitor or comparable to Sea."
+        }
+      ]
     },
     {
       "name": "Fusionova Technologies Pte",
@@ -3512,7 +4353,19 @@
         "relevance_score": "B"
       },
       "relevant": false,
-      "rationale": "Fusionova sells warehouse, retail, and logistics software/consulting, not a consumer e-commerce marketplace, digital entertainment, or financial-services platform like Sea."
+      "rationale": "IT consultancy and warehouse/retail management software vendor, not a consumer e-commerce marketplace, digital-entertainment, or financial-services platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "IT consultancy and warehouse/retail management software vendor, not a consumer e-commerce marketplace, digital-entertainment, or financial-services platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "IT consultancy selling warehouse/retail management software; not a consumer internet or e-commerce marketplace peer of Sea/Shopee."
+        }
+      ]
     },
     {
       "name": "Softwareology",
@@ -3550,7 +4403,19 @@
         "relevance_score": "B"
       },
       "relevant": false,
-      "rationale": "Softwareology is a general software development/IT consulting firm, not a consumer e-commerce, digital entertainment, or financial-services platform like Sea."
+      "rationale": "Software development consultancy, not a consumer e-commerce marketplace, digital entertainment, or financial-services platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Software development consultancy, not a consumer e-commerce marketplace, digital entertainment, or financial-services platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "IT services/software development consultancy, not a consumer internet or e-commerce platform; no product, market, or model overlap with Sea/Shopee."
+        }
+      ]
     },
     {
       "name": "Yun yu hui",
@@ -3580,7 +4445,19 @@
         "relevance_score": "B"
       },
       "relevant": false,
-      "rationale": "No evidence Yun yu hui operates an e-commerce marketplace, digital entertainment, or financial-services platform serving comparable consumers or merchants."
+      "rationale": "Insufficient evidence that Yun yu hui operates an e-commerce marketplace, digital-financial-services platform, or consumer internet ecosystem comparable to Sea.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Insufficient evidence that Yun yu hui operates an e-commerce marketplace, digital-financial-services platform, or consumer internet ecosystem comparable to Sea."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Tiny Chinese IT/software firm with no e-commerce marketplace, digital entertainment, or fintech product resembling Sea's consumer internet businesses."
+        }
+      ]
     },
     {
       "name": "Gtitechnologies",
@@ -3615,7 +4492,19 @@
         "relevance_score": "B"
       },
       "relevant": false,
-      "rationale": "Gtitechnologies is a generic IT/software consultancy, not an e-commerce, digital entertainment, or consumer financial-services platform comparable to Sea."
+      "rationale": "IT/software consulting firm with no evidence of operating an e-commerce marketplace, digital entertainment, or financial-services platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "IT/software consulting firm with no evidence of operating an e-commerce marketplace, digital entertainment, or financial-services platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Small IT consulting/software firm, not a consumer internet, e-commerce, or digital financial services company; no shared product or market."
+        }
+      ]
     },
     {
       "name": "Dcs",
@@ -3666,7 +4555,19 @@
         "relevance_score": "B"
       },
       "relevant": false,
-      "rationale": "DCS is primarily a payments infrastructure and card-services firm, not a consumer e-commerce platform like Shopee; financial-services overlap alone is insufficient."
+      "rationale": "DCS provides payments infrastructure, not Sea\u2019s core e-commerce marketplace or consumer internet platform; its fintech offering is too narrow and infrastructure-oriented.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "DCS provides payments infrastructure, not Sea\u2019s core e-commerce marketplace or consumer internet platform; its fintech offering is too narrow and infrastructure-oriented."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "DCS is B2B payments/card infrastructure with Web3 focus; only weak overlap with Sea's consumer fintech arm, none with core e-commerce/entertainment business."
+        }
+      ]
     },
     {
       "name": "Axon Sovereign",
@@ -3692,7 +4593,19 @@
         "relevance_score": "B"
       },
       "relevant": false,
-      "rationale": "Axon Sovereign is an internet consultancy, not an e-commerce marketplace, digital entertainment operator, or digital financial services platform."
+      "rationale": "Internet consultancy, not a consumer e-commerce marketplace, digital entertainment, or financial-services platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Internet consultancy, not a consumer e-commerce marketplace, digital entertainment, or financial-services platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Tiny internet consultancy, not a consumer internet platform; no e-commerce, entertainment, or fintech product resembling Sea/Shopee."
+        }
+      ]
     },
     {
       "name": "WhooshPro - Web Design and Software Development",
@@ -3770,7 +4683,19 @@
         "relevance_score": "B"
       },
       "relevant": false,
-      "rationale": "WhooshPro is a web development and digital agency, not a consumer e-commerce marketplace, gaming operator, or digital financial services platform."
+      "rationale": "Web design and development agency serving clients; it does not operate a consumer e-commerce, digital entertainment, or financial-services platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Web design and development agency serving clients; it does not operate a consumer e-commerce, digital entertainment, or financial-services platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Web design/development agency serving clients, not a consumer internet/e-commerce platform; agency in the category, not a competitor to Sea."
+        }
+      ]
     },
     {
       "name": "Galaxy FinX",
@@ -3826,7 +4751,19 @@
         "relevance_score": "B"
       },
       "relevant": true,
-      "rationale": "Galaxy FinX\u2019s digital banking product overlaps Sea\u2019s core digital financial services, serving Southeast Asian consumers with similar banking and payment needs."
+      "rationale": "Vietnamese digital bank serving consumer financial needs in Southeast Asia, comparable to Sea\u2019s digital-financial-services business.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Vietnamese digital bank serving consumer financial needs in Southeast Asia, comparable to Sea\u2019s digital-financial-services business."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Southeast Asian digital bank; strong match to Sea's digital financial services arm (SeaMoney) in the same regional consumer-fintech market."
+        }
+      ]
     },
     {
       "name": "SIMEXA International Pte",
@@ -3890,7 +4827,19 @@
         "relevance_score": "B"
       },
       "relevant": false,
-      "rationale": "SIMEXA is an export and international trade partner, not a consumer e-commerce marketplace, digital entertainment, or financial services platform."
+      "rationale": "Export-development partner for suppliers, not a consumer e-commerce marketplace, digital entertainment, or fintech platform comparable to Sea.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Export-development partner for suppliers, not a consumer e-commerce marketplace, digital entertainment, or fintech platform comparable to Sea."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Export/trade services firm for APAC exporters, not a consumer e-commerce, digital entertainment, or fintech platform like Sea."
+        }
+      ]
     },
     {
       "name": "Think Tech Consultancy SMC-PVT",
@@ -3953,7 +4902,19 @@
         "relevance_score": "B"
       },
       "relevant": false,
-      "rationale": "Think Tech is a payment-integration, web development, and marketing consultancy, not a consumer e-commerce, entertainment, and fintech platform operator like Sea."
+      "rationale": "A web/digital-marketing consultancy facilitating payment integrations, not a consumer e-commerce marketplace, digital-entertainment, or financial-services platform operator.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "A web/digital-marketing consultancy facilitating payment integrations, not a consumer e-commerce marketplace, digital-entertainment, or financial-services platform operator."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Small consultancy/agency selling payment-gateway approvals, web development, and marketing services; serves the category rather than operating e-commerce/fintech platforms like Sea."
+        }
+      ]
     },
     {
       "name": "Silkway Ventures",
@@ -3993,7 +4954,19 @@
         "relevance_score": "B"
       },
       "relevant": false,
-      "rationale": "Silkway Ventures is a technology investment/group entity, not a consumer e-commerce, digital entertainment, or digital financial-services platform like Sea."
+      "rationale": "Generic tech group with finance and internet interests; no evidence of operating a comparable e-commerce marketplace, entertainment, or digital-financial-services platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Generic tech group with finance and internet interests; no evidence of operating a comparable e-commerce marketplace, entertainment, or digital-financial-services platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Vague holding/venture group of tech companies with no identifiable e-commerce, gaming, or consumer fintech products comparable to Sea's operating businesses."
+        }
+      ]
     },
     {
       "name": "Exvas",
@@ -4063,7 +5036,19 @@
         "relevance_score": "B"
       },
       "relevant": false,
-      "rationale": "Exvas is a custom software and digital-solutions provider, not a consumer e-commerce marketplace, gaming publisher, or digital financial-services platform like Sea."
+      "rationale": "Exvas is a software development agency offering white-label gaming and custom IT solutions, not a consumer internet platform operating e-commerce, fintech, and entertainment services.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Exvas is a software development agency offering white-label gaming and custom IT solutions, not a consumer internet platform operating e-commerce, fintech, and entertainment services."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Exvas is a software development agency serving clients, not a consumer internet platform operating e-commerce like Sea/Shopee."
+        }
+      ]
     },
     {
       "name": "Eron",
@@ -4117,7 +5102,19 @@
         "relevance_score": "B"
       },
       "relevant": false,
-      "rationale": "Eron provides B2B payment orchestration, not Sea\u2019s core consumer e-commerce marketplace, gaming, or digital financial-services model."
+      "rationale": "Eron provides payment orchestration infrastructure, not a consumer e-commerce marketplace, gaming platform, or broad digital-financial-services ecosystem like Sea.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Eron provides payment orchestration infrastructure, not a consumer e-commerce marketplace, gaming platform, or broad digital-financial-services ecosystem like Sea."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Eron is a B2B payment-orchestration infrastructure provider; Sea is a consumer e-commerce, gaming, and fintech ecosystem. Supplier-type infrastructure, not a competitor or comparable."
+        }
+      ]
     },
     {
       "name": "ATX Group Malaysia",
@@ -4173,7 +5170,19 @@
         "relevance_score": "B"
       },
       "relevant": false,
-      "rationale": "ATX provides B2B transaction-platform integration and advisory services, not a consumer e-commerce marketplace, gaming platform, or digital-finance ecosystem like Sea."
+      "rationale": "ATX is a B2B transaction-integration and advisory provider for retailers and operators, not a consumer e-commerce marketplace or digital-services platform like Sea.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "ATX is a B2B transaction-integration and advisory provider for retailers and operators, not a consumer e-commerce marketplace or digital-services platform like Sea."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "B2B IT/telecom integration and advisory firm serving telcos and money-service operators; not a consumer internet, e-commerce, or digital entertainment peer of Sea."
+        }
+      ]
     },
     {
       "name": "Manjalabs",
@@ -4226,7 +5235,19 @@
         "relevance_score": "B"
       },
       "relevant": false,
-      "rationale": "Manjalabs has no identified e-commerce marketplace, digital entertainment, or financial-services offering overlapping Sea\u2019s core consumer platforms."
+      "rationale": "Insufficient evidence that Manjalabs operates an e-commerce marketplace, digital entertainment, or financial-services platform comparable to Sea.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Insufficient evidence that Manjalabs operates an e-commerce marketplace, digital entertainment, or financial-services platform comparable to Sea."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Tiny Malaysian firm with no described product; WordPress/WooCommerce tech stack alone doesn't make it comparable to Sea's consumer internet platforms."
+        }
+      ]
     },
     {
       "name": "Sssmine Private",
@@ -4269,7 +5290,19 @@
         "relevance_score": "B"
       },
       "relevant": false,
-      "rationale": "Sssmine is a web design and technology consultancy, not an e-commerce marketplace, digital entertainment platform, or digital financial services provider."
+      "rationale": "IT consulting, web design, and app-development agency; it does not operate a consumer e-commerce, entertainment, or fintech platform comparable to Sea.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "IT consulting, web design, and app-development agency; it does not operate a consumer e-commerce, entertainment, or fintech platform comparable to Sea."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "IT services/web design consultancy serving clients, not a consumer internet/e-commerce platform like Sea; agency, not peer."
+        }
+      ]
     },
     {
       "name": "Goodman Tech Systems",
@@ -4341,7 +5374,19 @@
         "relevance_score": "B"
       },
       "relevant": false,
-      "rationale": "Goodman Tech Systems is a general IT services provider, not a consumer e-commerce, digital entertainment, or financial-services platform like Sea."
+      "rationale": "Generic IT and web-development services provider, not a consumer e-commerce marketplace, digital entertainment platform, or digital financial-services operator.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Generic IT and web-development services provider, not a consumer e-commerce marketplace, digital entertainment platform, or digital financial-services operator."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "IT services/web-dev agency in Uganda, not a consumer internet, e-commerce, or digital financial services company like Sea/Shopee."
+        }
+      ]
     },
     {
       "name": "Verysell Group",
@@ -4411,7 +5456,19 @@
         "relevance_score": "B"
       },
       "relevant": false,
-      "rationale": "Verysell is primarily a software development and consulting group, not a consumer e-commerce marketplace comparable to Shopee."
+      "rationale": "Primarily a software outsourcing and consulting group; its niche payments and game products do not resemble Sea's consumer internet platform ecosystem.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Primarily a software outsourcing and consulting group; its niche payments and game products do not resemble Sea's consumer internet platform ecosystem."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Software development/outsourcing consultancy serving enterprises, not a consumer internet platform; services firm rather than peer to Shopee/Sea."
+        }
+      ]
     },
     {
       "name": "Eight Infinity Communications",
@@ -4467,7 +5524,19 @@
         "relevance_score": "B"
       },
       "relevant": false,
-      "rationale": "Eight Infinity is a digital marketing/IT services firm, not an e-commerce marketplace, digital entertainment platform, or financial-services operator like Sea."
+      "rationale": "Digital marketing, design, and IT services firm; it does not operate a consumer e-commerce marketplace, entertainment platform, or financial-services ecosystem.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Digital marketing, design, and IT services firm; it does not operate a consumer e-commerce marketplace, entertainment platform, or financial-services ecosystem."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Small Philippine IT services/digital marketing agency, not a consumer internet platform with e-commerce, entertainment, or fintech like Sea."
+        }
+      ]
     },
     {
       "name": "Cloud Technology",
@@ -4515,7 +5584,19 @@
         "relevance_score": "B"
       },
       "relevant": false,
-      "rationale": "Cloud Technology is an ICT/cloud consultancy, not a consumer e-commerce, digital entertainment, or digital financial-services platform like Sea."
+      "rationale": "Qatari ICT consultancy and cloud-services partner, not a consumer e-commerce, digital entertainment, or fintech platform comparable to Sea.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Qatari ICT consultancy and cloud-services partner, not a consumer e-commerce, digital entertainment, or fintech platform comparable to Sea."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "IT services/consulting firm in Qatar reselling Whale Cloud; not a consumer internet, e-commerce, or digital financial services company like Sea."
+        }
+      ]
     },
     {
       "name": "Gmetech",
@@ -4551,7 +5632,19 @@
         "relevance_score": "B"
       },
       "relevant": false,
-      "rationale": "Gmetech primarily provides point-of-sale software, not a consumer e-commerce marketplace, digital entertainment platform, or digital financial service like Sea."
+      "rationale": "Gmetech appears to be a point-of-sale software provider, not a consumer e-commerce marketplace, digital entertainment, or financial-services platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Gmetech appears to be a point-of-sale software provider, not a consumer e-commerce marketplace, digital entertainment, or financial-services platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Gmetech is a small Malaysian POS/IT software vendor, a merchant supplier \u2014 not a consumer internet, e-commerce marketplace, or fintech peer of Sea/Shopee."
+        }
+      ]
     },
     {
       "name": "Jatis Group",
@@ -4586,7 +5679,19 @@
         "relevance_score": "B"
       },
       "relevant": false,
-      "rationale": "Jatis is an enterprise IT consulting and application-services provider, not a consumer e-commerce, gaming, or digital-financial-services platform like Sea."
+      "rationale": "IT consulting and enterprise application provider, not a consumer e-commerce marketplace, digital entertainment, or consumer financial-services platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "IT consulting and enterprise application provider, not a consumer e-commerce marketplace, digital entertainment, or consumer financial-services platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Jatis is an IT consulting/services firm, not a consumer internet platform operating e-commerce, gaming, or fintech like Sea."
+        }
+      ]
     },
     {
       "name": "GSTechnologies LON:GST",
@@ -4644,7 +5749,19 @@
         "relevance_score": "B"
       },
       "relevant": false,
-      "rationale": "GSTechnologies focuses on blockchain payments and ICT services, not a consumer e-commerce marketplace comparable to Shopee."
+      "rationale": "Blockchain payments and ICT services do not resemble Shopee's consumer e-commerce marketplace, digital entertainment, and integrated consumer-finance platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Blockchain payments and ICT services do not resemble Shopee's consumer e-commerce marketplace, digital entertainment, and integrated consumer-finance platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Small blockchain-payments/ICT services firm; no e-commerce marketplace or consumer-internet platform comparable to Sea's Shopee/Garena model."
+        }
+      ]
     },
     {
       "name": "Garena",
@@ -4717,7 +5834,19 @@
         "relevance_score": "B"
       },
       "relevant": false,
-      "rationale": "Garena is Sea Limited\u2019s own digital-entertainment subsidiary, making it a parent-child/duplicate corporate entry rather than an independent lookalike."
+      "rationale": "Garena is Sea Limited\u2019s own digital-entertainment subsidiary, not an independent competitor, comparable, or ICP-expansion lookalike.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Garena is Sea Limited\u2019s own digital-entertainment subsidiary, not an independent competitor, comparable, or ICP-expansion lookalike."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Garena is Sea Limited's own digital entertainment subsidiary, not a competitor or comparable; subsidiaries are excluded like parent companies."
+        }
+      ]
     },
     {
       "name": "E-Management",
@@ -4774,7 +5903,19 @@
         "relevance_score": "B"
       },
       "relevant": false,
-      "rationale": "E-Management provides corporate, licensing, and fiduciary services to gaming companies, not consumer e-commerce, entertainment, or digital financial platforms."
+      "rationale": "Corporate-services consultancy for online gaming operators, not an e-commerce marketplace, digital-entertainment platform, or consumer financial-services provider.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Corporate-services consultancy for online gaming operators, not an e-commerce marketplace, digital-entertainment platform, or consumer financial-services provider."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Corporate/fiduciary services consultancy for gaming companies, not a consumer internet, e-commerce, or digital entertainment company like Sea."
+        }
+      ]
     },
     {
       "name": "Valantech",
@@ -4813,7 +5954,19 @@
         "relevance_score": "B"
       },
       "relevant": false,
-      "rationale": "Valantech is a custom software and IT consultancy, not a consumer e-commerce, digital entertainment, or financial-services platform like Sea."
+      "rationale": "Valantech is a custom web/mobile development and IT consulting agency, not a consumer e-commerce, digital entertainment, or financial-services platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Valantech is a custom web/mobile development and IT consulting agency, not a consumer e-commerce, digital entertainment, or financial-services platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Valantech is a small IT-services/web-development consultancy, not a consumer internet, e-commerce, or digital entertainment platform like Sea/Shopee."
+        }
+      ]
     },
     {
       "name": "Infibeam",
@@ -4869,7 +6022,19 @@
         "relevance_score": "B"
       },
       "relevant": false,
-      "rationale": "Infibeam sells payment and e-commerce infrastructure to organizations, while Shopee primarily operates a consumer marketplace; buyers and core business models differ."
+      "rationale": "Infibeam provides B2B payment processing and e-commerce technology, whereas Sea primarily operates consumer marketplaces, entertainment, and financial-services platforms.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Infibeam provides B2B payment processing and e-commerce technology, whereas Sea primarily operates consumer marketplaces, entertainment, and financial-services platforms."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "B2B payments processor and e-commerce software vendor enabling merchants/governments, not a consumer marketplace or consumer internet platform like Shopee/Sea."
+        }
+      ]
     },
     {
       "name": "Section",
@@ -4915,7 +6080,19 @@
         "relevance_score": "B"
       },
       "relevant": false,
-      "rationale": "Section is a digital transformation agency serving clients, not a consumer e-commerce, entertainment, or financial-services platform like Sea."
+      "rationale": "Section is a digital transformation agency, not a consumer internet operator running e-commerce, entertainment, or financial-services platforms.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Section is a digital transformation agency, not a consumer internet operator running e-commerce, entertainment, or financial-services platforms."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Digital-transformation agency serving clients, not a consumer internet/e-commerce operator; consultancy in the category, not a peer."
+        }
+      ]
     },
     {
       "name": "UnaFinancial",
@@ -4957,8 +6134,20 @@
         ],
         "relevance_score": "B"
       },
-      "relevant": true,
-      "rationale": "UnaFinancial\u2019s digital consumer lending overlaps SeaMoney\u2019s credit services, targeting consumers seeking fast app-based financing in Asian markets."
+      "relevant": false,
+      "rationale": "UnaFinancial is a consumer digital-lending provider, not an e-commerce marketplace or diversified consumer-internet platform like Sea/Shopee.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "UnaFinancial is a consumer digital-lending provider, not an e-commerce marketplace or diversified consumer-internet platform like Sea/Shopee."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Pure-play consumer digital lender; overlaps only Sea's secondary SeaMoney arm, with no e-commerce marketplace or entertainment core\u2014weak single-axis resemblance at best."
+        }
+      ]
     },
     {
       "name": "commerce.asia",
@@ -5005,7 +6194,19 @@
         "relevance_score": "B"
       },
       "relevant": false,
-      "rationale": "Commerce.Asia provides merchant e-commerce infrastructure and services, while Shopee primarily operates a consumer marketplace; their core models and buying use cases differ."
+      "rationale": "Commerce.Asia provides SME merchant software, fulfillment, and marketplace-management tools, rather than operating a consumer e-commerce marketplace like Shopee.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Commerce.Asia provides SME merchant software, fulfillment, and marketplace-management tools, rather than operating a consumer e-commerce marketplace like Shopee."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "E-commerce enabler/managed-services firm supplying tools to SEA merchants, not a consumer marketplace competitor like Shopee."
+        }
+      ]
     },
     {
       "name": "Quantaplex Solutions Pte",
@@ -5045,10 +6246,20 @@
         "relevance_score": "B"
       },
       "relevant": false,
-      "rationale": "Quantaplex is an IT product-development and consulting firm, not a consumer e-commerce, digital entertainment, or financial-services platform like Sea."
+      "rationale": "IT product-development and consulting firm; it does not operate a consumer e-commerce, digital entertainment, or financial-services platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "IT product-development and consulting firm; it does not operate a consumer e-commerce, digital entertainment, or financial-services platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "IT services/consulting firm building blockchain and IoT products for clients, not a consumer internet, e-commerce, or digital services platform like Sea."
+        }
+      ]
     }
   ],
-  "error": null,
-  "relevant_count_at_25": 3,
-  "precision_at_25": 12.0
+  "error": null
 }

@@ -7,20 +7,20 @@
     "name": "domain_similarity"
   },
   "k": 100,
-  "relevant_count": 45,
-  "precision_at_k": 45.0,
-  "relevant_count_at_10": 3,
-  "relevant_count_at_25": 9,
-  "relevant_count_at_100": 45,
-  "precision_at_10": 30.0,
-  "precision_at_25": 36.0,
-  "precision_at_100": 45.0,
+  "relevant_count": 62,
+  "precision_at_k": 62.0,
+  "relevant_count_at_10": 8,
+  "relevant_count_at_25": 17,
+  "relevant_count_at_100": 62,
+  "precision_at_10": 80.0,
+  "precision_at_25": 68.0,
+  "precision_at_100": 62.0,
   "latency_ms": 2649,
   "cost_usd": null,
   "duplicates_removed": 1,
   "max_results": null,
-  "judge_model": "gpt-5.6",
-  "judged_at": "2026-07-27T06:49:27Z",
+  "judge_model": "majority(n=3): claude-opus-5,gpt-5.6-terra,kimi-k3",
+  "judged_at": "2026-08-10T19:56:20Z",
   "candidates": [
     {
       "name": "Mural",
@@ -37,7 +37,19 @@
         "employee_count": "501-1000"
       },
       "relevant": true,
-      "rationale": "Mural directly overlaps Miro in visual whiteboarding, brainstorming, workshops, planning, and remote team collaboration for enterprise and product teams."
+      "rationale": "Mural directly competes as a visual collaboration and digital whiteboarding workspace for workshops, planning, and distributed team collaboration.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Mural directly competes as a visual collaboration and digital whiteboarding workspace for workshops, planning, and distributed team collaboration."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Mural is a direct competitor: AI-powered visual collaboration/whiteboarding platform for distributed teams, same product, market, and model as Miro."
+        }
+      ]
     },
     {
       "name": "monday.com",
@@ -54,7 +66,19 @@
         "employee_count": "1001-5000"
       },
       "relevant": true,
-      "rationale": "Both provide collaborative planning and workflow platforms used by product and cross-functional teams to organize projects and coordinate distributed work."
+      "rationale": "Work-management and collaboration platform for planning, coordinating, and executing projects across distributed teams; a strong adjacent competitor to Miro.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Work-management and collaboration platform for planning, coordinating, and executing projects across distributed teams; a strong adjacent competitor to Miro."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are collaborative work-planning SaaS platforms serving distributed teams; genuine competitors/comparables in team collaboration and planning market."
+        }
+      ]
     },
     {
       "name": "Asana",
@@ -70,8 +94,20 @@
         "industries": null,
         "employee_count": "1001-5000"
       },
-      "relevant": false,
-      "rationale": "Asana centers on task and project management, while Miro centers on visual whiteboarding; they are typically complementary rather than evaluated for the same job."
+      "relevant": true,
+      "rationale": "Asana is a collaborative work-management and planning platform for distributed teams, overlapping Miro's product-team workflow and collaboration use cases.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Asana is a collaborative work-management and planning platform for distributed teams, overlapping Miro's product-team workflow and collaboration use cases."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are team-collaboration SaaS platforms serving distributed product teams for planning and coordinating work; direct competitors in the collaboration software market."
+        }
+      ]
     },
     {
       "name": "Slack",
@@ -88,7 +124,19 @@
         "employee_count": "1001-5000"
       },
       "relevant": false,
-      "rationale": "Slack centers on team messaging and workflow communication, while Miro provides visual whiteboarding and workshops; they are complementary, not same-job alternatives."
+      "rationale": "Slack is primarily team messaging and workflow coordination, not a visual whiteboarding and workshop platform like Miro.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Slack is primarily team messaging and workflow coordination, not a visual whiteboarding and workshop platform like Miro."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Slack is team messaging/communication, complementary to Miro's visual whiteboarding; different job-to-be-done, shared 'collaboration' label is too generic."
+        }
+      ]
     },
     {
       "name": "Zoom",
@@ -104,8 +152,20 @@
         "industries": null,
         "employee_count": "5001-10000"
       },
-      "relevant": false,
-      "rationale": "Zoom primarily provides unified communications and video conferencing; its ancillary whiteboard feature does not make it a direct visual-collaboration alternative to Miro."
+      "relevant": true,
+      "rationale": "Zoom\u2019s interactive online whiteboards and collaboration tools overlap Miro\u2019s distributed-team visual collaboration use case, making it a plausible comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Zoom\u2019s interactive online whiteboards and collaboration tools overlap Miro\u2019s distributed-team visual collaboration use case, making it a plausible comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Zoom's collaboration suite includes interactive online whiteboards (Zoom Whiteboard), directly overlapping Miro's visual collaboration/whiteboarding product and buyer."
+        }
+      ]
     },
     {
       "name": "Wrike",
@@ -121,8 +181,25 @@
         "industries": null,
         "employee_count": "1001-5000"
       },
-      "relevant": false,
-      "rationale": "Wrike centers on structured project/work management, while Miro centers on visual whiteboarding and workshops; adjacent buyers, but different primary jobs."
+      "relevant": true,
+      "rationale": "Enterprise work-management platform serving product and marketing teams; comparable collaboration and planning software, though less focused on visual whiteboarding.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Enterprise work-management platform serving product and marketing teams; comparable collaboration and planning software, though less focused on visual whiteboarding."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Wrike is structured project/work management (Gantt charts, workflow automation), not visual whiteboarding collaboration; different core product and job to be done."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Both SaaS collaboration/work-management platforms sold to distributed product, marketing teams; adjacent competitors in team collaboration space.', ''}"
+        }
+      ]
     },
     {
       "name": "Smartsheet",
@@ -138,8 +215,20 @@
         "industries": null,
         "employee_count": "1001-5000"
       },
-      "relevant": false,
-      "rationale": "Smartsheet centers on structured project and portfolio management, not visual whiteboarding and workshop collaboration, so it serves a distinct core job."
+      "relevant": true,
+      "rationale": "Enterprise work-management and collaboration platform overlaps Miro\u2019s planning, workshop, and distributed team workflow use cases.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Enterprise work-management and collaboration platform overlaps Miro\u2019s planning, workshop, and distributed team workflow use cases."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are SaaS collaboration/work-management platforms for team planning and real-time project collaboration; same enterprise buyer persona and overlapping use cases."
+        }
+      ]
     },
     {
       "name": "Notion",
@@ -155,8 +244,20 @@
         "industries": null,
         "employee_count": "501-1000"
       },
-      "relevant": false,
-      "rationale": "Notion focuses on documents, knowledge management, and project tracking, not Miro\u2019s core visual whiteboarding and workshop use case."
+      "relevant": true,
+      "rationale": "Notion is a collaborative workspace for team documentation, planning, and roadmaps, overlapping Miro's distributed product-team collaboration use cases.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Notion is a collaborative workspace for team documentation, planning, and roadmaps, overlapping Miro's distributed product-team collaboration use cases."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are team collaboration SaaS serving distributed product teams; Notion's workspace (docs, planning, wikis) is a direct comparable/competitor to Miro's collaboration platform."
+        }
+      ]
     },
     {
       "name": "Visme",
@@ -173,7 +274,19 @@
         "employee_count": "51-200"
       },
       "relevant": false,
-      "rationale": "Visme focuses on polished visual content and presentations, not collaborative whiteboarding, workshops, or product-team planning\u2014the core jobs Miro serves."
+      "rationale": "Visme is primarily a visual-content and presentation design tool, not a collaborative whiteboarding and distributed product-team workspace.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Visme is primarily a visual-content and presentation design tool, not a collaborative whiteboarding and distributed product-team workspace."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Visme is a design tool for presentations/infographics, not a collaborative whiteboard/workshop platform; different product and job-to-be-done."
+        }
+      ]
     },
     {
       "name": "BeeCanvas",
@@ -190,7 +303,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "BeeCanvas overlaps Miro in visual canvases, brainstorming, collaborative project planning, and creative-team workflows for the same core jobs."
+      "rationale": "Visual collaboration canvas for brainstorming, planning, and project workflows directly overlaps Miro\u2019s whiteboarding and distributed team collaboration product.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Visual collaboration canvas for brainstorming, planning, and project workflows directly overlaps Miro\u2019s whiteboarding and distributed team collaboration product."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "AI-native visual collaboration and brainstorming canvas for teams \u2014 same product category and buyer as Miro's whiteboarding platform; direct competitor."
+        }
+      ]
     },
     {
       "name": "Microsoft",
@@ -206,8 +331,25 @@
         "industries": null,
         "employee_count": "10001+"
       },
-      "relevant": true,
-      "rationale": "Microsoft offers Whiteboard and Teams for visual collaboration, targeting the same workplace and product-team buyers for overlapping collaborative planning workflows."
+      "relevant": false,
+      "rationale": "Diversified tech conglomerate; whiteboard/collaboration is a minor feature within broad cloud, OS, and productivity portfolio, not its primary product.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Microsoft offers collaborative digital whiteboarding and productivity tools, making it a broad but genuine comparable for Miro's visual collaboration use cases."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Diversified tech conglomerate; whiteboard/collaboration is a minor feature within broad cloud, OS, and productivity portfolio, not its primary product."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "Microsoft is a diversified tech giant; Whiteboard/Teams is a minor feature, not a comparable visual-collaboration point product."
+        }
+      ]
     },
     {
       "name": "Mem",
@@ -224,7 +366,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "Mem focuses on AI knowledge management and searchable notes, not visual whiteboarding, workshops, or collaborative canvas-based planning like Miro."
+      "rationale": "Mem is AI note-taking and knowledge management, not a visual whiteboarding and workshop collaboration platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Mem is AI note-taking and knowledge management, not a visual whiteboarding and workshop collaboration platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Mem is AI note-taking/knowledge management; Miro is visual whiteboarding. Only generic 'team collaboration' overlap, no strong product or market-axis match."
+        }
+      ]
     },
     {
       "name": "Morningmate",
@@ -241,7 +395,19 @@
         "employee_count": "51-200"
       },
       "relevant": false,
-      "rationale": "Morningmate focuses on task management and chat, not visual whiteboarding or workshop facilitation; the shared collaboration label does not establish the same job."
+      "rationale": "Morningmate is primarily a task/project-management and chat platform, not a visual whiteboarding and workshop collaboration product like Miro.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Morningmate is primarily a task/project-management and chat platform, not a visual whiteboarding and workshop collaboration product like Miro."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Project management and chat platform without visual whiteboarding/workshop core; adjacent work-collaboration category but not Miro's product or job-to-be-done."
+        }
+      ]
     },
     {
       "name": "Bit",
@@ -258,7 +424,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "Bit focuses on documents and wikis, while Miro centers on visual whiteboarding and workshops; they serve distinct collaboration jobs."
+      "rationale": "Bit focuses on document creation and wikis, not Miro-style visual whiteboarding, workshops, and collaborative planning.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Bit focuses on document creation and wikis, not Miro-style visual whiteboarding, workshops, and collaborative planning."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Bit does document/wiki collaboration, not visual whiteboarding or workshop-style planning; different core job to be done despite shared collaboration label."
+        }
+      ]
     },
     {
       "name": "Arthur",
@@ -274,8 +452,20 @@
         "industries": null,
         "employee_count": "51-200"
       },
-      "relevant": false,
-      "rationale": "Arthur focuses on AI-assisted meetings and immersive workspaces, not Miro\u2019s core visual whiteboarding, diagramming, and collaborative planning job."
+      "relevant": true,
+      "rationale": "Digital collaboration platform for distributed teams, supporting real-time workshops, planning, and asynchronous teamwork similar to Miro's core use cases.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Digital collaboration platform for distributed teams, supporting real-time workshops, planning, and asynchronous teamwork similar to Miro's core use cases."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Peer collaboration platform for distributed teams' meetings, workshops, and project alignment; same buyers and job-to-be-done as Miro despite different medium."
+        }
+      ]
     },
     {
       "name": "Mermaid Chart",
@@ -292,7 +482,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Both provide collaborative visual workspaces for teams to create diagrams, map ideas, and plan projects, serving overlapping product and project-team workflows."
+      "rationale": "Collaborative visual workspace for planning and diagramming overlaps Miro\u2019s whiteboarding and team-workshop use cases, though it is more diagram-focused.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Collaborative visual workspace for planning and diagramming overlaps Miro\u2019s whiteboarding and team-workshop use cases, though it is more diagram-focused."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Collaborative visual diagramming platform for teams; overlaps Miro's core whiteboarding/diagramming use cases and buyer persona, a direct comparable."
+        }
+      ]
     },
     {
       "name": "Nifty",
@@ -308,8 +510,25 @@
         "industries": null,
         "employee_count": "11-50"
       },
-      "relevant": false,
-      "rationale": "Nifty primarily manages projects, tasks, and roadmaps, while Miro centers on visual whiteboarding and workshop collaboration; they solve distinct core jobs."
+      "relevant": true,
+      "rationale": "Nifty is a collaborative project-management workspace for team planning, roadmaps, discussions, and workflows, substantially overlapping Miro's distributed product-team collaboration use case.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Nifty is a collaborative project-management workspace for team planning, roadmaps, discussions, and workflows, substantially overlapping Miro's distributed product-team collaboration use case."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Nifty is task/project-management software; Miro is visual whiteboarding/collaboration. Shared 'team collaboration' label alone is insufficient; different primary job to be done."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Both are SaaS team-collaboration/work-management platforms serving distributed product teams; adjacent competitors in collaboration software.# Reminder use the required JSON output format.# Reminder use the required JSON output format.# Rem"
+        }
+      ]
     },
     {
       "name": "Creately",
@@ -326,7 +545,19 @@
         "employee_count": "51-200"
       },
       "relevant": true,
-      "rationale": "Creately directly overlaps Miro in team visual collaboration, infinite whiteboarding, diagramming, workshops, and planning for product and project teams."
+      "rationale": "Creately directly competes in collaborative infinite whiteboards, diagramming, workshops, and team planning for distributed teams.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Creately directly competes in collaborative infinite whiteboards, diagramming, workshops, and team planning for distributed teams."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Visual collaboration and diagramming platform for brainstorming and planning \u2014 direct product and market competitor to Miro's whiteboard platform."
+        }
+      ]
     },
     {
       "name": "Air",
@@ -343,7 +574,19 @@
         "employee_count": "51-200"
       },
       "relevant": false,
-      "rationale": "Air primarily manages creative assets and approval workflows, while Miro provides collaborative whiteboarding and planning; their core jobs differ."
+      "rationale": "Air is a digital asset and creative-operations management platform, not a collaborative whiteboarding, workshop, or product-planning tool.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Air is a digital asset and creative-operations management platform, not a collaborative whiteboarding, workshop, or product-planning tool."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Air is creative-asset/DAM management for creative ops, not whiteboarding or visual collaboration; shared 'visual workspace' label is superficial."
+        }
+      ]
     },
     {
       "name": "Batterii",
@@ -360,7 +603,19 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "Batterii offers collaborative visual ideation boards and design-sprint workflows for product and innovation teams, overlapping Miro\u2019s whiteboarding and workshop use cases."
+      "rationale": "Visual collaborative ideation and workshop platform for product and design teams, directly overlapping Miro's whiteboarding and distributed product-work use cases.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Visual collaborative ideation and workshop platform for product and design teams, directly overlapping Miro's whiteboarding and distributed product-work use cases."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Visual ideation/collaboration platform with live boards for product and design teams \u2014 same product category and buyer persona as Miro."
+        }
+      ]
     },
     {
       "name": "NimbleWork",
@@ -376,8 +631,25 @@
         "industries": null,
         "employee_count": "201-500"
       },
-      "relevant": false,
-      "rationale": "NimbleWork centers on project execution, resource planning, and portfolio management, while Miro\u2019s core job is collaborative whiteboarding and workshop facilitation."
+      "relevant": true,
+      "rationale": "Visual work-management platform for collaborative planning and product teams; a credible adjacent comparable to Miro\u2019s visual collaboration offering.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Visual work-management platform for collaborative planning and product teams; a credible adjacent comparable to Miro\u2019s visual collaboration offering."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "NimbleWork is project/work management (Kanban, Gantt, resource planning); Miro is collaborative whiteboarding. Adjacent but distinct product categories, weak market overlap only."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Both are visual team collaboration/planning SaaS for distributed product and agile teams; adjacent competitors in work visualization space.<br>"
+        }
+      ]
     },
     {
       "name": "TheBrain Technologies",
@@ -393,8 +665,25 @@
         "industries": null,
         "employee_count": "1-10"
       },
-      "relevant": false,
-      "rationale": "TheBrain primarily provides personal knowledge management and connected note-taking, not collaborative whiteboarding and workshop facilitation for product teams."
+      "relevant": true,
+      "rationale": "Visual idea mapping and TeamBrain collaboration overlap with Miro's whiteboarding and distributed workshop use cases, though it emphasizes knowledge management.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Visual idea mapping and TeamBrain collaboration overlap with Miro's whiteboarding and distributed workshop use cases, though it emphasizes knowledge management."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Primary product is personal knowledge management/mind-mapping 'digital memory,' not visual whiteboarding and workshop collaboration; overlap is weak and adjacent."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Visual mind-mapping/idea-organization software with team collaboration; adjacent competitor in visual collaboration and knowledge-mapping space.Reminder: your entire response must be a single line of valid JSON matching the schema."
+        }
+      ]
     },
     {
       "name": "BoardX",
@@ -411,7 +700,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "BoardX is a digital whiteboarding and visual collaboration platform serving agile product teams, directly overlapping Miro\u2019s core use cases and buyers."
+      "rationale": "AI-enabled digital whiteboard for design thinking, workshops, and agile team collaboration directly overlaps Miro's core product and users.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "AI-enabled digital whiteboard for design thinking, workshops, and agile team collaboration directly overlaps Miro's core product and users."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "AI-powered digital whiteboard for visual collaboration and agile team workshops \u2014 same product category and buyer as Miro; a direct competitor."
+        }
+      ]
     },
     {
       "name": "Canvanizer",
@@ -428,7 +729,19 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "Both provide collaborative visual canvas tools for product, strategy, and cross-functional teams conducting ideation, planning, and workshops."
+      "rationale": "Collaborative visual canvases for ideation, planning, and product/strategy workshops closely overlap Miro\u2019s whiteboarding and team-collaboration use cases.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Collaborative visual canvases for ideation, planning, and product/strategy workshops closely overlap Miro\u2019s whiteboarding and team-collaboration use cases."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Canvanizer is an online visual canvas/whiteboarding tool for collaborative brainstorming, directly overlapping Miro's core visual collaboration product and market."
+        }
+      ]
     },
     {
       "name": "FYI",
@@ -445,7 +758,19 @@
         "employee_count": "51-200"
       },
       "relevant": false,
-      "rationale": "FYI focuses on AI content creation, messaging, and creative project organization, not visual whiteboarding and workshop collaboration like Miro."
+      "rationale": "FYI is primarily an AI messaging and project-management tool for creatives, not a visual whiteboarding and workshop collaboration platform like Miro.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "FYI is primarily an AI messaging and project-management tool for creatives, not a visual whiteboarding and workshop collaboration platform like Miro."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Miro is a visual whiteboarding/workshop platform for product teams; FYI is an AI content-generation and messaging tool for creatives \u2014 different product and buyer, only weak generic collaboration overlap."
+        }
+      ]
     },
     {
       "name": "Roam",
@@ -461,8 +786,25 @@
         "industries": null,
         "employee_count": "11-50"
       },
-      "relevant": false,
-      "rationale": "Roam is a virtual office and team-communication platform, not a visual whiteboarding and workshop workspace evaluated for Miro\u2019s core use cases."
+      "relevant": true,
+      "rationale": "Both are collaboration platforms for distributed teams; Roam's virtual HQ competes in the same remote-team collaboration market as Miro's visual workspace.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Roam is a virtual headquarters focused on AI-enabled team communication and management, not a visual whiteboarding and workshop collaboration platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are collaboration platforms for distributed teams; Roam's virtual HQ competes in the same remote-team collaboration market as Miro's visual workspace."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Both sell virtual collaboration workspaces for distributed teams; overlapping buyer and job-to-be-done, plausible competitor/comparable.You must respond with valid JSON that conforms to the following JSON schema:"
+        }
+      ]
     },
     {
       "name": "Cardsmith",
@@ -479,7 +821,19 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "Cardsmith directly overlaps Miro in collaborative virtual whiteboarding, brainstorming, workshops, and visual project planning for remote and product teams."
+      "rationale": "Cardsmith is a real-time visual whiteboard for brainstorming, workshops, planning, and agile collaboration, directly comparable to Miro.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Cardsmith is a real-time visual whiteboard for brainstorming, workshops, planning, and agile collaboration, directly comparable to Miro."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Virtual whiteboard with sticky notes and real-time team brainstorming\u2014direct product and market competitor to Miro's visual collaboration platform."
+        }
+      ]
     },
     {
       "name": "Marvel",
@@ -496,7 +850,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Both provide collaborative visual design and wireframing tools for product teams, overlapping in early-stage ideation, design collaboration, and prototyping workflows."
+      "rationale": "Collaborative visual workspace for product teams; Marvel emphasizes prototyping and testing, but overlaps strongly in digital-product design collaboration.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Collaborative visual workspace for product teams; Marvel emphasizes prototyping and testing, but overlaps strongly in digital-product design collaboration."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are collaborative visual SaaS platforms for product/design teams\u2014wireframing, prototyping, real-time collaboration\u2014overlapping buyer persona and adjacent product space, genuine comparables."
+        }
+      ]
     },
     {
       "name": "Ayoa",
@@ -513,7 +879,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Ayoa offers collaborative whiteboards, mind mapping, and planning tools for teams, overlapping Miro\u2019s visual collaboration use cases and buyers."
+      "rationale": "Ayoa provides collaborative whiteboards, brainstorming, visual planning, and task workflows for teams, directly overlapping Miro's visual collaboration use cases.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Ayoa provides collaborative whiteboards, brainstorming, visual planning, and task workflows for teams, directly overlapping Miro's visual collaboration use cases."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Visual collaboration software with whiteboards, mind mapping, and team brainstorming \u2014 direct product and market overlap with Miro's collaborative whiteboarding."
+        }
+      ]
     },
     {
       "name": "Mindomo",
@@ -530,7 +908,19 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "Mindomo overlaps Miro\u2019s collaborative visual ideation and planning use cases, serving teams needing real-time mind maps, brainstorming, and project planning."
+      "rationale": "Collaborative visual ideation and planning platform; mind maps and workshops overlap strongly with Miro's whiteboarding use cases.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Collaborative visual ideation and planning platform; mind maps and workshops overlap strongly with Miro's whiteboarding use cases."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Mindomo offers real-time collaborative visual diagramming (mind maps, concept maps) for team ideation\u2014directly comparable visual collaboration product to Miro."
+        }
+      ]
     },
     {
       "name": "Hive",
@@ -546,8 +936,20 @@
         "industries": null,
         "employee_count": "11-50"
       },
-      "relevant": false,
-      "rationale": "Hive centers on task and project management, while Miro\u2019s core is visual whiteboarding and workshop collaboration; buyers typically use them complementarily."
+      "relevant": true,
+      "rationale": "Hive is a team collaboration and visual project-management platform, overlapping Miro's planning and distributed product-team workflow use cases.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Hive is a team collaboration and visual project-management platform, overlapping Miro's planning and distributed product-team workflow use cases."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are SaaS team-collaboration platforms sold to distributed product/project teams for planning and coordinating work \u2014 genuine comparables in collaborative work software."
+        }
+      ]
     },
     {
       "name": "Milanote",
@@ -564,7 +966,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Milanote\u2019s collaborative visual boards support brainstorming, planning, and creative project organization, overlapping Miro\u2019s whiteboarding workflows and product, design, and marketing users."
+      "rationale": "Visual board platform for brainstorming, planning, and collaborative project organization; overlaps Miro\u2019s core whiteboarding and distributed product-team workflows.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Visual board platform for brainstorming, planning, and collaborative project organization; overlaps Miro\u2019s core whiteboarding and distributed product-team workflows."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are visual board/canvas collaboration tools for teams to organize ideas and projects; direct product competitors."
+        }
+      ]
     },
     {
       "name": "Macro",
@@ -581,7 +995,19 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "Macro\u2019s collaborative infinite canvas and real-time team workspace overlap Miro\u2019s visual ideation and distributed collaboration use cases."
+      "rationale": "Macro offers collaborative infinite-canvas, notes, and document workflows for teams, closely overlapping Miro's visual collaboration and distributed planning use cases.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Macro offers collaborative infinite-canvas, notes, and document workflows for teams, closely overlapping Miro's visual collaboration and distributed planning use cases."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Team collaboration platform with infinite canvas, visual idea exploration, and real-time multiplayer editing\u2014overlaps Miro's visual collaboration product and market."
+        }
+      ]
     },
     {
       "name": "Feishu",
@@ -597,8 +1023,25 @@
         "industries": null,
         "employee_count": "501-1000"
       },
-      "relevant": false,
-      "rationale": "Feishu is a broad workplace communications and productivity suite, not primarily a visual whiteboarding and workshop platform like Miro."
+      "relevant": true,
+      "rationale": "Feishu is an enterprise collaboration suite with messaging, documents, and project tools, overlapping Miro\u2019s distributed-team collaboration market, though broader than visual whiteboarding.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Feishu is an enterprise collaboration suite with messaging, documents, and project tools, overlapping Miro\u2019s distributed-team collaboration market, though broader than visual whiteboarding."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Feishu is a general messaging/video/docs productivity suite (Slack/Teams-like), not a visual whiteboarding platform; 'collaboration' keyword overlap only."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Both are SaaS team-collaboration platforms for enterprises; adjacent competitors in the collaborative work management space.._<br>"
+        }
+      ]
     },
     {
       "name": "Integrity",
@@ -615,7 +1058,19 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "Integrity\u2019s collaborative canvases and visual project mapping overlap Miro\u2019s whiteboarding, brainstorming, and planning workflows for project and product teams."
+      "rationale": "Unified visual workspace with canvases, collaboration, planning, and drag-and-drop organization closely overlaps Miro's whiteboarding and distributed team-work use case.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Unified visual workspace with canvases, collaboration, planning, and drag-and-drop organization closely overlaps Miro's whiteboarding and distributed team-work use case."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Visual workspace with canvases, drag-and-drop idea organization, and team collaboration\u2014overlaps Miro's product and collaborative-planning market."
+        }
+      ]
     },
     {
       "name": "Tuesday",
@@ -631,8 +1086,25 @@
         "industries": null,
         "employee_count": "51-200"
       },
-      "relevant": false,
-      "rationale": "Tuesday focuses on task and asset workflow management, while Miro\u2019s core job is collaborative whiteboarding and visual ideation."
+      "relevant": true,
+      "rationale": "Creative-team project management and visual workflows overlap Miro's collaboration use cases, though Tuesday is more task-focused.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Creative-team project management and visual workflows overlap Miro's collaboration use cases, though Tuesday is more task-focused."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Project-management tool for animation/game studios, not a visual whiteboarding/collaboration platform; product and buyer differ from Miro."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Both SaaS visual collaboration/work-management platforms for distributed teams; adjacent competitor comparable to Miro's planning and workflow use cases.398 Cn 4\ufe0f\u20e3 \u2796 \u2754 \u25aa\ufe0f \u2702\ufe0f \u274c \u2797 8\ufe0f\u20e3 \u2733\ufe0f \u25ab\ufe0f 6\ufe0f\u20e3 7\ufe0f\u20e3 \u2714\ufe0f \u27a1\ufe0f \u2716\ufe0f \u27b0 \u26ab 5\ufe0f\u20e3 \u26aa \u27bf \u25b6\ufe0f \u2705 \u2734\ufe0f #\ufe0f\u20e3 \u25fe \u25fc\ufe0f 1\ufe0f\u20e3 3\ufe0f"
+        }
+      ]
     },
     {
       "name": "MockFlow",
@@ -649,7 +1121,19 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "MockFlow overlaps Miro in collaborative visual brainstorming, diagramming, and product-design planning for remote product teams, despite its stronger wireframing focus."
+      "rationale": "Collaborative visual workspace for brainstorming and product design overlaps Miro's whiteboarding and distributed product-team workflows.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Collaborative visual workspace for brainstorming and product design overlaps Miro's whiteboarding and distributed product-team workflows."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Visual collaboration platform (wireframing plus collaborative idea boards) serving the same product/design-team persona as Miro's whiteboarding; a direct comparable."
+        }
+      ]
     },
     {
       "name": "Wondershare Edraw",
@@ -666,7 +1150,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Both provide visual diagramming, brainstorming, planning, and collaboration tools that product managers and business analysts may evaluate for overlapping workflows."
+      "rationale": "Edraw includes online visual collaboration, mind mapping, brainstorming, and planning tools, making it a comparable visual-workspace platform despite stronger diagramming focus.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Edraw includes online visual collaboration, mind mapping, brainstorming, and planning tools, making it a comparable visual-workspace platform despite stronger diagramming focus."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Visual diagramming and online collaboration suite (Edraw.AI, mind mapping, whiteboarding) directly overlaps Miro's visual-collaboration product and buyer."
+        }
+      ]
     },
     {
       "name": "Mihira AI",
@@ -683,7 +1179,19 @@
         "employee_count": "51-200"
       },
       "relevant": false,
-      "rationale": "Mihira AI focuses on AI-driven storytelling and media creation, not visual whiteboarding, workshops, or product-team planning for the same job."
+      "rationale": "AI creative-content tools for storytellers differ from Miro's visual whiteboarding and product-team collaboration platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "AI creative-content tools for storytellers differ from Miro's visual whiteboarding and product-team collaboration platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Mihira is an AI content-generation platform for storytellers; Miro is a visual whiteboarding/collaboration platform for product teams. Different product, buyer, and use case."
+        }
+      ]
     },
     {
       "name": "Visual Paradigm",
@@ -700,7 +1208,19 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "Both provide visual diagramming and planning tools for agile/product teams, including user-story mapping, with overlapping collaborative workflow use cases."
+      "rationale": "Diagramming, user-story mapping, and agile project tools serve similar product-team planning and visual collaboration workflows.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Diagramming, user-story mapping, and agile project tools serve similar product-team planning and visual collaboration workflows."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are visual diagramming/planning platforms serving agile product teams; overlaps Miro's whiteboarding, planning, and workshop use cases."
+        }
+      ]
     },
     {
       "name": "Akiiro",
@@ -717,7 +1237,19 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "Akiiro overlaps Miro\u2019s visual ideation and project-planning use cases, serving users who need interactive workspaces to organize ideas and workflows."
+      "rationale": "Visual workspace and planning/mind-mapping product overlap Miro\u2019s whiteboarding and workshop collaboration use cases, despite a narrower individual-creative focus.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Visual workspace and planning/mind-mapping product overlap Miro\u2019s whiteboarding and workshop collaboration use cases, despite a narrower individual-creative focus."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Visual mind-mapping/planning canvas overlaps Miro's whiteboarding and visual planning product; comparable visual-thinking workspace for similar users."
+        }
+      ]
     },
     {
       "name": "Trovve",
@@ -734,7 +1266,24 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "Trovve automates project administration in Microsoft Teams, while Miro provides visual whiteboarding and collaborative workshops; their core jobs-to-be-done differ."
+      "rationale": "Trovve is AI task/project automation inside Microsoft Teams, not visual whiteboarding or visual collaboration; different core product and job to be done.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Project-management and team-collaboration software overlaps Miro's planning and distributed product-work use cases, though delivered within Microsoft Teams."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Trovve is AI task/project automation inside Microsoft Teams, not visual whiteboarding or visual collaboration; different core product and job to be done."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "Trovve is Teams-embedded AI project management, not a visual whiteboarding/collaboration canvas; only loose team-productivity adjacency."
+        }
+      ]
     },
     {
       "name": "MindGenius Ltd",
@@ -751,7 +1300,19 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "Both provide collaborative visual mapping and planning tools used by project teams for ideation, workshops, and structuring work."
+      "rationale": "MindGenius provides collaborative visual planning, whiteboarding-like mindmapping, and project-workshop tools for teams, making it a comparable visual collaboration platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "MindGenius provides collaborative visual planning, whiteboarding-like mindmapping, and project-workshop tools for teams, making it a comparable visual collaboration platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "MindGenius offers visual collaboration and mindmapping tools for team planning and workshops, overlapping Miro's core visual-collaboration product and market."
+        }
+      ]
     },
     {
       "name": "Stormboard",
@@ -768,7 +1329,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Both provide digital visual collaboration, brainstorming, workshops, and agile planning for product and distributed teams, serving the same buyers and workflows."
+      "rationale": "Stormboard is a visual collaboration and digital whiteboarding platform for brainstorming, planning, workshops, and distributed agile/product teams.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Stormboard is a visual collaboration and digital whiteboarding platform for brainstorming, planning, workshops, and distributed agile/product teams."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Stormboard is a digital whiteboard platform for collaborative brainstorming and workflows, a direct product and market competitor to Miro."
+        }
+      ]
     },
     {
       "name": "Metaimpact",
@@ -784,8 +1357,25 @@
         "industries": null,
         "employee_count": "11-50"
       },
-      "relevant": false,
-      "rationale": "Metaimpact manages cross-organizational initiatives and impact measurement, not visual whiteboarding or product-team workshop collaboration for Miro\u2019s core users."
+      "relevant": true,
+      "rationale": "Collaboration workspaces, goal alignment, project tracking, and multi-stakeholder planning overlap Miro\u2019s visual collaboration and distributed-team workflow market.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Collaboration workspaces, goal alignment, project tracking, and multi-stakeholder planning overlap Miro\u2019s visual collaboration and distributed-team workflow market."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Stakeholder-impact management platform, not visual whiteboarding; different use case (impact programs, philanthropy) and buyer despite generic 'collaboration' label."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Both are SaaS collaboration workspace platforms with shared workspaces, projects, and integrations; adjacent comparable despite Metaimpact's impact-network niche.', ok.', ok.', ok.', ok.', ok.', ok.', ok.', ok.', ok."
+        }
+      ]
     },
     {
       "name": "Mokkup.ai",
@@ -802,7 +1392,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "Mokkup.ai specializes in BI dashboard wireframing, not general-purpose collaborative whiteboarding, workshops, and product planning for distributed teams."
+      "rationale": "Mokkup.ai specializes in BI dashboard wireframing and Tableau/Power BI export, not broad visual collaboration, workshops, and distributed product-team planning.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Mokkup.ai specializes in BI dashboard wireframing and Tableau/Power BI export, not broad visual collaboration, workshops, and distributed product-team planning."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Mokkup is a niche BI dashboard wireframing tool for data analysts, not a visual whiteboarding/collaboration platform; product and buyer differ from Miro."
+        }
+      ]
     },
     {
       "name": "ilibrium",
@@ -819,7 +1421,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "Ilibrium serves media-production teams with specialized asset sharing and production workflows, not Miro\u2019s visual whiteboarding and product-planning use case."
+      "rationale": "Entertainment-production workflow and media-sharing platform, not a visual whiteboarding/workshop tool for distributed product teams.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Entertainment-production workflow and media-sharing platform, not a visual whiteboarding/workshop tool for distributed product teams."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Both are 'collaboration platforms' but ilibrium serves entertainment/VFX production media-sharing workflows, not visual whiteboarding for product teams \u2014 only a generic shared label."
+        }
+      ]
     },
     {
       "name": "Mindy AI Studio",
@@ -836,7 +1450,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "Mindy primarily creates AI marketing visuals, while Miro supports collaborative whiteboarding and product-team planning; their core jobs and buyers differ."
+      "rationale": "AI visual-content creation for marketers differs from Miro's collaborative whiteboarding and product-workspace platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "AI visual-content creation for marketers differs from Miro's collaborative whiteboarding and product-workspace platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "AI marketing-content creation tool, not a visual whiteboarding/collaboration platform; different product and buyer job."
+        }
+      ]
     },
     {
       "name": "Lucid",
@@ -853,7 +1479,19 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "Lucid offers virtual whiteboarding, diagramming, and real-time planning for the same product, design, and distributed-team collaboration workflows as Miro."
+      "rationale": "Lucid\u2019s whiteboarding, diagramming, and real-time ideation platform directly competes with Miro for distributed product and project teams.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Lucid\u2019s whiteboarding, diagramming, and real-time ideation platform directly competes with Miro for distributed product and project teams."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Direct competitor: Lucid offers visual collaboration, virtual whiteboarding (Lucidspark), and diagramming for the same product-team use cases as Miro."
+        }
+      ]
     },
     {
       "name": "Easy Redmine",
@@ -870,7 +1508,24 @@
         "employee_count": "51-200"
       },
       "relevant": false,
-      "rationale": "Easy Redmine is project/IT service management software, not a visual whiteboarding and workshop collaboration platform; core jobs-to-be-done differ."
+      "rationale": "Easy Redmine is structured project management (Gantt, Waterfall, ITSM), not a visual whiteboard/collaboration canvas; product cores differ materially.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Project-management platform for hybrid teams overlaps Miro\u2019s planning and distributed product-team collaboration use case, though it is more workflow-centric."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Easy Redmine is structured project management (Gantt, Waterfall, ITSM), not a visual whiteboard/collaboration canvas; product cores differ materially."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "Easy Redmine is structured project/IT service management software, not a visual whiteboarding/collaboration canvas; different product and buyer job."
+        }
+      ]
     },
     {
       "name": "GroovePages",
@@ -887,7 +1542,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "GroovePages focuses on document co-editing and content automation, not visual whiteboarding, workshops, or collaborative product planning like Miro."
+      "rationale": "Generic collaborative document and task workspace, not a visual whiteboarding and workshop platform comparable to Miro.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Generic collaborative document and task workspace, not a visual whiteboarding and workshop platform comparable to Miro."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Document co-editing/content workspace, not visual whiteboarding; collaboration overlap is generic and weak. Domain mismatch suggests dubious entry."
+        }
+      ]
     },
     {
       "name": "Refractive",
@@ -904,7 +1571,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "Refractive provides complementary add-on tools for Miro rather than a standalone visual collaboration and whiteboarding platform evaluated for the same job."
+      "rationale": "Refractive sells add-on visual-thinking tools specifically for Miro users, making it a complementary supplier rather than a competing collaboration platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Refractive sells add-on visual-thinking tools specifically for Miro users, making it a complementary supplier rather than a competing collaboration platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Refractive builds add-on plugins for Miro's platform, making it a complement within Miro's ecosystem, not a competing whiteboarding/collaboration platform."
+        }
+      ]
     },
     {
       "name": "Boardmix",
@@ -921,7 +1600,19 @@
         "employee_count": "51-200"
       },
       "relevant": true,
-      "rationale": "Boardmix directly overlaps Miro\u2019s collaborative whiteboarding, brainstorming, workshop, and planning use cases for product and cross-functional teams."
+      "rationale": "Online collaborative whiteboard and visual workspace for brainstorming, workshops, planning, and distributed teams\u2014directly comparable to Miro.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Online collaborative whiteboard and visual workspace for brainstorming, workshops, planning, and distributed teams\u2014directly comparable to Miro."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Online collaborative whiteboard for brainstorming, planning, and team workshops \u2014 direct Miro competitor on product, market, and model."
+        }
+      ]
     },
     {
       "name": "IMAI",
@@ -938,7 +1629,19 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "Both provide visual ideation and real-time collaboration tools for product and design teams working on concepts, prototypes, and feedback."
+      "rationale": "Collaborative visual ideation and real-time feedback for product/design teams closely overlaps Miro\u2019s whiteboarding and distributed workshop use cases.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Collaborative visual ideation and real-time feedback for product/design teams closely overlaps Miro\u2019s whiteboarding and distributed workshop use cases."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Visual ideation and real-time collaboration platform for product/design teams, directly overlapping Miro's whiteboarding and collaborative-ideation market."
+        }
+      ]
     },
     {
       "name": "Jeda.ai",
@@ -955,7 +1658,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Jeda.ai offers an AI-powered visual whiteboard and collaborative workspace for strategy, planning, and product work, overlapping Miro\u2019s core use cases and users."
+      "rationale": "AI-powered visual thinking and collaborative canvas platform overlaps Miro's whiteboarding, templates, workshops, and distributed team planning use cases.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "AI-powered visual thinking and collaborative canvas platform overlaps Miro's whiteboarding, templates, workshops, and distributed team planning use cases."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "AI-powered visual collaboration canvas with whiteboarding, mind maps, flowcharts, and templates \u2014 same product category and market as Miro."
+        }
+      ]
     },
     {
       "name": "design2dev",
@@ -972,7 +1687,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "Design2Dev is an AI creative studio building custom apps and experiences, not a self-service visual collaboration platform for team whiteboarding and planning."
+      "rationale": "Design2Dev is a digital creative studio and app-development service, not a self-serve visual collaboration/whiteboarding platform comparable to Miro.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Design2Dev is a digital creative studio and app-development service, not a self-serve visual collaboration/whiteboarding platform comparable to Miro."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "AI creative studio/agency building apps for clients; a services shop, not a self-serve visual collaboration platform like Miro."
+        }
+      ]
     },
     {
       "name": "Mirific Systems",
@@ -988,8 +1715,25 @@
         "industries": null,
         "employee_count": "1-10"
       },
-      "relevant": false,
-      "rationale": "Mirific focuses on task and workflow management, not Miro\u2019s core visual whiteboarding and workshop collaboration job."
+      "relevant": true,
+      "rationale": "Agile team work-management platform overlaps Miro's collaborative planning and distributed product-team workflow use cases.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Agile team work-management platform overlaps Miro's collaborative planning and distributed product-team workflow use cases."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Task/work-management tool for agile sprints, not visual whiteboarding; shares only generic 'collaboration' label and overlapping audience, weak on every axis."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Collaborative work management SaaS for agile product teams \bnd same buyer persona; adjacent competitor/comparable to Miro's collaboration platform.), plausible ICP expansion."
+        }
+      ]
     },
     {
       "name": "Fabrie",
@@ -1006,7 +1750,19 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "Fabrie directly overlaps Miro\u2019s collaborative digital whiteboarding and distributed design-team workflows, serving many of the same product and design users."
+      "rationale": "AI-powered collaborative infinite whiteboard for distributed design and product teams directly overlaps Miro\u2019s core visual collaboration and workshop-planning product.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "AI-powered collaborative infinite whiteboard for distributed design and product teams directly overlaps Miro\u2019s core visual collaboration and workshop-planning product."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "AI-powered infinite whiteboard for design team collaboration \u2014 same product category and market as Miro's visual collaboration platform; direct competitor."
+        }
+      ]
     },
     {
       "name": "Ideate",
@@ -1023,7 +1779,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "Ideate automates design mockups and feedback workflows, not collaborative whiteboarding, workshops, or distributed product-team planning like Miro."
+      "rationale": "Ideate is specialized design-workflow automation for designers, not a general visual whiteboarding and cross-functional collaboration platform like Miro.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Ideate is specialized design-workflow automation for designers, not a general visual whiteboarding and cross-functional collaboration platform like Miro."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Ideate automates design production tasks (mockups, moodboards) for designers, not whiteboarding/visual collaboration for distributed product teams. Different job-to-be-done."
+        }
+      ]
     },
     {
       "name": "Tixio",
@@ -1040,7 +1808,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Tixio offers real-time collaborative whiteboarding and brainstorming for remote teams, overlapping Miro\u2019s core use case and target users despite its broader workspace suite."
+      "rationale": "Includes real-time collaborative whiteboarding for remote teams, directly overlapping Miro\u2019s core visual collaboration and workshop use case.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Includes real-time collaborative whiteboarding for remote teams, directly overlapping Miro\u2019s core visual collaboration and workshop use case."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Offers real-time whiteboard collaboration (Tixio Canvas) within a remote-team workspace, overlapping Miro on product and market axes."
+        }
+      ]
     },
     {
       "name": "Moio",
@@ -1057,7 +1837,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "Moio focuses on high-fidelity interface prototyping, while Miro\u2019s core job is collaborative whiteboarding, workshops, and planning; workflows differ despite shared design users."
+      "rationale": "Moio is a high-fidelity UI prototyping tool, not a visual whiteboarding and cross-functional workshop platform like Miro.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Moio is a high-fidelity UI prototyping tool, not a visual whiteboarding and cross-functional workshop platform like Miro."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Moio is a UI/UX prototyping tool (Figma-like), not a visual whiteboard/collaboration platform; different product and buyer job-to-be-done."
+        }
+      ]
     },
     {
       "name": "Silverile",
@@ -1074,7 +1866,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "Silverile is an agile project-management system, not a visual whiteboarding and workshop platform; overlapping product-team users serve different primary jobs."
+      "rationale": "Agile product-development management and team collaboration overlaps Miro\u2019s planning/workshop use cases, but it is primarily a project-management platform rather than visual whiteboarding.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Agile product-development management and team collaboration overlaps Miro\u2019s planning/workshop use cases, but it is primarily a project-management platform rather than visual whiteboarding."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Agile project-management/issue-tracking tool, not visual whiteboarding; overlaps on team collaboration but different core product and job to be done."
+        }
+      ]
     },
     {
       "name": "Spacebar AI",
@@ -1091,7 +1895,19 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "Both provide real-time collaborative workspaces with persistent whiteboards for remote product teams, workshops, and planning."
+      "rationale": "Unified real-time collaboration workspace includes persistent whiteboards for distributed product and strategy teams, making it a comparable visual collaboration platform despite added calling and AI.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Unified real-time collaboration workspace includes persistent whiteboards for distributed product and strategy teams, making it a comparable visual collaboration platform despite added calling and AI."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Real-time collaborative workspace with whiteboards and annotation for product/remote teams \u2014 overlaps Miro on product and market axes."
+        }
+      ]
     },
     {
       "name": "Mindverse",
@@ -1108,7 +1924,24 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "Mindverse is primarily a broad AI content and automation suite; its whiteboard feature does not make visual collaboration a core overlapping offering."
+      "rationale": "Mindverse is primarily an AI content-generation tool suite; whiteboarding is a minor feature, not the core visual-collaboration product Miro sells.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Includes collaborative AI brainstorming and whiteboard tools for teams, overlapping Miro's visual collaboration and workshop use cases."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Mindverse is primarily an AI content-generation tool suite; whiteboarding is a minor feature, not the core visual-collaboration product Miro sells."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "AI content-generation suite for marketers; whiteboard is a minor feature, not a visual collaboration platform competitor."
+        }
+      ]
     },
     {
       "name": "sboard",
@@ -1125,7 +1958,19 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "Sboard directly competes with Miro as a collaborative online whiteboard for product teams, workshops, planning, brainstorming, and agile workflows."
+      "rationale": "Cloud collaborative whiteboard for brainstorming, workshops, planning, and product teams; explicitly a direct Miro alternative.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Cloud collaborative whiteboard for brainstorming, workshops, planning, and product teams; explicitly a direct Miro alternative."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Cloud whiteboard platform explicitly positioned as a Miro alternative; same product, use cases, and buyer persona."
+        }
+      ]
     },
     {
       "name": "Mitra",
@@ -1142,7 +1987,19 @@
         "employee_count": "201-500"
       },
       "relevant": false,
-      "rationale": "Mitra is a no-code business application and workflow builder, not a collaborative whiteboarding platform; buyers use it for process automation, not visual teamwork."
+      "rationale": "Mitra is a no-code business-app and workflow automation platform, not a collaborative whiteboarding and workshop platform for product teams.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Mitra is a no-code business-app and workflow automation platform, not a collaborative whiteboarding and workshop platform for product teams."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "No-code app builder replacing spreadsheets for finance/ops teams; not a visual whiteboarding/collaboration platform like Miro. Different product and buyer."
+        }
+      ]
     },
     {
       "name": "Celoxis",
@@ -1159,7 +2016,19 @@
         "employee_count": "51-200"
       },
       "relevant": false,
-      "rationale": "Celoxis is structured project portfolio and resource management software, not a visual whiteboarding and collaborative workshop platform like Miro."
+      "rationale": "Celoxis is a PMO-focused project portfolio and resource-management platform, not a visual whiteboarding and collaborative workshop tool like Miro.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Celoxis is a PMO-focused project portfolio and resource-management platform, not a visual whiteboarding and collaborative workshop tool like Miro."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Celoxis is project portfolio management software for PMOs, not visual whiteboarding/collaboration; different product and buyer persona."
+        }
+      ]
     },
     {
       "name": "Samepage.ai",
@@ -1175,8 +2044,25 @@
         "industries": null,
         "employee_count": "1-10"
       },
-      "relevant": false,
-      "rationale": "Samepage targets product managers but offers AI workflow and roadmap automation, not Miro\u2019s visual whiteboarding and collaborative workspace for planning and workshops."
+      "relevant": true,
+      "rationale": "Both are SaaS tools for product teams to coordinate planning and cross-functional alignment, though Samepage emphasizes AI workflow automation over visual whiteboarding.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both are SaaS tools for product teams to coordinate planning and cross-functional alignment, though Samepage emphasizes AI workflow automation over visual whiteboarding."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "AI copilot automating PM workflows, not a visual collaboration/whiteboarding platform; adjacent product-team tooling but different product and job-to-be-done."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Both sell collaboration/alignment software to product teams and PMs; overlapping buyer and job-to-be-done, though Samepage is AI copilot rather than whiteboard.Retry with valid JSON.>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>"
+        }
+      ]
     },
     {
       "name": "Brainstorming",
@@ -1193,7 +2079,19 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "Both provide collaborative visual ideation and mind-mapping tools for product, design, and marketing teams conducting brainstorming and remote workshops."
+      "rationale": "Collaborative visual ideation and mindmapping tool for product and design teams overlaps Miro's whiteboarding, workshops, and distributed creative-work use cases.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Collaborative visual ideation and mindmapping tool for product and design teams overlaps Miro's whiteboarding, workshops, and distributed creative-work use cases."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Collaborative visual ideation/mindmapping canvas serving remote product and design teams \u2014 overlaps Miro's core whiteboarding and workshop use case."
+        }
+      ]
     },
     {
       "name": "MyMap.AI",
@@ -1210,7 +2108,19 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "Both provide visual diagramming and planning tools that teams or professionals could evaluate for mind mapping, flowcharts, and collaborative ideation."
+      "rationale": "AI visual diagramming and mind-mapping overlaps Miro\u2019s whiteboarding and planning workflows, including team visual collaboration, though with a narrower AI-first focus.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "AI visual diagramming and mind-mapping overlaps Miro\u2019s whiteboarding and planning workflows, including team visual collaboration, though with a narrower AI-first focus."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "AI-driven visual diagramming/whiteboard platform for mind maps, flowcharts, and visual planning \u2014 same product category as Miro's visual collaboration canvas."
+        }
+      ]
     },
     {
       "name": "DevMads Ltd.",
@@ -1227,7 +2137,19 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "Both provide visual collaborative planning for product teams, including user story mapping, prioritization, and roadmap or release planning workflows."
+      "rationale": "Visual collaborative planning platform for product teams; overlaps Miro's whiteboarding, workshops, and distributed product-planning use cases.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Visual collaborative planning platform for product teams; overlaps Miro's whiteboarding, workshops, and distributed product-planning use cases."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Visual, collaborative planning platform for agile product teams; overlaps Miro's product-team collaboration and planning use cases on product and market axes."
+        }
+      ]
     },
     {
       "name": "Ideamap",
@@ -1244,7 +2166,19 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "Both provide visual, real-time collaboration workspaces for remote teams, especially brainstorming, idea organization, and product or strategy workshops."
+      "rationale": "AI-powered visual workspace for remote brainstorming, ideation, and collaborative workshops directly overlaps Miro's core whiteboarding and distributed-team collaboration use cases.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "AI-powered visual workspace for remote brainstorming, ideation, and collaborative workshops directly overlaps Miro's core whiteboarding and distributed-team collaboration use cases."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Visual workspace for real-time team brainstorming and idea organization for distributed teams\u2014directly overlaps Miro's whiteboarding/workshop collaboration product and market."
+        }
+      ]
     },
     {
       "name": "Generation Digital",
@@ -1261,7 +2195,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "Generation Digital is an implementation and change-management consultancy that deploys Miro and other tools, not a competing visual collaboration platform."
+      "rationale": "Consultancy implementing and training customers on Miro and related tools, not a visual collaboration platform competitor or comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Consultancy implementing and training customers on Miro and related tools, not a visual collaboration platform competitor or comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Consultancy that implements and resells Miro/Asana for clients; a partner serving the category, not a competing collaboration platform."
+        }
+      ]
     },
     {
       "name": "FreedomBoard",
@@ -1278,7 +2224,19 @@
         "employee_count": "51-200"
       },
       "relevant": true,
-      "rationale": "FreedomBoard is a collaborative infinite whiteboard overlapping Miro\u2019s core functionality, tailored to fashion product, merchandising, and planning teams."
+      "rationale": "Industry-specialized collaborative infinite whiteboard for planning and visual workflows, directly comparable to Miro despite fashion-specific features.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Industry-specialized collaborative infinite whiteboard for planning and visual workflows, directly comparable to Miro despite fashion-specific features."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "AI-powered infinite collaborative whiteboard; same core product as Miro, verticalized for fashion \u2014 a direct comparable/competitor."
+        }
+      ]
     },
     {
       "name": "missionX",
@@ -1295,7 +2253,24 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "missionX focuses on project and resource management, not visual whiteboarding or collaborative workshops; buyers would use it for a different core job."
+      "rationale": "AI project/resource management tool, not a visual collaboration/whiteboarding platform; only weak planning overlap, different product and buyer job.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Project planning and collaboration for distributed teams overlaps Miro's planning/workshop use cases, though missionX emphasizes project and resource management."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "AI project/resource management tool, not a visual collaboration/whiteboarding platform; only weak planning overlap, different product and buyer job."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "Project/resource management PSA tool, not visual whiteboarding/collaboration canvas; different product and job to be done.You must respond with valid JSON that conforms to the following JSON schema:\n<json_schema>"
+        }
+      ]
     },
     {
       "name": "ConceptCraft AI",
@@ -1312,7 +2287,24 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "ConceptCraft focuses on AI-driven product ideation, research, and validation, not visual whiteboarding and collaborative workshop facilitation like Miro."
+      "rationale": "Vague AI concept-to-creation product platform; no clear visual whiteboarding or collaboration workspace product overlapping Miro's core offering.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "AI product ideation and planning platform overlaps Miro's product-team workshop and planning use cases, though with stronger research and generation focus."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Vague AI concept-to-creation product platform; no clear visual whiteboarding or collaboration workspace product overlapping Miro's core offering."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "AI idea-to-project-plan generator, not a visual collaboration/whiteboarding workspace; overlap with Miro's product and job-to-be-done is weak."
+        }
+      ]
     },
     {
       "name": "WorkflowAI",
@@ -1329,7 +2321,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "WorkflowAI supports building and iterating AI features, not visual whiteboarding, workshops, or collaborative planning; shared product-team users alone are insufficient."
+      "rationale": "Both provide collaboration tools for product and engineering teams, but WorkflowAI focuses on AI feature development rather than visual whiteboarding and workshops.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Both provide collaboration tools for product and engineering teams, but WorkflowAI focuses on AI feature development rather than visual whiteboarding and workshops."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "AI feature-development tooling for engineers, not visual whiteboarding/collaboration; shared 'collaboration' keyword is generic, no product or market overlap."
+        }
+      ]
     },
     {
       "name": "Coverse",
@@ -1346,7 +2350,19 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "Coverse offers a visual collaborative workspace for cross-functional product and project teams, overlapping Miro\u2019s planning, content collaboration, and distributed-work use cases."
+      "rationale": "Visual workspace for cross-functional collaboration, planning, and embedded Miro/Figma content targets similar product and project teams.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Visual workspace for cross-functional collaboration, planning, and embedded Miro/Figma content targets similar product and project teams."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Visual collaboration workspace for cross-functional product teams \u2014 same product category, buyer, and job-to-be-done as Miro."
+        }
+      ]
     },
     {
       "name": "TIMU",
@@ -1362,8 +2378,20 @@
         "industries": null,
         "employee_count": "11-50"
       },
-      "relevant": false,
-      "rationale": "TIMU primarily provides AI-agent building and workflow automation, not a visual whiteboarding and workshop platform evaluated for Miro\u2019s core use case."
+      "relevant": true,
+      "rationale": "TIMU's Powerboards provide collaboration, messaging, meetings, and visual planning for teams, overlapping Miro's collaborative whiteboarding and product-work workflows.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "TIMU's Powerboards provide collaboration, messaging, meetings, and visual planning for teams, overlapping Miro's collaborative whiteboarding and product-work workflows."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "TIMU offers a collaboration platform with visual planning boards, messaging, and meetings for team work\u2014directly comparable to Miro's visual collaboration space."
+        }
+      ]
     },
     {
       "name": "Mirorim",
@@ -1380,7 +2408,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "Mirorim is primarily task and project management, not a visual whiteboarding and workshop platform; shared remote collaboration users are insufficient."
+      "rationale": "Project-management platform for remote teams overlaps collaboration needs, but lacks Miro's visual whiteboarding and workshop-focused product.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Project-management platform for remote teams overlaps collaboration needs, but lacks Miro's visual whiteboarding and workshop-focused product."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Task/project-management tool with Kanban and chat, but no visual whiteboarding; adjacent PM category, not a genuine Miro competitor or comparable."
+        }
+      ]
     },
     {
       "name": "Mavity",
@@ -1397,7 +2437,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "Mavity focuses on AI creative operations and marketing asset production, not collaborative whiteboarding and visual planning for distributed teams."
+      "rationale": "Mavity is a creative-operations and GTM campaign platform, not a visual whiteboarding and workshop collaboration product for distributed teams.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Mavity is a creative-operations and GTM campaign platform, not a visual whiteboarding and workshop collaboration product for distributed teams."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Mavity is AI creative-ops for GTM/marketing campaigns, not a visual whiteboarding/collaboration platform; different product and buyer persona."
+        }
+      ]
     },
     {
       "name": "Agilibo",
@@ -1414,7 +2466,24 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "Both support distributed product teams with collaborative sprint planning, retrospectives, and agile workshops, targeting Scrum Masters and product owners."
+      "rationale": "Agilibo supports distributed agile teams with planning, retrospectives, and collaboration workflows, overlapping Miro\u2019s workshop and product-team collaboration use cases.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Agilibo supports distributed agile teams with planning, retrospectives, and collaboration workflows, overlapping Miro\u2019s workshop and product-team collaboration use cases."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Agile ceremony/scrum management tool, not a visual whiteboard or workshop canvas; overlap is only generic distributed-team collaboration, different product category."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "SaaS collaboration tool for distributed agile teams doing sprint planning and retrospectives \flop use cases overlapping Miro's core buyers.Respond only with JSON."
+        }
+      ]
     },
     {
       "name": "RoadMap AI",
@@ -1431,7 +2500,24 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "Both provide collaborative product-planning and roadmap tools for product managers and cross-functional development teams."
+      "rationale": "Collaborative product-roadmapping platform for product and development teams overlaps Miro's planning and distributed product-team collaboration use cases.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Collaborative product-roadmapping platform for product and development teams overlaps Miro's planning and distributed product-team collaboration use cases."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Dedicated product-roadmap tool, not a visual collaboration/whiteboarding platform; market overlap with product teams is only partial and product resemblance is weak."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Both are SaaS collaboration/planning tools for product teams aligning cross-functional stakeholders; adjacent competitor in product planning space.You must respond with valid JSON that conforms to the following JSON schema:</json_schema>. J"
+        }
+      ]
     },
     {
       "name": "Space AI",
@@ -1448,7 +2534,19 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "Both provide collaborative visual ideation and sketching tools for designers and product teams conducting brainstorming and early-stage concept work."
+      "rationale": "Visual ideation, sketching, and real-time collaboration for product designers closely overlap Miro's whiteboarding and distributed team-work use cases.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Visual ideation, sketching, and real-time collaboration for product designers closely overlap Miro's whiteboarding and distributed team-work use cases."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Real-time visual sketching and collaborative ideation canvas for designers overlaps Miro's whiteboarding/visual-collaboration product and buyer persona."
+        }
+      ]
     },
     {
       "name": "Microboard.io",
@@ -1465,7 +2563,19 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "Both provide collaborative online whiteboards for product, design, and remote teams, supporting planning, diagrams, workshops, and Jira-connected workflows."
+      "rationale": "Online collaborative whiteboard for product teams, workshops, planning, and real-time visual collaboration directly overlaps Miro's core product and buyers.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Online collaborative whiteboard for product teams, workshops, planning, and real-time visual collaboration directly overlaps Miro's core product and buyers."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Online collaborative whiteboard platform for product/design teams with real-time collaboration and Jira integration \u2014 direct Miro competitor on product and market axes."
+        }
+      ]
     },
     {
       "name": "Parta.io",
@@ -1482,7 +2592,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "Parta is primarily an eLearning authoring platform for instructional designers, not a general visual whiteboarding workspace evaluated by product teams."
+      "rationale": "Parta is an eLearning course-authoring platform for instructional design, not a general visual whiteboarding and product-team collaboration platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Parta is an eLearning course-authoring platform for instructional design, not a general visual whiteboarding and product-team collaboration platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "eLearning course-authoring tool for instructional designers; Miro-style collaboration is a feature, not the same product or market."
+        }
+      ]
     },
     {
       "name": "ScrumDesk",
@@ -1498,8 +2620,25 @@
         "industries": null,
         "employee_count": "1-10"
       },
-      "relevant": false,
-      "rationale": "ScrumDesk is primarily agile project-management software, while Miro is a general visual whiteboarding platform; overlapping retrospectives and planning are secondary."
+      "relevant": true,
+      "rationale": "Both support product and agile teams with collaborative planning, roadmaps, workshops/retrospectives, and distributed team coordination.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both support product and agile teams with collaborative planning, roadmaps, workshops/retrospectives, and distributed team coordination."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "ScrumDesk is a structured agile PM/backlog tool (Jira-like); Miro is visual whiteboarding/collaboration. Audience overlap alone doesn't carry product or model resemblance."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Both are SaaS collaboration tools for distributed agile product teams (planning, retrospectives), overlapping buyer persona and job to be done.', ' ' ' '"
+        }
+      ]
     },
     {
       "name": "Mushin",
@@ -1516,7 +2655,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Both provide visual collaboration workspaces for product teams conducting co-creation, ideation, journey mapping, and collaborative planning."
+      "rationale": "Visual collaboration and ideation platform for product teams; overlaps Miro's whiteboarding and workshop use cases despite customer co-creation specialization.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Visual collaboration and ideation platform for product teams; overlaps Miro's whiteboarding and workshop use cases despite customer co-creation specialization."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Visual collaboration platform for product-team co-creation and ideation, matching Miro's core product axis despite narrower customer-feedback focus."
+        }
+      ]
     },
     {
       "name": "Coot AI",
@@ -1533,7 +2684,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "Coot AI aggregates AI models and gig workflows, not visual whiteboarding or collaborative planning for product teams; buyers would not evaluate them interchangeably."
+      "rationale": "Coot AI aggregates generative AI models and expert gigs; it is not a visual whiteboarding or workshop-planning collaboration platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Coot AI aggregates generative AI models and expert gigs; it is not a visual whiteboarding or workshop-planning collaboration platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "AI-model aggregator and gig marketplace, not a visual whiteboarding/collaboration platform; no shared product or market with Miro."
+        }
+      ]
     },
     {
       "name": "Dimension",
@@ -1550,7 +2713,19 @@
         "employee_count": "51-200"
       },
       "relevant": false,
-      "rationale": "Dimension focuses on engineering execution, AI chat, and developer workflows, not visual whiteboarding and workshop collaboration; they solve different core jobs."
+      "rationale": "Engineering-focused chat and project management differs from Miro\u2019s visual whiteboarding and workshop collaboration product.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Engineering-focused chat and project management differs from Miro\u2019s visual whiteboarding and workshop collaboration product."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Engineering chat/PM/CI-CD tool, not visual whiteboarding; different job-to-be-done despite both being team collaboration software."
+        }
+      ]
     },
     {
       "name": "Naer",
@@ -1567,7 +2742,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "Naer is an XR extension for Miro users, not a standalone visual collaboration platform evaluated as an alternative to Miro."
+      "rationale": "XR collaboration platform extends Miro workshops into immersive environments, but its primary offering is a Miro integration rather than a comparable whiteboarding platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "XR collaboration platform extends Miro workshops into immersive environments, but its primary offering is a Miro integration rather than a comparable whiteboarding platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "XR add-on built as a Miro integration\u2014an ecosystem complement dependent on the seed, not a peer collaboration platform or competitor."
+        }
+      ]
     },
     {
       "name": "Draft.io",
@@ -1584,7 +2771,19 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "Draft.io directly overlaps Miro in collaborative whiteboarding, workshops, ideation, and agile planning for product and agile teams."
+      "rationale": "Direct visual whiteboarding and workshop collaboration platform for agile product teams, overlapping Miro\u2019s core product and buyer use cases.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Direct visual whiteboarding and workshop collaboration platform for agile product teams, overlapping Miro\u2019s core product and buyer use cases."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Direct competitor: visual collaboration whiteboard platform for agile teams, workshops, and product planning \u2014 same product, market, and model as Miro."
+        }
+      ]
     },
     {
       "name": "Meeting.ai",
@@ -1601,7 +2800,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "Meeting.ai transcribes and summarizes meetings; it is not a collaborative whiteboarding or visual workspace platform evaluated for the same core job."
+      "rationale": "Meeting.ai is a meeting transcription and visual-summary tool, not a collaborative whiteboarding and workshop platform for distributed product teams.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Meeting.ai is a meeting transcription and visual-summary tool, not a collaborative whiteboarding and workshop platform for distributed product teams."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Meeting.ai is an AI transcription/note-taking tool, not an interactive visual collaboration/whiteboard platform like Miro; closer to Otter.ai than Mural or FigJam."
+        }
+      ]
     },
     {
       "name": "virtuall",
@@ -1618,7 +2829,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "Virtuall specializes in AI-generated 3D content production and asset review, not collaborative whiteboarding, workshops, or product-team planning."
+      "rationale": "Specialized AI-enabled 3D content-production workspace for creative teams, not a general visual whiteboarding and collaboration platform for distributed product work.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Specialized AI-enabled 3D content-production workspace for creative teams, not a general visual whiteboarding and collaboration platform for distributed product work."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "3D asset generation/DAM tool for design studios, not a whiteboarding/visual-collaboration platform for distributed team planning; different job and buyer."
+        }
+      ]
     },
     {
       "name": "illumi",
@@ -1635,7 +2858,19 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "Both provide collaborative visual whiteboards for team ideation, planning, knowledge sharing, and real-time workflows, targeting teams with the same core job."
+      "rationale": "AI-enabled collaborative whiteboard for teams directly overlaps Miro's visual collaboration, brainstorming, and distributed-work use cases.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "AI-enabled collaborative whiteboard for teams directly overlaps Miro's visual collaboration, brainstorming, and distributed-work use cases."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are visual collaboration whiteboard platforms for teams; illumi competes directly with Miro on product and market, with added AI features."
+        }
+      ]
     },
     {
       "name": "EmpathyAI",
@@ -1652,7 +2887,19 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "Both provide collaborative ideation and innovation platforms for product, R&D, and workshop teams to brainstorm and refine concepts."
+      "rationale": "AI co-creation and real-time collaborative ideation support similar workshops, brainstorming, and product-team innovation workflows.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "AI co-creation and real-time collaborative ideation support similar workshops, brainstorming, and product-team innovation workflows."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are collaborative ideation platforms for product/innovation teams; Connectify's real-time co-creation and brainstorming resembles Miro's whiteboarding/workshop collaboration."
+        }
+      ]
     },
     {
       "name": "Missio AI",
@@ -1669,7 +2916,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "Missio automates product-management workflows, while Miro provides visual whiteboarding and collaboration; buyer overlap alone does not establish the same job to be done."
+      "rationale": "Both serve product teams, but Missio is an AI workflow copilot for PM operations, not a visual collaboration or whiteboarding platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Both serve product teams, but Missio is an AI workflow copilot for PM operations, not a visual collaboration or whiteboarding platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "AI copilot automating PM tasks, not a visual collaboration/whiteboarding platform; adjacent persona but different product category."
+        }
+      ]
     },
     {
       "name": "M20 Technology",
@@ -1686,7 +2945,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "M20 is primarily a Confluence implementation consultancy, not a visual whiteboarding and collaboration software platform evaluated for the same job."
+      "rationale": "Atlassian implementation consultancy serving collaboration users, not a visual whiteboarding and workshop platform competitor.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Atlassian implementation consultancy serving collaboration users, not a visual whiteboarding and workshop platform competitor."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Confluence implementation consultancy, not a visual collaboration whiteboarding platform; agency serving the category rather than competing with Miro."
+        }
+      ]
     },
     {
       "name": "Korgi",
@@ -1703,7 +2974,25 @@
         "employee_count": null
       },
       "relevant": true,
-      "rationale": "Both provide collaborative visual boards for project planning and team workflows, targeting project managers and cross-functional teams."
+      "rationale": "AI-powered project boards for planning and team collaboration overlap with Miro's visual planning and distributed-workspace use cases.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "AI-powered project boards for planning and team collaboration overlap with Miro's visual planning and distributed-workspace use cases."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Korgi is AI project-management boards/task planning, not a visual whiteboarding collaboration canvas; different product category despite planning overlap."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Both are visual board-based collaboration/planning tools for teams; Korgi is a plausible comparable in the collaborative workspace space.', ''), ('rationale'"
+        }
+      ]
     }
-  ]
+  ],
+  "error": null
 }

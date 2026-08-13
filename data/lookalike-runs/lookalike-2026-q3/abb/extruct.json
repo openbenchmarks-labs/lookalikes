@@ -7,20 +7,20 @@
     "name": "domain_similarity"
   },
   "k": 100,
-  "relevant_count": 26,
-  "precision_at_k": 26.0,
+  "relevant_count": 10,
+  "precision_at_k": 10.0,
   "relevant_count_at_10": 4,
-  "relevant_count_at_25": 11,
-  "relevant_count_at_100": 26,
+  "relevant_count_at_25": 8,
+  "relevant_count_at_100": 10,
   "precision_at_10": 40.0,
-  "precision_at_25": 44.0,
-  "precision_at_100": 26.0,
+  "precision_at_25": 32.0,
+  "precision_at_100": 10.0,
   "latency_ms": 1899,
   "cost_usd": null,
   "duplicates_removed": 1,
   "max_results": null,
-  "judge_model": "gpt-5.6",
-  "judged_at": "2026-07-27T06:50:27Z",
+  "judge_model": "majority(n=3): claude-opus-5,gpt-5.6-terra,kimi-k3",
+  "judged_at": "2026-08-10T20:18:22Z",
   "candidates": [
     {
       "name": "HellermannTyton Global",
@@ -37,7 +37,19 @@
         "employee_count": "201-500"
       },
       "relevant": true,
-      "rationale": "HellermannTyton\u2019s cable ties, conduits, and cable-protection products overlap ABB\u2019s electrification portfolio and target the same industrial electrical buyers."
+      "rationale": "Industrial cable-management manufacturer directly overlaps ABB\u2019s electrification installation products, including cable ties, conduits, and protection systems.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Industrial cable-management manufacturer directly overlaps ABB\u2019s electrification installation products, including cable ties, conduits, and protection systems."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Industrial electrical installation products maker; ABB's electrification division sells the same cable management products to the same industrial buyers \u2014 direct segment competitor."
+        }
+      ]
     },
     {
       "name": "Dunford and Pearson Distribution for ABB - Harnessflex",
@@ -54,7 +66,19 @@
         "employee_count": "51-200"
       },
       "relevant": false,
-      "rationale": "Candidate is an ABB product distributor and wiring-harness specialist, not an industrial electrification, automation, motion, or robotics technology manufacturer."
+      "rationale": "Distributor of ABB's own Harnessflex products, not an independent industrial automation, electrification, robotics, or motion technology comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Distributor of ABB's own Harnessflex products, not an independent industrial automation, electrification, robotics, or motion technology comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Distributor/reseller of ABB's own Harnessflex products \u2014 a channel partner, not a competitor or comparable industrial technology company."
+        }
+      ]
     },
     {
       "name": "Fibox Group",
@@ -71,7 +95,24 @@
         "employee_count": "51-200"
       },
       "relevant": true,
-      "rationale": "Both manufacture industrial electrical enclosures and automation-related hardware evaluated by OEMs and industrial engineers for protecting and housing electrical systems."
+      "rationale": "Fibox makes industrial electrical enclosures and electrification components, overlapping ABB's electrification product line and serving the same industrial automation customers.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Fibox primarily manufactures protective industrial enclosures, a component category rather than ABB\u2019s broad electrification, automation, robotics, and motion platforms."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Fibox makes industrial electrical enclosures and electrification components, overlapping ABB's electrification product line and serving the same industrial automation customers."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Both manufacture electrical/automation hardware components sold to industrial automation OEMs and utilities; adjacent peer in electrification products.Ancak narrower.', ''}"
+        }
+      ]
     },
     {
       "name": "HellermannTyton",
@@ -88,7 +129,19 @@
         "employee_count": "201-500"
       },
       "relevant": true,
-      "rationale": "HellermannTyton overlaps ABB\u2019s electrification portfolio in cable management, protection, identification, and installation products sold to electrical and industrial buyers."
+      "rationale": "HellermannTyton\u2019s cable management and electrical protection products directly overlap ABB\u2019s electrification portfolio, serving similar industrial and electrical-installation customers.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "HellermannTyton\u2019s cable management and electrical protection products directly overlap ABB\u2019s electrification portfolio, serving similar industrial and electrical-installation customers."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both manufacture electrical installation and cable-management products; HellermannTyton competes directly with ABB's electrification/installation-products division for the same industrial buyers."
+        }
+      ]
     },
     {
       "name": "CONEC Elektronische Bauelemente GmbH",
@@ -105,7 +158,19 @@
         "employee_count": "51-200"
       },
       "relevant": false,
-      "rationale": "CONEC primarily makes industrial connectors, a component category rather than ABB\u2019s core electrification, automation, motion, and robotics systems."
+      "rationale": "CONEC supplies industrial connectors, a complementary component category rather than ABB's electrification, automation, motion, robotics, and process-control platforms.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "CONEC supplies industrial connectors, a complementary component category rather than ABB's electrification, automation, motion, robotics, and process-control platforms."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "CONEC makes connector components supplying automation OEMs like ABB \u2014 a component supplier, not a peer in electrification/automation systems."
+        }
+      ]
     },
     {
       "name": "SMI",
@@ -122,7 +187,19 @@
         "employee_count": "51-200"
       },
       "relevant": false,
-      "rationale": "SMI specializes in custom hostile-environment cable assemblies, not ABB\u2019s core industrial electrification, automation, motion, or robotics platforms."
+      "rationale": "SMI makes specialized cable and connector systems for defense and offshore infrastructure, not ABB\u2019s broad electrification, automation, motion, or robotics platforms.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "SMI makes specialized cable and connector systems for defense and offshore infrastructure, not ABB\u2019s broad electrification, automation, motion, or robotics platforms."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "SMI makes niche subsea/defense cable harnesses and connectors; ABB is broad electrification, automation, and robotics \u2014 different products and buyer markets."
+        }
+      ]
     },
     {
       "name": "Charofil",
@@ -139,7 +216,24 @@
         "employee_count": "51-200"
       },
       "relevant": true,
-      "rationale": "Charofil\u2019s electrical cable-management systems overlap ABB\u2019s electrification portfolio and target the same electrical engineers, contractors, and industrial facility buyers."
+      "rationale": "Cable trays, channeling, and electrical installation products directly overlap ABB's electrification division (Thomas & Betts cable management/strut lines); same contractor buyers.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Charofil makes cable-management hardware for electrical installations, a narrow component supplier rather than an electrification, automation, motion, or robotics peer."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Cable trays, channeling, and electrical installation products directly overlap ABB's electrification division (Thomas & Betts cable management/strut lines); same contractor buyers."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Manufacturer of electrical infrastructure products (cable management) serving electrical contractors \\u2014 adjacent peer in ABB's electrification hardware space.antml:invoke Loose but plausible.', 'x': 1}"
+        }
+      ]
     },
     {
       "name": "Cornelius Electronics Ltd",
@@ -156,7 +250,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "Cornelius is a contract manufacturer of cable assemblies and harnesses, not an industrial electrification, automation, motion, or robotics technology provider."
+      "rationale": "Contract manufacturer of wiring harnesses and cable assemblies; it supplies industrial OEMs rather than offering ABB's electrification, automation, robotics, or motion platforms.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Contract manufacturer of wiring harnesses and cable assemblies; it supplies industrial OEMs rather than offering ABB's electrification, automation, robotics, or motion platforms."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Contract manufacturer of wiring harnesses/cable assemblies; a component supplier, not a peer in electrification, automation, or robotics products."
+        }
+      ]
     },
     {
       "name": "Auto Electrical Supplies",
@@ -173,7 +279,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "AES distributes automotive wiring-protection components, while ABB\u2019s core offerings are industrial electrification, automation, motion, and robotics platforms for different purchasing needs."
+      "rationale": "Automotive wiring-components distributor, not an industrial electrification, automation, robotics, or motion technology platform comparable to ABB.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Automotive wiring-components distributor, not an industrial electrification, automation, robotics, or motion technology platform comparable to ABB."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Niche distributor of automotive wiring conduit parts; a components supplier, not an industrial electrification/automation peer like ABB."
+        }
+      ]
     },
     {
       "name": "Amphenol Trackwise Designs Ltd",
@@ -190,7 +308,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "Trackwise manufactures flexible PCB interconnects, while ABB provides electrification and automation systems; buyers would not evaluate them for the same job."
+      "rationale": "Manufactures flexible PCB and wiring-harness components, a supplier to industrial automation rather than an electrification, automation, robotics, or motion systems peer.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Manufactures flexible PCB and wiring-harness components, a supplier to industrial automation rather than an electrification, automation, robotics, or motion systems peer."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Trackwise makes flexible PCBs replacing wiring harnesses \u2014 a component supplier, not a peer in electrification, automation, or robotics systems like ABB."
+        }
+      ]
     },
     {
       "name": "Northern Connectors Ltd.",
@@ -207,7 +337,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "Northern Connectors is a specialized component distributor, not an industrial automation, electrification, motion, or robotics technology manufacturer like ABB."
+      "rationale": "Industrial connector distributor supplying automation components; it is a supplier, not a comparable electrification, automation, robotics, or motion technology company.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Industrial connector distributor supplying automation components; it is a supplier, not a comparable electrification, automation, robotics, or motion technology company."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Distributor of connector components, a supplier in the industrial supply chain, not a competitor or comparable to ABB's electrification/automation technology business."
+        }
+      ]
     },
     {
       "name": "AQ Wiring Systems Rockford",
@@ -224,7 +366,19 @@
         "employee_count": "51-200"
       },
       "relevant": false,
-      "rationale": "AQ manufactures specialized wiring harnesses, not industrial automation, robotics, motion-control, or electrification platforms evaluated for ABB\u2019s core jobs."
+      "rationale": "Manufacturer of wiring harnesses and cable assemblies, not an industrial electrification, automation, robotics, motion, or process-control platform comparable to ABB.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Manufacturer of wiring harnesses and cable assemblies, not an industrial electrification, automation, robotics, motion, or process-control platform comparable to ABB."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Wiring-harness component maker for aerospace/defence OEMs; not a peer in ABB's electrification, automation, or robotics markets\u2014more supplier-tier than comparable."
+        }
+      ]
     },
     {
       "name": "Metpro",
@@ -241,7 +395,19 @@
         "employee_count": "51-200"
       },
       "relevant": true,
-      "rationale": "Metpro\u2019s conduit and cable-management products overlap ABB\u2019s electrification installation offerings and target the same electrical wholesalers, OEMs, and contractors."
+      "rationale": "Metpro manufactures electrical cable-management and conduit products, overlapping ABB's electrification portfolio and serving similar electrical trade and OEM buyers.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Metpro manufactures electrical cable-management and conduit products, overlapping ABB's electrification portfolio and serving similar electrical trade and OEM buyers."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Metpro manufactures electrical conduit, boxes, and cable-management products, directly overlapping ABB's electrification/installation-products business (e.g., Thomas & Betts); genuine product-axis match."
+        }
+      ]
     },
     {
       "name": "GREMCO",
@@ -257,8 +423,20 @@
         "industries": null,
         "employee_count": "11-50"
       },
-      "relevant": true,
-      "rationale": "GREMCO\u2019s cable protection and insulation products overlap ABB\u2019s electrification portfolio and target the same industrial OEM and automation buyers."
+      "relevant": false,
+      "rationale": "GREMCO supplies cable-protection components, not ABB-like electrification, automation, robotics, motion, or industrial-control platforms.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "GREMCO supplies cable-protection components, not ABB-like electrification, automation, robotics, motion, or industrial-control platforms."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "GREMCO is a niche cable-protection component supplier, not a peer in electrification, automation, or robotics systems; supplier rather than comparable."
+        }
+      ]
     },
     {
       "name": "CABLEX Group",
@@ -275,7 +453,19 @@
         "employee_count": "51-200"
       },
       "relevant": false,
-      "rationale": "CABLEX manufactures custom wiring and molded components; it does not offer ABB-like electrification, automation, motion, or robotics systems."
+      "rationale": "Wire-harness and component manufacturer supplying industrial OEMs, not an electrification, automation, robotics, or industrial technology platform peer.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Wire-harness and component manufacturer supplying industrial OEMs, not an electrification, automation, robotics, or industrial technology platform peer."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "CABLEX is a wire-harness/cable-assembly component contract manufacturer\u2014a supplier, not a peer in electrification, automation, or robotics systems."
+        }
+      ]
     },
     {
       "name": "FS Cables",
@@ -292,7 +482,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "FS Cables is primarily a cable distributor, not an industrial electrification, automation, motion, or robotics technology provider evaluated for the same jobs."
+      "rationale": "Cabling distributor supplying electrical contractors, not an industrial electrification, automation, robotics, or motion technology platform comparable to ABB.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Cabling distributor supplying electrical contractors, not an industrial electrification, automation, robotics, or motion technology platform comparable to ABB."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "FS Cables is a cable distributor/reseller, not an industrial electrification/automation technology manufacturer; supplier-adjacent, not a peer of ABB."
+        }
+      ]
     },
     {
       "name": "Senior Flexonics",
@@ -309,7 +511,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "Senior Flexonics supplies vehicle thermal and exhaust components, not industrial electrification, automation, motion-control, or robotics systems evaluated for ABB\u2019s core jobs."
+      "rationale": "Senior Flexonics supplies vehicle thermal-management and exhaust components, not ABB-like electrification, automation, robotics, or industrial control platforms.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Senior Flexonics supplies vehicle thermal-management and exhaust components, not ABB-like electrification, automation, robotics, or industrial control platforms."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Automotive exhaust/thermal component supplier; no overlap with ABB's electrification, automation, robotics, or industrial technology products."
+        }
+      ]
     },
     {
       "name": "Hydraflex",
@@ -326,7 +540,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "Hydraflex manufactures specialized hoses and assemblies, not electrification, industrial automation, motion, or robotics systems evaluated for ABB\u2019s core jobs."
+      "rationale": "Hydraflex manufactures industrial hose assemblies and cooling components, not electrification, automation, robotics, motion, or process-control systems comparable to ABB.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Hydraflex manufactures industrial hose assemblies and cooling components, not electrification, automation, robotics, motion, or process-control systems comparable to ABB."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Hydraflex manufactures industrial hoses, not electrification, automation, or robotics systems; a component supplier in adjacent space, not a peer or comparable."
+        }
+      ]
     },
     {
       "name": "Whitehouse Flexible Tubing Ltd",
@@ -342,8 +568,20 @@
         "industries": null,
         "employee_count": "1-10"
       },
-      "relevant": true,
-      "rationale": "Both manufacture flexible conduit and cable-protection products for electrical contractors and industrial facilities, creating direct offering and buyer overlap within ABB\u2019s electrification business."
+      "relevant": false,
+      "rationale": "Specialist tubing and hose manufacturer supplies industrial components, not ABB\u2019s electrification, automation, motion, robotics, or process-control platforms.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Specialist tubing and hose manufacturer supplies industrial components, not ABB\u2019s electrification, automation, motion, robotics, or process-control platforms."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Niche tubing/conduit component maker; supplier to industry, not a peer in electrification, automation, or robotics technology."
+        }
+      ]
     },
     {
       "name": "HIK",
@@ -360,7 +598,19 @@
         "employee_count": "51-200"
       },
       "relevant": false,
-      "rationale": "HIK is primarily a custom cable and component manufacturer, not an industrial electrification, automation, motion, or robotics technology platform like ABB."
+      "rationale": "HIK is a custom component, cable, and enclosure manufacturer supplying industrial OEMs, not a broad electrification, automation, robotics, and motion technology peer.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "HIK is a custom component, cable, and enclosure manufacturer supplying industrial OEMs, not a broad electrification, automation, robotics, and motion technology peer."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Custom cable-assembly and enclosure contract manufacturer supplying industrial OEMs\u2014a supplier in ABB's value chain, not an electrification/automation peer or competitor."
+        }
+      ]
     },
     {
       "name": "Moltec International",
@@ -376,8 +626,20 @@
         "industries": null,
         "employee_count": "11-50"
       },
-      "relevant": true,
-      "rationale": "Moltec\u2019s industrial cable-protection systems overlap ABB\u2019s electrification portfolio and target the same engineers designing wind, transit, and robotic automation equipment."
+      "relevant": false,
+      "rationale": "Wire-protection component supplier for automation and energy equipment, not an electrification, automation, robotics, or industrial-platform peer.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Wire-protection component supplier for automation and energy equipment, not an electrification, automation, robotics, or industrial-platform peer."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Niche wire/conduit component supplier for robotics and wind OEMs, not a peer in electrification, automation, or robotics systems; supplier role, weak product overlap."
+        }
+      ]
     },
     {
       "name": "ASL",
@@ -394,7 +656,19 @@
         "employee_count": "201-500"
       },
       "relevant": false,
-      "rationale": "ASL primarily manufactures custom cables and wiring harnesses, not ABB-like electrification, automation, motion, or robotics systems for the same purchasing need."
+      "rationale": "ASL manufactures cable assemblies and control panels for industrial OEMs, acting as an ABB supplier-type manufacturer rather than a broad automation, robotics, or electrification peer.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "ASL manufactures cable assemblies and control panels for industrial OEMs, acting as an ABB supplier-type manufacturer rather than a broad automation, robotics, or electrification peer."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Cable assembly/harness contract manufacturer supplying OEMs \u2014 a component supplier, not a peer in electrification, automation, or robotics systems."
+        }
+      ]
     },
     {
       "name": "Sealcon",
@@ -411,7 +685,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Sealcon\u2019s industrial cable protection, connectors, conduit, and enclosures overlap ABB\u2019s electrification installation products and target the same industrial engineers and equipment designers."
+      "rationale": "Sealcon supplies industrial cable protection, connectors, and enclosures that overlap ABB\u2019s electrification and industrial-automation component portfolio.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Sealcon supplies industrial cable protection, connectors, and enclosures that overlap ABB\u2019s electrification and industrial-automation component portfolio."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Sealcon's cable glands, connectors, and conduit systems directly overlap ABB's installation-products/cable-protection line (e.g., PMA), serving the same industrial automation buyers."
+        }
+      ]
     },
     {
       "name": "Cablecraft",
@@ -428,7 +714,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Cablecraft\u2019s cable management, protection, and connection products overlap ABB\u2019s electrification portfolio and target the same electrical engineers, installers, and contractors."
+      "rationale": "Cablecraft supplies industrial electrical cabling, termination, protection, and control-panel accessories, overlapping ABB\u2019s electrification portfolio and serving similar industrial electrical buyers.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Cablecraft supplies industrial electrical cabling, termination, protection, and control-panel accessories, overlapping ABB\u2019s electrification portfolio and serving similar industrial electrical buyers."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Cablecraft manufactures electrical cable management and installation products, directly overlapping ABB's electrification installation-products line, serving the same industrial/electrical buyers."
+        }
+      ]
     },
     {
       "name": "Famatel UK",
@@ -445,7 +743,19 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "Famatel overlaps ABB\u2019s electrification portfolio in industrial plugs, sockets, and enclosures, targeting the same industrial engineers and harsh-environment applications."
+      "rationale": "Manufactures industrial electrical connection products for similar electrification and industrial-process customers, making it a focused ABB comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Manufactures industrial electrical connection products for similar electrification and industrial-process customers, making it a focused ABB comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Industrial electrification products (plugs, sockets, enclosures) directly overlap ABB's electrification/low-voltage product lines \u2014 a niche competitor in ABB's space."
+        }
+      ]
     },
     {
       "name": "Tsubaki Kabelschlepp",
@@ -462,7 +772,19 @@
         "employee_count": "51-200"
       },
       "relevant": false,
-      "rationale": "Tsubaki supplies cable-management and machine-protection components, complementary to ABB\u2019s automation and robotics platforms rather than an overlapping core offering."
+      "rationale": "Industrial automation component supplier; overlaps ABB\u2019s automation ecosystem but not its core electrification, robotics, motion, or automation platform products.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Industrial automation component supplier; overlaps ABB\u2019s automation ecosystem but not its core electrification, robotics, motion, or automation platform products."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Component supplier (cable carriers for machinery), not a peer in electrification, robotics, or automation systems; supplier to the category rather than comparable."
+        }
+      ]
     },
     {
       "name": "UK Automotive Products Ltd",
@@ -479,7 +801,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "UK Automotive Products makes vehicle-specific wiring harnesses and lighting kits, not ABB-like industrial electrification, automation, motion, or robotics systems."
+      "rationale": "Automotive wiring and lighting supplier, not an industrial electrification, automation, motion, robotics, or process-technology peer.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Automotive wiring and lighting supplier, not an industrial electrification, automation, motion, robotics, or process-technology peer."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Vehicle wiring-harness component maker; ABB is electrification/automation/robotics industrial tech \u2014 no shared product, market, or model axis."
+        }
+      ]
     },
     {
       "name": "Falcon Trunking Systems",
@@ -495,8 +829,20 @@
         "industries": null,
         "employee_count": "1-10"
       },
-      "relevant": true,
-      "rationale": "Both manufacture cable-management products for electrical distributors and contractors, overlapping within ABB\u2019s electrification portfolio and serving the same installation needs."
+      "relevant": false,
+      "rationale": "Falcon manufactures narrow cable and pipe trunking products, not ABB's broad electrification, automation, motion, robotics, or industrial technology platforms.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Falcon manufactures narrow cable and pipe trunking products, not ABB's broad electrification, automation, motion, robotics, or industrial technology platforms."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Makes uPVC cable/pipe trunking for trade distributors \u2014 a building-products consumable, not electrification, automation, or robotics technology; only weak peripheral overlap."
+        }
+      ]
     },
     {
       "name": "AerosUSA",
@@ -512,8 +858,25 @@
         "industries": null,
         "employee_count": "1-10"
       },
-      "relevant": true,
-      "rationale": "AerosUSA\u2019s industrial conduits, cable glands, and wiring protection overlap ABB\u2019s electrification installation products and target the same industrial engineers."
+      "relevant": false,
+      "rationale": "Component supplier/distributor of cable conduits and glands, not an electrification/automation/robotics peer; supplier to the industry, not a comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Industrial cable-protection systems directly overlap ABB's electrification and automation wiring portfolio, making AerosUSA a niche product competitor."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Component supplier/distributor of cable conduits and glands, not an electrification/automation/robotics peer; supplier to the industry, not a comparable."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "Niche distributor of cable protection components, not an industrial automation/electrification technology manufacturer like ABB; supplier-tier, different product.CANDIDATE lacks peer resemblance."
+        }
+      ]
     },
     {
       "name": "Electri-Cord Manufacturing",
@@ -530,7 +893,19 @@
         "employee_count": "201-500"
       },
       "relevant": false,
-      "rationale": "Electri-Cord supplies custom cable and wiring components, not ABB\u2019s core electrification, automation, motion, or robotics systems for the same purchasing need."
+      "rationale": "Custom cable and wiring-harness manufacturer; supplies industrial equipment makers rather than offering ABB\u2019s electrification, automation, motion, or robotics platforms.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Custom cable and wiring-harness manufacturer; supplies industrial equipment makers rather than offering ABB\u2019s electrification, automation, motion, or robotics platforms."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Component supplier (wiring harnesses, cable assemblies), not a peer in electrification/automation/robotics systems; supplier relationship, not competitor or comparable."
+        }
+      ]
     },
     {
       "name": "Cybele Industries",
@@ -547,7 +922,19 @@
         "employee_count": "51-200"
       },
       "relevant": false,
-      "rationale": "Cybele primarily manufactures wires and automotive harnesses, while ABB provides broader electrification, automation, motion, and robotics systems; core offerings are not directly substitutable."
+      "rationale": "Cable and wiring-harness manufacturer supplying industrial sectors, not an electrification, automation, robotics, or industrial-technology platform comparable to ABB.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Cable and wiring-harness manufacturer supplying industrial sectors, not an electrification, automation, robotics, or industrial-technology platform comparable to ABB."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Cable/wiring-harness component manufacturer, not an electrification, automation, or robotics technology peer; at best a supplier-category company."
+        }
+      ]
     },
     {
       "name": "Flex-Tec",
@@ -564,7 +951,19 @@
         "employee_count": "501-1000"
       },
       "relevant": false,
-      "rationale": "Flex-Tec manufactures custom wire harnesses for OEMs, unlike ABB\u2019s industrial electrification, automation, motion, and robotics platforms."
+      "rationale": "Flex-Tec supplies wire harnesses to OEMs; it is an electrical-component manufacturer, not an electrification, automation, robotics, or industrial technology platform peer.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Flex-Tec supplies wire harnesses to OEMs; it is an electrical-component manufacturer, not an electrification, automation, robotics, or industrial technology platform peer."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Flex-Tec is a wire-harness component supplier to OEMs, not a peer in electrification, automation, or robotics systems like ABB."
+        }
+      ]
     },
     {
       "name": "Haley Products",
@@ -580,8 +979,20 @@
         "industries": null,
         "employee_count": "11-50"
       },
-      "relevant": true,
-      "rationale": "Both supply electrical-installation and cable-management products evaluated by electrical contractors, installers, and distributors for commercial wiring projects."
+      "relevant": false,
+      "rationale": "Cable-tray bracket manufacturer serving electrical installers; it does not offer ABB's industrial electrification, automation, motion, or robotics systems.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Cable-tray bracket manufacturer serving electrical installers; it does not offer ABB's industrial electrification, automation, motion, or robotics systems."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Niche cable tray bracket manufacturer; only a small component supplier in electrical installation, not a peer in electrification, automation, or robotics."
+        }
+      ]
     },
     {
       "name": "HTK Europe Ltd",
@@ -598,7 +1009,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "HTK supplies connectors and custom wiring harnesses, not industrial electrification, automation, motion, or robotics systems comparable to ABB\u2019s core offerings."
+      "rationale": "Cable-harness distributor and manufacturer supplying industrial OEMs, not an electrification, automation, robotics, or process-technology platform competitor.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Cable-harness distributor and manufacturer supplying industrial OEMs, not an electrification, automation, robotics, or process-technology platform competitor."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Component distributor/harness maker supplying connectors and cables; not a peer in electrification, automation, or robotics systems \u2014 more a supplier than a comparable."
+        }
+      ]
     },
     {
       "name": "Protecable",
@@ -615,7 +1038,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "Protecable sells niche EV cable-protection components, not ABB\u2019s core electrification, automation, motion, or robotics systems evaluated for the same job."
+      "rationale": "Protecable sells niche EV cable-protection components, not ABB\u2019s broad electrification, automation, motion, robotics, or industrial technology platforms.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Protecable sells niche EV cable-protection components, not ABB\u2019s broad electrification, automation, motion, robotics, or industrial technology platforms."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Niche EV cable-protection sleeve supplier; ABB is diversified electrification/automation/robotics technology company. No shared product, market, or business model as peers."
+        }
+      ]
     },
     {
       "name": "HellermannTyton France",
@@ -632,7 +1067,24 @@
         "employee_count": "51-200"
       },
       "relevant": true,
-      "rationale": "Both manufacture electrical cable-management, protection, identification, and installation products for industrial engineers, maintenance teams, and electrical contractors."
+      "rationale": "Cable-management manufacturer serving industrial electrical installations; comparable within ABB\u2019s electrification ecosystem, though narrower in scope.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Cable-management manufacturer serving industrial electrical installations; comparable within ABB\u2019s electrification ecosystem, though narrower in scope."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Cable management components manufacturer; narrow electrical accessories supplier, not a peer in electrification/automation/robotics industrial technology."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Both manufacture electrical/industrial installation products sold to electrical contractors and industrial maintenance; overlaps ABB's electrification component lines."
+        }
+      ]
     },
     {
       "name": "HD Connector",
@@ -649,7 +1101,19 @@
         "employee_count": "51-200"
       },
       "relevant": false,
-      "rationale": "HD Connector supplies automotive repair components, while ABB provides industrial electrification and automation systems to different buyers and use cases."
+      "rationale": "Automotive aftermarket connector and wire-harness supplier, not an industrial electrification, automation, robotics, or motion technology peer.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Automotive aftermarket connector and wire-harness supplier, not an industrial electrification, automation, robotics, or motion technology peer."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Narrow automotive aftermarket connector/wire-harness supplier; no overlap with ABB's industrial electrification, automation, robotics, or process-industry markets."
+        }
+      ]
     },
     {
       "name": "Concept Cables Ltd",
@@ -666,7 +1130,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "Concept Cables manufactures specialized industrial cables, while ABB\u2019s core offerings are electrification, automation, motors, and robotics systems; buyer overlap alone is insufficient."
+      "rationale": "Manufactures specialized industrial cables, a component supplier rather than an electrification, automation, robotics, or industrial technology platform comparable to ABB.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Manufactures specialized industrial cables, a component supplier rather than an electrification, automation, robotics, or industrial technology platform comparable to ABB."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Niche cable component manufacturer, not an electrification/automation/robotics systems peer; weak product overlap with ABB's core industrial technology business."
+        }
+      ]
     },
     {
       "name": "Securi-Flex\u00ae Ltd",
@@ -683,7 +1159,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "Securi-Flex primarily distributes cables, while ABB manufactures electrification, automation, motion, and robotics systems; their core offerings serve different purchasing needs."
+      "rationale": "Cable distributor serving electrical and security installers; it does not offer ABB\u2019s industrial automation, robotics, motion, or electrification systems.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Cable distributor serving electrical and security installers; it does not offer ABB\u2019s industrial automation, robotics, motion, or electrification systems."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Cable/accessory distributor in electrical supply chain, not a manufacturer of electrification/automation/robotics technology like ABB; channel player, not peer."
+        }
+      ]
     },
     {
       "name": "FEP Fahrzeugelektrik Pirna",
@@ -700,7 +1188,19 @@
         "employee_count": "51-200"
       },
       "relevant": false,
-      "rationale": "FEP makes specialized in-vehicle electrical components for automotive OEMs, unlike ABB\u2019s industrial electrification, automation, motion, and robotics platforms."
+      "rationale": "FEP supplies specialized automotive electrical components, not ABB\u2019s industrial electrification, automation, motion, robotics, or process-industry platforms.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "FEP supplies specialized automotive electrical components, not ABB\u2019s industrial electrification, automation, motion, robotics, or process-industry platforms."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Automotive electrical-component supplier for OEMs, not industrial electrification/automation/robotics; different products, buyers, and markets than ABB."
+        }
+      ]
     },
     {
       "name": "Gvtong Electronic Technology",
@@ -717,7 +1217,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "Gvtong manufactures specialized EV connectors and wire harnesses, while ABB primarily sells industrial electrification, automation, motion, and robotics systems."
+      "rationale": "Automotive connector and wire-harness supplier, not an industrial electrification, automation, robotics, or motion systems competitor.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Automotive connector and wire-harness supplier, not an industrial electrification, automation, robotics, or motion systems competitor."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Niche EV connector/harness component supplier, not a peer in electrification, automation, or robotics systems; serves automotive OEMs, not ABB's industrial markets."
+        }
+      ]
     },
     {
       "name": "MECS Mechanical Electronical Control Systems bv",
@@ -734,7 +1246,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "MECS supplies custom wire harnesses and components, not ABB-like electrification, automation, motion, or robotics platforms for comparable industrial jobs."
+      "rationale": "MECS is a wire-harness and electrical-component supplier to OEMs, not an industrial automation, robotics, motion, or electrification platform comparable to ABB.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "MECS is a wire-harness and electrical-component supplier to OEMs, not an industrial automation, robotics, motion, or electrification platform comparable to ABB."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Wire harness assembly supplier for vehicles/machinery; a component supplier, not an electrification/automation/robotics peer of ABB."
+        }
+      ]
     },
     {
       "name": "S & A Manufacturing Ltd.",
@@ -751,7 +1275,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "S&A is a contract cable-harness and assembly manufacturer, not an industrial electrification, automation, motion, or robotics technology provider like ABB."
+      "rationale": "Contract cable-harness and electronics manufacturer, not an industrial electrification, automation, motion, robotics, or process-technology platform comparable to ABB.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Contract cable-harness and electronics manufacturer, not an industrial electrification, automation, motion, robotics, or process-technology platform comparable to ABB."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Small contract cable-harness/PCB assembly shop supplying OEMs; a component supplier, not a peer in ABB's electrification, automation, or robotics technology space."
+        }
+      ]
     },
     {
       "name": "Strip Tinning Automotive",
@@ -768,7 +1304,19 @@
         "employee_count": "51-200"
       },
       "relevant": false,
-      "rationale": "Strip Tinning makes specialized automotive connectors and busbars, not ABB\u2019s core industrial electrification, automation, motion, or robotics platforms."
+      "rationale": "Automotive connector and busbar component supplier, not an industrial electrification, automation, motion, robotics, or process-technology platform comparable to ABB.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Automotive connector and busbar component supplier, not an industrial electrification, automation, motion, robotics, or process-technology platform comparable to ABB."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Niche automotive connector/busbar component supplier, not an industrial electrification/automation/robotics peer; different products, buyers, and model."
+        }
+      ]
     },
     {
       "name": "Hronovsk\u00fd s.r.o.",
@@ -785,7 +1333,19 @@
         "employee_count": "51-200"
       },
       "relevant": false,
-      "rationale": "Hronovsk\u00fd primarily manufactures automotive wiring and components, not ABB\u2019s industrial electrification, automation, motion, or robotics systems for industrial buyers."
+      "rationale": "Automotive cable-harness and component manufacturer, not an industrial electrification, automation, robotics, or process-technology platform comparable to ABB.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Automotive cable-harness and component manufacturer, not an industrial electrification, automation, robotics, or process-technology platform comparable to ABB."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Automotive cable-harness component supplier, not electrification/automation/robotics technology; supplier-category manufacturer rather than ABB peer or comparable."
+        }
+      ]
     },
     {
       "name": "Convert Limited",
@@ -802,7 +1362,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "Convert manufactures custom cable harnesses, while ABB\u2019s core offerings are electrification, automation, motion, and robotics systems for different purchasing needs."
+      "rationale": "Cable-harness contract manufacturer serving automotive and rail OEMs, not an industrial electrification, automation, motion, or robotics technology provider.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Cable-harness contract manufacturer serving automotive and rail OEMs, not an industrial electrification, automation, motion, or robotics technology provider."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Cable harness contract manufacturer is a component supplier, not a peer in electrification, automation, or robotics systems like ABB."
+        }
+      ]
     },
     {
       "name": "SGF Automotive",
@@ -819,7 +1391,19 @@
         "employee_count": "501-1000"
       },
       "relevant": false,
-      "rationale": "SGF manufactures specialized automotive rubber and vibration-control components, not ABB\u2019s core electrification, industrial automation, robotics, or motion-control systems."
+      "rationale": "Automotive rubber-component and NVH engineering supplier, not an industrial electrification, automation, robotics, or process-technology platform comparable to ABB.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Automotive rubber-component and NVH engineering supplier, not an industrial electrification, automation, robotics, or process-technology platform comparable to ABB."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Automotive rubber/NVH component maker, not electrification, automation, robotics, or industrial technology \u2014 different industry and buyers."
+        }
+      ]
     },
     {
       "name": "Combined Test Solutions",
@@ -836,7 +1420,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "Combined Test Solutions specializes in cable-harness testing equipment, not ABB\u2019s core electrification, motion, robotics, or industrial automation platforms."
+      "rationale": "Specialized cable-harness test-equipment distributor, not an electrification, automation, robotics, or industrial-control platform comparable to ABB.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Specialized cable-harness test-equipment distributor, not an electrification, automation, robotics, or industrial-control platform comparable to ABB."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Niche cable-harness test-equipment distributor, not an electrification/automation/robotics manufacturer; no meaningful product, market, or model overlap with ABB."
+        }
+      ]
     },
     {
       "name": "Electro-Technik",
@@ -853,7 +1449,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "Electro-Technik is a contract wire-harness manufacturer, not a provider of ABB-like electrification, automation, motion, or robotics systems."
+      "rationale": "Wire-harness contract manufacturer and component supplier, not an electrification, automation, motion, robotics, or industrial-technology platform peer.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Wire-harness contract manufacturer and component supplier, not an electrification, automation, motion, robotics, or industrial-technology platform peer."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Wire harness contract manufacturer supplying OEMs; a component supplier, not a peer in electrification, automation, or robotics technology."
+        }
+      ]
     },
     {
       "name": "Cable Harnesses UK Ltd",
@@ -870,7 +1478,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "Cable Harnesses UK is a contract wiring-assembly manufacturer, not an industrial electrification, automation, motion, or robotics technology provider like ABB."
+      "rationale": "Contract manufacturer of wiring harnesses and assemblies, not an industrial electrification, automation, robotics, or motion technology platform comparable to ABB.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Contract manufacturer of wiring harnesses and assemblies, not an industrial electrification, automation, robotics, or motion technology platform comparable to ABB."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Contract manufacturer of wiring harnesses and cable assemblies \u2014 a component supplier, not a peer in electrification, automation, or robotics technology."
+        }
+      ]
     },
     {
       "name": "TriCab Engineered Cable Systems",
@@ -887,7 +1507,19 @@
         "employee_count": "51-200"
       },
       "relevant": false,
-      "rationale": "TriCab primarily manufactures specialized cables, while ABB\u2019s core offerings are electrification, automation, motion, and robotics systems; buyer adjacency alone is insufficient."
+      "rationale": "TriCab manufactures specialty electrical cables, not ABB\u2019s core electrification, automation, motion, robotics, or process-control platforms.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "TriCab manufactures specialty electrical cables, not ABB\u2019s core electrification, automation, motion, robotics, or process-control platforms."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "TriCab is a niche cable manufacturer \u2014 a component supplier to electrification/automation, not a peer in ABB's industrial technology, robotics, or automation markets."
+        }
+      ]
     },
     {
       "name": "ASTE",
@@ -904,7 +1536,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "ASTE is a specialized cable and cable-protection supplier, likely distributing ABB brands, not a comparable industrial automation and electrification technology manufacturer."
+      "rationale": "ASTE supplies specialized cable-protection components to industrial users; it is an adjacent supplier, not a comparable electrification, automation, robotics, or motion platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "ASTE supplies specialized cable-protection components to industrial users; it is an adjacent supplier, not a comparable electrification, automation, robotics, or motion platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Niche cable-protection component supplier, not a peer in electrification, automation, or robotics systems; more a supplier than competitor/comparable."
+        }
+      ]
     },
     {
       "name": "Furukawa Automotive Systems",
@@ -921,7 +1565,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "Furukawa primarily supplies automotive wiring harnesses and connectors, not industrial electrification, automation, motion, or robotics platforms evaluated by ABB\u2019s buyers."
+      "rationale": "Automotive wiring-harness supplier; ABB primarily sells industrial electrification, automation, motion, and robotics systems, not vehicle electrical harnesses.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Automotive wiring-harness supplier; ABB primarily sells industrial electrification, automation, motion, and robotics systems, not vehicle electrical harnesses."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Furukawa makes automotive wiring harnesses/connectors for vehicle OEMs; ABB sells electrification, automation, and robotics platforms\u2014different products and markets, no resemblance."
+        }
+      ]
     },
     {
       "name": "Amphenol Unlimited Services",
@@ -938,7 +1594,19 @@
         "employee_count": "201-500"
       },
       "relevant": false,
-      "rationale": "Amphenol manufactures custom vehicle wire harnesses and cable assemblies, not ABB-like industrial electrification, automation, motion, or robotics platforms."
+      "rationale": "Wire-harness manufacturer supplying equipment OEMs; it is an industrial component supplier, not an electrification, automation, robotics, or motion platform comparable to ABB.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Wire-harness manufacturer supplying equipment OEMs; it is an industrial component supplier, not an electrification, automation, robotics, or motion platform comparable to ABB."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Wire-harness/cable-assembly component maker for vehicle OEMs; a parts supplier, not a peer in electrification, automation, or robotics systems."
+        }
+      ]
     },
     {
       "name": "FlexGlory",
@@ -954,8 +1622,25 @@
         "industries": null,
         "employee_count": "11-50"
       },
-      "relevant": true,
-      "rationale": "FlexGlory\u2019s flexible conduit and cable-protection products overlap ABB\u2019s electrification portfolio and target the same industrial electrical and automation buyers."
+      "relevant": false,
+      "rationale": "FlexGlory supplies cable conduit components to automation makers; a parts supplier, not a peer in electrification, robotics, or automation platforms.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Supplies industrial cable conduit and wiring-protection accessories overlapping ABB\u2019s electrification and installation-products portfolio for automation and electrical infrastructure."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "FlexGlory supplies cable conduit components to automation makers; a parts supplier, not a peer in electrification, robotics, or automation platforms."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "Commodity cable conduit/accessories supplier, not an electrification/automation technology maker; component vendor rather than ABB peer.get"
+        }
+      ]
     },
     {
       "name": "Eurotech",
@@ -972,7 +1657,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "Eurotech supplies specialized automotive wire-harness materials, not industrial electrification, automation, motion, or robotics systems evaluated for ABB\u2019s core use cases."
+      "rationale": "Wire-harness materials supplier to automotive OEMs, not an electrification, automation, robotics, or industrial technology platform comparable to ABB.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Wire-harness materials supplier to automotive OEMs, not an electrification, automation, robotics, or industrial technology platform comparable to ABB."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Eurotech supplies automotive wire-harness tapes and components; not a peer in electrification, automation, or robotics like ABB."
+        }
+      ]
     },
     {
       "name": "Anamet Europe",
@@ -988,8 +1685,20 @@
         "industries": null,
         "employee_count": "51-200"
       },
-      "relevant": true,
-      "rationale": "Anamet\u2019s industrial cable-protection conduits and fittings directly overlap ABB\u2019s electrification portfolio and target the same engineers, machine builders, and facility operators."
+      "relevant": false,
+      "rationale": "Industrial electrical components supplier, but not a broad electrification, automation, motion, robotics, or process-automation platform comparable to ABB.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Industrial electrical components supplier, but not a broad electrification, automation, motion, robotics, or process-automation platform comparable to ABB."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Niche conduit/hose component maker; only marginal overlap with ABB's core electrification, automation, and robotics systems business."
+        }
+      ]
     },
     {
       "name": "Echelon Supply and Service",
@@ -1006,7 +1715,19 @@
         "employee_count": "201-500"
       },
       "relevant": false,
-      "rationale": "Echelon distributes industrial hoses and fittings, not electrification, automation, motion, or robotics systems; overlapping industrial customers do not imply the same purchasing need."
+      "rationale": "Industrial hose distributor, not an electrification, automation, robotics, motion, or process-control technology provider comparable to ABB.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Industrial hose distributor, not an electrification, automation, robotics, motion, or process-control technology provider comparable to ABB."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Hose distributor, not a maker of electrification, automation, or robotics technology; a component supplier, not a peer or competitor to ABB."
+        }
+      ]
     },
     {
       "name": "Heyco",
@@ -1022,8 +1743,25 @@
         "industries": null,
         "employee_count": "11-50"
       },
-      "relevant": true,
-      "rationale": "Both manufacture industrial electrification components, including cable-management and conduit solutions, for electrical contractors, system designers, and equipment manufacturers."
+      "relevant": false,
+      "rationale": "Heyco makes specialized electrical wiring components, not ABB's broad electrification, automation, motion, robotics, or industrial-control platforms.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Heyco makes specialized electrical wiring components, not ABB's broad electrification, automation, motion, robotics, or industrial-control platforms."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Heyco's liquidtight fittings and electrical components directly overlap ABB's electrification/installation-products lines, serving the same contractor and industrial OEM buyers."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "Heyco makes niche passive electrical connector/strain-relief components, not electrification systems, automation, or robotics like ABB.MUST respond in JSON.', 'r"
+        }
+      ]
     },
     {
       "name": "Anamet Electrical",
@@ -1039,8 +1777,25 @@
         "industries": null,
         "employee_count": "51-200"
       },
-      "relevant": true,
-      "rationale": "Both supply industrial electrical conduit and cable-protection systems for hazardous environments to electrical engineers, OEMs, and facility operators."
+      "relevant": false,
+      "rationale": "Niche conduit/fittings component maker; ABB is a broad electrification/automation/robotics technology company. Component supplier, not a peer or comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Manufactures industrial electrical conduit systems for hazardous environments, overlapping ABB's electrification and industrial infrastructure product market."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Niche conduit/fittings component maker; ABB is a broad electrification/automation/robotics technology company. Component supplier, not a peer or comparable."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "Niche flexible-conduit component manufacturer, not a broad industrial automation/electrification technology company like ABB; different product scope."
+        }
+      ]
     },
     {
       "name": "Goodflex Rubber",
@@ -1057,7 +1812,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "Goodflex manufactures rubber hoses and mouldings, not electrification, industrial automation, motion-control, or robotics systems evaluated by ABB\u2019s buyers."
+      "rationale": "Rubber hoses and mouldings are industrial components supplied to OEMs, not electrification, automation, motion, robotics, or process-industry technology platforms.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Rubber hoses and mouldings are industrial components supplied to OEMs, not electrification, automation, motion, robotics, or process-industry technology platforms."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Rubber hose/moulding component manufacturer, not a peer in electrification, automation, or robotics; a supplier to industries ABB serves, not a comparable."
+        }
+      ]
     },
     {
       "name": "HELUKABEL\u4e2d\u56fd",
@@ -1074,7 +1841,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "HELUKABEL manufactures industrial cables, a complementary component category rather than ABB\u2019s core electrification, automation, motion, and robotics systems."
+      "rationale": "HELUKABEL primarily supplies industrial cables, a component category adjacent to ABB\u2019s automation and electrification platforms rather than a comparable integrated industrial technology provider.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "HELUKABEL primarily supplies industrial cables, a component category adjacent to ABB\u2019s automation and electrification platforms rather than a comparable integrated industrial technology provider."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Cable/wire component manufacturer supplying industrial automation; a supplier in ABB's value chain, not a peer in electrification, robotics, or automation systems."
+        }
+      ]
     },
     {
       "name": "PMG Company",
@@ -1091,7 +1870,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "PMG distributes cable-harnessing consumables, while ABB provides electrification, automation, motion, and robotics systems; their core offerings address different purchasing needs."
+      "rationale": "Cable-harness and heat-shrink component distributor; supplies industrial manufacturers rather than offering ABB\u2019s electrification, automation, motion, or robotics systems.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Cable-harness and heat-shrink component distributor; supplies industrial manufacturers rather than offering ABB\u2019s electrification, automation, motion, or robotics systems."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "PMG is a component distributor (heat shrink, cable harness supplies), not a maker of electrification/automation/robotics systems \u2014 a supplier, not a competitor or comparable."
+        }
+      ]
     },
     {
       "name": "Hadfield Services",
@@ -1108,7 +1899,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "Hadfield is a custom wiring-harness and test-rig manufacturer, not an industrial electrification, automation, motion, or robotics technology platform like ABB."
+      "rationale": "Hadfield is a contract precision electrical manufacturer, not an electrification, automation, robotics, or industrial technology platform comparable to ABB.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Hadfield is a contract precision electrical manufacturer, not an electrification, automation, robotics, or industrial technology platform comparable to ABB."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Hadfield makes wiring harnesses and test rigs as a component supplier, not electrification/automation/robotics equipment; no strong product or market overlap with ABB."
+        }
+      ]
     },
     {
       "name": "Electri-Flex Company",
@@ -1124,8 +1927,25 @@
         "industries": null,
         "employee_count": "51-200"
       },
-      "relevant": true,
-      "rationale": "Electri-Flex\u2019s flexible electrical conduit directly overlaps ABB\u2019s conduit and electrification portfolio, targeting the same electrical contractors and industrial infrastructure buyers."
+      "relevant": false,
+      "rationale": "Electrical conduit manufacturer is a component supplier, not a broad electrification, automation, motion, robotics, or industrial technology platform comparable to ABB.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Electrical conduit manufacturer is a component supplier, not a broad electrification, automation, motion, robotics, or industrial technology platform comparable to ABB."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Flexible electrical conduit maker overlapping ABB's electrification/installation-products line (Adaptaflex/Thomas & Betts); direct competitor for the same industrial buyers."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "Niche electrical conduit component manufacturer, not an electrification/automation/robotics technology provider like ABB; supplier-tier commodity hardware."
+        }
+      ]
     },
     {
       "name": "Mettex",
@@ -1142,7 +1962,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "Mettex is a specialized copper-braid component manufacturer, not a broad electrification, automation, motion, or robotics technology provider competing for the same jobs."
+      "rationale": "Mettex supplies copper braided components, while ABB sells broad electrification, automation, motion, and robotics systems; it is a component supplier, not a comparable platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Mettex supplies copper braided components, while ABB sells broad electrification, automation, motion, and robotics systems; it is a component supplier, not a comparable platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Mettex is a niche copper-braid component maker, a supplier into electrical/aerospace chains, not a peer in electrification, automation, or robotics systems."
+        }
+      ]
     },
     {
       "name": "HELUKABEL MIDDLE EAST",
@@ -1159,7 +1991,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "HELUKABEL supplies industrial cables, a complementary component category rather than ABB\u2019s core electrification, automation, motion, or robotics platforms."
+      "rationale": "Industrial cable supplier serving automation projects, but not a comparable electrification, automation, robotics, or industrial-control platform provider.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Industrial cable supplier serving automation projects, but not a comparable electrification, automation, robotics, or industrial-control platform provider."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Cable/wire component supplier serving industrial buyers, not a peer in automation, robotics, or electrification systems; supplier rather than competitor."
+        }
+      ]
     },
     {
       "name": "HCI Systems",
@@ -1176,7 +2020,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "HCI manufactures bespoke vehicle wiring harnesses, while ABB\u2019s core offerings are industrial electrification, automation, motion, and robotics systems for different purchasing needs."
+      "rationale": "HCI manufactures bespoke wiring harnesses for vehicles and defence, not ABB's broad industrial electrification, automation, motion, robotics, or process-automation platforms.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "HCI manufactures bespoke wiring harnesses for vehicles and defence, not ABB's broad industrial electrification, automation, motion, robotics, or process-automation platforms."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "HCI makes bespoke motorsport/defence wiring harnesses; ABB is an electrification, automation, and robotics technology company \u2014 no product or market overlap."
+        }
+      ]
     },
     {
       "name": "Helukabel Belgium",
@@ -1193,7 +2049,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "Helukabel manufactures industrial cables and wires, which complement ABB\u2019s automation and electrification systems but do not overlap ABB\u2019s core equipment offerings."
+      "rationale": "Helukabel primarily supplies industrial cables and wires, whereas ABB sells broad electrification, automation, motion, and robotics systems.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Helukabel primarily supplies industrial cables and wires, whereas ABB sells broad electrification, automation, motion, and robotics systems."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Cable/wire component manufacturer supplying industrial automation, not a peer in electrification/automation/robotics systems; supplier rather than competitor or comparable."
+        }
+      ]
     },
     {
       "name": "EMDEP TestBoards",
@@ -1210,7 +2078,24 @@
         "employee_count": "501-1000"
       },
       "relevant": false,
-      "rationale": "EMDEP provides specialized wiring-harness assembly and testing systems, not ABB\u2019s core industrial electrification, robotics, motion, or general automation platforms."
+      "rationale": "Niche wiring-harness test equipment supplier; not a peer to ABB's broad electrification, robotics, and industrial automation portfolio\u2014more a customer than comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Automotive wiring-harness test equipment is a narrow industrial automation offering, comparable to ABB's automation and process-industry technology portfolio."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Niche wiring-harness test equipment supplier; not a peer to ABB's broad electrification, robotics, and industrial automation portfolio\u2014more a customer than comparable."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "judge error: Unterminated string starting at: line 1 column 34 (char 33)"
+        }
+      ]
     },
     {
       "name": "Tubiflex",
@@ -1227,7 +2112,19 @@
         "employee_count": "51-200"
       },
       "relevant": false,
-      "rationale": "Tubiflex manufactures flexible metal hoses and expansion joints, not electrification, automation, motion, or robotics systems evaluated for the same job."
+      "rationale": "Tubiflex manufactures industrial metal components for overlapping sectors but is a component supplier, not an electrification, automation, motion, or robotics platform comparable to ABB.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Tubiflex manufactures industrial metal components for overlapping sectors but is a component supplier, not an electrification, automation, motion, or robotics platform comparable to ABB."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Tubiflex makes flexible metal hoses/bellows\u2014a narrow component supplier, not a peer in electrification, automation, or robotics like ABB."
+        }
+      ]
     },
     {
       "name": "BCA Leisure Ltd",
@@ -1244,7 +2141,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "BCA manufactures niche vehicle wiring harnesses, not industrial electrification, automation, motion, or robotics systems evaluated by ABB\u2019s buyers."
+      "rationale": "Specialist caravan and motorhome wiring-harness manufacturer, not an industrial electrification, automation, motion, robotics, or process-technology peer.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Specialist caravan and motorhome wiring-harness manufacturer, not an industrial electrification, automation, motion, robotics, or process-technology peer."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Niche caravan wiring-harness maker; ABB is industrial electrification, automation, robotics. Shared 'electrical' label only\u2014no product, market, or model overlap."
+        }
+      ]
     },
     {
       "name": "Hayakawa International (UK) Ltd",
@@ -1261,7 +2170,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "Hayakawa manufactures custom wire harnesses and cable assemblies, not ABB-like electrification, automation, motion, or robotics systems."
+      "rationale": "Wire-harness manufacturer supplying industrial OEMs; it does not offer ABB's electrification, automation, motion, robotics, or process-industry platforms.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Wire-harness manufacturer supplying industrial OEMs; it does not offer ABB's electrification, automation, motion, robotics, or process-industry platforms."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Wire harness and cable assembly manufacturer supplying automotive/rail OEMs; a component supplier, not a peer in electrification, automation, or robotics systems."
+        }
+      ]
     },
     {
       "name": "Pmflex Group Northern Europe AB",
@@ -1277,8 +2198,20 @@
         "industries": null,
         "employee_count": "11-50"
       },
-      "relevant": true,
-      "rationale": "Pmflex\u2019s electrical conduit and cable-protection products overlap ABB\u2019s electrification portfolio and target the same electrical installers, contractors, and engineers."
+      "relevant": false,
+      "rationale": "Pmflex makes electrical conduit and installation accessories, a narrow building-wiring supplier rather than an ABB-like electrification, automation, motion, and robotics platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Pmflex makes electrical conduit and installation accessories, a narrow building-wiring supplier rather than an ABB-like electrification, automation, motion, and robotics platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Conduit manufacturer is an electrical-components supplier, not a peer in electrification, automation, or robotics technology platforms."
+        }
+      ]
     },
     {
       "name": "Hub Electronics",
@@ -1295,7 +2228,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "Hub Electronics is a component distributor, not a manufacturer of electrification, automation, motion, or robotics systems comparable to ABB."
+      "rationale": "Electro-mechanical component distributor supplying industrial sectors, not an electrification, automation, robotics, or industrial technology platform comparable to ABB.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Electro-mechanical component distributor supplying industrial sectors, not an electrification, automation, robotics, or industrial technology platform comparable to ABB."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Component distributor (channel partner), not a manufacturer of electrification/automation technology; supplier-type player, not a peer competitor to ABB."
+        }
+      ]
     },
     {
       "name": "Gibson Stainless & Specialty Inc.",
@@ -1311,8 +2256,20 @@
         "industries": null,
         "employee_count": "11-50"
       },
-      "relevant": true,
-      "rationale": "Both supply industrial electrical conduit and fittings for harsh environments to electrical engineers, facility managers, and contractors."
+      "relevant": false,
+      "rationale": "Gibson manufactures electrical conduit and fittings, complementing ABB electrification systems but not competing in ABB's primary automation, motion, robotics, or power products.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Gibson manufactures electrical conduit and fittings, complementing ABB electrification systems but not competing in ABB's primary automation, motion, robotics, or power products."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Niche conduit/fittings manufacturer, not an industrial automation/electrification technology peer; at best a components supplier to ABB's category."
+        }
+      ]
     },
     {
       "name": "C\u00e2blage Connectique Europ\u00e9en",
@@ -1329,7 +2286,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "CCE supplies cables and wiring assemblies, not ABB-like electrification, automation, motion, or robotics systems; buyers would not evaluate them for the same job."
+      "rationale": "Supplier of wiring harnesses and connectors, not an industrial electrification, automation, motion, robotics, or process-technology platform comparable to ABB.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Supplier of wiring harnesses and connectors, not an industrial electrification, automation, motion, robotics, or process-technology platform comparable to ABB."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Small wiring-harness and cable-cord manufacturer; a component supplier, not a peer in electrification, automation, or robotics technology."
+        }
+      ]
     },
     {
       "name": "603 Manufacturing",
@@ -1346,7 +2315,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "603 Manufacturing is a custom cable and wire-harness supplier, not an industrial electrification, automation, motion, or robotics technology provider like ABB."
+      "rationale": "Custom cable and harness manufacturer supplying industrial OEMs, not an electrification, automation, motion, robotics, or industrial technology platform comparable to ABB.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Custom cable and harness manufacturer supplying industrial OEMs, not an electrification, automation, motion, robotics, or industrial technology platform comparable to ABB."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Niche cable/harness contract manufacturer\u2014a component supplier, not a peer in electrification, automation, robotics, or motion where ABB competes."
+        }
+      ]
     },
     {
       "name": "Champion Fiberglass",
@@ -1362,8 +2343,25 @@
         "industries": null,
         "employee_count": "11-50"
       },
-      "relevant": true,
-      "rationale": "Champion\u2019s electrical conduit systems overlap ABB\u2019s electrification and cable-protection offerings and target the same electrical engineers, contractors, and industrial infrastructure buyers."
+      "relevant": false,
+      "rationale": "Manufactures specialized electrical conduit infrastructure, not broad electrification, automation, motion, robotics, or industrial-control products comparable to ABB.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Manufactures specialized electrical conduit infrastructure, not broad electrification, automation, motion, robotics, or industrial-control products comparable to ABB."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Manufactures electrical conduit and installation products for industrial electrification markets, overlapping ABB's electrification/installation-products lines and serving the same electrical-engineering and contractor buyers."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "Niche fiberglass conduit manufacturer, not an electrification/automation/robotics technology company; only loose adjacency in electrical infrastructure supply."
+        }
+      ]
     },
     {
       "name": "Burgaflex",
@@ -1380,7 +2378,19 @@
         "employee_count": "51-200"
       },
       "relevant": false,
-      "rationale": "Burgaflex manufactures hoses and thermal-management components, not industrial electrification, automation, robotics, or motion-control systems comparable to ABB\u2019s core offerings."
+      "rationale": "Burgaflex supplies automotive fluid and thermal-management components, not ABB\u2019s electrification, automation, motion, robotics, or process-industry platforms.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Burgaflex supplies automotive fluid and thermal-management components, not ABB\u2019s electrification, automation, motion, robotics, or process-industry platforms."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Burgaflex supplies automotive hose and thermal components to OEMs; ABB does electrification, automation, robotics. Component supplier, not a peer or comparable."
+        }
+      ]
     },
     {
       "name": "Air/Flex Industries",
@@ -1396,8 +2406,20 @@
         "industries": null,
         "employee_count": "1-10"
       },
-      "relevant": true,
-      "rationale": "Both supply flexible electrical conduit and fittings for industrial equipment, serving engineers selecting cable-protection components for similar applications."
+      "relevant": false,
+      "rationale": "Manufactures specialized conduit components; it is an industrial supplier, not a peer in ABB\u2019s electrification, automation, robotics, or motion systems markets.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Manufactures specialized conduit components; it is an industrial supplier, not a peer in ABB\u2019s electrification, automation, robotics, or motion systems markets."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Niche mil-spec conduit/fittings component maker; supplier-level parts, not a peer in electrification, automation, or robotics like ABB."
+        }
+      ]
     },
     {
       "name": "Habia",
@@ -1414,7 +2436,19 @@
         "employee_count": "201-500"
       },
       "relevant": false,
-      "rationale": "Habia supplies specialty cables, while ABB\u2019s core offerings are electrification, automation, motion, and robotics systems; buyers would not evaluate them for the same job."
+      "rationale": "Habia is a custom cable and interconnect manufacturer, supplying industrial sectors rather than offering ABB\u2019s electrification, automation, motion, or robotics systems.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Habia is a custom cable and interconnect manufacturer, supplying industrial sectors rather than offering ABB\u2019s electrification, automation, motion, or robotics systems."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Habia is a niche specialty-cable manufacturer; ABB's core is electrification equipment, automation, and robotics. Cables are components, not a peer product\u2014no strong axis match."
+        }
+      ]
     },
     {
       "name": "Vulcascot Cable Protectors Ltd",
@@ -1431,7 +2465,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "Vulcascot sells floor cable-protection products, not industrial electrification, automation, motion, or robotics systems buyers would evaluate against ABB."
+      "rationale": "Cable-protector manufacturer; it does not provide ABB-like electrification, automation, motion, robotics, or industrial control systems.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Cable-protector manufacturer; it does not provide ABB-like electrification, automation, motion, robotics, or industrial control systems."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Niche floor cable-protector maker; not a peer in electrification, automation, robotics, or industrial technology \u2014 at best an accessory supplier."
+        }
+      ]
     },
     {
       "name": "Pacific Hoseflex",
@@ -1448,7 +2494,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "Pacific Hoseflex manufactures fluid-transfer components, not electrification, automation, motion, or robotics systems; buyers would not evaluate it for ABB\u2019s core jobs."
+      "rationale": "Manufactures fluid-transfer components and fabrication services, not ABB's electrification, automation, motion, or robotics technology platforms.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Manufactures fluid-transfer components and fabrication services, not ABB's electrification, automation, motion, or robotics technology platforms."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Hose and fitting manufacturer is a component supplier, not an electrification/automation/robotics technology peer; no shared product or business-model axis."
+        }
+      ]
     },
     {
       "name": "HellermannTyton Austria & CEE",
@@ -1464,8 +2522,20 @@
         "industries": null,
         "employee_count": "11-50"
       },
-      "relevant": true,
-      "rationale": "Both supply industrial cable-management, protection, and identification products to electrical engineers, installers, and industrial maintenance buyers."
+      "relevant": false,
+      "rationale": "Industrial cabling-component supplier, not an electrification, automation, motion, or robotics platform comparable to ABB.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Industrial cabling-component supplier, not an electrification, automation, motion, or robotics platform comparable to ABB."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Cable-tie and labeling accessories supplier, not a peer in electrification, automation, or robotics systems; components vendor rather than comparable industrial technology company."
+        }
+      ]
     },
     {
       "name": "Gwent Cables",
@@ -1482,7 +2552,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "Gwent Cables manufactures wiring harnesses and assemblies, not ABB\u2019s core electrification, automation, motion, or robotics systems for the same buying need."
+      "rationale": "Gwent Cables is a cable-harness manufacturer and supplier, not an industrial electrification, automation, robotics, or motion technology platform comparable to ABB.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Gwent Cables is a cable-harness manufacturer and supplier, not an industrial electrification, automation, robotics, or motion technology platform comparable to ABB."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Cable harness component supplier, not a peer in electrification/automation/robotics; supplies parts rather than competing with ABB's industrial technology."
+        }
+      ]
     },
     {
       "name": "Teaflex S.p.a.",
@@ -1499,7 +2581,24 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Teaflex\u2019s industrial cable conduits and protection systems overlap ABB\u2019s electrification portfolio and target the same electrical and automation engineering buyers."
+      "rationale": "Teaflex supplies industrial cable-protection components, overlapping ABB's electrification and automation markets but not its broad systems portfolio.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Teaflex supplies industrial cable-protection components, overlapping ABB's electrification and automation markets but not its broad systems portfolio."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Teaflex manufactures cable protection components, a supplier to electrification/automation industries, not a peer industrial technology company like ABB."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Industrial electrical components manufacturer serving automation, rail, machinery buyers \rification/cable installation \ftype of ABB's electrification products.}"
+        }
+      ]
     },
     {
       "name": "GSW Manufacturing",
@@ -1516,7 +2615,19 @@
         "employee_count": "201-500"
       },
       "relevant": false,
-      "rationale": "GSW manufactures custom wire harnesses, while ABB\u2019s core offerings are electrification, automation, motion, and robotics systems; buyers would not evaluate them interchangeably."
+      "rationale": "GSW is a component supplier of wire harnesses, not an electrification, automation, motion, robotics, or industrial technology platform comparable to ABB.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "GSW is a component supplier of wire harnesses, not an electrification, automation, motion, robotics, or industrial technology platform comparable to ABB."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Wire-harness contract manufacturer is a component supplier, not an electrification/automation/robotics technology peer; no shared product or market axis with ABB."
+        }
+      ]
     },
     {
       "name": "Integraflex",
@@ -1533,7 +2644,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "Integraflex supplies industrial hoses and couplings, not electrification, automation, motion, robotics, or process-control technology evaluated for ABB\u2019s core jobs."
+      "rationale": "Industrial hose and coupling supplier, not an electrification, automation, robotics, motion, or process-automation technology competitor or comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Industrial hose and coupling supplier, not an electrification, automation, robotics, motion, or process-automation technology competitor or comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Integraflex makes flexible hoses/couplings \u2014 a component supplier to process industries, not a peer in electrification, automation, robotics, or motion systems."
+        }
+      ]
     },
     {
       "name": "Guru Amardass International Private Limited (GAD)",
@@ -1550,7 +2673,19 @@
         "employee_count": "51-200"
       },
       "relevant": false,
-      "rationale": "GAD manufactures cable assemblies and wiring harnesses, while ABB\u2019s core offerings are electrification, automation, motion, and robotics systems; buyer jobs differ."
+      "rationale": "GAD manufactures wiring harnesses and cable assemblies, primarily as components for OEMs, not industrial electrification, automation, motion, or robotics systems.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "GAD manufactures wiring harnesses and cable assemblies, primarily as components for OEMs, not industrial electrification, automation, motion, or robotics systems."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Cable/wiring-harness component manufacturer supplying OEMs, not a peer in industrial automation, robotics, or electrification systems like ABB."
+        }
+      ]
     },
     {
       "name": "Firstflex Cables",
@@ -1567,7 +2702,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "Firstflex primarily distributes industrial cables, while ABB manufactures automation, electrification, motion, and robotics systems; buyer overlap alone is insufficient."
+      "rationale": "Industrial cable distributor and supplier, not a diversified electrification, automation, motion, robotics, and process-industries technology provider like ABB.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Industrial cable distributor and supplier, not a diversified electrification, automation, motion, robotics, and process-industries technology provider like ABB."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Cable distributor in the electrification supply chain, not a diversified industrial-technology peer; a supplier/channel player rather than competitor to ABB."
+        }
+      ]
     },
     {
       "name": "Hydralectric Group",
@@ -1584,7 +2731,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "Hydralectric manufactures fluid-transfer hoses and water-control components, while ABB\u2019s core portfolio centers on electrification, automation, motion, and robotics."
+      "rationale": "Hydralectric manufactures plumbing and water-control components, not ABB\u2019s industrial electrification, automation, motion, or robotics platforms.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Hydralectric manufactures plumbing and water-control components, not ABB\u2019s industrial electrification, automation, motion, or robotics platforms."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Hose and valve maker for plumbing/appliance markets; no overlap with ABB's electrification, automation, robotics, or industrial systems businesses."
+        }
+      ]
     },
     {
       "name": "DeyTrade",
@@ -1601,7 +2760,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "DeyTrade is an automotive connector distributor and ABB product reseller, not a broad industrial electrification, automation, motion, or robotics technology provider."
+      "rationale": "Automotive connector distributor serving OEMs, not an industrial electrification, automation, robotics, or motion technology competitor/comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Automotive connector distributor serving OEMs, not an industrial electrification, automation, robotics, or motion technology competitor/comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Small distributor reselling automotive connectors (including ABB products); a channel partner/customer of ABB, not an industrial automation peer or competitor."
+        }
+      ]
     },
     {
       "name": "Cables & Components",
@@ -1618,7 +2789,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "Cables & Components is a cable distributor, not an industrial electrification, automation, motion, or robotics technology manufacturer competing for the same core job."
+      "rationale": "Cable distributor and online catalog, not an industrial electrification, automation, robotics, motion, or process-technology platform comparable to ABB.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Cable distributor and online catalog, not an industrial electrification, automation, robotics, motion, or process-technology platform comparable to ABB."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Online cable distributor/retailer supplying components, not a peer in electrification, automation, or robotics technology; a supplier-type rather than competitor or comparable."
+        }
+      ]
     },
     {
       "name": "Compass Made",
@@ -1635,7 +2818,19 @@
         "employee_count": "51-200"
       },
       "relevant": false,
-      "rationale": "Compass Made is a contract manufacturer of cable harnesses and assemblies, not a provider of industrial automation, electrification, motion, or robotics platforms."
+      "rationale": "Custom cable and harness manufacturer supplying OEMs, not an industrial electrification, automation, motion, or robotics platform comparable to ABB.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Custom cable and harness manufacturer supplying OEMs, not an industrial electrification, automation, motion, or robotics platform comparable to ABB."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Contract manufacturer of cable/harness assemblies \u2014 a component supplier to OEMs, not a peer in electrification, automation, or robotics technology."
+        }
+      ]
     },
     {
       "name": "Excel Assemblies",
@@ -1652,7 +2847,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "Excel Assemblies manufactures custom cable harnesses, not ABB-like electrification, automation, motion, or robotics systems evaluated for the same industrial jobs."
+      "rationale": "Cable-harness manufacturer supplying industrial OEMs, not an electrification, automation, robotics, or industrial technology platform comparable to ABB.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Cable-harness manufacturer supplying industrial OEMs, not an electrification, automation, robotics, or industrial technology platform comparable to ABB."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Cable-harness component supplier for OEMs, not a peer in electrification, automation, or robotics; would be a supplier, not a competitor or comparable."
+        }
+      ]
     },
     {
       "name": "Interconnect Systems",
@@ -1669,7 +2876,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "Interconnect Systems manufactures custom cable harnesses and interconnect components, not ABB-like electrification, automation, motion, or robotics platforms."
+      "rationale": "Cable-harness engineering and manufacturing supplier, not an electrification, automation, robotics, motion, or industrial-control platform comparable to ABB.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Cable-harness engineering and manufacturing supplier, not an electrification, automation, robotics, motion, or industrial-control platform comparable to ABB."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Cable-harness component maker/repairer is a supplier to industrial OEMs, not a peer in electrification, automation, or robotics platforms like ABB."
+        }
+      ]
     },
     {
       "name": "Cablepoint Ltd",
@@ -1686,7 +2905,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "Cablepoint is a bespoke cable-assembly manufacturer, not an industrial electrification, automation, motion, or robotics technology provider comparable to ABB."
+      "rationale": "Cablepoint is a bespoke cable and control-panel manufacturer, a component supplier rather than an industrial electrification, automation, robotics, and motion platform peer.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Cablepoint is a bespoke cable and control-panel manufacturer, a component supplier rather than an industrial electrification, automation, robotics, and motion platform peer."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Cablepoint is a bespoke cable-assembly contract manufacturer \u2014 a component supplier in ABB's value chain, not a peer in electrification, automation, or robotics."
+        }
+      ]
     },
     {
       "name": "Kromberg & Schubert",
@@ -1703,7 +2934,20 @@
         "employee_count": "10001+"
       },
       "relevant": false,
-      "rationale": "Kromberg & Schubert supplies automotive wiring harnesses, not industrial electrification, automation, motion, or robotics systems evaluated for the same job."
+      "rationale": "Automotive wiring-harness manufacturer and supplier, not an industrial electrification, automation, robotics, or motion technology platform comparable to ABB.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Automotive wiring-harness manufacturer and supplier, not an industrial electrification, automation, robotics, or motion technology platform comparable to ABB."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Automotive wiring-harness supplier; no overlap with ABB's electrification, automation, robotics, or motion products and markets."
+        }
+      ]
     }
-  ]
+  ],
+  "error": null
 }

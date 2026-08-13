@@ -7,18 +7,20 @@
     "name": "domain_lookalikes"
   },
   "k": 100,
-  "relevant_count": 5,
-  "precision_at_k": 5.0,
-  "relevant_count_at_10": 5,
-  "relevant_count_at_100": 5,
-  "precision_at_10": 50.0,
-  "precision_at_100": 5.0,
+  "relevant_count": 6,
+  "precision_at_k": 6.0,
+  "relevant_count_at_10": 6,
+  "relevant_count_at_25": 6,
+  "relevant_count_at_100": 6,
+  "precision_at_10": 60.0,
+  "precision_at_25": 24.0,
+  "precision_at_100": 6.0,
   "latency_ms": 313,
   "cost_usd": null,
   "duplicates_removed": 0,
   "max_results": 10,
-  "judge_model": "gpt-5.6",
-  "judged_at": "2026-07-27T03:31:27Z",
+  "judge_model": "majority(n=3): claude-opus-5,gpt-5.6-terra,kimi-k3",
+  "judged_at": "2026-08-10T19:30:41Z",
   "candidates": [
     {
       "name": "atlassian",
@@ -34,7 +36,19 @@
         "confidence_level": 96
       },
       "relevant": false,
-      "rationale": "Atlassian provides general team collaboration and software project tools, not construction-specific project, financial, quality, and safety management for contractors."
+      "rationale": "Atlassian provides general collaboration and software project tools, not construction-specific project, financial, quality, safety, or contractor management.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Atlassian provides general collaboration and software project tools, not construction-specific project, financial, quality, safety, or contractor management."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Generic team-collaboration/software-development tools (Jira, Confluence), not construction management software; different market and product depth."
+        }
+      ]
     },
     {
       "name": "autodesk",
@@ -50,7 +64,19 @@
         "confidence_level": 96
       },
       "relevant": true,
-      "rationale": "Autodesk Construction Cloud overlaps Procore in construction project management, collaboration, cost, quality, and safety workflows for contractors and construction teams."
+      "rationale": "Autodesk offers construction collaboration and management software, including Autodesk Construction Cloud, serving overlapping construction-project workflows and buyers.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Autodesk offers construction collaboration and management software, including Autodesk Construction Cloud, serving overlapping construction-project workflows and buyers."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Autodesk Construction Cloud directly competes with Procore in construction project management software, serving same buyers and jobs."
+        }
+      ]
     },
     {
       "name": "bluebeam",
@@ -66,7 +92,19 @@
         "confidence_level": 96
       },
       "relevant": true,
-      "rationale": "Bluebeam provides construction-focused project collaboration and document workflow software, overlapping Procore\u2019s project management offering and serving the same construction professionals."
+      "rationale": "Bluebeam provides construction project collaboration and workflow software for the same design-and-construction professionals, making it a credible Procore comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Bluebeam provides construction project collaboration and workflow software for the same design-and-construction professionals, making it a credible Procore comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Construction software serving design/construction professionals with project collaboration tools; same market and adjacent product, genuine comparable to Procore."
+        }
+      ]
     },
     {
       "name": "buildertrend",
@@ -82,7 +120,19 @@
         "confidence_level": 96
       },
       "relevant": true,
-      "rationale": "Buildertrend offers construction project management software with overlapping scheduling, financial, communication, and document workflows for construction professionals."
+      "rationale": "Construction management platform with project management, estimating, scheduling, change orders, and document tools for construction professionals.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Construction management platform with project management, estimating, scheduling, change orders, and document tools for construction professionals."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Cloud-based construction project management software (estimating, scheduling, change orders, client communication) \u2014 direct competitor to Procore on product and market."
+        }
+      ]
     },
     {
       "name": "buildops",
@@ -98,7 +148,19 @@
         "confidence_level": 96
       },
       "relevant": true,
-      "rationale": "Both provide operational and project-management software for commercial contractors, covering job workflows, field teams, financials, and office coordination."
+      "rationale": "Commercial-contractor operations platform overlaps Procore\u2019s construction management market, covering job workflows, field operations, billing, and project execution.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Commercial-contractor operations platform overlaps Procore\u2019s construction management market, covering job workflows, field operations, billing, and project execution."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both sell construction management software to contractors, covering jobs from quoting through billing; strong product and market overlap, genuine comparable."
+        }
+      ]
     },
     {
       "name": "deloitte",
@@ -114,7 +176,19 @@
         "confidence_level": 96
       },
       "relevant": false,
-      "rationale": "Deloitte is a professional services and consulting network, not a construction management software platform serving Procore\u2019s core job to be done."
+      "rationale": "Deloitte is a professional-services consultancy, not a construction project-management software platform competing with Procore.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Deloitte is a professional-services consultancy, not a construction project-management software platform competing with Procore."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Deloitte is a global professional-services/consulting firm, not construction management software; no product or model resemblance to Procore."
+        }
+      ]
     },
     {
       "name": "levelset, a procore company",
@@ -130,7 +204,24 @@
         "confidence_level": 96
       },
       "relevant": false,
-      "rationale": "Levelset overlaps construction payment software, but it is owned by Procore and is therefore not an independent lookalike sales account."
+      "rationale": "Levelset is owned by Procore ('a procore company'), making it a subsidiary of the seed, not an independent competitor or comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Construction SaaS for contractors, focused on payment and lien workflows; overlaps Procore\u2019s financial and project-management buyer market."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Levelset is owned by Procore ('a procore company'), making it a subsidiary of the seed, not an independent competitor or comparable."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "Levelset is Procore's own acquired subsidiary, effectively the same entity rather than an independent comparable."
+        }
+      ]
     },
     {
       "name": "openspace",
@@ -145,8 +236,20 @@
         "country": "united states",
         "confidence_level": 96
       },
-      "relevant": false,
-      "rationale": "OpenSpace provides complementary construction-site reality capture and visual intelligence, not a construction management platform buyers would evaluate instead of Procore."
+      "relevant": true,
+      "rationale": "Construction-site visual intelligence and workflow platform for builders; complementary but comparable construction-management software serving the same project teams.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Construction-site visual intelligence and workflow platform for builders; complementary but comparable construction-management software serving the same project teams."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Construction-tech software selling to builders; same buyer persona and adjacent jobsite-management product, a genuine comparable in Procore's space."
+        }
+      ]
     },
     {
       "name": "salesforce",
@@ -162,7 +265,19 @@
         "confidence_level": 96
       },
       "relevant": false,
-      "rationale": "Salesforce is a general CRM platform, not construction project-management software; buyers would not evaluate both for the same core job."
+      "rationale": "Salesforce is a general CRM platform, not construction-focused project, financial, quality, safety, or contractor management software.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Salesforce is a general CRM platform, not construction-focused project, financial, quality, safety, or contractor management software."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Generic CRM platform with no construction management product; different buyer, job to be done, and industry than Procore."
+        }
+      ]
     },
     {
       "name": "trimble inc.",
@@ -178,10 +293,20 @@
         "confidence_level": 96
       },
       "relevant": true,
-      "rationale": "Trimble offers construction project-management and connected construction software used by contractors and project teams, overlapping Procore\u2019s core offerings and buyers."
+      "rationale": "Trimble offers construction technology, including design, modeling, and project workflows, making it a credible construction-software comparable to Procore.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Trimble offers construction technology, including design, modeling, and project workflows, making it a credible construction-software comparable to Procore."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Trimble sells construction management software (Viewpoint, ProjectSight) competing directly with Procore's construction project-management platform."
+        }
+      ]
     }
   ],
-  "error": null,
-  "relevant_count_at_25": 5,
-  "precision_at_25": 20.0
+  "error": null
 }

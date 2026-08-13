@@ -7,20 +7,20 @@
     "name": "domain_similarity"
   },
   "k": 100,
-  "relevant_count": 14,
-  "precision_at_k": 14.0,
-  "relevant_count_at_10": 0,
-  "relevant_count_at_25": 2,
-  "relevant_count_at_100": 14,
-  "precision_at_10": 0.0,
-  "precision_at_25": 8.0,
-  "precision_at_100": 14.0,
+  "relevant_count": 20,
+  "precision_at_k": 20.0,
+  "relevant_count_at_10": 1,
+  "relevant_count_at_25": 4,
+  "relevant_count_at_100": 20,
+  "precision_at_10": 10.0,
+  "precision_at_25": 16.0,
+  "precision_at_100": 20.0,
   "latency_ms": 1039,
   "cost_usd": null,
   "duplicates_removed": 1,
   "max_results": null,
-  "judge_model": "gpt-5.6",
-  "judged_at": "2026-07-27T07:00:33Z",
+  "judge_model": "majority(n=3): claude-opus-5,gpt-5.6-terra,kimi-k3",
+  "judged_at": "2026-08-10T20:25:09Z",
   "candidates": [
     {
       "name": "Covalent Marketing, LLC",
@@ -45,7 +45,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Covalent is a consultancy implementing and optimizing Braze for clients, not a competing customer-engagement software platform."
+      "rationale": "Consultancy implementing and optimizing Braze for clients, not a customer-engagement platform competitor or comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Consultancy implementing and optimizing Braze for clients, not a customer-engagement platform competitor or comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Consultancy that implements Braze for clients, not a competing customer-engagement platform; a service partner of the category."
+        }
+      ]
     },
     {
       "name": "Glassbox",
@@ -72,7 +84,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Glassbox focuses on behavioral analytics and session replay, while Braze orchestrates personalized multichannel messaging; they address distinct customer-experience jobs."
+      "rationale": "Glassbox provides digital-experience analytics and session replay, not multichannel customer messaging, campaign orchestration, or engagement automation.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Glassbox provides digital-experience analytics and session replay, not multichannel customer messaging, campaign orchestration, or engagement automation."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Glassbox is session-replay/behavior analytics, not cross-channel messaging/engagement; different product and job-to-be-done than Braze."
+        }
+      ]
     },
     {
       "name": "Massive Rocket",
@@ -102,7 +126,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Massive Rocket is a CRM and marketing-technology agency offering implementation and strategy services, not a customer-engagement software platform competing with Braze."
+      "rationale": "Customer-data and CRM consultancy/agency, not a customer-engagement messaging platform competing with Braze.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Customer-data and CRM consultancy/agency, not a customer-engagement messaging platform competing with Braze."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Agency/consultancy offering CRM and martech services, not a customer-engagement platform product; serves the category rather than competing with Braze."
+        }
+      ]
     },
     {
       "name": "Dot Marketing ApS.",
@@ -131,7 +167,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Dot.Vu creates interactive marketing content, while Braze orchestrates personalized cross-channel messaging; marketers use them for distinct, potentially complementary jobs."
+      "rationale": "Dot.Vu creates interactive marketing content, not a multichannel customer-engagement and messaging orchestration platform like Braze.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Dot.Vu creates interactive marketing content, not a multichannel customer-engagement and messaging orchestration platform like Braze."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Dot.Vu builds interactive content (quizzes, games); Braze orchestrates cross-channel personalized messaging. Different products and jobs, only broad martech adjacency."
+        }
+      ]
     },
     {
       "name": "Amplitude, Inc.",
@@ -158,8 +206,25 @@
           "https://www.linkedin.com/company/amplitude-analytics/"
         ]
       },
-      "relevant": false,
-      "rationale": "Amplitude primarily provides product analytics and experimentation, while Braze centers on cross-channel customer messaging; adjacent buyers, but different core jobs."
+      "relevant": true,
+      "rationale": "Amplitude is product-analytics/customer-data SaaS serving the same growth, product, and marketing buyer persona; a natural comparable in digital customer-experience tooling.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Amplitude primarily provides product analytics and experimentation, not cross-channel customer messaging and engagement automation like Braze."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Amplitude is product-analytics/customer-data SaaS serving the same growth, product, and marketing buyer persona; a natural comparable in digital customer-experience tooling."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Both are product/growth-team martech platforms; Amplitude's analytics plus CDP/engagement features overlap and compete with Braze's customer-engagement use cases."
+        }
+      ]
     },
     {
       "name": "Base",
@@ -188,7 +253,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Base focuses on B2B customer advocacy, references, and expansion, not Braze\u2019s cross-channel lifecycle messaging and campaign orchestration job."
+      "rationale": "Base focuses on customer advocacy, references, and expansion programs, not multichannel lifecycle messaging and campaign orchestration like Braze.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Base focuses on customer advocacy, references, and expansion programs, not multichannel lifecycle messaging and campaign orchestration like Braze."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Base focuses on customer references, advocacy, and upsell workflows, not Braze's cross-channel personalized messaging orchestration; adjacent customer marketing, different product and job."
+        }
+      ]
     },
     {
       "name": "NIQ",
@@ -219,7 +296,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "NIQ provides consumer market intelligence and analytics, not cross-channel customer messaging and engagement orchestration for the same job to be done."
+      "rationale": "NIQ sells consumer and market intelligence analytics, not a cross-channel customer messaging and engagement platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "NIQ sells consumer and market intelligence analytics, not a cross-channel customer messaging and engagement platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "NIQ sells consumer market research and analytics data, not a customer-engagement/messaging platform; different product and buyer."
+        }
+      ]
     },
     {
       "name": "Stitch",
@@ -244,7 +333,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Stitch is a marketing services consultancy implementing Braze for clients, not a competing customer-engagement software platform."
+      "rationale": "Stitch is a marketing services consultancy implementing Braze for clients, not a customer-engagement software platform or direct comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Stitch is a marketing services consultancy implementing Braze for clients, not a customer-engagement software platform or direct comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Stitch is a Braze-implementation marketing consultancy that serves clients using Braze, not a competing customer-engagement platform."
+        }
+      ]
     },
     {
       "name": "Omni24",
@@ -268,7 +369,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Omni24 primarily unifies customer support and sales interactions, while Braze specializes in lifecycle marketing and personalized outbound engagement across channels."
+      "rationale": "Omni24 centers on customer support ticketing, live chat, and reputation management, not Braze-style personalized lifecycle marketing and cross-channel engagement.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Omni24 centers on customer support ticketing, live chat, and reputation management, not Braze-style personalized lifecycle marketing and cross-channel engagement."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Omni24 is a helpdesk/support CX platform (ticketing, live chat, surveys); Braze is marketing messaging automation \u2014 different job and buyer, resemblance only weak."
+        }
+      ]
     },
     {
       "name": "Gainsight",
@@ -298,7 +411,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Gainsight primarily serves customer-success teams with retention and adoption software, while Braze serves marketers with cross-channel messaging and campaign orchestration."
+      "rationale": "Gainsight focuses on customer-success and product-experience operations, not multichannel customer messaging and lifecycle engagement campaigns like Braze.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Gainsight focuses on customer-success and product-experience operations, not multichannel customer messaging and lifecycle engagement campaigns like Braze."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Braze is cross-channel messaging/engagement marketing; Gainsight is customer-success management software\u2014different products and buyers, sharing only a generic 'engagement' label."
+        }
+      ]
     },
     {
       "name": "Partnerswell",
@@ -322,7 +447,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Partnerswell manages partner attribution and co-selling operations, not personalized omnichannel customer messaging; buyers and jobs to be done differ."
+      "rationale": "Partner intelligence and deal-attribution software, not a multichannel customer-engagement and messaging platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Partner intelligence and deal-attribution software, not a multichannel customer-engagement and messaging platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Partner intelligence/attribution platform for co-selling operations, not customer-engagement messaging; different product and buyer persona than Braze."
+        }
+      ]
     },
     {
       "name": "Emozo Labs, Inc.",
@@ -346,7 +483,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Emozo provides emotion and behavioral research analytics, not cross-channel customer messaging or lifecycle engagement orchestration for the same job."
+      "rationale": "Emozo provides customer emotion and UX research analytics, not cross-channel customer messaging, campaign orchestration, or engagement automation.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Emozo provides customer emotion and UX research analytics, not cross-channel customer messaging, campaign orchestration, or engagement automation."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Emozo is an emotion/behavior analytics research platform, not a cross-channel customer-engagement messaging platform like Braze; different product and buyer."
+        }
+      ]
     },
     {
       "name": "RewardOps",
@@ -371,7 +520,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "RewardOps manages loyalty rewards programs, while Braze orchestrates cross-channel customer messaging; adjacent marketing buyers but different core jobs and products."
+      "rationale": "Rewards-management and loyalty engagement platform, not a cross-channel customer messaging and lifecycle engagement platform like Braze.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Rewards-management and loyalty engagement platform, not a cross-channel customer messaging and lifecycle engagement platform like Braze."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "RewardOps runs loyalty/rewards program operations, not cross-channel personalized messaging; adjacent martech but different product and job to be done."
+        }
+      ]
     },
     {
       "name": "Insider One",
@@ -401,7 +562,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both offer cross-channel customer engagement platforms with journey automation, personalization, segmentation, analytics, and messaging for marketing teams."
+      "rationale": "AI customer-engagement platform offering cross-channel personalized messaging, journey automation, segmentation, and behavioral analytics\u2014directly comparable to Braze.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "AI customer-engagement platform offering cross-channel personalized messaging, journey automation, segmentation, and behavioral analytics\u2014directly comparable to Braze."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Direct competitor: AI customer-engagement platform offering cross-channel messaging, personalization, and journey orchestration for marketing teams, same as Braze."
+        }
+      ]
     },
     {
       "name": "FranklinCovey",
@@ -427,7 +600,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "FranklinCovey provides leadership training and organizational development, not cross-channel customer-engagement and personalized messaging software."
+      "rationale": "Leadership training and organizational-development services, not a multichannel customer-engagement messaging platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Leadership training and organizational-development services, not a multichannel customer-engagement messaging platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Leadership training and development company, not a customer-engagement or messaging platform; unrelated product and market to Braze."
+        }
+      ]
     },
     {
       "name": "Annex Cloud",
@@ -452,8 +637,25 @@
           "https://www.youtube.com/@AnnexCloud"
         ]
       },
-      "relevant": false,
-      "rationale": "Annex Cloud manages loyalty programs and rewards, while Braze delivers cross-channel customer messaging; adjacent buyers, but distinct core jobs and complementary products."
+      "relevant": true,
+      "rationale": "Both sell B2B platforms for brands\u2019 customer engagement and retention, using customer data and personalization, though Annex Cloud specializes in loyalty programs.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both sell B2B platforms for brands\u2019 customer engagement and retention, using customer data and personalization, though Annex Cloud specializes in loyalty programs."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Loyalty-program management is adjacent MarTech, but not a cross-channel messaging/engagement platform like Braze; different product and job to be done."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Both enterprise martech SaaS selling customer engagement/personalization to marketing teams; loyalty vs messaging are adjacent, comparable categories."
+        }
+      ]
     },
     {
       "name": "Marvin",
@@ -481,7 +683,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Marvin provides customer research and insights management, not cross-channel customer messaging or engagement automation; buyers and jobs-to-be-done differ."
+      "rationale": "Marvin is a customer-research and insights repository, not a cross-channel customer-engagement or personalized messaging platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Marvin is a customer-research and insights repository, not a cross-channel customer-engagement or personalized messaging platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Marvin is a UX/customer research insights repository, not a customer-engagement messaging platform; different product and buyer job-to-be-done."
+        }
+      ]
     },
     {
       "name": "Bevan Dodds Consulting",
@@ -504,7 +718,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Bevan Dodds Consulting/Canva provides design and marketing services, not a cross-channel customer-engagement and personalized messaging platform."
+      "rationale": "Design/marketing-services consultancy and Canva-related tooling, not a multichannel customer-engagement messaging platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Design/marketing-services consultancy and Canva-related tooling, not a multichannel customer-engagement messaging platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Design/branding services consultancy, not a customer-engagement messaging platform; no product, market, or model overlap with Braze."
+        }
+      ]
     },
     {
       "name": "Prosper EX PTY LTD",
@@ -530,7 +756,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Prosper is an employee-experience and internal workforce platform, not a customer-engagement platform for cross-channel marketing messaging."
+      "rationale": "Employee-experience platform for internal workforce surveys and communications, not customer engagement or cross-channel marketing automation.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Employee-experience platform for internal workforce surveys and communications, not customer engagement or cross-channel marketing automation."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Employee-experience/HR platform for internal teams, not customer-engagement messaging; different buyer, persona, and job to be done."
+        }
+      ]
     },
     {
       "name": "CleverTap",
@@ -562,7 +800,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide omnichannel customer-engagement platforms for personalized messaging, campaign orchestration, analytics, and retention, targeting the same marketing and customer-lifecycle teams."
+      "rationale": "CleverTap directly competes in multichannel customer engagement, personalization, analytics, and campaign orchestration for similar marketing teams.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "CleverTap directly competes in multichannel customer engagement, personalization, analytics, and campaign orchestration for similar marketing teams."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are customer-engagement platforms for personalized cross-channel messaging and campaign orchestration; direct competitors serving the same marketing buyer."
+        }
+      ]
     },
     {
       "name": "Midas Automate",
@@ -588,7 +838,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Midas is a broad AI automation and custom IT services provider, not a cross-channel customer messaging platform evaluated for Braze\u2019s core use case."
+      "rationale": "AI automation and custom DevOps services may support marketing, but it is not a dedicated multichannel customer-engagement platform comparable to Braze.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "AI automation and custom DevOps services may support marketing, but it is not a dedicated multichannel customer-engagement platform comparable to Braze."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "AI automation/DevOps services shop, not a customer-engagement messaging platform; agency-like IT services, not a Braze competitor or comparable product."
+        }
+      ]
     },
     {
       "name": "edison365",
@@ -616,7 +878,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "edison365 manages internal innovation, projects, and resources, not customer engagement or cross-channel personalized messaging for marketing teams."
+      "rationale": "Edison365 provides innovation and project portfolio management, not multichannel customer engagement or personalized marketing messaging.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Edison365 provides innovation and project portfolio management, not multichannel customer engagement or personalized marketing messaging."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Edison365 is innovation/project portfolio management software; Braze is customer-engagement messaging. Different product, buyer, and use case."
+        }
+      ]
     },
     {
       "name": "Tango Card. Inc.",
@@ -648,7 +922,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Tango manages gift-card and incentive rewards, not omnichannel customer messaging; buyers would not evaluate it against Braze for the same job."
+      "rationale": "Tango provides rewards and gift-card fulfillment, not cross-channel customer engagement or personalized messaging automation.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Tango provides rewards and gift-card fulfillment, not cross-channel customer engagement or personalized messaging automation."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Tango sells gift-card/rewards fulfillment, not cross-channel customer-engagement messaging; different product and buyer job-to-be-done."
+        }
+      ]
     },
     {
       "name": "Epicenter",
@@ -680,7 +966,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Epicenter primarily provides outsourced customer support and operational services, not a customer-engagement messaging platform evaluated for Braze\u2019s core use case."
+      "rationale": "Epicenter is a customer-support and business-process outsourcing provider, not a self-service multichannel customer-engagement software platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Epicenter is a customer-support and business-process outsourcing provider, not a self-service multichannel customer-engagement software platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Epicenter is a BPO/customer-experience outsourcing services firm, not a customer-engagement software platform like Braze; services provider, not product competitor."
+        }
+      ]
     },
     {
       "name": "Fuse",
@@ -704,7 +1002,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Fuse is an agency implementing Braze for clients, not a competing customer-engagement software platform evaluated for the same job."
+      "rationale": "Marketing agency implementing Braze for clients, not a customer-engagement software platform or comparable product vendor.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Marketing agency implementing Braze for clients, not a customer-engagement software platform or comparable product vendor."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Marketing agency that implements Braze for retail clients; serves the category rather than competing with a customer-engagement platform."
+        }
+      ]
     },
     {
       "name": "Prokeep",
@@ -733,7 +1043,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Prokeep is a distributor-focused order and sales communication system, while Braze serves cross-channel lifecycle marketing teams; their core jobs and buyers differ."
+      "rationale": "Prokeep is distributor-focused order and sales communication software, not a general cross-channel customer-engagement and lifecycle messaging platform like Braze.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Prokeep is distributor-focused order and sales communication software, not a general cross-channel customer-engagement and lifecycle messaging platform like Braze."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Vertical order-management tool for wholesale distributors; messaging is a feature, not a cross-channel customer-engagement platform like Braze."
+        }
+      ]
     },
     {
       "name": "Execs In The Know, LLC",
@@ -763,7 +1085,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Execs In The Know is a CX community and events/resource organization, not a cross-channel customer-engagement messaging platform competing with Braze."
+      "rationale": "CX-leader community, events, and vendor directory; it does not provide a multichannel customer-engagement messaging platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "CX-leader community, events, and vendor directory; it does not provide a multichannel customer-engagement messaging platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "CX professional community/events organization, not a customer-engagement messaging platform; serves the industry rather than competing with Braze."
+        }
+      ]
     },
     {
       "name": "Centrify",
@@ -785,7 +1119,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Centrify focuses on customer analytics and insights, without a clear multichannel messaging or campaign-orchestration product comparable to Braze."
+      "rationale": "Centrify is primarily an identity and privileged-access security platform; generic customer insights do not constitute multichannel customer-engagement messaging.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Centrify is primarily an identity and privileged-access security platform; generic customer insights do not constitute multichannel customer-engagement messaging."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Customer analytics/insights platform; no cross-channel messaging or engagement-orchestration product matching Braze's core offering. Resemblance is weak and generic."
+        }
+      ]
     },
     {
       "name": "Techouts",
@@ -812,7 +1158,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Techouts is an enterprise IT services and implementation firm, not a customer-engagement messaging software platform evaluated for Braze\u2019s core use case."
+      "rationale": "Techouts is an IT services consultancy offering custom digital systems, not a customer-engagement messaging platform comparable to Braze.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Techouts is an IT services consultancy offering custom digital systems, not a customer-engagement messaging platform comparable to Braze."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Techouts is an IT-services/consulting firm building custom digital systems for enterprises, not a customer-engagement software product competing with Braze."
+        }
+      ]
     },
     {
       "name": "LogicalWhy",
@@ -840,7 +1198,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "LogicalWhy is a broad technology consultancy delivering custom transformation services, not a customer-engagement messaging software platform evaluated for Braze\u2019s job."
+      "rationale": "Technology consultancy providing bespoke digital transformation, not a customer-engagement messaging platform or comparable SaaS product.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Technology consultancy providing bespoke digital transformation, not a customer-engagement messaging platform or comparable SaaS product."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "IT consulting firm offering digital transformation services, not a customer-engagement messaging platform; serves the category rather than competing with Braze."
+        }
+      ]
     },
     {
       "name": "Customer.io",
@@ -868,7 +1238,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide cross-channel customer engagement platforms for personalized, automated lifecycle messaging, targeting marketing and growth teams."
+      "rationale": "Customer.io directly competes in omnichannel customer engagement, journey orchestration, and personalized messaging for marketing and SaaS teams.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Customer.io directly competes in omnichannel customer engagement, journey orchestration, and personalized messaging for marketing and SaaS teams."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Direct competitor: data-driven customer-engagement platform for personalized omnichannel messaging and journey automation, same product and market as Braze."
+        }
+      ]
     },
     {
       "name": "SysGenPro",
@@ -895,7 +1277,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "SysGenPro is an ERP platform, not a cross-channel customer-engagement and messaging platform; buyers and core jobs differ."
+      "rationale": "SysGenPro sells white-label ERP systems, not multichannel customer-engagement and personalized messaging software.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "SysGenPro sells white-label ERP systems, not multichannel customer-engagement and personalized messaging software."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "White-label ERP platform, not customer-engagement or messaging software; different product and buyer."
+        }
+      ]
     },
     {
       "name": "Zorvia",
@@ -917,7 +1311,19 @@
         "social_urls": []
       },
       "relevant": true,
-      "rationale": "Zorvia offers cross-channel customer engagement, centralized profiles, real-time messaging, and journey tracking for similar marketing and customer-communication buyers."
+      "rationale": "Omnichannel customer-engagement platform with customer profiles, messaging, and journey tracking, closely comparable to Braze\u2019s engagement automation offering.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Omnichannel customer-engagement platform with customer profiles, messaging, and journey tracking, closely comparable to Braze\u2019s engagement automation offering."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Cross-channel customer-engagement and messaging platform with customer profiles and journey tracking\u2014same product category and buyer as Braze."
+        }
+      ]
     },
     {
       "name": "Tanqory Inc.",
@@ -950,7 +1356,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Tanqory is primarily an e-commerce business-building and operations platform; its marketing automation is ancillary, not Braze-like cross-channel customer engagement."
+      "rationale": "Tanqory is an e-commerce business-building and storefront operations platform, not a cross-channel customer-engagement messaging platform like Braze.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Tanqory is an e-commerce business-building and storefront operations platform, not a cross-channel customer-engagement messaging platform like Braze."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Tanqory is an e-commerce storefront builder with AI business tools, not a cross-channel customer-engagement/messaging platform like Braze."
+        }
+      ]
     },
     {
       "name": "ON24",
@@ -982,7 +1400,24 @@
         ]
       },
       "relevant": false,
-      "rationale": "ON24 primarily delivers webinars and virtual events, complementing rather than replacing Braze\u2019s cross-channel lifecycle messaging and customer-engagement platform."
+      "rationale": "ON24 centers on webinars and virtual events, not cross-channel customer messaging and lifecycle engagement like Braze.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "ON24 centers on webinars and virtual events, not cross-channel customer messaging and lifecycle engagement like Braze."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are B2B customer-engagement platforms sold to marketing teams; ON24's webinar/virtual-event engagement with omni-channel campaigns overlaps Braze's market and model."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "ON24 is a webinar/virtual-event platform, not a cross-channel customer-engagement messaging platform like Braze; different product and job."
+        }
+      ]
     },
     {
       "name": "LeadQuizzes",
@@ -1011,7 +1446,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "LeadQuizzes creates quizzes and forms for lead capture, not omnichannel lifecycle messaging and customer-engagement orchestration like Braze."
+      "rationale": "LeadQuizzes is quiz/form-based lead capture and qualification software, not a multichannel customer-engagement messaging platform like Braze.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "LeadQuizzes is quiz/form-based lead capture and qualification software, not a multichannel customer-engagement messaging platform like Braze."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "LeadQuizzes is a quiz/form lead-capture builder, not a multi-channel customer-engagement messaging platform; product and buyer job differ from Braze."
+        }
+      ]
     },
     {
       "name": "Salesmate",
@@ -1042,7 +1489,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Salesmate is primarily a sales CRM and pipeline automation tool, not a cross-channel customer-engagement platform for lifecycle marketing teams."
+      "rationale": "Salesmate is primarily a sales CRM and lead-management platform, not a cross-channel customer-engagement platform for lifecycle messaging.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Salesmate is primarily a sales CRM and lead-management platform, not a cross-channel customer-engagement platform for lifecycle messaging."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Salesmate is a sales-focused CRM; Braze is a cross-channel customer-engagement messaging platform. Overlap is weak\u2014different buyers and primary jobs to be done."
+        }
+      ]
     },
     {
       "name": "ChannelEngine",
@@ -1071,7 +1530,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "ChannelEngine manages e-commerce marketplace operations, while Braze provides cross-channel customer messaging; they solve different jobs for different buyers."
+      "rationale": "ChannelEngine manages e-commerce marketplace listings, inventory, and pricing; Braze provides cross-channel customer engagement and personalized messaging.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "ChannelEngine manages e-commerce marketplace listings, inventory, and pricing; Braze provides cross-channel customer engagement and personalized messaging."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "ChannelEngine automates marketplace selling operations (inventory, pricing, listings), not customer-engagement messaging; different product and buyer job than Braze."
+        }
+      ]
     },
     {
       "name": "Sunya Technologies Inc.",
@@ -1097,7 +1568,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Sunya provides energy-market intelligence and alerts, not cross-channel customer engagement or personalized marketing messaging for Braze\u2019s buyers."
+      "rationale": "Energy-transition intelligence and deal-data platform, not a multichannel customer-engagement or personalized messaging product.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Energy-transition intelligence and deal-data platform, not a multichannel customer-engagement or personalized messaging product."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Energy-sector data/insights platform; no customer-engagement or messaging product, different market and model from Braze."
+        }
+      ]
     },
     {
       "name": "Foundever",
@@ -1129,7 +1612,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Foundever primarily provides outsourced CX operations and advisory services, not a cross-channel customer messaging platform evaluated for Braze\u2019s marketing-engagement use case."
+      "rationale": "Foundever is a CX outsourcing and advisory services provider, not a customer-engagement SaaS platform competing with Braze.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Foundever is a CX outsourcing and advisory services provider, not a customer-engagement SaaS platform competing with Braze."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Foundever is a CX services/BPO provider, not a customer-engagement messaging platform; it serves the category rather than competing with Braze's product."
+        }
+      ]
     },
     {
       "name": "Bulls & Brands",
@@ -1151,7 +1646,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Bulls & Brands is a financial marketing services firm, not a customer-engagement software platform serving cross-channel messaging needs."
+      "rationale": "Financial marketing agency serving public companies and funds, not a customer-engagement software platform comparable to Braze.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Financial marketing agency serving public companies and funds, not a customer-engagement software platform comparable to Braze."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Marketing agency for public companies/investor audiences, not a customer-engagement messaging platform; serves the category rather than competing with Braze."
+        }
+      ]
     },
     {
       "name": "Impartner Inc.",
@@ -1180,7 +1687,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Impartner manages partner-channel relationships and operations, while Braze manages multichannel customer messaging; buyers and core jobs differ."
+      "rationale": "Impartner manages channel partners and partner operations, not multichannel end-customer messaging and engagement.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Impartner manages channel partners and partner operations, not multichannel end-customer messaging and engagement."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Impartner is partner relationship management software; Braze is customer-engagement messaging. Different products and buyer jobs\u2014no axis held."
+        }
+      ]
     },
     {
       "name": "Vibes",
@@ -1206,7 +1725,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Vibes offers personalized mobile customer-engagement messaging and campaign management, overlapping Braze\u2019s SMS/MMS engagement capabilities and targeting the same brand marketing teams."
+      "rationale": "Mobile messaging engagement platform offering personalized SMS/MMS campaigns, audience management, and analytics for brands\u2014directly comparable to Braze\u2019s customer-engagement offering.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Mobile messaging engagement platform offering personalized SMS/MMS campaigns, audience management, and analytics for brands\u2014directly comparable to Braze\u2019s customer-engagement offering."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Mobile customer-engagement messaging platform (SMS, RCS, wallet) for enterprise marketers \u2014 direct product and market overlap with Braze."
+        }
+      ]
     },
     {
       "name": "AB Tasty",
@@ -1233,8 +1764,25 @@
           "https://x.com/abtasty"
         ]
       },
-      "relevant": false,
-      "rationale": "AB Tasty focuses on experimentation and conversion optimization, not Braze\u2019s core cross-channel customer messaging and engagement orchestration."
+      "relevant": true,
+      "rationale": "B2B SaaS personalization and digital-experience optimization platform serving the same marketing/growth buyers as Braze; strong market and partial product overlap.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "AB Tasty centers on web experimentation and conversion optimization, not Braze\u2019s cross-channel customer messaging and engagement platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "B2B SaaS personalization and digital-experience optimization platform serving the same marketing/growth buyers as Braze; strong market and partial product overlap."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Both are SaaS customer-experience/personalization platforms for marketers optimizing digital engagement; adjacent competitors and comparable ICP.MUST respond with JSON.}}"
+        }
+      ]
     },
     {
       "name": "xSMTHS",
@@ -1258,7 +1806,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "xSMTHS is a consulting and implementation partner, not a customer-engagement software platform competing with Braze for the same job."
+      "rationale": "Consulting and Salesforce implementation firm; it serves marketing-technology users rather than selling a customer-engagement platform comparable to Braze.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Consulting and Salesforce implementation firm; it serves marketing-technology users rather than selling a customer-engagement platform comparable to Braze."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Consulting/Salesforce implementation firm serving the engagement category, not a competing customer-engagement platform product."
+        }
+      ]
     },
     {
       "name": "FVVRD",
@@ -1280,7 +1840,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "FVVRD provides general workflow automation for support and HR, not cross-channel customer messaging and engagement; buyers and core jobs differ."
+      "rationale": "FVVRD is a general workflow automation platform for support and HR, not a multichannel customer-engagement messaging platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "FVVRD is a general workflow automation platform for support and HR, not a multichannel customer-engagement messaging platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "FVVRD automates internal support/HR workflows, not cross-channel customer-engagement messaging; different product category and buyer than Braze."
+        }
+      ]
     },
     {
       "name": "Prove",
@@ -1308,7 +1880,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Prove provides identity verification and fraud prevention, not omnichannel customer-engagement messaging; buyers and core jobs-to-be-done differ."
+      "rationale": "Prove provides digital identity verification and fraud prevention, not multichannel customer engagement or personalized messaging software.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Prove provides digital identity verification and fraud prevention, not multichannel customer engagement or personalized messaging software."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Prove sells identity verification/fraud prevention, not customer-engagement or cross-channel messaging; different product and buyer."
+        }
+      ]
     },
     {
       "name": "Salesloft",
@@ -1335,7 +1919,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Salesloft targets sales teams with revenue orchestration, while Braze targets marketing/customer-engagement teams managing multichannel lifecycle messaging; their core jobs differ."
+      "rationale": "Salesloft orchestrates seller workflows and sales pipelines, while Braze manages marketing/customer lifecycle messaging; they serve different buyers and jobs.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Salesloft orchestrates seller workflows and sales pipelines, while Braze manages marketing/customer lifecycle messaging; they serve different buyers and jobs."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Salesloft is B2B sales-engagement/revenue orchestration for sales teams; Braze is cross-channel customer-engagement marketing. Different buyer persona and job to be done."
+        }
+      ]
     },
     {
       "name": "SmartRecruiters",
@@ -1362,7 +1958,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "SmartRecruiters provides recruiting and applicant-tracking software, not cross-channel customer-engagement messaging; buyers and jobs to be done differ."
+      "rationale": "SmartRecruiters is talent-acquisition and applicant-tracking software, not a customer-engagement platform for cross-channel marketing messaging.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "SmartRecruiters is talent-acquisition and applicant-tracking software, not a customer-engagement platform for cross-channel marketing messaging."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "SmartRecruiters is HR recruiting software; Braze is a customer-engagement messaging platform. Different product, buyer, and market."
+        }
+      ]
     },
     {
       "name": "SpecSavi",
@@ -1386,7 +1994,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "SpecSavi is a revenue-operations consultancy and systems integrator, not a customer-engagement messaging platform evaluated for the same job as Braze."
+      "rationale": "Revenue-operations consultancy integrating CRM and automation tools; it does not offer a customer-engagement messaging platform comparable to Braze.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Revenue-operations consultancy integrating CRM and automation tools; it does not offer a customer-engagement messaging platform comparable to Braze."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "SpecSavi is a RevOps consultancy integrating HubSpot/Salesforce for clients, not a customer-engagement platform; agencies serving the category don't compete with Braze."
+        }
+      ]
     },
     {
       "name": "AAI Marketplace",
@@ -1411,7 +2031,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide multichannel customer-engagement and marketing automation, including personalized messaging, campaigns, follow-ups, and analytics for marketing teams."
+      "rationale": "Both offer B2B marketing automation and personalized multichannel customer messaging, though AAI adds lead-management and appointment workflows.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both offer B2B marketing automation and personalized multichannel customer messaging, though AAI adds lead-management and appointment workflows."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Multichannel customer-engagement and marketing-automation platform with personalized messaging and automated campaigns, matching Braze's product and market."
+        }
+      ]
     },
     {
       "name": "Kiuvify",
@@ -1438,7 +2070,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide B2B marketing automation and customer-engagement workflows, enabling marketers to manage personalized communications and customer journeys across digital channels."
+      "rationale": "Its marketing-automation and customer-engagement workflows serve similar business messaging and engagement needs, though it is a broader all-in-one platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Its marketing-automation and customer-engagement workflows serve similar business messaging and engagement needs, though it is a broader all-in-one platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Customer-engagement and marketing-automation platform with messaging, chatbots, and campaign tools; same product category and buyer as Braze."
+        }
+      ]
     },
     {
       "name": "Braqui",
@@ -1464,7 +2108,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Braqui is a professional-services marketplace, not a multichannel customer-engagement and messaging platform; buyers and jobs to be done do not overlap."
+      "rationale": "Braqui is a professional-services discovery marketplace, not a multichannel customer-engagement and personalized messaging platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Braqui is a professional-services discovery marketplace, not a multichannel customer-engagement and personalized messaging platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Braqui is a services marketplace connecting customers with professionals, not a customer-engagement or messaging platform; no shared product or market with Braze."
+        }
+      ]
     },
     {
       "name": "TELUS Digital",
@@ -1491,7 +2147,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "TELUS Digital is primarily a CX transformation and outsourcing partner, not a cross-channel customer messaging platform evaluated for Braze\u2019s core job."
+      "rationale": "TELUS Digital is primarily a CX consulting, outsourcing, and custom-solutions provider, not a self-service multichannel customer-engagement platform comparable to Braze.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "TELUS Digital is primarily a CX consulting, outsourcing, and custom-solutions provider, not a self-service multichannel customer-engagement platform comparable to Braze."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "TELUS Digital is an IT-services/CX consulting and contact-center outsourcing partner, not a customer-engagement messaging platform competing with Braze."
+        }
+      ]
     },
     {
       "name": "Flameup",
@@ -1517,7 +2185,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide B2B marketing automation for personalized, multichannel customer engagement, campaign optimization, retention, and conversion use cases."
+      "rationale": "AI marketing automation for personalized multichannel customer messaging, behavioral targeting, campaign optimization, and retention directly overlaps Braze's customer-engagement platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "AI marketing automation for personalized multichannel customer messaging, behavioral targeting, campaign optimization, and retention directly overlaps Braze's customer-engagement platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "AI marketing-automation platform for personalized multichannel customer engagement and campaign optimization \u2014 same product and market as Braze."
+        }
+      ]
     },
     {
       "name": "Informa TechTarget",
@@ -1548,7 +2228,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Informa TechTarget provides B2B intent data, content, advertising, and lead-generation services, not a cross-channel customer-engagement messaging platform like Braze."
+      "rationale": "B2B marketing agency and intent-data provider serving technology vendors, not a customer-engagement messaging platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "B2B marketing agency and intent-data provider serving technology vendors, not a customer-engagement messaging platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "B2B marketing agency selling intent data, content, and lead-gen services; not a customer-engagement messaging platform\u2014serves the category rather than competing with Braze."
+        }
+      ]
     },
     {
       "name": "Tradebyte Software GmbH",
@@ -1579,7 +2271,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Tradebyte manages marketplace integrations, product assortments, and e-commerce operations; it does not provide Braze-like cross-channel customer messaging and engagement."
+      "rationale": "Tradebyte provides e-commerce marketplace integration and operations software, not multichannel customer engagement or personalized messaging.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Tradebyte provides e-commerce marketplace integration and operations software, not multichannel customer engagement or personalized messaging."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Tradebyte is marketplace-integration/e-commerce operations software, not customer-engagement messaging; different product and buyer."
+        }
+      ]
     },
     {
       "name": "Recrevio AB",
@@ -1605,7 +2309,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Recrevio is an online course, coaching, and membership business platform, not a cross-channel customer-engagement and personalized messaging platform like Braze."
+      "rationale": "Recrevio is a creator-course and community business platform, not a cross-channel customer-engagement platform for enterprise marketing.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Recrevio is a creator-course and community business platform, not a cross-channel customer-engagement platform for enterprise marketing."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Recrevio is a course/membership/coaching platform for creators; not a customer-engagement or cross-channel messaging platform like Braze."
+        }
+      ]
     },
     {
       "name": "Chainfluence",
@@ -1627,7 +2343,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Chainfluence is a Web3 influencer-marketing agency, not a customer-engagement software platform for managing personalized cross-channel messaging."
+      "rationale": "Chainfluence is a Web3 influencer marketing agency, not a customer-engagement messaging software platform or comparable SaaS vendor.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Chainfluence is a Web3 influencer marketing agency, not a customer-engagement messaging software platform or comparable SaaS vendor."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Web3 influencer marketing agency, not a customer-engagement messaging platform; agencies serving the category are excluded."
+        }
+      ]
     },
     {
       "name": "ITA Group, Inc.",
@@ -1660,7 +2388,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "ITA Group primarily delivers managed incentives, loyalty, events, and employee-engagement programs, not a cross-channel customer messaging platform evaluated for Braze\u2019s core use case."
+      "rationale": "ITA Group is an incentives, loyalty-program, and event-experience services provider, not a multichannel customer-engagement messaging software platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "ITA Group is an incentives, loyalty-program, and event-experience services provider, not a multichannel customer-engagement messaging software platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Services agency for loyalty programs, events, and employee incentives; not a customer-engagement software platform like Braze."
+        }
+      ]
     },
     {
       "name": "Solutions Metrix",
@@ -1690,7 +2430,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Solutions Metrix is a CRM implementation consultancy, not a customer-engagement messaging platform evaluated for the same core job as Braze."
+      "rationale": "CRM implementation consultancy serving platform users, not a customer-engagement software platform competing with Braze.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "CRM implementation consultancy serving platform users, not a customer-engagement software platform competing with Braze."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "CRM implementation/consulting firm serving the category, not a customer-engagement platform product; agency, not competitor."
+        }
+      ]
     },
     {
       "name": "YouhkTech",
@@ -1712,7 +2464,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "YouhkTech is an IT consultancy implementing Braze and other platforms, not a competing customer-engagement software platform."
+      "rationale": "IT consultancy implementing Braze and other cloud platforms for clients, not a customer-engagement software platform or direct comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "IT consultancy implementing Braze and other cloud platforms for clients, not a customer-engagement software platform or direct comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "IT consultancy that implements Braze/Salesforce for clients; serves the category as a partner, not a competing engagement platform."
+        }
+      ]
     },
     {
       "name": "Zeliq",
@@ -1737,7 +2501,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Zeliq focuses on B2B sales prospecting and lead outreach, while Braze serves cross-channel customer engagement and lifecycle marketing teams."
+      "rationale": "Zeliq is a B2B sales prospecting and outbound platform, not a customer-engagement platform for lifecycle messaging across owned channels.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Zeliq is a B2B sales prospecting and outbound platform, not a customer-engagement platform for lifecycle messaging across owned channels."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Zeliq is a B2B sales prospecting/outreach tool with lead data; Braze is a customer-engagement messaging platform for marketers. Different products and buyer personas."
+        }
+      ]
     },
     {
       "name": "Ocamba",
@@ -1763,7 +2539,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide omnichannel customer-engagement platforms with personalized messaging, behavioral analytics, and lifecycle marketing for brands seeking retention and revenue growth."
+      "rationale": "Ocamba offers omnichannel personalized messaging, behavioral tracking, lifecycle management, and analytics for customer engagement, directly comparable to Braze.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Ocamba offers omnichannel personalized messaging, behavioral tracking, lifecycle management, and analytics for customer engagement, directly comparable to Braze."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are customer-engagement platforms offering personalized omnichannel messaging, analytics, and lifecycle management \u2014 direct competitors on product and market."
+        }
+      ]
     },
     {
       "name": "Coresignal",
@@ -1790,7 +2578,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Coresignal sells public web-data APIs for enrichment and talent intelligence, not cross-channel customer messaging or engagement automation like Braze."
+      "rationale": "Coresignal sells public web data APIs for talent and market intelligence, not multichannel customer engagement or messaging automation.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Coresignal sells public web data APIs for talent and market intelligence, not multichannel customer engagement or messaging automation."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Coresignal sells public web data/enrichment APIs, not customer-engagement messaging; different product and buyer, more a data vendor than a peer."
+        }
+      ]
     },
     {
       "name": "UltraCart",
@@ -1819,7 +2619,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "UltraCart primarily provides online storefront, checkout, payments, and inventory management, not Braze-like cross-channel customer messaging and engagement automation."
+      "rationale": "UltraCart primarily provides e-commerce storefront, checkout, and operations software, not a cross-channel customer-engagement messaging platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "UltraCart primarily provides e-commerce storefront, checkout, and operations software, not a cross-channel customer-engagement messaging platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "UltraCart is an e-commerce storefront platform, not a cross-channel customer-engagement/messaging platform like Braze; different product and buyer job."
+        }
+      ]
     },
     {
       "name": "GoAxell",
@@ -1840,8 +2652,20 @@
         "city": "Austell",
         "social_urls": []
       },
-      "relevant": false,
-      "rationale": "GoAxell is a broad SMB operations/CRM suite; customer messaging is ancillary, not a dedicated cross-channel engagement platform evaluated like Braze."
+      "relevant": true,
+      "rationale": "Both provide multichannel customer communication and automated messaging/nurturing for businesses, though GoAxell targets smaller organizations with broader operational tools.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both provide multichannel customer communication and automated messaging/nurturing for businesses, though GoAxell targets smaller organizations with broader operational tools."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "All-in-one customer communication and marketing-automation platform with automated messaging and lead nurturing, overlapping Braze's customer-engagement product axis for SMB buyers."
+        }
+      ]
     },
     {
       "name": "Inventis",
@@ -1869,7 +2693,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Inventis is a broad IT solutions and digital-transformation provider, not a dedicated cross-channel customer-engagement messaging platform evaluated for Braze\u2019s core use case."
+      "rationale": "Broad IT and digital-transformation provider; automated marketing is ancillary, not a dedicated multichannel customer-engagement platform comparable to Braze.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Broad IT and digital-transformation provider; automated marketing is ancillary, not a dedicated multichannel customer-engagement platform comparable to Braze."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "IT services/digital-transformation consultancy with broad solutions, not a customer-engagement messaging platform; serves the category rather than competing with Braze."
+        }
+      ]
     },
     {
       "name": "Juidesh Pande",
@@ -1893,7 +2729,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "CloudPaths is a cloud implementation consultancy, not a customer-engagement messaging platform evaluated for Braze\u2019s core use case."
+      "rationale": "Cloud transformation and CRM implementation consultancy, not a customer-engagement messaging platform or comparable SaaS product.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Cloud transformation and CRM implementation consultancy, not a customer-engagement messaging platform or comparable SaaS product."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Consulting firm implementing CRM/cloud systems for clients, not a customer-engagement messaging platform; serves the category rather than competing with Braze."
+        }
+      ]
     },
     {
       "name": "ChannelAssist Inc.",
@@ -1921,7 +2769,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "ChannelAssist manages partner sales incentives and rewards, not omnichannel customer messaging; buyers and core jobs-to-be-done differ from Braze."
+      "rationale": "ChannelAssist manages partner-sales incentive programs, not multichannel customer messaging and lifecycle engagement.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "ChannelAssist manages partner-sales incentive programs, not multichannel customer messaging and lifecycle engagement."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "ChannelAssist manages channel sales incentive programs for partners/reps, not cross-channel customer engagement messaging; different product, buyer, and job to be done."
+        }
+      ]
     },
     {
       "name": "Cohasia",
@@ -1950,7 +2810,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Cohasia manages brand-creator partnerships and influencer campaigns, not omnichannel customer messaging and lifecycle engagement like Braze."
+      "rationale": "Influencer collaboration marketplace for brands and creators, not a multichannel customer-engagement or lifecycle messaging platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Influencer collaboration marketplace for brands and creators, not a multichannel customer-engagement or lifecycle messaging platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Cohasia is an influencer/brand-collaboration marketplace, not a customer-engagement messaging platform like Braze; different product and buyer."
+        }
+      ]
     },
     {
       "name": "Airship",
@@ -1979,7 +2851,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Airship directly overlaps Braze in cross-channel customer engagement, journey management, personalized messaging, and retention tools for brand marketing teams."
+      "rationale": "Airship directly competes in cross-channel customer engagement, journey orchestration, personalization, and messaging for marketing teams.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Airship directly competes in cross-channel customer engagement, journey orchestration, personalization, and messaging for marketing teams."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Direct competitor: mobile-first customer engagement platform offering push, in-app, and multi-channel messaging, same product and market as Braze."
+        }
+      ]
     },
     {
       "name": "NiCE Cognigy",
@@ -2009,7 +2893,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Cognigy automates customer-service conversations, while Braze orchestrates outbound lifecycle marketing and engagement; their core jobs and primary buyers differ."
+      "rationale": "Cognigy automates customer-service conversations and contact-center agents, whereas Braze drives marketing and lifecycle engagement; their primary jobs and buyers differ.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Cognigy automates customer-service conversations and contact-center agents, whereas Braze drives marketing and lifecycle engagement; their primary jobs and buyers differ."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Cognigy automates customer-service conversations for contact centers; Braze is marketer-facing cross-channel engagement/messaging. Different product, buyer, and job to be done."
+        }
+      ]
     },
     {
       "name": "Forrester Research, Inc.",
@@ -2038,7 +2934,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Forrester sells research and consulting, not a cross-channel customer-engagement messaging platform; buyers would not evaluate it for Braze\u2019s core job."
+      "rationale": "Forrester sells research and consulting services, not a multichannel customer-engagement software platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Forrester sells research and consulting services, not a multichannel customer-engagement software platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Forrester is a research/advisory consulting firm, not a customer-engagement or messaging platform; it analyzes the category rather than competing in it."
+        }
+      ]
     },
     {
       "name": "Candu",
@@ -2063,7 +2971,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Candu builds no-code in-app onboarding and product UX, while Braze orchestrates personalized multichannel customer messaging; their core jobs and buyers differ."
+      "rationale": "Candu builds no-code in-app onboarding and UX content for SaaS teams, not an omnichannel customer messaging and engagement platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Candu builds no-code in-app onboarding and UX content for SaaS teams, not an omnichannel customer messaging and engagement platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Candu is a no-code UX/onboarding design tool, not a cross-channel customer-engagement messaging platform like Braze."
+        }
+      ]
     },
     {
       "name": "Advantage Solutions L.L.C",
@@ -2089,7 +3009,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide omnichannel customer-engagement software and analytics for marketers managing and optimizing campaigns across digital channels."
+      "rationale": "Offers an omnichannel customer-engagement platform for marketers, directly comparable to Braze's cross-channel personalized messaging product.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Offers an omnichannel customer-engagement platform for marketers, directly comparable to Braze's cross-channel personalized messaging product."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Offers an omnichannel customer engagement platform for marketers, directly matching Braze's core product and buyer persona."
+        }
+      ]
     },
     {
       "name": "WebEngage",
@@ -2119,7 +3051,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "WebEngage directly overlaps Braze in omnichannel customer engagement, campaign orchestration, personalization, and retention for marketing teams."
+      "rationale": "Multi-channel personalized customer engagement, segmentation, automation, and retention platform directly comparable to Braze.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Multi-channel personalized customer engagement, segmentation, automation, and retention platform directly comparable to Braze."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "WebEngage is a customer-engagement/retention platform with multi-channel messaging and CDP, a direct Braze competitor on product, market, and model."
+        }
+      ]
     },
     {
       "name": "Price Strategist",
@@ -2141,7 +3085,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Price Strategist provides pricing optimization, not cross-channel customer messaging or engagement; buyers would not evaluate them for the same job."
+      "rationale": "Pricing optimization software serves revenue teams, not cross-channel customer engagement or personalized messaging.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Pricing optimization software serves revenue teams, not cross-channel customer engagement or personalized messaging."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Pricing-optimization analytics tool, not a customer-engagement/messaging platform; different product, buyer, and job to be done."
+        }
+      ]
     },
     {
       "name": "Customer Success Middle East",
@@ -2166,7 +3122,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "A professional community and education platform for customer-success practitioners does not provide Braze-like multichannel customer-engagement or messaging software."
+      "rationale": "Professional community and education platform for customer success practitioners, not a multichannel customer-engagement software vendor.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Professional community and education platform for customer success practitioners, not a multichannel customer-engagement software vendor."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Community/content platform for customer success professionals, not a customer-engagement messaging software competitor or comparable."
+        }
+      ]
     },
     {
       "name": "Blumessage",
@@ -2190,7 +3158,24 @@
         ]
       },
       "relevant": false,
-      "rationale": "Blumessage primarily automates customer support and sales conversations, while Braze focuses on cross-channel lifecycle marketing and personalized messaging campaigns."
+      "rationale": "Blum primarily provides AI customer support and sales assistance, not a cross-channel personalized customer-engagement and lifecycle messaging platform like Braze.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Blum primarily provides AI customer support and sales assistance, not a cross-channel personalized customer-engagement and lifecycle messaging platform like Braze."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are B2B customer-engagement platforms automating personalized messaging across chat channels (WhatsApp, Messenger) \u2014 comparable product and market to Braze."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "AI customer-support chatbot/agent, not a marketing customer-engagement and cross-channel campaign messaging platform like Braze."
+        }
+      ]
     },
     {
       "name": "Vue.ai",
@@ -2221,7 +3206,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Vue.ai is a broad AI orchestration and workflow platform, not a multichannel customer-messaging and engagement platform evaluated for Braze\u2019s core use case."
+      "rationale": "Enterprise AI orchestration and workflow automation is not a customer-engagement platform for multichannel personalized messaging.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Enterprise AI orchestration and workflow automation is not a customer-engagement platform for multichannel personalized messaging."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Vue.ai is a generic enterprise AI orchestration/data-automation platform, not a customer-engagement messaging platform; no product or market overlap with Braze."
+        }
+      ]
     },
     {
       "name": "SuccessManager.in",
@@ -2248,7 +3245,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "SuccessManager.in focuses on customer-success careers, HR workflows, training, and recruitment, not omnichannel customer messaging or engagement automation."
+      "rationale": "Customer-success career, HR, and recruitment platform, not a multichannel customer-engagement messaging product.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Customer-success career, HR, and recruitment platform, not a multichannel customer-engagement messaging product."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Candidate is customer-success career/HR platform with job matching and training, not a customer-engagement messaging platform like Braze; different product and buyer."
+        }
+      ]
     },
     {
       "name": "PulseCash LLC",
@@ -2271,7 +3280,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "PulseCash centers on managed customer-data infrastructure and analytics, not Braze-like cross-channel messaging orchestration; buyers would not evaluate both for the same core job."
+      "rationale": "Customer data and marketing personalization overlap, but its primary offering is managed data infrastructure services rather than multichannel customer engagement software.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Customer data and marketing personalization overlap, but its primary offering is managed data infrastructure services rather than multichannel customer engagement software."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Customer data platform with managed data-infrastructure services; upstream data supplier to engagement stacks, not a multichannel messaging/engagement peer like Braze."
+        }
+      ]
     },
     {
       "name": "Unifyr",
@@ -2296,7 +3317,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Unifyr manages partner ecosystems and channel programs, while Braze manages cross-channel customer messaging; their core jobs and buyers differ."
+      "rationale": "Unifyr manages partner-channel operations and co-marketing programs, not cross-channel end-customer engagement or personalized lifecycle messaging.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Unifyr manages partner-channel operations and co-marketing programs, not cross-channel end-customer engagement or personalized lifecycle messaging."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Unifyr is partner/channel-ecosystem management (PRM), not a customer-engagement messaging platform; different product and buyer persona, shared marketing-SaaS label insufficient."
+        }
+      ]
     },
     {
       "name": "Engageware",
@@ -2320,8 +3353,20 @@
           "https://www.linkedin.com/company/engageware/"
         ]
       },
-      "relevant": false,
-      "rationale": "Engageware primarily provides conversational service, scheduling, and knowledge tools, not Braze-like lifecycle marketing and personalized cross-channel messaging automation."
+      "relevant": true,
+      "rationale": "Both provide B2B customer-engagement platforms that automate personalized interactions and campaigns across digital channels, though Engageware emphasizes regulated-industry service workflows.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both provide B2B customer-engagement platforms that automate personalized interactions and campaigns across digital channels, though Engageware emphasizes regulated-industry service workflows."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are customer-engagement platforms automating personalized interactions across channels; comparable product and market despite Engageware's regulated-industry focus."
+        }
+      ]
     },
     {
       "name": "EngageLab",
@@ -2349,7 +3394,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide multichannel customer-engagement platforms for personalized, automated marketing messaging, user-profile management, and campaign analytics to the same marketing teams."
+      "rationale": "Omnichannel engagement and marketing-automation platform delivering personalized app, web, SMS, email, and WhatsApp messaging, directly comparable to Braze.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Omnichannel engagement and marketing-automation platform delivering personalized app, web, SMS, email, and WhatsApp messaging, directly comparable to Braze."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Omnichannel customer-engagement platform for push, email, SMS, web, and WhatsApp messaging with marketing automation \u2014 direct competitor to Braze."
+        }
+      ]
     },
     {
       "name": "Raincheck",
@@ -2372,7 +3429,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Raincheck focuses on omnichannel customer support and task management, while Braze provides lifecycle marketing automation and personalized outbound engagement."
+      "rationale": "Raincheck is a customer-support conversation management platform, not a cross-channel marketing engagement and lifecycle messaging platform like Braze.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Raincheck is a customer-support conversation management platform, not a cross-channel marketing engagement and lifecycle messaging platform like Braze."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Raincheck is a customer-support helpdesk (shared inbox, live chat, tickets); Braze is marketing-side engagement messaging. Different product and buyer persona."
+        }
+      ]
     },
     {
       "name": "boostCX",
@@ -2397,7 +3466,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "boostCX focuses on feedback, surveys, reviews, and reputation management, not Braze\u2019s cross-channel personalized messaging and customer-engagement orchestration."
+      "rationale": "boostCX focuses on customer feedback, surveys, reviews, and experience measurement, not orchestrating personalized cross-channel customer messaging.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "boostCX focuses on customer feedback, surveys, reviews, and experience measurement, not orchestrating personalized cross-channel customer messaging."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "boostCX is a CX/feedback and reputation-management platform, not a personalized cross-channel customer-engagement messaging platform like Braze; different core product."
+        }
+      ]
     },
     {
       "name": "Supermetrics",
@@ -2427,7 +3508,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Supermetrics focuses on aggregating and reporting marketing data, not executing personalized cross-channel customer messaging like Braze."
+      "rationale": "Supermetrics provides marketing data integration and analytics, not customer-engagement orchestration or personalized cross-channel messaging.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Supermetrics provides marketing data integration and analytics, not customer-engagement orchestration or personalized cross-channel messaging."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Supermetrics is a marketing data-integration and reporting tool, not a customer-engagement/messaging platform; complementary data pipeline rather than a Braze competitor."
+        }
+      ]
     },
     {
       "name": "Ridgeline, Inc.",
@@ -2455,7 +3548,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Ridgeline provides investment-management operations software, not cross-channel customer-engagement messaging; its core product and financial-firm buyer persona do not overlap Braze."
+      "rationale": "Investment-management operations software for financial firms, not a cross-channel customer-engagement or personalized messaging platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Investment-management operations software for financial firms, not a cross-channel customer-engagement or personalized messaging platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Ridgeline is an investment-management platform for financial firms; Braze is a customer-engagement messaging platform. Different products, markets, and buyers."
+        }
+      ]
     },
     {
       "name": "Hiswai",
@@ -2481,7 +3586,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Hiswai is a personalized search and content-monitoring dashboard, not a cross-channel customer-engagement and marketing messaging platform."
+      "rationale": "Hiswai is a personalized web-search, dashboard, and newsletter tool, not a cross-channel customer-engagement platform for business messaging.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Hiswai is a personalized web-search, dashboard, and newsletter tool, not a cross-channel customer-engagement platform for business messaging."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Hiswai is a consumer news-dashboard/search aggregator, not a customer-engagement or messaging platform; no product, market, or model overlap with Braze."
+        }
+      ]
     },
     {
       "name": "Fintellect Solutions Private Limited",
@@ -2503,7 +3620,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Fintellect provides customer-support chatbots and AI agents, not Braze-like multichannel marketing automation and lifecycle messaging for customer engagement teams."
+      "rationale": "AI chatbot and agent platform for support and workflow automation, not a multichannel customer-engagement and lifecycle messaging platform like Braze.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "AI chatbot and agent platform for support and workflow automation, not a multichannel customer-engagement and lifecycle messaging platform like Braze."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Chatbot/AI-agent builder for support automation, not a cross-channel customer-engagement messaging platform; product and buyer differ from Braze's marketing-engagement focus."
+        }
+      ]
     },
     {
       "name": "Yotpo",
@@ -2534,8 +3663,20 @@
           "https://x.com/yotpo"
         ]
       },
-      "relevant": false,
-      "rationale": "Yotpo focuses on e-commerce reviews and loyalty programs, complementing rather than replacing Braze\u2019s cross-channel personalized messaging platform."
+      "relevant": true,
+      "rationale": "Both are B2B customer-retention platforms for marketers; Yotpo overlaps Braze in personalized engagement, loyalty, and retention, though it is e-commerce focused.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both are B2B customer-retention platforms for marketers; Yotpo overlaps Braze in personalized engagement, loyalty, and retention, though it is e-commerce focused."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are B2B SaaS customer-engagement/retention marketing platforms serving brand marketing teams; Yotpo's loyalty, reviews, and messaging tools make it a genuine comparable to Braze."
+        }
+      ]
     },
     {
       "name": "Comingtogetherstarkcounty",
@@ -2559,7 +3700,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Candidate is a digital marketing agency delivering services, not a customer-engagement software platform for cross-channel messaging."
+      "rationale": "Digital marketing agency serving clients; it does not offer a customer-engagement messaging platform comparable to Braze.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Digital marketing agency serving clients; it does not offer a customer-engagement messaging platform comparable to Braze."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Digital marketing agency serving clients, not a customer-engagement/messaging platform; service provider to the category, not a competitor or comparable product."
+        }
+      ]
     },
     {
       "name": "Introw",
@@ -2585,7 +3738,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Introw manages partner relationships and channel sales, while Braze manages end-customer engagement messaging; their core jobs and buyers differ."
+      "rationale": "Introw is a partner relationship management platform for channel partnerships, not a customer engagement and cross-channel messaging platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Introw is a partner relationship management platform for channel partnerships, not a customer engagement and cross-channel messaging platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Introw is partner relationship management software, not a customer-engagement/messaging platform; different product category and buyer than Braze."
+        }
+      ]
     },
     {
       "name": "Netmera",
@@ -2613,7 +3778,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Netmera directly overlaps Braze in omnichannel customer engagement, journey automation, segmentation, personalized messaging, and campaign analytics for marketing teams."
+      "rationale": "Netmera directly competes in multichannel customer engagement, offering segmentation, automated journeys, and personalized messaging across mobile, web, email, SMS, and in-app channels.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Netmera directly competes in multichannel customer engagement, offering segmentation, automated journeys, and personalized messaging across mobile, web, email, SMS, and in-app channels."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are customer-engagement platforms for personalized cross-channel messaging (mobile, email, web, in-app); direct competitor on product, market, and model."
+        }
+      ]
     },
     {
       "name": "Aspire",
@@ -2644,7 +3821,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Aspire manages influencer campaigns and creator relationships, while Braze provides direct multichannel customer messaging; their core offerings and jobs differ."
+      "rationale": "Aspire is influencer-marketing workflow software for e-commerce brands, not a cross-channel customer engagement and personalized messaging platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Aspire is influencer-marketing workflow software for e-commerce brands, not a cross-channel customer engagement and personalized messaging platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Aspire is influencer-marketing/creator-management software; Braze is cross-channel customer-engagement messaging. Different product and buyer job-to-be-done."
+        }
+      ]
     },
     {
       "name": "Elixirr",
@@ -2671,7 +3860,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Elixirr is a digital-transformation consultancy, not a customer-engagement messaging platform evaluated for cross-channel marketing automation."
+      "rationale": "Elixirr is a digital-transformation consultancy, not a customer-engagement messaging platform or comparable SaaS product.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Elixirr is a digital-transformation consultancy, not a customer-engagement messaging platform or comparable SaaS product."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Elixirr is a digital-transformation consultancy, not a customer-engagement software platform; agencies serving the category don't count as lookalikes."
+        }
+      ]
     },
     {
       "name": "Link Systems",
@@ -2695,7 +3896,25 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Link Systems is a broad SMB CRM, web presence, and payments suite, not a cross-channel lifecycle marketing and customer-engagement platform."
+      "rationale": "Link Systems is a broad SMB CRM, website, payments, and communications tool, not a dedicated omnichannel customer-engagement and lifecycle messaging platform like Braze.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Link Systems is a broad SMB CRM, website, payments, and communications tool, not a dedicated omnichannel customer-engagement and lifecycle messaging platform like Braze."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Customer-communication platform with CRM, messaging, web chat, and engagement tools for businesses \u2014 comparable to Braze's engagement/messaging space."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "SMB all-in-one CRM/website/payments toolkit, not an enterprise cross-channel engagement/messaging orchestration platform; different buyer and job."
+        }
+      ]
     }
-  ]
+  ],
+  "error": null
 }

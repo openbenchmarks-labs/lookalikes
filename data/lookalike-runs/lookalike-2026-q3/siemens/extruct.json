@@ -9,15 +9,18 @@
   "k": 100,
   "relevant_count": 6,
   "precision_at_k": 6.0,
-  "relevant_count_at_10": 2,
+  "relevant_count_at_10": 1,
+  "relevant_count_at_25": 2,
   "relevant_count_at_100": 6,
-  "precision_at_10": 20.0,
+  "precision_at_10": 10.0,
+  "precision_at_25": 8.0,
   "precision_at_100": 6.0,
   "latency_ms": 1653,
   "cost_usd": null,
   "duplicates_removed": 0,
-  "judge_model": "gpt-5.6",
-  "judged_at": "2026-07-27T03:22:36Z",
+  "max_results": null,
+  "judge_model": "majority(n=3): claude-opus-5,gpt-5.6-terra,kimi-k3",
+  "judged_at": "2026-08-10T19:49:33Z",
   "candidates": [
     {
       "name": "T-Systems",
@@ -34,7 +37,19 @@
         "employee_count": "10001+"
       },
       "relevant": false,
-      "rationale": "T-Systems primarily sells enterprise IT, cloud, and transformation services, not Siemens-like industrial automation, electrification, mobility, or infrastructure technology."
+      "rationale": "T-Systems is primarily an enterprise IT, cloud, and digital-transformation service provider, not an industrial automation, electrification, mobility, or infrastructure technology peer.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "T-Systems is primarily an enterprise IT, cloud, and digital-transformation service provider, not an industrial automation, electrification, mobility, or infrastructure technology peer."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "T-Systems is an IT services/digital-transformation provider, not an industrial automation, electrification, or infrastructure technology company like Siemens."
+        }
+      ]
     },
     {
       "name": "DB Systel",
@@ -51,7 +66,19 @@
         "employee_count": "5001-10000"
       },
       "relevant": false,
-      "rationale": "DB Systel is a railway-focused IT consultancy and systems integrator, not an industrial automation, electrification, infrastructure, or mobility technology vendor like Siemens."
+      "rationale": "Rail-focused system integrator and consultancy, not an industrial automation, electrification, mobility-equipment, or infrastructure technology peer of Siemens.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Rail-focused system integrator and consultancy, not an industrial automation, electrification, mobility-equipment, or infrastructure technology peer of Siemens."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "DB Systel is a rail IT services/consulting arm (Deutsche Bahn subsidiary) serving railway operators \u2014 a consultancy in the category, not a Siemens peer."
+        }
+      ]
     },
     {
       "name": "Software AG",
@@ -67,8 +94,25 @@
         "industries": null,
         "employee_count": "1001-5000"
       },
-      "relevant": true,
-      "rationale": "Both offer enterprise industrial IoT and digital-transformation software, serving organizations seeking to connect assets, integrate data, and optimize operations."
+      "relevant": false,
+      "rationale": "Software AG sells enterprise integration/middleware and generic IT modernization, not Siemens' core industrial automation, electrification, or industrial software; IoT overlap is weak.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Software AG's IoT, integration, and enterprise digitalization platforms overlap with Siemens' industrial software and smart-infrastructure digital transformation offerings."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Software AG sells enterprise integration/middleware and generic IT modernization, not Siemens' core industrial automation, electrification, or industrial software; IoT overlap is weak."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "Enterprise integration/IoT software vendor; not an industrial automation, electrification and infrastructure hardware conglomerate like Siemens."
+        }
+      ]
     },
     {
       "name": "Digital X",
@@ -85,7 +129,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "Digital X is an events and networking initiative, not a provider of industrial automation, electrification, infrastructure, mobility, or engineering software."
+      "rationale": "Digital X is an event and networking initiative, not an industrial automation, electrification, mobility, or infrastructure technology provider.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Digital X is an event and networking initiative, not an industrial automation, electrification, mobility, or infrastructure technology provider."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Digital X is a Deutsche Telekom events/networking initiative for digital transformation, not an industrial technology, automation, or electrification company comparable to Siemens."
+        }
+      ]
     },
     {
       "name": "Stefanini Group",
@@ -102,7 +158,19 @@
         "employee_count": "10001+"
       },
       "relevant": false,
-      "rationale": "Stefanini is a digital-transformation consultancy, not an industrial automation, electrification, infrastructure, mobility, or industrial software product company comparable to Siemens."
+      "rationale": "Stefanini is a digital-transformation consultancy, not an industrial automation, electrification, infrastructure, mobility, or industrial-software provider comparable to Siemens.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Stefanini is a digital-transformation consultancy, not an industrial automation, electrification, infrastructure, mobility, or industrial-software provider comparable to Siemens."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "IT consulting/digital-transformation agency, not an industrial technology product company; consultancies serving the category are excluded."
+        }
+      ]
     },
     {
       "name": "Hitachi",
@@ -119,7 +187,19 @@
         "employee_count": "10001+"
       },
       "relevant": true,
-      "rationale": "Hitachi overlaps Siemens in industrial automation, IT/OT digitalization, energy infrastructure, and mobility solutions sold to enterprises and governments."
+      "rationale": "Hitachi directly overlaps Siemens in industrial automation, electrification/energy transition, mobility, and digital industrial solutions.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Hitachi directly overlaps Siemens in industrial automation, electrification/energy transition, mobility, and digital industrial solutions."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Diversified industrial technology peer: both span industrial automation, energy/electrification, rail mobility, and digital solutions for the same enterprise buyers."
+        }
+      ]
     },
     {
       "name": "AIT",
@@ -136,7 +216,24 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "AIT is a Siemens-affiliated custom IoT and mixed-reality software specialist, not an independent industrial technology platform comparable to Siemens."
+      "rationale": "Siemens ecosystem consultancy delivering custom IoT/mixed-reality implementations for clients; serves the category rather than competing with Siemens's industrial technology products.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Industrial IoT and automation software overlaps Siemens\u2019 digital-industries offerings, though AIT is a specialized implementation provider."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Siemens ecosystem consultancy delivering custom IoT/mixed-reality implementations for clients; serves the category rather than competing with Siemens's industrial technology products."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "AIT is a Siemens-owned software consultancy delivering custom solutions, not an industrial technology manufacturer comparable to Siemens.no peer status.', ''"
+        }
+      ]
     },
     {
       "name": "Infosys",
@@ -153,7 +250,19 @@
         "employee_count": "10001+"
       },
       "relevant": false,
-      "rationale": "Infosys primarily provides IT consulting and digital-transformation services, not Siemens-like industrial automation, electrification, infrastructure, mobility, or industrial products."
+      "rationale": "Infosys is primarily an IT consulting and digital transformation services firm, not an industrial automation, electrification, mobility, or infrastructure technology peer.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Infosys is primarily an IT consulting and digital transformation services firm, not an industrial automation, electrification, mobility, or infrastructure technology peer."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Infosys is an IT services/consulting firm; Siemens is an industrial technology product company. Consultancies serving the category are not peers."
+        }
+      ]
     },
     {
       "name": "syndikat7",
@@ -170,7 +279,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "syndikat7 is an AI and software transformation consultancy serving industrial firms like Siemens, not a provider of industrial automation, electrification, or infrastructure products."
+      "rationale": "Digital transformation consultancy serving Siemens and manufacturers, not an industrial automation, electrification, mobility, or infrastructure product peer.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Digital transformation consultancy serving Siemens and manufacturers, not an industrial automation, electrification, mobility, or infrastructure product peer."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Consultancy building custom AI/software solutions for Siemens as a client, not a competing industrial technology company."
+        }
+      ]
     },
     {
       "name": "Atos",
@@ -187,7 +308,19 @@
         "employee_count": "10001+"
       },
       "relevant": false,
-      "rationale": "Atos primarily provides managed IT and consulting services, not Siemens-like industrial automation, electrification, mobility, or smart-infrastructure products."
+      "rationale": "Atos is primarily an IT managed-services and digital-transformation provider, not an industrial automation, electrification, mobility, or smart-infrastructure product peer.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Atos is primarily an IT managed-services and digital-transformation provider, not an industrial automation, electrification, mobility, or smart-infrastructure product peer."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Atos is an IT managed-services and digital-transformation consultancy, not an industrial automation/electrification technology peer of Siemens."
+        }
+      ]
     },
     {
       "name": "Accenture",
@@ -204,7 +337,19 @@
         "employee_count": "10001+"
       },
       "relevant": false,
-      "rationale": "Accenture is primarily a consulting and services firm, not an industrial automation, electrification, infrastructure, mobility, or industrial-product company like Siemens."
+      "rationale": "Accenture is a professional-services consultancy, not an industrial automation, electrification, infrastructure, mobility, or industrial-software product peer.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Accenture is a professional-services consultancy, not an industrial automation, electrification, infrastructure, mobility, or industrial-software product peer."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Accenture is an IT/consulting services firm, not an industrial technology product maker; serves the category rather than competing with Siemens."
+        }
+      ]
     },
     {
       "name": "evosoft",
@@ -221,7 +366,19 @@
         "employee_count": "1001-5000"
       },
       "relevant": false,
-      "rationale": "Evosoft is Siemens\u2019 wholly owned subsidiary and implementation arm, not an independent peer company offering a comparable industrial technology portfolio."
+      "rationale": "Evosoft is a wholly owned Siemens subsidiary, not an independent competitor, comparable, or ICP-expansion prospect.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Evosoft is a wholly owned Siemens subsidiary, not an independent competitor, comparable, or ICP-expansion prospect."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "100% Siemens AG subsidiary \u2014 part of the seed itself, not an independent competitor or comparable; excluded per parent/affiliate rule."
+        }
+      ]
     },
     {
       "name": "Fujitsu",
@@ -238,7 +395,24 @@
         "employee_count": "10001+"
       },
       "relevant": false,
-      "rationale": "Fujitsu primarily provides IT consulting, cloud, and digital transformation services, not Siemens-like industrial automation, electrification, mobility, or infrastructure products."
+      "rationale": "Fujitsu is IT services/consulting and cloud, not industrial automation, electrification, or mobility; no strong product/market overlap with Siemens.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Fujitsu is a broad enterprise technology company offering digital infrastructure, automation-adjacent solutions, and industrial transformation services, making it a credible Siemens comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Fujitsu is IT services/consulting and cloud, not industrial automation, electrification, or mobility; no strong product/market overlap with Siemens."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "Fujitsu is an IT services/consulting firm; Siemens is industrial automation and infrastructure hardware/software \"}, }"
+        }
+      ]
     },
     {
       "name": "ISAP GmbH",
@@ -255,7 +429,19 @@
         "employee_count": "51-200"
       },
       "relevant": false,
-      "rationale": "ISAP is primarily a Siemens PLM reseller and implementation consultancy, not an industrial technology manufacturer or competing software platform."
+      "rationale": "ISAP is a Siemens PLM implementation and consulting partner, serving Siemens products rather than competing as an industrial technology provider.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "ISAP is a Siemens PLM implementation and consulting partner, serving Siemens products rather than competing as an industrial technology provider."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Siemens PLM partner/reseller providing consulting and implementation services on Siemens products; a channel partner, not a competitor or comparable."
+        }
+      ]
     },
     {
       "name": "MARTINSFELD GmbH & Co. KG",
@@ -272,7 +458,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "MARTINSFELD is a digital consultancy/custom developer, not an industrial automation, electrification, infrastructure, or mobility technology provider comparable to Siemens."
+      "rationale": "Digital transformation consultancy and custom developer serving enterprises, not an industrial automation, electrification, infrastructure, mobility, or industrial software peer.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Digital transformation consultancy and custom developer serving enterprises, not an industrial automation, electrification, infrastructure, mobility, or industrial software peer."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Digital transformation consultancy serving enterprises (including Siemens Healthineers), not an industrial technology peer; agencies/consultancies serving the category are excluded."
+        }
+      ]
     },
     {
       "name": "Tech Mahindra",
@@ -289,7 +487,19 @@
         "employee_count": "10001+"
       },
       "relevant": false,
-      "rationale": "Tech Mahindra is primarily an IT consulting and digital-transformation services firm, not an industrial automation, electrification, infrastructure, or mobility technology vendor."
+      "rationale": "Tech Mahindra is primarily an IT consulting and digital-transformation services firm, not an industrial automation, electrification, mobility, or infrastructure technology peer.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Tech Mahindra is primarily an IT consulting and digital-transformation services firm, not an industrial automation, electrification, mobility, or infrastructure technology peer."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "IT services/consulting firm serving enterprises, not an industrial technology product company; no overlap in automation, electrification, or industrial software products."
+        }
+      ]
     },
     {
       "name": "TIVIT",
@@ -306,7 +516,19 @@
         "employee_count": "5001-10000"
       },
       "relevant": false,
-      "rationale": "TIVIT is an IT services and digital-transformation provider, not an industrial automation, electrification, infrastructure, or mobility technology manufacturer like Siemens."
+      "rationale": "TIVIT is a digital-transformation and managed technology-services provider, not an industrial automation, electrification, mobility, or infrastructure product peer.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "TIVIT is a digital-transformation and managed technology-services provider, not an industrial automation, electrification, mobility, or infrastructure product peer."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "TIVIT is an IT services/digital-transformation firm (cloud, cybersecurity, managed services), not an industrial automation/electrification technology peer like Siemens."
+        }
+      ]
     },
     {
       "name": "Digital Industries World",
@@ -323,7 +545,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "Digital Industries World is a knowledge-sharing network, not a provider of Siemens-like industrial automation, electrification, infrastructure, mobility, or software products."
+      "rationale": "Industry knowledge-sharing network, not an industrial automation, electrification, mobility, or infrastructure technology provider comparable to Siemens.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Industry knowledge-sharing network, not an industrial automation, electrification, mobility, or infrastructure technology provider comparable to Siemens."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "A knowledge-sharing network/community for industrial digital transformation, not an industrial technology product company competing with Siemens."
+        }
+      ]
     },
     {
       "name": "Mindtree",
@@ -340,7 +574,19 @@
         "employee_count": "10001+"
       },
       "relevant": false,
-      "rationale": "Mindtree is primarily an IT consulting and digital-transformation services provider, not an industrial automation, electrification, infrastructure, or mobility technology vendor."
+      "rationale": "Mindtree is a technology consulting and services provider, not an industrial automation, electrification, mobility, or smart-infrastructure product company.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Mindtree is a technology consulting and services provider, not an industrial automation, electrification, mobility, or smart-infrastructure product company."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Mindtree is an IT consulting/digital-transformation services firm, not an industrial technology maker; consultancy serving the category, not a peer."
+        }
+      ]
     },
     {
       "name": "Transition Technologies PSC",
@@ -357,7 +603,24 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "TTPSC is primarily an industrial digital-transformation integrator and services partner, not a core automation, electrification, mobility, or industrial-platform vendor like Siemens."
+      "rationale": "IT services/integrator implementing PLM and IIoT for industrial clients; a consultancy serving the category, not an industrial-technology product competitor like Siemens.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Industrial digital-transformation integrator serving manufacturers; overlaps Siemens\u2019 industrial software/automation markets, though primarily as a services provider."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "IT services/integrator implementing PLM and IIoT for industrial clients; a consultancy serving the category, not an industrial-technology product competitor like Siemens."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "Systems integrator/consultancy implementing industrial software, not a manufacturer of industrial technology/automation products like Siemens."
+        }
+      ]
     },
     {
       "name": "DiKItal Solutions",
@@ -374,7 +637,19 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "Both offer industrial digital-twin solutions for manufacturing, buildings, logistics, and energy, targeting operations and facility-management buyers."
+      "rationale": "Digital twin solutions for industrial operations and smart buildings overlap Siemens\u2019 industrial software and smart-infrastructure offerings.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Digital twin solutions for industrial operations and smart buildings overlap Siemens\u2019 industrial software and smart-infrastructure offerings."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Digital twin software for production, buildings, and energy directly overlaps Siemens' industrial software/smart infrastructure business; comparable provider, size irrelevant."
+        }
+      ]
     },
     {
       "name": "Xpert.Digital",
@@ -391,7 +666,24 @@
         "employee_count": "51-200"
       },
       "relevant": false,
-      "rationale": "Xpert.Digital primarily provides niche XR/AI transformation solutions and consulting, not Siemens-like industrial automation, electrification, infrastructure, or mobility products."
+      "rationale": "Primarily a digital-transformation consultancy with AR/VR services for industry, not an industrial technology product company competing with or comparable to Siemens.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Industrial metaverse, AI logistics, and smart-factory solutions overlap Siemens\u2019 industrial software and digitalization offerings for manufacturing customers."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Primarily a digital-transformation consultancy with AR/VR services for industry, not an industrial technology product company competing with or comparable to Siemens."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "Small digital-transformation consultancy/XR platform, not an industrial technology manufacturer of automation, electrification, and mobility equipment like Siemens.# You must respond with valid JSON.# Do not include any text outside the JSO"
+        }
+      ]
     },
     {
       "name": "nexineer digital",
@@ -408,7 +700,24 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "Nexineer is a tailored industrial digital-transformation consultancy, not a provider of Siemens-like automation, electrification, infrastructure, or mobility products."
+      "rationale": "Small consultancy delivering tailored digitalization/IoT implementation services for manufacturers, not an industrial technology product company competing with Siemens.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Industrial digital-transformation consultancy and software provider for smart factories overlaps Siemens\u2019 industrial automation and manufacturing digitalization markets."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Small consultancy delivering tailored digitalization/IoT implementation services for manufacturers, not an industrial technology product company competing with Siemens."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "Boutique digital-transformation service provider for manufacturers, not a competitor or comparable to Siemens' industrial products and platforms."
+        }
+      ]
     },
     {
       "name": "Excellence4Digital",
@@ -425,7 +734,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "Excellence4Digital is a property/FM digital-transformation consultancy, not a provider of Siemens-like industrial automation, electrification, infrastructure, mobility, or software products."
+      "rationale": "Digital-transformation consultancy for property and facilities clients, not an industrial technology company or comparable automation/electrification platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Digital-transformation consultancy for property and facilities clients, not an industrial technology company or comparable automation/electrification platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Digital-transformation consultancy for property/FM firms; advisory services, not industrial technology products \u2014 a service provider, not a Siemens comparable."
+        }
+      ]
     },
     {
       "name": "Hitachi Digital Services",
@@ -442,7 +763,19 @@
         "employee_count": "10001+"
       },
       "relevant": false,
-      "rationale": "Hitachi Digital Services primarily provides enterprise IT transformation services, not Siemens-like industrial automation, electrification, infrastructure, or mobility products."
+      "rationale": "Hitachi Digital Services primarily provides enterprise digital-transformation and IT services, not Siemens-like industrial automation, electrification, mobility, or infrastructure products.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Hitachi Digital Services primarily provides enterprise digital-transformation and IT services, not Siemens-like industrial automation, electrification, mobility, or infrastructure products."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Digital transformation consultancy/services firm, not an industrial technology product company; serves the category rather than competing with Siemens."
+        }
+      ]
     },
     {
       "name": "Thiqah",
@@ -459,7 +792,19 @@
         "employee_count": "1001-5000"
       },
       "relevant": false,
-      "rationale": "Thiqah provides broad digital-transformation and professional services, not Siemens-like industrial automation, electrification, mobility, or smart-infrastructure products."
+      "rationale": "Thiqah provides broad digital-transformation and professional services, not Siemens-like industrial automation, electrification, infrastructure, mobility, or industrial technology products.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Thiqah provides broad digital-transformation and professional services, not Siemens-like industrial automation, electrification, infrastructure, mobility, or industrial technology products."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Thiqah is a digital-transformation services provider for government and finance sectors, not an industrial automation/electrification/mobility technology peer of Siemens."
+        }
+      ]
     },
     {
       "name": "digital.hamburg innovation GmbH",
@@ -476,7 +821,19 @@
         "employee_count": "51-200"
       },
       "relevant": false,
-      "rationale": "The candidate is a digital-transformation consultancy, not an industrial automation, electrification, infrastructure, mobility, or industrial software provider like Siemens."
+      "rationale": "Digital transformation consultancy serving varied clients; it does not offer Siemens-like industrial automation, electrification, infrastructure, mobility, or software products.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Digital transformation consultancy serving varied clients; it does not offer Siemens-like industrial automation, electrification, infrastructure, mobility, or software products."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Digital transformation consultancy serving clients, not an industrial technology/automation competitor or comparable to Siemens."
+        }
+      ]
     },
     {
       "name": "Comtrade System Integration",
@@ -493,7 +850,19 @@
         "employee_count": "501-1000"
       },
       "relevant": false,
-      "rationale": "Comtrade is an IT consulting and systems-integration provider, not an industrial automation, electrification, infrastructure, or mobility technology manufacturer like Siemens."
+      "rationale": "Digital transformation consultancy and systems integrator; it implements vendor technologies rather than offering Siemens-like industrial automation, infrastructure, mobility, or industrial software products.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Digital transformation consultancy and systems integrator; it implements vendor technologies rather than offering Siemens-like industrial automation, infrastructure, mobility, or industrial software products."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "IT services/system-integration consultancy, not an industrial technology or automation company; serves rather than competes with Siemens."
+        }
+      ]
     },
     {
       "name": "Digital Innovation AG",
@@ -510,7 +879,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "Digital Innovation is a transformation consultancy, not an industrial automation, electrification, infrastructure, mobility, or industrial software provider comparable to Siemens."
+      "rationale": "Digital transformation consultancy serving industrial clients, not an industrial automation, electrification, mobility, or infrastructure technology provider.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Digital transformation consultancy serving industrial clients, not an industrial automation, electrification, mobility, or infrastructure technology provider."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Digital transformation consultancy serving clients, not an industrial technology product peer; consultancies serving the category are excluded."
+        }
+      ]
     },
     {
       "name": "Exxeta",
@@ -527,7 +908,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "Exxeta is primarily a digital transformation consultancy, not an industrial automation, electrification, infrastructure, or mobility technology manufacturer comparable to Siemens."
+      "rationale": "Exxeta is a digital-transformation consultancy and software developer, not an industrial automation, electrification, infrastructure, or mobility technology provider comparable to Siemens.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Exxeta is a digital-transformation consultancy and software developer, not an industrial automation, electrification, infrastructure, or mobility technology provider comparable to Siemens."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Exxeta is an IT/digital-transformation consultancy serving enterprises, not an industrial technology product company; it serves Siemens' category rather than competing with it."
+        }
+      ]
     },
     {
       "name": "Technology & Strategy",
@@ -544,7 +937,19 @@
         "employee_count": "1001-5000"
       },
       "relevant": false,
-      "rationale": "Technology & Strategy is an engineering and digital consultancy, not a provider of Siemens-like industrial automation, electrification, infrastructure, or mobility products."
+      "rationale": "Engineering and digital-transformation consultancy serving industrial clients, rather than an industrial automation, electrification, mobility, or software product company.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Engineering and digital-transformation consultancy serving industrial clients, rather than an industrial automation, electrification, mobility, or software product company."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Engineering and digital consulting firm serving industrial clients, not a maker of industrial technology products; a service provider to the category, not a peer."
+        }
+      ]
     },
     {
       "name": "Leading Lights",
@@ -561,7 +966,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "Leading Lights is a digital transformation consultancy, not an industrial automation, electrification, infrastructure, mobility, or industrial software provider like Siemens."
+      "rationale": "Digital-transformation consultancy serving enterprises, not an industrial technology, automation, electrification, mobility, or infrastructure product peer.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Digital-transformation consultancy serving enterprises, not an industrial technology, automation, electrification, mobility, or infrastructure product peer."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Leading Lights is a digital-transformation consultancy/agency, not an industrial technology product company; it serves rather than competes with Siemens."
+        }
+      ]
     },
     {
       "name": "Enterprise Group Technologies",
@@ -578,7 +995,19 @@
         "employee_count": "51-200"
       },
       "relevant": false,
-      "rationale": "Enterprise Group Technologies is primarily a Siemens solution integrator and digital-transformation provider, not an industrial technology manufacturer competing with Siemens."
+      "rationale": "IT integrator implementing Siemens PLM and IoT solutions for clients, not an industrial technology manufacturer or comparable platform provider.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "IT integrator implementing Siemens PLM and IoT solutions for clients, not an industrial technology manufacturer or comparable platform provider."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "IT services firm implementing Siemens PLM/IoT solutions for clients; a partner/integrator serving the category, not a competitor or comparable."
+        }
+      ]
     },
     {
       "name": "Sigma Technology Group",
@@ -595,7 +1024,19 @@
         "employee_count": "1001-5000"
       },
       "relevant": false,
-      "rationale": "Sigma is a technology consultancy delivering custom projects, not an industrial automation, electrification, infrastructure, or mobility product company competing with Siemens."
+      "rationale": "Technology consultancy providing custom software and embedded development; it serves industrial firms but does not offer Siemens-like industrial technology platforms or products.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Technology consultancy providing custom software and embedded development; it serves industrial firms but does not offer Siemens-like industrial technology platforms or products."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Sigma is an IT/digital consulting services firm serving enterprises, not an industrial technology product company; it serves the category rather than competing with Siemens."
+        }
+      ]
     },
     {
       "name": "Conseil Ing\u00e9nierie et D\u00e9veloppement Groupe CID",
@@ -612,7 +1053,19 @@
         "employee_count": "10001+"
       },
       "relevant": false,
-      "rationale": "CID is a digital-transformation consultancy, not an industrial automation, electrification, mobility, infrastructure, or industrial-software product company like Siemens."
+      "rationale": "CID is a digital-transformation consultancy serving industrial clients, not an industrial automation, electrification, mobility, or infrastructure technology provider.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "CID is a digital-transformation consultancy serving industrial clients, not an industrial automation, electrification, mobility, or infrastructure technology provider."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "CID is a digital transformation consultancy serving industrial clients; it provides services to the category rather than competing with Siemens' industrial technology products."
+        }
+      ]
     },
     {
       "name": "Transformize",
@@ -629,7 +1082,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "Transformize is a digital transformation consultancy, not an industrial automation, electrification, infrastructure, mobility, or industrial software provider like Siemens."
+      "rationale": "Digital transformation consultancy serving corporates; it does not offer Siemens' industrial automation, infrastructure, mobility, or software products.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Digital transformation consultancy serving corporates; it does not offer Siemens' industrial automation, infrastructure, mobility, or software products."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Transformize is a digital-transformation consultancy serving corporates, not an industrial technology/automation company; it serves rather than competes with Siemens."
+        }
+      ]
     },
     {
       "name": "Digitalbaustein",
@@ -646,7 +1111,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "Digitalbaustein is an IT/AI consultancy, not a provider of Siemens-like industrial automation, electrification, infrastructure, mobility, or industrial software products."
+      "rationale": "IT/AI strategy consultancy serving enterprises, not an industrial technology, automation, infrastructure, mobility, or industrial software provider comparable to Siemens.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "IT/AI strategy consultancy serving enterprises, not an industrial technology, automation, infrastructure, mobility, or industrial software provider comparable to Siemens."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "IT/AI consulting firm, not an industrial technology product company; consultancies serving digital transformation don't compete with Siemens' automation/electrification products."
+        }
+      ]
     },
     {
       "name": "PROLIM Solutions India",
@@ -663,7 +1140,19 @@
         "employee_count": "51-200"
       },
       "relevant": false,
-      "rationale": "PROLIM is a services and implementation partner for Siemens software, not an industrial technology manufacturer or competing product platform."
+      "rationale": "PLM implementation consultancy and Siemens software reseller/partner, serving Siemens customers rather than competing in Siemens\u2019s broad industrial technology markets.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "PLM implementation consultancy and Siemens software reseller/partner, serving Siemens customers rather than competing in Siemens\u2019s broad industrial technology markets."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "PROLIM is a services firm that implements Siemens software (Teamcenter, NX, Mendix) \u2014 a partner/client of the seed, not a competitor or comparable."
+        }
+      ]
     },
     {
       "name": "Innovation Strategies",
@@ -680,7 +1169,19 @@
         "employee_count": "51-200"
       },
       "relevant": false,
-      "rationale": "Innovation Strategies is a digital-transformation consultancy and systems integrator, not an industrial automation, electrification, infrastructure, or mobility technology provider like Siemens."
+      "rationale": "Digital transformation consultancy and systems integrator; it serves enterprises using technology rather than selling Siemens-like industrial automation, infrastructure, mobility, or electrification products.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Digital transformation consultancy and systems integrator; it serves enterprises using technology rather than selling Siemens-like industrial automation, infrastructure, mobility, or electrification products."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Digital transformation consultancy/system integrator serving the category, not an industrial technology peer; services firm, not a competitor or comparable."
+        }
+      ]
     },
     {
       "name": "Visagio Australia",
@@ -697,7 +1198,19 @@
         "employee_count": "51-200"
       },
       "relevant": false,
-      "rationale": "Visagio is a transformation consultancy serving clients, not an industrial automation, electrification, infrastructure, mobility, or industrial software provider like Siemens."
+      "rationale": "Visagio is a business-transformation consultancy implementing solutions for clients, not an industrial automation, electrification, mobility, or infrastructure technology provider.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Visagio is a business-transformation consultancy implementing solutions for clients, not an industrial automation, electrification, mobility, or infrastructure technology provider."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Visagio is a digital-transformation consultancy implementing solutions for clients, not an industrial technology vendor like Siemens; agency-style services don't compete."
+        }
+      ]
     },
     {
       "name": "Digital China",
@@ -714,7 +1227,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "Digital China primarily provides enterprise IT transformation and integration services, not Siemens-like industrial automation, electrification, mobility, or infrastructure products."
+      "rationale": "Digital China is primarily an enterprise cloud, AI, and data-transformation solutions provider, not an industrial automation, electrification, infrastructure, or mobility technology peer.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Digital China is primarily an enterprise cloud, AI, and data-transformation solutions provider, not an industrial automation, electrification, infrastructure, or mobility technology peer."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "IT services and digital-transformation solutions provider (cloud, AI, servers), not an industrial automation/electrification technology peer of Siemens."
+        }
+      ]
     },
     {
       "name": "Ferdinand-Steinbeis-Institut",
@@ -731,7 +1256,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "The candidate is a research and transformation institute, not a vendor of industrial automation, electrification, infrastructure, mobility, or related software."
+      "rationale": "Research institute and transformation consultancy, not an industrial automation, electrification, mobility, or infrastructure technology vendor comparable to Siemens.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Research institute and transformation consultancy, not an industrial automation, electrification, mobility, or infrastructure technology vendor comparable to Siemens."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Non-university research institute doing digitalization research and consulting, not an industrial technology product company competing with Siemens."
+        }
+      ]
     },
     {
       "name": "Engineering Industries eXcellence",
@@ -748,7 +1285,19 @@
         "employee_count": "201-500"
       },
       "relevant": false,
-      "rationale": "Engineering Industries eXcellence is a consultancy and implementation partner using Siemens products, not a competing industrial technology and software vendor."
+      "rationale": "Industrial digital-transformation consultancy and Siemens software implementer, not a broad industrial technology manufacturer or platform peer.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Industrial digital-transformation consultancy and Siemens software implementer, not a broad industrial technology manufacturer or platform peer."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Consultancy that implements Siemens/SAP software for clients; a partner serving the category, not a competitor or comparable product company."
+        }
+      ]
     },
     {
       "name": "D4TENSCHMIE.DE",
@@ -765,7 +1314,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "D4TENSCHMIE.DE is a custom industrial digital-transformation specialist, not a comparable industrial automation, electrification, infrastructure, mobility, or software product company."
+      "rationale": "Industrial digital-transformation consultancy for manufacturers, not a broad industrial automation, electrification, mobility, and infrastructure technology provider like Siemens.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Industrial digital-transformation consultancy for manufacturers, not a broad industrial automation, electrification, mobility, and infrastructure technology provider like Siemens."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Small consultancy delivering tailored digital-transformation services for manufacturers; serves the industrial category rather than competing with Siemens' automation/software products."
+        }
+      ]
     },
     {
       "name": "Telmotor",
@@ -782,7 +1343,19 @@
         "employee_count": "201-500"
       },
       "relevant": false,
-      "rationale": "Telmotor is a Siemens solution partner and distributor/integrator, not an independent industrial technology manufacturer competing for the same core purchase."
+      "rationale": "Telmotor is a Siemens Solution Partner and distributor/integrator, serving Siemens-related products rather than competing as a broad industrial technology provider.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Telmotor is a Siemens Solution Partner and distributor/integrator, serving Siemens-related products rather than competing as a broad industrial technology provider."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Telmotor is a Siemens Solution Partner distributing and integrating Siemens products\u2014a channel partner/client, not a competitor or comparable."
+        }
+      ]
     },
     {
       "name": "PT ADA DIGITAL SINERGI",
@@ -799,7 +1372,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "Candidate is a Siemens solutions integrator/reseller implementing Siemens products, not an industrial technology vendor with its own overlapping core platform."
+      "rationale": "Siemens-focused systems integrator implementing its platforms, not an industrial technology competitor or comparable product provider.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Siemens-focused systems integrator implementing its platforms, not an industrial technology competitor or comparable product provider."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Siemens integrator/reseller implementing Siemens platforms, not a competitor or comparable industrial technology company."
+        }
+      ]
     },
     {
       "name": "ICT Digital Solutions",
@@ -816,7 +1401,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "ICT Digital Solutions is an IoT implementation consultancy, not a provider of core industrial automation, electrification, infrastructure, or mobility products like Siemens."
+      "rationale": "IoT and industrial digital-transformation consultancy/implementation provider, not an industrial automation, electrification, mobility, or infrastructure product company.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "IoT and industrial digital-transformation consultancy/implementation provider, not an industrial automation, electrification, mobility, or infrastructure product company."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "IoT consulting and implementation services firm serving the industrial digitalization category, not an industrial technology product maker like Siemens; consultancies serving the category are excluded."
+        }
+      ]
     },
     {
       "name": "Sachsen Digital Consulting",
@@ -833,7 +1430,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "A regional digital-transformation consultancy and systems integrator does not overlap Siemens\u2019 core industrial technology, automation, electrification, or infrastructure product platforms."
+      "rationale": "Regional digital-transformation consultancy and systems integrator, not an industrial automation, electrification, mobility, or infrastructure technology product company.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Regional digital-transformation consultancy and systems integrator, not an industrial automation, electrification, mobility, or infrastructure technology product company."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Regional IT/digital-transformation consultancy for Saxon public sector; services firm, not an industrial technology product competitor or comparable to Siemens."
+        }
+      ]
     },
     {
       "name": "Gateway Digital",
@@ -850,7 +1459,19 @@
         "employee_count": "1001-5000"
       },
       "relevant": false,
-      "rationale": "Gateway Digital is a digital transformation consultancy, not an industrial automation, electrification, infrastructure, mobility, or industrial software product company like Siemens."
+      "rationale": "Digital transformation consultancy serving enterprises, not an industrial automation, electrification, mobility, or infrastructure technology provider comparable to Siemens.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Digital transformation consultancy serving enterprises, not an industrial automation, electrification, mobility, or infrastructure technology provider comparable to Siemens."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Gateway Digital is a digital transformation consultancy; Siemens is an industrial technology product company. Consultancies serving the category don't count as lookalikes."
+        }
+      ]
     },
     {
       "name": "Digital Transformation Office",
@@ -867,7 +1488,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "Candidate is an industrial digital-transformation consultancy, not a provider of Siemens-like automation, electrification, infrastructure, mobility, or industrial technology products."
+      "rationale": "Industrial digital-transformation consultancy serving manufacturers, not an industrial technology, automation, infrastructure, or mobility product competitor.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Industrial digital-transformation consultancy serving manufacturers, not an industrial technology, automation, infrastructure, or mobility product competitor."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Fraunhofer-led consultancy advising manufacturers on digital transformation; serves the industrial category rather than competing with Siemens' automation, electrification, and software products."
+        }
+      ]
     },
     {
       "name": "Digital Stage",
@@ -884,7 +1517,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "Digital Stage is a manufacturing consultancy implementing technologies, while Siemens primarily sells industrial technology, automation systems, infrastructure, and software products."
+      "rationale": "Digital transformation consultancy serving manufacturers, not an industrial technology company selling automation, infrastructure, mobility, or software products.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Digital transformation consultancy serving manufacturers, not an industrial technology company selling automation, infrastructure, mobility, or software products."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Consultancy implementing digital transformation for manufacturers, not an industrial technology product maker; serves the category rather than competing with Siemens."
+        }
+      ]
     },
     {
       "name": "Siemens Advanta",
@@ -901,7 +1546,19 @@
         "employee_count": null
       },
       "relevant": false,
-      "rationale": "Siemens Advanta is Siemens\u2019s consulting arm, not a separate industrial automation, electrification, infrastructure, or mobility technology provider."
+      "rationale": "Siemens Advanta is a Siemens consulting/services unit, not an independent industrial technology competitor or comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Siemens Advanta is a Siemens consulting/services unit, not an independent industrial technology competitor or comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Siemens Advanta is Siemens' own consulting subsidiary \u2014 part of the seed company, not a competitor or comparable peer."
+        }
+      ]
     },
     {
       "name": "Meta",
@@ -918,7 +1575,19 @@
         "employee_count": "1001-5000"
       },
       "relevant": false,
-      "rationale": "Meta is primarily a digital-transformation consultancy and systems integrator, not an industrial automation, electrification, infrastructure, or mobility technology manufacturer like Siemens."
+      "rationale": "Meta is a digital-transformation consultancy and SAP implementer, serving industrial firms rather than competing with Siemens\u2019 industrial technology products.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Meta is a digital-transformation consultancy and SAP implementer, serving industrial firms rather than competing with Siemens\u2019 industrial technology products."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Meta is an IT services/SAP-implementation consultancy, not an industrial technology peer; it serves the digital-transformation category rather than competing with Siemens."
+        }
+      ]
     },
     {
       "name": "Quality Digital",
@@ -935,7 +1604,19 @@
         "employee_count": "1001-5000"
       },
       "relevant": false,
-      "rationale": "Quality Digital is a digital-transformation services firm, not an industrial automation, electrification, infrastructure, or mobility technology provider competing for Siemens\u2019 core buyers."
+      "rationale": "Digital-transformation consultancy serving varied industries, not an industrial automation, electrification, infrastructure, mobility, or industrial software peer.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Digital-transformation consultancy serving varied industries, not an industrial automation, electrification, infrastructure, mobility, or industrial software peer."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Digital transformation services/consultancy firm, not an industrial technology, automation, or electrification company; serves the category rather than competing."
+        }
+      ]
     },
     {
       "name": "NET AG system integration",
@@ -952,7 +1633,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "NET AG is primarily a digital-transformation integrator implementing third-party industrial tools, not a manufacturer of Siemens-like automation, electrification, or infrastructure products."
+      "rationale": "Industrial digital-transformation systems integrator and advisor, not a diversified industrial technology manufacturer or platform provider comparable to Siemens.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Industrial digital-transformation systems integrator and advisor, not a diversified industrial technology manufacturer or platform provider comparable to Siemens."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Consultancy/system integrator implementing PTC and ANSYS tools for clients, not an industrial technology product company competing with Siemens."
+        }
+      ]
     },
     {
       "name": "digitise",
@@ -969,7 +1662,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "Digitise is a consulting/advisory firm serving industrial SMEs, not an industrial automation, electrification, infrastructure, mobility, or product-software company like Siemens."
+      "rationale": "Digital-transformation consultancy serving industrial SMEs, not an industrial automation, electrification, mobility, or infrastructure technology provider.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Digital-transformation consultancy serving industrial SMEs, not an industrial automation, electrification, mobility, or infrastructure technology provider."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Consultancy advising industrial SMEs on digital transformation; serves Siemens' category as a service provider, not a competitor or comparable industrial technology company."
+        }
+      ]
     },
     {
       "name": "Davitec GmbH",
@@ -986,7 +1691,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "Davitec is a digital transformation consultancy building portals and integrations, not a provider of Siemens-like industrial automation, electrification, mobility, or infrastructure products."
+      "rationale": "Davitec is a bespoke digital-transformation consultancy, not an industrial automation, electrification, infrastructure, mobility, or industrial-software company.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Davitec is a bespoke digital-transformation consultancy, not an industrial automation, electrification, infrastructure, mobility, or industrial-software company."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Davitec is a digital-transformation consultancy building portals and configurators for mid-market clients; an agency serving the category, not an industrial-technology peer."
+        }
+      ]
     },
     {
       "name": "Seidel Software a Medida",
@@ -1003,7 +1720,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "Seidel is a digital-transformation consultancy and systems integrator, not an industrial automation, electrification, infrastructure, or mobility technology provider like Siemens."
+      "rationale": "Digital-transformation consultancy and systems integrator, not an industrial automation, electrification, mobility, or infrastructure technology product company.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Digital-transformation consultancy and systems integrator, not an industrial automation, electrification, mobility, or infrastructure technology product company."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Digital transformation consultancy delivering implementation services, not an industrial technology/automation product company; serves the category rather than competing with Siemens."
+        }
+      ]
     },
     {
       "name": "Digital Enabler",
@@ -1020,7 +1749,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "Digital Enabler is a consultancy implementing industrial digitalization projects, not a provider of Siemens-like automation, electrification, infrastructure, mobility, or industrial software products."
+      "rationale": "Digital Enabler is a consulting and development firm serving industrial clients, not an industrial automation, electrification, mobility, or infrastructure product peer.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Digital Enabler is a consulting and development firm serving industrial clients, not an industrial automation, electrification, mobility, or infrastructure product peer."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Consultancy delivering digitalization projects/services for industrial clients; serves the category rather than competing with Siemens' industrial technology products."
+        }
+      ]
     },
     {
       "name": "Factoridge",
@@ -1037,7 +1778,19 @@
         "employee_count": "1001-5000"
       },
       "relevant": true,
-      "rationale": "Factoridge\u2019s smart-factory and production optimization tools overlap Siemens\u2019 industrial automation offerings and target the same manufacturing operations buyers."
+      "rationale": "Provides smart-factory and manufacturing digitalization solutions, overlapping Siemens' industrial automation and software offerings for factory operations.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Provides smart-factory and manufacturing digitalization solutions, overlapping Siemens' industrial automation and software offerings for factory operations."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Smart factory and manufacturing digital-transformation solutions directly overlap Siemens' industrial automation and Digital Industries business; same buyer persona."
+        }
+      ]
     },
     {
       "name": "Mit dem Wandel der Zeit",
@@ -1054,7 +1807,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "The candidate is a digital transformation consultancy, not an industrial automation, electrification, infrastructure, mobility, or industrial software provider like Siemens."
+      "rationale": "Digital-transformation consultancy serving SMEs, not an industrial automation, electrification, mobility, or infrastructure technology vendor comparable to Siemens.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Digital-transformation consultancy serving SMEs, not an industrial automation, electrification, mobility, or infrastructure technology vendor comparable to Siemens."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Consultancy serving SMEs on digital transformation, not an industrial technology products company; serves the category rather than competing with Siemens."
+        }
+      ]
     },
     {
       "name": "Extreme Consulting",
@@ -1071,7 +1836,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "Extreme Consulting is a digital transformation consultancy, not an industrial automation, electrification, infrastructure, mobility, or industrial software product company like Siemens."
+      "rationale": "Digital-transformation consultancy serving industrial clients; it does not sell Siemens-like industrial technology, automation, infrastructure, mobility, or software products.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Digital-transformation consultancy serving industrial clients; it does not sell Siemens-like industrial technology, automation, infrastructure, mobility, or software products."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Consultancy serving industrial clients, not an industrial technology product maker; serves the category rather than competing with Siemens."
+        }
+      ]
     },
     {
       "name": "Transition Technologies USA",
@@ -1088,7 +1865,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "Transition Technologies USA is primarily an industrial digital-transformation consultancy and implementation partner, not a competing industrial technology product company."
+      "rationale": "Industrial digital-transformation consultancy serving manufacturers and energy firms, not a broad industrial technology, automation, electrification, or mobility product company.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Industrial digital-transformation consultancy serving manufacturers and energy firms, not a broad industrial technology, automation, electrification, or mobility product company."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Consultancy implementing IIoT/PLM solutions for industrials; serves the category rather than competing with Siemens' automation and software products."
+        }
+      ]
     },
     {
       "name": "Marconi Technologies",
@@ -1105,7 +1894,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "Marconi is a consultancy and integrator implementing Siemens and AWS products, not an industrial technology manufacturer or competing platform provider."
+      "rationale": "Consulting and integration firm implementing Siemens and AWS products, not an industrial technology manufacturer or platform peer.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Consulting and integration firm implementing Siemens and AWS products, not an industrial technology manufacturer or platform peer."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Consultancy implementing Siemens products (NX, Teamcenter, MindSphere) for clients; serves the category as a partner, not a competitor or comparable."
+        }
+      ]
     },
     {
       "name": "Digital Excellence GmbH",
@@ -1122,7 +1923,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "Digital Excellence is a digital-transformation consultancy and workshop provider, not an industrial automation, electrification, infrastructure, mobility, or software vendor comparable to Siemens."
+      "rationale": "Digital transformation consultancy and workshop framework, not an industrial automation, electrification, mobility, or infrastructure technology provider.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Digital transformation consultancy and workshop framework, not an industrial automation, electrification, mobility, or infrastructure technology provider."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Digital transformation consultancy/framework provider; an advisory firm serving the category, not an industrial technology peer to Siemens."
+        }
+      ]
     },
     {
       "name": "Simsol",
@@ -1139,7 +1952,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "Simsol is a Siemens-focused partner providing implementation, training, and support, not an industrial technology manufacturer offering competing automation and infrastructure products."
+      "rationale": "Siemens partner and consultancy implementing Siemens Tecnomatix, not an independent industrial technology competitor or comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Siemens partner and consultancy implementing Siemens Tecnomatix, not an independent industrial technology competitor or comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Siemens partner consultancy reselling/implementing Tecnomatix, not a competitor or comparable industrial technology company."
+        }
+      ]
     },
     {
       "name": "QSID Digital Advisory",
@@ -1156,7 +1981,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "QSID is a digital-transformation advisory serving industrial firms, not a provider of Siemens-like industrial automation, electrification, infrastructure, mobility, or software products."
+      "rationale": "Digital-transformation advisory serving industrial firms, not an industrial automation, electrification, mobility, or software product competitor.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Digital-transformation advisory serving industrial firms, not an industrial automation, electrification, mobility, or software product competitor."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "QSID is a boutique digital-transformation consultancy serving industrial firms, not an industrial technology maker; it advises the category rather than competing with Siemens."
+        }
+      ]
     },
     {
       "name": "SiciX Technology",
@@ -1173,7 +2010,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "SiciX primarily offers enterprise workflow, HR, and ESG software, not Siemens\u2019 core industrial automation, electrification, infrastructure, or mobility technologies."
+      "rationale": "Enterprise workflow, HR, and ESG software is not comparable to Siemens\u2019 industrial automation, electrification, infrastructure, or mobility product portfolio.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Enterprise workflow, HR, and ESG software is not comparable to Siemens\u2019 industrial automation, electrification, infrastructure, or mobility product portfolio."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "SiciX sells generic office workflow/OKR/HR SaaS, not industrial automation, electrification, or smart infrastructure; no strong product or market overlap with Siemens."
+        }
+      ]
     },
     {
       "name": "just experts",
@@ -1190,7 +2039,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "just experts is a digital-transformation consultancy, not an industrial automation, electrification, infrastructure, mobility, or industrial software product company like Siemens."
+      "rationale": "Consulting firm implementing digital transformation for industrial clients, not an industrial automation, electrification, mobility, or technology product peer.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Consulting firm implementing digital transformation for industrial clients, not an industrial automation, electrification, mobility, or technology product peer."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Consultancy serving manufacturers, not an industrial technology vendor; resembles a service provider to Siemens' market, not a competitor or comparable."
+        }
+      ]
     },
     {
       "name": "Expertime",
@@ -1207,7 +2068,19 @@
         "employee_count": "51-200"
       },
       "relevant": false,
-      "rationale": "Expertime is a Microsoft-focused digital transformation consultancy, not an industrial automation, electrification, infrastructure, mobility, or industrial software provider like Siemens."
+      "rationale": "Digital-transformation consultancy implementing Microsoft tools, not an industrial automation, electrification, mobility, or infrastructure technology provider.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Digital-transformation consultancy implementing Microsoft tools, not an industrial automation, electrification, mobility, or infrastructure technology provider."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Microsoft-focused digital transformation consultancy; an IT services firm, not an industrial technology peer or competitor to Siemens."
+        }
+      ]
     },
     {
       "name": "bods",
@@ -1224,7 +2097,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "bods is a custom software and digital-transformation consultancy, not a broad industrial automation, electrification, infrastructure, or mobility technology vendor like Siemens."
+      "rationale": "Industrial automation overlap exists, but bods is primarily a custom development and digital-transformation consultancy, not an industrial technology product peer.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Industrial automation overlap exists, but bods is primarily a custom development and digital-transformation consultancy, not an industrial technology product peer."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Custom software development and consulting shop serving industrial clients; a services firm for the category, not a competitor making industrial technology products."
+        }
+      ]
     },
     {
       "name": "SOVA Digital",
@@ -1241,7 +2126,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "SOVA Digital is primarily an Industry 4.0 implementation and systems-integration provider, not a broad industrial technology product manufacturer like Siemens."
+      "rationale": "SOVA Digital is an Industry 4.0 implementation and systems-integration consultancy, serving manufacturers rather than offering Siemens-scale industrial technology products.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "SOVA Digital is an Industry 4.0 implementation and systems-integration consultancy, serving manufacturers rather than offering Siemens-scale industrial technology products."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Industry 4.0 implementation/system-integration services firm, not an industrial technology product company; serves the category rather than competing with Siemens."
+        }
+      ]
     },
     {
       "name": "\u222b\u222b\u222b-consulting",
@@ -1258,7 +2155,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "Candidate is a digital-transformation consultancy, not a provider of Siemens-like industrial automation, electrification, infrastructure, mobility, or software products."
+      "rationale": "Consultancy providing digital transformation services to industrial SMEs, not an industrial automation, electrification, mobility, or infrastructure product company.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Consultancy providing digital transformation services to industrial SMEs, not an industrial automation, electrification, mobility, or infrastructure product company."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Consultancy serving industrial clients' digital transformation; serves Siemens' category rather than competing as industrial technology product maker."
+        }
+      ]
     },
     {
       "name": "Emixa",
@@ -1275,7 +2184,19 @@
         "employee_count": "501-1000"
       },
       "relevant": false,
-      "rationale": "Emixa is a consulting and implementation partner for Siemens and other platforms, not an industrial technology product company with competing core offerings."
+      "rationale": "Emixa is a digital-transformation and implementation partner using Siemens products, not an industrial technology company competing with Siemens' core automation, infrastructure, mobility, or software offerings.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Emixa is a digital-transformation and implementation partner using Siemens products, not an industrial technology company competing with Siemens' core automation, infrastructure, mobility, or software offerings."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Emixa is a Siemens implementation partner/consultancy reselling and integrating Siemens PLM and SAP, not a competitor or comparable industrial technology maker."
+        }
+      ]
     },
     {
       "name": "Disruptiv.digital",
@@ -1292,7 +2213,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "Disruptiv.digital is a consultancy implementing AI and digital strategies, not an industrial automation, electrification, infrastructure, or mobility technology provider like Siemens."
+      "rationale": "Digital-transformation consultancy serving businesses; it does not sell Siemens-like industrial automation, electrification, infrastructure, mobility, or industrial software products.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Digital-transformation consultancy serving businesses; it does not sell Siemens-like industrial automation, electrification, infrastructure, mobility, or industrial software products."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "AI/digital-transformation consultancy serving businesses, not an industrial technology product company competing with Siemens."
+        }
+      ]
     },
     {
       "name": "Xactus",
@@ -1309,7 +2242,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "Xactus appears to provide custom digital-transformation services, not Siemens-like industrial automation, electrification, infrastructure, or mobility products evaluated for the same job."
+      "rationale": "Xactus appears to be a small digital-transformation solutions provider, not an industrial automation, electrification, mobility, or infrastructure technology peer.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Xactus appears to be a small digital-transformation solutions provider, not an industrial automation, electrification, mobility, or infrastructure technology peer."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Xactus is a small AI/IoT digital-transformation solutions/services firm, a consultancy serving the industrial category rather than a product competitor to Siemens."
+        }
+      ]
     },
     {
       "name": "Digital Guides",
@@ -1326,7 +2271,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "Digital Guides is a transformation consultancy, not a provider of Siemens-like industrial automation, electrification, infrastructure, mobility, or software products."
+      "rationale": "Digital transformation consultancy serving industrial clients, not an industrial automation, electrification, mobility, or software product competitor.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Digital transformation consultancy serving industrial clients, not an industrial automation, electrification, mobility, or software product competitor."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Consultancy offering digital-transformation coaching, not an industrial technology product company; serves the category rather than competing with Siemens."
+        }
+      ]
     },
     {
       "name": "SigniantTech",
@@ -1343,7 +2300,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "SigniantTech is an IT consultancy/custom developer, not a provider of Siemens-like industrial automation, electrification, infrastructure, mobility, or core industrial software products."
+      "rationale": "IT consultancy and custom-development provider serving enterprises, not an industrial automation, electrification, mobility, or infrastructure technology company.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "IT consultancy and custom-development provider serving enterprises, not an industrial automation, electrification, mobility, or infrastructure technology company."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "IT consulting and custom software development services firm, not an industrial technology product company; serves the category rather than competing with Siemens."
+        }
+      ]
     },
     {
       "name": "Vector InfoTech Group",
@@ -1360,7 +2329,19 @@
         "employee_count": "201-500"
       },
       "relevant": true,
-      "rationale": "Both provide industrial digitalization, automation, digital-twin, and infrastructure solutions to operators of industrial and critical infrastructure assets."
+      "rationale": "Industrial digital-infrastructure provider serving critical infrastructure with digital twins, automation, cybersecurity, and AI; a plausible Siemens Smart Infrastructure/Digital Industries comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Industrial digital-infrastructure provider serving critical infrastructure with digital twins, automation, cybersecurity, and AI; a plausible Siemens Smart Infrastructure/Digital Industries comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Industrial-technology vendor selling digital-twin, automation, OT-security, and infrastructure products to the same industrial/critical-infrastructure buyers Siemens serves."
+        }
+      ]
     },
     {
       "name": "Digitalia GBE",
@@ -1377,7 +2358,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "Digitalia GBE is a consulting/services provider, not an industrial automation, electrification, infrastructure, mobility, or industrial software product company like Siemens."
+      "rationale": "Digital transformation consultancy serving industrial logistics firms, not an industrial technology, automation, electrification, or mobility product company.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Digital transformation consultancy serving industrial logistics firms, not an industrial technology, automation, electrification, or mobility product company."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Consultancy providing digital transformation services to industrial firms, not an industrial technology product maker competing with Siemens."
+        }
+      ]
     },
     {
       "name": "factor10",
@@ -1394,7 +2387,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "factor10 is a custom software consultancy serving industrial firms, not an industrial automation, electrification, infrastructure, mobility, or product-software provider like Siemens."
+      "rationale": "Custom software consultancy serving industrial manufacturers, rather than an industrial automation, electrification, mobility, or infrastructure technology provider.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Custom software consultancy serving industrial manufacturers, rather than an industrial automation, electrification, mobility, or infrastructure technology provider."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "factor10 is a custom-software consultancy serving industrial clients, not an industrial technology product company competing with Siemens."
+        }
+      ]
     },
     {
       "name": "Digital Business Innovation s.r.l.",
@@ -1411,7 +2416,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "Digital Business Innovation is a consulting firm implementing transformation projects, not an industrial automation, electrification, mobility, or infrastructure technology provider."
+      "rationale": "Digital-transformation consultancy serving brands; it does not offer Siemens-like industrial automation, electrification, infrastructure, mobility, or industrial software products.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Digital-transformation consultancy serving brands; it does not offer Siemens-like industrial automation, electrification, infrastructure, mobility, or industrial software products."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Digital transformation consultancy serving enterprises, not an industrial technology maker; a services firm adjacent to the category, not a competitor."
+        }
+      ]
     },
     {
       "name": "Digitopia",
@@ -1428,7 +2445,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "Digitopia provides transformation consulting and maturity-management tools, not Siemens\u2019 core industrial automation, electrification, infrastructure, mobility, or industrial software offerings."
+      "rationale": "Digitopia is a consulting-led digital transformation and AI advisory provider, not an industrial automation, electrification, mobility, or infrastructure technology peer.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Digitopia is a consulting-led digital transformation and AI advisory provider, not an industrial automation, electrification, mobility, or infrastructure technology peer."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Digitopia is a digital-transformation consultancy/assessment platform, not industrial automation, electrification, or infrastructure technology like Siemens."
+        }
+      ]
     },
     {
       "name": "integsa",
@@ -1445,7 +2474,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "Integsa is primarily an industrial transformation consultancy and systems integrator, not a direct provider of Siemens-like industrial technology platforms and equipment."
+      "rationale": "Integsa is primarily an industrial digital-transformation services integrator, not a broad industrial automation, electrification, mobility, and technology product peer.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Integsa is primarily an industrial digital-transformation services integrator, not a broad industrial automation, electrification, mobility, and technology product peer."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Integsa is a small IT/industrial services consultancy implementing Industry 4.0 solutions, not an industrial technology product company comparable to Siemens."
+        }
+      ]
     },
     {
       "name": "Parque Tecnol\u00f3gico Sanmiguelense",
@@ -1462,7 +2503,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "The candidate is primarily a digital-transformation consultancy serving manufacturers, not an industrial automation, electrification, infrastructure, or mobility technology vendor like Siemens."
+      "rationale": "Digital-transformation consultancy for manufacturing SMEs, not an industrial automation, electrification, mobility, or infrastructure product company.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Digital-transformation consultancy for manufacturing SMEs, not an industrial automation, electrification, mobility, or infrastructure product company."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "A digital-transformation consultancy/tech park serving SME manufacturers, not an industrial technology product company; consultancy serving the category, not a peer."
+        }
+      ]
     },
     {
       "name": "EXPERIOR DIGITAL",
@@ -1479,7 +2532,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "EXPERIOR DIGITAL is a digital transformation consultancy, not a provider of Siemens-like industrial automation, electrification, infrastructure, mobility, or engineering software."
+      "rationale": "Digital transformation consultancy serving clients, not an industrial automation, electrification, infrastructure, mobility, or industrial software peer.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Digital transformation consultancy serving clients, not an industrial automation, electrification, infrastructure, mobility, or industrial software peer."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Digital transformation consultancy selling services, not industrial technology products; an agency serving the category, not a Siemens competitor or comparable."
+        }
+      ]
     },
     {
       "name": "BusinessTech-Company",
@@ -1496,7 +2561,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "A digital-transformation consultancy does not overlap Siemens\u2019 core industrial automation, electrification, infrastructure, mobility, or industrial technology products."
+      "rationale": "Consultancy implementing digital transformation and SAP solutions, not an industrial automation, electrification, mobility, or infrastructure technology provider.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Consultancy implementing digital transformation and SAP solutions, not an industrial automation, electrification, mobility, or infrastructure technology provider."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "IT consulting agency serving tech firms, not an industrial technology/automation company; serves the category rather than competing with Siemens."
+        }
+      ]
     },
     {
       "name": "Sentify-test",
@@ -1513,7 +2590,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "Sogeti is an IT services consultancy, not an industrial automation, electrification, infrastructure, mobility, or industrial software manufacturer comparable to Siemens."
+      "rationale": "Sogeti is an IT consulting and digital-transformation services provider, not an industrial automation, electrification, infrastructure, mobility, or industrial software company.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Sogeti is an IT consulting and digital-transformation services provider, not an industrial automation, electrification, infrastructure, mobility, or industrial software company."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Sogeti is an IT services/consulting firm, not an industrial automation/electrification technology company; no product or market overlap with Siemens."
+        }
+      ]
     },
     {
       "name": "evniko GmbH",
@@ -1530,7 +2619,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "evniko is primarily a digital-transformation consultancy implementing Industry 4.0 solutions, not an industrial technology product company comparable to Siemens."
+      "rationale": "Industry 4.0 consultancy and implementation provider, not an industrial automation, infrastructure, mobility, or software platform comparable to Siemens.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Industry 4.0 consultancy and implementation provider, not an industrial automation, infrastructure, mobility, or software platform comparable to Siemens."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Consultancy implementing Industry 4.0 solutions for manufacturers, not an industrial technology product company; serves the category rather than competing with Siemens."
+        }
+      ]
     },
     {
       "name": "ReThink Industry",
@@ -1547,7 +2648,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "ReThink Industry primarily offers industry insights and case studies, not Siemens-like industrial automation, electrification, infrastructure, or mobility products."
+      "rationale": "Provides industry transformation insights and case studies, not a broad industrial automation, electrification, infrastructure, mobility, or software product platform like Siemens.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Provides industry transformation insights and case studies, not a broad industrial automation, electrification, infrastructure, mobility, or software product platform like Siemens."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Content/insights publication about industrial digitalization, not an industrial technology vendor; serves Siemens's space as commentary, not a competitor or comparable."
+        }
+      ]
     },
     {
       "name": "2050-Integrator",
@@ -1563,8 +2676,20 @@
         "industries": null,
         "employee_count": "51-200"
       },
-      "relevant": false,
-      "rationale": "2050-Integrator appears primarily to implement and integrate manufacturing technologies, rather than offer industrial automation products comparable to Siemens."
+      "relevant": true,
+      "rationale": "Provides industrial digitalization, IIoT, digital twins, and automation solutions to manufacturers, overlapping Siemens' industrial automation and software markets.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Provides industrial digitalization, IIoT, digital twins, and automation solutions to manufacturers, overlapping Siemens' industrial automation and software markets."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Sells digital twin, industrial IoT, and automation solutions to discrete manufacturers \u2014 directly overlaps Siemens Digital Industries' product and market."
+        }
+      ]
     },
     {
       "name": "METAPOTT",
@@ -1581,7 +2706,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "METAPOTT is an IT consulting firm, not a provider of Siemens-like industrial automation, electrification, infrastructure, mobility, or software products."
+      "rationale": "METAPOTT is a digital-transformation consultancy, not an industrial automation, electrification, mobility, or infrastructure technology product provider.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "METAPOTT is a digital-transformation consultancy, not an industrial automation, electrification, mobility, or infrastructure technology product provider."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "IT/digital-transformation consultancy serving the category, not an industrial-technology product maker; competes with Siemens on no axis."
+        }
+      ]
     },
     {
       "name": "NFP",
@@ -1598,7 +2735,19 @@
         "employee_count": "5001-10000"
       },
       "relevant": false,
-      "rationale": "NFP focuses on enterprise process automation, ERP, and document workflows, not Siemens\u2019 core industrial automation, electrification, infrastructure, or mobility offerings."
+      "rationale": "NFP provides generic digital-transformation and ERP/process-automation solutions, not Siemens-like industrial automation, electrification, infrastructure, mobility, or industrial software products.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "NFP provides generic digital-transformation and ERP/process-automation solutions, not Siemens-like industrial automation, electrification, infrastructure, mobility, or industrial software products."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "NFP is a digital-transformation services provider (RPA, ERP, document management), not an industrial automation/electrification technology peer of Siemens."
+        }
+      ]
     },
     {
       "name": "dategro IT",
@@ -1615,7 +2764,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "dategro IT is an industrial digital-transformation consultancy, not a provider of Siemens-like automation, electrification, infrastructure, mobility, or industrial technology products."
+      "rationale": "Dategro IT is a consulting provider to industrial firms, not an industrial automation, electrification, mobility, or infrastructure technology competitor.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Dategro IT is a consulting provider to industrial firms, not an industrial automation, electrification, mobility, or infrastructure technology competitor."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "IT consultancy serving industrial clients, not an industrial technology product company; a service provider to the category, not a peer."
+        }
+      ]
     },
     {
       "name": "GlobalTMS",
@@ -1632,7 +2793,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "GlobalTMS is an IT consultancy and custom solutions provider, not an industrial automation, electrification, mobility, or smart-infrastructure technology manufacturer like Siemens."
+      "rationale": "IT consultancy and custom digital transformation provider, not an industrial automation, electrification, mobility, or industrial software company.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "IT consultancy and custom digital transformation provider, not an industrial automation, electrification, mobility, or industrial software company."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "IT consultancy/digital-transformation services firm for SMEs, not an industrial automation/electrification technology company; serves the category rather than competing."
+        }
+      ]
     },
     {
       "name": "Digital Smart Group",
@@ -1649,7 +2822,19 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "Offers industrial IoT, digital-grid, predictive-maintenance, and smart-infrastructure solutions to utilities and industrial operators, overlapping Siemens\u2019 core offerings and buyers."
+      "rationale": "Provides smart-grid, industrial IoT, OT security, and predictive-maintenance solutions for utilities and industrial infrastructure\u2014the same core Siemens smart-infrastructure market.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Provides smart-grid, industrial IoT, OT security, and predictive-maintenance solutions for utilities and industrial infrastructure\u2014the same core Siemens smart-infrastructure market."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Provides digital grid, IIoT, and smart-infrastructure technology for energy utilities, directly overlapping Siemens' electrification and smart infrastructure segments."
+        }
+      ]
     },
     {
       "name": "Digital Gates",
@@ -1666,7 +2851,19 @@
         "employee_count": "51-200"
       },
       "relevant": false,
-      "rationale": "Digital Gates is a software outsourcing and digital-transformation services firm, not an industrial automation, electrification, infrastructure, or mobility technology provider."
+      "rationale": "Digital Gates is a software outsourcing and digital-transformation consultancy, not an industrial automation, electrification, mobility, or infrastructure technology provider.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Digital Gates is a software outsourcing and digital-transformation consultancy, not an industrial automation, electrification, mobility, or infrastructure technology provider."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Digital Gates is a software outsourcing/digital transformation consultancy, not an industrial technology or automation products company like Siemens."
+        }
+      ]
     },
     {
       "name": "Connected Technology Solutions",
@@ -1683,7 +2880,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "Connected Technology Solutions is an industrial technology publication and insights provider, not a vendor of automation, electrification, infrastructure, mobility, or industrial software."
+      "rationale": "Provides manufacturing technology analysis and thought leadership, not industrial automation, electrification, mobility, or infrastructure products comparable to Siemens.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Provides manufacturing technology analysis and thought leadership, not industrial automation, electrification, mobility, or infrastructure products comparable to Siemens."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "A thought-leadership/content publisher about manufacturing tech, not an industrial technology vendor; serves the category as media, not as competitor or comparable."
+        }
+      ]
     },
     {
       "name": "digiwelt",
@@ -1700,7 +2909,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "digiwelt is an IT consulting and training provider, not an industrial automation, electrification, mobility, or smart-infrastructure technology manufacturer like Siemens."
+      "rationale": "Digital-transformation consultancy and IT implementer, not an industrial automation, electrification, mobility, or infrastructure technology company.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Digital-transformation consultancy and IT implementer, not an industrial automation, electrification, mobility, or infrastructure technology company."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Small IT/digital-transformation consultancy for SMEs, not an industrial technology or automation peer of Siemens; serves the category rather than competing."
+        }
+      ]
     },
     {
       "name": "Digix",
@@ -1717,10 +2938,20 @@
         "employee_count": "51-200"
       },
       "relevant": false,
-      "rationale": "Digix is a digital-transformation consultancy, not an industrial automation, electrification, infrastructure, mobility, or industrial-product vendor comparable to Siemens."
+      "rationale": "Digital-transformation consultancy serving industrial clients, not an industrial automation, electrification, mobility, or infrastructure technology provider.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Digital-transformation consultancy serving industrial clients, not an industrial automation, electrification, mobility, or infrastructure technology provider."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Digix is a digital-transformation consultancy serving manufacturers, not an industrial technology provider competing with Siemens' automation/electrification products."
+        }
+      ]
     }
   ],
-  "error": null,
-  "relevant_count_at_25": 3,
-  "precision_at_25": 12.0
+  "error": null
 }

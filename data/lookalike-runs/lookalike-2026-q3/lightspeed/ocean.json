@@ -16,18 +16,18 @@
   "k": 100,
   "relevant_count": 82,
   "precision_at_k": 82.0,
-  "relevant_count_at_10": 9,
-  "relevant_count_at_25": 23,
+  "relevant_count_at_10": 8,
+  "relevant_count_at_25": 22,
   "relevant_count_at_100": 82,
-  "precision_at_10": 90.0,
-  "precision_at_25": 92.0,
+  "precision_at_10": 80.0,
+  "precision_at_25": 88.0,
   "precision_at_100": 82.0,
   "latency_ms": 2118,
   "cost_usd": null,
   "duplicates_removed": 0,
   "max_results": null,
-  "judge_model": "gpt-5.6",
-  "judged_at": "2026-07-27T07:08:48Z",
+  "judge_model": "majority(n=3): claude-opus-5,gpt-5.6-terra,kimi-k3",
+  "judged_at": "2026-08-10T20:14:10Z",
   "candidates": [
     {
       "name": "London Print Studio",
@@ -100,7 +100,19 @@
         "relevance_score": "A"
       },
       "relevant": false,
-      "rationale": "London Print Studio provides public printmaking facilities and arts services, not a POS, payments, inventory, or commerce operations platform."
+      "rationale": "Printmaking and graphic arts facility, not a commerce platform or POS, payments, inventory, and operations software provider.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Printmaking and graphic arts facility, not a commerce platform or POS, payments, inventory, and operations software provider."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Printmaking and graphic arts studio; no commerce platform, POS, or retail/restaurant software product."
+        }
+      ]
     },
     {
       "name": "Retailcloud",
@@ -161,7 +173,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide integrated POS, payments-adjacent commerce, inventory, and operations software for retail and food-service operators, despite Retailcloud\u2019s venue specialization."
+      "rationale": "Cloud POS platform for retail and hospitality, with payments, inventory, and operations tools, directly comparable to Lightspeed.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Cloud POS platform for retail and hospitality, with payments, inventory, and operations tools, directly comparable to Lightspeed."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both sell cloud POS and commerce platforms for retail and hospitality businesses; direct competitors on product and market."
+        }
+      ]
     },
     {
       "name": "Agiliron",
@@ -221,7 +245,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Agiliron overlaps Lightspeed\u2019s retail offering with omnichannel POS, inventory, e-commerce, and operations software for product-based merchants."
+      "rationale": "Omnichannel commerce suite overlaps Lightspeed\u2019s retail POS, inventory, operations, and payments-adjacent merchant platform market.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Omnichannel commerce suite overlaps Lightspeed\u2019s retail POS, inventory, operations, and payments-adjacent merchant platform market."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Omni-channel commerce suite with POS, inventory, and back-office for retail/eCommerce \u2014 directly comparable commerce platform to Lightspeed."
+        }
+      ]
     },
     {
       "name": "C-Square Info Solution",
@@ -287,8 +323,20 @@
         ],
         "relevance_score": "A"
       },
-      "relevant": true,
-      "rationale": "Both provide commerce and operations software for retailers, including inventory and workflow management; pharmacy retailers could evaluate either for retail operations."
+      "relevant": false,
+      "rationale": "Pharma-focused ERP and workflow software for distributors and healthcare providers is not clearly a retail/restaurant POS and payments commerce platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Pharma-focused ERP and workflow software for distributors and healthcare providers is not clearly a retail/restaurant POS and payments commerce platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Pharma/healthcare-vertical ERP and distribution software; not a general retail/restaurant commerce platform, so product and market overlap is weak."
+        }
+      ]
     },
     {
       "name": "Cin7",
@@ -348,7 +396,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide cloud retail operations platforms with overlapping POS, inventory, purchasing, and sales-channel management for product-based businesses."
+      "rationale": "Cin7 offers POS, inventory, and operations software for retail businesses, substantially overlapping Lightspeed\u2019s commerce-platform product and merchant customer base.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Cin7 offers POS, inventory, and operations software for retail businesses, substantially overlapping Lightspeed\u2019s commerce-platform product and merchant customer base."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Cin7 offers POS, inventory, and retail operations platform for product businesses, directly comparable to Lightspeed's retail commerce platform."
+        }
+      ]
     },
     {
       "name": "ISeller Commerce",
@@ -401,7 +461,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "iSeller offers unified POS, payments, and omnichannel commerce software for retailers and entrepreneurs, directly overlapping Lightspeed\u2019s core platform and buyers."
+      "rationale": "iSeller is an omnichannel SaaS commerce platform combining POS, payments, and online/offline selling for merchants, directly comparable to Lightspeed.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "iSeller is an omnichannel SaaS commerce platform combining POS, payments, and online/offline selling for merchants, directly comparable to Lightspeed."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "SaaS omnichannel commerce platform with POS and payments for SMB retailers \u2014 same product and market as Lightspeed."
+        }
+      ]
     },
     {
       "name": "Ari",
@@ -468,7 +540,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Ari directly overlaps Lightspeed\u2019s retail offering with POS, inventory, CRM, multi-store management, and operational software for the same retail buyers."
+      "rationale": "Retail POS and management platform covering inventory, sales, CRM, promotions, and multi-store operations; directly comparable to Lightspeed's retail offering.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Retail POS and management platform covering inventory, sales, CRM, promotions, and multi-store operations; directly comparable to Lightspeed's retail offering."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Retail POS software with inventory, loyalty, and reporting \u2014 direct competitor to Lightspeed's retail commerce platform on product and market."
+        }
+      ]
     },
     {
       "name": "BusinessWala",
@@ -541,7 +625,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "BusinessWala offers POS software for small and midsize businesses, overlapping Lightspeed\u2019s core commerce platform and targeting similar retail and hospitality operators."
+      "rationale": "BusinessWala offers POS software for small-to-mid-sized businesses, directly overlapping Lightspeed\u2019s core commerce, retail, and restaurant operations platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "BusinessWala offers POS software for small-to-mid-sized businesses, directly overlapping Lightspeed\u2019s core commerce, retail, and restaurant operations platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "POS software for small-mid businesses, directly matching Lightspeed's point-of-sale/commerce platform on product and market."
+        }
+      ]
     },
     {
       "name": "Hana Retail",
@@ -595,7 +691,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Hana Retail offers retail POS, payments, inventory tracking, analytics, and loyalty tools, directly overlapping Lightspeed\u2019s commerce platform for the same retail buyers."
+      "rationale": "Retail POS platform with payments, inventory, reporting, and loyalty tools directly comparable to Lightspeed's retail commerce offering.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Retail POS platform with payments, inventory, reporting, and loyalty tools directly comparable to Lightspeed's retail commerce offering."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Retail POS platform with payments, inventory tracking, analytics, and loyalty\u2014same product and buyer as Lightspeed's commerce platform; direct competitor."
+        }
+      ]
     },
     {
       "name": "Logic ERP",
@@ -656,7 +764,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Logic ERP offers retail POS, inventory, and store operations software, overlapping Lightspeed\u2019s core commerce platform and retail buyer persona."
+      "rationale": "Provides retail POS and commerce operations software, overlapping Lightspeed\u2019s core restaurant/retail platform despite broader ERP and manufacturing offerings.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Provides retail POS and commerce operations software, overlapping Lightspeed\u2019s core restaurant/retail platform despite broader ERP and manufacturing offerings."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Sells retail POS and inventory/ERP software to merchants, overlapping Lightspeed's core commerce-platform product and retail buyer market."
+        }
+      ]
     },
     {
       "name": "NimbusRMS",
@@ -730,7 +850,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "NimbusRMS offers cloud retail POS and management software, overlapping Lightspeed\u2019s retail commerce platform and serving the same retail operators."
+      "rationale": "Cloud retail management and POS platform overlapping Lightspeed\u2019s retail POS, inventory, and operations offering.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Cloud retail management and POS platform overlapping Lightspeed\u2019s retail POS, inventory, and operations offering."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Cloud retail POS/management system for retailers, same product category and buyer as Lightspeed's retail commerce platform."
+        }
+      ]
     },
     {
       "name": "3Spos",
@@ -792,7 +924,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide point-of-sale software for small businesses, with overlapping retail commerce use cases and buyers evaluating operational POS platforms."
+      "rationale": "Provides POS software for small businesses, directly overlapping Lightspeed's core retail and restaurant commerce platform offering.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Provides POS software for small businesses, directly overlapping Lightspeed's core retail and restaurant commerce platform offering."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "POS software for small businesses across retail and hospitality \u2014 direct product and market competitor to Lightspeed's commerce/POS platform."
+        }
+      ]
     },
     {
       "name": "VasyERP",
@@ -861,7 +1005,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "VasyERP overlaps Lightspeed in cloud POS, payments-adjacent retail operations, inventory, e-commerce, and multi-outlet management for retail businesses."
+      "rationale": "VasyERP provides cloud POS, payments-adjacent retail operations, inventory, and multi-outlet tools for retailers, directly overlapping Lightspeed's commerce platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "VasyERP provides cloud POS, payments-adjacent retail operations, inventory, and multi-outlet tools for retailers, directly overlapping Lightspeed's commerce platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "VasyERP offers POS, inventory, eCommerce, and multi-outlet retail management \u2014 directly overlapping Lightspeed's commerce platform for retailers; a clear competitor."
+        }
+      ]
     },
     {
       "name": "idzlink.com",
@@ -916,7 +1072,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Its cloud retail and restaurant management applications, including inventory and operations, target the same merchants and overlap core Lightspeed commerce workflows."
+      "rationale": "Cloud platform offers retail and restaurant management with inventory and operational tools, targeting the same merchant segments as Lightspeed.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Cloud platform offers retail and restaurant management with inventory and operational tools, targeting the same merchant segments as Lightspeed."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Cloud platform offering retail and restaurant management, POS, and inventory\u2014same product and market as Lightspeed's commerce platform."
+        }
+      ]
     },
     {
       "name": "Goods Order Inventory",
@@ -986,7 +1154,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide retail-focused software for managing inventory, sales, orders, and operations, targeting merchants with overlapping commerce-management needs."
+      "rationale": "Inventory, sales, and order-management software for retailers overlaps Lightspeed\u2019s core commerce operations platform, though POS/payments are not stated.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Inventory, sales, and order-management software for retailers overlaps Lightspeed\u2019s core commerce operations platform, though POS/payments are not stated."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Inventory, sales, and order management software for retail/commerce operations \u2014 overlaps Lightspeed's inventory and operations product axis for similar buyers."
+        }
+      ]
     },
     {
       "name": "SaasyPOS",
@@ -1041,7 +1221,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "SaasyPOS offers cloud point-of-sale and retail operations software, directly overlapping Lightspeed\u2019s core retail commerce platform and buyer persona."
+      "rationale": "Cloud point-of-sale platform for retailers, overlapping Lightspeed\u2019s core retail POS and operations product.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Cloud point-of-sale platform for retailers, overlapping Lightspeed\u2019s core retail POS and operations product."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Cloud POS platform for retailers, directly matching Lightspeed's core point-of-sale and commerce product and market."
+        }
+      ]
     },
     {
       "name": "Wondersoft",
@@ -1118,7 +1310,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Wondersoft offers retail POS, inventory, distribution, and commerce software, overlapping Lightspeed\u2019s core platform and targeting the same retail operators."
+      "rationale": "Wondersoft provides retail and distribution software, including point-of-sale, inventory, and operational solutions for retailers, directly comparable to Lightspeed\u2019s retail commerce platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Wondersoft provides retail and distribution software, including point-of-sale, inventory, and operational solutions for retailers, directly comparable to Lightspeed\u2019s retail commerce platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Wondersoft sells POS and retail management software to retailers and chains, matching Lightspeed's product and market directly."
+        }
+      ]
     },
     {
       "name": "Tanyo",
@@ -1168,7 +1372,19 @@
         "relevance_score": "A"
       },
       "relevant": false,
-      "rationale": "Tanyo is a general CRM and process-automation tool, not a retail or restaurant POS, payments, inventory, and commerce platform."
+      "rationale": "Tanyo is a general CRM/business-process automation tool, not a commerce platform providing POS, payments, inventory, and restaurant or retail operations.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Tanyo is a general CRM/business-process automation tool, not a commerce platform providing POS, payments, inventory, and restaurant or retail operations."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Generic CRM, not a POS/commerce platform for restaurants and retailers; no strong product or market overlap with Lightspeed."
+        }
+      ]
     },
     {
       "name": "Taptouch POS",
@@ -1237,7 +1453,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide integrated POS, payments, sales, and business-management platforms for hospitality and retail businesses."
+      "rationale": "Retail and hospitality POS platform with payments, inventory, ordering, and operations overlaps directly with Lightspeed's core commerce offering.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Retail and hospitality POS platform with payments, inventory, ordering, and operations overlaps directly with Lightspeed's core commerce offering."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "POS systems for retail and hospitality with payments, inventory, and multi-channel ordering\u2014direct competitor to Lightspeed's commerce platform."
+        }
+      ]
     },
     {
       "name": "ERetail Cybertech",
@@ -1301,7 +1529,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide POS and retail/restaurant operations software to the same merchants for billing, inventory, and backend management."
+      "rationale": "Cloud and on-premise POS, inventory, warehouse, and restaurant/retail operations software directly overlaps Lightspeed\u2019s commerce platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Cloud and on-premise POS, inventory, warehouse, and restaurant/retail operations software directly overlaps Lightspeed\u2019s commerce platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Cloud POS software for retailers and restaurants, including inventory and operations \u2014 direct competitor to Lightspeed's commerce platform."
+        }
+      ]
     },
     {
       "name": "ACCEO Smart Vendor",
@@ -1362,7 +1602,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide retail POS and commerce-management platforms spanning payments, inventory, omnichannel sales, and store operations for retail merchants."
+      "rationale": "Retail POS and management platform with payments, inventory, omnichannel commerce, and operations capabilities, directly comparable to Lightspeed\u2019s retail offering.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Retail POS and management platform with payments, inventory, omnichannel commerce, and operations capabilities, directly comparable to Lightspeed\u2019s retail offering."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Retail POS platform with inventory, payments, and omnichannel commerce \u2014 same product and buyer market as Lightspeed, a direct competitor/comparable."
+        }
+      ]
     },
     {
       "name": "ConnectPOS",
@@ -1437,7 +1689,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "ConnectPOS and Lightspeed both provide retail POS, inventory, and omnichannel commerce software evaluated by retailers for managing sales and operations."
+      "rationale": "Cloud POS and inventory-management platform for retailers, directly overlapping Lightspeed\u2019s retail commerce offering and buyer market.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Cloud POS and inventory-management platform for retailers, directly overlapping Lightspeed\u2019s retail commerce offering and buyer market."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Cloud POS with inventory management for retailers \u2014 same product, market, and model as Lightspeed; direct competitor."
+        }
+      ]
     },
     {
       "name": "Prana",
@@ -1517,7 +1781,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Prana offers retail POS and billing software with sales, inventory, and customer management, overlapping Lightspeed\u2019s retail commerce platform and buyer persona."
+      "rationale": "Retail billing/POS software with sales, inventory, and customer management directly overlaps Lightspeed's retail commerce platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Retail billing/POS software with sales, inventory, and customer management directly overlaps Lightspeed's retail commerce platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Prana sells POS/billing software for retail with sales, inventory, and customer management \u2014 same product and market as Lightspeed's commerce platform."
+        }
+      ]
     },
     {
       "name": "Triquestra",
@@ -1575,7 +1851,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Triquestra offers a unified retail commerce platform spanning POS, inventory, e-commerce, loyalty, and operations, directly overlapping Lightspeed\u2019s retailer offering and buyers."
+      "rationale": "Unified retail commerce platform offering POS, payments-adjacent operations, inventory, e-commerce, and omnichannel tools; directly comparable to Lightspeed for retail customers.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Unified retail commerce platform offering POS, payments-adjacent operations, inventory, e-commerce, and omnichannel tools; directly comparable to Lightspeed for retail customers."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Unified retail commerce platform with POS, inventory, eCommerce \u2014 direct competitor to Lightspeed's retail commerce platform on product and market."
+        }
+      ]
     },
     {
       "name": "posspot.com",
@@ -1630,7 +1918,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide integrated POS, inventory, and commerce software for retailers, targeting the same businesses and operational purchasing needs."
+      "rationale": "Provides integrated POS, e-commerce, and inventory software for retail businesses, directly overlapping Lightspeed\u2019s commerce platform offering.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Provides integrated POS, e-commerce, and inventory software for retail businesses, directly overlapping Lightspeed\u2019s commerce platform offering."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "POS, inventory, and eCommerce software for retail businesses\u2014matches Lightspeed on product, market, and business model as a direct competitor."
+        }
+      ]
     },
     {
       "name": "Unipro Tech Solutions Pvt Ltd",
@@ -1685,7 +1985,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide integrated POS, inventory, billing, and operations software for retailers and restaurants/QSRs, targeting the same commerce operators."
+      "rationale": "Provides POS, inventory, payments integrations, and operational software for retailers and QSRs, directly comparable to Lightspeed\u2019s commerce platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Provides POS, inventory, payments integrations, and operational software for retailers and QSRs, directly comparable to Lightspeed\u2019s commerce platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Cloud POS/ERP platform for retailers and QSRs covering billing, inventory, and operations \u2014 direct product and market match to Lightspeed."
+        }
+      ]
     },
     {
       "name": "SalesPlay POS",
@@ -1766,7 +2078,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "SalesPlay directly overlaps Lightspeed\u2019s POS, inventory, payments, and operations offering for retail and restaurant buyers."
+      "rationale": "POS platform for retailers and restaurants with payments, inventory, and operations features, directly comparable to Lightspeed.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "POS platform for retailers and restaurants with payments, inventory, and operations features, directly comparable to Lightspeed."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "POS software for retail and restaurants covering sales, inventory, employees, and payments \u2014 same product and market as Lightspeed."
+        }
+      ]
     },
     {
       "name": "Vibe Retail",
@@ -1818,7 +2142,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Vibe offers retail POS, payments, inventory, omnichannel sales, and operations software, directly overlapping Lightspeed\u2019s commerce platform for the same retail buyers."
+      "rationale": "AI-powered retail POS platform covering payments, inventory, omnichannel sales, analytics, and customer relationships\u2014directly comparable to Lightspeed's retail commerce offering.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "AI-powered retail POS platform covering payments, inventory, omnichannel sales, analytics, and customer relationships\u2014directly comparable to Lightspeed's retail commerce offering."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Retail POS platform with inventory, payments, and analytics\u2014direct product and market match to Lightspeed's commerce platform."
+        }
+      ]
     },
     {
       "name": "Korona",
@@ -1890,7 +2226,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "KORONA and Lightspeed both provide cloud POS and retail operations software to retailers, addressing overlapping commerce-management needs and buyers."
+      "rationale": "KORONA POS is a cloud point-of-sale platform for retailers, directly comparable to Lightspeed's retail commerce and operations offering.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "KORONA POS is a cloud point-of-sale platform for retailers, directly comparable to Lightspeed's retail commerce and operations offering."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "POS software for retail and restaurants with inventory, payments, and analytics \u2014 directly matches Lightspeed's product, market, and B2B model."
+        }
+      ]
     },
     {
       "name": "LS Retail",
@@ -1942,7 +2290,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "LS Retail offers POS and business-management software for retailers and hospitality operators, directly overlapping Lightspeed\u2019s core products and buyer personas."
+      "rationale": "POS and business-management software for retailers, restaurants, and hospitality directly overlaps Lightspeed\u2019s commerce, payments, inventory, and operations platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "POS and business-management software for retailers, restaurants, and hospitality directly overlaps Lightspeed\u2019s commerce, payments, inventory, and operations platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Unified commerce platform with POS, payments, and inventory for retailers and restaurants \u2014 direct competitor on product and market."
+        }
+      ]
     },
     {
       "name": "ThirdChannel",
@@ -1995,7 +2355,19 @@
         "relevance_score": "A"
       },
       "relevant": false,
-      "rationale": "ThirdChannel provides managed retail field execution and merchandising, not a POS, payments, inventory, and commerce operations platform evaluated for the same job."
+      "rationale": "ThirdChannel is a managed retail field-service and merchandising provider, not a POS, payments, inventory, or commerce-operations software platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "ThirdChannel is a managed retail field-service and merchandising provider, not a POS, payments, inventory, or commerce-operations software platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Managed retail field-service for brands (merchandising, reps), not a POS/commerce platform for retailers \u2014 different product, buyer, and model."
+        }
+      ]
     },
     {
       "name": "Evosus",
@@ -2047,7 +2419,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Evosus offers retail POS, ecommerce, inventory, accounting, and operations software, overlapping Lightspeed\u2019s commerce platform and targeting the same retail business buyers."
+      "rationale": "Evosus offers cloud ERP with POS, retail, inventory, and operations tools for retail and service businesses, directly comparable to Lightspeed\u2019s commerce platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Evosus offers cloud ERP with POS, retail, inventory, and operations tools for retail and service businesses, directly comparable to Lightspeed\u2019s commerce platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Cloud POS/ERP platform for retail and service businesses covering POS, inventory, and operations\u2014direct competitor to Lightspeed's retail commerce platform."
+        }
+      ]
     },
     {
       "name": "Retailzpos",
@@ -2108,7 +2492,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide retail POS platforms with inventory, payments-adjacent operations, loyalty, and reporting for store operators."
+      "rationale": "RetailzPOS is a retail point-of-sale platform with inventory and operational features, directly comparable to Lightspeed's retail offering.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "RetailzPOS is a retail point-of-sale platform with inventory and operational features, directly comparable to Lightspeed's retail offering."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "POS platform for retail stores with inventory management and reporting \u2014 same product and buyer persona as Lightspeed's retail offering."
+        }
+      ]
     },
     {
       "name": "Vinculum Group",
@@ -2185,7 +2581,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Vinculum\u2019s omnichannel retail order, inventory, and commerce software overlaps Lightspeed\u2019s retail operations platform and targets the same retailer buyers."
+      "rationale": "Retail SaaS platform for brands and retailers with omnichannel inventory, orders, fulfillment, and commerce operations, overlapping Lightspeed's retail-management market.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Retail SaaS platform for brands and retailers with omnichannel inventory, orders, fulfillment, and commerce operations, overlapping Lightspeed's retail-management market."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both sell retail commerce SaaS to merchants/retailers covering inventory, orders, and omnichannel operations\u2014same buyer, overlapping product category, genuine comparables."
+        }
+      ]
     },
     {
       "name": "Connected Business",
@@ -2247,7 +2655,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Connected Business offers integrated retail POS, inventory, e-commerce, and operations software, overlapping Lightspeed\u2019s commerce platform for retail businesses."
+      "rationale": "Omnichannel retail commerce software integrates sales, inventory, e-commerce, and back-office operations, closely comparable to Lightspeed\u2019s retail platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Omnichannel retail commerce software integrates sales, inventory, e-commerce, and back-office operations, closely comparable to Lightspeed\u2019s retail platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both sell integrated commerce software for retailers covering POS, inventory, eCommerce, and operations\u2014direct comparables in retail management platforms."
+        }
+      ]
     },
     {
       "name": "Foycom",
@@ -2297,7 +2717,19 @@
         "relevance_score": "A"
       },
       "relevant": false,
-      "rationale": "Foycom targets wholesale ERP operations, while Lightspeed primarily serves restaurant and retail merchants with POS and payments; buyers and core use cases differ."
+      "rationale": "Wholesale ERP targets wholesale operations, not restaurant and retail point-of-sale, payments, and commerce operations.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Wholesale ERP targets wholesale operations, not restaurant and retail point-of-sale, payments, and commerce operations."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Wholesale ERP for distributors, not a retail/restaurant POS and commerce platform; different product and buyer."
+        }
+      ]
     },
     {
       "name": "UpStart Commerce",
@@ -2360,7 +2792,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide SaaS commerce platforms for retailers, with overlapping ecommerce operations capabilities and retail technology buyers."
+      "rationale": "Retail-focused commerce platform; both support retailers' commerce operations, though UpStart emphasizes ecommerce while Lightspeed includes POS, payments, and inventory.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Retail-focused commerce platform; both support retailers' commerce operations, though UpStart emphasizes ecommerce while Lightspeed includes POS, payments, and inventory."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "SaaS commerce platform for retailers managing ecommerce operations \u2014 same product category and buyer persona as Lightspeed's retail commerce platform."
+        }
+      ]
     },
     {
       "name": "Retail POS Pvt Ltd",
@@ -2418,7 +2862,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide cloud-based point-of-sale software for retailers, serving the same buyers and core commerce operations job."
+      "rationale": "Cloud-based retail POS provider directly overlaps Lightspeed\u2019s point-of-sale and retail-operations platform offering.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Cloud-based retail POS provider directly overlaps Lightspeed\u2019s point-of-sale and retail-operations platform offering."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "POS software for retailers and restaurants with inventory and operations management \u2014 direct product and market match to Lightspeed."
+        }
+      ]
     },
     {
       "name": "Posim",
@@ -2487,7 +2943,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Posim offers integrated retail POS and inventory management, overlapping Lightspeed\u2019s core commerce platform and targeting the same retail operators."
+      "rationale": "Retail POS and inventory-management platform with reporting and customer tracking, directly comparable to Lightspeed's retail commerce offering.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Retail POS and inventory-management platform with reporting and customer tracking, directly comparable to Lightspeed's retail commerce offering."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Retail POS and inventory management software, directly matching Lightspeed's core retail commerce platform product and market."
+        }
+      ]
     },
     {
       "name": "Treez",
@@ -2561,7 +3029,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Treez offers POS, payments, analytics, and retail operations software like Lightspeed, specialized for cannabis retailers with the same commerce-management needs."
+      "rationale": "Cannabis-focused retail commerce platform offering POS, payments, analytics, and operations tools, directly comparable to Lightspeed's retail platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Cannabis-focused retail commerce platform offering POS, payments, analytics, and operations tools, directly comparable to Lightspeed's retail platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both sell cloud POS, payments, and commerce operations platforms for retailers; Treez is a vertical (cannabis) peer with the same product and model."
+        }
+      ]
     },
     {
       "name": "Gokul Pos",
@@ -2624,7 +3104,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Gokul POS offers retail point-of-sale software, directly overlapping Lightspeed\u2019s core commerce platform and serving the same retail operators and buyers."
+      "rationale": "Retail point-of-sale provider, directly comparable to Lightspeed's POS and commerce platform for retailers.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Retail point-of-sale provider, directly comparable to Lightspeed's POS and commerce platform for retailers."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Provides complete POS solutions for retail industries, directly matching Lightspeed's core point-of-sale product for retailers; same product and market."
+        }
+      ]
     },
     {
       "name": "Omisell",
@@ -2680,7 +3172,24 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide commerce operations software for retailers, including inventory and business management, targeting merchants seeking to manage and automate sales operations."
+      "rationale": "E-commerce operations software for merchants overlaps Lightspeed\u2019s retail-commerce customers and inventory/operations use case, though it is more focused on online channels.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "E-commerce operations software for merchants overlaps Lightspeed\u2019s retail-commerce customers and inventory/operations use case, though it is more focused on online channels."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Omisell is multichannel e-commerce order/warehouse management software, not a POS/payments commerce platform for retailers and restaurants."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Both sell commerce operations SaaS (inventory, orders, multichannel) to retailers/merchants; Omisell is online-only but a plausible comparable."
+        }
+      ]
     },
     {
       "name": "Softinfo Systems - India",
@@ -2730,7 +3239,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Offers retail ERP and point-of-sale software for inventory and commerce operations, targeting the same retail buyers and jobs as Lightspeed."
+      "rationale": "Provides ERP software to retailers, including POS and commerce-related capabilities, making it a plausible retail-operations platform comparable to Lightspeed.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Provides ERP software to retailers, including POS and commerce-related capabilities, making it a plausible retail-operations platform comparable to Lightspeed."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Sells ERP/POS software to retailers, overlapping Lightspeed's retail commerce platform on product and market axes."
+        }
+      ]
     },
     {
       "name": "OrderGrid",
@@ -2796,7 +3317,24 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both offer cloud inventory and operational management software to food retailers, with overlapping retail operations buyers and inventory-control use cases."
+      "rationale": "Retail and food-sector operations platform overlapping Lightspeed\u2019s inventory and commerce-management buyers, though focused more on supply-chain planning.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Retail and food-sector operations platform overlapping Lightspeed\u2019s inventory and commerce-management buyers, though focused more on supply-chain planning."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "OrderGrid sells supply-chain inventory/warehouse forecasting software; Lightspeed is a POS/payments commerce platform. Adjacent complement, not a competitor or comparable on product or model."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "SaaS retail operations software (inventory, ordering) sold to retailers/grocers, overlapping Lightspeed's retail inventory/operations market., Reasonably comparable.', 'ok'"
+        }
+      ]
     },
     {
       "name": "Armada POS",
@@ -2851,7 +3389,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide POS and commerce technology for retail and hospitality businesses, serving the same operational buyers and core transaction-management needs."
+      "rationale": "Armada POS provides point-of-sale software for retail and hospitality, directly overlapping Lightspeed\u2019s core restaurant and retail commerce platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Armada POS provides point-of-sale software for retail and hospitality, directly overlapping Lightspeed\u2019s core restaurant and retail commerce platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "POS software for retail and hospitality, same product and market as Lightspeed's restaurant/retailer commerce platform."
+        }
+      ]
     },
     {
       "name": "MemoCash Solu\u00e7\u00f5es",
@@ -2938,7 +3488,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "MemoCash offers POS, inventory, financial, and business-management software for merchants, overlapping Lightspeed\u2019s core commerce platform and buyer persona."
+      "rationale": "MemoCash offers hybrid sales/POS, inventory, financial tools, and business operations software for commercial enterprises, closely matching Lightspeed's commerce platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "MemoCash offers hybrid sales/POS, inventory, financial tools, and business operations software for commercial enterprises, closely matching Lightspeed's commerce platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "SMB commerce management platform with POS, inventory, financial tools, and offline sales mode \u2014 same product and market as Lightspeed."
+        }
+      ]
     },
     {
       "name": "Ohtez",
@@ -2980,7 +3542,19 @@
         "relevance_score": "A"
       },
       "relevant": false,
-      "rationale": "Ohtez is a software consulting and development firm, not a commerce platform offering POS, payments, inventory, and operations tools."
+      "rationale": "Ohtez is a software consulting and development firm, not a commerce, POS, payments, inventory, or restaurant/retail operations platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Ohtez is a software consulting and development firm, not a commerce, POS, payments, inventory, or restaurant/retail operations platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Ohtez is a software consulting/development agency, not a commerce/POS platform; serves the category rather than competing with Lightspeed."
+        }
+      ]
     },
     {
       "name": "Blazetm",
@@ -3067,7 +3641,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "BLAZE offers cannabis retailers an integrated POS, payments, inventory, e-commerce, and operations platform, closely overlapping Lightspeed\u2019s core retail commerce offering."
+      "rationale": "Cannabis-specific retail commerce platform offering POS, payments, inventory, e-commerce, and operations\u2014directly comparable to Lightspeed\u2019s restaurant and retail platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Cannabis-specific retail commerce platform offering POS, payments, inventory, e-commerce, and operations\u2014directly comparable to Lightspeed\u2019s restaurant and retail platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Cannabis-vertical retail commerce platform with POS, payments, e-commerce, and inventory \u2014 same product/model as Lightspeed, different vertical."
+        }
+      ]
     },
     {
       "name": "Quantum Retail",
@@ -3125,7 +3711,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide retail inventory and operational management software, serving retail planners and operators managing assortment, forecasting, replenishment, and stock."
+      "rationale": "Retail-focused inventory, forecasting, replenishment, and assortment optimization overlaps Lightspeed\u2019s retailer operations and inventory-management market.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Retail-focused inventory, forecasting, replenishment, and assortment optimization overlaps Lightspeed\u2019s retailer operations and inventory-management market."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both sell retail-operations software to retailers; overlapping inventory-management functionality makes Quantum a comparable retail-tech vendor despite no POS."
+        }
+      ]
     },
     {
       "name": "Interpay Flow",
@@ -3174,7 +3772,24 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Interpay Flow offers point-of-sale and payment software for SMB retailers, overlapping Lightspeed\u2019s core commerce tools and merchant buyer persona."
+      "rationale": "Offers POS and payments software for SMB retailers, matching Lightspeed's product and market as a competitor.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Metadata suggests payments/POS, but does not establish a restaurant or retail commerce platform comparable to Lightspeed."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Offers POS and payments software for SMB retailers, matching Lightspeed's product and market as a competitor."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Payments/POS SaaS for SMB retail and e-commerce, overlapping Lightspeed's commerce platform market.pos and payments product axis.Yes.Yes.Yes.Yes.Yes.Yes.Yes.Yes.Yes.Yes.Yes.Yes.Yes.Yes.Yes.Yes.Yes.Yes.Yes.Yes.Yes.Yes.Yes.Yes.Yes.Yes.Yes.Yes"
+        }
+      ]
     },
     {
       "name": "Erply Suomi",
@@ -3209,7 +3824,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Erply offers cloud-based retail POS, inventory, and multi-store management, directly overlapping Lightspeed\u2019s commerce platform for the same retail buyers."
+      "rationale": "Cloud retail platform for point of sale, inventory, store management, and operations; directly comparable to Lightspeed\u2019s retail commerce offering.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Cloud retail platform for point of sale, inventory, store management, and operations; directly comparable to Lightspeed\u2019s retail commerce offering."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Erply offers cloud POS, inventory, and store management for retailers \u2014 same product and market as Lightspeed's commerce platform; direct competitor."
+        }
+      ]
     },
     {
       "name": "Neto by Maropost",
@@ -3259,7 +3886,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide integrated retail commerce platforms spanning POS, inventory, orders, payments, and multichannel operations for merchants."
+      "rationale": "Integrated commerce platform offering POS, online stores, inventory, orders, and payments-adjacent operations for retailers, closely matching Lightspeed's product and customer market.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Integrated commerce platform offering POS, online stores, inventory, orders, and payments-adjacent operations for retailers, closely matching Lightspeed's product and customer market."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "All-in-one commerce platform with POS, inventory, and order management for retailers \u2014 direct competitor on product and business model."
+        }
+      ]
     },
     {
       "name": "OneStock",
@@ -3334,8 +3973,20 @@
         ],
         "relevance_score": "A"
       },
-      "relevant": false,
-      "rationale": "OneStock is an enterprise order-management and fulfillment platform, not a POS/payments commerce system; buyers would evaluate it for a different core job."
+      "relevant": true,
+      "rationale": "Both sell retail-commerce operations software with inventory and omnichannel capabilities for retailers, though OneStock specializes in order management and fulfillment.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both sell retail-commerce operations software with inventory and omnichannel capabilities for retailers, though OneStock specializes in order management and fulfillment."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both sell commerce-operations software to retailers; OneStock's order/inventory/fulfillment platform overlaps Lightspeed's retail operations and inventory management for the same buyer."
+        }
+      ]
     },
     {
       "name": "Velaone",
@@ -3392,7 +4043,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both offer integrated POS, payments, and business-management platforms for restaurant and retail merchants, addressing the same commerce operations needs."
+      "rationale": "Unified POS, payments, inventory/business management platform serving restaurants and retailers\u2014directly comparable to Lightspeed\u2019s commerce platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Unified POS, payments, inventory/business management platform serving restaurants and retailers\u2014directly comparable to Lightspeed\u2019s commerce platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Unified POS, payments, and commerce platform for restaurants and retail \u2014 direct product and market match with Lightspeed."
+        }
+      ]
     },
     {
       "name": "Mi9 Retail",
@@ -3468,7 +4131,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Mi9 Retail offers POS, inventory, order management, analytics, and e-commerce software to retailers, substantially overlapping Lightspeed\u2019s retail commerce platform and buyers."
+      "rationale": "Retail commerce software suite with POS, inventory, order management, e-commerce, and analytics directly overlaps Lightspeed's retailer platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Retail commerce software suite with POS, inventory, order management, e-commerce, and analytics directly overlaps Lightspeed's retailer platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Retail software suite with POS, inventory, order management, and e-commerce \u2014 direct competitor to Lightspeed's retail commerce platform."
+        }
+      ]
     },
     {
       "name": "Teamwork Commerce",
@@ -3533,7 +4208,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide integrated retail commerce platforms spanning POS, payments/order workflows, inventory, and omnichannel operations for retail businesses."
+      "rationale": "Omnichannel retail commerce platform for physical and digital sales, directly comparable to Lightspeed's retail POS and operations offering.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Omnichannel retail commerce platform for physical and digital sales, directly comparable to Lightspeed's retail POS and operations offering."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both sell omnichannel retail POS/commerce platforms to retailers; direct competitor on product and market axes."
+        }
+      ]
     },
     {
       "name": "Agr",
@@ -3611,8 +4298,20 @@
         ],
         "relevance_score": "A"
       },
-      "relevant": true,
-      "rationale": "Both provide retail inventory-management software, serving merchants and operations teams seeking to optimize stock, ordering, and related workflows."
+      "relevant": false,
+      "rationale": "Inventory optimization and demand-planning software is adjacent, but not a restaurant/retail POS, payments, and commerce operations platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Inventory optimization and demand-planning software is adjacent, but not a restaurant/retail POS, payments, and commerce operations platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Agr is inventory demand-planning/optimization software; it lacks Lightspeed's core POS, payments, and commerce platform, serving a different job for retailers."
+        }
+      ]
     },
     {
       "name": "Justbilling",
@@ -3669,7 +4368,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Justbilling offers POS software for retail and restaurants, directly overlapping Lightspeed\u2019s core commerce platform and targeting the same business buyers."
+      "rationale": "POS software for retail and restaurants, overlapping Lightspeed\u2019s core point-of-sale and merchant-operations market.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "POS software for retail and restaurants, overlapping Lightspeed\u2019s core point-of-sale and merchant-operations market."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "POS software for retail and restaurants with payments, matching Lightspeed's core product and market as a direct competitor."
+        }
+      ]
     },
     {
       "name": "Nextar",
@@ -3717,7 +4428,19 @@
         "relevance_score": "A"
       },
       "relevant": false,
-      "rationale": "Candidate is described as a generic IT services company; taxonomy tags alone do not establish a commerce or point-of-sale platform."
+      "rationale": "Description identifies a generic IT services company; Point of Sale and e-commerce labels lack evidence of a commerce platform comparable to Lightspeed.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Description identifies a generic IT services company; Point of Sale and e-commerce labels lack evidence of a commerce platform comparable to Lightspeed."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Record describes a generic Shenzhen IT services/consulting firm; POS taxonomy tag alone doesn't establish a commerce/POS platform resembling Lightspeed."
+        }
+      ]
     },
     {
       "name": "Edgeworks Solutions",
@@ -3783,7 +4506,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Edgeworks offers POS, inventory, e-commerce, and operations software to retailers and restaurants, directly overlapping Lightspeed\u2019s platform and buyers."
+      "rationale": "Provides all-in-one POS, inventory, commerce, and operations software for retailers and F&B businesses, directly overlapping Lightspeed\u2019s product and customer markets.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Provides all-in-one POS, inventory, commerce, and operations software for retailers and F&B businesses, directly overlapping Lightspeed\u2019s product and customer markets."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "All-in-one POS, inventory, and commerce platform for retail and F&B \u2014 same product, market, and model as Lightspeed."
+        }
+      ]
     },
     {
       "name": "Kwi",
@@ -3854,7 +4589,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "KWI and Lightspeed both offer retail commerce platforms combining POS, inventory/merchandising, payments-adjacent operations, e-commerce, and omnichannel capabilities for retailers."
+      "rationale": "KWI is an omnichannel retail commerce platform offering POS, payments-adjacent operations, inventory/merchandising, e-commerce, and loyalty, directly comparable to Lightspeed's retail offering.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "KWI is an omnichannel retail commerce platform offering POS, payments-adjacent operations, inventory/merchandising, e-commerce, and loyalty, directly comparable to Lightspeed's retail offering."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both sell retail commerce platforms with POS, order/inventory management, and operations tools \u2014 direct competitors in retail POS."
+        }
+      ]
     },
     {
       "name": "SoCloz",
@@ -3932,7 +4679,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "SoCloz offers retail mPOS, inventory, and omnichannel order-management software, overlapping Lightspeed\u2019s retail commerce platform and serving the same retail operations buyers."
+      "rationale": "Omnichannel retail platform with mobile POS, inventory, and order orchestration; directly comparable to Lightspeed's retail commerce operations offering.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Omnichannel retail platform with mobile POS, inventory, and order orchestration; directly comparable to Lightspeed's retail commerce operations offering."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Retail commerce platform spanning mPOS, inventory, and omnichannel order operations for stores and e-commerce, closely overlapping Lightspeed's retailer-focused POS and operations market."
+        }
+      ]
     },
     {
       "name": "POSaBIT",
@@ -4000,7 +4759,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide integrated point-of-sale, payments, and retail operations software to merchants; POSaBIT specializes in cannabis retailers."
+      "rationale": "Cannabis-specific POS, payments, and retail operations platform directly parallels Lightspeed\u2019s commerce stack for merchants.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Cannabis-specific POS, payments, and retail operations platform directly parallels Lightspeed\u2019s commerce stack for merchants."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "POSaBIT sells POS plus payments for retail merchants (cannabis vertical), matching Lightspeed's core retail POS/payments product \u2014 a direct comparable."
+        }
+      ]
     },
     {
       "name": "Praktis",
@@ -4051,7 +4822,19 @@
         "relevance_score": "A"
       },
       "relevant": false,
-      "rationale": "Praktis provides outsourced sourcing, production, fulfillment, and logistics, not a restaurant/retail POS, payments, and commerce operations platform."
+      "rationale": "Praktis provides supply-chain sourcing, fulfillment, and logistics services, not a restaurant/retail POS, payments, and commerce-operations platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Praktis provides supply-chain sourcing, fulfillment, and logistics services, not a restaurant/retail POS, payments, and commerce-operations platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Praktis is a supply-chain/fulfillment/logistics service for Indonesian MSMEs, not a POS/commerce platform for restaurants and retailers like Lightspeed."
+        }
+      ]
     },
     {
       "name": "Dgtal World",
@@ -4107,7 +4890,19 @@
         "relevance_score": "A"
       },
       "relevant": false,
-      "rationale": "Dgtal World is a custom software and Microsoft implementation consultancy, not a commerce platform offering POS, payments, inventory, and retail operations."
+      "rationale": "Custom software and Microsoft implementation consultancy, not a restaurant or retail POS, payments, inventory, and operations platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Custom software and Microsoft implementation consultancy, not a restaurant or retail POS, payments, inventory, and operations platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "IT consulting/implementation services firm, not a commerce/POS platform; serves the category as consultant rather than competing with a product."
+        }
+      ]
     },
     {
       "name": "Mosaic Solutions",
@@ -4180,7 +4975,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide integrated POS, payments-adjacent, inventory, analytics, and operations software to restaurants, hospitality groups, and retailers."
+      "rationale": "Cloud POS, inventory, purchasing, analytics, and restaurant/retail operations platform serving the same merchants as Lightspeed.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Cloud POS, inventory, purchasing, analytics, and restaurant/retail operations platform serving the same merchants as Lightspeed."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Cloud POS, inventory, and operations platform for restaurants and retail\u2014direct competitor to Lightspeed on product, market, and business model."
+        }
+      ]
     },
     {
       "name": "INextErp Solutions",
@@ -4223,7 +5030,24 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Offers integrated POS, inventory, and operations software for retailers, overlapping Lightspeed\u2019s core platform and retail buyer use cases."
+      "rationale": "Builds ERP/POS/inventory software for retail and multi-location businesses, overlapping Lightspeed's core product of POS, inventory, and operations software.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "ERP consulting and implementation provider; POS is one module, not a dedicated restaurant/retail commerce platform comparable to Lightspeed."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Builds ERP/POS/inventory software for retail and multi-location businesses, overlapping Lightspeed's core product of POS, inventory, and operations software."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "ERP with POS, inventory for retail/distribution businesses; overlaps seed's retail commerce software though consulting-heavy.', a weaker but plausible comparable.10:00 AM(2025)"
+        }
+      ]
     },
     {
       "name": "Brightpearl",
@@ -4279,7 +5103,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide retail commerce operations platforms with overlapping inventory, order, and business management capabilities for multichannel retailers."
+      "rationale": "Retail operations platform with inventory, orders, payments integrations, and POS-adjacent capabilities for multichannel retailers; a strong commerce-software comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Retail operations platform with inventory, orders, payments integrations, and POS-adjacent capabilities for multichannel retailers; a strong commerce-software comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Retail operations platform with inventory, order, and financial management for retailers \u2014 same buyer and comparable commerce-operations product as Lightspeed."
+        }
+      ]
     },
     {
       "name": "Sitoo",
@@ -4340,7 +5176,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Sitoo directly overlaps Lightspeed\u2019s retail offering with unified commerce, POS, inventory, and store operations for the same retail buyers."
+      "rationale": "Unified retail commerce platform with POS, payments-adjacent operations, inventory, and omnichannel capabilities; a direct comparable to Lightspeed's retail offering.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Unified retail commerce platform with POS, payments-adjacent operations, inventory, and omnichannel capabilities; a direct comparable to Lightspeed's retail offering."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Cloud-native POS and unified commerce platform for retailers, matching Lightspeed's retail POS, inventory, and commerce operations product and market."
+        }
+      ]
     },
     {
       "name": "Leap360",
@@ -4401,7 +5249,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide integrated POS, payments, and operational software for physical hospitality or entertainment venues, targeting operators centralizing commerce and daily workflows."
+      "rationale": "Both provide integrated POS, payments, and operational-management platforms for venue-based businesses, though LEAP360 is specialized for family entertainment centers.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both provide integrated POS, payments, and operational-management platforms for venue-based businesses, though LEAP360 is specialized for family entertainment centers."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "All-in-one POS, payments, and operations platform for venue-based businesses; same product model as Lightspeed's commerce/POS platform for physical locations."
+        }
+      ]
     },
     {
       "name": "6Dx",
@@ -4458,7 +5318,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "6Dx offers cloud POS, CRM, and retail back-office software, overlapping Lightspeed\u2019s commerce and operations platform for retail businesses."
+      "rationale": "Retail software platform offering cloud POS, CRM, and back-office operations to retail chains, directly comparable to Lightspeed\u2019s retail commerce suite.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Retail software platform offering cloud POS, CRM, and back-office operations to retail chains, directly comparable to Lightspeed\u2019s retail commerce suite."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Retail software vendor offering cloud POS, CRM, and back-office solutions for retail chains \u2014 direct product and market match to Lightspeed's commerce platform."
+        }
+      ]
     },
     {
       "name": "MyAccounts Online Softwares Private",
@@ -4512,7 +5384,24 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "MyAccounts offers retail-focused POS, accounting, inventory, and business-management software, overlapping Lightspeed\u2019s commerce platform for retail operators."
+      "rationale": "Offers retail-focused software and point-of-sale solutions, overlapping Lightspeed\u2019s retail commerce platform, though it also provides broader custom IT services.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Offers retail-focused software and point-of-sale solutions, overlapping Lightspeed\u2019s retail commerce platform, though it also provides broader custom IT services."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Custom software/IT services consultancy serving retail clients, not a POS/commerce platform product competing with Lightspeed."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Sells retail POS/accounting software for retailers, garments, footwear \\u2014 a smaller regional comparable to Lightspeed's retail commerce platform.<candidate_description>Welcome to My Accounts\u2026. MyAccounts started by a young and dynamic p"
+        }
+      ]
     },
     {
       "name": "Detego",
@@ -4549,8 +5438,20 @@
         ],
         "relevance_score": "A"
       },
-      "relevant": true,
-      "rationale": "Both provide SaaS inventory and retail-operations technology to retailers, serving overlapping buyers seeking improved stock tracking, accuracy, and availability."
+      "relevant": false,
+      "rationale": "RFID inventory-tracking software for retailers is complementary to, not a comparable commerce POS, payments, and operations platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "RFID inventory-tracking software for retailers is complementary to, not a comparable commerce POS, payments, and operations platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Detego is an RFID supply-chain item-tracking SaaS for retailers, not a POS/commerce/payments platform; complementary retail-tech, not a competitor or comparable to Lightspeed."
+        }
+      ]
     },
     {
       "name": "Windward Software",
@@ -4617,7 +5518,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide integrated POS, inventory, and business operations software to independent retailers, addressing substantially the same commerce-management needs and buyers."
+      "rationale": "Integrated POS, inventory, CRM, and business-management software for independent retailers directly overlaps Lightspeed\u2019s retail commerce platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Integrated POS, inventory, CRM, and business-management software for independent retailers directly overlaps Lightspeed\u2019s retail commerce platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Sells integrated POS, inventory, and business-management software for retail/wholesale SMBs \u2014 same product, market, and model as Lightspeed's commerce platform."
+        }
+      ]
     },
     {
       "name": "ClearTEQ",
@@ -4673,7 +5586,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "ClearTEQ offers retailers POS, merchant services, operational insights, and cash-flow tools, directly overlapping Lightspeed\u2019s retail commerce platform and buyer persona."
+      "rationale": "Retail POS and merchant-services platform with operations and cash-flow tools, directly comparable to Lightspeed\u2019s retail commerce offering.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Retail POS and merchant-services platform with operations and cash-flow tools, directly comparable to Lightspeed\u2019s retail commerce offering."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "POS and merchant services for retailers\u2014same product, market, and model as Lightspeed's retail commerce platform."
+        }
+      ]
     },
     {
       "name": "Celerant",
@@ -4752,7 +5677,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Celerant offers integrated retail POS, e-commerce, inventory, and commerce software, directly overlapping Lightspeed\u2019s platform and targeting the same retail buyers."
+      "rationale": "Retail commerce platform offering in-store POS, eCommerce, and operational software, directly comparable to Lightspeed's retail offering.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Retail commerce platform offering in-store POS, eCommerce, and operational software, directly comparable to Lightspeed's retail offering."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Retail commerce platform with POS and eCommerce, same product and buyer persona as Lightspeed's retail POS/commerce offering."
+        }
+      ]
     },
     {
       "name": "StoreHub",
@@ -4816,7 +5753,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "StoreHub offers cloud POS, ordering, loyalty, and operations tools to the same restaurant and retail buyers as Lightspeed."
+      "rationale": "Cloud POS platform for restaurants and retailers, including payments, inventory, CRM, and operations\u2014directly comparable to Lightspeed.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Cloud POS platform for restaurants and retailers, including payments, inventory, CRM, and operations\u2014directly comparable to Lightspeed."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Cloud all-in-one POS platform for restaurants and retailers with inventory, payments, and loyalty \u2014 direct competitor to Lightspeed on product and market."
+        }
+      ]
     },
     {
       "name": "Gloposnet",
@@ -4873,7 +5822,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide POS systems for retail and hospitality businesses, including payments and operational tools, serving the same core buyers and use case."
+      "rationale": "Provides POS systems and payment hardware for retail and hospitality SMBs, directly overlapping Lightspeed's core commerce platform market.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Provides POS systems and payment hardware for retail and hospitality SMBs, directly overlapping Lightspeed's core commerce platform market."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Sells POS systems for retail and hospitality, matching Lightspeed's core point-of-sale product and target market."
+        }
+      ]
     },
     {
       "name": "Retail Express",
@@ -4923,7 +5884,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Retail Express directly overlaps Lightspeed\u2019s retail commerce offering with cloud POS, inventory, e-commerce, loyalty, and back-office tools for retailers."
+      "rationale": "Cloud retail platform offering POS, e-commerce, inventory, payments-adjacent operations, and analytics to retailers\u2014directly comparable to Lightspeed's retail offering.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Cloud retail platform offering POS, e-commerce, inventory, payments-adjacent operations, and analytics to retailers\u2014directly comparable to Lightspeed's retail offering."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Cloud retail POS platform with inventory, eCommerce, and operations features \u2014 direct competitor to Lightspeed's retail commerce platform on product and market."
+        }
+      ]
     },
     {
       "name": "B2B Soft",
@@ -4997,7 +5970,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide retail POS, payments, inventory, and store-operations software; B2B Soft specializes these capabilities for telecom carriers and wireless dealers."
+      "rationale": "Wireless-retail POS, inventory, payments, and operations platform; a verticalized retail commerce-software comparable to Lightspeed.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Wireless-retail POS, inventory, payments, and operations platform; a verticalized retail commerce-software comparable to Lightspeed."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Retail POS platform with payments and inventory management, same core product as Lightspeed, though verticalized for wireless/telecom retail."
+        }
+      ]
     },
     {
       "name": "Business Review Europe",
@@ -5051,7 +6036,19 @@
         "relevance_score": "A"
       },
       "relevant": false,
-      "rationale": "Business Review Europe is a media publication, not a commerce, point-of-sale, payments, or retail operations software platform."
+      "rationale": "Digital business-news publisher, not a commerce, POS, payments, inventory, or retail-operations platform comparable to Lightspeed.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Digital business-news publisher, not a commerce, POS, payments, inventory, or retail-operations platform comparable to Lightspeed."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Digital business magazine, not a commerce/POS platform; media publisher, not a competitor or comparable to Lightspeed."
+        }
+      ]
     },
     {
       "name": "EHopper",
@@ -5120,7 +6117,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "eHopper offers POS, payments, hardware, and business-management tools to small retailers and restaurants, directly overlapping Lightspeed\u2019s commerce platform and buyers."
+      "rationale": "eHopper offers POS, payment integration, hardware, and small-business management tools for retailers, directly comparable to Lightspeed's commerce platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "eHopper offers POS, payment integration, hardware, and small-business management tools for retailers, directly comparable to Lightspeed's commerce platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "eHopper sells POS systems with payments and operations management for small businesses, directly competing with Lightspeed's restaurant/retail commerce platform."
+        }
+      ]
     },
     {
       "name": "AB Pos",
@@ -5173,7 +6182,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "AB POS offers merchant point-of-sale and payment solutions, overlapping Lightspeed\u2019s core commerce platform and targeting the same retail and restaurant buyers."
+      "rationale": "Provides POS and payment solutions to merchants, overlapping Lightspeed's core commerce platform for retail and restaurant businesses.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Provides POS and payment solutions to merchants, overlapping Lightspeed's core commerce platform for retail and restaurant businesses."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both sell POS and payment processing solutions to restaurants and retailers; direct product and market overlap, a clear competitor."
+        }
+      ]
     },
     {
       "name": "Omo",
@@ -5221,8 +6242,25 @@
         ],
         "relevance_score": "A"
       },
-      "relevant": false,
-      "rationale": "Omo primarily offers digital marketing and omnichannel integration; POS is only one component, without clear overlap in core retail or restaurant operations."
+      "relevant": true,
+      "rationale": "Offers POS and e-commerce platforms for businesses, overlapping Lightspeed\u2019s commerce platform despite broader marketing and digital-integration focus.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Offers POS and e-commerce platforms for businesses, overlapping Lightspeed\u2019s commerce platform despite broader marketing and digital-integration focus."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Broad digital-marketing/mobile-integration solutions provider; POS and eshop are minor add-ons, not a core commerce platform for restaurants/retailers like Lightspeed."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Offers POS, ecommerce/eshop platform and retail tech to merchants, overlapping with Lightspeed's commerce platform, though broader digital-marketing focus.}], ...JSON"
+        }
+      ]
     },
     {
       "name": "Lundi Matin",
@@ -5252,7 +6290,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Lundi Matin offers retail and restaurant POS, commerce management, e-commerce, and CRM software, overlapping Lightspeed\u2019s core merchant operations platform and buyers."
+      "rationale": "Offers retail and restaurant POS, e-commerce, inventory/ERP, and omnichannel commerce tools, directly comparable to Lightspeed's merchant platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Offers retail and restaurant POS, e-commerce, inventory/ERP, and omnichannel commerce tools, directly comparable to Lightspeed's merchant platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Offers POS software for retail (RoverCash) and restaurants (AirKitchen) plus e-commerce/ERP \u2014 directly matches Lightspeed's commerce platform for restaurants and retailers."
+        }
+      ]
     },
     {
       "name": "Comvision",
@@ -5292,7 +6342,19 @@
         "relevance_score": "A"
       },
       "relevant": false,
-      "rationale": "Comvision offers broad customized ERP and IT services, not a clear restaurant/retail POS, payments, and commerce platform for the same buying need."
+      "rationale": "Comvision is a bespoke ERP/IT solutions provider, not clearly a restaurant and retail POS, payments, and commerce operations platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Comvision is a bespoke ERP/IT solutions provider, not clearly a restaurant and retail POS, payments, and commerce operations platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Generic ERP/IT consulting firm, not a POS/commerce platform for restaurants and retailers; no strong product or market overlap with Lightspeed."
+        }
+      ]
     },
     {
       "name": "Omega Software",
@@ -5380,7 +6442,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Omega offers POS and business-management software for restaurants, hospitality, and retailers, directly overlapping Lightspeed\u2019s core platform and target buyers."
+      "rationale": "Provides POS and enterprise-management software for restaurants and retailers, directly overlapping Lightspeed's core commerce platform and buyer markets.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Provides POS and enterprise-management software for restaurants and retailers, directly overlapping Lightspeed's core commerce platform and buyer markets."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "POS and operations-management software for restaurants and retail\u2014same product, market, and business model as Lightspeed."
+        }
+      ]
     },
     {
       "name": "Cuscen Usa",
@@ -5459,7 +6533,19 @@
         "relevance_score": "A"
       },
       "relevant": false,
-      "rationale": "CUSCEN primarily offers broad ERP, HXM, CRM, and LMS software, not a restaurant/retail commerce platform with POS and payments."
+      "rationale": "ERP, HXM, CRM, and LMS implementation/support for SMBs is not a restaurant/retail POS, payments, inventory, and commerce platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "ERP, HXM, CRM, and LMS implementation/support for SMBs is not a restaurant/retail POS, payments, inventory, and commerce platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Cuscen offers ERP/CRM/HXM/LMS support services for SMBs, not a commerce/POS platform for restaurants and retailers; no product or market overlap."
+        }
+      ]
     },
     {
       "name": "Shopdev",
@@ -5516,7 +6602,19 @@
         "relevance_score": "A"
       },
       "relevant": false,
-      "rationale": "Shopdev is a custom software and digital-transformation consultancy, not a commerce platform offering POS, payments, inventory, and retail operations software."
+      "rationale": "Shopdev is a custom software development and digital transformation consultancy, not a commerce POS, payments, inventory, and operations platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Shopdev is a custom software development and digital transformation consultancy, not a commerce POS, payments, inventory, and operations platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Software consultancy/IT services firm, not a commerce POS platform; serves the category rather than competing with Lightspeed."
+        }
+      ]
     },
     {
       "name": "Pagamio",
@@ -5570,7 +6668,24 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Pagamio provides merchant point-of-sale and payment processing, overlapping Lightspeed\u2019s checkout and payments offering for commerce operators."
+      "rationale": "Pagamio offers point-of-sale and payment-processing software, overlapping Lightspeed's merchant commerce, POS, and payments platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Pagamio offers point-of-sale and payment-processing software, overlapping Lightspeed's merchant commerce, POS, and payments platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Pagamio appears to be a payment-processing app; POS keyword alone insufficient, no evidence of a commerce/POS platform like Lightspeed."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Payments/point-of-sale software vendor serving merchants, comparable to Lightspeed's POS and payments offering."
+        }
+      ]
     },
     {
       "name": "IQ Fulfillment",
@@ -5651,7 +6766,19 @@
         "relevance_score": "A"
       },
       "relevant": false,
-      "rationale": "IQ Fulfillment provides outsourced warehousing and order fulfillment, not a POS, payments, and commerce operations platform for retailers or restaurants."
+      "rationale": "AI-powered third-party warehousing and fulfillment provider, not a restaurant/retail POS, payments, inventory, and operations commerce platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "AI-powered third-party warehousing and fulfillment provider, not a restaurant/retail POS, payments, inventory, and operations commerce platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "IQ Fulfillment is a warehousing/logistics fulfillment service, not a commerce/POS platform; different product and job-to-be-done."
+        }
+      ]
     },
     {
       "name": "Inventory Planner",
@@ -5710,7 +6837,24 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide retail inventory-management software, serving merchants seeking to optimize stock, purchasing, and commerce operations."
+      "rationale": "Retail software for merchants that optimizes inventory, forecasting, and purchase orders; overlaps Lightspeed\u2019s retail inventory and operations offering.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Retail software for merchants that optimizes inventory, forecasting, and purchase orders; overlaps Lightspeed\u2019s retail inventory and operations offering."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Inventory-forecasting add-on for retailers, complementing rather than competing with Lightspeed's POS/commerce platform; different job to be done."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Retail/eCommerce SaaS for inventory forecasting and purchasing; same merchant buyer persona and adjacent to Lightspeed's inventory/ops product.', ' ' ' ' ' '"
+        }
+      ]
     },
     {
       "name": "Mindscape Computing",
@@ -5768,7 +6912,19 @@
         "relevance_score": "A"
       },
       "relevant": false,
-      "rationale": "Mindscape appears to be a retail IT solutions partner, not a clearly productized POS, payments, inventory, and commerce platform."
+      "rationale": "Retail-focused IT partner and solution developer, but no evidence of a proprietary POS, payments, inventory, or commerce platform comparable to Lightspeed.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Retail-focused IT partner and solution developer, but no evidence of a proprietary POS, payments, inventory, or commerce platform comparable to Lightspeed."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Retail IT services/consulting partner for retailers, not a POS/commerce platform product; serves the category rather than competing with Lightspeed."
+        }
+      ]
     },
     {
       "name": "Arch Retail Solutions",
@@ -5830,7 +6986,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Arch offers integrated POS, inventory, multi-store operations, loyalty, and e-commerce software to retailers, directly overlapping Lightspeed\u2019s retail commerce platform and buyers."
+      "rationale": "Integrated retail management platform with POS, inventory, payments-adjacent operations, loyalty, and e-commerce\u2014directly comparable to Lightspeed's retail commerce offering.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Integrated retail management platform with POS, inventory, payments-adjacent operations, loyalty, and e-commerce\u2014directly comparable to Lightspeed's retail commerce offering."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Integrated retail POS, inventory, and store-management software suite \u2014 direct competitor to Lightspeed's retail commerce platform on product and market."
+        }
+      ]
     },
     {
       "name": "Aqua Software",
@@ -5871,7 +7039,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Aqua offers POS and enterprise-management software for restaurants, hospitality, and retailers, directly overlapping Lightspeed\u2019s core platform and buyer personas."
+      "rationale": "POS and enterprise management platform for restaurants, hospitality, and retail\u2014the same core merchant commerce market as Lightspeed.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "POS and enterprise management platform for restaurants, hospitality, and retail\u2014the same core merchant commerce market as Lightspeed."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "POS and enterprise management software for restaurants and retail \u2014 same product and buyer market as Lightspeed, a direct competitor."
+        }
+      ]
     },
     {
       "name": "Fishbowl",
@@ -5944,7 +7124,24 @@
         "relevance_score": "A"
       },
       "relevant": false,
-      "rationale": "Fishbowl primarily provides inventory and manufacturing software, not a retail/restaurant commerce platform with POS and payments; buyer use cases only partially overlap."
+      "rationale": "Fishbowl sells inventory/manufacturing software, not a POS/payments commerce platform; overlaps only one component, not the core product or market.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Fishbowl provides inventory and manufacturing operations software, overlapping Lightspeed's inventory-management needs for SMB retailers, though it lacks core POS and payments breadth."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Fishbowl sells inventory/manufacturing software, not a POS/payments commerce platform; overlaps only one component, not the core product or market."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "Fishbowl sells inventory/manufacturing software for SMBs; lacks POS/payments commerce platform for retail and restaurants, only weak inventory overlap."
+        }
+      ]
     },
     {
       "name": "Algo Technosoft",
@@ -5993,7 +7190,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Algo offers billing, inventory, purchasing, and accounting software that overlaps Lightspeed\u2019s commerce operations suite and targets similar retail business buyers."
+      "rationale": "Billing, inventory, and purchase-management software overlaps Lightspeed\u2019s retail operations and POS-adjacent commerce platform, serving similar merchant needs.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Billing, inventory, and purchase-management software overlaps Lightspeed\u2019s retail operations and POS-adjacent commerce platform, serving similar merchant needs."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Billing/POS software with inventory and purchase management for retail businesses \u2014 same product category and SMB commerce market as Lightspeed."
+        }
+      ]
     },
     {
       "name": "Citrus-Lime",
@@ -6060,7 +7269,19 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Both provide unified retail commerce platforms with POS, inventory, ecommerce, and operational tools for independent retailers."
+      "rationale": "Unified retail commerce platform offering POS, payments-adjacent operations, inventory, ecommerce, and loyalty for independent specialty retailers.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Unified retail commerce platform offering POS, payments-adjacent operations, inventory, ecommerce, and loyalty for independent specialty retailers."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Retail commerce platform offering POS, inventory, ecommerce, and operations for independent retailers \u2014 same product and market as Lightspeed, just vertical-focused."
+        }
+      ]
     },
     {
       "name": "OrderMS",
@@ -6116,8 +7337,25 @@
         ],
         "relevance_score": "A"
       },
-      "relevant": false,
-      "rationale": "OrderMS is a generic order and inventory management tool, not a restaurant/retail commerce platform with integrated POS and payments."
+      "relevant": true,
+      "rationale": "Cloud commerce/operations SaaS for retailers covering orders, inventory, and fulfillment \u2014 overlapping product and market with Lightspeed's commerce platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "OrderMS provides order and inventory management for businesses, but lacks Lightspeed's core restaurant/retail POS and payments platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Cloud commerce/operations SaaS for retailers covering orders, inventory, and fulfillment \u2014 overlapping product and market with Lightspeed's commerce platform."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Cloud order/inventory management SaaS for retail commerce operations; overlaps Lightspeed's inventory and operations offering as a comparable commerce software vendor."
+        }
+      ]
     },
     {
       "name": "Paladin Data Corporation",
@@ -6195,7 +7433,20 @@
         "relevance_score": "A"
       },
       "relevant": true,
-      "rationale": "Paladin offers retail point-of-sale, inventory, e-commerce, and operations software, directly overlapping Lightspeed\u2019s platform for the same retail buyers."
+      "rationale": "Retail POS and commerce platform with inventory, ordering, customer management, and e-commerce tools, directly comparable to Lightspeed's retail offering.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Retail POS and commerce platform with inventory, ordering, customer management, and e-commerce tools, directly comparable to Lightspeed's retail offering."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Retail point-of-sale platform with inventory, e-commerce, and operations tools \u2014 direct product and market competitor to Lightspeed's retail commerce platform."
+        }
+      ]
     }
-  ]
+  ],
+  "error": null
 }

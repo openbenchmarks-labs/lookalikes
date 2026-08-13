@@ -68,6 +68,40 @@ class Seed:
     seed_domain: str | None
     description: str | None
     category: str
+    # One-clause identity used verbatim in the NL lookalike query sent to
+    # text-query vendors (Exa, Parallel). Deliberately short: it exists to
+    # disambiguate the seed entity, not to enumerate features or target
+    # segments — deriving the similarity axes from the seed is the vendor's
+    # job and is exactly what the benchmark measures. Falls back to
+    # `description` when absent.
+    short_description: str | None = None
+
+    # --- The lookalike definition, split into its two halves --------------- #
+    # A seed description like "Restaurant point-of-sale, payments, online
+    # ordering, payroll, and operations platform" is really two claims, and a
+    # lookalike has to satisfy them differently:
+    #
+    #   anchor       — who the company sells to + what it fundamentally is
+    #                  ("restaurant point-of-sale platform"). A HARD match:
+    #                  every lookalike must clear it, no exceptions. Write it
+    #                  at the coarsest level that still defines the space —
+    #                  too narrow rejects genuine peers, too broad makes the
+    #                  gate a no-op and hands all the work to capabilities.
+    #   capabilities — what the company does ("payments", "online ordering",
+    #                  "payroll", "operations"). ANY non-empty subset counts;
+    #                  a candidate needn't match all of them.
+    #
+    # relevant = anchor_match AND (>= 1 capability matched). See
+    # judge.JUDGE_SYSTEM_PROMPT. Both fall back to `description` when absent
+    # so a partially-migrated seed set still runs.
+    anchor: str | None = None
+    capabilities: list[str] = dataclasses.field(default_factory=list)
+
+    # Verbatim NL query for the text-query vendors (Exa, Parallel), authored
+    # per seed rather than composed from a template. Both vendors receive the
+    # SAME string — that identity is the benchmark's fairness property. When
+    # absent, the hooks compose one from name/domain/short_description.
+    query: str | None = None
     # Optional, public/TAM-derived firmographic hints (NOT derived from the
     # gold set). Lets a runner use a vendor's documented firmographic filter
     # surface (e.g. locations / employee range / funding stages) so
@@ -151,12 +185,19 @@ class JudgeVote:
 @dataclasses.dataclass
 class JudgedCandidate:
     candidate: Candidate
-    relevant: bool          # majority label across `votes` (== the lone vote when N=1)
+    relevant: bool          # anchor_match AND >=1 capability matched (majority across `votes`)
     rationale: str
     # Per-judge breakdown. Empty for legacy single-judge constructions; populated
     # by JudgePanel. The slim/snapshot artifacts carry only the aggregate
     # `relevant`/`rationale`; full votes live in the audit trail + Supabase.
     votes: list[JudgeVote] = dataclasses.field(default_factory=list)
+    # Did the candidate clear the seed's anchor (the hard gate)? False here
+    # forces `relevant` False regardless of capability overlap.
+    anchor_match: bool | None = None
+    # Which of the seed's `capabilities` this candidate matched. Lets a cell be
+    # read as "found the right kind of company, overlapping 3 of 4 capabilities"
+    # rather than a bare boolean.
+    capabilities_matched: list[str] = dataclasses.field(default_factory=list)
 
 
 @dataclasses.dataclass
@@ -223,6 +264,10 @@ class RawJudgeCall:
     elapsed_ms: int
     for_candidate_rank: int | None = None  # which candidate this judged
     error: str | None = None  # if the LLM call failed, what went wrong
+    # True when the verdict was served from the process-wide verdict cache
+    # (same judge + prompt version + seed + candidate already judged this run,
+    # e.g. via another config or vendor) — no LLM call was made.
+    cached: bool = False
 
 
 # --------------------------------------------------------------------------- #
@@ -290,6 +335,10 @@ def read_seeds() -> list[Seed]:
                 seed_domain=s.get("seed_domain"),
                 description=s.get("description"),
                 category=s["category"],
+                short_description=s.get("short_description"),
+                anchor=s.get("anchor"),
+                capabilities=list(s.get("capabilities") or []),
+                query=s.get("query"),
             )
         )
     return out
@@ -325,6 +374,7 @@ def raw_judge_call_to_dict(call: RawJudgeCall) -> dict[str, Any]:
         "elapsed_ms": call.elapsed_ms,
         "for_candidate_rank": call.for_candidate_rank,
         "error": call.error,
+        "cached": call.cached,
     }
 
 
@@ -427,6 +477,18 @@ def persist_run_detail(dataset_slug: str, judged: JudgedRun) -> Path:
                 "extra": j.candidate.extra,
                 "relevant": j.relevant,
                 "rationale": j.rationale,
+                # Gate + overlap: lets a cell be read as "right kind of company,
+                # 3 of 4 capabilities" rather than a bare boolean, and shows
+                # WHY a candidate failed (wrong anchor vs no overlap).
+                "anchor_match": j.anchor_match,
+                "capabilities_matched": j.capabilities_matched,
+                # Per-judge breakdown (panel runs). The DB backfill rebuilds
+                # vote_yes/vote_no from this; without it a majority(n=3) cell
+                # would flatten to one fabricated vote.
+                "votes": [
+                    {"judge_model": v.judge_model, "relevant": v.relevant, "rationale": v.rationale}
+                    for v in (j.votes or [])
+                ],
             }
             for j in judged.judged
         ],
@@ -667,6 +729,39 @@ def capture_http_calls() -> Iterator[list[RawHttpCall]]:
         yield buf
     finally:
         _HTTP_TRACE.reset(token)
+
+
+def record_vendor_call(
+    *,
+    method: str,
+    url: str,
+    request_body: Any,
+    response_status: int,
+    response_body: Any,
+    elapsed_ms: int,
+) -> None:
+    """Add a non-HTTP vendor invocation (for example a local vendor CLI) to the
+    same raw audit trail as HTTP-backed runners.
+
+    request_headers is empty by construction: a CLI carries its credentials in
+    the environment or a config file, not in a header we could capture, so
+    there is nothing to redact and nothing to claim we captured.
+    """
+    trace = _HTTP_TRACE.get()
+    if trace is None:
+        return
+    trace.append(
+        RawHttpCall(
+            method=method,
+            url=url,
+            request_headers={},
+            request_body=request_body,
+            response_status=response_status,
+            response_body=response_body,
+            response_text_preview=json.dumps(response_body, ensure_ascii=False)[:4096],
+            elapsed_ms=elapsed_ms,
+        )
+    )
 
 
 def _redact_headers(headers: dict[str, str]) -> dict[str, str]:

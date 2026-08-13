@@ -7,18 +7,20 @@
     "name": "domain_similarity"
   },
   "k": 100,
-  "relevant_count": 16,
-  "precision_at_k": 16.0,
+  "relevant_count": 18,
+  "precision_at_k": 18.0,
   "relevant_count_at_10": 0,
-  "relevant_count_at_100": 16,
+  "relevant_count_at_25": 3,
+  "relevant_count_at_100": 18,
   "precision_at_10": 0.0,
-  "precision_at_100": 16.0,
+  "precision_at_25": 12.0,
+  "precision_at_100": 18.0,
   "latency_ms": 1436,
   "cost_usd": null,
   "duplicates_removed": 4,
   "max_results": null,
-  "judge_model": "gpt-5.6",
-  "judged_at": "2026-07-27T03:40:29Z",
+  "judge_model": "majority(n=3): claude-opus-5,gpt-5.6-terra,kimi-k3",
+  "judged_at": "2026-08-10T19:20:30Z",
   "candidates": [
     {
       "name": "HubSpot, Inc",
@@ -50,7 +52,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "This is a duplicate/misattributed HubSpot entry rather than an independent lookalike company."
+      "rationale": "Duplicate entry for the seed company HubSpot, not a distinct competitor, comparable, or ICP-expansion prospect.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Duplicate entry for the seed company HubSpot, not a distinct competitor, comparable, or ICP-expansion prospect."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Duplicate of the seed company itself (same name, product, social links), not a distinct lookalike competitor or comparable."
+        }
+      ]
     },
     {
       "name": "Samdani Art Foundation",
@@ -86,7 +100,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Samdani Art Foundation is an arts organization; the description incorrectly duplicates HubSpot\u2019s CRM offering and does not reflect the candidate\u2019s actual business."
+      "rationale": "Samdani Art Foundation is an arts organization; the HubSpot description and social links are mismatched record data, not its product.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Samdani Art Foundation is an arts organization; the HubSpot description and social links are mismatched record data, not its product."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Art foundation with mismatched copy-pasted HubSpot description; duplicate/erroneous entry, not a CRM competitor."
+        }
+      ]
     },
     {
       "name": "Scottish Borders Council",
@@ -108,7 +134,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "The candidate is a local government council with an unrelated domain; its description appears copied from HubSpot rather than describing a competing CRM product."
+      "rationale": "Scottish Borders Council is a local government body, not a CRM or marketing-automation platform; the description appears misattributed to HubSpot.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Scottish Borders Council is a local government body, not a CRM or marketing-automation platform; the description appears misattributed to HubSpot."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Local government council with a copied HubSpot description; no CRM product of its own. Parody/duplicate entry, not a competitor."
+        }
+      ]
     },
     {
       "name": "Logiciels de marketing",
@@ -139,7 +177,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "This appears to be a French HubSpot-branded site or duplicate entry, not an independent CRM and marketing automation company."
+      "rationale": "This appears to be a HubSpot-branded duplicate/local entry, not an independent comparable company.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "This appears to be a HubSpot-branded duplicate/local entry, not an independent comparable company."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Duplicate of the seed: HubSpot's own French regional site with official HubSpot social links, not a distinct lookalike company."
+        }
+      ]
     },
     {
       "name": "Software de marketing",
@@ -174,7 +224,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "This is a duplicate or localized HubSpot listing, not an independent company offering a comparable CRM and marketing-automation platform."
+      "rationale": "This is a HubSpot Spanish-language/affiliate entry, not an independent company lookalike.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "This is a HubSpot Spanish-language/affiliate entry, not an independent company lookalike."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Duplicate entry describing HubSpot itself; domain and social links all point to HubSpot's official Spanish presence, not a distinct lookalike company."
+        }
+      ]
     },
     {
       "name": "Breeze",
@@ -196,7 +258,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Breeze is a HubSpot implementation and optimization agency, not a competing CRM or marketing-automation platform evaluated for the same job."
+      "rationale": "HubSpot implementation agency serving HubSpot users, not a CRM or marketing-automation platform competitor or comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "HubSpot implementation agency serving HubSpot users, not a CRM or marketing-automation platform competitor or comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "HubSpot partner agency providing implementation services, not a competing CRM/marketing platform; serves the category rather than competing."
+        }
+      ]
     },
     {
       "name": "Ai Partner Solution",
@@ -219,7 +293,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Ai Partner Solution is a HubSpot implementation consultancy, not a competing CRM and marketing-automation software platform."
+      "rationale": "HubSpot implementation consultancy serving HubSpot users, not a CRM or marketing-automation platform competitor or comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "HubSpot implementation consultancy serving HubSpot users, not a CRM or marketing-automation platform competitor or comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "HubSpot implementation consultancy/partner, not a competing CRM or marketing-automation platform; serves the category rather than resembling the seed."
+        }
+      ]
     },
     {
       "name": "New Breed",
@@ -249,7 +335,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "New Breed is a HubSpot implementation and marketing-services partner, not a competing CRM and marketing-automation software platform."
+      "rationale": "HubSpot implementation and marketing agency; it serves HubSpot users rather than offering a competing CRM or marketing-automation platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "HubSpot implementation and marketing agency; it serves HubSpot users rather than offering a competing CRM or marketing-automation platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "HubSpot partner/agency providing implementation and marketing services, not a competing CRM platform; serves the category rather than competing in it."
+        }
+      ]
     },
     {
       "name": "CRO:NYX Digital",
@@ -277,7 +375,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "CRO:NYX is a HubSpot implementation and marketing-services partner, not a competing CRM or marketing-automation software platform."
+      "rationale": "HubSpot implementation and marketing agency serving HubSpot users, not a CRM or marketing-automation platform competitor.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "HubSpot implementation and marketing agency serving HubSpot users, not a CRM or marketing-automation platform competitor."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "HubSpot partner agency selling marketing/web services, not a CRM or marketing-automation platform; serves the category rather than competing."
+        }
+      ]
     },
     {
       "name": "Lean Labs",
@@ -301,7 +411,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Lean Labs is a marketing agency and HubSpot migration partner, not a CRM and marketing-automation software platform competing for the same job."
+      "rationale": "Marketing agency providing lead generation, redesign, and HubSpot migration services; it serves HubSpot users rather than competing as a CRM platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Marketing agency providing lead generation, redesign, and HubSpot migration services; it serves HubSpot users rather than competing as a CRM platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Marketing agency offering HubSpot migrations and lead-gen services; serves the category rather than competing as a CRM/marketing platform."
+        }
+      ]
     },
     {
       "name": "HappyFox",
@@ -330,8 +452,20 @@
           "https://x.com/happyfox"
         ]
       },
-      "relevant": true,
-      "rationale": "HappyFox\u2019s help desk and CRM overlap HubSpot\u2019s Service Hub and CRM, targeting customer support and sales teams with similar workflow needs."
+      "relevant": false,
+      "rationale": "HappyFox primarily sells help-desk and IT service automation, not CRM and marketing automation for go-to-market teams.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "HappyFox primarily sells help-desk and IT service automation, not CRM and marketing automation for go-to-market teams."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "HappyFox's primary product is help desk/customer-support automation, not CRM/marketing automation; its CRM is secondary, so resemblance to HubSpot is weak."
+        }
+      ]
     },
     {
       "name": "Factory42",
@@ -359,7 +493,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Factory42 is a consultancy implementing and optimizing HubSpot and Salesforce, not a competing CRM and marketing-automation software platform."
+      "rationale": "CRM consultancy and implementation partner for HubSpot/Salesforce, not a CRM or marketing-automation platform competitor.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "CRM consultancy and implementation partner for HubSpot/Salesforce, not a CRM or marketing-automation platform competitor."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Consultancy implementing and optimizing HubSpot/Salesforce for clients; an agency serving the category, not a CRM platform competitor."
+        }
+      ]
     },
     {
       "name": "HubBase",
@@ -386,7 +532,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "HubBase is an agency implementing and managing HubSpot websites, not a CRM or marketing-automation software platform competing with HubSpot."
+      "rationale": "HubBase is an agency building and supporting HubSpot websites, not a CRM or marketing-automation platform competing with HubSpot.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "HubBase is an agency building and supporting HubSpot websites, not a CRM or marketing-automation platform competing with HubSpot."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Agency building HubSpot websites; serves the HubSpot ecosystem as a service provider, not a competing CRM/marketing platform."
+        }
+      ]
     },
     {
       "name": "GoAxell",
@@ -408,7 +566,19 @@
         "social_urls": []
       },
       "relevant": true,
-      "rationale": "GoAxell overlaps HubSpot in SMB lead generation, contact management, automated messaging, lead nurturing, and customer communications for go-to-market teams."
+      "rationale": "All-in-one small-business platform overlaps HubSpot's CRM, lead generation, marketing automation, customer communication, and go-to-market workflow.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "All-in-one small-business platform overlaps HubSpot's CRM, lead generation, marketing automation, customer communication, and go-to-market workflow."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "AI-powered all-in-one platform for small businesses combining CRM, lead generation, marketing automation, and communications \u2014 direct SMB go-to-market competitor to HubSpot."
+        }
+      ]
     },
     {
       "name": "Show Up",
@@ -435,7 +605,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Show Up is a services agency implementing HubSpot, not a competing CRM and marketing automation software platform."
+      "rationale": "HubSpot implementation agency serving HubSpot users, not a CRM or marketing-automation platform competitor or comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "HubSpot implementation agency serving HubSpot users, not a CRM or marketing-automation platform competitor or comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "HubSpot implementation agency/consultancy serving the category, not a competing CRM or marketing-automation platform."
+        }
+      ]
     },
     {
       "name": "EasyDialog B.V.",
@@ -460,7 +642,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "EasyDialog is a HubSpot implementation and optimization partner, not a competing CRM and marketing automation software platform."
+      "rationale": "HubSpot implementation partner and consultancy, not a CRM or marketing-automation platform competitor.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "HubSpot implementation partner and consultancy, not a CRM or marketing-automation platform competitor."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "HubSpot partner agency implementing CRM/marketing automation services for clients, not a competing platform; consultancies serving the category are excluded."
+        }
+      ]
     },
     {
       "name": "AI Support Hub",
@@ -483,7 +677,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "AI customer-support automation is adjacent to HubSpot but does not overlap its core CRM and marketing-automation job to be done."
+      "rationale": "AI customer-support automation is distinct from HubSpot's CRM and marketing automation for go-to-market teams.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "AI customer-support automation is distinct from HubSpot's CRM and marketing automation for go-to-market teams."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "AI customer support tools differ from HubSpot's CRM/marketing automation; different product category and buyer job-to-be-done."
+        }
+      ]
     },
     {
       "name": "Demand Machine",
@@ -507,7 +713,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Demand Machine is a HubSpot implementation and engineering partner, not a competing CRM and marketing automation platform evaluated for the same need."
+      "rationale": "HubSpot implementation and engineering partner, not a CRM or marketing-automation platform competitor or comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "HubSpot implementation and engineering partner, not a CRM or marketing-automation platform competitor or comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "HubSpot implementation/engineering partner (IT services consultancy) serving HubSpot customers, not a competing CRM or marketing-automation platform."
+        }
+      ]
     },
     {
       "name": "Simple Marketing Now LLC",
@@ -533,7 +751,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Marketing consultancy implementing HubSpot and related tools for clients, not a competing CRM or marketing-automation software platform."
+      "rationale": "Marketing consultancy using HubSpot for clients, not a CRM or marketing-automation platform competitor or comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Marketing consultancy using HubSpot for clients, not a CRM or marketing-automation platform competitor or comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Marketing consultancy that uses HubSpot to serve clients, not a competing CRM/marketing-automation platform."
+        }
+      ]
     },
     {
       "name": "The Hustle",
@@ -570,7 +800,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "The Hustle is a business media and newsletter publisher, not a CRM or marketing automation platform evaluated for go-to-market operations."
+      "rationale": "The Hustle is a business-media newsletter and content brand, not a CRM or marketing-automation platform for go-to-market teams.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "The Hustle is a business-media newsletter and content brand, not a CRM or marketing-automation platform for go-to-market teams."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "The Hustle is a business media/newsletter publisher (and HubSpot subsidiary), not a CRM or marketing-automation platform competitor."
+        }
+      ]
     },
     {
       "name": "The Network Ai",
@@ -594,7 +836,19 @@
         "social_urls": []
       },
       "relevant": true,
-      "rationale": "Offers CRM, lead qualification, email automation, and scheduling for real estate go-to-market teams, overlapping HubSpot\u2019s core sales and marketing platform."
+      "rationale": "Real-estate-focused CRM and marketing automation platform, directly comparable to HubSpot for lead management and sales workflows.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Real-estate-focused CRM and marketing automation platform, directly comparable to HubSpot for lead management and sales workflows."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "All-in-one CRM and marketing-automation platform explicitly positioned as a HubSpot alternative, same product/model despite real-estate vertical focus."
+        }
+      ]
     },
     {
       "name": "AutomateNow",
@@ -622,7 +876,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "AutomateNow is a HubSpot consultancy and implementation partner, not a competing CRM or marketing-automation software platform."
+      "rationale": "HubSpot implementation and revenue-operations consultancy, not a CRM or marketing-automation platform competitor.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "HubSpot implementation and revenue-operations consultancy, not a CRM or marketing-automation platform competitor."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "HubSpot partner/consultancy implementing and optimizing HubSpot for clients; serves the category rather than competing as a CRM platform."
+        }
+      ]
     },
     {
       "name": "Amplitude, Inc.",
@@ -650,7 +916,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Amplitude primarily provides product analytics and experimentation, not CRM and marketing automation; buyers would not evaluate both for the same core job."
+      "rationale": "Amplitude provides product and behavioral analytics, not a CRM or marketing-automation platform; it complements rather than directly competes with HubSpot.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Amplitude provides product and behavioral analytics, not a CRM or marketing-automation platform; it complements rather than directly competes with HubSpot."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Product/user-behavior analytics platform, not CRM or marketing automation; shared B2B SaaS go-to-market adjacency is taxonomy-level, not a product or job-to-be-done match."
+        }
+      ]
     },
     {
       "name": "Prospect Builder",
@@ -672,8 +950,20 @@
         "city": "Saskatoon",
         "social_urls": []
       },
-      "relevant": false,
-      "rationale": "Prospect Builder is primarily a prospecting and lead-enrichment tool that integrates with CRMs, not a CRM and marketing-automation platform like HubSpot."
+      "relevant": true,
+      "rationale": "AI lead-generation and outreach platform for GTM teams, overlapping HubSpot's prospecting, email automation, and CRM-adjacent workflows.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "AI lead-generation and outreach platform for GTM teams, overlapping HubSpot's prospecting, email automation, and CRM-adjacent workflows."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "B2B lead-gen and automated email-outreach SaaS overlapping HubSpot's marketing automation, serving the same SMB go-to-market buyer as a software peer, not an agency."
+        }
+      ]
     },
     {
       "name": "Aspiration Marketing, Inc.",
@@ -700,7 +990,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Aspiration Marketing is a consulting agency that implements HubSpot and provides marketing services, not a competing CRM and marketing automation platform."
+      "rationale": "Marketing consultancy implementing HubSpot and providing services, not a CRM or marketing-automation platform competitor.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Marketing consultancy implementing HubSpot and providing services, not a CRM or marketing-automation platform competitor."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Marketing agency/consultancy that implements HubSpot for clients, not a CRM/marketing-automation platform competitor."
+        }
+      ]
     },
     {
       "name": "CreativeSmug",
@@ -729,7 +1031,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "CreativeSmug is a CRM/marketing automation implementation agency using HubSpot and Salesforce, not a competing software platform evaluated for the same job."
+      "rationale": "CreativeSmug is a consultancy implementing tailored HubSpot/Salesforce systems, not a CRM and marketing-automation platform competitor.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "CreativeSmug is a consultancy implementing tailored HubSpot/Salesforce systems, not a CRM and marketing-automation platform competitor."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Agency/consultancy that builds custom CRM and HubSpot/Salesforce implementations for clients, not a competing CRM platform."
+        }
+      ]
     },
     {
       "name": "Revio",
@@ -753,7 +1067,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Revio is a marketing agency and HubSpot implementation consultancy, not a CRM or marketing-automation software platform competing for the same job."
+      "rationale": "Digital marketing agency and HubSpot implementation consultant; it serves HubSpot users rather than offering a competing CRM or marketing automation platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Digital marketing agency and HubSpot implementation consultant; it serves HubSpot users rather than offering a competing CRM or marketing automation platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Digital marketing agency that implements HubSpot/Salesforce for clients; serves the category rather than competing as a CRM/marketing platform."
+        }
+      ]
     },
     {
       "name": "Highwind AI, Inc.",
@@ -780,7 +1106,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Highwind offers broad AI workflow and support tools, not a core CRM or marketing-automation platform evaluated for the same go-to-market needs."
+      "rationale": "Generic AI workflow and support automation marketplace, not a CRM or marketing-automation platform for go-to-market teams.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Generic AI workflow and support automation marketplace, not a CRM or marketing-automation platform for go-to-market teams."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "AI-tools marketplace for small-business workflow automation, not a CRM/marketing-automation platform; no shared product or go-to-market buyer persona."
+        }
+      ]
     },
     {
       "name": "Sales Loves Marketing",
@@ -807,7 +1145,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Primarily a sales and marketing resources/content website, not a CRM and marketing-automation platform evaluated for the same operational need."
+      "rationale": "Content and resource website for sales marketers, not a CRM and marketing-automation software platform comparable to HubSpot.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Content and resource website for sales marketers, not a CRM and marketing-automation software platform comparable to HubSpot."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Content/resource site reviewing sales and marketing tools, not a CRM or marketing-automation platform itself; media publisher, not a competitor."
+        }
+      ]
     },
     {
       "name": "IrisAgent",
@@ -834,7 +1184,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "IrisAgent automates customer support tickets, not CRM or marketing automation; buyers would evaluate it for a different primary job."
+      "rationale": "AI customer-support automation platform, not a CRM or marketing-automation product for go-to-market teams; HubSpot is merely an integration.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "AI customer-support automation platform, not a CRM or marketing-automation product for go-to-market teams; HubSpot is merely an integration."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "AI customer-support ticket automation, not CRM/marketing automation; integrates with HubSpot rather than competing in its category."
+        }
+      ]
     },
     {
       "name": "Evenbound",
@@ -861,7 +1223,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Evenbound is a growth marketing and RevOps consultancy that implements HubSpot, not a CRM or marketing-automation software platform."
+      "rationale": "Evenbound is a growth marketing and RevOps consultancy using HubSpot for clients, not a CRM or marketing-automation software platform competitor.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Evenbound is a growth marketing and RevOps consultancy using HubSpot for clients, not a CRM or marketing-automation software platform competitor."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "B2B growth marketing agency that implements HubSpot for clients; serves the category rather than competing with a CRM/marketing platform."
+        }
+      ]
     },
     {
       "name": "Lead Velocity",
@@ -883,8 +1257,20 @@
         "city": null,
         "social_urls": []
       },
-      "relevant": false,
-      "rationale": "Lead Velocity is a prospecting and outreach tool, not a CRM or marketing automation platform; it complements HubSpot rather than replacing it."
+      "relevant": true,
+      "rationale": "AI prospecting, enrichment, and automated outreach platform serving go-to-market teams, overlapping HubSpot\u2019s sales and marketing automation use case.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "AI prospecting, enrichment, and automated outreach platform serving go-to-market teams, overlapping HubSpot\u2019s sales and marketing automation use case."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "B2B SaaS platform for go-to-market teams doing prospecting, outreach, and conversion \u2014 same buyer persona and sales-engagement job as HubSpot's sales/marketing hubs."
+        }
+      ]
     },
     {
       "name": "Flowla",
@@ -910,7 +1296,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Flowla provides digital sales rooms and buyer collaboration workflows, not a core CRM or marketing automation platform; it complements HubSpot rather than substitutes for it."
+      "rationale": "Flowla is a sales-room and buyer-collaboration tool that integrates with CRM platforms, not a CRM and marketing-automation peer.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Flowla is a sales-room and buyer-collaboration tool that integrates with CRM platforms, not a CRM and marketing-automation peer."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Digital sales room that integrates with CRMs like HubSpot; complementary add-on, not a CRM/marketing-automation competitor or comparable."
+        }
+      ]
     },
     {
       "name": "DocsBot",
@@ -937,7 +1335,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "DocsBot provides AI customer-support chatbots and documentation automation, not a core CRM or marketing-automation platform evaluated for the same job."
+      "rationale": "AI customer-support chatbot and knowledge-base automation, not a CRM or marketing-automation platform for go-to-market teams.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "AI customer-support chatbot and knowledge-base automation, not a CRM or marketing-automation platform for go-to-market teams."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "DocsBot is an AI customer-support chatbot, not a CRM/marketing-automation platform; different product and buyer persona than HubSpot."
+        }
+      ]
     },
     {
       "name": "ALLMO Digital Solutions UG",
@@ -962,7 +1372,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "ALLMO provides AI-search visibility and content optimization, not CRM or marketing automation; buyers would not evaluate both for the same core job."
+      "rationale": "AI-search visibility analytics is a specialized marketing tool, not a CRM and broad marketing-automation platform for go-to-market teams.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "AI-search visibility analytics is a specialized marketing tool, not a CRM and broad marketing-automation platform for go-to-market teams."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "AI search-visibility/GEO analytics tool, not a CRM or marketing-automation platform; serves marketers for a different job, weak resemblance."
+        }
+      ]
     },
     {
       "name": "Stratenet",
@@ -988,7 +1410,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Stratenet is a consulting and implementation agency serving HubSpot users, not a CRM or marketing-automation software platform competing with HubSpot."
+      "rationale": "Marketing and sales agency implementing HubSpot for clients, not a CRM or marketing-automation platform competitor.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Marketing and sales agency implementing HubSpot for clients, not a CRM or marketing-automation platform competitor."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Agency that implements and manages HubSpot for clients, not a competing CRM/marketing-automation platform."
+        }
+      ]
     },
     {
       "name": "Salesloft",
@@ -1015,7 +1449,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide B2B revenue teams with sales automation, pipeline management, buyer engagement, and analytics tools for closely overlapping go-to-market workflows."
+      "rationale": "Salesloft is B2B sales-engagement and revenue-orchestration software for go-to-market teams, overlapping HubSpot's CRM and sales automation market.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Salesloft is B2B sales-engagement and revenue-orchestration software for go-to-market teams, overlapping HubSpot's CRM and sales automation market."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Sales engagement/revenue orchestration platform serving same GTM teams as HubSpot; direct competitor to HubSpot Sales Hub."
+        }
+      ]
     },
     {
       "name": "Thalox AG",
@@ -1041,7 +1487,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Thalox is a HubSpot implementation and optimization service provider, not a competing CRM or marketing-automation software platform."
+      "rationale": "HubSpot implementation consultancy serving users of the platform, not a CRM or marketing-automation product competitor.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "HubSpot implementation consultancy serving users of the platform, not a CRM or marketing-automation product competitor."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "HubSpot implementation/consulting agency serving the category, not a competing CRM or marketing-automation platform."
+        }
+      ]
     },
     {
       "name": "Big Presence",
@@ -1067,7 +1525,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Big Presence is a consulting and implementation partner using HubSpot, not a competing CRM or marketing automation software platform."
+      "rationale": "HubSpot consulting agency that implements the seed for clients, rather than offering a competing CRM or marketing-automation platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "HubSpot consulting agency that implements the seed for clients, rather than offering a competing CRM or marketing-automation platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "HubSpot consulting/agency partner that implements HubSpot for clients, not a competing CRM or marketing-automation platform."
+        }
+      ]
     },
     {
       "name": "Cerebral AI Suite",
@@ -1088,8 +1558,25 @@
         "city": "London",
         "social_urls": []
       },
-      "relevant": false,
-      "rationale": "Cerebral AI Suite focuses on AI content creation and search optimization, not CRM or comprehensive marketing automation for go-to-market teams."
+      "relevant": true,
+      "rationale": "AI-powered marketing platform for marketers, offering content, campaign optimization, analytics, and integrations\u2014overlapping HubSpot\u2019s marketing-automation buyer and use cases.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "AI-powered marketing platform for marketers, offering content, campaign optimization, analytics, and integrations\u2014overlapping HubSpot\u2019s marketing-automation buyer and use cases."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "AI content-generation and AEO/SEO tooling for agencies, not a CRM or marketing-automation platform; only generic 'marketing software' overlap with HubSpot."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Both sell B2B marketing software platforms with content, analytics and integrations; plausible smaller marketing-automation comparable.You must respond with valid JSON that conforms to the following JSON schema:"
+        }
+      ]
     },
     {
       "name": "Twopir Consulting",
@@ -1114,7 +1601,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Twopir is a RevOps consultancy implementing HubSpot and Salesforce, not a competing CRM and marketing automation software platform."
+      "rationale": "Consulting firm implementing HubSpot and Salesforce for clients, not a CRM or marketing-automation platform competitor.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Consulting firm implementing HubSpot and Salesforce for clients, not a CRM or marketing-automation platform competitor."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Consultancy implementing HubSpot/Salesforce for clients, not a CRM product company; serves the category rather than competing in it."
+        }
+      ]
     },
     {
       "name": "AI Ekip Inc.",
@@ -1139,7 +1638,24 @@
         ]
       },
       "relevant": false,
-      "rationale": "AI Ekip provides AI agents that complement and integrate with CRMs; it is not primarily a CRM or marketing-automation platform."
+      "rationale": "AI sales/support agents automate lead qualification and customer interactions, but are an add-on integrating with CRM rather than a comparable CRM/marketing automation platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "AI sales/support agents automate lead qualification and customer interactions, but are an add-on integrating with CRM rather than a comparable CRM/marketing automation platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Sells AI sales/support automation software to the same SMB go-to-market buyers; overlaps HubSpot's sales and support automation products as a competitor/comparable."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "AI agent add-ons that integrate with HubSpot, not a CRM/marketing automation platform; complementary tooling, not a peer."
+        }
+      ]
     },
     {
       "name": "Growbro",
@@ -1166,7 +1682,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Growbro is a conversational AI layer integrating with CRMs, not a CRM or broad marketing-automation platform serving the same core job."
+      "rationale": "Specialized conversational AI layer that integrates with HubSpot; it is not primarily a CRM or broad marketing-automation platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Specialized conversational AI layer that integrates with HubSpot; it is not primarily a CRM or broad marketing-automation platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Chatbot/messaging automation tool that integrates with HubSpot as a complementary add-on, not a CRM/marketing-automation competitor or comparable."
+        }
+      ]
     },
     {
       "name": "Digifianz",
@@ -1195,7 +1723,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Digifianz is a HubSpot implementation and consulting partner, not a competing CRM and marketing automation software platform."
+      "rationale": "HubSpot implementation and consulting agency serving HubSpot users, not a CRM or marketing-automation platform competitor.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "HubSpot implementation and consulting agency serving HubSpot users, not a CRM or marketing-automation platform competitor."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "HubSpot Elite Partner agency providing implementation and consulting services, not a competing CRM/marketing-automation platform."
+        }
+      ]
     },
     {
       "name": "TECH SYSTEM SUPPORT CORP",
@@ -1216,8 +1756,20 @@
         "city": "Davenport",
         "social_urls": []
       },
-      "relevant": true,
-      "rationale": "Its AI chatbot and customer-support platform overlaps HubSpot Service Hub, targeting teams automating customer engagement and managing multichannel interactions."
+      "relevant": false,
+      "rationale": "Customer-support chatbot and implementation service, not a CRM and marketing-automation platform for go-to-market teams.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Customer-support chatbot and implementation service, not a CRM and marketing-automation platform for go-to-market teams."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "AI customer-support chatbot platform, not CRM/marketing automation for go-to-market teams; different product category and buyer job-to-be-done."
+        }
+      ]
     },
     {
       "name": "Parallel AI",
@@ -1244,7 +1796,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide B2B sales and marketing automation for go-to-market teams, including lead generation, customer engagement, content, and CRM-integrated workflows."
+      "rationale": "AI platform for sales, marketing, and support automation overlaps HubSpot\u2019s GTM buyer and lead-generation/customer-engagement workflows.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "AI platform for sales, marketing, and support automation overlaps HubSpot\u2019s GTM buyer and lead-generation/customer-engagement workflows."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "AI-driven GTM platform for sales/marketing teams automating lead gen and engagement; same buyer persona and overlapping job-to-be-done as HubSpot."
+        }
+      ]
     },
     {
       "name": "The Forward Marketer, LLC",
@@ -1270,7 +1834,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Marketing agency providing HubSpot management and strategy services, not a competing CRM or marketing-automation software platform."
+      "rationale": "Marketing agency and HubSpot service provider, not a CRM or marketing-automation platform competitor or comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Marketing agency and HubSpot service provider, not a CRM or marketing-automation platform competitor or comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "HubSpot-focused marketing agency serving the category as a client/service provider, not a CRM or marketing-automation platform competitor."
+        }
+      ]
     },
     {
       "name": "Scale Net",
@@ -1292,8 +1868,20 @@
         "city": null,
         "social_urls": []
       },
-      "relevant": false,
-      "rationale": "Scale Net is an AI prospecting and outreach tool that integrates with CRMs, not a CRM and marketing-automation platform like HubSpot."
+      "relevant": true,
+      "rationale": "AI lead-generation and outreach platform serves go-to-market teams, overlapping HubSpot's prospecting and marketing-automation use case.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "AI lead-generation and outreach platform serves go-to-market teams, overlapping HubSpot's prospecting and marketing-automation use case."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "AI lead-generation and outreach platform serving the same SMB/mid-market go-to-market teams as HubSpot; comparable sales-prospecting software, not an agency or client."
+        }
+      ]
     },
     {
       "name": "TechArk Solutions",
@@ -1322,7 +1910,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "TechArk is a digital marketing and development agency serving clients, not a CRM and marketing-automation software platform evaluated for the same job."
+      "rationale": "Digital agency providing bespoke marketing, web, and software services, not a CRM and marketing-automation platform competitor.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Digital agency providing bespoke marketing, web, and software services, not a CRM and marketing-automation platform competitor."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Digital agency offering web design and marketing services, not a CRM/marketing-automation product; serves the category rather than competing with HubSpot."
+        }
+      ]
     },
     {
       "name": "CPG Synergy",
@@ -1344,7 +1944,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "CPG Synergy is primarily a marketing agency/automation service integrating with CRMs, not a CRM and marketing-automation platform evaluated like HubSpot."
+      "rationale": "Appears to be an AI marketing agency offering lead generation and campaign services, not a peer CRM and marketing-automation software platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Appears to be an AI marketing agency offering lead generation and campaign services, not a peer CRM and marketing-automation software platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "AI marketing agency offering done-for-you services and integrations with CRMs, not a CRM/marketing-automation platform competing with HubSpot."
+        }
+      ]
     },
     {
       "name": "SaaSpartout",
@@ -1372,7 +1984,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "SaaSpartout is a software discovery and review marketplace, not a CRM or marketing automation platform serving the same go-to-market job."
+      "rationale": "Software discovery and review marketplace; it does not provide CRM or marketing automation for go-to-market teams.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Software discovery and review marketplace; it does not provide CRM or marketing automation for go-to-market teams."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Software discovery/review marketplace (G2-like), not a CRM or marketing-automation platform; serves software buyers, not go-to-market teams as a peer."
+        }
+      ]
     },
     {
       "name": "AgentGPT",
@@ -1397,7 +2021,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "AgentGPT provides general AI agents and chatbots, not a core CRM and marketing automation platform evaluated for the same job."
+      "rationale": "AI chatbot and business-automation provider, not a CRM and marketing-automation platform for go-to-market teams.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "AI chatbot and business-automation provider, not a CRM and marketing-automation platform for go-to-market teams."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "AI chatbot/GPT-agent automation tool for support and lead gen, not a CRM or marketing-automation platform; adjacent AI utility, not a HubSpot comparable."
+        }
+      ]
     },
     {
       "name": "All In One Marketing",
@@ -1419,8 +2055,25 @@
         "city": "Smithtown",
         "social_urls": []
       },
-      "relevant": false,
-      "rationale": "All In One Marketing is a lead-sourcing and enrichment tool, not a CRM or marketing-automation platform comparable to HubSpot."
+      "relevant": true,
+      "rationale": "Lead-generation, enrichment, and outreach software serves the same SMB go-to-market teams and overlaps HubSpot\u2019s sales and marketing automation use cases.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Lead-generation, enrichment, and outreach software serves the same SMB go-to-market teams and overlaps HubSpot\u2019s sales and marketing automation use cases."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Lead-generation tool that integrates with CRMs like HubSpot; complementary prospecting software, not a CRM/marketing-automation platform competitor."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "B2B SaaS lead-gen/outreach software with CRM integrations and marketing automation, adjacent competitor to HubSpot's sales/marketing tooling.', 'axis': 'product/market"
+        }
+      ]
     },
     {
       "name": "SmithDigital",
@@ -1448,7 +2101,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "SmithDigital is a marketing agency and HubSpot consultant, not a CRM or marketing-automation software platform competing for the same job."
+      "rationale": "Marketing agency providing HubSpot services and lead generation, not a CRM or marketing-automation platform competitor.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Marketing agency providing HubSpot services and lead generation, not a CRM or marketing-automation platform competitor."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Marketing agency and HubSpot services partner (onboarding, CMS migration), not a CRM/marketing-automation platform competitor."
+        }
+      ]
     },
     {
       "name": "Global Tech Stack",
@@ -1481,7 +2146,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Global Tech Stack is a software review and comparison directory, not a CRM or marketing automation platform serving go-to-market teams."
+      "rationale": "Software review and comparison publisher, not a CRM or marketing-automation platform serving go-to-market teams.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Software review and comparison publisher, not a CRM or marketing-automation platform serving go-to-market teams."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Software review and comparison directory, not a CRM or marketing-automation platform; media site covering the category, not a competitor."
+        }
+      ]
     },
     {
       "name": "Salesmate",
@@ -1512,7 +2189,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Salesmate offers CRM, sales automation, and marketing automation for go-to-market teams, directly overlapping HubSpot\u2019s core products and buyer personas."
+      "rationale": "Salesmate is an SMB CRM with sales and marketing automation, directly comparable to HubSpot\u2019s go-to-market platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Salesmate is an SMB CRM with sales and marketing automation, directly comparable to HubSpot\u2019s go-to-market platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "AI-powered CRM with sales and marketing automation for SMBs \u2014 same product, market, and model as HubSpot."
+        }
+      ]
     },
     {
       "name": "Aircall",
@@ -1545,7 +2234,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Aircall is primarily a cloud phone/contact-center platform complementing CRM systems, not a CRM and marketing-automation alternative to HubSpot."
+      "rationale": "Aircall provides cloud calling and contact-center tools that integrate with HubSpot; it is a complementary communications platform, not a CRM or marketing-automation comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Aircall provides cloud calling and contact-center tools that integrate with HubSpot; it is a complementary communications platform, not a CRM or marketing-automation comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Aircall is a cloud phone/call-center platform that integrates with CRMs like HubSpot; adjacent communications tool, not a CRM/marketing-automation competitor."
+        }
+      ]
     },
     {
       "name": "Kenyt",
@@ -1573,7 +2274,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide marketing and sales automation, lead capture, multichannel engagement, and workflow tools for go-to-market teams."
+      "rationale": "AI platform for marketing, sales, and support automation overlaps HubSpot\u2019s CRM-adjacent lead capture, segmentation, campaigns, and customer-engagement workflows.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "AI platform for marketing, sales, and support automation overlaps HubSpot\u2019s CRM-adjacent lead capture, segmentation, campaigns, and customer-engagement workflows."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "AI-driven marketing, sales, and support automation platform serving same go-to-market teams; comparable to HubSpot's marketing automation/CRM space despite integrations."
+        }
+      ]
     },
     {
       "name": "Infinite Renewals",
@@ -1598,7 +2311,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Infinite Renewals is a post-sales consultancy implementing and optimizing CRM tools, not a CRM or marketing-automation platform competing with HubSpot."
+      "rationale": "Post-sales consultancy for SaaS companies using existing CRM tools, not a CRM or marketing-automation platform competing with HubSpot.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Post-sales consultancy for SaaS companies using existing CRM tools, not a CRM or marketing-automation platform competing with HubSpot."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Post-sales consulting service that implements on top of CRMs like HubSpot; serves the category as an agency, not a CRM competitor."
+        }
+      ]
     },
     {
       "name": "Industry Results",
@@ -1624,7 +2349,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Industry Results is a digital agency delivering tailored marketing and CRM services, not a CRM and marketing-automation software platform."
+      "rationale": "Digital agency delivering client services, not a CRM and marketing-automation software platform comparable to HubSpot.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Digital agency delivering client services, not a CRM and marketing-automation software platform comparable to HubSpot."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Full-service digital agency serving clients with CRM/marketing work, not a CRM or marketing-automation platform competitor."
+        }
+      ]
     },
     {
       "name": "Source",
@@ -1649,7 +2386,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Source is primarily marketing attribution and analytics that integrates with HubSpot, not a CRM and marketing-automation platform serving the same core job."
+      "rationale": "Marketing attribution and data dashboards complement CRM/automation platforms like HubSpot rather than providing a comparable CRM or marketing-automation product.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Marketing attribution and data dashboards complement CRM/automation platforms like HubSpot rather than providing a comparable CRM or marketing-automation product."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Marketing analytics/attribution layer that integrates with HubSpot rather than competing; no CRM or marketing-automation product\u2014adjacent complement, not peer."
+        }
+      ]
     },
     {
       "name": "Cognizo",
@@ -1676,7 +2425,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Cognizo is an AI-search visibility and content optimization tool, not a CRM or marketing automation platform evaluated for HubSpot\u2019s core workflows."
+      "rationale": "Cognizo is an AI-search visibility and SEO optimization tool, not a CRM or broad marketing-automation platform like HubSpot.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Cognizo is an AI-search visibility and SEO optimization tool, not a CRM or broad marketing-automation platform like HubSpot."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "AI-search visibility/GEO content tool for marketers, not a CRM or marketing-automation platform; same broad buyer but different core job and product category."
+        }
+      ]
     },
     {
       "name": "Mind & Metrics",
@@ -1706,7 +2467,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Mind & Metrics is a digital transformation and marketing agency offering CRM implementation services, not a CRM and marketing automation software platform."
+      "rationale": "Digital transformation agency providing marketing, CRM integration, and design services; it serves HubSpot-like customers rather than offering a competing CRM platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Digital transformation agency providing marketing, CRM integration, and design services; it serves HubSpot-like customers rather than offering a competing CRM platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Digital transformation agency offering CRM integrations and marketing services; serves the category as a consultancy, not a competing CRM/automation platform."
+        }
+      ]
     },
     {
       "name": "Codwind LLC",
@@ -1730,7 +2503,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Codwind primarily provides AI agents for support and workflow automation, not a CRM and marketing-automation platform evaluated for HubSpot\u2019s core use case."
+      "rationale": "General-purpose AI agents for support and operations, not a CRM and marketing-automation platform for go-to-market teams.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "General-purpose AI agents for support and operations, not a CRM and marketing-automation platform for go-to-market teams."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "AI-agent/IT-services firm automating support tasks, not a CRM or marketing-automation platform; resembles an agency serving the category rather than a HubSpot competitor."
+        }
+      ]
     },
     {
       "name": "R8N",
@@ -1753,7 +2538,19 @@
         "social_urls": []
       },
       "relevant": true,
-      "rationale": "FlowEngage overlaps HubSpot\u2019s marketing automation, lead nurturing, email campaigns, and sales pipeline workflows for business go-to-market teams."
+      "rationale": "Marketing automation platform with email campaigns, lead nurturing, engagement, analytics, and pipeline management directly overlaps HubSpot's core GTM software.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Marketing automation platform with email campaigns, lead nurturing, engagement, analytics, and pipeline management directly overlaps HubSpot's core GTM software."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Marketing automation platform with email campaigns, lead nurturing, and sales pipeline management\u2014same product and SMB go-to-market market as HubSpot."
+        }
+      ]
     },
     {
       "name": "Dock Labs, Inc.",
@@ -1779,7 +2576,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Dock is a revenue enablement and client collaboration tool that complements CRM platforms, not a CRM or marketing automation alternative."
+      "rationale": "Dock provides revenue-enablement and client-onboarding workspaces, complementing CRM systems rather than competing with HubSpot's CRM and marketing-automation platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Dock provides revenue-enablement and client-onboarding workspaces, complementing CRM systems rather than competing with HubSpot's CRM and marketing-automation platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Sales enablement/onboarding workspace that integrates with HubSpot as a complement, not a CRM or marketing-automation competitor; different job to be done."
+        }
+      ]
     },
     {
       "name": "File Room Pty Ltd.",
@@ -1806,7 +2615,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "File Room is an agency implementing and integrating HubSpot for clients, not a competing CRM and marketing-automation software platform."
+      "rationale": "Fileroom is a HubSpot-focused implementation and marketing agency, not a CRM or marketing-automation platform competitor or comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Fileroom is a HubSpot-focused implementation and marketing agency, not a CRM or marketing-automation platform competitor or comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "HubSpot-integration and sales-enablement agency; serves the CRM category as a services partner, not a competing CRM/marketing-automation platform."
+        }
+      ]
     },
     {
       "name": "Snoika",
@@ -1833,7 +2654,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Snoika is a specialized AI-search visibility and SEO tool, not a CRM or marketing-automation platform addressing HubSpot\u2019s core job."
+      "rationale": "Snoika is a specialized AI search-visibility and SEO tool, complementary to rather than a CRM and marketing-automation platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Snoika is a specialized AI search-visibility and SEO tool, complementary to rather than a CRM and marketing-automation platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Snoika is a niche AI-search/SEO visibility tool, not a CRM or marketing-automation platform; different product and buyer job than HubSpot."
+        }
+      ]
     },
     {
       "name": "Media Junction",
@@ -1860,7 +2693,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Media Junction is a services agency implementing HubSpot, not a competing CRM and marketing-automation software platform."
+      "rationale": "HubSpot implementation and marketing agency serving HubSpot users, not a CRM or marketing-automation platform competitor or comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "HubSpot implementation and marketing agency serving HubSpot users, not a CRM or marketing-automation platform competitor or comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "HubSpot Elite Partner agency implementing HubSpot for clients; a service provider serving the category, not a competing CRM platform."
+        }
+      ]
     },
     {
       "name": "My Business Local",
@@ -1882,7 +2727,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "My Business Local is primarily an AI marketing agency for local businesses, not a self-service CRM and marketing automation platform evaluated like HubSpot."
+      "rationale": "AI marketing agency providing services and websites to local businesses, not a self-serve CRM and marketing-automation platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "AI marketing agency providing services and websites to local businesses, not a self-serve CRM and marketing-automation platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "AI marketing agency selling services to local businesses, not a CRM/marketing-automation platform; serves the category rather than competing with HubSpot."
+        }
+      ]
     },
     {
       "name": "Scale Agent",
@@ -1904,7 +2761,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Scale Agent is primarily a conversational chatbot and call-automation tool, not a CRM or broad marketing-automation platform comparable to HubSpot."
+      "rationale": "SMB chatbot and call-automation tool, not a CRM or marketing-automation platform; it is more complementary than a direct HubSpot comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "SMB chatbot and call-automation tool, not a CRM or marketing-automation platform; it is more complementary than a direct HubSpot comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Chatbot/customer-interaction automation tool, not a CRM or marketing-automation platform; overlapping SMB persona but different product and job to be done."
+        }
+      ]
     },
     {
       "name": "Campaign Creators",
@@ -1932,7 +2801,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Campaign Creators is a HubSpot implementation and marketing services provider, not a competing CRM and marketing automation software platform."
+      "rationale": "HubSpot implementation and marketing agency serving HubSpot users, not a CRM or marketing-automation platform competitor/comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "HubSpot implementation and marketing agency serving HubSpot users, not a CRM or marketing-automation platform competitor/comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "HubSpot implementation/services agency, not a CRM or marketing-automation platform; serves the category rather than competing with HubSpot."
+        }
+      ]
     },
     {
       "name": "Webflow",
@@ -1965,8 +2846,25 @@
           "https://x.com/webflow"
         ]
       },
-      "relevant": true,
-      "rationale": "Both sell B2B platforms to marketing teams for building, managing, optimizing, and converting traffic through websites and content."
+      "relevant": false,
+      "rationale": "Webflow is a website builder/CMS, not a CRM or marketing-automation platform; same broad marketing audience but different job-to-be-done, so resemblance is weak.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Webflow is a B2B web marketing and CMS platform for marketing teams, overlapping HubSpot\u2019s website/content and demand-generation buyer use cases."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Webflow is a website builder/CMS, not a CRM or marketing-automation platform; same broad marketing audience but different job-to-be-done, so resemblance is weak."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "Webflow sells website building/CMS, not CRM or marketing automation; only loose adjacency in marketing SaaS."
+        }
+      ]
     },
     {
       "name": "AI Lead Flow",
@@ -1991,7 +2889,24 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide B2B lead-generation and outreach automation software for go-to-market teams, with overlapping prospecting, personalization, enrichment, and conversion workflows."
+      "rationale": "AI-powered prospecting, enrichment, and personalized outreach overlap with HubSpot\u2019s sales and marketing automation for go-to-market teams.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "AI-powered prospecting, enrichment, and personalized outreach overlap with HubSpot\u2019s sales and marketing automation for go-to-market teams."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Lead-generation data enrichment and outreach tool that complements CRMs rather than competing as a CRM/marketing-automation platform; product overlap only weak."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Both sell B2B SaaS to SMB sales/marketing teams for finding and converting leads; adjacent lead-gen/automation comparable."
+        }
+      ]
     },
     {
       "name": "All Your Leads",
@@ -2016,7 +2931,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide B2B lead generation and marketing automation tools for sales and marketing teams seeking to acquire and manage customers."
+      "rationale": "Marketing and lead-generation platform with email, social, chatbot, review, and performance tools overlaps HubSpot\u2019s SMB go-to-market automation offering.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Marketing and lead-generation platform with email, social, chatbot, review, and performance tools overlaps HubSpot\u2019s SMB go-to-market automation offering."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "B2B SaaS marketing automation and lead-generation platform for go-to-market teams, overlapping HubSpot's marketing hub product and SMB buyer market."
+        }
+      ]
     },
     {
       "name": "Inbox",
@@ -2042,7 +2969,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Inbox is a marketing agency and HubSpot implementation partner, not a CRM or marketing-automation software platform competing for the same purchase."
+      "rationale": "Marketing agency implementing HubSpot and related services for clients, not a CRM or marketing-automation platform competitor/comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Marketing agency implementing HubSpot and related services for clients, not a CRM or marketing-automation platform competitor/comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Marketing agency implementing HubSpot for clients, not a CRM/marketing platform competitor; serves the category rather than competing."
+        }
+      ]
     },
     {
       "name": "Core Client LLC",
@@ -2064,7 +3003,19 @@
         "social_urls": []
       },
       "relevant": true,
-      "rationale": "Core Client offers CRM, marketing automation, lead conversion, and sales tools for businesses, overlapping HubSpot\u2019s core platform and go-to-market buyer persona."
+      "rationale": "CRM and marketing-automation platform for businesses, directly comparable to HubSpot\u2019s core go-to-market software.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "CRM and marketing-automation platform for businesses, directly comparable to HubSpot\u2019s core go-to-market software."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "CRM platform with marketing automation, sales automation, and analytics \u2014 same product and SMB/mid-market buyer as HubSpot; size irrelevant."
+        }
+      ]
     },
     {
       "name": "WebLogic Marketing",
@@ -2086,7 +3037,24 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "WebLogic primarily offers conversational AI and custom automation, not a CRM-centered marketing automation platform evaluated for HubSpot\u2019s core job."
+      "rationale": "AI consultancy/agency building tailored chatbots and automation for clients across industries, not a productized CRM/marketing platform competing with HubSpot.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "AI platform automates lead generation, customer interactions, and marketing campaigns for business go-to-market teams, overlapping HubSpot's marketing-automation use case."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "AI consultancy/agency building tailored chatbots and automation for clients across industries, not a productized CRM/marketing platform competing with HubSpot."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "AI services/agency-style implementer of chatbots and automation, not a CRM/marketing-automation SaaS platform like HubSpot.', ' ' ' '"
+        }
+      ]
     },
     {
       "name": "Dahbah Marketing",
@@ -2111,7 +3079,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Offers an all-in-one CRM, marketing automation, lead capture, and sales follow-up platform for businesses, overlapping HubSpot\u2019s core product and buyers."
+      "rationale": "All-in-one CRM, marketing automation, lead capture, email follow-up, and sales tools closely overlap HubSpot\u2019s SMB go-to-market platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "All-in-one CRM, marketing automation, lead capture, email follow-up, and sales tools closely overlap HubSpot\u2019s SMB go-to-market platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "All-in-one CRM and marketing automation platform for SMB growth teams, matching HubSpot on product, buyer, and business model."
+        }
+      ]
     },
     {
       "name": "Agent Customer Care",
@@ -2133,7 +3113,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "AI customer-support automation is not a CRM or marketing-automation platform; overlapping business buyers alone do not establish the same job to be done."
+      "rationale": "AI customer-support solution/implementation service, not a CRM or marketing-automation platform for go-to-market teams.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "AI customer-support solution/implementation service, not a CRM or marketing-automation platform for go-to-market teams."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "AI customer-care implementation service, not a CRM/marketing automation platform; adjacent support tooling, not a HubSpot competitor."
+        }
+      ]
     },
     {
       "name": "Profoundly",
@@ -2159,7 +3151,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Profoundly is a marketplace for HubSpot consultants and services, not a CRM or marketing-automation software platform competing for the same job."
+      "rationale": "Marketplace for HubSpot consultants and contractors; it serves HubSpot users rather than providing competing CRM or marketing-automation software.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Marketplace for HubSpot consultants and contractors; it serves HubSpot users rather than providing competing CRM or marketing-automation software."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Marketplace for HubSpot consultants/freelancers; serves the HubSpot ecosystem as a service provider, not a competing CRM/marketing-automation platform."
+        }
+      ]
     },
     {
       "name": "NgageContent",
@@ -2184,7 +3188,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "NgageContent is a marketing agency and HubSpot implementer, not a CRM or marketing automation software platform competing for the same job."
+      "rationale": "Digital marketing agency and HubSpot implementation partner, not a CRM or marketing-automation platform competitor/comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Digital marketing agency and HubSpot implementation partner, not a CRM or marketing-automation platform competitor/comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Digital marketing agency implementing HubSpot for clients, not a CRM/marketing-automation platform competitor or comparable."
+        }
+      ]
     },
     {
       "name": "Make the Grade",
@@ -2211,7 +3227,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Make the Grade is a HubSpot consulting and integration agency, not a competing CRM and marketing automation software platform."
+      "rationale": "HubSpot implementation and marketing agency serving HubSpot users, not a CRM or marketing-automation platform competitor.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "HubSpot implementation and marketing agency serving HubSpot users, not a CRM or marketing-automation platform competitor."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "HubSpot consulting and integration agency that implements the seed's product for clients, not a competing CRM/marketing platform."
+        }
+      ]
     },
     {
       "name": "Cetdigit",
@@ -2239,7 +3267,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Cetdigit is a CRM implementation and managed-services consultancy using HubSpot and Salesforce, not a competing CRM and marketing-automation platform."
+      "rationale": "AI-agent automation and CRM implementation layer built for HubSpot/Salesforce users, not a standalone CRM and marketing-automation platform competitor.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "AI-agent automation and CRM implementation layer built for HubSpot/Salesforce users, not a standalone CRM and marketing-automation platform competitor."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Builds AI voice agents and implementations on top of HubSpot/Salesforce \u2014 an ecosystem partner/integrator, not a competing CRM platform."
+        }
+      ]
     },
     {
       "name": "Forge8.Digital",
@@ -2267,7 +3307,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Forge8 is vertical field-service operations software for contractors, not a general CRM and marketing-automation platform evaluated for the same core job."
+      "rationale": "Field-service operations platform for contractors, not a general CRM and marketing automation platform for SMB go-to-market teams.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Field-service operations platform for contractors, not a general CRM and marketing automation platform for SMB go-to-market teams."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Field-service management platform for trades contractors (scheduling, billing, job pipelines), not a CRM/marketing-automation platform for go-to-market teams; weak overlap only."
+        }
+      ]
     },
     {
       "name": "TSL Marketing, LLC.",
@@ -2296,7 +3348,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "TSL Marketing is an agency delivering managed marketing services, not a CRM or marketing-automation software platform evaluated for the same job."
+      "rationale": "TSL Marketing is a services agency serving B2B tech clients, not a CRM or marketing-automation software platform comparable to HubSpot.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "TSL Marketing is a services agency serving B2B tech clients, not a CRM or marketing-automation software platform comparable to HubSpot."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "TSL is a marketing services agency serving B2B tech clients, not a CRM/marketing-automation software platform; it serves the category rather than competing."
+        }
+      ]
     },
     {
       "name": "Periti Digital",
@@ -2320,7 +3384,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Periti Digital is a consultancy implementing and optimizing HubSpot for clients, not a competing CRM and marketing-automation software platform."
+      "rationale": "HubSpot implementation consultancy and integration partner, not a CRM or marketing-automation platform competing with HubSpot.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "HubSpot implementation consultancy and integration partner, not a CRM or marketing-automation platform competing with HubSpot."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "HubSpot implementation consultancy serving the category, not a competing CRM/marketing-automation platform."
+        }
+      ]
     },
     {
       "name": "Hypha HubSpot Development",
@@ -2349,7 +3425,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Hypha is a services agency implementing HubSpot for clients, not a competing CRM and marketing-automation software platform."
+      "rationale": "HubSpot implementation and marketing agency serving clients, not a CRM or marketing-automation platform competitor or comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "HubSpot implementation and marketing agency serving clients, not a CRM or marketing-automation platform competitor or comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "HubSpot partner agency providing marketing/development services on HubSpot \u2014 serves the category as a client-facing agency, not a competing CRM platform."
+        }
+      ]
     },
     {
       "name": "Learning Deck",
@@ -2372,7 +3460,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Learning Deck is a HubSpot training provider, not a competing CRM or marketing automation platform evaluated for the same job."
+      "rationale": "Training provider teaching HubSpot CRM skills, not a CRM or marketing-automation platform serving go-to-market teams.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Training provider teaching HubSpot CRM skills, not a CRM or marketing-automation platform serving go-to-market teams."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Training provider teaching HubSpot CRM skills, not a CRM/marketing-automation platform; serves HubSpot users, doesn't compete with HubSpot."
+        }
+      ]
     },
     {
       "name": "Services Engine",
@@ -2400,7 +3500,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Services Engine offers CRM, lead management, and marketing automation for SMB home-service businesses, overlapping HubSpot\u2019s core platform and buyer use cases."
+      "rationale": "Vertical SaaS platform combines CRM, lead management, marketing automation, and customer engagement for home-service businesses, directly comparable to HubSpot for that segment.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Vertical SaaS platform combines CRM, lead management, marketing automation, and customer engagement for home-service businesses, directly comparable to HubSpot for that segment."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "All-in-one CRM and marketing-automation platform for SMBs (home-services vertical); same product and business model as HubSpot, a vertical comparable."
+        }
+      ]
     },
     {
       "name": "Goose Digital",
@@ -2429,7 +3541,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Goose Digital is an agency implementing CRM and marketing automation for clients, not a competing software platform evaluated for the same job."
+      "rationale": "Marketing agency implementing CRM and automation for clients, not a CRM or marketing-automation platform competitor.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Marketing agency implementing CRM and automation for clients, not a CRM or marketing-automation platform competitor."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "B2B marketing agency offering CRM/automation consulting services, not a software platform; serves the category rather than competing with HubSpot."
+        }
+      ]
     },
     {
       "name": "Automated and AI Solutions",
@@ -2455,7 +3579,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Provides tailored AI automation services, not a core CRM and marketing-automation software platform evaluated for the same go-to-market job."
+      "rationale": "AI automation consultancy offering tailored services, not a CRM and marketing-automation platform comparable to HubSpot.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "AI automation consultancy offering tailored services, not a CRM and marketing-automation platform comparable to HubSpot."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "IT-services/consultancy building tailored AI automation solutions for clients, not a CRM/marketing-automation product platform competing with HubSpot."
+        }
+      ]
     },
     {
       "name": "Automation IN",
@@ -2477,7 +3613,19 @@
         "social_urls": []
       },
       "relevant": true,
-      "rationale": "Both offer all-in-one CRM and marketing automation for businesses and marketers, addressing lead capture, campaigns, and client management."
+      "rationale": "All-in-one CRM and marketing automation platform serving marketers and businesses, directly comparable to HubSpot's core product.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "All-in-one CRM and marketing automation platform serving marketers and businesses, directly comparable to HubSpot's core product."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "All-in-one CRM and marketing automation platform for SMBs \u2014 same product and market as HubSpot; size irrelevant."
+        }
+      ]
     },
     {
       "name": "Upperscore",
@@ -2504,7 +3652,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Upperscore is an agency implementing and optimizing HubSpot for clients, not a competing CRM and marketing-automation software platform."
+      "rationale": "Marketing agency implementing and training clients on HubSpot, not a CRM or marketing-automation platform competitor or comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Marketing agency implementing and training clients on HubSpot, not a CRM or marketing-automation platform competitor or comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "HubSpot implementation and marketing agency serving the category, not a CRM/marketing-automation platform competitor or comparable."
+        }
+      ]
     },
     {
       "name": "Leadlabs",
@@ -2529,7 +3689,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Leadlabs is a consulting and advertising service provider implementing HubSpot, not a competing CRM and marketing automation software platform."
+      "rationale": "Leadlabs is a HubSpot-focused marketing and implementation consultancy, serving HubSpot users rather than offering a competing CRM or automation platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Leadlabs is a HubSpot-focused marketing and implementation consultancy, serving HubSpot users rather than offering a competing CRM or automation platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "HubSpot implementation and LinkedIn ads consultancy/agency serving the category, not a competing CRM or marketing-automation platform."
+        }
+      ]
     },
     {
       "name": "Paradox Marketing",
@@ -2554,10 +3726,20 @@
         ]
       },
       "relevant": false,
-      "rationale": "Paradox Marketing is a marketing resource/content site, not a CRM and marketing-automation software platform evaluated for the same job."
+      "rationale": "Resource website offering marketing information, not a CRM and marketing-automation software platform competing with HubSpot.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Resource website offering marketing information, not a CRM and marketing-automation software platform competing with HubSpot."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Content/agency-style marketing services site, not a CRM or marketing-automation software platform; serves the category rather than competing with HubSpot."
+        }
+      ]
     }
   ],
-  "error": null,
-  "relevant_count_at_25": 3,
-  "precision_at_25": 12.0
+  "error": null
 }

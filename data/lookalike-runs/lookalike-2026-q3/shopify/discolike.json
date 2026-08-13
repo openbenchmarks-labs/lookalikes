@@ -7,18 +7,20 @@
     "name": "domain_similarity"
   },
   "k": 100,
-  "relevant_count": 22,
-  "precision_at_k": 22.0,
-  "relevant_count_at_10": 1,
-  "relevant_count_at_100": 22,
-  "precision_at_10": 10.0,
-  "precision_at_100": 22.0,
+  "relevant_count": 23,
+  "precision_at_k": 23.0,
+  "relevant_count_at_10": 2,
+  "relevant_count_at_25": 5,
+  "relevant_count_at_100": 23,
+  "precision_at_10": 20.0,
+  "precision_at_25": 20.0,
+  "precision_at_100": 23.0,
   "latency_ms": 1044,
   "cost_usd": null,
   "duplicates_removed": 5,
   "max_results": null,
-  "judge_model": "gpt-5.6",
-  "judged_at": "2026-07-27T03:40:42Z",
+  "judge_model": "majority(n=3): claude-opus-5,gpt-5.6-terra,kimi-k3",
+  "judged_at": "2026-08-10T19:25:07Z",
   "candidates": [
     {
       "name": "Shopify",
@@ -42,7 +44,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "This is a misattributed duplicate: the candidate uses Shopify\u2019s name and offering but has an unrelated n24tv.com domain."
+      "rationale": "Likely a duplicate/misattributed Shopify record: the n24tv.com domain does not identify an independent commerce-platform competitor.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Likely a duplicate/misattributed Shopify record: the n24tv.com domain does not identify an independent commerce-platform competitor."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Duplicate entry of the seed itself (same name) under mismatched domain n24tv.com; a company is not its own lookalike."
+        }
+      ]
     },
     {
       "name": "ecommerce.so",
@@ -64,7 +78,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Ecommerce.so is a Shopify-dependent store-building and automation layer, not an alternative commerce platform merchants would evaluate instead of Shopify."
+      "rationale": "Shopify-focused store-building service for merchants, but primarily an add-on built on Shopify rather than an independent commerce-platform competitor.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Shopify-focused store-building service for merchants, but primarily an add-on built on Shopify rather than an independent commerce-platform competitor."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Builds stores on top of Shopify rather than competing as an independent commerce platform; a dependent tool, not a peer."
+        }
+      ]
     },
     {
       "name": "Simple Bundles",
@@ -90,7 +116,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Simple Bundles is a Shopify add-on for product bundling, not a standalone commerce platform merchants would evaluate instead of Shopify."
+      "rationale": "Shopify app for product bundling and inventory workflows; it complements Shopify rather than providing a merchant commerce platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Shopify app for product bundling and inventory workflows; it complements Shopify rather than providing a merchant commerce platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Simple Bundles is a Shopify app/plugin for product bundling, not a commerce platform competitor; it depends on and extends Shopify's ecosystem rather than resembling it."
+        }
+      ]
     },
     {
       "name": "Sectionly",
@@ -113,7 +151,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Sectionly provides add-on apps for Shopify stores, not a standalone platform for creating and operating online storefronts."
+      "rationale": "Sectionly is a Shopify app vendor that complements Shopify stores, not an independent commerce platform competing with or comparable to Shopify.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Sectionly is a Shopify app vendor that complements Shopify stores, not an independent commerce platform competing with or comparable to Shopify."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Sectionly builds add-on apps for Shopify stores, serving Shopify's ecosystem as a partner, not a competing commerce platform."
+        }
+      ]
     },
     {
       "name": "Atlas",
@@ -141,7 +191,24 @@
         ]
       },
       "relevant": false,
-      "rationale": "Atlas is a Shopify-dependent store-building app, not a standalone commerce platform merchants would evaluate as an alternative to Shopify."
+      "rationale": "Atlas is a Shopify-app page builder built on Shopify's ecosystem, a supplier/add-on rather than a competing commerce platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Provides a Shopify-focused store and page-building platform for merchants, overlapping directly with Shopify\u2019s core online commerce functionality."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Atlas is a Shopify-app page builder built on Shopify's ecosystem, a supplier/add-on rather than a competing commerce platform."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "Shopify-dependent app/page builder, an ecosystem add-on rather than a competing commerce platform."
+        }
+      ]
     },
     {
       "name": "Build Your Store",
@@ -170,7 +237,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Build Your Store is a Shopify-dependent store-building tool, not an independent commerce platform merchants would evaluate instead of Shopify."
+      "rationale": "A Shopify-based store-building service and complementary merchant tool, not an independent commerce platform comparable to Shopify.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "A Shopify-based store-building service and complementary merchant tool, not an independent commerce platform comparable to Shopify."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Tool that builds stores on top of Shopify, not an independent commerce platform; ecosystem partner/service layer, not a competitor or comparable."
+        }
+      ]
     },
     {
       "name": "PagePilot.ai",
@@ -201,7 +280,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "PagePilot is a complementary Shopify landing-page tool, not an independent commerce platform for running stores, payments, fulfillment, and retail operations."
+      "rationale": "Shopify-focused landing-page tool and ecosystem add-on, not a full commerce platform competing with Shopify's storefront, payments, fulfillment, and retail operations.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Shopify-focused landing-page tool and ecosystem add-on, not a full commerce platform competing with Shopify's storefront, payments, fulfillment, and retail operations."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Shopify-ecosystem landing page builder app; a supplier/add-on for Shopify merchants, not a competing commerce platform."
+        }
+      ]
     },
     {
       "name": "Shopware",
@@ -232,7 +323,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Shopware directly overlaps Shopify as an e-commerce platform for merchants building and managing online stores, omnichannel sales, payments, and operations."
+      "rationale": "Shopware is a competing e-commerce platform for merchants to build and operate online stores, with comparable omnichannel, payments, and commerce-management capabilities.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Shopware is a competing e-commerce platform for merchants to build and operate online stores, with comparable omnichannel, payments, and commerce-management capabilities."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "E-commerce platform for merchants to build and run online stores with payments and analytics \u2014 direct Shopify competitor."
+        }
+      ]
     },
     {
       "name": "StoreBuild, Inc.",
@@ -258,8 +361,25 @@
           "https://www.youtube.com/@storebuildai"
         ]
       },
-      "relevant": false,
-      "rationale": "StoreBuild is a Shopify-dependent AI store-building and automation tool, complementary to Shopify rather than an alternative commerce platform buyers would evaluate instead."
+      "relevant": true,
+      "rationale": "AI-enabled platform for merchants to build and operate online stores, with sourcing, fulfillment, themes, and automation\u2014directly overlapping Shopify\u2019s commerce-platform job.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "AI-enabled platform for merchants to build and operate online stores, with sourcing, fulfillment, themes, and automation\u2014directly overlapping Shopify\u2019s commerce-platform job."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "AI store-builder tool built on top of Shopify serving Shopify merchants; a complement/supplier to the platform, not a competing commerce platform."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "SaaS helping merchants create and manage online stores; same buyer and job as Shopify, though built atop it."
+        }
+      ]
     },
     {
       "name": "Shopify Canada",
@@ -282,7 +402,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "This appears to be an unofficial or duplicate Shopify entry, not an independent commerce-platform company suitable as a lookalike."
+      "rationale": "Duplicate/misrepresented Shopify entry rather than a distinct company or independent lookalike.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Duplicate/misrepresented Shopify entry rather than a distinct company or independent lookalike."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Duplicate/regional entity of the seed itself (Shopify Canada), not a distinct competitor or comparable lookalike."
+        }
+      ]
     },
     {
       "name": "Salesorder",
@@ -307,7 +439,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Salesorder is wholesale operations/ERP software, not an online-store commerce platform; buyers would evaluate it for back-office management rather than storefront creation."
+      "rationale": "Wholesale sales, fulfillment, and accounting software, not a merchant storefront and commerce platform comparable to Shopify.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Wholesale sales, fulfillment, and accounting software, not a merchant storefront and commerce platform comparable to Shopify."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Wholesale order/inventory management for home-decor wholesalers; no storefront or commerce platform for merchants, different product and buyer."
+        }
+      ]
     },
     {
       "name": "Ecomatic",
@@ -332,7 +476,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Ecomatic is a marketing-content tool for Shopify users, not an e-commerce storefront and retail operations platform merchants would evaluate instead of Shopify."
+      "rationale": "AI content and marketing tool for Shopify merchants, not an e-commerce storefront, payments, fulfillment, or retail-operations platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "AI content and marketing tool for Shopify merchants, not an e-commerce storefront, payments, fulfillment, or retail-operations platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Ecomatic is a content-generation app for Shopify merchants, serving the ecosystem as a supplier, not a competing commerce platform."
+        }
+      ]
     },
     {
       "name": "Dropify",
@@ -362,7 +518,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Dropify, like Shopify, enables merchants to build and manage online stores with payments, fulfillment integrations, marketing, and commerce operations tools."
+      "rationale": "Dropify provides merchants with an e-commerce storefront platform, payment integrations, order tools, and marketing features, directly comparable to Shopify.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Dropify provides merchants with an e-commerce storefront platform, payment integrations, order tools, and marketing features, directly comparable to Shopify."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "E-commerce platform for building and managing online stores with payments and marketing tools \u2014 direct Shopify competitor on product and market."
+        }
+      ]
     },
     {
       "name": "Zeroagent",
@@ -389,7 +557,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Zeroagent is an AI shopping and support add-on for existing stores, not a platform merchants evaluate to create and operate storefronts."
+      "rationale": "AI assistant for Shopify merchants, not an e-commerce storefront and commerce-operations platform competing with Shopify.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "AI assistant for Shopify merchants, not an e-commerce storefront and commerce-operations platform competing with Shopify."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "AI chatbot plug-in for Shopify/WooCommerce stores; a complementary app serving merchants, not a competing storefront or commerce platform."
+        }
+      ]
     },
     {
       "name": "SHOPLINE's Ecommerce Platform",
@@ -414,7 +594,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide merchant-facing commerce platforms for building and operating online stores, including payments, inventory, marketing, and omnichannel sales."
+      "rationale": "SHOPLINE directly competes as a merchant e-commerce platform for building and operating online stores, with payments, inventory, marketing, and omnichannel tools.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "SHOPLINE directly competes as a merchant e-commerce platform for building and operating online stores, with payments, inventory, marketing, and omnichannel tools."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "SHOPLINE is an eCommerce platform for building and scaling online stores with payments, marketing, and inventory tools \u2014 a direct Shopify competitor."
+        }
+      ]
     },
     {
       "name": "aethero",
@@ -438,7 +630,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Aethero is a Shopify implementation and growth-services agency, not a competing commerce platform evaluated by merchants for the same core job."
+      "rationale": "Shopify-focused agency providing development, analytics, and marketing services to merchants; it uses and implements Shopify rather than competing as a commerce platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Shopify-focused agency providing development, analytics, and marketing services to merchants; it uses and implements Shopify rather than competing as a commerce platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Shopify-focused agency building stores on Shopify; serves the category as a service provider, not a competing commerce platform."
+        }
+      ]
     },
     {
       "name": "Sunrise Integration",
@@ -469,7 +673,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Sunrise Integration is an agency implementing and optimizing Shopify for merchants, not a competing e-commerce storefront platform."
+      "rationale": "Shopify-focused development agency serving Shopify merchants, not a commerce platform competing with or comparable to Shopify.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Shopify-focused development agency serving Shopify merchants, not a commerce platform competing with or comparable to Shopify."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Shopify development agency serving merchants on the platform; a services partner for the category, not a competing commerce platform."
+        }
+      ]
     },
     {
       "name": "Ecomcoder",
@@ -496,7 +712,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Ecomcoder is an add-on theme editor for Shopify stores, not a standalone commerce platform merchants would evaluate instead of Shopify."
+      "rationale": "Shopify-specific theme-editing add-on serving Shopify merchants, not a standalone commerce platform or comparable storefront and operations provider.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Shopify-specific theme-editing add-on serving Shopify merchants, not a standalone commerce platform or comparable storefront and operations provider."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Shopify theme-editing app built on Shopify; a supplier/complement to the platform, not a competing commerce platform."
+        }
+      ]
     },
     {
       "name": "Alter Origin",
@@ -519,7 +747,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Alter Origin is a Shopify-dependent store enhancement tool, not an independent commerce platform merchants would evaluate instead of Shopify."
+      "rationale": "Shopify-specific store-building and management tool is a complementary app/platform, not an independent commerce platform comparable to Shopify.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Shopify-specific store-building and management tool is a complementary app/platform, not an independent commerce platform comparable to Shopify."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Shopify-specific store-management tool built on Shopify's ecosystem; a supplier/partner layer, not a competing commerce platform."
+        }
+      ]
     },
     {
       "name": "Predicmart",
@@ -542,7 +782,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Predicmart sells add-on apps for Shopify stores, not a commerce platform merchants would evaluate instead of Shopify for storefront operations."
+      "rationale": "Predicmart is a Shopify app vendor serving Shopify merchants, not an online-store commerce platform comparable to Shopify.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Predicmart is a Shopify app vendor serving Shopify merchants, not an online-store commerce platform comparable to Shopify."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Builds apps for Shopify's ecosystem \u2014 a partner/supplier to merchants on the seed's platform, not a competing commerce platform."
+        }
+      ]
     },
     {
       "name": "Talkvisor",
@@ -567,7 +819,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Talkvisor is a customer-support/chatbot add-on for Shopify stores, not an e-commerce storefront and commerce operations platform."
+      "rationale": "AI customer-support add-on for Shopify stores, not an e-commerce storefront and commerce-operations platform comparable to Shopify.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "AI customer-support add-on for Shopify stores, not an e-commerce storefront and commerce-operations platform comparable to Shopify."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "AI customer-service chatbot built for Shopify merchants\u2014a supplier/app ecosystem tool, not a commerce platform competing with Shopify."
+        }
+      ]
     },
     {
       "name": "AI Commerce Solutions",
@@ -592,7 +856,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "AI Commerce Solutions is a marketing/SEO service for existing Shopify merchants, not an e-commerce storefront and retail operations platform."
+      "rationale": "Agency/service optimizing Shopify stores with SEO and AI integrations, not a commerce platform competing with or comparable to Shopify.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Agency/service optimizing Shopify stores with SEO and AI integrations, not a commerce platform competing with or comparable to Shopify."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "An agency/service optimizing Shopify stores via SEO and ChatGPT, not a competing commerce platform; serves the category rather than resembling it."
+        }
+      ]
     },
     {
       "name": "SHOPIFIO",
@@ -625,7 +901,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "SHOPIFIO is an agency implementing and managing Shopify stores for clients, not a competing commerce platform."
+      "rationale": "SHOPIFIO is a Shopify implementation and marketing agency, serving Shopify merchants rather than providing a competing commerce platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "SHOPIFIO is a Shopify implementation and marketing agency, serving Shopify merchants rather than providing a competing commerce platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Shopify services agency that sets up and manages client stores on Shopify; serves the category, doesn't offer a competing commerce platform."
+        }
+      ]
     },
     {
       "name": "eCommerce Fastlane",
@@ -660,7 +948,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "eCommerce Fastlane is a media and educational resource for Shopify users, not an e-commerce storefront and operations platform competing with Shopify."
+      "rationale": "Media and education resource for Shopify users, not an e-commerce storefront platform competing with or comparable to Shopify.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Media and education resource for Shopify users, not an e-commerce storefront platform competing with or comparable to Shopify."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Media/content platform advising Shopify merchants on AI commerce; it serves the ecosystem as a resource, not a competing commerce platform."
+        }
+      ]
     },
     {
       "name": "Monieshop",
@@ -683,7 +983,19 @@
         "social_urls": []
       },
       "relevant": true,
-      "rationale": "Monieshop provides merchant-facing online store creation, catalog, payment, and order-management tools, overlapping Shopify\u2019s core commerce platform and buyer persona."
+      "rationale": "E-commerce platform enabling merchants to build online stores, manage catalogs, payments, orders, and customer operations, with WhatsApp as a sales channel.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "E-commerce platform enabling merchants to build online stores, manage catalogs, payments, orders, and customer operations, with WhatsApp as a sales channel."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "E-commerce platform letting merchants build online stores, manage catalogs, payments, and orders \u2014 same product and merchant market as Shopify, via WhatsApp."
+        }
+      ]
     },
     {
       "name": "Shopline Singapore",
@@ -710,7 +1022,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "SHOPLINE is an e-commerce platform enabling merchants to build and manage online stores, payments, marketing, and omnichannel operations, directly overlapping Shopify."
+      "rationale": "SHOPLINE directly competes as a merchant commerce platform for building online stores, payments, marketing, analytics, and omnichannel operations.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "SHOPLINE directly competes as a merchant commerce platform for building online stores, payments, marketing, analytics, and omnichannel operations."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "E-commerce platform for building and managing online stores with integrated payments and marketing tools \u2014 direct Shopify competitor on product and market."
+        }
+      ]
     },
     {
       "name": "Shopiapps",
@@ -732,7 +1056,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Shopiapps is a Shopify customization and development service provider, not an independent commerce platform merchants would evaluate instead of Shopify."
+      "rationale": "Shopiapps is a Shopify-focused development and customization service, not an independent commerce-platform competitor or comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Shopiapps is a Shopify-focused development and customization service, not an independent commerce-platform competitor or comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Shopify-focused service agency doing store customization and app development; serves the platform ecosystem rather than competing as a commerce platform."
+        }
+      ]
     },
     {
       "name": "Jentegrity Jewelry And Gifts",
@@ -761,7 +1097,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Jentegrity is primarily a jewelry and gifts retailer, not an e-commerce storefront platform merchants would evaluate against Shopify."
+      "rationale": "Jewelry and gifts retailer using or describing e-commerce tools, not a commerce platform competing with Shopify.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Jewelry and gifts retailer using or describing e-commerce tools, not a commerce platform competing with Shopify."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "A jewelry/gifts retail brand, not a commerce platform; it's a merchant (typical Shopify customer), not a competitor or comparable."
+        }
+      ]
     },
     {
       "name": "SellersCommerce",
@@ -788,7 +1136,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide ecommerce platforms for businesses to build and manage online storefronts, catalogs, checkout, integrations, and multichannel commerce operations."
+      "rationale": "B2B ecommerce platform for creating buyer portals, catalogs, checkout, and multichannel commerce operations; a direct commerce-platform comparable to Shopify.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "B2B ecommerce platform for creating buyer portals, catalogs, checkout, and multichannel commerce operations; a direct commerce-platform comparable to Shopify."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "B2B e-commerce platform with storefronts, catalogs, and checkout\u2014same core product category as Shopify, a direct comparable/competitor."
+        }
+      ]
     },
     {
       "name": "Ecommerce.com.au",
@@ -814,8 +1174,25 @@
           "https://www.instagram.com/ecommerce/"
         ]
       },
-      "relevant": true,
-      "rationale": "Both provide merchants with platforms to launch and operate online stores, including product, fulfillment, pricing, and shipping management."
+      "relevant": false,
+      "rationale": "Primarily a dropshipping sourcing and fulfillment service that integrates with Shopify, making it a complementary merchant tool rather than a storefront-platform peer.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Primarily a dropshipping sourcing and fulfillment service that integrates with Shopify, making it a complementary merchant tool rather than a storefront-platform peer."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Ecommerce platform for launching and running online stores with fulfillment and product management; same merchant buyers and product category as Shopify, a direct comparable."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "Dropshipping sourcing/fulfillment tool that integrates with Shopify rather than competing as a commerce storefront platform; complement, not peer."
+        }
+      ]
     },
     {
       "name": "Shopifyv",
@@ -838,7 +1215,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Shopifyv appears to be a near-duplicate or impersonating entry rather than a distinct, credible e-commerce platform lookalike."
+      "rationale": "Likely a Shopify-branded duplicate or parody entry rather than an independently established commerce-platform competitor.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Likely a Shopify-branded duplicate or parody entry rather than an independently established commerce-platform competitor."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Apparent parody/duplicate entry mimicking Shopify's name and branding; exclude per rules despite similar described product."
+        }
+      ]
     },
     {
       "name": "IIT Developer",
@@ -867,7 +1256,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "IIT Developer is a custom development and digital marketing agency, not a self-service commerce platform merchants would evaluate against Shopify."
+      "rationale": "Custom web, app, and marketing agency; it builds e-commerce sites for clients rather than offering a merchant commerce platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Custom web, app, and marketing agency; it builds e-commerce sites for clients rather than offering a merchant commerce platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Agency building custom sites and e-commerce platforms for clients; services firm serving the category, not a commerce platform competitor."
+        }
+      ]
     },
     {
       "name": "Real Infotech Solutions",
@@ -892,7 +1293,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Real Infotech is a marketing and e-commerce services agency, not a commerce platform merchants evaluate to build and operate stores."
+      "rationale": "Digital marketing and e-commerce services agency, not a merchant commerce platform for building and operating online stores.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Digital marketing and e-commerce services agency, not a merchant commerce platform for building and operating online stores."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Digital marketing and e-commerce services agency, not a commerce platform; serves merchants rather than competing with Shopify."
+        }
+      ]
     },
     {
       "name": "P3 Media",
@@ -918,7 +1331,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "P3 Media is an agency implementing Shopify for clients, not a competing commerce platform merchants would evaluate instead of Shopify."
+      "rationale": "Agency providing Shopify implementation, marketing, and optimization services; it serves Shopify merchants rather than operating a competing commerce platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Agency providing Shopify implementation, marketing, and optimization services; it serves Shopify merchants rather than operating a competing commerce platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Shopify services agency, not a commerce platform; serves the category rather than competing with it."
+        }
+      ]
     },
     {
       "name": "Aasaan",
@@ -955,7 +1380,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Aasaan is a no-code e-commerce platform for merchants to build and manage online stores, directly overlapping Shopify\u2019s core storefront offering and buyers."
+      "rationale": "No-code e-commerce platform for merchants to build online stores, manage catalogs and checkout; directly comparable to Shopify despite narrower scope.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "No-code e-commerce platform for merchants to build online stores, manage catalogs and checkout; directly comparable to Shopify despite narrower scope."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "No-code e-commerce platform for building and managing online stores; directly competes with Shopify on product, market, and business model."
+        }
+      ]
     },
     {
       "name": "Chative",
@@ -983,7 +1420,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Chative provides e-commerce customer-support and engagement software, not a platform for creating and operating online stores like Shopify."
+      "rationale": "E-commerce-focused customer engagement tool, but not a storefront, commerce operations, payments, or fulfillment platform comparable to Shopify.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "E-commerce-focused customer engagement tool, but not a storefront, commerce operations, payments, or fulfillment platform comparable to Shopify."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Live-chat/chatbot support tool for e-commerce merchants, not a commerce/storefront platform; complementary supplier to Shopify's category, not a competitor or comparable."
+        }
+      ]
     },
     {
       "name": "Sell Plus",
@@ -1006,7 +1455,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Sell Plus is a Shopify implementation and optimization agency, not an alternative commerce platform merchants would evaluate instead of Shopify."
+      "rationale": "Shopify development agency serving merchants, not a commerce platform competing with or comparable to Shopify.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Shopify development agency serving merchants, not a commerce platform competing with or comparable to Shopify."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Shopify development agency serving merchants on the platform; a service provider in the ecosystem, not a competing commerce platform."
+        }
+      ]
     },
     {
       "name": "SellApp",
@@ -1033,7 +1494,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "SellApp provides no-code online storefronts, checkout, payments, and commerce management for digital-product merchants, overlapping Shopify\u2019s core platform and buyer use case."
+      "rationale": "Digital-commerce platform enabling merchants to build online stores, process payments, and market products; a focused Shopify comparable for digital sellers.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Digital-commerce platform enabling merchants to build online stores, process payments, and market products; a focused Shopify comparable for digital sellers."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "No-code online store builder with payments, checkout, and marketing tools \u2014 same e-commerce platform product and business model as Shopify, focused on digital goods."
+        }
+      ]
     },
     {
       "name": "Globify",
@@ -1062,7 +1535,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Globify is a digital agency implementing Shopify stores and transformation services, not a commerce platform merchants would evaluate as a Shopify alternative."
+      "rationale": "Digital agency providing Shopify development and transformation services; it serves Shopify merchants rather than offering a competing commerce platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Digital agency providing Shopify development and transformation services; it serves Shopify merchants rather than offering a competing commerce platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Digital agency building Shopify stores and e-commerce services; serves the category as a service provider, not a competing commerce platform."
+        }
+      ]
     },
     {
       "name": "Qikify",
@@ -1091,7 +1576,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Qikify sells add-on apps for Shopify stores, not a standalone commerce platform merchants would evaluate against Shopify for store creation and operations."
+      "rationale": "Qikify is a Shopify app vendor serving Shopify merchants, not an independent commerce platform comparable to Shopify.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Qikify is a Shopify app vendor serving Shopify merchants, not an independent commerce platform comparable to Shopify."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Qikify builds Shopify apps for merchants; it's a supplier in Shopify's ecosystem, not a commerce-platform competitor or comparable."
+        }
+      ]
     },
     {
       "name": "MyCartell",
@@ -1116,7 +1613,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "MyCartell directly overlaps Shopify\u2019s core storefront, payments, and inventory platform for merchants creating and managing online stores."
+      "rationale": "MyCartell provides merchants an online-store platform with payments, inventory, product pages, and integrations, directly comparable to Shopify.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "MyCartell provides merchants an online-store platform with payments, inventory, product pages, and integrations, directly comparable to Shopify."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "E-commerce platform for building online stores with payments and inventory management \u2014 same product, market, and model as Shopify."
+        }
+      ]
     },
     {
       "name": "Zopi",
@@ -1141,7 +1650,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Zopi is a complementary dropshipping sourcing and fulfillment tool integrated with Shopify, not an alternative commerce storefront platform."
+      "rationale": "Zopi is a dropshipping-management app integrated with Shopify, complementing merchants\u2019 stores rather than providing a comparable commerce platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Zopi is a dropshipping-management app integrated with Shopify, complementing merchants\u2019 stores rather than providing a comparable commerce platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Zopi is a dropshipping add-on that integrates with Shopify, not a standalone storefront/commerce platform; complementary tool, not a competitor or comparable."
+        }
+      ]
     },
     {
       "name": "LadiPageAI",
@@ -1163,7 +1684,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "LadiPageAI is primarily a landing-page, CRM, and marketing-automation tool, not an online-store and commerce-operations platform."
+      "rationale": "Primarily a landing-page, CRM, and marketing-automation tool, not a merchant commerce platform for operating online stores, fulfillment, and retail.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Primarily a landing-page, CRM, and marketing-automation tool, not a merchant commerce platform for operating online stores, fulfillment, and retail."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Landing-page builder with CRM/automation, not a commerce/storefront platform with payments and fulfillment; marketing tool, not a Shopify peer."
+        }
+      ]
     },
     {
       "name": "Shipline AI",
@@ -1186,7 +1719,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Shipline AI is a complementary dropshipping store-generation tool built on Shopify, not an independent commerce platform merchants would evaluate as a Shopify alternative."
+      "rationale": "Shopify-specific dropshipping automation tool; it supports merchants on Shopify rather than operating a comparable commerce platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Shopify-specific dropshipping automation tool; it supports merchants on Shopify rather than operating a comparable commerce platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Dropshipping add-on that builds stores on Shopify; serves Shopify users as a complementary tool, not a competing commerce platform."
+        }
+      ]
     },
     {
       "name": "Shopiroller Inc.",
@@ -1225,7 +1770,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Shopiroller provides an online-store creation and multichannel commerce platform, serving merchants with the same core e-commerce job as Shopify."
+      "rationale": "E-commerce platform for merchants to create and manage online stores, orders, payments, and multichannel sales; directly comparable to Shopify.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "E-commerce platform for merchants to create and manage online stores, orders, payments, and multichannel sales; directly comparable to Shopify."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "E-commerce platform for building and managing online stores with multichannel selling, payments, and order management \u2014 same product and merchant market as Shopify."
+        }
+      ]
     },
     {
       "name": "Power Commerce",
@@ -1252,7 +1809,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Power Commerce is an e-commerce consultancy implementing and optimizing Shopify stores, not a competing online-store commerce platform."
+      "rationale": "E-commerce consulting agency serving Shopify merchants, not a commerce platform competing with or comparable to Shopify.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "E-commerce consulting agency serving Shopify merchants, not a commerce platform competing with or comparable to Shopify."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "eCommerce consulting agency serving Shopify merchants; a service provider in the ecosystem, not a competing commerce platform."
+        }
+      ]
     },
     {
       "name": "Essential Apps",
@@ -1277,7 +1846,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Essential Apps provides add-on conversion tools for Shopify stores, not a commerce platform merchants would evaluate as a Shopify alternative."
+      "rationale": "Builds conversion and engagement apps for Shopify stores; it is a Shopify ecosystem supplier, not a competing commerce platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Builds conversion and engagement apps for Shopify stores; it is a Shopify ecosystem supplier, not a competing commerce platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Sells add-on apps for Shopify stores, an ecosystem supplier, not a competing commerce platform; no storefront product of its own."
+        }
+      ]
     },
     {
       "name": "Jumpseller",
@@ -1309,7 +1890,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Jumpseller, like Shopify, enables merchants to create and manage online stores, payments, shipping, and multichannel commerce."
+      "rationale": "E-commerce SaaS enabling merchants to build and manage online stores, with payments, sales-channel integrations, and store operations comparable to Shopify.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "E-commerce SaaS enabling merchants to build and manage online stores, with payments, sales-channel integrations, and store operations comparable to Shopify."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "E-commerce platform for building and managing online stores with payments and sales-channel integrations \u2014 direct Shopify competitor, smaller scale."
+        }
+      ]
     },
     {
       "name": "On The Road",
@@ -1335,7 +1928,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "On The Road is a Shopify implementation and optimization agency, not an e-commerce storefront platform merchants would evaluate instead of Shopify."
+      "rationale": "Shopify-focused development agency serving merchants, not a commerce platform competing with or comparable to Shopify.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Shopify-focused development agency serving merchants, not a commerce platform competing with or comparable to Shopify."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Shopify development agency providing services to merchants, not a commerce platform competitor; agencies serving the category are excluded."
+        }
+      ]
     },
     {
       "name": "Website Template",
@@ -1360,7 +1965,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "A freelancer selling website templates and setup support is not a commerce platform for managing storefronts, payments, fulfillment, and retail operations."
+      "rationale": "Sells website templates and freelance setup services, not a full commerce platform for merchants\u2019 store, retail, fulfillment, and operational management.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Sells website templates and freelance setup services, not a full commerce platform for merchants\u2019 store, retail, fulfillment, and operational management."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Freelancer selling ready-made website templates, not a commerce platform; a supplier in Shopify's ecosystem, not a competitor or comparable."
+        }
+      ]
     },
     {
       "name": "BizClues",
@@ -1383,7 +2000,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "BizClues is a complementary multichannel operations dashboard integrating Shopify, not a storefront commerce platform merchants would evaluate instead of Shopify."
+      "rationale": "E-commerce operations platform for merchants, but primarily a marketplace-management layer integrating with Shopify rather than a storefront commerce platform competitor.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "E-commerce operations platform for merchants, but primarily a marketplace-management layer integrating with Shopify rather than a storefront commerce platform competitor."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Multichannel sales/inventory dashboard that integrates with Shopify as an ecosystem add-on, not a storefront commerce platform competitor."
+        }
+      ]
     },
     {
       "name": "EprosperFy",
@@ -1413,7 +2042,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "EprosperFy is a Shopify-focused services agency, not an e-commerce storefront platform merchants would evaluate instead of Shopify."
+      "rationale": "Shopify-focused agency providing setup, design, and optimization services; it serves Shopify merchants rather than offering a competing commerce platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Shopify-focused agency providing setup, design, and optimization services; it serves Shopify merchants rather than offering a competing commerce platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Agency servicing Shopify stores (setup, CRO, design); serves the ecosystem rather than competing as a commerce platform."
+        }
+      ]
     },
     {
       "name": "Digital Commerce Alchemy",
@@ -1438,7 +2079,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Digital Commerce Alchemy is an e-commerce development and optimization service, not a merchant storefront commerce platform competing with Shopify."
+      "rationale": "Agency/service provider optimizing merchants' e-commerce sites, not a commerce platform for creating and operating online stores.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Agency/service provider optimizing merchants' e-commerce sites, not a commerce platform for creating and operating online stores."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Agency/consultancy that optimizes and builds on platforms like Shopify, serving the category rather than competing as a commerce platform."
+        }
+      ]
     },
     {
       "name": "SHOPLINE Sdn Bhd",
@@ -1464,7 +2117,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "SHOPLINE is an omnichannel commerce platform offering online storefronts, POS, sales management, and merchant tools that directly overlap Shopify\u2019s core offering."
+      "rationale": "Omnichannel commerce platform offering online-store building, POS, marketplace integrations, marketing, and retail operations for merchants\u2014directly comparable to Shopify.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Omnichannel commerce platform offering online-store building, POS, marketplace integrations, marketing, and retail operations for merchants\u2014directly comparable to Shopify."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Omnichannel commerce platform with store builder, POS, and marketplace integrations \u2014 direct Shopify competitor on product, market, and model."
+        }
+      ]
     },
     {
       "name": "Chatbotify",
@@ -1489,7 +2154,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Chatbotify is a chatbot add-on for Shopify merchants, not an e-commerce storefront and retail operations platform competing with Shopify."
+      "rationale": "Chatbotify is an add-on customer-support tool for Shopify merchants, not an e-commerce storefront and commerce-operations platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Chatbotify is an add-on customer-support tool for Shopify merchants, not an e-commerce storefront and commerce-operations platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Chatbot add-on built for Shopify stores; an ecosystem app/supplier, not a commerce platform competitor or comparable."
+        }
+      ]
     },
     {
       "name": "ShopPay",
@@ -1513,7 +2190,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Appears to be an impersonating or duplicate Shopify entry using a suspicious Shopify-like domain, not a distinct commerce-platform company."
+      "rationale": "ShopPay appears to be a Shopify-branded or duplicate entry rather than an independent commerce-platform competitor or comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "ShopPay appears to be a Shopify-branded or duplicate entry rather than an independent commerce-platform competitor or comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Duplicate/parody entry: ShopPay is Shopify's own payment product on a Shopify-branded clone domain, describing Shopify itself, not an independent comparable."
+        }
+      ]
     },
     {
       "name": "EComposer",
@@ -1544,7 +2233,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "EComposer is an add-on page builder exclusively for Shopify, not an independent commerce/storefront platform merchants would evaluate instead of Shopify."
+      "rationale": "EComposer is a complementary Shopify-specific page-building app, not an independent commerce platform comparable to Shopify.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "EComposer is a complementary Shopify-specific page-building app, not an independent commerce platform comparable to Shopify."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Shopify app/plugin (page builder) built on Shopify's ecosystem; a supplier to merchants, not a competing commerce platform."
+        }
+      ]
     },
     {
       "name": "Pure Commerce",
@@ -1570,7 +2271,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Pure Commerce is a Shopify-focused agency and consultancy implementing stores, not a competing commerce platform merchants would evaluate instead of Shopify."
+      "rationale": "Shopify-focused agency providing design, integrations, and consulting; it serves Shopify merchants rather than offering a competing commerce platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Shopify-focused agency providing design, integrations, and consulting; it serves Shopify merchants rather than offering a competing commerce platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Agency/consultancy providing design and optimization services for Shopify stores, not a competing commerce platform."
+        }
+      ]
     },
     {
       "name": "Buddify",
@@ -1601,7 +2314,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Buddify is a complementary Shopify app for partnerships, dropshipping, and sales automation, not a standalone online-store commerce platform."
+      "rationale": "Buddify is a Shopify-integrated brand-partnership and dropshipping tool, complementing merchant storefronts rather than providing a comparable commerce platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Buddify is a Shopify-integrated brand-partnership and dropshipping tool, complementing merchant storefronts rather than providing a comparable commerce platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Buddify is a Shopify-ecosystem app (dropshipping/AI sales assistant) that integrates with Shopify; a complement/partner, not a competing commerce platform."
+        }
+      ]
     },
     {
       "name": "Digismoothie",
@@ -1631,7 +2356,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Digismoothie is primarily an agency and app developer serving Shopify merchants, not a competing online-store commerce platform."
+      "rationale": "Shopify-focused agency and app developer serving merchants, not a merchant commerce platform comparable to Shopify.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Shopify-focused agency and app developer serving merchants, not a merchant commerce platform comparable to Shopify."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Services agency building Shopify Plus stores for clients; serves the platform's ecosystem rather than competing as a commerce platform."
+        }
+      ]
     },
     {
       "name": "Checkout Extensions Pro",
@@ -1656,7 +2393,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "It is a Shopify add-on for checkout customization, not a standalone commerce platform merchants would evaluate instead of Shopify."
+      "rationale": "A Shopify-focused checkout customization app, not a merchant commerce platform competing with Shopify\u2019s storefront, payments, fulfillment, and retail offering.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "A Shopify-focused checkout customization app, not a merchant commerce platform competing with Shopify\u2019s storefront, payments, fulfillment, and retail offering."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Shopify-ecosystem checkout plugin, not a commerce platform; complements Shopify rather than competing as a storefront platform."
+        }
+      ]
     },
     {
       "name": "Commerce Layer",
@@ -1681,7 +2430,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Commerce Layer is an ecommerce platform offering storefront, checkout, order, inventory, and omnichannel capabilities for the same merchant buyers as Shopify."
+      "rationale": "API-first ecommerce platform for merchants, offering checkout, order management, POS, and headless storefront capabilities comparable to Shopify.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "API-first ecommerce platform for merchants, offering checkout, order management, POS, and headless storefront capabilities comparable to Shopify."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "API-first commerce platform offering storefronts, checkout, order management, and POS \u2014 same product and merchant market as Shopify, a direct competitor."
+        }
+      ]
     },
     {
       "name": "Finqu",
@@ -1708,7 +2469,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Finqu directly overlaps Shopify as an e-commerce platform for merchants to build and manage online stores, including POS and marketing tools."
+      "rationale": "Finqu provides a merchant e-commerce platform with online store creation, POS, customer management, and marketing tools, directly comparable to Shopify.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Finqu provides a merchant e-commerce platform with online store creation, POS, customer management, and marketing tools, directly comparable to Shopify."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Finqu is an eCommerce store-builder platform with POS and marketing tools, directly competing with Shopify on product, market, and model."
+        }
+      ]
     },
     {
       "name": "Alcemi",
@@ -1732,7 +2505,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Alcemi is an AI shopping and support add-on for Shopify stores, not a platform for creating and operating online storefronts."
+      "rationale": "Shopify-focused AI support and sales agent is an app/vendor serving Shopify merchants, not a commerce platform comparable to Shopify.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Shopify-focused AI support and sales agent is an app/vendor serving Shopify merchants, not a commerce platform comparable to Shopify."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Alcemi is an AI chat/support add-on built for Shopify stores, a supplier in Shopify's ecosystem, not a competing commerce platform."
+        }
+      ]
     },
     {
       "name": "Apps by Customer First focus",
@@ -1754,7 +2539,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Provides add-on e-commerce apps and services, not a core online-store commerce platform merchants would evaluate as an alternative to Shopify."
+      "rationale": "Provides e-commerce store-management tools, but appears to be an app vendor for merchants rather than a full commerce platform comparable to Shopify.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Provides e-commerce store-management tools, but appears to be an app vendor for merchants rather than a full commerce platform comparable to Shopify."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Builds add-on apps (reviews, loyalty, order tracking) for store platforms rather than a competing storefront commerce platform; ecosystem supplier, not a peer."
+        }
+      ]
     },
     {
       "name": "Fynicom",
@@ -1780,7 +2577,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Fynicom offers a no-code online-store creation and management platform for merchants, directly overlapping Shopify\u2019s core storefront and commerce use case."
+      "rationale": "Fynicom provides a no-code e-commerce platform for businesses to build and manage online stores, directly comparable to Shopify.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Fynicom provides a no-code e-commerce platform for businesses to build and manage online stores, directly comparable to Shopify."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "No-code eCommerce store-builder platform with payments-adjacent tools, templates, and analytics \u2014 direct Shopify competitor on product and market axes."
+        }
+      ]
     },
     {
       "name": "Webscale",
@@ -1810,7 +2619,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Webscale provides hosting, performance, and security infrastructure for existing commerce platforms, not an online-store platform merchants would evaluate against Shopify."
+      "rationale": "Webscale provides hosting, performance, and security infrastructure for e-commerce sites, complementing rather than competing with Shopify's merchant commerce platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Webscale provides hosting, performance, and security infrastructure for e-commerce sites, complementing rather than competing with Shopify's merchant commerce platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Webscale sells hosting/infrastructure and security for e-commerce platforms, not a storefront commerce platform itself; it supports rather than competes with Shopify."
+        }
+      ]
     },
     {
       "name": "Frontio",
@@ -1836,7 +2657,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Frontio is a customer-support inbox that integrates with Shopify, not an e-commerce storefront and retail operations platform."
+      "rationale": "Customer-support inbox that integrates with Shopify; it is a merchant-facing complementary tool, not an ecommerce storefront or commerce-operations platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Customer-support inbox that integrates with Shopify; it is a merchant-facing complementary tool, not an ecommerce storefront or commerce-operations platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Frontio is a customer-support inbox that integrates with Shopify as an ecosystem app, not a commerce/storefront platform competitor."
+        }
+      ]
     },
     {
       "name": "Sell everything",
@@ -1858,7 +2691,19 @@
         "social_urls": []
       },
       "relevant": true,
-      "rationale": "Both provide no-code e-commerce platforms for merchants to build and manage online stores, including products, orders, payments, inventory, and storefront customization."
+      "rationale": "E-commerce platform for merchants to build and manage online stores, with payments, inventory, orders, and customization\u2014directly comparable to Shopify.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "E-commerce platform for merchants to build and manage online stores, with payments, inventory, orders, and customization\u2014directly comparable to Shopify."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "No-code e-commerce platform for building and managing online stores with payments and inventory\u2014direct Shopify competitor on product and market."
+        }
+      ]
     },
     {
       "name": "eCommerce Web Guru",
@@ -1880,7 +2725,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "eCommerce Web Guru is an agency implementing Shopify for clients, not a competing commerce or online-store platform."
+      "rationale": "Shopify-focused development agency serving merchants, not a commerce platform competing with or comparable to Shopify.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Shopify-focused development agency serving merchants, not a commerce platform competing with or comparable to Shopify."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Shopify development agency serving merchants, not a commerce platform competitor; agencies serving the category are excluded."
+        }
+      ]
     },
     {
       "name": "Yozo AI",
@@ -1908,7 +2765,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Yozo is a marketing automation add-on for Shopify stores, not an e-commerce storefront and retail operations platform merchants would evaluate instead of Shopify."
+      "rationale": "Yozo is a marketing automation tool for Shopify merchants, not an e-commerce storefront and commerce-operations platform comparable to Shopify.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Yozo is a marketing automation tool for Shopify merchants, not an e-commerce storefront and commerce-operations platform comparable to Shopify."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Marketing-automation app built on Shopify for merchants; it's an ecosystem supplier, not a commerce platform competing with or resembling Shopify."
+        }
+      ]
     },
     {
       "name": "Black Diamond Informatative",
@@ -1931,7 +2800,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "Black Diamond Informatative provides education on using Shopify and print-on-demand, not an e-commerce storefront platform merchants would evaluate against Shopify."
+      "rationale": "Provides courses teaching people to sell on Shopify, rather than an e-commerce storefront platform competing with or comparable to Shopify.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Provides courses teaching people to sell on Shopify, rather than an e-commerce storefront platform competing with or comparable to Shopify."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Educational course teaching people to sell on Shopify; not a commerce platform competitor\u2014serves merchants as training, not as peer software."
+        }
+      ]
     },
     {
       "name": "Webemart",
@@ -1962,7 +2843,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Webemart is a web development and marketing agency that implements Shopify, not a self-service commerce platform merchants would evaluate against Shopify."
+      "rationale": "Webemart is an agency building and marketing client sites, including Shopify stores, not a commerce-platform competitor or comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Webemart is an agency building and marketing client sites, including Shopify stores, not a commerce-platform competitor or comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Agency building Shopify/WordPress sites and marketing services; serves the category rather than offering a competing commerce platform."
+        }
+      ]
     },
     {
       "name": "Social-Shop",
@@ -1986,7 +2879,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Social-Shop offers merchant-facing online storefront creation and catalog management, overlapping Shopify\u2019s core e-commerce platform and serving the same users."
+      "rationale": "Social-Shop provides merchants an online-store creation and management platform, directly comparable to Shopify\u2019s core commerce offering.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Social-Shop provides merchants an online-store creation and management platform, directly comparable to Shopify\u2019s core commerce offering."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Online store creation and management platform with subscriptions, catalog tools, and social selling \u2014 direct Shopify competitor on product and model."
+        }
+      ]
     },
     {
       "name": "Launchify",
@@ -2012,7 +2917,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Launchify offers no-code online store creation and commerce operations tools for merchants, overlapping Shopify\u2019s core platform and target users."
+      "rationale": "E-commerce platform for merchants to create and manage online stores, with fulfillment and multichannel selling features overlapping Shopify\u2019s core commerce offering.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "E-commerce platform for merchants to create and manage online stores, with fulfillment and multichannel selling features overlapping Shopify\u2019s core commerce offering."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "No-code e-commerce platform for building and managing online stores \u2014 same product category and merchant market as Shopify, a direct comparable."
+        }
+      ]
     },
     {
       "name": "Zenpire Holdings",
@@ -2038,7 +2955,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Zenpire primarily builds add-on apps for Shopify stores, not an independent commerce platform merchants would evaluate instead of Shopify."
+      "rationale": "Shopify ecosystem app developer offering add-on discount, preorder, and store tools, not a standalone commerce platform comparable to Shopify.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Shopify ecosystem app developer offering add-on discount, preorder, and store tools, not a standalone commerce platform comparable to Shopify."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Zenpire builds apps for the Shopify ecosystem as a partner/supplier, not a competing commerce platform for creating online stores."
+        }
+      ]
     },
     {
       "name": "3Dsellers",
@@ -2070,7 +2999,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "3Dsellers manages and automates marketplace listings, primarily on eBay; it is not an online-store commerce platform comparable to Shopify."
+      "rationale": "eBay-focused seller-management software that integrates with Shopify; it is a complementary marketplace operations tool, not an online-store commerce platform competitor.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "eBay-focused seller-management software that integrates with Shopify; it is a complementary marketplace operations tool, not an online-store commerce platform competitor."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "eBay listing-management add-on for marketplace sellers, not a storefront/commerce platform; complements Shopify rather than competing with it."
+        }
+      ]
     },
     {
       "name": "Boost Commerce",
@@ -2098,7 +3039,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Boost Commerce is a Shopify add-on for product discovery and merchandising, not an alternative commerce platform for creating and operating online stores."
+      "rationale": "Shopify-focused search and merchandising app, not a full commerce platform for creating stores, payments, fulfillment, and retail operations.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Shopify-focused search and merchandising app, not a full commerce platform for creating stores, payments, fulfillment, and retail operations."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Shopify ecosystem app enhancing search/merchandising for Shopify stores; a supplier/partner, not a competing commerce platform."
+        }
+      ]
     },
     {
       "name": "XCO Agency",
@@ -2125,7 +3078,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "XCO is a Shopify implementation and e-commerce services agency, not a competing storefront commerce platform evaluated for the same job."
+      "rationale": "Shopify implementation agency serving merchants, not a commerce-platform provider or comparable SaaS competitor.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Shopify implementation agency serving merchants, not a commerce-platform provider or comparable SaaS competitor."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Shopify Plus partner agency offering store setup and customization services; serves the category as a consultancy, not a competing commerce platform."
+        }
+      ]
     },
     {
       "name": "ShopOpti+",
@@ -2152,7 +3117,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "ShopOpti+ is an optimization and automation add-on for existing stores, not a storefront commerce platform merchants would evaluate instead of Shopify."
+      "rationale": "Merchant operations tool built around Shopify stores, but not a commerce storefront platform; it is an ecosystem app/supplier rather than comparable competitor.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Merchant operations tool built around Shopify stores, but not a commerce storefront platform; it is an ecosystem app/supplier rather than comparable competitor."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Add-on tool that optimizes Shopify stores; serves Shopify merchants as a partner, not a competing commerce/storefront platform."
+        }
+      ]
     },
     {
       "name": "DG1 Group Holdings Inc",
@@ -2179,8 +3156,25 @@
           "https://www.linkedin.com/company/dg1/"
         ]
       },
-      "relevant": false,
-      "rationale": "DG1 primarily provides marketing automation and content tools that integrate with Shopify, not a competing online-store commerce platform."
+      "relevant": true,
+      "rationale": "AI-powered digital commerce platform for businesses, offering online storefront, product, marketing, and shopping tools for a similar merchant audience.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "AI-powered digital commerce platform for businesses, offering online storefront, product, marketing, and shopping tools for a similar merchant audience."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "AI marketing-automation layer that integrates with Shopify/WooCommerce; complements rather than competes as a storefront commerce platform."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "All-in-one eCommerce/website SaaS platform for businesses to sell online \r\n\to/comparable to Shopify."
+        }
+      ]
     },
     {
       "name": "IXLU",
@@ -2203,7 +3197,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "IXLU is an e-commerce development agency implementing Shopify and Magento, not a competing commerce platform merchants evaluate for building stores."
+      "rationale": "IXLU is a Shopify/Magento development agency serving merchants, not a commerce platform competing with or comparable to Shopify.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "IXLU is a Shopify/Magento development agency serving merchants, not a commerce platform competing with or comparable to Shopify."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Agency providing Shopify/Magento development services; serves merchants on the platform rather than offering a competing commerce platform."
+        }
+      ]
     },
     {
       "name": "Flow Digital Ltd",
@@ -2230,7 +3236,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Flow is a Shopify-focused agency and support provider, not a competing e-commerce storefront platform merchants would evaluate instead of Shopify."
+      "rationale": "Shopify-focused agency providing setup, marketing, and support services; it serves Shopify merchants rather than offering a competing commerce platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Shopify-focused agency providing setup, marketing, and support services; it serves Shopify merchants rather than offering a competing commerce platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Agency providing Shopify store setup and marketing services to merchants, not a commerce platform competitor; serves the category rather than competing."
+        }
+      ]
     },
     {
       "name": "Final Apps",
@@ -2256,7 +3274,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Final Apps provides add-on tools for Shopify merchants, not a competing platform for creating and operating online stores."
+      "rationale": "Final Apps develops add-on tools for Shopify merchants, serving Shopify\u2019s ecosystem rather than operating a competing commerce platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Final Apps develops add-on tools for Shopify merchants, serving Shopify\u2019s ecosystem rather than operating a competing commerce platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Shopify-ecosystem app vendor (invoices, SKU, barcode tools), not a competing commerce/storefront platform; supplier to the ecosystem, not a lookalike."
+        }
+      ]
     },
     {
       "name": "Sellery Digital",
@@ -2282,7 +3312,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Sellery Digital acquires and grows Shopify stores; it does not provide a merchant storefront and commerce operations platform."
+      "rationale": "Acquires and supports Shopify-based e-commerce businesses; it is an investor/operator, not a merchant commerce platform competitor or comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Acquires and supports Shopify-based e-commerce businesses; it is an investor/operator, not a merchant commerce platform competitor or comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Acquirer/partner of Shopify stores, not a commerce platform; serves merchants as buyer, not peer competitor or comparable platform."
+        }
+      ]
     },
     {
       "name": "Instant",
@@ -2309,8 +3351,20 @@
           "https://www.youtube.com/@instant-page-builder"
         ]
       },
-      "relevant": true,
-      "rationale": "Both provide no-code online storefront building for e-commerce merchants, with overlapping website creation and conversion-optimization use cases."
+      "relevant": false,
+      "rationale": "Instant is a Shopify-focused page-building app, not a standalone commerce platform comparable to Shopify\u2019s merchant, payment, fulfillment, and retail suite.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Instant is a Shopify-focused page-building app, not a standalone commerce platform comparable to Shopify\u2019s merchant, payment, fulfillment, and retail suite."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Instant is a page-builder app built on Shopify's ecosystem, a complementary tool/supplier rather than a competing commerce platform."
+        }
+      ]
     },
     {
       "name": "Create A Shoppe",
@@ -2335,7 +3389,19 @@
         ]
       },
       "relevant": true,
-      "rationale": "Both provide e-commerce website-building platforms with storefront templates, product and order management for merchants launching online stores."
+      "rationale": "E-commerce website builder enabling merchants to create stores, manage products and orders; directly comparable to Shopify's core commerce platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "E-commerce website builder enabling merchants to create stores, manage products and orders; directly comparable to Shopify's core commerce platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "E-commerce website/store builder with product and order management \u2014 same product and merchant market as Shopify, just smaller."
+        }
+      ]
     },
     {
       "name": "360 Expert Solutions",
@@ -2360,7 +3426,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "360 Expert Solutions is an e-commerce development and integration consultancy serving platforms like Shopify, not a competing online-store commerce platform."
+      "rationale": "E-commerce development and integration agency serving Shopify and other platforms, not a merchant commerce platform competitor or comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "E-commerce development and integration agency serving Shopify and other platforms, not a merchant commerce platform competitor or comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Agency building/integrating e-commerce stores on Shopify and others, not a commerce platform competitor; serves the category rather than competing."
+        }
+      ]
     },
     {
       "name": "LearnMate",
@@ -2383,7 +3461,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "LearnMate is a marketing automation and chatbot platform, not an online-store creation and commerce operations platform evaluated for Shopify\u2019s core job."
+      "rationale": "Marketing automation and chatbot software, not a merchant storefront or commerce-operations platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Marketing automation and chatbot software, not a merchant storefront or commerce-operations platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Chatbot/marketing-automation tool for merchants, not a commerce/storefront platform; adjacent supplier, not a Shopify competitor or comparable."
+        }
+      ]
     },
     {
       "name": "Bellfivelimo",
@@ -2405,8 +3495,20 @@
         "city": "London",
         "social_urls": []
       },
-      "relevant": false,
-      "rationale": "Bell Five Limo appears to be a limousine transportation operator, not an e-commerce storefront platform competing for Shopify\u2019s merchant buyers."
+      "relevant": true,
+      "rationale": "Offers customizable e-commerce platforms for online stores, including inventory, orders, payments, checkout, and marketplace integration\u2014directly comparable to Shopify.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Offers customizable e-commerce platforms for online stores, including inventory, orders, payments, checkout, and marketplace integration\u2014directly comparable to Shopify."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Provides an e-commerce platform for online retailers with storefront, inventory, orders, payments, checkout, analytics, and marketing tools."
+        }
+      ]
     },
     {
       "name": "EcomForAll",
@@ -2428,7 +3530,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "EcomForAll is an educational resource teaching Shopify usage, not an e-commerce storefront and operations platform merchants would evaluate instead of Shopify."
+      "rationale": "Educational resource teaching Shopify usage, not an e-commerce storefront platform or merchant commerce-operations competitor.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Educational resource teaching Shopify usage, not an e-commerce storefront platform or merchant commerce-operations competitor."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Educational/tutorial platform teaching Shopify usage, not a commerce platform itself; serves learners, not merchants needing storefront infrastructure."
+        }
+      ]
     },
     {
       "name": "StoreMessage",
@@ -2451,7 +3565,19 @@
         "social_urls": []
       },
       "relevant": false,
-      "rationale": "StoreMessage is a marketing-content and SEO tool for Shopify merchants, not an e-commerce storefront and retail operations platform."
+      "rationale": "Shopify-focused content, SEO, and email-marketing tool; it serves Shopify merchants as an add-on rather than providing a commerce platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Shopify-focused content, SEO, and email-marketing tool; it serves Shopify merchants as an add-on rather than providing a commerce platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "AI content tool built for Shopify stores; an ecosystem app serving Shopify merchants, not a competing commerce platform."
+        }
+      ]
     },
     {
       "name": "Replo",
@@ -2480,7 +3606,19 @@
         ]
       },
       "relevant": false,
-      "rationale": "Replo is a complementary Shopify page-builder and theme editor, not a standalone commerce platform merchants would evaluate instead of Shopify."
+      "rationale": "Replo is a complementary Shopify-specific page builder, not a standalone commerce platform competing with or comparable to Shopify.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Replo is a complementary Shopify-specific page builder, not a standalone commerce platform competing with or comparable to Shopify."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Replo is a Shopify-ecosystem page-builder app, not a competing commerce platform; it complements rather than resembles Shopify."
+        }
+      ]
     },
     {
       "name": "Biz-eu.net",
@@ -2504,7 +3642,19 @@
         "social_urls": []
       },
       "relevant": true,
-      "rationale": "Both provide no-code e-commerce storefronts, integrated payments, and merchant sales tools for users creating and selling products online."
+      "rationale": "Platform lets merchants build online stores, sell products, accept payments, and market offerings\u2014core commerce-platform functions comparable to Shopify.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Platform lets merchants build online stores, sell products, accept payments, and market offerings\u2014core commerce-platform functions comparable to Shopify."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "No-code e-commerce store builder with integrated payments\u2014same product and business model as Shopify; a direct competitor."
+        }
+      ]
     },
     {
       "name": "Fast Simon",
@@ -2538,10 +3688,20 @@
         ]
       },
       "relevant": false,
-      "rationale": "Fast Simon provides search, personalization, and merchandising add-ons, not an online-store commerce platform merchants would evaluate instead of Shopify."
+      "rationale": "AI search, personalization, and merchandising vendor for retailers, not a merchant storefront, payments, fulfillment, or commerce-operations platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "AI search, personalization, and merchandising vendor for retailers, not a merchant storefront, payments, fulfillment, or commerce-operations platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Fast Simon sells search/personalization add-ons for eCommerce stores, not a storefront/commerce platform; it's a supplier to Shopify's ecosystem, not a peer."
+        }
+      ]
     }
   ],
-  "error": null,
-  "relevant_count_at_25": 4,
-  "precision_at_25": 16.0
+  "error": null
 }

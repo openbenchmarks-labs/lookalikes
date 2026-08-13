@@ -7,20 +7,20 @@
     "name": "domain_lookalikes"
   },
   "k": 100,
-  "relevant_count": 6,
-  "precision_at_k": 6.0,
-  "relevant_count_at_10": 6,
-  "relevant_count_at_25": 6,
-  "relevant_count_at_100": 6,
-  "precision_at_10": 60.0,
-  "precision_at_25": 24.0,
-  "precision_at_100": 6.0,
+  "relevant_count": 5,
+  "precision_at_k": 5.0,
+  "relevant_count_at_10": 5,
+  "relevant_count_at_25": 5,
+  "relevant_count_at_100": 5,
+  "precision_at_10": 50.0,
+  "precision_at_25": 20.0,
+  "precision_at_100": 5.0,
   "latency_ms": 384,
   "cost_usd": null,
   "duplicates_removed": 0,
   "max_results": 10,
-  "judge_model": "gpt-5.6",
-  "judged_at": "2026-07-27T06:54:09Z",
+  "judge_model": "majority(n=3): claude-opus-5,gpt-5.6-terra,kimi-k3",
+  "judged_at": "2026-08-10T20:17:00Z",
   "candidates": [
     {
       "name": "abb",
@@ -36,7 +36,19 @@
         "confidence_level": 93
       },
       "relevant": false,
-      "rationale": "ABB is a broad electrification and automation supplier; grid-scale battery storage platforms are not its primary offering, despite adjacent power-management capabilities."
+      "rationale": "ABB is a broad electrification and industrial-automation supplier, not primarily a grid-scale battery storage and renewable-integration platform comparable to Fluence.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "ABB is a broad electrification and industrial-automation supplier, not primarily a grid-scale battery storage and renewable-integration platform comparable to Fluence."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "ABB is a diversified electrification/automation conglomerate; grid-scale battery storage is not its primary product, so resemblance is too weak and generic."
+        }
+      ]
     },
     {
       "name": "the aes corporation",
@@ -52,7 +64,19 @@
         "confidence_level": 93
       },
       "relevant": false,
-      "rationale": "AES is a diversified power utility and Fluence\u2019s founding parent/customer, not primarily a grid-storage technology and optimization platform evaluated for the same job."
+      "rationale": "AES is a utility and strategic parent/partner of Fluence, not an independent grid-scale storage software and technology comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "AES is a utility and strategic parent/partner of Fluence, not an independent grid-scale storage software and technology comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "AES is a global utility/power generator and co-founded Fluence as a joint venture \u2014 a parent company, not a storage-technology competitor."
+        }
+      ]
     },
     {
       "name": "fluence india",
@@ -68,7 +92,19 @@
         "confidence_level": 93
       },
       "relevant": false,
-      "rationale": "Fluence India is a regional Fluence affiliate supplying the same branded BESS products, not an independent lookalike company."
+      "rationale": "Fluence India appears to be Fluence's regional operation, not an independent competitor or comparable company.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Fluence India appears to be Fluence's regional operation, not an independent competitor or comparable company."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Fluence India is the seed company's own Indian subsidiary/arm \u2014 a duplicate of the seed, not an independent competitor or comparable."
+        }
+      ]
     },
     {
       "name": "ge vernova",
@@ -83,8 +119,20 @@
         "country": "united states",
         "confidence_level": 93
       },
-      "relevant": false,
-      "rationale": "GE Vernova primarily provides broad power, grid-electrification, and wind technologies; the description does not establish a core grid-scale battery-storage offering comparable to Fluence."
+      "relevant": true,
+      "rationale": "GE Vernova is a utility-scale energy technology provider overlapping Fluence in grid electrification, renewable integration, and energy-storage-adjacent solutions.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "GE Vernova is a utility-scale energy technology provider overlapping Fluence in grid electrification, renewable integration, and energy-storage-adjacent solutions."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Energy-tech company whose grid-scale battery storage systems and grid software compete directly with Fluence for utility and renewable-integration customers."
+        }
+      ]
     },
     {
       "name": "hitachi energy",
@@ -100,7 +148,24 @@
         "confidence_level": 93
       },
       "relevant": true,
-      "rationale": "Hitachi Energy offers utility-scale battery storage and grid-integration technologies, serving the same utility and renewable-energy buyers as Fluence."
+      "rationale": "Both sell grid-scale energy technology and software to utilities for decarbonization; Hitachi Energy also offers battery storage and grid-edge solutions, overlapping product and market.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Hitachi Energy primarily provides broad grid infrastructure and electrification equipment, not grid-scale battery storage and optimization platforms comparable to Fluence."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both sell grid-scale energy technology and software to utilities for decarbonization; Hitachi Energy also offers battery storage and grid-edge solutions, overlapping product and market."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Grid technology provider serving utilities, including battery energy storage systems and grid automation \\}}}}}}}}}}}}, a direct Fluence competitor."
+        }
+      ]
     },
     {
       "name": "powin",
@@ -116,7 +181,19 @@
         "confidence_level": 93
       },
       "relevant": true,
-      "rationale": "Powin provides utility-scale battery energy storage systems for utilities and energy producers, directly overlapping Fluence\u2019s core offering and buyers."
+      "rationale": "Powin provides grid-scale and commercial battery energy-storage systems for utilities and renewable integration, directly comparable to Fluence.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Powin provides grid-scale and commercial battery energy-storage systems for utilities and renewable integration, directly comparable to Fluence."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both provide grid-scale battery energy storage systems to utilities, IPPs, and C&I customers; direct competitors on product and market."
+        }
+      ]
     },
     {
       "name": "schneider electric",
@@ -131,8 +208,20 @@
         "country": "france",
         "confidence_level": 93
       },
-      "relevant": true,
-      "rationale": "Schneider offers battery energy-storage, microgrid, and grid-management solutions evaluated by utilities and infrastructure operators for similar energy optimization needs."
+      "relevant": false,
+      "rationale": "Schneider is a broad electrification and automation supplier, not primarily a grid-scale battery storage and energy-optimization platform comparable to Fluence.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Schneider is a broad electrification and automation supplier, not primarily a grid-scale battery storage and energy-optimization platform comparable to Fluence."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Diversified electrification/automation conglomerate; grid-scale battery storage is peripheral, not its primary product\u2014more partner/ecosystem player than storage competitor."
+        }
+      ]
     },
     {
       "name": "siemens energy",
@@ -147,8 +236,20 @@
         "country": "germany",
         "confidence_level": 93
       },
-      "relevant": true,
-      "rationale": "Siemens Energy offers grid-scale storage and renewable-grid integration solutions that utilities and power developers could evaluate alongside Fluence."
+      "relevant": false,
+      "rationale": "Siemens Energy is a broad energy-equipment provider and strategic Fluence shareholder/partner, not a primarily grid-scale battery-storage and optimization platform competitor.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Siemens Energy is a broad energy-equipment provider and strategic Fluence shareholder/partner, not a primarily grid-scale battery-storage and optimization platform competitor."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Diversified energy-technology giant focused on generation/transmission equipment; grid-scale storage and optimization software are only minor portfolio slices, not its primary product."
+        }
+      ]
     },
     {
       "name": "sungrow",
@@ -164,7 +265,19 @@
         "confidence_level": 93
       },
       "relevant": true,
-      "rationale": "Sungrow offers utility-scale energy storage systems and renewable integration equipment, serving the same project developers and utilities evaluating Fluence."
+      "rationale": "Sungrow provides grid-scale energy-storage systems and renewable integration equipment, directly overlapping Fluence's battery-storage and clean-power market.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Sungrow provides grid-scale energy-storage systems and renewable integration equipment, directly overlapping Fluence's battery-storage and clean-power market."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Sungrow's grid-scale energy storage systems and renewable integration business directly competes with Fluence's storage and optimization offerings."
+        }
+      ]
     },
     {
       "name": "tesla",
@@ -180,7 +293,20 @@
         "confidence_level": 93
       },
       "relevant": true,
-      "rationale": "Tesla\u2019s Megapack grid-scale battery systems and energy-management software directly overlap Fluence\u2019s utility storage and renewable-integration offerings."
+      "rationale": "Tesla sells grid-scale battery storage and solar integration systems, overlapping Fluence\u2019s core energy-storage market despite its broader EV business.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Tesla sells grid-scale battery storage and solar integration systems, overlapping Fluence\u2019s core energy-storage market despite its broader EV business."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Tesla Energy sells grid-scale battery storage (Megapack), solar, and energy-optimization software \u2014 same product and market as Fluence."
+        }
+      ]
     }
-  ]
+  ],
+  "error": null
 }

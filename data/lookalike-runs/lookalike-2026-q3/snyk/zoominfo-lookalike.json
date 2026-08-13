@@ -1,0 +1,851 @@
+{
+  "dataset_slug": "lookalike-2026-q3",
+  "seed_slug": "snyk",
+  "provider_slug": "zoominfo-lookalike",
+  "config_name": "native_similar_by_name",
+  "config": {
+    "name": "native_similar_by_name"
+  },
+  "k": 100,
+  "relevant_count": 6,
+  "precision_at_k": 6.0,
+  "relevant_count_at_10": 5,
+  "relevant_count_at_25": 6,
+  "relevant_count_at_100": 6,
+  "precision_at_10": 50.0,
+  "precision_at_25": 24.0,
+  "precision_at_100": 6.0,
+  "latency_ms": 1417,
+  "cost_usd": null,
+  "duplicates_removed": 0,
+  "max_results": 25,
+  "judge_model": "majority(n=3): claude-opus-5,gpt-5.6-terra,kimi-k3",
+  "judged_at": "2026-08-13T17:36:02Z",
+  "candidates": [
+    {
+      "name": "Microsoft",
+      "domain": null,
+      "description": null,
+      "rank": 1,
+      "extra": {
+        "zoominfo_company_id": 24904409,
+        "similarity_score": 0.9200000166893005,
+        "industry": "[Database & File Management Software, Software Development & Design, Software]",
+        "revenue_range": "Over $5 bil.",
+        "employee_range": "Over 10,000",
+        "country": "United States"
+      },
+      "relevant": false,
+      "rationale": "Anchor false: Microsoft is a diversified technology vendor, not primarily a developer-security platform; overlaps all listed security capabilities.",
+      "anchor_match": false,
+      "capabilities_matched": [
+        "vulnerability scanning",
+        "dependency management",
+        "container security",
+        "cloud infrastructure security"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Anchor false: Microsoft is a diversified technology vendor, not primarily a developer-security platform; overlaps all listed security capabilities."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Microsoft is a broad software/cloud company, not a developer-security platform as its primary business; security is a side offering. Anchor fails."
+        }
+      ]
+    },
+    {
+      "name": "Gitlab",
+      "domain": null,
+      "description": null,
+      "rank": 2,
+      "extra": {
+        "zoominfo_company_id": 372685017,
+        "similarity_score": 0.8799999952316284,
+        "industry": "[Engineering Software, Software Development & Design, Software]",
+        "revenue_range": "$500 mil. - $1 bil.",
+        "employee_range": "1,000 - 5,000",
+        "country": "United States"
+      },
+      "relevant": false,
+      "rationale": "Anchor false: GitLab is primarily a DevOps/CI-CD platform, not a developer-security platform; security scanning is a side feature despite capability overlap.",
+      "anchor_match": false,
+      "capabilities_matched": [
+        "vulnerability scanning",
+        "dependency management",
+        "container security"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Anchor true: GitLab is a DevSecOps developer-security platform with scanning, dependency, container, and infrastructure-security capabilities."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Anchor false: GitLab is primarily a DevOps/CI-CD platform, not a developer-security platform; security scanning is a side feature despite capability overlap."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "GitLab is primarily a DevOps/CI-CD platform, not a developer-security platform, though it bundles scanning features."
+        }
+      ]
+    },
+    {
+      "name": "Cloud Defense",
+      "domain": null,
+      "description": null,
+      "rank": 3,
+      "extra": {
+        "zoominfo_company_id": 558058161,
+        "similarity_score": 0.877985895,
+        "industry": "[Business Intelligence (BI) Software, Software Development & Design, Software]",
+        "revenue_range": "$500,000 - $1 mil.",
+        "employee_range": "10 - 20",
+        "country": "United States"
+      },
+      "relevant": true,
+      "rationale": "Anchor true: CloudDefense is a developer/cloud-security platform with vulnerability, dependency, container, and cloud-infrastructure security capabilities.",
+      "anchor_match": true,
+      "capabilities_matched": [
+        "vulnerability scanning",
+        "dependency management",
+        "container security",
+        "cloud infrastructure security"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Anchor true: CloudDefense is a developer/cloud-security platform with vulnerability, dependency, container, and cloud-infrastructure security capabilities."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Cannot determine what Cloud Defense sells; generic BI/software taxonomy labels don't establish a developer-security anchor. Anchor fails."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Cloud Defense is a developer-focused application/cloud security platform; overlaps on scanning, dependencies, cloud security."
+        }
+      ]
+    },
+    {
+      "name": "Veracode",
+      "domain": null,
+      "description": null,
+      "rank": 4,
+      "extra": {
+        "zoominfo_company_id": 240615578,
+        "similarity_score": 0.8600000143051147,
+        "industry": "[Security software, Software Development & Design, Software]",
+        "revenue_range": "$100 mil. - $250 mil.",
+        "employee_range": "500 - 1,000",
+        "country": "United States"
+      },
+      "relevant": true,
+      "rationale": "Anchor true: Veracode is a developer application-security platform offering vulnerability scanning and container security.",
+      "anchor_match": true,
+      "capabilities_matched": [
+        "vulnerability scanning",
+        "container security",
+        "dependency management"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Anchor true: Veracode is a developer application-security platform offering vulnerability scanning and container security."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Developer application-security platform like Snyk; offers SAST/DAST/SCA (vulnerability scanning, dependency management) and container security scanning."
+        }
+      ]
+    },
+    {
+      "name": "Synopsys",
+      "domain": null,
+      "description": null,
+      "rank": 5,
+      "extra": {
+        "zoominfo_company_id": 37323650,
+        "similarity_score": 0.8500000238418579,
+        "industry": "[Security software, Software Development & Design, Software]",
+        "revenue_range": "Over $5 bil.",
+        "employee_range": "Over 10,000",
+        "country": "United States"
+      },
+      "relevant": false,
+      "rationale": "Anchor false: Synopsys primarily provides semiconductor design software; its software-integrity products overlap on vulnerability scanning and dependency management.",
+      "anchor_match": false,
+      "capabilities_matched": [
+        "vulnerability scanning",
+        "dependency management"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Anchor false: Synopsys primarily provides semiconductor design software; its software-integrity products overlap on vulnerability scanning and dependency management."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Synopsys Software Integrity Group (Coverity, Black Duck) is a developer-security platform for the same customers; matches vulnerability scanning, dependency management, container security."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "Synopsys is primarily an EDA/chip-design company; AppSec (Black Duck/Coverity) was a secondary, now-divested unit, so anchor fails."
+        }
+      ]
+    },
+    {
+      "name": "Sonatype",
+      "domain": null,
+      "description": null,
+      "rank": 6,
+      "extra": {
+        "zoominfo_company_id": 259047831,
+        "similarity_score": 0.8399999737739563,
+        "industry": "[Supply Chain Management (SCM) Software, Software Development & Design, Software]",
+        "revenue_range": "$50 mil. - $100 mil.",
+        "employee_range": "500 - 1,000",
+        "country": "United States"
+      },
+      "relevant": true,
+      "rationale": "Anchor true: Sonatype is a developer-security platform with vulnerability scanning, dependency management, and container security.",
+      "anchor_match": true,
+      "capabilities_matched": [
+        "vulnerability scanning",
+        "dependency management",
+        "container security"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Anchor true: Sonatype is a developer-security platform with vulnerability scanning, dependency management, and container security."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Sonatype is a developer-focused software supply chain security platform (Nexus/Lifecycle) with dependency vulnerability scanning and management; anchor matches."
+        }
+      ]
+    },
+    {
+      "name": "MEND",
+      "domain": null,
+      "description": null,
+      "rank": 7,
+      "extra": {
+        "zoominfo_company_id": 347312409,
+        "similarity_score": 0.8100000023841858,
+        "industry": "[Real Estate]",
+        "revenue_range": "$1 mil. - $5 mil.",
+        "employee_range": "20 - 50",
+        "country": "United States"
+      },
+      "relevant": false,
+      "rationale": "Anchor false: provided data identifies a real estate company, not a developer-security platform; no listed capability overlap is evidenced.",
+      "anchor_match": false,
+      "capabilities_matched": [],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Anchor false: provided data identifies a real estate company, not a developer-security platform; no listed capability overlap is evidenced."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Mend (mend.io, ex-WhiteSource) is a developer/app-security platform for engineering teams; offers SCA vulnerability scanning, dependency management, container security. ZoomInfo industry tag appears misclassified."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "Candidate listed as real estate, not a developer-security platform; no capability evidence."
+        }
+      ]
+    },
+    {
+      "name": "Contrast Security",
+      "domain": null,
+      "description": null,
+      "rank": 8,
+      "extra": {
+        "zoominfo_company_id": 369931131,
+        "similarity_score": 0.75,
+        "industry": "[Security software, Software Development & Design, Software]",
+        "revenue_range": "$50 mil. - $100 mil.",
+        "employee_range": "250 - 500",
+        "country": "United States"
+      },
+      "relevant": true,
+      "rationale": "Anchor true: Contrast is a developer application-security platform; overlap includes vulnerability scanning.",
+      "anchor_match": true,
+      "capabilities_matched": [
+        "vulnerability scanning",
+        "dependency management"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Anchor true: Contrast is a developer application-security platform; overlap includes vulnerability scanning."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Developer application-security platform for dev teams; offers vulnerability scanning and SCA-based dependency management. Anchor matches."
+        }
+      ]
+    },
+    {
+      "name": "Palo Alto Networks",
+      "domain": null,
+      "description": null,
+      "rank": 9,
+      "extra": {
+        "zoominfo_company_id": 141951307,
+        "similarity_score": 0.7300000190734863,
+        "industry": "[Security software, Software Development & Design, Software]",
+        "revenue_range": "Over $5 bil.",
+        "employee_range": "Over 10,000",
+        "country": "United States"
+      },
+      "relevant": false,
+      "rationale": "Anchor false: Palo Alto Networks is a broad enterprise cybersecurity vendor, though Prisma Cloud overlaps on vulnerability scanning, dependency management, container and cloud infrastructure security.",
+      "anchor_match": false,
+      "capabilities_matched": [
+        "vulnerability scanning",
+        "dependency management",
+        "container security",
+        "cloud infrastructure security"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Anchor false: Palo Alto Networks is a broad enterprise cybersecurity vendor, though Prisma Cloud overlaps on vulnerability scanning, dependency management, container and cloud infrastructure security."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Anchor false: enterprise network/cloud security vendor, not a developer-security platform, despite Prisma container/cloud overlap."
+        }
+      ]
+    },
+    {
+      "name": "Aqua Security",
+      "domain": null,
+      "description": null,
+      "rank": 10,
+      "extra": {
+        "zoominfo_company_id": 395964867,
+        "similarity_score": 0.7200000286102295,
+        "industry": "[Security software, Software Development & Design, Software]",
+        "revenue_range": "$100 mil. - $250 mil.",
+        "employee_range": "500 - 1,000",
+        "country": "United States"
+      },
+      "relevant": true,
+      "rationale": "Anchor true: developer-security platform; overlaps vulnerability scanning, container security, and cloud infrastructure security.",
+      "anchor_match": true,
+      "capabilities_matched": [
+        "vulnerability scanning",
+        "container security",
+        "cloud infrastructure security"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Anchor true: developer-security platform; overlaps vulnerability scanning, container security, and cloud infrastructure security."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Anchor true: Aqua is a developer/cloud-native security platform. Overlaps on vulnerability scanning, container security, and cloud infrastructure security."
+        }
+      ]
+    },
+    {
+      "name": "LenelS2",
+      "domain": null,
+      "description": null,
+      "rank": 11,
+      "extra": {
+        "zoominfo_company_id": 469637223,
+        "similarity_score": 0.696212112903595,
+        "industry": "[Security software, Software Development & Design, Software]",
+        "revenue_range": "$100 mil. - $250 mil.",
+        "employee_range": "500 - 1,000",
+        "country": "United States"
+      },
+      "relevant": false,
+      "rationale": "Anchor false: LenelS2 provides physical access-control security systems, not developer-security; no listed capability overlap.",
+      "anchor_match": false,
+      "capabilities_matched": [],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Anchor false: LenelS2 provides physical access-control security systems, not developer-security; no listed capability overlap."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "LenelS2 sells physical access control and video security to facilities, not developer security tools. Different category and customer; no capability overlap."
+        }
+      ]
+    },
+    {
+      "name": "SilverSky",
+      "domain": null,
+      "description": null,
+      "rank": 12,
+      "extra": {
+        "zoominfo_company_id": 365413893,
+        "similarity_score": 0.6952198147773743,
+        "industry": "[Security software, Software Development & Design, Software]",
+        "revenue_range": "$50 mil. - $100 mil.",
+        "employee_range": "250 - 500",
+        "country": "United States"
+      },
+      "relevant": false,
+      "rationale": "Anchor false: SilverSky is a managed cybersecurity services provider, not a developer-security platform; overlap: vulnerability scanning.",
+      "anchor_match": false,
+      "capabilities_matched": [
+        "vulnerability scanning"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Anchor false: SilverSky is a managed cybersecurity services provider, not a developer-security platform; overlap: vulnerability scanning."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "SilverSky is a managed security services provider (email security, MDR), not a developer-security platform; different category and customer."
+        }
+      ]
+    },
+    {
+      "name": "Saviynt",
+      "domain": null,
+      "description": null,
+      "rank": 13,
+      "extra": {
+        "zoominfo_company_id": 346916283,
+        "similarity_score": 0.6945813298225403,
+        "industry": "[Security software, Software Development & Design, Software]",
+        "revenue_range": "$100 mil. - $250 mil.",
+        "employee_range": "500 - 1,000",
+        "country": "United States"
+      },
+      "relevant": false,
+      "rationale": "Anchor false: Saviynt is an identity and access governance platform, not a developer-security platform; overlaps on cloud infrastructure security.",
+      "anchor_match": false,
+      "capabilities_matched": [
+        "cloud infrastructure security"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Anchor false: Saviynt is an identity and access governance platform, not a developer-security platform; overlaps on cloud infrastructure security."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Saviynt is identity governance/IGA for enterprise IT, not a developer-security platform; different category, no listed capability overlap."
+        }
+      ]
+    },
+    {
+      "name": "ThreatLocker",
+      "domain": null,
+      "description": null,
+      "rank": 14,
+      "extra": {
+        "zoominfo_company_id": 446634384,
+        "similarity_score": 0.6933022141456604,
+        "industry": "[Security software, Software Development & Design, Software]",
+        "revenue_range": "$100 mil. - $250 mil.",
+        "employee_range": "500 - 1,000",
+        "country": "United States"
+      },
+      "relevant": false,
+      "rationale": "Anchor false: ThreatLocker is endpoint/zero-trust security, not a developer-security platform; overlap: vulnerability scanning.",
+      "anchor_match": false,
+      "capabilities_matched": [
+        "vulnerability scanning"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Anchor false: ThreatLocker is endpoint/zero-trust security, not a developer-security platform; overlap: vulnerability scanning."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Anchor false: ThreatLocker is endpoint security (application allowlisting/ringfencing) for IT/MSP customers, not a developer-security platform; no capability overlap."
+        }
+      ]
+    },
+    {
+      "name": "Checkmarx",
+      "domain": null,
+      "description": null,
+      "rank": 15,
+      "extra": {
+        "zoominfo_company_id": 37429250,
+        "similarity_score": 0.6900082230567932,
+        "industry": "[Security software, Software Development & Design, Software]",
+        "revenue_range": "$100 mil. - $250 mil.",
+        "employee_range": "500 - 1,000",
+        "country": "United States"
+      },
+      "relevant": true,
+      "rationale": "Anchor true: Checkmarx is a developer-security platform offering vulnerability scanning, dependency management, container security, and cloud infrastructure security.",
+      "anchor_match": true,
+      "capabilities_matched": [
+        "vulnerability scanning",
+        "dependency management",
+        "container security",
+        "cloud infrastructure security"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Anchor true: Checkmarx is a developer-security platform offering vulnerability scanning, dependency management, container security, and cloud infrastructure security."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Anchor true: Checkmarx is a developer application-security platform; overlaps via SAST/SCA scanning, dependency analysis, container and IaC security."
+        }
+      ]
+    },
+    {
+      "name": "Synack",
+      "domain": null,
+      "description": null,
+      "rank": 16,
+      "extra": {
+        "zoominfo_company_id": 358222469,
+        "similarity_score": 0.6861729025840759,
+        "industry": "[Security software, Software Development & Design, Software]",
+        "revenue_range": "$50 mil. - $100 mil.",
+        "employee_range": "250 - 500",
+        "country": "United States"
+      },
+      "relevant": false,
+      "rationale": "Anchor false: Synack is a crowdsourced penetration-testing platform, not a developer-security platform; no listed capability overlap evidenced.",
+      "anchor_match": false,
+      "capabilities_matched": [
+        "vulnerability scanning"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Anchor false: Synack is a crowdsourced penetration-testing platform, not a developer-security platform; no listed capability overlap evidenced."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Anchor false: Synack is crowdsourced pen-testing-as-a-service for security teams, not a developer-security platform; overlaps only on vulnerability scanning."
+        }
+      ]
+    },
+    {
+      "name": "Tenerity",
+      "domain": null,
+      "description": null,
+      "rank": 17,
+      "extra": {
+        "zoominfo_company_id": 557026923,
+        "similarity_score": 0.6805686354637146,
+        "industry": "[Security software, Software Development & Design, Software]",
+        "revenue_range": "$250 mil. - $500 mil.",
+        "employee_range": "1,000 - 5,000",
+        "country": "United States"
+      },
+      "relevant": false,
+      "rationale": "Anchor false: Tenerity is a customer-engagement and loyalty solutions provider, not a developer-security platform; no listed capability overlap.",
+      "anchor_match": false,
+      "capabilities_matched": [],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Anchor false: Tenerity is a customer-engagement and loyalty solutions provider, not a developer-security platform; no listed capability overlap."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Tenerity is a customer loyalty/engagement platform, not a developer-security platform; no capability overlap."
+        }
+      ]
+    },
+    {
+      "name": "Olenick",
+      "domain": null,
+      "description": null,
+      "rank": 18,
+      "extra": {
+        "zoominfo_company_id": 59312739,
+        "similarity_score": 0.6803059577941895,
+        "industry": "[Software & Technical Consulting, Software]",
+        "revenue_range": "$50 mil. - $100 mil.",
+        "employee_range": "250 - 500",
+        "country": "United States"
+      },
+      "relevant": false,
+      "rationale": "Anchor false: Olenick is a software testing and quality-assurance services firm, not a developer-security platform; no listed capability overlap evidenced.",
+      "anchor_match": false,
+      "capabilities_matched": [],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Anchor false: Olenick is a software testing and quality-assurance services firm, not a developer-security platform; no listed capability overlap evidenced."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Olenick is a software QA/testing consultancy, not a developer-security platform vendor; services firm serving the category, no security capabilities."
+        }
+      ]
+    },
+    {
+      "name": "CertiK",
+      "domain": null,
+      "description": null,
+      "rank": 19,
+      "extra": {
+        "zoominfo_company_id": 451017055,
+        "similarity_score": 0.6787531971931458,
+        "industry": "[Security software, Software Development & Design, Software]",
+        "revenue_range": "$50 mil. - $100 mil.",
+        "employee_range": "100 - 250",
+        "country": "United States"
+      },
+      "relevant": false,
+      "rationale": "Anchor false: CertiK is a blockchain/Web3 security and auditing platform, not a general developer-security platform; overlap: vulnerability scanning.",
+      "anchor_match": false,
+      "capabilities_matched": [
+        "vulnerability scanning"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Anchor false: CertiK is a blockchain/Web3 security and auditing platform, not a general developer-security platform; overlap: vulnerability scanning."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Anchor false: CertiK is a blockchain/smart-contract security auditor for Web3 projects, not a developer AppSec platform; scans contracts but serves a different market."
+        }
+      ]
+    },
+    {
+      "name": "Auth0",
+      "domain": null,
+      "description": null,
+      "rank": 20,
+      "extra": {
+        "zoominfo_company_id": 358475488,
+        "similarity_score": 0.6760261058807373,
+        "industry": "[Security software, Software Development & Design, Software]",
+        "revenue_range": "$100 mil. - $250 mil.",
+        "employee_range": "500 - 1,000",
+        "country": "United States"
+      },
+      "relevant": false,
+      "rationale": "Anchor false: Auth0 is a developer identity and access-management platform, not a vulnerability or cloud-security platform; no listed capability overlap.",
+      "anchor_match": false,
+      "capabilities_matched": [],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Anchor false: Auth0 is a developer identity and access-management platform, not a vulnerability or cloud-security platform; no listed capability overlap."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Anchor fails: Auth0 is identity/access management (authentication), not a developer-security platform; no overlap with Snyk's capabilities."
+        }
+      ]
+    },
+    {
+      "name": "PKWARE",
+      "domain": null,
+      "description": null,
+      "rank": 21,
+      "extra": {
+        "zoominfo_company_id": 120291847,
+        "similarity_score": 0.6752352118492126,
+        "industry": "[Security software, Software Development & Design, Software]",
+        "revenue_range": "$50 mil. - $100 mil.",
+        "employee_range": "100 - 250",
+        "country": "United States"
+      },
+      "relevant": false,
+      "rationale": "Anchor false: PKWARE is enterprise data encryption and compression software, not a developer-security platform; no listed capability overlap evidenced.",
+      "anchor_match": false,
+      "capabilities_matched": [],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Anchor false: PKWARE is enterprise data encryption and compression software, not a developer-security platform; no listed capability overlap evidenced."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Anchor false: PKWARE sells data encryption/masking software, not developer-security tooling; no vulnerability, dependency, container, or cloud-infrastructure scanning."
+        }
+      ]
+    },
+    {
+      "name": "SilverEdge",
+      "domain": null,
+      "description": null,
+      "rank": 22,
+      "extra": {
+        "zoominfo_company_id": 540318923,
+        "similarity_score": 0.6745827198028564,
+        "industry": "[Healthcare General, Healthcare]",
+        "revenue_range": "$1 mil. - $5 mil.",
+        "employee_range": "10 - 20",
+        "country": "Tanzania"
+      },
+      "relevant": false,
+      "rationale": "Anchor false: SilverEdge is identified as a healthcare company, not a developer-security platform; no listed capability overlap is evidenced.",
+      "anchor_match": false,
+      "capabilities_matched": [],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Anchor false: SilverEdge is identified as a healthcare company, not a developer-security platform; no listed capability overlap is evidenced."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "SilverEdge is a healthcare company, not a developer-security platform; anchor fails, no capability overlap."
+        }
+      ]
+    },
+    {
+      "name": "VikingCloud",
+      "domain": null,
+      "description": null,
+      "rank": 23,
+      "extra": {
+        "zoominfo_company_id": 482971499,
+        "similarity_score": 0.6737710237503052,
+        "industry": "[Security software, Software Development & Design, Software]",
+        "revenue_range": "$100 mil. - $250 mil.",
+        "employee_range": "1,000 - 5,000",
+        "country": "United States"
+      },
+      "relevant": false,
+      "rationale": "Anchor false: VikingCloud is a managed cybersecurity and PCI compliance provider, not a developer-security platform; overlap: vulnerability scanning.",
+      "anchor_match": false,
+      "capabilities_matched": [
+        "vulnerability scanning"
+      ],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Anchor false: VikingCloud is a managed cybersecurity and PCI compliance provider, not a developer-security platform; overlap: vulnerability scanning."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "VikingCloud is a merchant-focused cybersecurity/PCI compliance and managed security services firm, not a developer-security platform; anchor fails despite scanning overlap."
+        }
+      ]
+    },
+    {
+      "name": "Simetrik",
+      "domain": null,
+      "description": null,
+      "rank": 24,
+      "extra": {
+        "zoominfo_company_id": 465418523,
+        "similarity_score": 0.6736814379692078,
+        "industry": "[Software Development & Design, Software]",
+        "revenue_range": "$50 mil. - $100 mil.",
+        "employee_range": "250 - 500",
+        "country": "United States"
+      },
+      "relevant": false,
+      "rationale": "Anchor false: Simetrik is a financial reconciliation and operations platform, not a developer-security platform; no listed capability overlap evidenced.",
+      "anchor_match": false,
+      "capabilities_matched": [],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Anchor false: Simetrik is a financial reconciliation and operations platform, not a developer-security platform; no listed capability overlap evidenced."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Anchor false: Simetrik is a financial reconciliation automation platform for finance teams, not a developer-security platform; no capability overlap."
+        }
+      ]
+    },
+    {
+      "name": "Keeper",
+      "domain": null,
+      "description": null,
+      "rank": 25,
+      "extra": {
+        "zoominfo_company_id": 21266537,
+        "similarity_score": 0.6732198596000671,
+        "industry": "[Manufacturing General, Manufacturing]",
+        "revenue_range": "$5 mil. - $10 mil.",
+        "employee_range": "20 - 50",
+        "country": "United States"
+      },
+      "relevant": false,
+      "rationale": "Anchor false: Keeper is identified as a manufacturing company, not a developer-security platform; no listed capability overlap is evidenced.",
+      "anchor_match": false,
+      "capabilities_matched": [],
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Anchor false: Keeper is identified as a manufacturing company, not a developer-security platform; no listed capability overlap is evidenced."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Keeper is a password manager / manufacturing firm, not a developer-security platform; no anchor, no capability overlap."
+        }
+      ]
+    }
+  ],
+  "error": null
+}

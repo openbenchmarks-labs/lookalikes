@@ -10,15 +10,17 @@
   "relevant_count": 4,
   "precision_at_k": 4.0,
   "relevant_count_at_10": 4,
+  "relevant_count_at_25": 4,
   "relevant_count_at_100": 4,
   "precision_at_10": 40.0,
+  "precision_at_25": 16.0,
   "precision_at_100": 4.0,
   "latency_ms": 296,
   "cost_usd": null,
   "duplicates_removed": 0,
   "max_results": 10,
-  "judge_model": "gpt-5.6",
-  "judged_at": "2026-07-27T03:31:35Z",
+  "judge_model": "majority(n=3): claude-opus-5,gpt-5.6-terra,kimi-k3",
+  "judged_at": "2026-08-10T19:42:19Z",
   "candidates": [
     {
       "name": "cbre asia pacific",
@@ -34,7 +36,19 @@
         "confidence_level": 93
       },
       "relevant": false,
-      "rationale": "CBRE Asia Pacific is a regional division and duplicate of the seed company, not an independent lookalike prospect."
+      "rationale": "CBRE Asia Pacific is a regional division of the seed company, not an independent competitor, comparable, or ICP-expansion prospect.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "CBRE Asia Pacific is a regional division of the seed company, not an independent competitor, comparable, or ICP-expansion prospect."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "CBRE Asia Pacific is a regional division of the seed itself, not a separate competitor or comparable \u2014 a duplicate entry."
+        }
+      ]
     },
     {
       "name": "cbre global workplace solutions (gws)",
@@ -50,7 +64,19 @@
         "confidence_level": 93
       },
       "relevant": false,
-      "rationale": "CBRE GWS is a business division of CBRE, not an independent company offering a comparable alternative."
+      "rationale": "CBRE Global Workplace Solutions is a CBRE business division, not an independent competitor or comparable company.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "CBRE Global Workplace Solutions is a CBRE business division, not an independent competitor or comparable company."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "CBRE GWS is a business division of CBRE itself (same domain), not an independent competitor or comparable."
+        }
+      ]
     },
     {
       "name": "cbre india",
@@ -66,7 +92,19 @@
         "confidence_level": 93
       },
       "relevant": false,
-      "rationale": "CBRE India is the seed company\u2019s regional operation, not a distinct lookalike prospect."
+      "rationale": "CBRE India is a regional operation of the seed company, not an independent competitor, comparable, or ICP-expansion prospect.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "CBRE India is a regional operation of the seed company, not an independent competitor, comparable, or ICP-expansion prospect."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "CBRE India is a regional subsidiary of the seed company itself \u2014 a duplicate/branch entry, not a competitor or comparable."
+        }
+      ]
     },
     {
       "name": "colliers",
@@ -82,7 +120,19 @@
         "confidence_level": 93
       },
       "relevant": true,
-      "rationale": "Colliers directly overlaps CBRE in commercial real estate services, including leasing, asset lifecycle advisory, and investment management for the same property clients."
+      "rationale": "Global commercial real estate services and investment management firm directly comparable to CBRE across leasing, property lifecycle, and asset-management offerings.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Global commercial real estate services and investment management firm directly comparable to CBRE across leasing, property lifecycle, and asset-management offerings."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Colliers is a global commercial real estate services and investment management firm, a direct competitor to CBRE across product, market, and business model."
+        }
+      ]
     },
     {
       "name": "deloitte",
@@ -98,7 +148,19 @@
         "confidence_level": 93
       },
       "relevant": false,
-      "rationale": "Deloitte primarily provides audit, tax, and management consulting, not commercial property leasing, facilities management, valuation, or real estate asset management."
+      "rationale": "Deloitte is a broad audit, tax, and management consultancy, not a commercial real estate services and investment firm comparable to CBRE.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Deloitte is a broad audit, tax, and management consultancy, not a commercial real estate services and investment firm comparable to CBRE."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Deloitte is a Big Four audit/consulting firm, not a commercial real estate services/investment peer like JLL or Cushman & Wakefield."
+        }
+      ]
     },
     {
       "name": "jll",
@@ -114,7 +176,19 @@
         "confidence_level": 93
       },
       "relevant": true,
-      "rationale": "JLL directly overlaps CBRE in commercial real estate leasing, property management, valuation, capital markets, facilities, and investment management for the same clients."
+      "rationale": "JLL is a direct global commercial real estate services and investment-management competitor, offering leasing, property management, valuation-adjacent, facilities, and asset services.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "JLL is a direct global commercial real estate services and investment-management competitor, offering leasing, property management, valuation-adjacent, facilities, and asset services."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "JLL is a direct global competitor of CBRE: commercial real estate services and investment management across leasing, property management, and capital markets."
+        }
+      ]
     },
     {
       "name": "newmark",
@@ -130,7 +204,19 @@
         "confidence_level": 93
       },
       "relevant": true,
-      "rationale": "Newmark directly overlaps CBRE in commercial real estate advisory, leasing, investment, and services for institutional owners and corporate occupiers."
+      "rationale": "Newmark is a direct commercial real estate advisory and services peer, serving owners, occupiers, corporations, and institutional investors.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Newmark is a direct commercial real estate advisory and services peer, serving owners, occupiers, corporations, and institutional investors."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Newmark is a commercial real estate advisory and services firm serving institutional investors and occupiers\u2014direct competitor to CBRE on product, market, and model."
+        }
+      ]
     },
     {
       "name": "savills",
@@ -146,10 +232,20 @@
         "confidence_level": 93
       },
       "relevant": true,
-      "rationale": "Savills directly overlaps CBRE in commercial real estate advisory, leasing, valuation, facilities, investment, and property management for corporate and institutional clients."
+      "rationale": "Global commercial real estate advisory firm offering comparable leasing, investment, valuation, and property services to corporate and institutional clients.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Global commercial real estate advisory firm offering comparable leasing, investment, valuation, and property services to corporate and institutional clients."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Global commercial real estate services and advisory firm\u2014direct competitor to CBRE across leasing, valuation, and asset/property services."
+        }
+      ]
     }
   ],
-  "error": null,
-  "relevant_count_at_25": 4,
-  "precision_at_25": 16.0
+  "error": null
 }

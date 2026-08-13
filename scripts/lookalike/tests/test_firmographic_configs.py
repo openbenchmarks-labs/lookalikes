@@ -18,7 +18,7 @@ import sys
 import urllib.parse
 
 # Dummy creds so require_env() passes; http_request is mocked so they're unused.
-for _k in ("OCEAN_API_KEY", "PARALLEL_API_KEY", "EXA_API_KEY", "EXTRUCT_API_TOKEN", "DISCOLIKE_API_KEY", "PREDICT_LEADS_API_KEY", "PREDICT_LEADS_API_TOKEN"):
+for _k in ("OCEAN_API_KEY", "PARALLEL_API_KEY", "EXA_API_KEY", "EXTRUCT_API_TOKEN", "DISCOLIKE_API_KEY"):
     os.environ.setdefault(_k, "test-key")
 
 from lookalike import generic_runner  # noqa: E402
@@ -83,21 +83,21 @@ def check(cond: bool, msg: str) -> None:
 
 def test_parallel() -> None:
     print("\n[parallel]")
-    _, cap = _run("parallel", "full", SEED_FIRMO)
+    _, cap = _run("parallel", "seed_first", SEED_FIRMO)
     objective = cap.last_search["body"]["objective"]
     check(
         objective == (
-            "Find companies that are lookalikes of Acme: companies with a similar core product and buyer. "
-            "Acme makes widgets. Return companies a buyer would realistically evaluate alongside Acme."
+            "Find companies similar to Acme (acme.com), Acme makes widgets. "
+            "Return companies a buyer would realistically evaluate alongside Acme."
         ),
-        "objective defines product-and-buyer lookalikes",
+        "objective is seed-first: name + domain anchor, identity clause, buyer return framing",
     )
     check(cap.last_search["body"]["match_limit"] == 100, "match_limit=100 (deep fetch)")
     ctx = {"seed": SEED_FIRMO, "config": {"query_variant": "concise_fallback"}, "vars": {}}
     parallel_hook.objective(ctx)
     check(
-        ctx["vars"]["query"] == "companies like Acme — Acme makes widgets",
-        "fallback restores the concise name-plus-description query",
+        ctx["vars"]["query"] == "companies like Acme (acme.com) — Acme makes widgets",
+        "fallback restores the concise name-plus-identity query",
     )
 
 
@@ -140,23 +140,37 @@ def test_parallel_embedded_domain() -> None:
 
 def test_exa() -> None:
     print("\n[exa]")
-    _, cap = _run("exa", "full", SEED_FIRMO)
+    _, cap = _run("exa", "seed_first", SEED_FIRMO)
     check(
         cap.last_search["body"]["query"] == (
-            "Find companies that are lookalikes of Acme: companies with a similar core product and buyer. "
-            "Acme makes widgets. Return companies a buyer would realistically evaluate alongside Acme."
+            "Find companies similar to Acme (acme.com), Acme makes widgets. "
+            "Return companies a buyer would realistically evaluate alongside Acme."
         ),
-        "query defines product-and-buyer lookalikes",
+        "query is seed-first: name + domain anchor, identity clause, buyer return framing",
+    )
+
+    seed_short = Seed(
+        "short", "Shorty", "shorty.com",
+        "Long feature enumeration that should not reach the query", "saas",
+        short_description="the widget platform",
+    )
+    _, cap = _run("exa", "seed_first", seed_short)
+    check(
+        cap.last_search["body"]["query"] == (
+            "Find companies similar to Shorty (shorty.com), the widget platform. "
+            "Return companies a buyer would realistically evaluate alongside Shorty."
+        ),
+        "short_description wins over the long description in the query",
     )
 
     seed_no_desc = Seed("no-desc", "Name Only", "name-only.com", None, "saas")
-    _, cap = _run("exa", "full", seed_no_desc)
+    _, cap = _run("exa", "seed_first", seed_no_desc)
     check(
         cap.last_search["body"]["query"] == (
-            "Find companies that are lookalikes of Name Only: companies with a similar core product and buyer. "
-            "Name Only is a company. Return companies a buyer would realistically evaluate alongside Name Only."
+            "Find companies similar to Name Only (name-only.com). "
+            "Return companies a buyer would realistically evaluate alongside Name Only."
         ),
-        "query supplies a safe description fallback",
+        "query stays seed-only when no description exists",
     )
 
 

@@ -7,18 +7,20 @@
     "name": "domain_lookalikes"
   },
   "k": 100,
-  "relevant_count": 3,
-  "precision_at_k": 3.0,
-  "relevant_count_at_10": 3,
-  "relevant_count_at_100": 3,
-  "precision_at_10": 30.0,
-  "precision_at_100": 3.0,
+  "relevant_count": 6,
+  "precision_at_k": 6.0,
+  "relevant_count_at_10": 6,
+  "relevant_count_at_25": 6,
+  "relevant_count_at_100": 6,
+  "precision_at_10": 60.0,
+  "precision_at_25": 24.0,
+  "precision_at_100": 6.0,
   "latency_ms": 298,
   "cost_usd": null,
   "duplicates_removed": 0,
   "max_results": 10,
-  "judge_model": "gpt-5.6",
-  "judged_at": "2026-07-27T03:31:46Z",
+  "judge_model": "majority(n=3): claude-opus-5,gpt-5.6-terra,kimi-k3",
+  "judged_at": "2026-08-10T19:49:45Z",
   "candidates": [
     {
       "name": "bytedance",
@@ -33,8 +35,20 @@
         "country": "china",
         "confidence_level": 95
       },
-      "relevant": false,
-      "rationale": "ByteDance primarily operates social-content platforms; TikTok Shop overlaps commerce, but it is not primarily an e-commerce marketplace comparable to Shopee."
+      "relevant": true,
+      "rationale": "Both operate large consumer internet platforms spanning digital entertainment and commerce, making ByteDance a plausible adjacent platform-business comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both operate large consumer internet platforms spanning digital entertainment and commerce, making ByteDance a plausible adjacent platform-business comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are consumer internet conglomerates spanning e-commerce, digital entertainment, and content platforms; TikTok Shop competes directly with Shopee in Southeast Asia."
+        }
+      ]
     },
     {
       "name": "garena",
@@ -50,7 +64,19 @@
         "confidence_level": 95
       },
       "relevant": false,
-      "rationale": "Garena is Sea\u2019s own gaming subsidiary, not an independent lookalike, and its gaming offering does not overlap Shopee\u2019s e-commerce buyer job."
+      "rationale": "Garena is Sea Limited\u2019s own digital-entertainment subsidiary, not an independent competitor, comparable, or ICP-expansion lookalike.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Garena is Sea Limited\u2019s own digital-entertainment subsidiary, not an independent competitor, comparable, or ICP-expansion lookalike."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Garena is Sea Limited's own digital entertainment subsidiary, not a competitor or comparable; subsidiaries are excluded like parent companies."
+        }
+      ]
     },
     {
       "name": "google",
@@ -66,7 +92,19 @@
         "confidence_level": 95
       },
       "relevant": false,
-      "rationale": "Google\u2019s core search, advertising, cloud, and software businesses do not overlap Shopee\u2019s primary e-commerce marketplace for the same buyer job."
+      "rationale": "Google\u2019s primary business is search, advertising, and cloud; its ancillary consumer services do not make it a Shopee-like commerce, gaming, or fintech comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Google\u2019s primary business is search, advertising, and cloud; its ancillary consumer services do not make it a Shopee-like commerce, gaming, or fintech comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Google's primary products are search, ads, and cloud \u2014 not e-commerce, digital entertainment, or consumer fintech marketplaces like Sea's Shopee business."
+        }
+      ]
     },
     {
       "name": "goto group",
@@ -82,7 +120,19 @@
         "confidence_level": 95
       },
       "relevant": true,
-      "rationale": "Both operate Southeast Asian consumer platforms combining digital commerce or merchant ecosystems with payments and financial services for overlapping consumers and merchants."
+      "rationale": "GoTo is a Southeast Asian consumer internet ecosystem combining commerce, on-demand services, and digital financial products, making it a close regional platform comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "GoTo is a Southeast Asian consumer internet ecosystem combining commerce, on-demand services, and digital financial products, making it a close regional platform comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Southeast Asian consumer internet group combining e-commerce (Tokopedia), on-demand services, and fintech \u2014 direct Sea/Shopee competitor and comparable."
+        }
+      ]
     },
     {
       "name": "grab",
@@ -98,7 +148,19 @@
         "confidence_level": 95
       },
       "relevant": true,
-      "rationale": "Both are Southeast Asian consumer superapps operating digital marketplaces and financial services, serving overlapping consumers and merchants."
+      "rationale": "Southeast Asian consumer superapp with digital financial services and delivery marketplace, making it a strong regional platform comparable to Sea's Shopee ecosystem.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Southeast Asian consumer superapp with digital financial services and delivery marketplace, making it a strong regional platform comparable to Sea's Shopee ecosystem."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are Southeast Asian consumer-internet super-apps combining commerce/delivery marketplaces and digital financial services; direct competitors and comparables (GrabPay vs SeaMoney, GrabFood vs ShopeeFood)."
+        }
+      ]
     },
     {
       "name": "lazada",
@@ -114,7 +176,19 @@
         "confidence_level": 95
       },
       "relevant": true,
-      "rationale": "Lazada directly overlaps Shopee as a Southeast Asian e-commerce marketplace serving the same consumers, merchants, and commerce use cases."
+      "rationale": "Lazada directly competes with Shopee as a Southeast Asian e-commerce marketplace, with comparable logistics and payments ecosystem services.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Lazada directly competes with Shopee as a Southeast Asian e-commerce marketplace, with comparable logistics and payments ecosystem services."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Lazada is Southeast Asia's leading e-commerce marketplace, Shopee's direct competitor\u2014same product, market, and business model."
+        }
+      ]
     },
     {
       "name": "monee",
@@ -130,7 +204,19 @@
         "confidence_level": 95
       },
       "relevant": false,
-      "rationale": "monee is Sea Limited\u2019s own digital financial-services business, not an independent lookalike prospect; it represents part of the seed company."
+      "rationale": "Monee is part of Sea Limited, making it an internal subsidiary rather than an independent competitor or comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Monee is part of Sea Limited, making it an internal subsidiary rather than an independent competitor or comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Monee is Sea Limited's own fintech subsidiary (SeaMoney), part of the seed company itself, not a peer or comparable."
+        }
+      ]
     },
     {
       "name": "shopee",
@@ -146,7 +232,19 @@
         "confidence_level": 95
       },
       "relevant": false,
-      "rationale": "Shopee is Sea\u2019s own e-commerce business, making it the same corporate account rather than an independent lookalike prospect."
+      "rationale": "Shopee is Sea\u2019s own e-commerce subsidiary, not an independent competitor or comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Shopee is Sea\u2019s own e-commerce subsidiary, not an independent competitor or comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Shopee is Sea's own subsidiary brand \u2014 a duplicate of the seed, not a competitor or comparable."
+        }
+      ]
     },
     {
       "name": "tiktok",
@@ -161,8 +259,25 @@
         "country": "united states",
         "confidence_level": 95
       },
-      "relevant": false,
-      "rationale": "TikTok is primarily a social video platform; TikTok Shop does not make its core offering equivalent to Shopee\u2019s e-commerce marketplace."
+      "relevant": true,
+      "rationale": "TikTok Shop directly competes with Shopee as a social-commerce marketplace in Southeast Asia, alongside both companies' consumer digital-entertainment offerings.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "TikTok Shop directly competes with Shopee as a social-commerce marketplace in Southeast Asia, alongside both companies' consumer digital-entertainment offerings."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Short-video social platform; primary product differs from Sea's e-commerce, gaming, and fintech. Shared 'consumer internet/entertainment' label is too generic."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Both consumer internet platforms combining digital entertainment with e-commerce (TikTok Shop) competing for Southeast Asian users; genuine comparables."
+        }
+      ]
     },
     {
       "name": "traveloka",
@@ -177,11 +292,26 @@
         "country": "singapore",
         "confidence_level": 95
       },
-      "relevant": false,
-      "rationale": "Traveloka is a travel-booking platform, while Shopee\u2019s core is general e-commerce; consumers use them for distinct jobs and offerings."
+      "relevant": true,
+      "rationale": "Both are Southeast Asian consumer internet platform companies; Traveloka is a comparable regional consumer marketplace/super-app business. Same model, same market.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Traveloka is a travel-booking marketplace; it does not offer Shopee-like e-commerce, gaming, or digital financial services as its primary business."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are Southeast Asian consumer internet platform companies; Traveloka is a comparable regional consumer marketplace/super-app business. Same model, same market."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "SEA consumer internet platform with large-scale app marketplace and fintech adjacency; comparable regional tech peer to Shopee/Sea.<json_schema>\u2026</json_schema>"
+        }
+      ]
     }
   ],
-  "error": null,
-  "relevant_count_at_25": 3,
-  "precision_at_25": 12.0
+  "error": null
 }

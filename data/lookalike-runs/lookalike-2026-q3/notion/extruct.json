@@ -7,17 +7,20 @@
     "name": "domain_similarity"
   },
   "k": 100,
-  "relevant_count": 42,
-  "precision_at_k": 42.0,
-  "relevant_count_at_10": 7,
-  "relevant_count_at_100": 42,
-  "precision_at_10": 70.0,
-  "precision_at_100": 42.0,
+  "relevant_count": 46,
+  "precision_at_k": 46.0,
+  "relevant_count_at_10": 6,
+  "relevant_count_at_25": 10,
+  "relevant_count_at_100": 46,
+  "precision_at_10": 60.0,
+  "precision_at_25": 40.0,
+  "precision_at_100": 46.0,
   "latency_ms": 3398,
   "cost_usd": null,
   "duplicates_removed": 3,
-  "judge_model": "gpt-5.6",
-  "judged_at": "2026-07-27T03:21:12Z",
+  "max_results": null,
+  "judge_model": "majority(n=3): claude-opus-5,gpt-5.6-terra,kimi-k3",
+  "judged_at": "2026-08-10T19:20:49Z",
   "candidates": [
     {
       "name": "Notion",
@@ -34,7 +37,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "This is a duplicate entry for the seed company, using Notion\u2019s notion.site domain and describing the same workspace products."
+      "rationale": "Duplicate/alternate-domain entry for the seed company, not a distinct company lookalike.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Duplicate/alternate-domain entry for the seed company, not a distinct company lookalike."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Duplicate entry: candidate is Notion itself (notion.site is Notion's own domain), not a competitor or comparable."
+        }
+      ]
     },
     {
       "name": "Mem",
@@ -51,7 +66,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Both provide collaborative workspaces for notes, projects, searchable knowledge bases, and team knowledge management, targeting the same organizational users and workflows."
+      "rationale": "AI-powered workspace for team notes, projects, searchable knowledge bases, and collaboration directly overlaps Notion\u2019s core use cases.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "AI-powered workspace for team notes, projects, searchable knowledge bases, and collaboration directly overlaps Notion\u2019s core use cases."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "AI-powered team notes and knowledge-management workspace directly overlaps Notion's notes/docs/wiki/knowledge base product and team collaboration market."
+        }
+      ]
     },
     {
       "name": "Tana",
@@ -68,7 +95,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Tana overlaps Notion in collaborative notes, knowledge management, tasks, and project organization for professionals and teams."
+      "rationale": "AI-native notes, knowledge management, task, and project workspace directly overlaps Notion\u2019s collaborative productivity platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "AI-native notes, knowledge management, task, and project workspace directly overlaps Notion\u2019s collaborative productivity platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "AI-native workspace for notes, tasks, and knowledge management\u2014same product category and buyer as Notion; direct competitor."
+        }
+      ]
     },
     {
       "name": "Noota",
@@ -84,8 +123,20 @@
         "industries": null,
         "employee_count": "11-50"
       },
-      "relevant": true,
-      "rationale": "Both offer collaborative note-taking and knowledge capture; teams could evaluate either for documenting meetings and sharing actionable notes."
+      "relevant": false,
+      "rationale": "AI meeting transcription and action-item tool overlaps only narrowly with Notion\u2019s broad collaborative workspace and knowledge-management platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "AI meeting transcription and action-item tool overlaps only narrowly with Notion\u2019s broad collaborative workspace and knowledge-management platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Noota is AI meeting transcription/conversation intelligence for sales and recruiting, not a collaborative docs/wiki/workspace platform; shared 'notes' keyword alone is insufficient."
+        }
+      ]
     },
     {
       "name": "Taskade",
@@ -102,7 +153,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Taskade offers a collaborative AI workspace with projects, wikis, workflows, and internal tools, targeting teams with similar productivity and knowledge-management needs."
+      "rationale": "Taskade is a collaborative AI workspace offering projects, workflows, wikis, and documentation, directly overlapping Notion's productivity and knowledge-management use cases.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Taskade is a collaborative AI workspace offering projects, workflows, wikis, and documentation, directly overlapping Notion's productivity and knowledge-management use cases."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Taskade is a collaborative workspace for projects, docs, wikis, and tasks \u2014 same product category and buyer persona as Notion, a direct competitor."
+        }
+      ]
     },
     {
       "name": "Noty.ai",
@@ -119,7 +182,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "Noty.ai is a meeting transcription and action-item assistant, not a collaborative docs, wiki, project, or knowledge-management workspace."
+      "rationale": "Meeting transcription and action-item assistant, not a collaborative docs, wiki, project workspace, or knowledge-management platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Meeting transcription and action-item assistant, not a collaborative docs, wiki, project workspace, or knowledge-management platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Meeting transcription/summarization assistant, not a collaborative workspace/docs/wiki platform; adjacent productivity tool, not a Notion competitor or comparable."
+        }
+      ]
     },
     {
       "name": "Superlist",
@@ -136,7 +211,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Both offer collaborative team productivity software spanning notes, tasks, and lightweight project management for overlapping knowledge-worker users and workflows."
+      "rationale": "Collaborative task management and AI note-taking overlap strongly with Notion\u2019s projects, notes, and team workspace use cases.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Collaborative task management and AI note-taking overlap strongly with Notion\u2019s projects, notes, and team workspace use cases."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Team productivity tool combining tasks, notes, and real-time collaboration \u2014 direct competitor to Notion's workspace, same buyer persona and product category."
+        }
+      ]
     },
     {
       "name": "Nifty",
@@ -153,7 +240,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Nifty overlaps Notion\u2019s collaborative project workspace, combining tasks, documents, discussions, and team planning for similar business users and workflows."
+      "rationale": "Nifty is a collaborative workspace combining documents, tasks, discussions, and project planning, directly comparable to Notion\u2019s docs-and-projects platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Nifty is a collaborative workspace combining documents, tasks, discussions, and project planning, directly comparable to Notion\u2019s docs-and-projects platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "All-in-one collaborative workspace combining docs, tasks, and discussions \u2014 competes with Notion on product, market, and model."
+        }
+      ]
     },
     {
       "name": "Onyx",
@@ -170,7 +269,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "Onyx searches and chats across existing workplace content; it does not provide Notion\u2019s core collaborative document, wiki, and project-authoring workspace."
+      "rationale": "Onyx is primarily an enterprise search and AI-agent layer over existing tools, not a collaborative docs, wiki, and project workspace.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Onyx is primarily an enterprise search and AI-agent layer over existing tools, not a collaborative docs, wiki, and project workspace."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Onyx is an AI search/chat layer over existing tools, not a docs/wiki workspace; knowledge-management adjacency is weak, not a direct competitor."
+        }
+      ]
     },
     {
       "name": "Bit",
@@ -187,7 +298,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Bit directly overlaps Notion in collaborative documents, notes, wikis, and team knowledge management for the same organizational users."
+      "rationale": "Bit offers collaborative documents, notes, wikis, and knowledge management for teams, directly overlapping Notion's core workspace product.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Bit offers collaborative documents, notes, wikis, and knowledge management for teams, directly overlapping Notion's core workspace product."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Bit.ai is a document collaboration platform for docs, notes, and wikis \u2014 directly competing with Notion on product, market, and model."
+        }
+      ]
     },
     {
       "name": "Maybe*",
@@ -204,7 +327,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "Maybe* builds cross-tool AI automation agents, not a collaborative docs, wiki, project, or knowledge-management workspace evaluated for the same job."
+      "rationale": "AI-agent automation platform; integrates with Notion but does not provide a collaborative docs, wiki, or project-workspace product.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "AI-agent automation platform; integrates with Notion but does not provide a collaborative docs, wiki, or project-workspace product."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Maybe* is an AI agent automation platform, not a collaborative docs/wiki/workspace product; integrating with Notion doesn't make it a comparable."
+        }
+      ]
     },
     {
       "name": "Read AI",
@@ -221,7 +356,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "Read AI primarily transcribes and summarizes meetings, while Notion provides a workspace for docs, wikis, projects, and knowledge management."
+      "rationale": "Read AI is a meeting transcription and summarization assistant, not a collaborative workspace for documents, wikis, and project management.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Read AI is a meeting transcription and summarization assistant, not a collaborative workspace for documents, wikis, and project management."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Read AI is a meeting transcription/summary assistant, not a collaborative workspace for docs, wikis, and projects; different product category."
+        }
+      ]
     },
     {
       "name": "OfficeIQ",
@@ -238,7 +385,24 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "OfficeIQ is a broad AI assistant suite, not a collaborative docs, wiki, project, and knowledge-management workspace comparable to Notion."
+      "rationale": "General AI assistant/co-pilot for content and tasks, not a collaborative workspace for docs, wikis, and knowledge management like Notion.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "AI productivity agents manage tasks, documents, and information, overlapping Notion\u2019s workspace and knowledge-management use cases."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "General AI assistant/co-pilot for content and tasks, not a collaborative workspace for docs, wikis, and knowledge management like Notion."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "AI assistant/agent tool for content generation, not a collaborative docs/wiki workspace platform; only vague productivity overlap."
+        }
+      ]
     },
     {
       "name": "Saga",
@@ -255,7 +419,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Saga and Notion both provide collaborative team workspaces combining notes, documentation, tasks, knowledge management, and AI assistance for similar users and workflows."
+      "rationale": "AI collaborative workspace for notes, tasks, documentation, and team knowledge management directly overlaps Notion\u2019s core product and use cases.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "AI collaborative workspace for notes, tasks, documentation, and team knowledge management directly overlaps Notion\u2019s core product and use cases."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "AI-powered collaborative workspace combining notes, tasks, docs, and real-time team collaboration \u2014 directly matches Notion's product, market, and model."
+        }
+      ]
     },
     {
       "name": "Supernormal",
@@ -272,7 +448,24 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "Supernormal is a specialized AI meeting assistant, not a collaborative docs, wiki, project, and knowledge-management workspace comparable to Notion."
+      "rationale": "Supernormal is AI meeting-note automation, not a collaborative workspace for docs, wikis, and knowledge management; notes overlap is too narrow.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "AI meeting-note automation overlaps Notion's documentation and collaboration use cases, but is a specialized productivity-workspace comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Supernormal is AI meeting-note automation, not a collaborative workspace for docs, wikis, and knowledge management; notes overlap is too narrow."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "AI meeting-notetaker, a narrow point tool; not a general collaborative docs/wiki workspace competing with Notion.J"
+        }
+      ]
     },
     {
       "name": "WotNot",
@@ -289,7 +482,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "WotNot provides customer-facing AI agents for support and lead generation, not a collaborative workspace for docs, wikis, projects, or knowledge management."
+      "rationale": "No-code AI agents for customer support and lead generation are distinct from Notion's collaborative docs, wiki, and project workspace.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "No-code AI agents for customer support and lead generation are distinct from Notion's collaborative docs, wiki, and project workspace."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "WotNot builds AI chatbot/agent tools for customer support and lead gen, not collaborative docs/wiki workspace software \u2014 different product and buyer."
+        }
+      ]
     },
     {
       "name": "Slite",
@@ -306,7 +511,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Slite directly overlaps Notion\u2019s collaborative documentation, wiki, and team knowledge-management use cases for the same organizational buyers and users."
+      "rationale": "Slite is a collaborative team knowledge base for documents, internal wikis, and AI-assisted information retrieval, directly overlapping Notion\u2019s workspace use cases.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Slite is a collaborative team knowledge base for documents, internal wikis, and AI-assisted information retrieval, directly overlapping Notion\u2019s workspace use cases."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Slite is a team knowledge base/docs platform with AI search \u2014 directly competes with Notion's wiki and knowledge-management workspace for the same buyers."
+        }
+      ]
     },
     {
       "name": "SciSpace",
@@ -323,7 +540,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "SciSpace is specialized AI software for academic research workflows, not a collaborative workspace for general notes, wikis, projects, and knowledge management."
+      "rationale": "Academic AI research and literature workflow platform, not a general collaborative workspace for notes, wikis, and project management.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Academic AI research and literature workflow platform, not a general collaborative workspace for notes, wikis, and project management."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "SciSpace is an AI academic-research toolset (literature review, citations), not a collaborative docs/wiki workspace; different product and buyer."
+        }
+      ]
     },
     {
       "name": "NinjaTech AI",
@@ -340,7 +569,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "NinjaTech is a general-purpose AI agent, not a collaborative documentation, wiki, project, and knowledge-management workspace competing with Notion."
+      "rationale": "General-purpose AI agent for individual tasks, not a collaborative workspace for docs, wikis, projects, and knowledge management.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "General-purpose AI agent for individual tasks, not a collaborative workspace for docs, wikis, projects, and knowledge management."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "AI agent for research/coding/scheduling, not a collaborative workspace/knowledge-management product; no shared product or market axis."
+        }
+      ]
     },
     {
       "name": "Highlight AI",
@@ -357,7 +598,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "Highlight AI is a cross-app meeting and activity assistant, not a collaborative docs, wiki, and project workspace competing with Notion."
+      "rationale": "AI meeting and activity-capture assistant, not a collaborative workspace for docs, wikis, and project management.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "AI meeting and activity-capture assistant, not a collaborative workspace for docs, wikis, and project management."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Adjacent AI meeting/activity capture assistant, not a collaborative docs, wiki, project, or knowledge workspace platform."
+        }
+      ]
     },
     {
       "name": "Auxilia",
@@ -374,7 +627,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Auxilia offers a collaborative AI workspace for notes, documents, search, and tasks, addressing similar knowledge-management needs for small teams."
+      "rationale": "Unified collaborative workspace for notes, writing, search, tasks, and project planning directly overlaps Notion\u2019s core knowledge-management and productivity product.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Unified collaborative workspace for notes, writing, search, tasks, and project planning directly overlaps Notion\u2019s core knowledge-management and productivity product."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Unified workspace combining AI note-taking, writing, document search, and team collaboration directly matches Notion's core product and market."
+        }
+      ]
     },
     {
       "name": "nuwacom",
@@ -391,7 +656,24 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Both provide collaborative knowledge and document workspaces that help business teams manage documentation, search company information, and turn knowledge into workflows."
+      "rationale": "Enterprise knowledge platform with documents, search, collaboration, and workflow automation overlaps Notion's workspace and knowledge-management use cases.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Enterprise knowledge platform with documents, search, collaboration, and workflow automation overlaps Notion's workspace and knowledge-management use cases."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Enterprise AI assistant/agent platform layering over company knowledge, not a collaborative docs/wiki workspace; overlaps on knowledge theme but not a Notion peer."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "AI knowledge workspace with docs, search, meetings and collaboration \\u2014 comparable to Notion's knowledge management workspace.', 'x'"
+        }
+      ]
     },
     {
       "name": "TextCortex AI",
@@ -408,7 +690,24 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "TextCortex primarily provides AI agents and knowledge search, not a collaborative docs, wiki, and project workspace serving Notion\u2019s core job."
+      "rationale": "TextCortex is an AI writing/agent automation tool with knowledge search, not a collaborative workspace for docs, wikis, and projects like Notion.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Enterprise knowledge management and knowledge-base creation overlap with Notion\u2019s workspace/wiki use case, though TextCortex adds AI agents and automation."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "TextCortex is an AI writing/agent automation tool with knowledge search, not a collaborative workspace for docs, wikis, and projects like Notion."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "TextCortex sells AI writing agents and enterprise search, not a collaborative docs/wiki workspace; overlap is only loose knowledge-management keyword."
+        }
+      ]
     },
     {
       "name": "timeOS",
@@ -425,7 +724,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "timeOS is primarily a calendar-based meeting assistant, not a collaborative docs, wiki, project, and knowledge-management workspace like Notion."
+      "rationale": "Meeting-intelligence AI captures notes and actions, but its primary calendar/meeting workflow product is not a general collaborative workspace.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Meeting-intelligence AI captures notes and actions, but its primary calendar/meeting workflow product is not a general collaborative workspace."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "AI meeting/calendar assistant that captures notes and integrates with Notion; complements rather than competes with a collaborative docs/wiki workspace."
+        }
+      ]
     },
     {
       "name": "Mindverse",
@@ -442,7 +753,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "Mindverse primarily provides AI content creation and automation tools, not a collaborative docs, wiki, project, and knowledge-management workspace."
+      "rationale": "AI productivity suite includes collaboration, workflows, and internal-data knowledge tools, but its primary focus is AI content creation rather than collaborative workspace management.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "AI productivity suite includes collaboration, workflows, and internal-data knowledge tools, but its primary focus is AI content creation rather than collaborative workspace management."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Mindverse is an AI content-generation tool suite (copy, images, SEO) for marketers, not a collaborative workspace for docs, wikis, and knowledge management like Notion."
+        }
+      ]
     },
     {
       "name": "Copera.ai",
@@ -459,7 +782,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Both provide unified team workspaces combining collaborative documents, tasks, and knowledge-sharing for remote and project teams, despite Copera\u2019s added communications focus."
+      "rationale": "Unified collaborative workspace for documents, tasks, notes, and team coordination directly overlaps Notion\u2019s productivity and knowledge-management use cases.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Unified collaborative workspace for documents, tasks, notes, and team coordination directly overlaps Notion\u2019s productivity and knowledge-management use cases."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Unified workspace combining documents, tasks, and team collaboration for remote teams\u2014overlaps Notion's product and buyer, despite added chat/video emphasis."
+        }
+      ]
     },
     {
       "name": "Brainfo.ai",
@@ -476,7 +811,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Brainfo offers collaborative block-based notes, documents, tasks, and AI knowledge management, overlapping Notion\u2019s workspace and serving similar individual and team users."
+      "rationale": "AI-enhanced collaborative workspace with block documents, notes, tasks, and team knowledge management closely matches Notion's core product.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "AI-enhanced collaborative workspace with block documents, notes, tasks, and team knowledge management closely matches Notion's core product."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Block-based collaborative workspace for notes, docs, and team knowledge management with AI \u2014 direct product and market match to Notion."
+        }
+      ]
     },
     {
       "name": "Humble AI",
@@ -493,7 +840,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "Humble AI provides knowledge-trained assistants that integrate with Notion, not a collaborative docs, wiki, and project workspace competing with it."
+      "rationale": "AI assistants query organizational knowledge and integrate with Notion, but Humble AI is an AI productivity layer rather than a collaborative workspace.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "AI assistants query organizational knowledge and integrate with Notion, but Humble AI is an AI productivity layer rather than a collaborative workspace."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "AI assistant layer integrating with Notion/Slack, not a workspace/docs/wiki product; complements rather than competes with Notion."
+        }
+      ]
     },
     {
       "name": "NotesO",
@@ -510,7 +869,24 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Both provide collaborative team note-taking and action-item management, serving project, product, and operations users documenting and organizing work."
+      "rationale": "AI meeting-note and task platform overlaps Notion's collaborative notes and project-workspace use cases, though it is more specialized.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "AI meeting-note and task platform overlaps Notion's collaborative notes and project-workspace use cases, though it is more specialized."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "NotesO is an AI meeting-transcription/task tool (Otter-like), not a collaborative docs/wiki workspace; note overlap is narrow, different job-to-be-done."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Both are note-taking/collaboration platforms for team knowledge capture, though NotesO focuses on AI meeting notes; plausible comparable."
+        }
+      ]
     },
     {
       "name": "Ogment AI",
@@ -527,7 +903,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "Ogment is an AI integration and workflow orchestration layer connecting tools like Notion, not a collaborative docs, wiki, and knowledge-management platform."
+      "rationale": "AI integration and workflow orchestration layer connecting tools, rather than a collaborative docs, wiki, and project-management workspace.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "AI integration and workflow orchestration layer connecting tools, rather than a collaborative docs, wiki, and project-management workspace."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Integration/automation layer connecting tools like Notion rather than a notes/docs/wiki workspace itself; different product and job to be done."
+        }
+      ]
     },
     {
       "name": "OpenNation AI",
@@ -544,7 +932,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "OpenNation focuses on AI content generation, design, and marketing automation, not collaborative docs, wikis, projects, or workplace knowledge management."
+      "rationale": "AI content-generation and marketing automation suite, not a collaborative workspace for docs, wikis, and project knowledge management.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "AI content-generation and marketing automation suite, not a collaborative workspace for docs, wikis, and project knowledge management."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "AI content-generation toolkit (copy, images, chatbots), not a collaborative workspace/notes/docs product; different product and buyer job-to-be-done."
+        }
+      ]
     },
     {
       "name": "Finna",
@@ -561,7 +961,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Both provide collaborative startup workspaces combining documents, project workflows, knowledge sharing, and AI assistance for cross-functional teams."
+      "rationale": "AI-first collaborative workspace unifying documents, knowledge, workflows, and team tools; a plausible Notion competitor for startup teams.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "AI-first collaborative workspace unifying documents, knowledge, workflows, and team tools; a plausible Notion competitor for startup teams."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "AI-first collaborative workspace with integrated document editor and team workflows, directly comparable to Notion's unified docs-and-projects workspace product."
+        }
+      ]
     },
     {
       "name": "NOAN",
@@ -578,7 +990,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Both provide centralized workspaces for business knowledge, notes, and document creation, targeting teams managing shared information and workflows."
+      "rationale": "AI-native workspace centralizes notes, documents, business facts, and collaboration, making it a comparable knowledge-management/productivity platform for founders.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "AI-native workspace centralizes notes, documents, business facts, and collaboration, making it a comparable knowledge-management/productivity platform for founders."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "AI-native workspace combining notes, docs, and centralized business knowledge \u2014 overlaps Notion's workspace/notes/knowledge product as an AI-forward comparable."
+        }
+      ]
     },
     {
       "name": "Visualist",
@@ -595,7 +1019,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "Visualist is a vertical client-management and creative workflow platform, not a collaborative docs, wiki, and knowledge-management workspace comparable to Notion."
+      "rationale": "Visualist is a vertical client-management and design-workflow tool for creative professionals, not a general collaborative docs, wiki, and knowledge-management workspace.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Visualist is a vertical client-management and design-workflow tool for creative professionals, not a general collaborative docs, wiki, and knowledge-management workspace."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Visualist is a client-management/business-admin tool for creative service professionals (stylists, planners), not a collaborative docs/wiki/knowledge workspace like Notion; different buyer and job."
+        }
+      ]
     },
     {
       "name": "Char",
@@ -612,7 +1048,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Char overlaps Notion\u2019s notes, task, meeting-capture, and lightweight workspace use cases for operators and teams managing knowledge and follow-ups."
+      "rationale": "AI notepad combining notes, tasks, meeting capture, and knowledge context is a comparable collaborative-workspace product, though more assistant-focused.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "AI notepad combining notes, tasks, meeting capture, and knowledge context is a comparable collaborative-workspace product, though more assistant-focused."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "AI notepad for notes, tasks, and knowledge capture overlaps Notion's docs/notes/workspace product and productivity market, a credible comparable."
+        }
+      ]
     },
     {
       "name": "Vaiz",
@@ -629,7 +1077,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Vaiz combines collaborative documents, task tracking, and workflows for teams, directly overlapping Notion\u2019s workspace and lightweight project-management use cases."
+      "rationale": "Combines collaborative documents, task tracking, and workflow management for teams, directly overlapping Notion\u2019s workspace and project-management use cases.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Combines collaborative documents, task tracking, and workflow management for teams, directly overlapping Notion\u2019s workspace and project-management use cases."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "All-in-one workspace merging project management, real-time document collaboration, and AI features \u2014 a direct competitor/comparable to Notion's collaborative workspace."
+        }
+      ]
     },
     {
       "name": "Alldone GmbH",
@@ -646,7 +1106,19 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "Both provide unified task, note, and knowledge-management workspaces for professionals seeking an all-in-one productivity system."
+      "rationale": "All-in-one notes, tasks, and knowledge-management workspace overlaps Notion\u2019s core product, despite its more personal, AI-agent-oriented positioning.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "All-in-one notes, tasks, and knowledge-management workspace overlaps Notion\u2019s core product, despite its more personal, AI-agent-oriented positioning."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "All-in-one workspace combining notes, tasks, and knowledge base\u2014same product category as Notion, a comparable productivity tool."
+        }
+      ]
     },
     {
       "name": "Sonnet AI",
@@ -663,7 +1135,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "Sonnet is specialized meeting transcription and CRM automation, not a collaborative docs, wiki, project, and knowledge-management workspace like Notion."
+      "rationale": "Meeting transcription and CRM-update tool, not a collaborative workspace for docs, wikis, projects, or knowledge management.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Meeting transcription and CRM-update tool, not a collaborative workspace for docs, wikis, projects, or knowledge management."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Sonnet is an AI meeting-transcription/CRM-update tool (like Otter), not a collaborative workspace for docs, wikis, and projects; notes overlap alone is weak."
+        }
+      ]
     },
     {
       "name": "Inner AI",
@@ -679,8 +1163,25 @@
         "industries": null,
         "employee_count": "11-50"
       },
-      "relevant": false,
-      "rationale": "Inner AI is a personal AI productivity assistant, not a collaborative docs, wiki, and team knowledge-management workspace."
+      "relevant": true,
+      "rationale": "AI personal productivity and thought-organization platform overlaps with Notion\u2019s workspace, notes, task, and knowledge-management use cases.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "AI personal productivity and thought-organization platform overlaps with Notion\u2019s workspace, notes, task, and knowledge-management use cases."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "AI assistant for individual thought organization and task automation, not a collaborative docs/wiki/knowledge workspace like Notion; product and buyer differ."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "AI productivity/workspace tool for organizing thoughts and tasks, targeting knowledge workers /productproductivity software space, plausible Notion comparable.}"
+        }
+      ]
     },
     {
       "name": "Nyxhora",
@@ -697,7 +1198,19 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "Nyxhora directly overlaps Notion\u2019s collaborative notes, project management, and team workspace functions for the same team productivity buyers."
+      "rationale": "Unified collaborative workspace for notes, project management, and team knowledge sharing directly overlaps Notion's core product and users.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Unified collaborative workspace for notes, project management, and team knowledge sharing directly overlaps Notion's core product and users."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "All-in-one collaborative workspace with Notion-style notes, kanban project management, and team collaboration \u2014 direct product and market competitor to Notion."
+        }
+      ]
     },
     {
       "name": "Sireal",
@@ -714,7 +1227,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "Sireal is a consultancy implementing Notion and Google Workspace, not a competing collaborative workspace or knowledge-management software platform."
+      "rationale": "Consultancy and training provider implementing Notion workflows, not a collaborative workspace software competitor or comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Consultancy and training provider implementing Notion workflows, not a collaborative workspace software competitor or comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Consultancy implementing Notion for clients, not a competing workspace product; agencies serving the category are excluded."
+        }
+      ]
     },
     {
       "name": "VirtualStation",
@@ -731,7 +1256,24 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Both are collaborative workspaces for teams, offering project management and shared productivity tools to remote-team leads and project managers."
+      "rationale": "Unified collaboration workspace for remote teams with notes, project management, and knowledge-sharing functions overlaps strongly with Notion\u2019s core use case.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Unified collaboration workspace for remote teams with notes, project management, and knowledge-sharing functions overlaps strongly with Notion\u2019s core use case."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Core product is AI-powered virtual-office meetings and note capture, not a docs/wiki/knowledge workspace; overlap on collaboration is only weak and generic."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Both sell collaborative digital workspace software for teams combining docs, projects, and collaboration; overlapping buyer and job to be done.', ok"
+        }
+      ]
     },
     {
       "name": "DocSightAI",
@@ -748,7 +1290,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "DocSightAI focuses on AI-driven research and file analysis, not a collaborative docs, wiki, and project workspace for team knowledge management."
+      "rationale": "AI research and file-processing assistant; note-taking is ancillary, not a collaborative docs, wiki, project, or knowledge-workspace platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "AI research and file-processing assistant; note-taking is ancillary, not a collaborative docs, wiki, project, or knowledge-workspace platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "AI assistant for research automation and file summarization, not a collaborative docs/wiki workspace; note-taking is peripheral, not the core product."
+        }
+      ]
     },
     {
       "name": "Thinkpilot",
@@ -765,7 +1319,19 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "Both provide collaborative note-taking and knowledge organization; product managers could evaluate either for capturing and organizing product insights."
+      "rationale": "AI-powered note-taking and organized product insights overlap with Notion's collaborative docs and knowledge-management workspace, though specialized for product managers.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "AI-powered note-taking and organized product insights overlap with Notion's collaborative docs and knowledge-management workspace, though specialized for product managers."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both sell note-taking/knowledge-organization software; Thinkpilot's AI notes app shares Notion's core product category and job-to-be-done, just narrower PM focus."
+        }
+      ]
     },
     {
       "name": "Notix",
@@ -782,7 +1348,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "Notix is a Notion add-on for web capture, not a standalone collaborative workspace competing for the same core knowledge-management job."
+      "rationale": "Notix is a Notion-integrated web clipper and content-capture extension, complementing Notion rather than providing a collaborative workspace platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Notix is a Notion-integrated web clipper and content-capture extension, complementing Notion rather than providing a collaborative workspace platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Browser extension add-on that clips content into Notion; it complements and depends on the seed, not a competing workspace product."
+        }
+      ]
     },
     {
       "name": "Nixa",
@@ -799,7 +1377,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "Nixa primarily automates enterprise operational workflows, while Notion centers on collaborative documents, wikis, and knowledge management; their core jobs differ."
+      "rationale": "Nixa primarily sells AI workflow automation for enterprise operations, not a notes, docs, wiki, and knowledge-management workspace comparable to Notion.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Nixa primarily sells AI workflow automation for enterprise operations, not a notes, docs, wiki, and knowledge-management workspace comparable to Notion."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Nixa is an enterprise process-automation platform for operations/IT buyers; lacks Notion's core notes/docs/wiki knowledge workspace, so product and market resemblance is weak."
+        }
+      ]
     },
     {
       "name": "Intrenion",
@@ -816,7 +1406,24 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "Both offer unified workspaces for knowledge workers, including note-taking, writing, search, and project-related knowledge workflows."
+      "rationale": "Unified AI workspace for notes, writing, search, and project planning serves knowledge workers similarly to Notion\u2019s collaborative workspace.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Unified AI workspace for notes, writing, search, and project planning serves knowledge workers similarly to Notion\u2019s collaborative workspace."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Intrenion is an AI-assistant layer wrapping ChatGPT/Copilot, not a collaborative docs/wiki/knowledge workspace; overlap is limited to generic note-taking features."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "AI-powered unified workspace for notes, docs, and knowledge work targeting knowledge workers \"s core use case."
+        }
+      ]
     },
     {
       "name": "Reflect",
@@ -833,7 +1440,19 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "Both provide digital note-taking and knowledge organization for knowledge workers, who could evaluate either for capturing, linking, and managing ideas."
+      "rationale": "AI note-taking and knowledge organization overlap with Notion\u2019s workspace, though Reflect is more minimalist and personal-focused.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "AI note-taking and knowledge organization overlap with Notion\u2019s workspace, though Reflect is more minimalist and personal-focused."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both sell note-taking/knowledge-management software; Reflect overlaps Notion's core notes/docs product and knowledge-worker market despite smaller scope."
+        }
+      ]
     },
     {
       "name": "Routine",
@@ -850,7 +1469,19 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "Routine overlaps Notion\u2019s collaborative notes, task management, databases, and team workspace capabilities, serving similar professionals and teams managing knowledge and work."
+      "rationale": "AI-enabled workspace combining notes, tasks, databases, and team coordination, directly comparable to Notion's collaborative productivity platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "AI-enabled workspace combining notes, tasks, databases, and team coordination, directly comparable to Notion's collaborative productivity platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "All-in-one workspace combining notes, tasks, calendar, and databases for individuals and teams \u2014 directly overlaps Notion's core product and market."
+        }
+      ]
     },
     {
       "name": "Writerly",
@@ -867,7 +1498,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "Writerly focuses on AI-generated marketing content, not collaborative docs, wikis, project management, or knowledge management workspaces."
+      "rationale": "Writerly primarily provides generative AI content creation for marketing and sales, not a collaborative workspace for docs, wikis, projects, and knowledge management.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Writerly primarily provides generative AI content creation for marketing and sales, not a collaborative workspace for docs, wikis, projects, and knowledge management."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Writerly sells generative AI content-creation tools, not a collaborative workspace for docs, wikis, and projects; different product and buyer job."
+        }
+      ]
     },
     {
       "name": "Goodnotes",
@@ -883,8 +1526,25 @@
         "industries": null,
         "employee_count": "201-500"
       },
-      "relevant": false,
-      "rationale": "Goodnotes primarily serves personal and educational handwritten note-taking, not the team workspace, wiki, and knowledge-management job Notion targets."
+      "relevant": true,
+      "rationale": "Both sell note-taking/document software with real-time collaboration; product overlap on collaborative notes is strong despite Goodnotes' handwriting/student tilt.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Digital note-taking overlaps, but Goodnotes primarily targets handwriting, education, and personal notebooks rather than Notion's team workspace and knowledge management."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both sell note-taking/document software with real-time collaboration; product overlap on collaborative notes is strong despite Goodnotes' handwriting/student tilt."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "Both are note-taking/collaboration apps with docs and real-time collaboration; overlapping product category and prosumer users.', ok"
+        }
+      ]
     },
     {
       "name": "Agence Notion",
@@ -901,7 +1561,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "Agence Notion is a consultancy implementing and customizing Notion, not a competing collaborative workspace or knowledge-management software platform."
+      "rationale": "Agency provides Notion implementation and training services; it is a customer-facing consultant, not a collaborative workspace software competitor.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Agency provides Notion implementation and training services; it is a customer-facing consultant, not a collaborative workspace software competitor."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Consultancy building custom Notion workspaces for clients; serves the category as an implementer, not a competing workspace product."
+        }
+      ]
     },
     {
       "name": "Micro",
@@ -918,7 +1590,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Both provide collaborative all-in-one workspaces for documents, project tracking, and team knowledge workflows, targeting startup and product teams."
+      "rationale": "AI-powered workspace combining project management, documents, and knowledge organization; overlaps Notion's collaborative workspace despite stronger email and CRM focus.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "AI-powered workspace combining project management, documents, and knowledge organization; overlaps Notion's collaborative workspace despite stronger email and CRM focus."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "All-in-one AI workspace combining docs, notes, and project management; directly competes with Notion in the collaborative workspace market."
+        }
+      ]
     },
     {
       "name": "reconfigured",
@@ -935,7 +1619,19 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "Both provide collaborative workplace note-taking, organization, retrieval, and lightweight knowledge management for professionals and distributed teams."
+      "rationale": "AI-powered collaborative note-taking, organization, search, and shared workspaces closely overlap Notion's workspace and knowledge-management use cases.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "AI-powered collaborative note-taking, organization, search, and shared workspaces closely overlap Notion's workspace and knowledge-management use cases."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "AI-powered notepad with collaborative workspaces, note organization, and sharing \u2014 same product category and market as Notion's notes/docs workspace."
+        }
+      ]
     },
     {
       "name": "Ginger Labs",
@@ -952,7 +1648,19 @@
         "employee_count": "51-200"
       },
       "relevant": false,
-      "rationale": "Notability is primarily an individual study and multimedia note-taking app, not a collaborative workspace for team docs, wikis, projects, and knowledge management."
+      "rationale": "Notability is primarily an individual education-focused note-taking and study app, not a collaborative workspace for team docs, wikis, and projects.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Notability is primarily an individual education-focused note-taking and study app, not a collaborative workspace for team docs, wikis, and projects."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Notability is a student-focused study app (flashcards, lecture capture), not a collaborative team workspace; different buyer persona and job to be done."
+        }
+      ]
     },
     {
       "name": "iTechNotion",
@@ -969,7 +1677,19 @@
         "employee_count": "51-200"
       },
       "relevant": false,
-      "rationale": "iTechNotion is an AI development consultancy building custom agents, not a collaborative workspace for docs, wikis, projects, and knowledge management."
+      "rationale": "AI-agent development and consulting services do not provide a collaborative workspace, notes, wiki, or project-management product comparable to Notion.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "AI-agent development and consulting services do not provide a collaborative workspace, notes, wiki, or project-management product comparable to Notion."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "AI development agency building custom agents; no collaborative workspace/docs product, and name similarity is coincidental."
+        }
+      ]
     },
     {
       "name": "Integrity",
@@ -986,7 +1706,19 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "Both offer unified workspaces for notes, project organization, and knowledge management, targeting users managing ideas and collaborative work."
+      "rationale": "Unified workspace for notes, projects, and knowledge organization directly overlaps Notion\u2019s collaborative docs/wiki and lightweight project-management product.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Unified workspace for notes, projects, and knowledge organization directly overlaps Notion\u2019s collaborative docs/wiki and lightweight project-management product."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Same product: unified workspace for notes, docs, projects with AI; explicitly targets Notion switchers \u2014 direct competitor."
+        }
+      ]
     },
     {
       "name": "SystemsHill Solutions",
@@ -1003,7 +1735,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "SystemsHill is a consultancy implementing and supporting Notion, not a competing collaborative workspace or knowledge-management software platform."
+      "rationale": "Notion implementation consultancy and admin support provider, not a collaborative workspace software platform competing with Notion.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Notion implementation consultancy and admin support provider, not a collaborative workspace software platform competing with Notion."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Consultancy that builds Notion setups for clients; implements on the platform rather than competing with it."
+        }
+      ]
     },
     {
       "name": "Station Studio",
@@ -1020,7 +1764,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "Station focuses on AI content creation, ideation, and automation, not collaborative docs, wikis, project workspaces, or knowledge management."
+      "rationale": "AI creative-content and workflow suite for agencies, not a collaborative docs, wiki, project, and knowledge-management workspace.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "AI creative-content and workflow suite for agencies, not a collaborative docs, wiki, project, and knowledge-management workspace."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "AI content-generation and ideation suite for creative teams, not a collaborative docs/wiki/workspace product; differs from Notion's core product and job-to-be-done."
+        }
+      ]
     },
     {
       "name": "cyborganize.ai",
@@ -1037,7 +1793,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "Cyborganize is an AI-agent add-on operating within Notion, not a standalone collaborative workspace for docs, wikis, and knowledge management."
+      "rationale": "Notion-native AI add-on serving Notion users; it provides agents within the workspace rather than a competing collaborative workspace platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Notion-native AI add-on serving Notion users; it provides agents within the workspace rather than a competing collaborative workspace platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Notion-native AI-agent add-on that runs inside Notion; a complementary plugin on the seed's platform, not a competing collaborative workspace."
+        }
+      ]
     },
     {
       "name": "Notionalism",
@@ -1054,7 +1822,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "Notionalism is a consultancy implementing Notion for clients, not a competing collaborative workspace or knowledge-management software platform."
+      "rationale": "Consultancy implementing and optimizing Notion for clients, not a competing collaborative workspace product.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Consultancy implementing and optimizing Notion for clients, not a competing collaborative workspace product."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Consultancy implementing Notion for clients, not a competing workspace product; consultancies serving the category are excluded."
+        }
+      ]
     },
     {
       "name": "Joevees",
@@ -1071,7 +1851,19 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "Joevees offers a collaborative workspace for documents, tasks, communication, and knowledge work, overlapping Notion\u2019s core use cases and team buyers."
+      "rationale": "AI-powered collaborative workspace for documents, tasks, communication, and knowledge work; directly overlaps Notion\u2019s core workspace and project-management use cases.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "AI-powered collaborative workspace for documents, tasks, communication, and knowledge work; directly overlaps Notion\u2019s core workspace and project-management use cases."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "AI-powered collaborative workspace with docs, tasks, and knowledge management \u2014 directly competes with Notion in product and market."
+        }
+      ]
     },
     {
       "name": "Unravo",
@@ -1088,7 +1880,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "Unravo automates business research and analysis, not collaborative docs, wikis, project workspaces, or general knowledge management evaluated for Notion\u2019s core use cases."
+      "rationale": "Unravo is an AI business-research and competitive-analysis tool, not a collaborative notes, docs, wiki, or project workspace.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Unravo is an AI business-research and competitive-analysis tool, not a collaborative notes, docs, wiki, or project workspace."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Unravo sells agentic AI for business research and competitive analysis, not a collaborative notes/docs/workspace platform like Notion; different product and buyer job."
+        }
+      ]
     },
     {
       "name": "Eigen",
@@ -1105,7 +1909,19 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "Eigen overlaps Notion\u2019s collaborative productivity workspace, combining notes, tasks, meetings, and knowledge tools for teams managing projects and information."
+      "rationale": "AI-powered workspace combining notes, tasks, and shared knowledge for productivity teams; directly comparable to Notion's collaborative workspace.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "AI-powered workspace combining notes, tasks, and shared knowledge for productivity teams; directly comparable to Notion's collaborative workspace."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "AI-powered all-in-one workspace combining notes, tasks, docs, and meetings \u2014 same product category and buyer persona as Notion's collaborative workspace."
+        }
+      ]
     },
     {
       "name": "Muka.ai",
@@ -1122,7 +1938,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "Muka is a cross-app AI agent automation platform, not a collaborative docs, wiki, projects, or knowledge-management workspace evaluated for the same job."
+      "rationale": "AI-agent automation across connected apps is distinct from Notion's collaborative workspace, docs, wikis, and project-management product.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "AI-agent automation across connected apps is distinct from Notion's collaborative workspace, docs, wikis, and project-management product."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Muka builds AI agents that automate tasks inside apps like Notion\u2014a complementary automation layer, not a collaborative workspace/docs/wiki competitor."
+        }
+      ]
     },
     {
       "name": "xdge",
@@ -1139,7 +1967,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "xdge is an AI automation and cross-app search layer, not a collaborative docs, wiki, and project workspace competing with Notion."
+      "rationale": "AI workplace search and automation tools may complement Notion, but xdge is not primarily a collaborative docs, wiki, and project-workspace platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "AI workplace search and automation tools may complement Notion, but xdge is not primarily a collaborative docs, wiki, and project-workspace platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "AI agents for search/automation across work apps, not a collaborative docs/wiki workspace; adjacent productivity layer, not a Notion competitor or comparable."
+        }
+      ]
     },
     {
       "name": "Bleu",
@@ -1156,7 +1996,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Bleu offers a collaborative AI workspace for writing, notes, search, and team workflows, overlapping Notion\u2019s core workspace and knowledge-management use cases."
+      "rationale": "AI-enabled collaborative workspace for notes, writing, search, workflows, and team collaboration closely overlaps Notion\u2019s core product and use cases.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "AI-enabled collaborative workspace for notes, writing, search, workflows, and team collaboration closely overlaps Notion\u2019s core product and use cases."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "AI-powered workspace with note-taking, docs, search, and real-time team collaboration \u2014 same product category and buyer persona as Notion."
+        }
+      ]
     },
     {
       "name": "Hyperspaces",
@@ -1173,7 +2025,19 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "Both provide digital note organization and knowledge management for writers and creatives, serving the same note-taking and idea-connection workflow."
+      "rationale": "AI-powered connected notes, search, and drafting workspace overlaps Notion's documentation and knowledge-management product, despite a narrower creative-focused audience.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "AI-powered connected notes, search, and drafting workspace overlaps Notion's documentation and knowledge-management product, despite a narrower creative-focused audience."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "AI note-taking/knowledge-management app with bi-directional linking and docs \u2014 same product category as Notion, a direct competitor/comparable."
+        }
+      ]
     },
     {
       "name": "Fluidity",
@@ -1190,7 +2054,19 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "Fluidity directly offers an AI-powered collaborative workspace and knowledge base positioned as a Notion replacement for similar users and workflows."
+      "rationale": "AI-powered workspace includes a Notion-replacement knowledge base and task management, directly overlapping Notion\u2019s collaborative workspace product.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "AI-powered workspace includes a Notion-replacement knowledge base and task management, directly overlapping Notion\u2019s collaborative workspace product."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "AI workspace suite explicitly positioned as a Notion replacement with knowledge base and task management; direct product and market competitor."
+        }
+      ]
     },
     {
       "name": "Nexus Trust",
@@ -1207,7 +2083,19 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "Both offer collaborative team workspaces with note-taking, search, writing, and lightweight work organization for similar knowledge-work teams."
+      "rationale": "AI workspace for collaborative notes, task organization, documents, and team workflows closely overlaps Notion's core product and users.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "AI workspace for collaborative notes, task organization, documents, and team workflows closely overlaps Notion's core product and users."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "AI-powered collaborative workspace with notes, docs, search, and team collaboration \u2014 same product and market as Notion."
+        }
+      ]
     },
     {
       "name": "OmniGPT",
@@ -1224,7 +2112,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "OmniGPT builds AI assistants that integrate with Notion; it is an automation add-on, not a collaborative workspace or knowledge-management alternative."
+      "rationale": "OmniGPT builds AI assistants that integrate with Notion; it is an add-on/supplier, not a collaborative workspace or direct comparable.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "OmniGPT builds AI assistants that integrate with Notion; it is an add-on/supplier, not a collaborative workspace or direct comparable."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "No-code AI-assistant builder that integrates with Notion rather than a competing collaborative workspace; it's an ecosystem add-on, not a lookalike."
+        }
+      ]
     },
     {
       "name": "ARTU",
@@ -1241,7 +2141,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "ARTU is a meeting transcription and summarization tool that integrates with Notion, not a collaborative workspace or knowledge-management platform alternative."
+      "rationale": "Meeting transcription and summaries integrate into Notion but do not provide a collaborative docs, wiki, or project workspace.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Meeting transcription and summaries integrate into Notion but do not provide a collaborative docs, wiki, or project workspace."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "AI meeting transcription tool that feeds into Notion; different product category, an integration/ecosystem app rather than a workspace competitor."
+        }
+      ]
     },
     {
       "name": "Bullet.so",
@@ -1258,7 +2170,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "Bullet.so is a website builder layered on Notion, not a collaborative workspace for docs, projects, and internal knowledge management."
+      "rationale": "Bullet is a website builder layered on Notion content, serving Notion users rather than competing as a collaborative workspace.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Bullet is a website builder layered on Notion content, serving Notion users rather than competing as a collaborative workspace."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Website builder built atop Notion, not a competing workspace; dependent complement/integration serving Notion users, not a peer or comparable."
+        }
+      ]
     },
     {
       "name": "Metance",
@@ -1275,7 +2199,24 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "Both provide collaborative team workspaces for internal documentation, knowledge management, search, and shared content, targeting teams with the same knowledge-work needs."
+      "rationale": "AI-powered collaborative knowledge workspace for team documentation, search, and internal knowledge management directly overlaps Notion\u2019s core product and users.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "AI-powered collaborative knowledge workspace for team documentation, search, and internal knowledge management directly overlaps Notion\u2019s core product and users."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Vague, generic 'AI productivity platform' claim with no evidence of docs/wiki/knowledge-management product; resemblance held only weakly. When in doubt, false."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "AI-powered collaborative knowledge workspace for teams \raches Notion's docs/wiki product and buyer.<candidate>Metance</candidate>"
+        }
+      ]
     },
     {
       "name": "Notability",
@@ -1291,8 +2232,20 @@
         "industries": null,
         "employee_count": null
       },
-      "relevant": false,
-      "rationale": "Notability primarily serves individual students and educators for study-focused note-taking, not teams seeking collaborative docs, wikis, projects, and knowledge management."
+      "relevant": true,
+      "rationale": "Both provide note-taking and knowledge-capture tools, making Notability a plausible comparable despite its education-focused study features.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Both provide note-taking and knowledge-capture tools, making Notability a plausible comparable despite its education-focused study features."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both sell note-taking/docs software; Notability overlaps Notion's core notes product, making it a competitor in the note-taking space despite a student skew."
+        }
+      ]
     },
     {
       "name": "keinsaas",
@@ -1309,7 +2262,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "keinsaas is a custom AI automation service integrating with Notion, not a collaborative workspace or knowledge-management software alternative."
+      "rationale": "Custom AI automation consultancy integrating with Notion, not a collaborative workspace or knowledge-management platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Custom AI automation consultancy integrating with Notion, not a collaborative workspace or knowledge-management platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "keinsaas is an AI-automation service that integrates with Notion, not a collaborative workspace/docs product competitor; agency-like implementer, not a peer."
+        }
+      ]
     },
     {
       "name": "Making Tangible",
@@ -1326,7 +2291,19 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "Both provide collaborative workspaces combining notes, documentation, search, writing, task organization, and team workflows for overlapping knowledge-worker users."
+      "rationale": "AI-enabled collaborative workspace for notes, documents, tasks, and team knowledge management directly overlaps Notion\u2019s core product.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "AI-enabled collaborative workspace for notes, documents, tasks, and team knowledge management directly overlaps Notion\u2019s core product."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "AI-powered workspace for notes, writing, search, and team collaboration\u2014directly matches Notion's product and market; genuine competitor/comparable."
+        }
+      ]
     },
     {
       "name": "Optiverse",
@@ -1343,7 +2320,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "Optiverse is a specialized meeting transcription assistant, not a collaborative workspace for docs, wikis, projects, and organizational knowledge management."
+      "rationale": "Optiverse is a meeting transcription and summarization assistant, not a general collaborative workspace for documents, wikis, projects, and knowledge management.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Optiverse is a meeting transcription and summarization assistant, not a general collaborative workspace for documents, wikis, projects, and knowledge management."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Narrow AI meeting-transcription assistant, not a collaborative docs/wiki/workspace platform; shared 'note-taking' keyword alone is insufficient resemblance."
+        }
+      ]
     },
     {
       "name": "Notaku",
@@ -1360,7 +2349,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "Notaku is a complementary website-publishing tool built on Notion, not a collaborative workspace for internal docs, projects, and knowledge management."
+      "rationale": "Notaku is a publishing layer built on Notion, serving Notion users rather than providing a competing collaborative workspace.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Notaku is a publishing layer built on Notion, serving Notion users rather than providing a competing collaborative workspace."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Notaku is a Notion add-on that publishes Notion pages as websites; it complements/serves Notion users rather than competing as a workspace product."
+        }
+      ]
     },
     {
       "name": "Penno",
@@ -1376,8 +2377,25 @@
         "industries": null,
         "employee_count": "1-10"
       },
-      "relevant": false,
-      "rationale": "Penno is primarily an AI writing and research layer integrating with Notion, not a comparable all-in-one collaborative workspace for docs, wikis, and projects."
+      "relevant": true,
+      "rationale": "AI writing and research workspace with collaboration, templates, and connected knowledge bases overlaps Notion's document and knowledge-management use cases.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "AI writing and research workspace with collaboration, templates, and connected knowledge bases overlaps Notion's document and knowledge-management use cases."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "AI writing/drafting layer that integrates with Notion rather than competing as a collaborative workspace; complementary tool, not a peer."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "AI docs/knowledge workspace with collaboration, templates, and enterprise search \\u2014 competes adjacent to Notion's doc/knowledge management product.', ' ', ''"
+        }
+      ]
     },
     {
       "name": "Nagent AI",
@@ -1394,7 +2412,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "Nagent provides specialized AI agents for varied tasks, not a collaborative docs, wiki, project, and knowledge-management workspace evaluated for the same job."
+      "rationale": "AI-agent platform for academic, career, and creative tasks, not a collaborative docs, wiki, project, or knowledge-management workspace.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "AI-agent platform for academic, career, and creative tasks, not a collaborative docs, wiki, project, or knowledge-management workspace."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "AI-agent marketplace for assorted tasks, not a collaborative workspace/docs/wiki product; only weak generic 'productivity' overlap."
+        }
+      ]
     },
     {
       "name": "Kortex",
@@ -1411,7 +2441,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Kortex overlaps Notion\u2019s core notes, knowledge organization, writing, and collaborative workspace use cases for creators and teams."
+      "rationale": "AI-powered notes, documents, knowledge capture, and collaborative workspace overlap strongly with Notion, despite a creator-and-writer-focused positioning.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "AI-powered notes, documents, knowledge capture, and collaborative workspace overlap strongly with Notion, despite a creator-and-writer-focused positioning."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Both are note-taking/knowledge-management workspaces; Kortex is a comparable 'second brain' docs-and-notes product despite individual-creator focus."
+        }
+      ]
     },
     {
       "name": "AI Jeannie Tech",
@@ -1428,7 +2470,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "AI Jeannie is a personal email and scheduling assistant, not a collaborative docs, wiki, and knowledge-management workspace evaluated for the same job."
+      "rationale": "Personal AI assistant for email, scheduling, and task automation, not a collaborative workspace for docs, wikis, projects, and team knowledge management.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Personal AI assistant for email, scheduling, and task automation, not a collaborative workspace for docs, wikis, projects, and team knowledge management."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "AI personal assistant for email/scheduling differs from Notion's collaborative workspace for docs, wikis, and knowledge management; no strong axis match."
+        }
+      ]
     },
     {
       "name": "Bayond",
@@ -1445,7 +2499,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "Bayond is primarily a visual mind-mapping layer integrating with Notion, not a collaborative docs, wiki, and workspace platform."
+      "rationale": "Bayond is a visual mind-mapping and workflow-automation tool that integrates with Notion, making it primarily complementary rather than a comparable workspace platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Bayond is a visual mind-mapping and workflow-automation tool that integrates with Notion, making it primarily complementary rather than a comparable workspace platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Visual mind-mapping layer that integrates with and updates Notion rather than competing as a docs/wiki/workspace platform; complementary tool, not a comparable."
+        }
+      ]
     },
     {
       "name": "Flowomatic",
@@ -1462,7 +2528,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "Flowomatic is an AI content and marketing automation platform, not a collaborative docs, wiki, projects, and knowledge-management workspace."
+      "rationale": "AI content-generation and marketing automation platform, not a collaborative workspace for documents, wikis, projects, and organizational knowledge.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "AI content-generation and marketing automation platform, not a collaborative workspace for documents, wikis, projects, and organizational knowledge."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Flowomatic is an AI content/copywriting generator for marketers, not a collaborative workspace for docs, wikis, or project management like Notion."
+        }
+      ]
     },
     {
       "name": "Aixperts",
@@ -1479,7 +2557,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "Aixperts provides AI workflow automation and integrations, not a collaborative docs, wiki, project, or knowledge-management workspace like Notion."
+      "rationale": "Aixperts is an AI workflow-automation provider that integrates with Notion; it does not offer a collaborative workspace, docs, wiki, or project-management product.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Aixperts is an AI workflow-automation provider that integrates with Notion; it does not offer a collaborative workspace, docs, wiki, or project-management product."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "AI-agent automation service that integrates with Notion rather than a competing collaborative workspace; no product/market overlap on any axis."
+        }
+      ]
     },
     {
       "name": "HyNote AI",
@@ -1496,7 +2586,24 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "Both provide business note-taking and knowledge-capture software, serving professionals and teams documenting meetings, research, and operational knowledge."
+      "rationale": "AI note-taking and knowledge-capture app overlapping Notion\u2019s notes and lightweight knowledge-management use cases for business professionals.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "AI note-taking and knowledge-capture app overlapping Notion\u2019s notes and lightweight knowledge-management use cases for business professionals."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "AI transcription/summarization note app (Otter-like), not a collaborative docs/wiki/projects workspace; shares the 'notes' keyword but serves a different core job."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": true,
+          "rationale": "AI note-taking/second-brain app competes in same notes and personal knowledge management space as Notion."
+        }
+      ]
     },
     {
       "name": "Notion Providers",
@@ -1513,7 +2620,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "Notion Providers is a consultancy building custom solutions on Notion, not a competing collaborative workspace or knowledge-management software platform."
+      "rationale": "Notion Providers appears to deliver customized business-operations services rather than a standalone collaborative workspace software product competing with Notion.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Notion Providers appears to deliver customized business-operations services rather than a standalone collaborative workspace software product competing with Notion."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Consultancy/agency building customized Notion workspaces for clients, not a competing workspace product; serves the category rather than competing."
+        }
+      ]
     },
     {
       "name": "Agentiiv",
@@ -1530,7 +2649,19 @@
         "employee_count": "11-50"
       },
       "relevant": false,
-      "rationale": "Agentiiv sells task-specific AI agents, not a collaborative docs, wiki, project, or knowledge-management workspace evaluated for the same job."
+      "rationale": "AI-agent platform automating business tasks, rather than a collaborative workspace for docs, wikis, projects, and knowledge management.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "AI-agent platform automating business tasks, rather than a collaborative workspace for docs, wikis, projects, and knowledge management."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Agentiiv sells enterprise AI agents for task automation, not collaborative workspace/docs/wiki software; no product or market overlap with Notion."
+        }
+      ]
     },
     {
       "name": "Inbox2Action",
@@ -1547,7 +2678,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "Inbox2Action is a complementary Gmail integration for Notion users, not a collaborative workspace or knowledge-management platform competing for the same job."
+      "rationale": "A Gmail-to-Notion automation add-on, not a standalone collaborative workspace or knowledge-management platform competing with Notion.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "A Gmail-to-Notion automation add-on, not a standalone collaborative workspace or knowledge-management platform competing with Notion."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Gmail-to-Notion integration add-on that depends on Notion; a complement/plugin, not a competing collaborative workspace or knowledge-management product."
+        }
+      ]
     },
     {
       "name": "Unlimited Notion",
@@ -1564,7 +2707,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "Unlimited Notion is a consultancy implementing Notion for clients, not a competing collaborative workspace or knowledge-management software platform."
+      "rationale": "Notion-focused consultancy designing and automating client workspaces, not a collaborative workspace software platform competitor or peer.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Notion-focused consultancy designing and automating client workspaces, not a collaborative workspace software platform competitor or peer."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Consultancy selling custom Notion workspace design services; serves the category as an implementer, not a competing workspace product."
+        }
+      ]
     },
     {
       "name": "Naumu",
@@ -1580,8 +2735,20 @@
         "industries": null,
         "employee_count": "1-10"
       },
-      "relevant": false,
-      "rationale": "Naumu is a personal AI knowledge aggregator and Notion integration, not a collaborative docs, wiki, and project workspace for teams."
+      "relevant": true,
+      "rationale": "AI-powered personal knowledge workspace for notes, files, links, and search overlaps Notion\u2019s knowledge-management and collaborative workspace product category.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "AI-powered personal knowledge workspace for notes, files, links, and search overlaps Notion\u2019s knowledge-management and collaborative workspace product category."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "AI knowledge workspace for capturing and organizing notes, files, and links directly parallels Notion's notes/docs/knowledge-management product and buyer job."
+        }
+      ]
     },
     {
       "name": "Ponder AI",
@@ -1598,7 +2765,19 @@
         "employee_count": "11-50"
       },
       "relevant": true,
-      "rationale": "Both offer knowledge workspaces for organizing, connecting, and synthesizing information; researchers and analysts could evaluate either for knowledge management."
+      "rationale": "AI-powered knowledge workspace for organizing, analyzing, and connecting information; comparable to Notion's collaborative notes, docs, and knowledge-management product.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "AI-powered knowledge workspace for organizing, analyzing, and connecting information; comparable to Notion's collaborative notes, docs, and knowledge-management product."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Knowledge workspace for notes, documents, and idea organization \u2014 same product category and knowledge-management market as Notion."
+        }
+      ]
     },
     {
       "name": "Nirvana AI",
@@ -1615,7 +2794,19 @@
         "employee_count": "1-10"
       },
       "relevant": false,
-      "rationale": "Nirvana AI is an automation and AI-agent integration platform, not a collaborative docs, wiki, and knowledge-management workspace competing with Notion."
+      "rationale": "No-code AI workflow automation integrates with Notion but is not a collaborative docs, wiki, or project workspace competitor.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "No-code AI workflow automation integrates with Notion but is not a collaborative docs, wiki, or project workspace competitor."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "No-code AI automation/integrion platform that connects to Notion rather than competing with it; different product category from collaborative workspace/docs."
+        }
+      ]
     },
     {
       "name": "Human",
@@ -1632,7 +2823,19 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "Both offer collaborative team workspaces combining documents, knowledge sharing, and project workflows for product, engineering, and remote teams."
+      "rationale": "AI-native collaborative workspace for documents, project workflows, idea sharing, and team coordination\u2014directly comparable to Notion\u2019s workspace offering.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "AI-native collaborative workspace for documents, project workflows, idea sharing, and team coordination\u2014directly comparable to Notion\u2019s workspace offering."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "AI-native collaborative workspace with docs, project management, and team knowledge sharing \u2014 same product category and buyer as Notion."
+        }
+      ]
     },
     {
       "name": "Altar Computing",
@@ -1649,7 +2852,19 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "Both provide workspaces for organizing knowledge and ideas, targeting creative and product users managing research, content, and structured workflows."
+      "rationale": "AI-native workspace for organizing knowledge, notes, and ideas overlaps strongly with Notion\u2019s collaborative knowledge-management and documentation use case.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "AI-native workspace for organizing knowledge, notes, and ideas overlaps strongly with Notion\u2019s collaborative knowledge-management and documentation use case."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "AI-native workspace for knowledge organization and content structuring directly mirrors Notion's workspace/docs/knowledge-management product and user base."
+        }
+      ]
     },
     {
       "name": "Purpose Bits",
@@ -1666,10 +2881,20 @@
         "employee_count": "1-10"
       },
       "relevant": true,
-      "rationale": "Both provide collaborative workspace tools for notes, knowledge search, writing, and team planning, targeting teams managing shared information and projects."
+      "rationale": "AI-powered collaborative workspace tools for search, writing, notes, and project planning closely overlap Notion\u2019s knowledge-management and collaboration product.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "AI-powered collaborative workspace tools for search, writing, notes, and project planning closely overlap Notion\u2019s knowledge-management and collaboration product."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Offers AI-powered note-taking, writing, search, and collaboration for workspaces \u2014 directly comparable to Notion's collaborative workspace and Notion AI features."
+        }
+      ]
     }
   ],
-  "error": null,
-  "relevant_count_at_25": 11,
-  "precision_at_25": 44.0
+  "error": null
 }

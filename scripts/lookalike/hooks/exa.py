@@ -12,31 +12,32 @@ AGGREGATOR_HOSTS = {
 
 
 def company_query(ctx: dict[str, Any]) -> None:
-    """build_request: form one of the benchmark's lookalike query variants."""
+    """build_request: seed-first lookalike query. The seed (name + domain) is
+    the input, one short clause disambiguates the entity — no feature
+    enumerations, no similarity definition — and a return clause frames the
+    output as companies a buyer would evaluate alongside the seed. What
+    "similar" means is left for the vendor to derive from the seed, which is
+    the behavior the benchmark measures."""
     k = ctx["k"]
     seed = ctx["seed"]
     config = ctx["config"]
     ctx["vars"]["num_results"] = min(k * int(config.get("over_fetch") or 1), 100)
-    if config.get("query_variant") == "concise_fallback":
-        description = f" — {seed.description}" if seed.description else ""
-        ctx["vars"]["query"] = f"companies like {seed.seed_name}{description}"
+    # An authored per-seed query wins outright — Exa and Parallel both read the
+    # same field, so the two vendors keep receiving the identical string.
+    if seed.query and config.get("query_variant") != "concise_fallback":
+        ctx["vars"]["query"] = seed.query.strip()
         return
-    description = (seed.description or f"{seed.seed_name} is a company.").strip()
-    if description[-1:] not in ".!?":
-        description += "."
-    prefix = f"Find companies that are lookalikes of {seed.seed_name}: "
-    variant = config.get("prompt_variant", "full")
-    if variant == "no_return":
-        ctx["vars"]["query"] = f"{prefix}companies with a similar core product and buyer. {description}"
-    elif variant == "no_similarity_clause":
-        ctx["vars"]["query"] = (
-            f"{prefix}{description} Return companies a buyer would realistically evaluate alongside {seed.seed_name}."
-        )
-    else:
-        ctx["vars"]["query"] = (
-            f"{prefix}companies with a similar core product and buyer. {description} "
-            f"Return companies a buyer would realistically evaluate alongside {seed.seed_name}."
-        )
+    anchor = f"{seed.seed_name} ({seed.seed_domain})" if seed.seed_domain else seed.seed_name
+    identity = (seed.short_description or seed.description or "").strip().rstrip(".!?")
+    if config.get("query_variant") == "concise_fallback":
+        suffix = f" — {identity}" if identity else ""
+        ctx["vars"]["query"] = f"companies like {anchor}{suffix}"
+        return
+    suffix = f", {identity}." if identity else "."
+    ctx["vars"]["query"] = (
+        f"Find companies similar to {anchor}{suffix} "
+        f"Return companies a buyer would realistically evaluate alongside {seed.seed_name}."
+    )
 
 
 def _company_entity(item: dict[str, Any]) -> dict[str, Any] | None:

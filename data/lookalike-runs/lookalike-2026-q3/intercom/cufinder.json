@@ -7,20 +7,20 @@
     "name": "domain_lookalikes"
   },
   "k": 100,
-  "relevant_count": 4,
-  "precision_at_k": 4.0,
-  "relevant_count_at_10": 4,
-  "relevant_count_at_25": 4,
-  "relevant_count_at_100": 4,
-  "precision_at_10": 40.0,
-  "precision_at_25": 16.0,
-  "precision_at_100": 4.0,
+  "relevant_count": 3,
+  "precision_at_k": 3.0,
+  "relevant_count_at_10": 3,
+  "relevant_count_at_25": 3,
+  "relevant_count_at_100": 3,
+  "precision_at_10": 30.0,
+  "precision_at_25": 12.0,
+  "precision_at_100": 3.0,
   "latency_ms": 703,
   "cost_usd": null,
   "duplicates_removed": 0,
   "max_results": 10,
-  "judge_model": "gpt-5.6",
-  "judged_at": "2026-07-27T06:53:44Z",
+  "judge_model": "majority(n=3): claude-opus-5,gpt-5.6-terra,kimi-k3",
+  "judged_at": "2026-08-10T19:52:05Z",
   "candidates": [
     {
       "name": "anthropic",
@@ -36,7 +36,19 @@
         "confidence_level": 98
       },
       "relevant": false,
-      "rationale": "Anthropic provides general-purpose foundation models and AI assistants, not a customer-support platform with ticketing, help centers, and support workflows."
+      "rationale": "Anthropic provides general-purpose foundation models and AI assistants, not a customer-support platform for messaging, ticketing, help centers, or support workflows.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Anthropic provides general-purpose foundation models and AI assistants, not a customer-support platform for messaging, ticketing, help centers, or support workflows."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Foundation-model AI research company, not a customer-support/messaging platform; acts as model supplier to the category, not a peer competitor."
+        }
+      ]
     },
     {
       "name": "atlassian",
@@ -51,8 +63,25 @@
         "country": "australia",
         "confidence_level": 98
       },
-      "relevant": true,
-      "rationale": "Atlassian\u2019s Jira Service Management overlaps Intercom\u2019s ticketing and support workflows, serving customer-service teams evaluating help-desk platforms."
+      "relevant": false,
+      "rationale": "Atlassian's primary products are project/team-collaboration tools (Jira, Confluence, Trello), not customer-support messaging; service-desk overlap is incidental.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Atlassian\u2019s Jira Service Management provides help-desk, ticketing, and service workflows comparable to Intercom\u2019s support platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Atlassian's primary products are project/team-collaboration tools (Jira, Confluence, Trello), not customer-support messaging; service-desk overlap is incidental."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "Atlassian sells team collaboration/dev tools; though Jira Service Management overlaps slightly, core product and buyer differ from customer-support messaging platform.: ...continue? No.: false"
+        }
+      ]
     },
     {
       "name": "fin",
@@ -68,7 +97,24 @@
         "confidence_level": 98
       },
       "relevant": false,
-      "rationale": "Fin is Intercom\u2019s rebranded company/product identity, making this a duplicate of the seed rather than a distinct lookalike prospect."
+      "rationale": "Candidate is Intercom itself rebranded (founded as Intercom 2011); a duplicate of the seed, not a lookalike.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Fin is Intercom\u2019s rebranded customer-agent platform, offering the same AI support, messaging, ticketing, and customer-service workflows."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Candidate is Intercom itself rebranded (founded as Intercom 2011); a duplicate of the seed, not a lookalike."
+        },
+        {
+          "judge_model": "claude-opus-5",
+          "relevant": false,
+          "rationale": "fin.ai is Intercom itself, rebranded /}Ilines: duplicate of the seed, not a lookalike."
+        }
+      ]
     },
     {
       "name": "google",
@@ -84,7 +130,19 @@
         "confidence_level": 98
       },
       "relevant": false,
-      "rationale": "Google is a broad technology company; customer support messaging and ticketing are not its primary product or shared core buyer job."
+      "rationale": "Google is a broad technology company; the record identifies no primary customer-support, ticketing, or AI-agent platform comparable to Intercom.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Google is a broad technology company; the record identifies no primary customer-support, ticketing, or AI-agent platform comparable to Intercom."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Google is a diversified tech giant, not a customer-support/AI-agent platform; no product, market, or model resemblance to Intercom."
+        }
+      ]
     },
     {
       "name": "clay",
@@ -100,7 +158,19 @@
         "confidence_level": 98
       },
       "relevant": false,
-      "rationale": "Clay is a go-to-market data enrichment and sales automation platform, not customer-support messaging, ticketing, or help-center software."
+      "rationale": "Clay is a GTM data enrichment and outbound-workflow platform, not a customer-support, messaging, ticketing, or AI-agent platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Clay is a GTM data enrichment and outbound-workflow platform, not a customer-support, messaging, ticketing, or AI-agent platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Clay is a GTM data-enrichment/outbound prospecting tool for growth teams, not a customer-support messaging/ticketing platform; different product and buyer."
+        }
+      ]
     },
     {
       "name": "hubspot",
@@ -116,7 +186,19 @@
         "confidence_level": 98
       },
       "relevant": true,
-      "rationale": "HubSpot\u2019s Service Hub overlaps Intercom in AI customer support, help desk, ticketing, live chat, and knowledge-base workflows for support teams."
+      "rationale": "HubSpot Service Hub directly competes in customer support, ticketing, knowledge base, and AI-assisted customer messaging workflows.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "HubSpot Service Hub directly competes in customer support, ticketing, knowledge base, and AI-assisted customer messaging workflows."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "HubSpot's Service Hub offers help desk, ticketing, and customer-messaging tools that directly compete with Intercom's support platform for the same buyers."
+        }
+      ]
     },
     {
       "name": "notion",
@@ -132,7 +214,19 @@
         "confidence_level": 98
       },
       "relevant": false,
-      "rationale": "Notion is a general workspace and knowledge-management tool, not a customer-support messaging, ticketing, or AI-agent platform evaluated for the same job."
+      "rationale": "Notion is a general workspace/wiki and project tool, not a customer-support messaging, ticketing, or AI-agent platform.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Notion is a general workspace/wiki and project tool, not a customer-support messaging, ticketing, or AI-agent platform."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Notion is an all-in-one workspace for docs/wikis/notes, not customer-support messaging or AI agents; no shared product, buyer, or model."
+        }
+      ]
     },
     {
       "name": "salesforce",
@@ -148,7 +242,19 @@
         "confidence_level": 98
       },
       "relevant": true,
-      "rationale": "Salesforce Service Cloud overlaps Intercom in AI-assisted customer support, case management, messaging, and service workflows for customer-success teams."
+      "rationale": "Salesforce\u2019s Service Cloud and AI customer-service tools compete with Intercom in support workflows, ticketing, messaging, and customer engagement.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Salesforce\u2019s Service Cloud and AI customer-service tools compete with Intercom in support workflows, ticketing, messaging, and customer engagement."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Salesforce's Service Cloud offers customer-support, ticketing, and AI-agent capabilities directly competing with Intercom's core platform."
+        }
+      ]
     },
     {
       "name": "stripe",
@@ -164,7 +270,19 @@
         "confidence_level": 98
       },
       "relevant": false,
-      "rationale": "Stripe provides payments and financial infrastructure, not customer-support messaging, ticketing, or AI-agent software; buyers evaluate them for different jobs."
+      "rationale": "Stripe provides payment and financial infrastructure, not customer-support messaging, ticketing, help centers, or AI support-agent workflows.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": false,
+          "rationale": "Stripe provides payment and financial infrastructure, not customer-support messaging, ticketing, help centers, or AI support-agent workflows."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": false,
+          "rationale": "Stripe is payments/financial infrastructure; Intercom is customer-support messaging and AI agents. Different product, buyer, and job to be done."
+        }
+      ]
     },
     {
       "name": "zendesk",
@@ -180,7 +298,20 @@
         "confidence_level": 98
       },
       "relevant": true,
-      "rationale": "Zendesk directly overlaps Intercom in customer-support software, including AI agents, omnichannel messaging, ticketing, and support workflows for the same buyers."
+      "rationale": "Zendesk directly competes in customer support, ticketing, help centers, messaging, and AI-agent workflows.",
+      "votes": [
+        {
+          "judge_model": "gpt-5.6-terra",
+          "relevant": true,
+          "rationale": "Zendesk directly competes in customer support, ticketing, help centers, messaging, and AI-agent workflows."
+        },
+        {
+          "judge_model": "kimi-k3",
+          "relevant": true,
+          "rationale": "Zendesk is a direct competitor: customer-support platform with AI agents, messaging, ticketing, and help-center tools serving the same buyers."
+        }
+      ]
     }
-  ]
+  ],
+  "error": null
 }
