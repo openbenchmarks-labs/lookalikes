@@ -9,11 +9,10 @@ Run: PYTHONPATH=scripts .venv/bin/python scripts/lookalike/tests/test_judge_pane
 """
 from __future__ import annotations
 
-import sys
-
 from lookalike.common import Candidate, JudgeVote, RunResult, Seed
 from lookalike.judge import (
     JudgePanel,
+    JudgeQuorumError,
     _aggregate_votes,
     _mock_score,
     judge_model_label,
@@ -146,6 +145,47 @@ def main() -> int:
         f.append("concurrent score_run: wrong judged/votes shape")
     if not all(jc.relevant for jc in jrc.judged):
         f.append("concurrent score_run: both-yes should aggregate to relevant=True")
+
+    # --- judge failures abstain instead of becoming False votes ---
+    class _OutcomeJudge:
+        def __init__(self, outcome: bool | Exception) -> None:
+            self.outcome = outcome
+
+        def score_candidate(self, seed: Seed, c: Candidate) -> JudgedCandidate:
+            if isinstance(self.outcome, Exception):
+                raise self.outcome
+            return JudgedCandidate(candidate=c, relevant=self.outcome, rationale="valid")
+
+    def outcome_panel(outcomes: list[bool | Exception]) -> JudgePanel:
+        panel = JudgePanel(models=[f"m{i}" for i in range(len(outcomes))], mock=True)
+        panel.judges = [_OutcomeJudge(outcome) for outcome in outcomes]  # type: ignore[list-item]
+        panel.vote_labels = [f"m{i}" for i in range(len(outcomes))]
+        return panel
+
+    one = RunResult(
+        seed_slug="pylon", provider_slug="x", config_name="c", config={},
+        candidates=[Candidate(name="Only", domain="only.com", rank=1)], latency_ms=1,
+    )
+
+    recovered = outcome_panel([True, RuntimeError("timeout"), True]).score_run(SEED, one)
+    if not recovered.judged[0].relevant:
+        f.append("two valid yes votes should win when the other judge fails")
+    if [v.judge_model for v in recovered.judged[0].votes] != ["m0", "m2"]:
+        f.append("failed judge should be absent from the published vote list")
+
+    negative = outcome_panel([False, RuntimeError("timeout"), False]).score_run(SEED, one)
+    if negative.judged[0].relevant:
+        f.append("two valid no votes should still produce not relevant")
+
+    for outcomes in (
+        [True, RuntimeError("timeout"), RuntimeError("rate limit")],
+        [True, False, RuntimeError("timeout")],
+    ):
+        try:
+            outcome_panel(outcomes).score_run(SEED, one)
+            f.append(f"panel without a valid majority should fail: {outcomes}")
+        except JudgeQuorumError:
+            pass
 
     # --- anchor/capability gate: relevant is DERIVED, never taken on trust ---
     from lookalike.judge import JudgeVerdict, _apply_gate, _format_seed_block

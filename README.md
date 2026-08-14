@@ -165,6 +165,9 @@ reproduce a majority-vote result.
   run one fixed prompt over every candidate with the same seed context. Different
   labs and different training data means they do not share blind spots. A candidate
   is relevant by strict majority; ties resolve to not relevant.
+- **Judge failures are not votes.** A transport, rate-limit, or parsing failure
+  abstains. The panel must still reach a majority of the configured judges; if it
+  cannot, that configuration is incomplete and does not contribute a score.
 - **The verdict is not taken from the model.** Each judge returns the anchor decision
   and the capabilities it matched as structured fields, and the `relevant` flag is
   recomputed in code from those fields. A model cannot mark a candidate relevant
