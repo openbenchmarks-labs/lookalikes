@@ -1,0 +1,23 @@
+slug: seltz
+name: Seltz
+base_url: https://api.seltz.ai/v1
+requires_seed_domain: false
+cost: { mode: none }
+auth:
+  - { header: x-api-key, env: SELTZ_API_KEY }
+request:
+  method: POST
+  path: /search
+  body:
+    query: $seed_description        # the seed's own description IS the query
+    scope: companies                # always target Seltz's companies vertical
+    max_results: $k                 # benchmark depth (K=100)
+response:
+  candidates_path: [documents]
+hooks:
+  # companies scope returns web `documents` (url + a Markdown `content` blob),
+  # not a structured company object, so name/domain/description are parsed out
+  # of the Markdown rather than read from declarative fields.
+  transform_candidates: seltz_parse_companies
+configs:
+  - { name: description_query }

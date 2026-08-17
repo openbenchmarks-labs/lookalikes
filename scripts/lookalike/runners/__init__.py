@@ -18,6 +18,7 @@ from . import (  # noqa: F401
     ocean,
     parallel,
     predictleads,
+    seltz,
     zoominfo,
 )
 
@@ -43,5 +44,6 @@ REGISTRY = {
     discolike.VENDOR_SLUG: discolike,
     parallel.VENDOR_SLUG: parallel,
     predictleads.VENDOR_SLUG: predictleads,
+    seltz.VENDOR_SLUG: seltz,
     zoominfo.VENDOR_SLUG: zoominfo,
 }
