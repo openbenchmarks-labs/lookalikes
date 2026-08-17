@@ -18,7 +18,7 @@ from __future__ import annotations
 
 from typing import Any, Callable
 
-from . import exa, ocean, parallel, predictleads
+from . import exa, ocean, parallel, predictleads, seltz
 
 HOOKS: dict[str, Callable[..., Any]] = {
     # Exa
@@ -32,4 +32,6 @@ HOOKS: dict[str, Callable[..., Any]] = {
     # PredictLeads
     "predictleads_paging": predictleads.paging,
     "predictleads_jsonapi_resolve": predictleads.jsonapi_resolve,
+    # Seltz
+    "seltz_parse_companies": seltz.parse_companies,
 }
