@@ -18,9 +18,11 @@ from __future__ import annotations
 
 from typing import Any, Callable
 
-from . import exa, ocean, parallel, predictleads, seltz
+from . import companyenrich, exa, ocean, parallel, predictleads, seltz
 
 HOOKS: dict[str, Callable[..., Any]] = {
+    # CompanyEnrich
+    "companyenrich_attach_scores": companyenrich.attach_scores,
     # Exa
     "exa_company_query": exa.company_query,
     "exa_dedupe_by_domain": exa.dedupe_by_domain,

@@ -35,6 +35,7 @@ Env (required when running live; ignored under --mock):
   LUSHA_API_KEY
   PREDICT_LEADS_API_TOKEN + PREDICT_LEADS_API_KEY
   SELTZ_API_KEY
+  COMPANYENRICH_API_KEY
 """
 from __future__ import annotations
 
