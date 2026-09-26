@@ -1,0 +1,40 @@
+slug: companyenrich
+name: CompanyEnrich
+base_url: https://api.companyenrich.com
+requires_seed_domain: true
+cost: { mode: none }          # credits (1 per company returned), no fixed USD equivalent
+auth:
+  - { header: Authorization, env: COMPANYENRICH_API_KEY, value_prefix: "Bearer " }
+request:
+  method: POST
+  path: /v2/companies/search
+  body:
+    lookalike:
+      domains: [$seed_domain]   # up to 10 seeds accepted; the benchmark sends one per cell
+    pageSize: $k                # hard max 100 == benchmark K, so one call fills the depth
+                                # (v2 pages by opaque `cursor`; the first page needs none)
+response:
+  candidates_path: [items]
+  item:
+    name: name
+    domain: domain
+    description: description
+    rank: null
+    extra:
+      id: id
+      linkedin_url: socials.linkedinUrl
+      industry: industry
+      industries: industries
+      categories: categories
+      company_type: type
+      employees: employees
+      revenue: revenue
+      founded_year: foundedYear
+      country: location.country.code
+hooks:
+  # Items are ranked by similarity, but the score itself is not on the item: it
+  # lives in a top-level `scores` map keyed by company id. The hook runs the
+  # declarative item map above and joins that score in as extra.similarity.
+  transform_candidates: companyenrich_attach_scores
+configs:
+  - { name: domain_similarity }
