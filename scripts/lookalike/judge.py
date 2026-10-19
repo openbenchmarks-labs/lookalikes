@@ -83,6 +83,11 @@ DEFAULT_AZURE_API_VERSION = "2024-10-21"
 # With cell-level parallelism (N cells at once) the live ceiling is N x this.
 _DEFAULT_JUDGE_CONCURRENCY = 3
 
+# A judge call that raises (connection error, unparseable output) is retried
+# with exponential backoff before the error propagates.
+JUDGE_MAX_ATTEMPTS = 4
+JUDGE_RETRY_BACKOFF_SEC = 5.0
+
 
 def _judge_concurrency() -> int:
     raw = os.environ.get("LOOKALIKE_JUDGE_CONCURRENCY")
@@ -609,6 +614,21 @@ class Judge:
                     anchor_match=anchor_match, capabilities_matched=list(caps),
                 )
 
+        for attempt in range(JUDGE_MAX_ATTEMPTS - 1):
+            try:
+                return self._score_live(seed, candidate, schema, messages, key)
+            except Exception:  # noqa: BLE001
+                time.sleep(JUDGE_RETRY_BACKOFF_SEC * 2**attempt)
+        return self._score_live(seed, candidate, schema, messages, key)
+
+    def _score_live(
+        self,
+        seed: Seed,
+        candidate: Candidate,
+        schema: type[BaseModel],
+        messages: list[dict[str, str]],
+        key: tuple[str, str, str, str] | None,
+    ) -> JudgedCandidate:
         start = time.monotonic()
         try:
             if self._kind == "anthropic":
@@ -688,20 +708,11 @@ class Judge:
 
     def score_run(self, seed: Seed, run: RunResult) -> JudgedRun:
         judged: list[JudgedCandidate] = []
+        # A judge failure that survives the retries propagates: an unjudged
+        # candidate must not be scored as "not relevant". The orchestrator
+        # records the config as judge-failed instead of publishing it.
         for c in run.candidates:
-            try:
-                judged.append(self.score_candidate(seed, c))
-            except Exception as exc:  # noqa: BLE001
-                # A judge failure on one candidate shouldn't poison the
-                # whole cell — record it as "not relevant" with the
-                # error so the audit trail keeps the signal.
-                judged.append(
-                    JudgedCandidate(
-                        candidate=c,
-                        relevant=False,
-                        rationale=f"judge error: {exc}",
-                    )
-                )
+            judged.append(self.score_candidate(seed, c))
         return JudgedRun(
             run=run, judged=judged, judge_model=self.label(), judged_at=now_iso()
         )
@@ -1022,20 +1033,22 @@ class JudgePanel:
             return "mock-judge"
         return judge_model_label([j.model for j in self.judges])
 
-    def _score_one(self, seed: Seed, ji: int, ci: int, candidate: Candidate) -> tuple[int, int, JudgedCandidate]:
-        """Score one (judge, candidate). A judge failure on one candidate is
-        recorded as not-relevant with the error, never poisoning the cell."""
+    def _score_one(
+        self, seed: Seed, ji: int, ci: int, candidate: Candidate
+    ) -> tuple[int, int, JudgedCandidate | Exception]:
+        """Score one (judge, candidate). A judge that still fails after its
+        retries abstains: the error is returned, not counted as a vote."""
         try:
             return ji, ci, self.judges[ji].score_candidate(seed, candidate)
         except Exception as exc:  # noqa: BLE001
-            return ji, ci, JudgedCandidate(candidate=candidate, relevant=False, rationale=f"judge error: {exc}")
+            return ji, ci, exc
 
     def _run_tasks(
         self,
         seed: Seed,
         candidates: list[Candidate],
         tasks: list[tuple[int, int]],
-        results: list[list[JudgedCandidate | None]],
+        results: list[list[JudgedCandidate | Exception | None]],
     ) -> None:
         """Execute (judge, candidate) tasks, filling results[ji][ci] — filled in
         any order; aggregation is in candidate order, so the JudgedRun is
@@ -1065,20 +1078,23 @@ class JudgePanel:
                     results[ji][ci] = jc
 
     @staticmethod
-    def _decided(results: list[list[JudgedCandidate | None]], ci: int, n_j: int) -> bool:
+    def _decided(results: list[list[JudgedCandidate | Exception | None]], ci: int, n_j: int) -> bool:
         """True when the cast votes force the majority outcome regardless of how
         every not-yet-consulted judge would vote (tie -> False, as in
-        _aggregate_votes)."""
-        cast = [results[ji][ci] for ji in range(n_j) if results[ji][ci] is not None]
+        _aggregate_votes). Judges that errored abstain and shrink the panel."""
+        column = [results[ji][ci] for ji in range(n_j)]
+        cast = [r for r in column if isinstance(r, JudgedCandidate)]
+        pending = sum(1 for r in column if r is None)
+        total = len(cast) + pending
         yes = sum(1 for r in cast if r.relevant)
-        if yes > n_j / 2:
+        if yes > total / 2:
             return True  # relevant=True is locked in
-        return yes + (n_j - len(cast)) <= n_j / 2  # even all-yes remainder can't flip it
+        return yes + pending <= total / 2  # even all-yes remainder can't flip it
 
     def score_run(self, seed: Seed, run: RunResult) -> JudgedRun:
         candidates = run.candidates
         n_j = len(self.judges)
-        results: list[list[JudgedCandidate | None]] = [[None] * len(candidates) for _ in range(n_j)]
+        results: list[list[JudgedCandidate | Exception | None]] = [[None] * len(candidates) for _ in range(n_j)]
 
         gate = (
             self.gated
@@ -1110,20 +1126,19 @@ class JudgePanel:
 
         judged: list[JudgedCandidate] = []
         for ci, c in enumerate(candidates):
+            cast = [r for ji in range(n_j) if isinstance(r := results[ji][ci], JudgedCandidate)]
+            if not cast:
+                errors = "; ".join(str(r) for ji in range(n_j) if isinstance(r := results[ji][ci], Exception))
+                raise RuntimeError(f"no judge could score candidate {c.domain or c.name!r}: {errors}")
             votes = [
-                JudgeVote(
-                    judge_model=self.vote_labels[ji],
-                    relevant=results[ji][ci].relevant,
-                    rationale=results[ji][ci].rationale,
-                )
+                JudgeVote(judge_model=self.vote_labels[ji], relevant=r.relevant, rationale=r.rationale)
                 for ji in range(n_j)
-                if results[ji][ci] is not None
+                if isinstance(r := results[ji][ci], JudgedCandidate)
             ]
             relevant, rationale = _aggregate_votes(votes)
             # Gate fields follow the majority: anchor_match is itself a majority
             # vote, and the capability set is the union across judges that agreed
             # with the winning verdict (a capability any of them evidenced counts).
-            cast = [results[ji][ci] for ji in range(n_j) if results[ji][ci] is not None]
             anchors = [r.anchor_match for r in cast if r.anchor_match is not None]
             anchor_match = (sum(1 for a in anchors if a) > len(anchors) / 2) if anchors else None
             caps: list[str] = []
