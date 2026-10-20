@@ -12,6 +12,7 @@ Run:  PYTHONPATH=scripts .venv/bin/python scripts/lookalike/tests/test_firmograp
 """
 from __future__ import annotations
 
+import dataclasses
 import json
 import os
 import sys
@@ -186,10 +187,15 @@ def test_extruct() -> None:
 
 def test_discolike() -> None:
     print("\n[discolike]")
-    _, cap = _run("discolike", "domain_similarity", SEED_FIRMO)
+    _, cap = _run("discolike", "domain_auto_icp_text", SEED_FIRMO)
     check(
-        _qs(cap.last_search["url"]) == {"domain": ["acme.com"], "max_records": ["100"]},
-        "uses the seed domain and requests 100 results",
+        _qs(cap.last_search["url"]) == {"domain": ["acme.com"], "max_records": ["120"], "auto_icp_text": ["true"]},
+        "domain-only seed: seed domain, over-fetched, auto_icp_text",
+    )
+    _, cap = _run("discolike", "recommended", dataclasses.replace(SEED_FIRMO, query="Find widget makers"))
+    check(
+        _qs(cap.last_search["url"]) == {"domain": ["acme.com"], "max_records": ["120"], "icp_prompt": ["Find widget makers"]},
+        "domain + query seed: domain steered by icp_prompt",
     )
 
 
