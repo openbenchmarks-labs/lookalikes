@@ -18,6 +18,7 @@ from . import (  # noqa: F401
     ocean,
     parallel,
     predictleads,
+    riveter,
     seltz,
     zoominfo,
 )
@@ -36,6 +37,10 @@ from . import (  # noqa: F401
 # binary on PATH (self-serve sign-up at gtm.ai, free tier available) rather than
 # an API key; the runner fails the cell cleanly when `gtm` is missing rather
 # than skipping it silently.
+#
+# Riveter has no lookalike endpoint: its runner generates the rows through the
+# async dataset API (create → build → poll → read), so it is a custom runner
+# rather than a spec, and one cell takes minutes rather than seconds.
 REGISTRY = {
     ocean.VENDOR_SLUG: ocean,
     exa.VENDOR_SLUG: exa,
@@ -44,6 +49,7 @@ REGISTRY = {
     discolike.VENDOR_SLUG: discolike,
     parallel.VENDOR_SLUG: parallel,
     predictleads.VENDOR_SLUG: predictleads,
+    riveter.VENDOR_SLUG: riveter,
     seltz.VENDOR_SLUG: seltz,
     zoominfo.VENDOR_SLUG: zoominfo,
 }
