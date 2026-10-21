@@ -1,7 +1,7 @@
 slug: discolike
 name: Discolike
 base_url: https://api.discolike.com
-requires_seed_domain: true
+requires_seed_domain: false
 cost: { mode: none }
 auth:
   - { header: x-discolike-key, env: DISCOLIKE_API_KEY }
@@ -10,7 +10,9 @@ request:
   path: /v1/discover
   query:
     domain: $seed_domain
-    max_records: $k
+    max_records: $max_records
+    icp_prompt: $icp_prompt
+    auto_icp_text: $auto_icp_text
 response:
   candidates_path: []
   item:
@@ -27,5 +29,8 @@ response:
       state: address.state
       city: address.city
       social_urls: social_urls
+hooks:
+  build_request: discolike_build_request   # input routing (domain / icp_prompt) + over-fetch
 configs:
-  - { name: domain_similarity }
+  - { name: recommended, over_fetch: 1.2 }
+  - { name: domain_auto_icp_text, over_fetch: 1.2, auto_icp_text: true }
