@@ -189,6 +189,31 @@ def main() -> int:
     if "ANCHOR" not in _format_seed_block(bare):
         f.append("unmigrated seed block should still carry an anchor line (from description)")
 
+    # A judge whose call fails abstains instead of voting "not relevant"
+    def _fail(*_a, **_k):
+        raise ConnectionError("Connection error.")
+
+    flaky = JudgePanel(models=["a", "b", "c"], mock=True)
+    flaky.judges[0].score_candidate = _fail
+    jr = flaky.score_run(SEED, _run())
+    if any("judge error" in v.rationale for j in jr.judged for v in j.votes):
+        f.append("a failed judge call must not be recorded as a vote")
+    for j in jr.judged:
+        expected, _ = _aggregate_votes(
+            [JudgeVote(judge_model="m", relevant=flaky.judges[i].score_candidate(SEED, j.candidate).relevant, rationale="r") for i in (1, 2)]
+        )
+        if j.relevant != expected:
+            f.append(f"with one judge abstaining, {j.candidate.name} should follow the other two: {expected}")
+
+    dead = JudgePanel(models=["a", "b", "c"], mock=True)
+    for j in dead.judges:
+        j.score_candidate = _fail
+    try:
+        dead.score_run(SEED, _run())
+        f.append("a candidate no judge could score must fail the cell, not count as a miss")
+    except RuntimeError:
+        pass
+
     if f:
         print(f"{len(f)} FAILURE(s):")
         for x in f:
