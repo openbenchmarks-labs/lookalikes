@@ -9,6 +9,7 @@ The orchestrator imports each runner by slug and sweeps `CONFIGS`,
 picking the one that maximizes Precision@K for the seed.
 """
 from . import (  # noqa: F401
+    companyenrich,
     exa,
     extruct,
     cufinder,
@@ -46,4 +47,5 @@ REGISTRY = {
     predictleads.VENDOR_SLUG: predictleads,
     seltz.VENDOR_SLUG: seltz,
     zoominfo.VENDOR_SLUG: zoominfo,
+    companyenrich.VENDOR_SLUG: companyenrich,
 }

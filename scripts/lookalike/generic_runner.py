@@ -273,12 +273,17 @@ def _build_out_config(
     return out
 
 
-def _compute_cost(spec: VendorSpec, candidates: list[Candidate]) -> float | None:
-    if spec.cost.mode == "none":
+def compute_cost(spec: VendorSpec, sent: int, depth: int) -> float | None:
+    """List price of one call: the flat fee plus the per-row fee on the rows the vendor sent,
+    capped at the depth asked for. Rows sent include the seed and any duplicates, which the
+    board removes before scoring but the vendor still bills."""
+    cost = spec.cost
+    if cost.mode == "none":
         return None
-    if spec.cost.mode == "per_call":
-        return spec.cost.usd
-    return round((spec.cost.usd or 0.0) * len(candidates), 6)  # per_result (reserved)
+    billable = min(max(sent, 0), depth)
+    flat = cost.usd if cost.mode in ("per_call", "list") else 0.0
+    per = cost.per_result_usd if cost.mode in ("per_result", "list") else 0.0
+    return round((flat or 0.0) + (per or 0.0) * billable, 6)
 
 
 # --------------------------------------------------------------------------- #
@@ -339,7 +344,9 @@ def run_from_spec(spec: VendorSpec, seed: Seed, k: int, config: dict[str, Any]) 
         body = _prune_none(body)
 
     headers = {a.header: f"{a.value_prefix}{env[a.env]}" for a in spec.auth}
-    status, payload, elapsed_ms = http_request(method, url, headers=headers, body=body)
+    status, payload, elapsed_ms = http_request(
+        method, url, headers=headers, body=body, timeout=spec.timeout_sec,
+    )
 
     if status >= 300:
         return _err(
@@ -354,6 +361,7 @@ def run_from_spec(spec: VendorSpec, seed: Seed, k: int, config: dict[str, Any]) 
         candidates = HOOKS[spec.hooks.transform_candidates](raw_items, ctx)
     else:
         candidates = [_map_item(it, spec.response.item) for it in raw_items if isinstance(it, dict)]
+    sent_count = len(candidates)    # what the vendor sent; per-row vendors bill for all of it
     candidates = _without_seed(candidates, seed)
     candidates, duplicates_removed = _without_duplicates(candidates)
 
@@ -364,8 +372,9 @@ def run_from_spec(spec: VendorSpec, seed: Seed, k: int, config: dict[str, Any]) 
         config=_build_out_config(config, spec, vars["_audit"], payload, success=True),
         candidates=take_top(candidates, k),
         latency_ms=elapsed_ms,
-        cost_usd=_compute_cost(spec, candidates),
+        cost_usd=compute_cost(spec, sent_count, k),
         error=None,
         requested_k=k,
         duplicates_removed=duplicates_removed,
+        sent_count=sent_count,
     )

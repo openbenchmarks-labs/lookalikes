@@ -143,6 +143,9 @@ class RunResult:
     # `duplicates_removed` is retained in artifacts so a short returned list
     # can be distinguished from a provider returning the same company twice.
     duplicates_removed: int = 0
+    # Rows the vendor sent, before the seed and duplicates were removed (None on older runs).
+    # Per-row vendors bill for these, so cost is priced on them.
+    sent_count: int | None = None
     # Some provider endpoints have a hard result ceiling below the benchmark
     # depth. Their supported cutoffs remain comparable; deeper ones are N/A.
     max_results: int | None = None
@@ -168,6 +171,7 @@ class RunResult:
             "error": self.error,
             "requested_k": self.requested_k,
             "duplicates_removed": self.duplicates_removed,
+            "sent_count": self.sent_count,
             "max_results": self.max_results,
         }
 
@@ -268,6 +272,10 @@ class RawJudgeCall:
     # (same judge + prompt version + seed + candidate already judged this run,
     # e.g. via another config or vendor) — no LLM call was made.
     cached: bool = False
+    # Token usage reported by the provider for this call (None when cached or
+    # failed): input, cached_input, cache_write, output, reasoning. Kept here so
+    # judge cost is reconstructable from the raw files, independent of Datadog.
+    usage: dict[str, int | None] | None = None
 
 
 # --------------------------------------------------------------------------- #
@@ -375,6 +383,7 @@ def raw_judge_call_to_dict(call: RawJudgeCall) -> dict[str, Any]:
         "for_candidate_rank": call.for_candidate_rank,
         "error": call.error,
         "cached": call.cached,
+        "usage": call.usage,
     }
 
 
@@ -465,6 +474,7 @@ def persist_run_detail(dataset_slug: str, judged: JudgedRun) -> Path:
         "latency_ms": run.latency_ms,
         "cost_usd": run.cost_usd,
         "duplicates_removed": run.duplicates_removed,
+        "sent_count": run.sent_count,
         "max_results": run.max_results,
         "judge_model": judged.judge_model,
         "judged_at": judged.judged_at,
@@ -545,6 +555,7 @@ def upsert_seed_vendor_cell(
                 "latency_ms": None,
                 "cost_usd": None,
                 "duplicates_removed": 0,
+                "sent_count": None,
                 "max_results": None,
                 "judge_model": None,
                 "judged_at": None,
@@ -576,12 +587,23 @@ def upsert_seed_vendor_cell(
             "latency_ms": run.latency_ms,
             "cost_usd": run.cost_usd,
             "duplicates_removed": run.duplicates_removed,
+            "sent_count": run.sent_count,
+        "sent_count": run.sent_count,
             "max_results": run.max_results,
             "judge_model": judged.judge_model,
             "judged_at": judged.judged_at,
             "config_used": {"name": run.config_name, **run.config},
         }
     )
+
+
+def _nearest_rank(sorted_values: list[int], q: float) -> int | None:
+    """Nearest-rank percentile of an ascending list, q in (0, 100]."""
+    if not sorted_values:
+        return None
+    import math
+
+    return sorted_values[max(0, math.ceil(q / 100 * len(sorted_values)) - 1)]
 
 
 def recompute_leaderboard(snapshot: dict[str, Any], k: int) -> None:
@@ -661,6 +683,13 @@ def recompute_leaderboard(snapshot: dict[str, Any], k: int) -> None:
         row["total_returned"] = sum(
             int(c.get("returned_count") or 0) for c in my_cells
         )
+        # What the vendor sent (before seed and duplicate removal); older cells fall back to
+        # what was kept plus the duplicates they recorded.
+        row["total_sent"] = sum(
+            int(c["sent_count"]) if c.get("sent_count") is not None
+            else int(c.get("returned_count") or 0) + int(c.get("duplicates_removed") or 0)
+            for c in my_cells
+        )
 
         # avg latency — only over cells that actually ran (latency != null)
         latencies = [
@@ -669,6 +698,12 @@ def recompute_leaderboard(snapshot: dict[str, Any], k: int) -> None:
         row["avg_latency_ms"] = (
             round(sum(latencies) / len(latencies), 1) if latencies else None
         )
+        # p50 / p99 latency (nearest rank) over the calls that returned a judged list
+        judged_lat = sorted(
+            c["latency_ms"] for c in judged_cells if isinstance(c.get("latency_ms"), int)
+        )
+        row["p50_latency_ms"] = _nearest_rank(judged_lat, 50)
+        row["p99_latency_ms"] = _nearest_rank(judged_lat, 99)
 
         row["total_cost_usd"] = round(
             sum(float(c.get("cost_usd") or 0.0) for c in my_cells), 4
@@ -677,6 +712,19 @@ def recompute_leaderboard(snapshot: dict[str, Any], k: int) -> None:
             round(row["total_cost_usd"] / row["total_relevant"], 4)
             if row["total_relevant"] > 0
             else None
+        )
+        # Relevant companies per $1 at depth 100: judged-relevant companies in the top 100 over
+        # the list price of those calls (rows sent, not rows kept, for per-row vendors). Null
+        # when the vendor has no list price or its endpoint does not reach 100.
+        priced = [
+            c for c in judged_cells
+            if c.get("cost_usd") is not None and c.get("relevant_count_at_100") is not None
+            and (c.get("max_results") is None or int(c["max_results"]) >= 100)
+        ]
+        spend = sum(float(c["cost_usd"]) for c in priced)
+        row["relevant_per_usd_at_100"] = (
+            round(sum(int(c["relevant_count_at_100"]) for c in priced) / spend, 1)
+            if priced and spend > 0 else None
         )
 
     # Re-rank: avg_precision_at_k DESC (nulls last), then total_relevant DESC,

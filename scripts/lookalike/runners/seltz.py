@@ -1,11 +1,10 @@
 """Seltz runner — thin binding to specs/seltz.yaml + the generic runner.
 
-Seltz is a web-search API; its `companies` scope returns lookalike companies for
-a natural-language query. The query is composed from the seed's anchor +
-capabilities (build_request hook in hooks/seltz.py), the scope is always
-`companies`, and the Markdown `content` of each result is parsed into a Candidate
-by the transform hook. Seltz can serve 100 results, so the benchmark's K=100 is
-always returned in full.
+Matches https://github.com/openbenchmarks-labs/lookalikes/pull/8: POST /search
+with x-api-key, body {query: <anchor for caps>, scope: companies, max_results: k}.
+The Markdown `content` of each result is parsed into a Candidate by
+hooks/seltz.py. Seltz can serve 100 results, so the benchmark's K=100 is
+always requested in full.
 """
 
 from __future__ import annotations

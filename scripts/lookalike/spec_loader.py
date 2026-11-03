@@ -32,16 +32,25 @@ class AuthHeader(BaseModel):
 
 
 class CostSpec(BaseModel):
+    """List price of one call. `per_call` is a flat fee per request; `per_result` is a fee per
+    row the vendor sends (seed and duplicates included, since that is what it bills for), capped
+    at the depth asked for; `list` is both. `source` says where the rate comes from."""
     model_config = ConfigDict(extra="forbid")
-    mode: str = "none"  # none | per_call | per_result
-    usd: Optional[float] = None
+    mode: str = "none"  # none | per_call | per_result | list
+    usd: Optional[float] = None             # flat fee per request (per_call, list)
+    per_result_usd: Optional[float] = None  # fee per row sent (per_result, list)
+    source: Optional[str] = None
 
     @model_validator(mode="after")
     def _check(self) -> "CostSpec":
-        if self.mode not in ("none", "per_call", "per_result"):
-            raise ValueError(f"cost.mode must be none|per_call|per_result, got {self.mode!r}")
-        if self.mode != "none" and self.usd is None:
-            raise ValueError("cost.usd is required unless cost.mode == none")
+        if self.mode not in ("none", "per_call", "per_result", "list"):
+            raise ValueError(f"cost.mode must be none|per_call|per_result|list, got {self.mode!r}")
+        if self.mode == "per_call" and self.usd is None:
+            raise ValueError("cost.usd is required for per_call")
+        if self.mode == "per_result" and self.per_result_usd is None:
+            raise ValueError("cost.per_result_usd is required for per_result")
+        if self.mode == "list" and (self.usd is None or self.per_result_usd is None):
+            raise ValueError("cost.usd and cost.per_result_usd are required for list")
         return self
 
 
@@ -89,6 +98,7 @@ class VendorSpec(BaseModel):
     base_url: str
     requires_seed_domain: bool = False
     no_domain_error: Optional[str] = None  # custom message for the guard
+    timeout_sec: int = 60
     cost: CostSpec = Field(default_factory=CostSpec)
     auth: list[AuthHeader] = Field(default_factory=list)
     request: RequestSpec

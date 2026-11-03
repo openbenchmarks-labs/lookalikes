@@ -3,7 +3,7 @@
 No network: `http_request` is monkeypatched to capture the outgoing request and
 return a canned empty response. Asserts that
   - filtered/firmographic configs fold the seed's public hints into the request
-    (Parallel objective text, Ocean companiesFilters),
+    (Parallel objective text, Ocean companiesFilters, CompanyEnrich filters),
   - they SkipConfig (→ "skipped: …" RunResult) on a seed with no hints,
   - non-filtered configs are unchanged (no firmographic params leak in),
   - Ocean's static configs still layer their filters via the spec `merge`.
@@ -18,7 +18,8 @@ import sys
 import urllib.parse
 
 # Dummy creds so require_env() passes; http_request is mocked so they're unused.
-for _k in ("OCEAN_API_KEY", "PARALLEL_API_KEY", "EXA_API_KEY", "EXTRUCT_API_TOKEN", "DISCOLIKE_API_KEY"):
+for _k in ("OCEAN_API_KEY", "PARALLEL_API_KEY", "EXA_API_KEY", "EXTRUCT_API_TOKEN", "DISCOLIKE_API_KEY",
+           "COMPANY_ENRICH_API_KEY", "PREDICT_LEADS_API_KEY", "PREDICT_LEADS_API_TOKEN", "SELTZ_API_KEY"):
     os.environ.setdefault(_k, "test-key")
 
 from lookalike import generic_runner  # noqa: E402
@@ -220,6 +221,56 @@ def test_ocean() -> None:
           "seed_only carries only lookalike/exclude domains")
 
 
+def test_companyenrich() -> None:
+    print("\n[companyenrich]")
+    _, cap = _run("companyenrich", "default", SEED_FIRMO)
+    call = cap.last_search
+    body = call["body"]
+    check(call["method"] == "POST" and call["url"].endswith("/v2/companies/search"),
+          f"POSTs /v2/companies/search (got {call['method']} {call['url']})")
+    look = body.get("lookalike") or {}
+    check(look.get("domains") == ["acme.com"], f"seed domain as lookalike.domains[] (got {look.get('domains')})")
+    check(body.get("filter") == {"domain": {"notIn": ["acme.com"]}},
+          f"excludes the seed domain, no firmo filters (got {body.get('filter')})")
+    check(body.get("pageSize") == 100 and "cursor" not in body, "one page of 100 at k=100")
+    check(look.get("minScore") == 0, "minScore 0 so the default cutoff can't truncate")
+    check(look.get("weight") == 0, "default config keeps lookalike.weight 0")
+    check("semantic" not in body and "expand" not in body, "no semantic query, no paid expansions")
+
+    _, cap = _run("companyenrich", "seed_firmographic", SEED_FIRMO)
+    filt = cap.last_search["body"].get("filter") or {}
+    # 11..1000 overlaps bands 11-50, 51-200, 201-500, 501-1K
+    check(filt.get("employees") == ["11-50", "51-200", "201-500", "501-1K"],
+          f"employee bands from hint (got {filt.get('employees')})")
+    check(filt.get("country") == ["US"], f"ISO alpha-2 countries from hint (got {filt.get('country')})")
+    check(filt.get("domain") == {"notIn": ["acme.com"]}, "seed exclusion kept alongside firmo filters")
+
+    res, _ = _run("companyenrich", "seed_firmographic", SEED_BARE)
+    check((res.error or "").startswith("skipped"), f"bare seed skips firmo config (err={res.error!r})")
+
+    # Response: items in API order, scores joined from scores[id], seed dropped.
+    def respond(method, url, *, headers=None, body=None, timeout=60):
+        items = [
+            {"id": "s", "name": "Acme", "domain": "acme.com"},
+            {"id": "a", "name": "Beta", "domain": "beta.com", "location": {"country": {"code": "US"}}},
+            {"id": "b", "name": "Gamma", "domain": "gamma.io"},
+        ]
+        return 200, {"items": items, "scores": {"a": 0.91, "b": 0.72}}, 5
+
+    import lookalike.common as _c
+    spec = load_spec("companyenrich")
+    generic_runner.http_request = respond      # type: ignore[assignment]
+    try:
+        res = generic_runner.run_from_spec(spec, SEED_FIRMO, 100, spec.configs[0])
+    finally:
+        generic_runner.http_request = _c.http_request      # type: ignore[assignment]
+    check([c.domain for c in res.candidates] == ["beta.com", "gamma.io"],
+          f"keeps API order, drops seed (got {[c.domain for c in res.candidates]})")
+    check([c.extra.get("similarity_score") for c in res.candidates] == [0.91, 0.72],
+          "similarity score joined by company id")
+    check(res.candidates[0].extra.get("country") == "US", "country code carried for the judge")
+
+
 class PagedPredictLeads:
     """Mock PredictLeads: serves `per_page_rows` similarity rows per page until
     `total` is reached, advertising meta.count=total. Lets us assert the hook
@@ -293,6 +344,7 @@ def main() -> int:
     test_extruct()
     test_discolike()
     test_ocean()
+    test_companyenrich()
     test_predictleads_pagination()
     print()
     if failures:
