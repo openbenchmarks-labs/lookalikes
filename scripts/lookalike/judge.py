@@ -70,6 +70,9 @@ def capture_judge_calls() -> Iterator[list[RawJudgeCall]]:
 
 # Match the model used in self-serve-backend so bench results track real prod calls.
 DEFAULT_MODEL = "gpt-5.4-mini"
+# Default 3-judge panel (adopted 2026-10-22 after the Q3 re-judge probe): the
+# first two judge every candidate; the third is consulted only on a split.
+DEFAULT_PANEL = ["gpt-6-luna", "glm-5.3-flash", "claude-haiku-5-5"]
 AZURE_KEY_ENV = "AZURE_OPENAI_NEXTGEN_DEPLOYMENT_KEY"
 AZURE_URL_ENV = "AZURE_OPENAI_NEXTGEN_DEPLOYMENT_URL"
 
@@ -197,6 +200,16 @@ JUDGE_ENDPOINTS: dict[str, JudgeEndpoint] = {
         key_env="FIREWORKS_API_KEY",
         deployment="accounts/fireworks/models/kimi-k3",  # verified live 2026-08-10
     ),
+    # --- cheaper probe panel (2026-10): Luna + GLM judge, Haiku breaks ties ---
+    "gpt-6-luna": JudgeEndpoint(kind="openai"),  # Azure NEXTGEN OpenAI-v1 deployment
+    "glm-5.3-flash": JudgeEndpoint(
+        kind="openai",
+        url_env="TELNYX_AI_BASE_URL",
+        url_default="https://api.telnyx.com/v2/ai/openai",  # same route as the inference benchmark
+        key_env="TELNYX_API_KEY",
+        deployment="zai-org/GLM-5.3-Flash",
+    ),
+    "claude-haiku-5-5": JudgeEndpoint(kind="anthropic", key_env="ANTHROPIC_API_KEY"),
 }
 
 
@@ -433,6 +446,14 @@ Rules that apply throughout:
     geography, maturity, or platform breadth. A smaller, larger, or
     differently-located company clears the anchor if it is the same kind of
     company for the same kind of customer. Ignore such metadata.
+  - A narrower company clears the anchor when one of the SEED's core
+    businesses is its primary business, for the same kind of customer. Do not
+    fail it for lacking the SEED's other product lines: a ride-hailing app
+    clears "on-demand consumer super-app"; a digital wallet clears "digital
+    banking super-app".
+  - When the ANCHOR names several customers or businesses joined by "and",
+    matching any one of them clears it: a retail-only commerce platform clears
+    "commerce platform for restaurants and retailers".
   - A shared generic taxonomy label or keyword is not an anchor match. Neither
     is a similar technology stack - tech co-signals may support a judgement but
     never establish one.
@@ -462,6 +483,10 @@ Worked examples (SEED anchor -> candidate -> verdict):
         constraint), relevant true if any capability overlaps.
   - "developer-security platform"
       • a company on a similar cloud stack selling HR software -> anchor false.
+
+Output: return only the response fields (anchor_match, capabilities_matched,
+relevant, rationale). Judge each CANDIDATE on its own; other candidates for
+the same SEED do not change this verdict.
 """
 
 
@@ -612,7 +637,7 @@ class Judge:
         start = time.monotonic()
         try:
             if self._kind == "anthropic":
-                raw = self._anthropic_complete(messages, schema)
+                raw, usage = self._anthropic_complete(messages, schema)
             else:
                 request: dict[str, Any] = {
                     "model": self._send_model,
@@ -625,6 +650,7 @@ class Judge:
                     )
                 completion = self._client.chat.completions.create(**request)
                 raw = completion.choices[0].message.content or ""
+                usage = _openai_usage(completion)
             elapsed_ms = int((time.monotonic() - start) * 1000)
             verdict = _validate_verdict(schema, raw)
             _emit_judge_trace(
@@ -634,6 +660,7 @@ class Judge:
                 parsed=verdict.model_dump(),  # v1 -> {relevant, rationale}; v2 -> full structured verdict
                 elapsed_ms=elapsed_ms,
                 for_candidate_rank=candidate.rank,
+                usage=usage,
             )
             rationale = verdict.rationale.strip()[:240]
             # The anchor gate is enforced here, not taken on the model's word.
@@ -662,7 +689,9 @@ class Judge:
             )
             raise
 
-    def _anthropic_complete(self, messages: list[dict[str, str]], schema: type[BaseModel]) -> str:
+    def _anthropic_complete(
+        self, messages: list[dict[str, str]], schema: type[BaseModel]
+    ) -> tuple[str, dict[str, int | None] | None]:
         """One structured-output verdict via the Anthropic API. The system
         block (rubric + SEED) carries a cache_control breakpoint so every
         candidate after the first for a seed reads the prefix at cache rates.
@@ -684,7 +713,7 @@ class Judge:
         )
         if getattr(resp, "stop_reason", None) == "refusal":
             raise RuntimeError(f"anthropic judge refusal: {getattr(resp, 'stop_details', None)}")
-        return next(b.text for b in resp.content if b.type == "text")
+        return next(b.text for b in resp.content if b.type == "text"), _anthropic_usage(resp)
 
     def score_run(self, seed: Seed, run: RunResult) -> JudgedRun:
         judged: list[JudgedCandidate] = []
@@ -707,6 +736,37 @@ class Judge:
         )
 
 
+def _openai_usage(completion: Any) -> dict[str, int | None] | None:
+    u = getattr(completion, "usage", None)
+    if u is None:
+        return None
+    pd = getattr(u, "prompt_tokens_details", None)
+    cd = getattr(u, "completion_tokens_details", None)
+    return {
+        "input_tokens": getattr(u, "prompt_tokens", None),
+        "cached_input_tokens": getattr(pd, "cached_tokens", None) if pd else None,
+        "cache_write_tokens": None,
+        "output_tokens": getattr(u, "completion_tokens", None),
+        "reasoning_tokens": getattr(cd, "reasoning_tokens", None) if cd else None,
+    }
+
+
+def _anthropic_usage(resp: Any) -> dict[str, int | None] | None:
+    u = getattr(resp, "usage", None)
+    if u is None:
+        return None
+    read = getattr(u, "cache_read_input_tokens", None) or 0
+    write = getattr(u, "cache_creation_input_tokens", None) or 0
+    return {
+        # Anthropic reports uncached input separately; total input includes the cache.
+        "input_tokens": (getattr(u, "input_tokens", None) or 0) + read + write,
+        "cached_input_tokens": read,
+        "cache_write_tokens": write,
+        "output_tokens": getattr(u, "output_tokens", None),  # includes any thinking
+        "reasoning_tokens": None,
+    }
+
+
 def _emit_judge_trace(
     *,
     model: str,
@@ -717,6 +777,7 @@ def _emit_judge_trace(
     for_candidate_rank: int | None,
     error: str | None = None,
     cached: bool = False,
+    usage: dict[str, int | None] | None = None,
 ) -> None:
     """Append a RawJudgeCall to the active capture buffer, if any. No-op
     when no `capture_judge_calls()` context is active."""
@@ -733,6 +794,7 @@ def _emit_judge_trace(
             for_candidate_rank=for_candidate_rank,
             error=error,
             cached=cached,
+            usage=usage,
         )
     )
 
@@ -972,7 +1034,8 @@ def resolve_judge_models(cli_judges: str | None = None, cli_single: str | None =
         toks = [t.strip() for t in env.split(",") if t.strip()]
         if toks:
             return toks
-    return [cli_single or os.environ.get("LOOKALIKE_JUDGE_MODEL") or DEFAULT_MODEL]
+    single = cli_single or os.environ.get("LOOKALIKE_JUDGE_MODEL")
+    return [single] if single else list(DEFAULT_PANEL)
 
 
 @dataclasses.dataclass

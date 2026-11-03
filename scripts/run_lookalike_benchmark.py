@@ -238,6 +238,7 @@ def run_vendor_for_seed(
             "judged_at": judged.judged_at,
             "cost_usd": run.cost_usd,
             "duplicates_removed": run.duplicates_removed,
+            "sent_count": run.sent_count,
             "error": None,
         }
         attempts.append(attempt)

@@ -1,0 +1,40 @@
+slug: companyenrich
+name: CompanyEnrich
+base_url: https://api.companyenrich.com
+requires_seed_domain: true
+# Credits, no fixed USD equivalent: 5 per company returned (5 if none found).
+cost: { mode: per_result, per_result_usd: 0.049, source: "https://companyenrich.com/pricing (5 credits per company at $49 / 5,000 credits)" }
+auth:
+  - { header: Authorization, env: COMPANY_ENRICH_API_KEY, value_prefix: "Bearer " }
+# v2 company search in lookalike mode, the endpoint CompanyEnrich recommends for
+# similar-company search (it replaces v1 POST /companies/similar).
+request:
+  method: POST
+  path: /v2/companies/search
+  body:
+    pageSize: $page_size                # min(k, 100), the documented page cap
+    lookalike:
+      domains: [$seed_domain]
+      weight: $similarity_weight
+      # Without minScore the API applies a default cutoff, which can return
+      # fewer than k companies and leave P@100 short. 0 keeps the full page.
+      minScore: 0
+    filter:
+      domain: { notIn: [$seed_domain] } # drop the seed itself
+      # Set by companyenrich_request only for the seed_firmographic config;
+      # null otherwise (pruned).
+      country: $countries
+      employees: $employees
+response:
+  candidates_path: [items]
+hooks:
+  build_request: companyenrich_request
+  transform_candidates: companyenrich_scored_items   # attach metadata.scores[id]
+configs:
+  # lookalike.weight: -1..1. Higher favors more similar companies, lower favors
+  # more established ones. One paid config, at the API default of 0, like most
+  # vendors on the board (5 credits/company: ~24k credits at 48 seeds x k=100).
+  - { name: default, similarity_weight: 0 }
+  # Same public, TAM-derived hints Ocean's seed_firmographic config uses (country
+  # + employee range). Skipped when the seed has no hints.
+  - { name: seed_firmographic, similarity_weight: 0, use_seed_firmo: true }

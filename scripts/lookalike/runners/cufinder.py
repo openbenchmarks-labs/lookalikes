@@ -9,6 +9,8 @@ VENDOR_SLUG = "cufinder"
 VENDOR_NAME = "CUFinder"
 CONFIGS: list[dict[str, Any]] = [{"name": "domain_lookalikes"}]
 MAX_RESULTS = 10
+# https://cufinder.io/pricing: 5 credits per company at $49 / 1,000 credits, billed on rows sent.
+USD_PER_RESULT = 5 * 49 / 1000
 
 
 def run(seed: Seed, k: int, config: dict[str, Any]) -> RunResult:
@@ -37,5 +39,7 @@ def run(seed: Seed, k: int, config: dict[str, Any]) -> RunResult:
         )
         for row in rows if isinstance(row, dict)
     ]
+    sent = len(rows)
     return RunResult(seed.seed_slug, VENDOR_SLUG, config["name"], config, take_top(candidates, min(k, MAX_RESULTS)),
-                     elapsed_ms, requested_k=k, max_results=MAX_RESULTS)
+                     elapsed_ms, cost_usd=round(USD_PER_RESULT * min(sent, k, MAX_RESULTS), 6), requested_k=k,
+                     max_results=MAX_RESULTS, sent_count=sent)

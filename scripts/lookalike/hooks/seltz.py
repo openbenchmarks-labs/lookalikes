@@ -22,6 +22,27 @@ AGGREGATOR_HOSTS = {
     "wikipedia.org", "en.wikipedia.org", "bloomberg.com", "pitchbook.com",
 }
 
+def _compose_query(seed: Seed) -> str:
+    """Compose the vendor query "<anchor> for <cap1>, <cap2>, ..., and <capN>"
+    from the seed's structured anchor + capabilities. Matches PR #8."""
+    caps = [c.strip() for c in seed.capabilities if c and c.strip()]
+    if not caps:
+        return (seed.anchor or seed.description or seed.seed_name).strip()
+    if len(caps) == 1:
+        joined = caps[0]
+    elif len(caps) == 2:
+        joined = f"{caps[0]} and {caps[1]}"
+    else:
+        joined = ", ".join(caps[:-1]) + ", and " + caps[-1]
+    anchor = (seed.anchor or "").strip()
+    return f"{anchor} for {joined}" if anchor else joined
+
+
+def build_query(ctx: dict[str, Any]) -> None:
+    """build_request: set the natural-language query from the seed's anchor +
+    capabilities."""
+    ctx["vars"]["query"] = _compose_query(ctx["seed"])
+
 
 def _host(value: Any) -> str | None:
     """Normalize a website URL to a bare host, dropping aggregator domains."""
@@ -89,27 +110,8 @@ def _subtitle(content: str) -> str | None:
 def _description(content: str, fields: dict[str, str]) -> str | None:
     about = _section(content, "About")
     if about:
-        return " ".join(about.split())  # collapse whitespace; no length cap
+        return " ".join(about.split())  # collapse whitespace; no length cap (PR #8)
     return _subtitle(content)
-
-
-def _compose_query(seed: Seed) -> str:
-    """Compose the vendor query "<anchor> for <cap1>, <cap2>, ..., and <capN>"
-    from the seed's structured anchor + capabilities. Every benchmark seed
-    carries an anchor and >= 2 capabilities."""
-    caps = [c.strip() for c in seed.capabilities if c and c.strip()]
-    joined = (
-        f"{caps[0]} and {caps[1]}"
-        if len(caps) == 2
-        else ", ".join(caps[:-1]) + ", and " + caps[-1]
-    )
-    return f"{(seed.anchor or '').strip()} for {joined}"
-
-
-def build_query(ctx: dict[str, Any]) -> None:
-    """build_request: set the natural-language query from the seed's anchor +
-    capabilities."""
-    ctx["vars"]["query"] = _compose_query(ctx["seed"])
 
 
 def parse_companies(raw_items: list[Any], ctx: dict[str, Any]) -> list[Candidate]:
@@ -132,10 +134,13 @@ def parse_companies(raw_items: list[Any], ctx: dict[str, Any]) -> list[Candidate
         linkedin_url = fields.get("linkedin") or (
             source_url if isinstance(source_url, str) and "linkedin.com" in source_url else None
         )
+        name = name.strip()
+        if not name and not domain:
+            continue
 
         candidates.append(
             Candidate(
-                name=name.strip(),
+                name=name or (domain or ""),
                 domain=domain,
                 description=_description(content, fields),
                 extra={
