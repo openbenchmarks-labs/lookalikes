@@ -94,7 +94,7 @@ and the raw audit trail (every vendor call + every judge call) lives under
 | `scripts/lookalike/specs/<vendor>.yaml` | Declarative vendor adapter — base URL, auth header, request template, response paths, candidate field map, cost. |
 | `scripts/lookalike/generic_runner.py` | One generic runner that executes any spec (templating, response normalization, cost). |
 | `scripts/lookalike/hooks/` | Optional per-vendor Python hooks for the few quirks that can't be declarative (e.g. domain preflight, page→domain dedupe, JSON:API joins). |
-| `scripts/lookalike/runners/<vendor>.py` | Thin spec-binding stub per vendor (exposes the runner contract to the orchestrator). |
+| `scripts/lookalike/runners/<vendor>.py` | Thin spec-binding stub per vendor (exposes the runner contract to the orchestrator). `riveter.py` is a full runner: Riveter has no lookalike endpoint, so it builds each list through the async dataset API (create → build → poll → read). |
 | `scripts/lookalike/metrics.py` | Pluggable metric registry — Precision@K (primary) + nDCG@K / MAP@K / MRR / pooled Recall@K. |
 | `scripts/lookalike/judge.py` | LLM judge panel — system prompt, Pydantic verdict schema, code-enforced anchor gate, majority vote, verdict cache, mock mode. |
 | `scripts/lookalike/common.py` | Dataclasses + HTTP helper + persistence + redaction. |
@@ -173,10 +173,10 @@ reproduce a majority-vote result.
   vote is still undecided, so the third model runs only when the first two disagree.
   Set `LOOKALIKE_JUDGE_FULL_PANEL=1` to always run all three, e.g. to measure
   per-model agreement.
-- **Natural-language query.** Domain-first providers receive a company domain. Exa and
-  Parallel take natural language, so each seed has one hand-authored query and both
-  vendors receive the identical string — that identity is what makes the two
-  comparable. The query states the anchor and the capabilities separately, mirroring
+- **Natural-language query.** Domain-first providers receive a company domain. Exa,
+  Parallel, and Riveter take natural language, so each seed has one hand-authored
+  query and all three vendors receive the identical string — that identity is what
+  makes them comparable. The query states the anchor and the capabilities separately, mirroring
   the rubric. Every seed's query is published in `data/latest-lookalike.json` and in
   the per-cell audit trail. The earlier three-variant prompt sweep has been retired,
   so a published figure is a single query's result rather than a per-seed maximum.
