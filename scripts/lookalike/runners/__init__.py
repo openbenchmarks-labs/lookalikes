@@ -16,6 +16,8 @@ from . import (  # noqa: F401
     discolike,
     lusha,
     mock,
+    model_baseline,
+    model_baseline_sol,
     ocean,
     parallel,
     predictleads,
@@ -48,4 +50,6 @@ REGISTRY = {
     seltz.VENDOR_SLUG: seltz,
     zoominfo.VENDOR_SLUG: zoominfo,
     companyenrich.VENDOR_SLUG: companyenrich,
+    model_baseline.VENDOR_SLUG: model_baseline,
+    model_baseline_sol.VENDOR_SLUG: model_baseline_sol,
 }
