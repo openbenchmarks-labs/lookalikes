@@ -64,7 +64,9 @@ CONFIGS: list[dict[str, Any]] = [
 ]
 
 DEFAULT_MODEL_ID = "us.anthropic.claude-opus-5-5"
-GEN_MAX_TOKENS = 8192
+# Opus 5.5 always thinks, and thinking counts against maxTokens: 8192 truncated
+# the candidate list on seeds where the model thought longer.
+GEN_MAX_TOKENS = 32000
 DESC_MAX_TOKENS = 300
 SCRAPE_TIMEOUT_SEC = 15
 SCRAPE_MAX_BYTES = 800_000
@@ -72,6 +74,9 @@ SCRAPE_TEXT_CHARS = 6_000
 OVERFETCH = 10  # ask for k+N so seed-removal/dedupe still leaves k
 BEDROCK_RETRIES = 5
 RETRYABLE_STATUSES = {429, 500, 503}
+# Generating ~110 candidates is a long response; the harness default (60s)
+# cuts it off under load.
+MODEL_TIMEOUT_SEC = 300
 _USAGE_LOCK = threading.Lock()
 
 GEN_SYSTEM = """You are a company lookalike engine. Given a seed company, you return the companies most similar to it: the same kind of company selling to the same kind of buyer, with overlapping capabilities. Order them most similar first.
@@ -125,7 +130,14 @@ def _converse(
 
     last: tuple[int, Any] = (0, None)
     for attempt in range(BEDROCK_RETRIES):
-        status, payload, _elapsed = http_request("POST", url, headers=headers, body=body)
+        try:
+            status, payload, _elapsed = http_request(
+                "POST", url, headers=headers, body=body, timeout=MODEL_TIMEOUT_SEC
+            )
+        except (TimeoutError, urllib.error.URLError) as exc:
+            last = (0, f"{type(exc).__name__}: {exc}")
+            time.sleep(min(30.0, (2 ** attempt) + random.random()))
+            continue
         if status == 200 and isinstance(payload, dict):
             usage = payload.get("usage") or {}
             with _USAGE_LOCK:  # read-modify-write from describe worker threads
@@ -143,22 +155,36 @@ def _converse(
     raise RuntimeError(f"bedrock converse failed (HTTP {last[0]}): {str(last[1])[:300]}")
 
 
-def _parse_candidates_json(raw: str) -> list[dict[str, Any]]:
+_CANDIDATE_OBJ = re.compile(
+    r'\{\s*"name"\s*:\s*"((?:[^"\\]|\\.)*)"\s*,\s*"domain"\s*:\s*"((?:[^"\\]|\\.)*)"\s*\}'
+)
+
+
+def _parse_candidates_json(raw: str) -> tuple[list[dict[str, Any]], bool]:
     """Parse {"candidates": [...]} out of the model's reply, tolerating code
-    fences or stray prose around the JSON object."""
+    fences or stray prose around the JSON object. Returns (items,
+    used_fallback). Occasionally the reply is not valid JSON as a whole; the
+    fallback then extracts each {"name", "domain"} object in order."""
     text = raw.strip()
     text = re.sub(r"^```(?:json)?\s*|\s*```$", "", text)
     try:
         obj = json.loads(text)
     except json.JSONDecodeError:
         start, end = text.find("{"), text.rfind("}")
-        if start < 0 or end <= start:
-            raise RuntimeError(f"model reply is not JSON: {raw[:200]}")
-        obj = json.loads(text[start : end + 1])
-    items = obj.get("candidates")
-    if not isinstance(items, list):
-        raise RuntimeError("model JSON has no 'candidates' list")
-    return [it for it in items if isinstance(it, dict) and it.get("name")]
+        try:
+            obj = json.loads(text[start : end + 1]) if 0 <= start < end else None
+        except json.JSONDecodeError:
+            obj = None
+    if isinstance(obj, dict) and isinstance(obj.get("candidates"), list):
+        return [it for it in obj["candidates"] if isinstance(it, dict) and it.get("name")], False
+
+    items = [
+        {"name": json.loads(f'"{n}"'), "domain": json.loads(f'"{d}"')}
+        for n, d in _CANDIDATE_OBJ.findall(text)
+    ]
+    if not items:
+        raise RuntimeError(f"model reply has no parseable candidates: {raw[:200]}")
+    return items, True
 
 
 # --------------------------------------------------------------------------- #
@@ -326,7 +352,7 @@ def run_pipeline(
         f"Return exactly {ask} candidates, most similar first."
     )
     raw = complete(GEN_SYSTEM, user_msg, gen_max_tokens, usage_totals)
-    items = _parse_candidates_json(raw)
+    items, parse_fallback = _parse_candidates_json(raw)
 
     candidates = [
         Candidate(
@@ -369,6 +395,7 @@ def run_pipeline(
             **config,
             "model_id": model_label,
             "requested_from_model": ask,
+            "parse_fallback": parse_fallback,
             "described_from_homepage": described,
             "model_usage": usage_totals,
         },

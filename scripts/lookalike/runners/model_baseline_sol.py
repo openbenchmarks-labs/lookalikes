@@ -16,6 +16,7 @@ from __future__ import annotations
 import os
 import random
 import time
+import urllib.error
 from typing import Any
 
 from ..common import RunResult, Seed, http_request, require_env
@@ -50,7 +51,14 @@ def _complete(system: str, user: str, max_tokens: int, usage_totals: dict[str, i
 
     last: tuple[int, Any] = (0, None)
     for attempt in range(base.BEDROCK_RETRIES):
-        status, payload, _elapsed = http_request("POST", url, headers=headers, body=body)
+        try:
+            status, payload, _elapsed = http_request(
+                "POST", url, headers=headers, body=body, timeout=base.MODEL_TIMEOUT_SEC
+            )
+        except (TimeoutError, urllib.error.URLError) as exc:
+            last = (0, f"{type(exc).__name__}: {exc}")
+            time.sleep(min(30.0, (2 ** attempt) + random.random()))
+            continue
         if status == 200 and isinstance(payload, dict):
             usage = payload.get("usage") or {}
             with base._USAGE_LOCK:
