@@ -430,6 +430,9 @@ STEP 1 - anchor_match (the gate).
     - Parent/holding companies, the seed itself, and duplicate or parody
       entries fail.
   When you cannot tell what the candidate sells, anchor_match is false.
+  If the CANDIDATE has no description, you cannot tell what it sells:
+  anchor_match is false and capabilities_matched is []. Do not fill the gap
+  from your own knowledge of the company, or infer it from its name or domain.
 
 STEP 2 - capabilities_matched (the overlap).
   List the SEED capabilities this candidate also does, copying the strings
@@ -475,6 +478,8 @@ Worked examples (SEED anchor -> candidate -> verdict):
         -> anchor FALSE (customer of the category), relevant false.
       • an agency that installs restaurant POS systems
         -> anchor FALSE (serves the category), relevant false.
+      • a candidate with no description, even one you recognise by name
+        -> anchor FALSE (no evidence given), matched [], relevant false.
   - "CRM and marketing automation platform for go-to-market teams"
       • a smaller CRM with marketing automation -> anchor true, relevant true.
       • a lead-generation agency using that CRM for clients -> anchor false.
